@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¹⁷¹Yb 跃迁数据图谱 (含里德堡态) | Ytterbium-171 Transition Atlas</title>
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/rydberg-diagram.css">
 <style>
   :root {
     --bg-0: #0a0e16;
@@ -1515,11 +1514,11 @@
       <div class="flow-guide-hint">点击任意步骤卡片跳转到对应模块 · <b>完成操作后步骤会点亮 ✓</b></div>
     </div>
     <ol class="flow-steps">
-      <li class="flow-step" data-gstep="1" data-tone="blue" role="link" tabindex="0" title="跳转到能级图（里德堡跃迁见下一节）">
+      <li class="flow-step" data-gstep="1" data-tone="blue" role="link" tabindex="0" title="跳转到能级图（含 65S 里德堡激发）">
         <span class="fs-num">1</span>
         <span class="fs-body">
-          <span class="fs-name">选跃迁：核心 / 里德堡</span>
-          <span class="fs-desc">核心跃迁或里德堡 R1–R7 任选其一 · 悬停查看详情 · 点击选中</span>
+          <span class="fs-name">选跃迁：核心 / 65S</span>
+          <span class="fs-desc">核心跃迁或 65S 激发任选其一 · 悬停查看详情 · 点击选中</span>
         </span>
       </li>
       <li class="fs-arrow" aria-hidden="true">→</li>
@@ -1597,8 +1596,8 @@
             <span>M2 磁四极</span>
           </div>
           <div class="legend-item">
-            <span class="legend-line dashed" style="border-color:#a78bfa"></span>
-            <span>双光子</span>
+            <span class="legend-line solid" style="border-color:#a78bfa"></span>
+            <span>65S 激发 E1（估算）</span>
           </div>
         </div>
         <div class="legend-col">
@@ -1632,119 +1631,6 @@
     </div>
   </section>
 
-  <!-- Rydberg Quantum Computing Diagram -->
-  <section class="section ryd-qc-section" id="secRyd">
-    <div class="section-head">
-      <div class="section-title">
-        里德堡跃迁图谱 · Rydberg Diagrams
-        <span class="badge ryd">¹⁷¹Yb</span>
-      </div>
-      <div class="section-sub guide-sub" data-gstep="1" data-tone="violet">
-        <span class="gs-step">STEP 1 · 选跃迁（里德堡）</span>
-        <span>切换超精细 / mF 示意图与原有 R1–R7 路径 · 原有路径可点击填入参数</span>
-      </div>
-    </div>
-    <div class="rd-view-tabs" role="tablist" aria-label="里德堡图谱视图">
-      <button class="f-btn active" id="rdTabResolved" role="tab" aria-selected="true" aria-controls="rdResolved">超精细 / mF 图</button>
-      <button class="f-btn" id="rdTabOverview" role="tab" aria-selected="false" aria-controls="rdOverview" tabindex="-1">原有示例路径 R1–R7</button>
-    </div>
-    <div id="rdResolved" role="tabpanel" aria-labelledby="rdTabResolved">
-      <div class="diagram-wrap rd-panel">
-        <div class="rd-heading">
-          <div><h3>¹⁷¹Yb Rydberg Transition Diagram</h3><p>6s² ¹S₀ → 6s6p ³P₀ → 6s65s ³S₁</p></div>
-          <div class="rd-polarization" role="group" aria-label="Polarization">
-            <span>Polarization</span>
-            <div class="rd-segments"><button type="button" data-rd-pol="pi" aria-pressed="true">π</button><button type="button" data-rd-pol="sigma+" aria-pressed="false">σ⁺</button><button type="button" data-rd-pol="sigma-" aria-pressed="false">σ⁻</button></div>
-          </div>
-        </div>
-        <div class="rd-scroll"><svg id="rydbergResolvedDiagram" viewBox="0 0 1100 750" role="img" aria-labelledby="rdSvgTitle rdSvgDesc"></svg></div>
-        <span class="rd-sr-only" id="rdStatus" role="status"></span>
-      </div>
-    </div>
-    <div id="rdOverview" role="tabpanel" aria-labelledby="rdTabOverview" hidden>
-    <div class="diagram-wrap">
-    <div class="filter-bar" id="rydFilterBar">
-      <div class="filter-group">
-        <span class="filter-label">初态</span>
-        <button class="f-btn ryd active" data-ryd-filter="all">全部</button>
-        <button class="f-btn ryd" data-ryd-filter="³P₀">³P₀</button>
-        <button class="f-btn ryd" data-ryd-filter="³P₁">³P₁</button>
-        <button class="f-btn ryd" data-ryd-filter="³P₂">³P₂</button>
-      </div>
-    </div>
-    <svg class="ryd-qc-svg" id="rydQcDiagram" viewBox="0 0 1000 540" preserveAspectRatio="xMidYMid meet"></svg>
-    <div class="legend">
-      <div class="legend-col">
-        <div class="legend-title">里德堡跃迁</div>
-        <div class="legend-item">
-          <span class="legend-line solid" style="border-color:#60a5fa; border-top-width:2.5px"></span>
-          <span>³P₀ → n³S₁ (R1–R3)</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-line solid" style="border-color:#a78bfa; border-top-width:2.5px"></span>
-          <span>³P₀ → 65³D₁ (R4)</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-line solid" style="border-color:#c084fc; border-top-width:2.5px"></span>
-          <span>³P₀ → 65³D₂ (R5)</span>
-        </div>
-      </div>
-      <div class="legend-col">
-        <div class="legend-title">辅助路径</div>
-        <div class="legend-item">
-          <span class="legend-line solid" style="border-color:#f59e0b; border-top-width:2.5px"></span>
-          <span>³P₁ → 65³S₁ (R6)</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-line solid" style="border-color:#22d391; border-top-width:2.5px"></span>
-          <span>³P₂ → 65³S₁ (R7)</span>
-        </div>
-      </div>
-      <div class="legend-col">
-        <div class="legend-title">参考线</div>
-        <div class="legend-item">
-          <span class="legend-line dashed" style="border-color:#f87171"></span>
-          <span>电离阈 (IP)</span>
-        </div>
-      </div>
-      <div class="legend-col">
-        <div class="legend-title">态类型</div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#e8edf7"></span>
-          <span>低能单重态 (¹S₀)</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#7aa2ff"></span>
-          <span>低能三重态 (³P_J)</span>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="ryd-qc-cards">
-      <div class="ryd-qc-card">
-        <h4>R1–R3：³P₀ → n³S₁ 量子门 <span class="tag theory">文献与估算</span></h4>
-        <p>图中以 50/65/80³S₁ 展示从 ³P₀ 出发的约 302 nm 单光子路径。三个 n 值的波长、矩阵元与线宽含简化估算；文献中的门保真度和具体工作点不能直接套用到每一行。</p>
-        <div class="ref">[2] Peper 2025 / Phys. Rev. X 15, 011009 · Ma 2023</div>
-      </div>
-      <div class="ryd-qc-card">
-        <h4>R4–R5：³P₀ → 65³D_J <span class="tag exp">光谱</span></h4>
-        <p>³P₀ → 65³D₁ 为 E1 允许跃迁；³P₀ → 65³D₂ 因 ΔJ=2 而 E1 禁戒，不能按弱 E1 跃迁使用。D 系列可用于光谱分析；若研究其他多极通道，须另行核对矩阵元。³D₂ 有 F=3/2、5/2 超精细态。</p>
-        <div class="ref">[2] Peper 2024 · [1] Kroeze 2025</div>
-      </div>
-      <div class="ryd-qc-card">
-        <h4>R6–R7：双光子与 ³P₂ 路径 <span class="tag exp">实验/辅助</span></h4>
-        <p>³P₁ → 65³S₁（~308 nm）是双光子激发方案中间步；³P₂ → 65³S₁（~326 nm）从辅助亚稳态直接激发。两者均依赖自旋-轨道混合通道。</p>
-        <div class="ref">[3] Kuroda 2025 / Phys. Rev. A 112, 042817 · [7] Wilson 2022</div>
-      </div>
-      <div class="ryd-qc-card">
-        <h4>里德堡系列与电离阈 <span class="tag theory">理论</span></h4>
-        <p>按 Peper 2025 文献画法，里德堡系列按宇称和总角动量 F 分组，向 Yb⁺ 两个超精细电离阈 E_I⁰ (F_core=0) 和 E_I¹ (F_core=1) 收敛，间距 12.643 GHz。</p>
-        <div class="ref">[2] Peper 2025 PRX 15, 011009 · [1] Kroeze 2025</div>
-      </div>
-    </div>
-    </div>
-   </section>
-
   <!-- Hyperfine Matrix Element Calculator -->
   <section class="section hf-calc-section" id="secCalc">
     <div class="section-head">
@@ -1757,7 +1643,9 @@
       </div>
     </div>
 
+      <p id="ryd65CalcNote" hidden style="color:var(--rydtext);padding:12px;border:1px solid var(--rydborder);border-radius:8px">65S 估算计算：波长、矩阵元及寿命来自现有简化模型；d = 0.0376 ea₀ 按电子态 J 级约化矩阵元使用，再换算到 F/mF 通道，未作独立验证。F 分组位置为示意，不代表真实超精细劈裂；输出不作为实验校准值。</p>
     <div class="hf-calc-wrap">
+
       <!-- Right: results, then diagram + CG table side by side -->
       <div class="hf-calc-right">
         <!-- Reduced & effective matrix elements -->
@@ -2170,7 +2058,7 @@
             <li class="changelog-item"><span class="changelog-marker"></span><div class="changelog-body"><span class="changelog-version">v5.1</span><span class="changelog-date">2026-08-12</span><div class="changelog-desc">参考文献列表 arXiv 冗余清理：9 条已正式发表条目（Peper / Kuroda / Muniz / Ma / Okuno / Wilson / Saskin / Halter / Lehec）的 doi 字段删除末尾的「· arXiv:xxxx」后缀，仅保留期刊发表信息（期刊名、卷号、文章号、年份）；Kroeze 条目仍为 arXiv 预印本（待发表），保留 arXiv 编号与「待发表」标注；其余无 arXiv 引用条目不变。条目格式与相邻条目保持统一，渲染为纯文本（无对应超链接可删）。</div></div></li>
             <li class="changelog-item"><span class="changelog-marker"></span><div class="changelog-body"><span class="changelog-version">v5.2</span><span class="changelog-date">2026-08-27</span><div class="changelog-desc">超精细跃迁图跃迁线标签口径订正：线上标注原为矩阵元 |⟨F′m′|T¹q|Fm⟩|（ea₀，随 d_reduced 缩放），与全分量 CG 矩阵「角向因子 (CG×6j)」列不一致；现改为同一 CG 系数（角向因子）= ⟨F′m′|T¹q|Fm⟩ / d_reduced，以最简分式（含根号、含符号）显示，与 CG 矩阵表逐通道一致，且仅依赖 F/mF/偏振与 J/J′/I、不随跃迁矩阵元变化。跃迁线悬停 tooltip 的「CG」行同步改为「CG 系数」并显示同一角向因子（原为裸 Clebsch-Gordan 系数）；矩阵元仍可在 tooltip 与 CG 矩阵表右列查看。图标题追加「线标 CG 系数」说明。</div></div></li>
             <li class="changelog-item"><span class="changelog-marker"></span><div class="changelog-body"><span class="changelog-version">v5.3</span><span class="changelog-date">2026-08-28</span><div class="changelog-desc">新手引导（step-by-step）：页头下方新增「快速上手 · 四步得到 Rabi-P 曲线」流程导航条（① 能级图选跃迁 → ② 里德堡跃迁 R1–R7 → ③ 参数自动填入 / F→F′ 分量分解 → ④ Rabi-P 图），步骤卡片可点击平滑跳转到对应模块，完成对应操作后自动点亮 ✓（核心 / 里德堡跃迁点击、计算模块与 Rabi-P 图交互均计入进度）；能级图、里德堡能级图、超精细矩阵元换算、Rabi-P 可视化四个小节的副标题升级为带 STEP 编号的醒目引导药丸（配色沿用页面莫兰迪蓝灰体系：蓝 / 紫 / 绿），并平滑滚动锚点。计算逻辑零改动。</div></div></li>
-            <li class="changelog-item"><span class="changelog-marker"></span><div class="changelog-body"><span class="changelog-version">v5.4</span><span class="changelog-date">2026-08-28</span><div class="changelog-desc">新手引导四步合并为三步：核心跃迁与里德堡跃迁（R1–R7）同属「选跃迁」动作，原第 1、2 步合并为一步「选跃迁：核心 / 里德堡」，导航条改为「快速上手 · 三步得到 Rabi-P 曲线」；四个小节副标题药丸编号同步调整——能级图与里德堡能级图同为 STEP 1（选跃迁·核心 / 选跃迁·里德堡），超精细矩阵元换算改 STEP 2，Rabi-P 可视化改 STEP 3；点亮逻辑同步：点击核心或里德堡跃迁线均点亮步骤 1（两个小节药丸一起点亮 ✓），参数与 Rabi-P 图交互分别点亮步骤 2 / 3。计算逻辑零改动。</div></div></li>
+            <li class="changelog-item"><span class="changelog-marker"></span><div class="changelog-body"><span class="changelog-version">v5.4</span><span class="changelog-date">2026-08-28</span><div class="changelog-desc">新手引导四步合并为三步：核心跃迁与里德堡跃迁（R1–R7）同属「选跃迁」动作，原第 1、2 步合并为一步「选跃迁：核心 / 65S」，导航条改为「快速上手 · 三步得到 Rabi-P 曲线」；四个小节副标题药丸编号同步调整——能级图与里德堡能级图同为 STEP 1（选跃迁·核心 / 选跃迁·里德堡），超精细矩阵元换算改 STEP 2，Rabi-P 可视化改 STEP 3；点亮逻辑同步：点击核心或里德堡跃迁线均点亮步骤 1（两个小节药丸一起点亮 ✓），参数与 Rabi-P 图交互分别点亮步骤 2 / 3。计算逻辑零改动。</div></div></li>
             <li class="changelog-item"><span class="changelog-marker"></span><div class="changelog-body"><span class="changelog-version">v5.5</span><span class="changelog-date">2026-09-01</span><div class="changelog-desc">跃迁数据库系数核查修复（三项）：① 里德堡态阻塞半径单位换算订正——C₆ 以 GHz·µm⁶ 列出而 Ω/2π 参考值为 1 MHz，原式漏掉 GHz→MHz 的 10³ 因子导致阻塞半径系统性低估 3.16×（n=57 由 1.80 µm 修正为 5.69 µm，n=60 由 1.99 修正为 6.28 µm；³D₁/³D₂ 两系列同步修正）；② 量子亏损表 6sns ³S₁ δ=2.523 的来源标注订正——由「NIST ASD + Peper 2024（n≈7 低 n 外推）」改为「高 n MQDT 有效值（Peper 2025 PRX）」，消除与 6s7s ³S₁ 实测反推 δ(7³S₁)=4.513 的矛盾表述；③ T2（¹S₀→³P₁ 555.8 nm）约化偶极矩阵元 d=0.543 ea₀ 的来源注明「内部校准值，文献 0.5398(6)」，标明该值为对齐 sympy ground truth 的有意校准而非文献原值。计算逻辑（dCyc/rabiHz）零改动。</div></div></li>
             <li class="changelog-item"><span class="changelog-marker"></span><div class="changelog-body"><span class="changelog-version">v5.6</span><span class="changelog-date">2026-09-01</span><div class="changelog-desc">里德堡跃迁表条数口径修正：原表按 6 个（下能级 × 系列）组合 × 代表性 n 值机械生成 28 条理论估算行，组合覆盖不满足 E1 选择定则（漏 ³P₀→n³D₁ 与 ³P₁→n³D₁ 两个允许组合），28 无物理出处且与里德堡能级图（仅 R1–R7）口径不一致。现改为仅保留有数据支撑的 7 条跃迁（R1–R7，由 RYDBERG_QC_TRANSITIONS 直接构建），波长/波数/频率/强度/来源均沿用 R1–R7 数据；页头「里德堡跃迁 28 条」统计卡与数据表 tab 徽标同步改为 7 条；顺带修正两处过期硬编码徽标（核心跃迁 10→7、里德堡态参数 24→21），四个 tab 徽标与页头统计卡改为从数据数组长度动态同步。计算逻辑零改动。</div></div></li>
           </ul>
@@ -2540,11 +2428,30 @@ const RYDBERG_TRANSITIONS = RYDBERG_QC_TRANSITIONS.map(r => {
   };
 });
 
+// The selected 65S path is shared by the main diagram and calculator.
+// d_num is treated as an estimated electronic J-reduced matrix element;
+// no independent channel-resolved measurement or MQDT validation is claimed.
+const selected65S = RYDBERG_QC_TRANSITIONS.find(t => t.id === 'R2');
+CORE_LEVELS.push({ term: '65³S₁', config: '6s65s', J: 1, S: 1,
+  parity: 'even', type: 'triplet',
+  energy_cm: 17288.439 + selected65S.energy_cm,
+  energy_eV: (17288.439 + selected65S.energy_cm) / 8065.543937,
+  lifetime: '估算', role: '65S 里德堡态（估算位置）' });
+CORE_TRANSITIONS.push({ ...selected65S, label: '65S 里德堡激发（估算）',
+  approximate: true, d_convention: 'estimated J-reduced',
+  energy_eV: selected65S.energy_cm / 8065.543937,
+  lifetime_ns: 1e9 / selected65S.Gamma_per_s_num,
+  Gamma_per_s: String(selected65S.Gamma_per_s_num),
+  oscillator_strength_f: '待核查', Isat: '待核查', branching: '待核查',
+  forbidden_reason: 'E1 允许；矩阵元采用 J 级约化量估算约定，待独立验证',
+  use: '65S 激发与 Rabi 示意计算',
+  source: selected65S.source + '；d 按电子态 J 级约化量使用，未作独立验证',
+  color: '#a78bfa' });
+
 // Hyperfine data for Rydberg states (A_hfs scales as n*⁻³)
 // Added to HYPERFINE_DATA so HFCalc can look up F-manifold energy shifts
 Object.assign(HYPERFINE_DATA, {
   '50³S₁': { J: 1, A: 5.734, levels: [{ F: 0.5, shift: -5.734 }, { F: 1.5, shift: 2.867 }] },
-  '65³S₁': { J: 1, A: 2.516, levels: [{ F: 0.5, shift: -2.516 }, { F: 1.5, shift: 1.258 }] },
   '80³S₁': { J: 1, A: 1.320, levels: [{ F: 0.5, shift: -1.320 }, { F: 1.5, shift: 0.660 }] },
   '65³D₁': { J: 1, A: -0.767, levels: [{ F: 0.5, shift: 0.767 }, { F: 1.5, shift: -0.383 }] },
   '65³D₂': { J: 2, A: -0.289, levels: [{ F: 1.5, shift: 0.434 }, { F: 2.5, shift: -0.289 }] },
@@ -2615,7 +2522,7 @@ const REFERENCES = [
   const svg = document.getElementById('levelDiagram');
   const NS = 'http://www.w3.org/2000/svg';
   const W = 1000, H = 760;
-  const padTop = 42, padBottom = 30;
+  const padTop = 85, padBottom = 30;
   // 3-column parity-symmetric layout: odd (left) | even (middle) | odd (right)
   //   left odd column: ¹P series (singlet P, 6s6p)
   //   middle even column: 6s², 6snd, 6sns (S, D even-parity series)
@@ -2843,7 +2750,7 @@ const REFERENCES = [
     } else if (shortLabel) {
       displayLabel = level.term;
     } else {
-      displayLabel = '(' + level.config + ') ' + level.term;
+      displayLabel = level.term === '65³S₁' ? '6s65s ³S₁ · 估算' : '(' + level.config + ') ' + level.term;
     }
 
     const label = document.createElementNS(NS, 'text');
@@ -3260,6 +3167,10 @@ function showHyperfinePanel(term) {
   const content = document.getElementById('hfsContent');
   const hfs = HYPERFINE_DATA[term];
   const level = CORE_LEVELS.find(l => l.term === term);
+  if (term === '65³S₁') {
+    content.innerHTML = '<div class="hfs-title-pill">6s65s ³S₁ · J=1 · I=1/2</div><p>F=1/2、3/2；未提供经验证的超精细劈裂。点击约 302 nm 跃迁，在下方查看 mF 通道与估算 Rabi 频率。</p>';
+    document.getElementById('hfsPanel').classList.add('active'); return;
+  }
   if (!hfs || !level) return;
 
   // Format F value as fraction: 0.5→1/2, 1.5→3/2, 2.5→5/2
@@ -3936,8 +3847,8 @@ function formatCell(row, col, tableId) {
     case 'core:label':
       return `<div class="trans-label">${row.label}</div><div class="trans-pair">${row.lower} → ${row.upper}</div>`;
     case 'core:wavelength_vac_nm':
-      return `<div class="wl-cell"><span class="wl-dot" style="background:${row.color}"></span>${infoTip('真空波长 λ', src, 'λ = c/ν = hc/ΔE，由上下能级的能量差决定。', row.wavelength_vac_nm.toFixed(4))}</div>
-              <div class="wl-sub">空气: ${row.wavelength_air_nm.toFixed(4)} nm</div>`;
+      return `<div class="wl-cell"><span class="wl-dot" style="background:${row.color}"></span>${infoTip('真空波长 λ', src, 'λ = c/ν = hc/ΔE，由上下能级的能量差决定。', row.approximate ? '≈' + row.wavelength_vac_nm.toFixed(2) + '（估算）' : row.wavelength_vac_nm.toFixed(4))}</div>
+              <div class="wl-sub">空气: ${Number.isFinite(row.wavelength_air_nm) ? row.wavelength_air_nm.toFixed(4) : '待补充'} nm</div>`;
     case 'core:frequency_THz':
       return infoTip('跃迁频率 ν', src, 'ν = c/λ，由真空波长换算得到。', `<span class="mono">${row.frequency_THz.toFixed(5)} THz</span>`);
     case 'core:energy_eV':
@@ -4094,12 +4005,12 @@ function showTooltip(e, t, isCore) {
   if (isCore) {
     rows = `
       <div class="tt-row"><span class="tt-key">跃迁</span><span class="tt-val">${t.lower} → ${t.upper}</span></div>
-      <div class="tt-row"><span class="tt-key">波长 (真空)</span><span class="tt-val">${t.wavelength_vac_nm.toFixed(4)} nm</span></div>
+      <div class="tt-row"><span class="tt-key">波长 (真空)</span><span class="tt-val">${t.approximate ? '≈' + t.wavelength_vac_nm.toFixed(2) + '（估算）' : t.wavelength_vac_nm.toFixed(4)} nm</span></div>
       <div class="tt-row"><span class="tt-key">频率</span><span class="tt-val">${t.frequency_THz.toFixed(5)} THz</span></div>
       <div class="tt-row"><span class="tt-key">线宽</span><span class="tt-val">${t.linewidth_FWHM}</span></div>
       <div class="tt-row"><span class="tt-key">寿命</span><span class="tt-val">${formatLifetime(t.lifetime_ns)}</span></div>
       <div class="tt-row"><span class="tt-key">振子强度</span><span class="tt-val">${t.oscillator_strength_f}</span></div>
-      <div class="tt-row"><span class="tt-key">矩阵元</span><span class="tt-val">${t.d_reduced_ea0} ea₀</span></div>
+      <div class="tt-row"><span class="tt-key">矩阵元</span><span class="tt-val">${t.d_reduced_ea0} ea₀${t.approximate ? "（J 级估算，待验证）" : ""}</span></div>
       <div class="tt-row"><span class="tt-key">多极性</span><span class="tt-val">${t.multipole}</span></div>
       <div class="tt-row"><span class="tt-key">强度</span><span class="tt-val">${clsLabel}</span></div>
     `;
@@ -6698,6 +6609,7 @@ window.addEventListener('resize', () => { if (infoTooltipTarget) positionInfoToo
   // ---- Load transition ----
   function loadTransition(t) {
     state.transition = t;
+    document.getElementById('ryd65CalcNote').hidden = t.id !== 'R2';
     state.selectedChannel = null;
     var lowerJ = findLevelJ(t.lower);
     var upperJ = findLevelJ(t.upper);
@@ -7013,6 +6925,5 @@ window.addEventListener('resize', () => { if (infoTooltipTarget) positionInfoToo
 })();
 </script>
 
-<script type="module" src="assets/rydberg-diagram.js"></script>
 </body>
 </html>
