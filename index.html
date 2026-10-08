@@ -1473,7 +1473,10 @@
     line-height: 1.55;
     color: var(--text-2);
   }
-  </style>
+  
+  #sec65Audit a { color: var(--accent); text-decoration: underline; }
+  #sec65Audit td, #sec65Audit th { white-space: normal; vertical-align: top; }
+</style>
 </head>
 <body>
 <div class="container">
@@ -1631,6 +1634,22 @@
     </div>
   </section>
 
+  <section class="section" id="sec65Audit">
+    <details class="hf-calc-panel" open>
+      <summary style="cursor:pointer;font-weight:600">65S 文献核查 · 已确认数据与待确认参数（2026-10-08）</summary>
+      <p>直接实验依据：<a href="https://doi.org/10.1103/PRXQuantum.6.020334" target="_blank" rel="noopener">Muniz 等，PRX Quantum 6, 020334 (2025)</a>；核查全文为 <a href="https://arxiv.org/html/2411.11708v2#A4" target="_blank" rel="noopener">作者预印本 v2，正文 IV 与附录 D / 图 7</a>。</p>
+      <div style="overflow-x:auto"><table style="width:100%;min-width:580px"><thead><tr><th>项目</th><th>原文信息 / 核查结论</th><th>当前页面采用口径</th></tr></thead><tbody>
+        <tr><td>实验态</td><td>65³S₁，F=3/2，mF=−3/2；σ⁻ 激发</td><td>主图保留 65S 标签；F=1/2 计算不能由这组实验直接验证</td></tr>
+        <tr><td>激发波长</td><td>301.9 nm（约 302 nm）</td><td>旧值 301.87 nm 仍是估算，原文不支持其额外小数位</td></tr>
+        <tr><td>人口寿命</td><td>65(3) μs；518 G、460 nm 光镊、典型阱深</td><td>这是有条件的实测寿命；计算器旧标度值约 37.51 μs 尚未替换</td></tr>
+        <tr><td>矩阵元</td><td>所核全文未直接给出 d=0.0376 ea₀ 及其约化约定</td><td>保留为旧估算；不能用总人口寿命直接反推这条光学支路矩阵元</td></tr>
+        <tr><td>F 分组与劈裂</td><td>高 n 的 F=1/2 S 态存在单重态 / 三重态混合</td><td>当前纯 J=1 的 6-j 换算仅为近似；F 分组位置不代表实测劈裂</td></tr>
+      </tbody></table></div>
+      <p>态标识依据：<a href="https://arxiv.org/html/2406.01482v2" target="_blank" rel="noopener">Peper 等，PRX 15, 011009 (2025)，Sec. III–V</a> 使用 ν、L、F 标记高 n 态；其门实验 ν≈54.28、F=1/2 的寿命不能移作 65S 数据。<a href="https://doi.org/10.1103/PhysRevA.105.052438" target="_blank" rel="noopener">Chen 等，PRA 105, 052438 (2022)，Fig. 2</a> 说明 F=1/2 的混合与 F=3/2 系列的区别。<a href="https://doi.org/10.1038/s41586-023-06438-1" target="_blank" rel="noopener">Ma 等，Nature 622, 279–284 (2023)，Fig. 1</a> 使用 6s59s，不能将其寿命按“65”字样直接归入本态。</p>
+      <p style="color:var(--muted)">待锁定：本项目的 65 指 n 还是 ν、目标 F/mF 及磁场。核查条目独立展示实测条件；计算器保留旧估算，尚未完成逐态数值校准。</p>
+    </details>
+  </section>
+
   <!-- Hyperfine Matrix Element Calculator -->
   <section class="section hf-calc-section" id="secCalc">
     <div class="section-head">
@@ -1643,7 +1662,7 @@
       </div>
     </div>
 
-      <p id="ryd65CalcNote" hidden style="color:var(--rydtext);padding:12px;border:1px solid var(--rydborder);border-radius:8px">65S 估算计算：波长、矩阵元及寿命来自现有简化模型；d = 0.0376 ea₀ 按电子态 J 级约化矩阵元使用，再换算到 F/mF 通道，未作独立验证。F 分组位置为示意，不代表真实超精细劈裂；输出不作为实验校准值。</p>
+      <p id="ryd65CalcNote" hidden style="color:var(--rydtext);padding:12px;border:1px solid var(--rydborder);border-radius:8px">65S 待校准计算：下列计算沿用旧标度估算。文献已报告 F=3/2、mF=−3/2 的 301.9 nm 激发与 65(3) μs 有条件实测寿命（见上方核查）；本计算尚未采用该实测寿命。d = 0.0376 ea₀ 按电子态 J 级约化矩阵元使用，再换算到 F/mF 通道，未作独立验证。F=1/2 态存在混合，当前纯 J=1 换算仅为近似。F 分组位置为示意，不代表真实超精细劈裂；输出不作为实验校准值。</p>
     <div class="hf-calc-wrap">
 
       <!-- Right: results, then diagram + CG table side by side -->
@@ -2368,7 +2387,7 @@ const RYDBERG_QC_TRANSITIONS = [
     d_num: 0.0376, d_reduced_ea0: "0.0376", Gamma_per_s_num: 2.666e4,
     linewidth_FWHM: "2π × 4.24 kHz", multipole: "E1", classification: "强",
     selection_check: "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
-    source: "理论估算 (n*⁻³/² 标度, Peper 2025)", color: "#b08f76" },
+    source: "页面旧标度估算，非文献逐态值；65S 实验参见 Muniz 2025 附录 D（条件与本估算不同）", color: "#b08f76" },
   { id: "R3", lower: "³P₀", upper: "80³S₁", label: "³P₀ → 80³S₁ · CZ 门 (高 n)",
     wavelength_vac_nm: 301.78, frequency_THz: 993.40, energy_cm: 33136.35,
     d_num: 0.0272, d_reduced_ea0: "0.0272", Gamma_per_s_num: 1.398e4,
