@@ -1,0 +1,9 @@
+{
+  "name": "yb171-database",
+  "compatibility_date": "2026-10-08",
+  "workers_dev": false,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./dist"
+  }
+}

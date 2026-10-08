@@ -1,10 +1,12 @@
 # ¹⁷¹Yb 跃迁数据图谱
 
-这是一个无需构建步骤的静态网页。GitHub Pages 的入口文件是仓库根目录的 `index.html`；`source_package/` 是早期导出记录，不是当前网页源码，也不会同步到仓库。
+这是一个静态网页，源码入口是仓库根目录的 `index.html`。`source_package/` 是早期导出记录，不是当前网页源码，也不会同步到仓库。仓库保存在个人 GitHub 私有库中；计划使用 Cloudflare Workers 和 Access 让 TaiyiQ 成员登录后访问网页。
 
 ## 本地预览与检查
 
 在项目目录运行 `python3 -m http.server 8765`，打开 `http://127.0.0.1:8765/`。运行 `npm test` 检查 HTML 标识符是否重复以及内联脚本语法。检查脚本不替代浏览器交互检查或科学数据核查。
+
+运行 `npm run build` 会将唯一需要发布的 `index.html` 复制到 `dist/`。`wrangler.jsonc` 已关闭公开的 `workers.dev` 路由和预览 URL；在 Cloudflare Access 完成 GitHub 身份提供方及 TaiyiQ 组织成员策略之前，不应开启公开路由。访问策略由 Cloudflare 账号管理，不能只靠仓库配置文件声明。
 
 ## 数据使用范围
 

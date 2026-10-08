@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "node build.cjs",
     "test": "node preflight.cjs"
   }
 }
