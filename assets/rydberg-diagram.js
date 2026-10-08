@@ -31,8 +31,9 @@ for (const transition of transitions) {
   const final = magneticSublevels.find(s => s.id === transition.final);
   const a = position(initial), b = position(final);
   const upper = final.level === 'r-three';
-  const offset = upper ? 39 : -39;
-  const d = `M ${a.x + offset} ${a.y - 5} L ${b.x + offset} ${b.y + 5}`;
+  const side = transition.polarization === 'pi' ? -1 : 1;
+  const offset = (upper ? side : -side) * 39;
+  const d = `M ${a.x} ${a.y - 5} L ${b.x + offset} ${b.y + 5}`;
   const pol = polarizations[transition.polarization];
   const group = el('g', { 'data-polarization': transition.polarization, 'data-initial': initial.id, 'data-final': final.id });
   el('title', {}, group, `${transition.type}: F=${initial.F}, mF=${initial.mF} → F=${final.F}, mF=${final.mF}; ≈${transition.wavelength} nm; ${polarizations[transition.polarization].label}`);
