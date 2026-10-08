@@ -18,9 +18,10 @@ export const magneticSublevels = hyperfineLevels.flatMap(level =>
       schematicOffset: -mF * 18, displayLabel: fraction(mF) };
   })
 );
-export const polarizations = { pi: { q: 0, label: 'π', dash: '' },
-  'sigma+': { q: 1, label: 'σ⁺', dash: '9 6' },
-  'sigma-': { q: -1, label: 'σ⁻', dash: '10 5 2 5' } };
+// Match the hyperfine transition diagram below: color encodes polarization.
+export const polarizations = { pi: { q: 0, label: 'π', dash: '', color: '#f59e0b' },
+  'sigma+': { q: 1, label: 'σ⁺', dash: '9 6', color: '#a78bfa' },
+  'sigma-': { q: -1, label: 'σ⁻', dash: '10 5 2 5', color: '#60a5fa' } };
 export const transitions = Object.entries(polarizations).flatMap(([polarization, { q }]) =>
   magneticSublevels.flatMap(initial => magneticSublevels.filter(final =>
     ((initial.state === 'g' && final.state === 'p') || (initial.state === 'p' && final.state === 'r')) &&
@@ -34,6 +35,8 @@ export const transitions = Object.entries(polarizations).flatMap(([polarization,
 );
 
 export function position(sublevel) {
-  return { x: 675 + sublevel.mF * 160,
+  // Stagger the electronic states, with a separate lane for each Rydberg F group.
+  const center = { 'g-half': 530, 'p-half': 670, 'r-half': 620, 'r-three': 780 }[sublevel.level];
+  return { x: center + sublevel.mF * 160,
     y: hyperfineLevels.find(level => level.id === sublevel.level).baseY + sublevel.schematicOffset };
 }

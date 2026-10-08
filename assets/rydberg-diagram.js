@@ -16,7 +16,7 @@ function subscript(parent, content) { el('tspan', { 'baseline-shift': 'sub', 'fo
 el('title', { id: 'rdSvgTitle' }, svg, '¹⁷¹Yb hyperfine- and mF-resolved Rydberg transitions');
 el('desc', { id: 'rdSvgDesc' }, svg, 'Ten magnetic sublevels, four hyperfine groups. Schematic positions, not calculated energies. At zero external field, mF states within each F multiplet are degenerate. F=3/2 is placed above F=1/2 for illustration. Arrows show allowed channels, not relative strengths.');
 const defs = el('defs');
-for (const [id, color] of [['clock', '#FBBF24'], ['rydberg', '#A78BFA'], ['energy', '#7d88a0']]) {
+for (const [id, color] of [...Object.entries(polarizations).map(([key, pol]) => [key, pol.color]), ['energy', '#7d88a0']]) {
   const marker = el('marker', { id: `rd-${id}`, viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 5, markerHeight: 5, orient: 'auto-start-reverse' }, defs);
   el('path', { d: 'M 0 0 L 10 5 L 0 10 Z', fill: color }, marker);
 }
@@ -31,18 +31,12 @@ for (const transition of transitions) {
   const final = magneticSublevels.find(s => s.id === transition.final);
   const a = position(initial), b = position(final);
   const upper = final.level === 'r-three';
-  const side = initial.mF < 0 ? -1 : 1;
-  const offset = (upper ? side : -side) * 39;
-  let d = `M ${a.x + offset} ${a.y - 5} L ${b.x + offset} ${b.y + 48} L ${b.x + offset} ${b.y + 5}`;
-  if (upper) {
-    // Bypass the intermediate F=1/2 lines and their labels through outer lanes.
-    const lane = initial.mF < 0 ? 490 : 875;
-    d = `M ${a.x + offset} ${a.y - 5} L ${lane} 365 L ${lane} 182 L ${b.x + offset} ${b.y + 48} L ${b.x + offset} ${b.y + 5}`;
-  }
-  const clock = initial.state === 'g';
+  const offset = upper ? 39 : -39;
+  const d = `M ${a.x + offset} ${a.y - 5} L ${b.x + offset} ${b.y + 5}`;
+  const pol = polarizations[transition.polarization];
   const group = el('g', { 'data-polarization': transition.polarization, 'data-initial': initial.id, 'data-final': final.id });
   el('title', {}, group, `${transition.type}: F=${initial.F}, mF=${initial.mF} → F=${final.F}, mF=${final.mF}; ≈${transition.wavelength} nm; ${polarizations[transition.polarization].label}`);
-  el('path', { d, class: 'rd-arrow', stroke: clock ? '#FBBF24' : '#A78BFA', 'stroke-dasharray': polarizations[transition.polarization].dash, 'marker-end': `url(#rd-${clock ? 'clock' : 'rydberg'})` }, group);
+  el('path', { d, class: 'rd-arrow', stroke: pol.color, 'stroke-dasharray': pol.dash, 'marker-end': `url(#rd-${transition.polarization})` }, group);
   arrowNodes.push({ group, transition });
 }
 for (const state of atomicStates) {
@@ -66,9 +60,9 @@ for (const level of hyperfineLevels) {
     el('tspan', {}, text, ` = ${member.displayLabel}`);
   }
 }
-label(980, 345, '≈302 nm', 'rd-group').setAttribute('style', 'fill:#A78BFA');
+label(980, 345, '≈302 nm', 'rd-group');
 label(980, 365, 'E1', 'rd-note');
-label(900, 560, '≈578.42 nm', 'rd-group').setAttribute('style', 'fill:#FBBF24');
+label(900, 560, '≈578.42 nm', 'rd-group');
 label(900, 580, 'Hyperfine-induced clock', 'rd-note');
 label(108, 715, 'Schematic mF splitting · not to scale', 'rd-note');
 label(108, 738, '零外磁场下，同一 F 内的 mF 态简并；图示分离与 F 排序仅用于布局。箭头不表示相同强度。', 'rd-note');
