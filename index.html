@@ -1600,7 +1600,7 @@
           </div>
           <div class="legend-item">
             <span class="legend-line solid" style="border-color:#a78bfa"></span>
-            <span>65S 激发 E1（估算）</span>
+            <span>65S 激发 E1</span>
           </div>
         </div>
         <div class="legend-col">
@@ -2442,8 +2442,8 @@ CORE_LEVELS.push({ term: '65³S₁', config: '6s65s', J: 1, S: 1,
   parity: 'even', type: 'triplet',
   energy_cm: 17288.439 + selected65S.energy_cm,
   energy_eV: (17288.439 + selected65S.energy_cm) / 8065.543937,
-  lifetime: '估算', role: '65S 里德堡态（估算位置）' });
-CORE_TRANSITIONS.push({ ...selected65S, label: '65S 里德堡激发（估算）',
+  lifetime: '估算', role: '65S 里德堡态' });
+CORE_TRANSITIONS.push({ ...selected65S, label: '65S 里德堡激发',
   approximate: true, d_convention: 'J-reduced, This work',
   energy_eV: selected65S.energy_cm / 8065.543937,
   lifetime_ns: 1e9 / selected65S.Gamma_per_s_num,
@@ -2759,7 +2759,7 @@ const REFERENCES = [
     } else if (shortLabel) {
       displayLabel = level.term;
     } else {
-      displayLabel = level.term === '65³S₁' ? '6s65s ³S₁ · 估算' : '(' + level.config + ') ' + level.term;
+      displayLabel = level.term === '65³S₁' ? '6s65s ³S₁' : '(' + level.config + ') ' + level.term;
     }
 
     const label = document.createElementNS(NS, 'text');
@@ -2997,8 +2997,8 @@ const REFERENCES = [
       }
     }
 
-    // 65S excitation starts two thirds along the ³P₀ bar from its left edge.
-    if (isCore && t.id === 'R2') x1 = colOddR - levelW / 2 + 2 * levelW / 3;
+    // 65S excitation starts one fifth of the bar width inward from the right edge.
+    if (isCore && t.id === 'R2') x1 = colOddR + levelW / 2 - levelW / 5;
 
     // Line stroke by strength classification
     const strokeW = t.classification.startsWith('强') ? (isCore ? 2.5 : 2) : t.classification.startsWith('弱') ? 2 : 1.2;
@@ -3872,7 +3872,7 @@ function formatCell(row, col, tableId) {
     case 'core:label':
       return `<div class="trans-label">${row.label}</div><div class="trans-pair">${row.lower} → ${row.upper}</div>`;
     case 'core:wavelength_vac_nm':
-      return `<div class="wl-cell"><span class="wl-dot" style="background:${row.color}"></span>${infoTip('真空波长 λ', src, 'λ = c/ν = hc/ΔE，由上下能级的能量差决定。', row.approximate ? '≈' + row.wavelength_vac_nm.toFixed(2) + '（估算）' : row.wavelength_vac_nm.toFixed(4))}</div>
+      return `<div class="wl-cell"><span class="wl-dot" style="background:${row.color}"></span>${infoTip('真空波长 λ', src, 'λ = c/ν = hc/ΔE，由上下能级的能量差决定。', row.approximate ? '≈' + row.wavelength_vac_nm.toFixed(2) : row.wavelength_vac_nm.toFixed(4))}</div>
               <div class="wl-sub">空气: ${Number.isFinite(row.wavelength_air_nm) ? row.wavelength_air_nm.toFixed(4) : '待补充'} nm</div>`;
     case 'core:frequency_THz':
       return infoTip('跃迁频率 ν', src, 'ν = c/λ，由真空波长换算得到。', `<span class="mono">${row.frequency_THz.toFixed(5)} THz</span>`);
@@ -4030,7 +4030,7 @@ function showTooltip(e, t, isCore) {
   if (isCore) {
     rows = `
       <div class="tt-row"><span class="tt-key">跃迁</span><span class="tt-val">${t.lower} → ${t.upper}</span></div>
-      <div class="tt-row"><span class="tt-key">波长 (真空)</span><span class="tt-val">${t.approximate ? '≈' + t.wavelength_vac_nm.toFixed(2) + '（估算）' : t.wavelength_vac_nm.toFixed(4)} nm</span></div>
+      <div class="tt-row"><span class="tt-key">波长 (真空)</span><span class="tt-val">${t.approximate ? '≈' + t.wavelength_vac_nm.toFixed(2) : t.wavelength_vac_nm.toFixed(4)} nm</span></div>
       <div class="tt-row"><span class="tt-key">频率</span><span class="tt-val">${t.frequency_THz.toFixed(5)} THz</span></div>
       <div class="tt-row"><span class="tt-key">线宽</span><span class="tt-val">${t.linewidth_FWHM}</span></div>
       <div class="tt-row"><span class="tt-key">寿命</span><span class="tt-val">${formatLifetime(t.lifetime_ns)}</span></div>
