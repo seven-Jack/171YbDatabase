@@ -3180,7 +3180,20 @@ function showHyperfinePanel(term) {
   const hfs = HYPERFINE_DATA[term];
   const level = CORE_LEVELS.find(l => l.term === term);
   if (term === '65³S₁') {
-    content.innerHTML = '<div class="hfs-title-pill">6s65s ³S₁ · J=1 · I=1/2</div><p>F=1/2、3/2；未提供经验证的超精细劈裂。点击约 302 nm 跃迁，在下方查看 mF 通道与估算 Rabi 频率。</p>';
+    const groups = [
+      { F: '3/2', y: 55, color: '#f59e0b', m: ['+3/2', '+1/2', '−1/2', '−3/2'] },
+      { F: '1/2', y: 175, color: '#a78bfa', m: ['+1/2', '−1/2'] }
+    ];
+    let diagram = '<svg viewBox="0 0 350 250" width="100%" role="img" aria-label="65S 超精细与 mF 示意结构">';
+    groups.forEach(group => {
+      diagram += `<text x="12" y="${group.y - 12}" fill="${group.color}" font-size="13">F=${group.F}</text><line x1="12" y1="${group.y}" x2="120" y2="${group.y}" stroke="${group.color}" stroke-width="2"/>`;
+      group.m.forEach((m, i) => {
+        const y = group.y + (i - (group.m.length - 1) / 2) * 23;
+        diagram += `<line x1="120" y1="${group.y}" x2="205" y2="${y}" stroke="${group.color}" stroke-dasharray="3 3" opacity="0.4"/><line x1="205" y1="${y}" x2="275" y2="${y}" stroke="${group.color}" stroke-width="2"/><text x="282" y="${y + 4}" fill="${group.color}" font-size="12">mF=${m}</text>`;
+      });
+    });
+    diagram += '<text x="12" y="235" fill="#8c96aa" font-size="11">F / mF 位置为示意；零场同一 F 内 mF 简并</text></svg>';
+    content.innerHTML = '<div class="hfs-title-pill">6s65s ³S₁ · J=1 · I=1/2</div>' + diagram + '<p>沿用上一版六个 mF 分量。点击约 302 nm 跃迁，在下方选择偏振并计算；矩阵元来源：This work。</p>';
     document.getElementById('hfsPanel').classList.add('active'); return;
   }
   if (!hfs || !level) return;
