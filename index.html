@@ -2007,7 +2007,7 @@
 
   <!-- Footer -->
   <div class="section" id="sec65Audit" style="color:var(--text-2);font-size:13px;line-height:1.8">
-    65S 数据标注：[17] 约化矩阵元来自 This work。[4] Muniz 2025，正文 IV、附录 D / 图 7（作者全文 arXiv:2411.11708v2）报告 65³S₁、F=3/2、mF=−3/2，301.9 nm 与典型 460 nm 光镊、518 G 条件下人口寿命 65(3) μs。当前计算器波长 301.87 nm 与寿命约 37.51 μs 保留原标度估算口径，未将实验条件下的总人口寿命用作单支跃迁矩阵元来源。[2,15] 高 n 的 F=1/2 S 态存在混合，当前纯 J=1 的角向换算与 F 分组位置属于近似示意；[16] 的 6s59s 数据不归入 65S。
+    65S 数据标注：旧版 A_hfs=2.516 MHz 可由 6838.41 × [(7−2.523)/(65−2.523)]³ 复现，属于网页内部标度估算，未确认文献出处或本工作计算记录，当前不作为数值输入。[17] 约化矩阵元来自 This work。[4] Muniz 2025，正文 IV、附录 D / 图 7（作者全文 arXiv:2411.11708v2）报告 65³S₁、F=3/2、mF=−3/2，301.9 nm 与典型 460 nm 光镊、518 G 条件下人口寿命 65(3) μs。当前计算器波长 301.87 nm 与寿命约 37.51 μs 保留原标度估算口径，未将实验条件下的总人口寿命用作单支跃迁矩阵元来源。[2,15] 高 n 的 F=1/2 S 态存在混合，当前纯 J=1 的角向换算与 F 分组位置属于近似示意；[16] 的 6s59s 数据不归入 65S。
   </div>
 
   <footer class="page-footer">
@@ -2759,7 +2759,7 @@ const REFERENCES = [
     } else if (shortLabel) {
       displayLabel = level.term;
     } else {
-      displayLabel = level.term === '65³S₁' ? '6s65s ³S₁' : '(' + level.config + ') ' + level.term;
+      displayLabel = level.term === '65³S₁' ? '6s65s ³S₁' : level.config === '6s7s' ? '6s7s ' + level.term : '(' + level.config + ') ' + level.term;
     }
 
     const label = document.createElementNS(NS, 'text');
@@ -3193,7 +3193,15 @@ function showHyperfinePanel(term) {
       });
     });
     diagram += '<text x="12" y="235" fill="#8c96aa" font-size="11">F / mF 位置为示意；零场同一 F 内 mF 简并</text></svg>';
-    content.innerHTML = '<div class="hfs-title-pill">6s65s ³S₁ · J=1 · I=1/2</div>' + diagram + '<p>沿用上一版六个 mF 分量。点击约 302 nm 跃迁，在下方选择偏振并计算；矩阵元来源：This work。</p>';
+    content.innerHTML = '<div class="hfs-title-pill">³S₁ 超精细结构 · 6s65s · J=1 · I=1/2 · A_hfs 待补充</div>' + diagram +
+      '<div class="hfs-info">' +
+      '<div class="hfs-row"><span>F = 1/2</span><strong>能量偏移待补充</strong></div>' +
+      '<div class="hfs-row" style="padding-left:12px"><span>mF ∈</span><strong>−½, +½</strong></div>' +
+      '<div class="hfs-row"><span>F = 3/2</span><strong>能量偏移待补充</strong></div>' +
+      '<div class="hfs-row" style="padding-left:12px"><span>mF ∈</span><strong>−³⁄₂, −½, +½, +³⁄₂</strong></div>' +
+      '<div class="hfs-row" style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px"><span>A_hfs</span><strong>待补充（MHz）</strong></div>' +
+      '<div class="hfs-row"><span>简并度</span><strong>2 + 4 = 6</strong></div></div>' +
+      '<p>矩阵元来源：This work。F / mF 排布沿用上一版示意图。</p>';
     document.getElementById('hfsPanel').classList.add('active'); return;
   }
   if (!hfs || !level) return;
