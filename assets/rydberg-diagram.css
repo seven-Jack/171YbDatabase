@@ -1,0 +1,21 @@
+.rd-view-tabs { display: flex; gap: 8px; margin: 0 0 16px; }
+#secRyd [hidden] { display: none !important; }
+.rd-panel { padding: 26px 28px 12px; }
+.rd-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.rd-heading h3 { font: 600 21px var(--serif); color: var(--text-0); }
+.rd-heading p { color: var(--text-1); margin-top: 8px; font-family: var(--serif); }
+.rd-polarization { display: flex; align-items: center; gap: 12px; color: var(--text-2); font: 12px var(--mono); }
+.rd-segments { display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg-0); }
+.rd-segments button { border: 0; border-radius: 5px; background: transparent; color: var(--text-1); padding: 7px 15px; cursor: pointer; font: 17px var(--serif); }
+.rd-segments button[aria-pressed="true"] { background: var(--bg-3); color: var(--accent-2); box-shadow: inset 0 0 0 1px var(--line); }
+.rd-view-tabs button:focus-visible, .rd-segments button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.rd-scroll { overflow-x: auto; }
+#rydbergResolvedDiagram { display: block; width: 100%; min-width: 760px; height: auto; font-family: var(--serif); }
+.rd-level { stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+.rd-arrow { fill: none; stroke-width: 2; opacity: .9; }
+.rd-state { fill: var(--text-0); font-size: 25px; }
+.rd-mf { fill: var(--text-1); font-size: 15px; }
+.rd-group { fill: var(--text-1); font-size: 20px; }
+.rd-note { fill: var(--text-2); font: 12px var(--sans); }
+.rd-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 1050px) { .rd-heading { flex-direction: column; gap: 16px; } .rd-panel { padding: 20px 14px 8px; } }

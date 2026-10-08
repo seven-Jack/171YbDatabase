@@ -29,12 +29,12 @@ if (run('git', ['diff', '--cached', '--name-only'], true)) {
 }
 run('git', ['fetch', 'origin']);
 run('git', ['merge-base', '--is-ancestor', 'origin/main', 'HEAD']);
-run(process.execPath, ['preflight.cjs']);
+run(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['test']);
 run(process.execPath, ['build.cjs']);
 // Only stage the maintained site and publishing files, never local archives.
 run('git', ['add', '--', 'index.html', 'README.md', 'package.json',
   'package-lock.json', '.gitignore', 'build.cjs', 'preflight.cjs',
-  'sync.cjs', 'wrangler.jsonc', '.github/workflows/pages.yml']);
+  'sync.cjs', 'wrangler.jsonc', '.github/workflows/pages.yml', 'assets', 'tests']);
 if (run('git', ['diff', '--cached', '--name-only'], true)) {
   run('git', ['commit', '-m', message]);
 }

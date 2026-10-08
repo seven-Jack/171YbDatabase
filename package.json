@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node build.cjs",
-    "test": "node preflight.cjs",
+    "test": "node preflight.cjs && node --test tests/rydberg.test.js",
     "sync": "node sync.cjs"
   }
 }

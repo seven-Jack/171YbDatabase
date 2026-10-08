@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¹⁷¹Yb 跃迁数据图谱 (含里德堡态) | Ytterbium-171 Transition Atlas</title>
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/rydberg-diagram.css">
 <style>
   :root {
     --bg-0: #0a0e16;
@@ -1635,14 +1636,32 @@
   <section class="section ryd-qc-section" id="secRyd">
     <div class="section-head">
       <div class="section-title">
-        里德堡量子计算能级图 · Rydberg QC Diagram
-        <span class="badge ryd">实验相关态</span>
+        里德堡跃迁图谱 · Rydberg Diagrams
+        <span class="badge ryd">¹⁷¹Yb</span>
       </div>
       <div class="section-sub guide-sub" data-gstep="1" data-tone="violet">
         <span class="gs-step">STEP 1 · 选跃迁（里德堡）</span>
-        <span>展示 7 条示例路径（R1–R7）；其中部分参数由标度关系估算 · 悬停查看详情 · <strong>点击可填入参数</strong></span>
+        <span>切换超精细 / mF 示意图与原有 R1–R7 路径 · 原有路径可点击填入参数</span>
       </div>
     </div>
+    <div class="rd-view-tabs" role="tablist" aria-label="里德堡图谱视图">
+      <button class="f-btn active" id="rdTabResolved" role="tab" aria-selected="true" aria-controls="rdResolved">超精细 / mF 图</button>
+      <button class="f-btn" id="rdTabOverview" role="tab" aria-selected="false" aria-controls="rdOverview" tabindex="-1">原有示例路径 R1–R7</button>
+    </div>
+    <div id="rdResolved" role="tabpanel" aria-labelledby="rdTabResolved">
+      <div class="diagram-wrap rd-panel">
+        <div class="rd-heading">
+          <div><h3>¹⁷¹Yb Rydberg Transition Diagram</h3><p>6s² ¹S₀ → 6s6p ³P₀ → 6s65s ³S₁</p></div>
+          <div class="rd-polarization" role="group" aria-label="Polarization">
+            <span>Polarization</span>
+            <div class="rd-segments"><button type="button" data-rd-pol="pi" aria-pressed="true">π</button><button type="button" data-rd-pol="sigma+" aria-pressed="false">σ⁺</button><button type="button" data-rd-pol="sigma-" aria-pressed="false">σ⁻</button></div>
+          </div>
+        </div>
+        <div class="rd-scroll"><svg id="rydbergResolvedDiagram" viewBox="0 0 1100 750" role="img" aria-labelledby="rdSvgTitle rdSvgDesc"></svg></div>
+        <span class="rd-sr-only" id="rdStatus" role="status"></span>
+      </div>
+    </div>
+    <div id="rdOverview" role="tabpanel" aria-labelledby="rdTabOverview" hidden>
     <div class="diagram-wrap">
     <div class="filter-bar" id="rydFilterBar">
       <div class="filter-group">
@@ -1722,6 +1741,7 @@
         <p>按 Peper 2025 文献画法，里德堡系列按宇称和总角动量 F 分组，向 Yb⁺ 两个超精细电离阈 E_I⁰ (F_core=0) 和 E_I¹ (F_core=1) 收敛，间距 12.643 GHz。</p>
         <div class="ref">[2] Peper 2025 PRX 15, 011009 · [1] Kroeze 2025</div>
       </div>
+    </div>
     </div>
    </section>
 
@@ -6993,5 +7013,6 @@ window.addEventListener('resize', () => { if (infoTooltipTarget) positionInfoToo
 })();
 </script>
 
+<script type="module" src="assets/rydberg-diagram.js"></script>
 </body>
 </html>
