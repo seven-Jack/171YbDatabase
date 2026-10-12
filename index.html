@@ -1165,6 +1165,45 @@
 
   /* ===== Rabi-P Visualization Section ===== */
   .rabi-viz-section { margin-top: 24px; }
+  .rabi-title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .rabi-formula-open, .rabi-formula-close {
+    color: var(--text-1); background: var(--bg-1); border: 1px solid var(--border);
+    border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 12px;
+  }
+  .rabi-formula-open:hover, .rabi-formula-close:hover { color: var(--accent); border-color: var(--accent); }
+  .rabi-formula-open:focus-visible, .rabi-formula-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .rabi-formula-panel {
+    width: min(640px, calc(100vw - 32px)); max-height: calc(100dvh - 64px);
+    box-sizing: border-box; margin: auto; padding: 0; overflow: auto;
+    border: 1px solid var(--border); border-radius: 16px; background: var(--bg-1);
+    color: var(--text-1); font-size: 13px; line-height: 1.8;
+  }
+  .rabi-formula-panel::backdrop { background: rgba(0, 0, 0, .65); backdrop-filter: blur(3px); }
+  .rabi-formula-header {
+    position: sticky; top: 0; z-index: 1; display: flex; align-items: center;
+    justify-content: space-between; gap: 12px; padding: 14px 20px;
+    background: var(--bg-1); border-bottom: 1px solid var(--border);
+  }
+  .rabi-formula-header h3 { margin: 0; font-size: 16px; color: var(--text-0); }
+  .rabi-formula-content { padding: 20px; }
+  .rabi-formula-main { overflow-x: auto; padding: 12px 0; text-align: center; }
+  .rabi-formula-main math { font-size: 26px; color: var(--text-0); }
+  .rabi-formula-caption { margin-top: 8px; color: var(--text-2); font-size: 12px; text-align: center; }
+  .rabi-formula-body { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .rabi-formula-body p { margin: 6px 0; }
+  .rabi-formula-params { display: grid; grid-template-columns: 100px 1fr; gap: 4px 12px; margin: 8px 0 12px; }
+  .rabi-formula-params dt { color: var(--text-0); }
+  .rabi-formula-params dd { margin: 0; }
+  .rabi-formula-derivation { margin-top: 10px; }
+  .rabi-formula-derivation p { text-align: left; word-spacing: normal; letter-spacing: normal; }
+  .rabi-formula-inline { white-space: nowrap; }
+  .rabi-formula-derivation > summary { cursor: pointer; color: var(--accent); }
+  @media (max-width: 600px) {
+    .rabi-formula-panel { width: 100%; max-width: none; max-height: 85dvh; margin: auto 0 0; border-radius: 16px 16px 0 0; }
+    .rabi-formula-content { padding: 16px; }
+    .rabi-formula-main math { font-size: 24px; }
+    .rabi-formula-params { grid-template-columns: 72px 1fr; }
+  }
   .rabi-viz-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
     margin-top: 14px;
@@ -1718,14 +1757,56 @@
   <!-- Rabi-P Visualization -->
   <section class="section rabi-viz-section" id="secRabi">
     <div class="section-head">
-      <div class="section-title">
-        Rabi-P 可视化 · Rabi Frequency vs Power
+      <div class="rabi-title-row">
+        <div class="section-title">Rabi-P 可视化 · Rabi Frequency vs Power</div>
+        <button type="button" class="rabi-formula-open" id="rabiFormulaOpen" aria-haspopup="dialog" aria-controls="rabiFormulaDialog">计算公式 ⓘ</button>
       </div>
       <div class="section-sub guide-sub" data-gstep="3" data-tone="green">
         <span class="gs-step">STEP 3 · 最终结果</span>
         <span>Rabi 频率随功率 / 束腰变化全景图 · 当前工作点实时标记 · 与上方能级图数据互通</span>
       </div>
     </div>
+
+    <dialog class="rabi-formula-panel" id="rabiFormulaDialog" aria-labelledby="rabiFormulaTitle">
+      <div class="rabi-formula-header">
+        <h3 id="rabiFormulaTitle">Rabi 频率 · 计算公式</h3>
+        <button type="button" class="rabi-formula-close" id="rabiFormulaClose" aria-label="关闭计算公式" autofocus>关闭 ×</button>
+      </div>
+      <div class="rabi-formula-content">
+      <div class="rabi-formula-main">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" displaystyle="true" aria-label="Rabi 频率 Ω 除以 2π 等于有效偶极矩阵元除以 2πℏ，乘以 4P 除以 πw₀²cε₀ 的平方根">
+          <mfrac><mi>Ω</mi><mrow><mn>2</mn><mi>π</mi></mrow></mfrac><mo>=</mo>
+          <mfrac><msub><mi>d</mi><mtext>eff</mtext></msub><mrow><mn>2</mn><mi>π</mi><mi>ℏ</mi></mrow></mfrac>
+          <msqrt><mfrac><mrow><mn>4</mn><mi>P</mi></mrow><mrow><mi>π</mi><msubsup><mi>w</mi><mn>0</mn><mn>2</mn></msubsup><mi>c</mi><msub><mi>ε</mi><mn>0</mn></msub></mrow></mfrac></msqrt>
+        </math>
+      </div>
+      <div class="rabi-formula-caption">高斯光束中心 · 单光子耦合 · Ω/2π ∝ √P / w₀</div>
+        <div class="rabi-formula-body">
+          <dl class="rabi-formula-params">
+            <dt>P</dt><dd>原子处光束的总功率，SI 单位为 W。</dd>
+            <dt>w₀</dt><dd>腰部的 1/e² 强度半径（不是直径），SI 单位为 m。</dd>
+            <dt>d<sub>eff</sub></dt><dd>对应偏振与跃迁通道的有效偶极矩阵元绝对值，SI 单位为 C·m；页面采用 ea₀。</dd>
+            <dt>Ω/2π</dt><dd>普通 Rabi 频率，单位为 Hz；图中可切换 Hz / kHz / MHz。</dd>
+            <dt>c</dt><dd>真空光速：2.99792458 × 10<sup>8</sup> m·s<sup>−1</sup>。</dd>
+            <dt>ε₀</dt><dd>真空介电常数：8.8541878128 × 10<sup>−12</sup> F·m<sup>−1</sup>。</dd>
+            <dt>ℏ</dt><dd>约化普朗克常数：1.054571817 × 10<sup>−34</sup> J·s（ℏ = h/2π）。</dd>
+            <dt>h</dt><dd>普朗克常数：6.62607015 × 10<sup>−34</sup> J·s。</dd>
+            <dt>e</dt><dd>元电荷：1.602176634 × 10<sup>−19</sup> C。</dd>
+            <dt>a₀</dt><dd>玻尔半径：5.29177210903 × 10<sup>−11</sup> m；ea₀ 是电偶极矩的原子单位（a.u.）。</dd>
+          </dl>
+          <p><strong>矩阵元选择：</strong>选中具体跃迁通道时使用该通道的 |d|；未选中时通常取当前 F → F′ 与偏振下最强的允许通道。有效矩阵元已包含角向因子，无需再次乘 CG 系数。</p>
+          <p><strong>适用条件：</strong>圆对称高斯光束腰部中心、单光子电偶极耦合。曲线给出耦合强度，未加入失谐、原子偏离光束中心或退相干修正。</p>
+          <details class="rabi-formula-derivation">
+            <summary>查看推导</summary>
+            <p>高斯光束的强度分布为 <span class="rabi-formula-inline">I(r)=I<sub>0</sub>exp(−2r<sup>2</sup>/w<sub>0</sub><sup>2</sup>)</span>。</p>
+            <p>对光束横截面积分，得到总功率 <span class="rabi-formula-inline">P=πw<sub>0</sub><sup>2</sup>I<sub>0</sub>/2</span>。</p>
+            <p>因此，中心强度为 <span class="rabi-formula-inline">I<sub>0</sub>=2P/(πw<sub>0</sub><sup>2</sup>)</span>。</p>
+            <p>周期平均强度满足 <span class="rabi-formula-inline">I<sub>0</sub>=cε<sub>0</sub>E<sub>0</sub><sup>2</sup>/2</span>，由此得到电场振幅 <span class="rabi-formula-inline">E<sub>0</sub>=√[4P/(πw<sub>0</sub><sup>2</sup>cε<sub>0</sub>)]</span>。</p>
+            <p>代入 <span class="rabi-formula-inline">Ω=d<sub>eff</sub>E<sub>0</sub>/ℏ</span>，再除以 2π，即得到上方公式。旋波近似的哈密顿量耦合项为 ℏΩ/2，Ω 本身无需再除以 2。</p>
+          </details>
+        </div>
+      </div>
+    </dialog>
 
     <div class="rabi-viz-grid">
       <!-- Rabi vs Power multi-curve chart -->
@@ -6950,5 +7031,27 @@ window.addEventListener('resize', () => { if (infoTooltipTarget) positionInfoToo
 })();
 </script>
 
+<script>
+(function() {
+  const dialog = document.getElementById('rabiFormulaDialog');
+  const trigger = document.getElementById('rabiFormulaOpen');
+  let savedOverflow = '';
+  trigger.addEventListener('click', function() {
+    savedOverflow = document.body.style.overflow;
+    dialog.showModal();
+    dialog.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('rabiFormulaClose').addEventListener('click', function() { dialog.close(); });
+  dialog.addEventListener('click', function(event) {
+    const rect = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+  });
+  dialog.addEventListener('close', function() {
+    document.body.style.overflow = savedOverflow;
+    trigger.focus({ preventScroll: true });
+  });
+})();
+</script>
 </body>
 </html>
