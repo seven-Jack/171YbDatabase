@@ -1668,6 +1668,16 @@
       <span class="hfs-close" onclick="document.getElementById('hfsPanel').classList.remove('active'); document.querySelectorAll('.core-level-group').forEach(g=>g.classList.remove('selected'));">&times;</span>
       <div id="hfsContent"></div>
     </div>
+    <details class="rabi-chart-card" id="ryd65HyperfineData" style="margin-top:14px;font-size:13px;line-height:1.8">
+      <summary style="cursor:pointer;color:var(--text-0)">65S 零场超精细数据 · 有效 A 与 F 分支能量</summary>
+      <p>¹⁷¹Yb · n=65 · 65³S₁ · B=0 · 无外电场。能量以普通频率 E/h 表示，零场同一 F 内的 mF 态简并。</p>
+      <div style="overflow-x:auto"><table style="width:100%"><thead><tr><th>物理态</th><th>ν（相对 F<sub>c</sub>=1 阈值）</th><th>E/h（GHz）</th><th>δE/h（MHz）</th></tr></thead><tbody id="ryd65HyperfineRows"></tbody></table></div>
+      <p id="ryd65HyperfineSummary"></p>
+      <p>E/h 的零点为离子芯超精细重心；δE/h 的零点为所选两支的加权重心：ē=(2e<sub>1/2</sub>+4e<sub>3/2</sub>)/6，其中 e=E/h。</p>
+      <p><strong>选根：</strong>F=1/2 使用三重态关联根 ν≈60.176127；旧 05.17/05.18 的 ν≈60.6844876419 为单重态关联支，不能替代此处的 F=1/2。</p>
+      <p><strong>适用范围：</strong>A<sub>hfs</sub><sup>eff</sup>=(2/3)ΔE/h（以频率定义，单位 MHz） 是混合态间隔定义的有效 A，非纯 J 模型的裸常数，仅适用于上述零场两支，不提供其他 n 值标度或有限磁场预测。已完成内部数值及态归属检查；尚未建立该间隔的独立实验验证或总模型不确定度。末位数字表示保存精度，不是实验精度。</p>
+      <p>来源：05.21_yb171_65s_hyperfine.ipynb / R005 保存结果；三个零场根及间隔见 R008。<a href="assets/05.21_yb171_65s_hyperfine.csv" download>下载原始数值 CSV</a>。</p>
+    </details>
   </section>
 
   <!-- Hyperfine Matrix Element Calculator -->
@@ -2530,9 +2540,10 @@ CORE_TRANSITIONS.push({ ...selected65S, label: '65S 里德堡激发',
   source: selected65S.source,
   color: '#a78bfa' });
 
-// Hyperfine data for Rydberg states (A_hfs scales as n*⁻³)
+// Rydberg hyperfine data: n=65 S uses saved zero-field MQDT energies and frequency-defined effective A_hfs (MHz); other entries retain their existing scaling estimates.
 // Added to HYPERFINE_DATA so HFCalc can look up F-manifold energy shifts
 Object.assign(HYPERFINE_DATA, {
+  '65³S₁': {"J": 1, "A": 7675.164378936361, "effective": true, "splitting": 11512.746568404542, "centroidGHz": -897.6646432896215, "levels": [{"F": 0.5, "shift": -7675.16437893628, "nu": 60.1761270465, "energyGHz": -905.3398076685577}, {"F": 1.5, "shift": 3837.5821894682617, "nu": 60.561073029, "energyGHz": -893.8270611001532}]},
   '50³S₁': { J: 1, A: 5.734, levels: [{ F: 0.5, shift: -5.734 }, { F: 1.5, shift: 2.867 }] },
   '80³S₁': { J: 1, A: 1.320, levels: [{ F: 0.5, shift: -1.320 }, { F: 1.5, shift: 0.660 }] },
   '65³D₁': { J: 1, A: -0.767, levels: [{ F: 0.5, shift: 0.767 }, { F: 1.5, shift: -0.383 }] },
@@ -3269,15 +3280,15 @@ function showHyperfinePanel(term) {
       });
     });
     diagram += '<text x="12" y="235" fill="#8c96aa" font-size="11">F / mF 位置为示意；零场同一 F 内 mF 简并</text></svg>';
-    content.innerHTML = '<div class="hfs-title-pill">³S₁ 超精细结构 · 6s65s · J=1 · I=1/2 · A_hfs 待补充</div>' + diagram +
+    content.innerHTML = '<div class="hfs-title-pill">³S₁ 超精细结构 · 6s65s · J=1 · I=1/2 · 零场 A<sub>hfs</sub><sup>eff</sup></div>' + diagram +
       '<div class="hfs-info">' +
-      '<div class="hfs-row"><span>F = 1/2</span><strong>能量偏移待补充</strong></div>' +
+      `<div class="hfs-row"><span>F = 1/2 · δE/h</span><strong>${hfs.levels[0].shift.toFixed(6)} MHz</strong></div>` +
       '<div class="hfs-row" style="padding-left:12px"><span>mF ∈</span><strong>−½, +½</strong></div>' +
-      '<div class="hfs-row"><span>F = 3/2</span><strong>能量偏移待补充</strong></div>' +
+      `<div class="hfs-row"><span>F = 3/2 · δE/h</span><strong>+${hfs.levels[1].shift.toFixed(6)} MHz</strong></div>` +
       '<div class="hfs-row" style="padding-left:12px"><span>mF ∈</span><strong>−³⁄₂, −½, +½, +³⁄₂</strong></div>' +
-      '<div class="hfs-row" style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px"><span>A_hfs</span><strong>待补充（MHz）</strong></div>' +
+      '<div class="hfs-row" style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px"><span>A<sub>hfs</sub><sup>eff</sup></span><strong>+' + hfs.A.toFixed(6) + ' MHz</strong></div>' +
       '<div class="hfs-row"><span>简并度</span><strong>2 + 4 = 6</strong></div></div>' +
-      '<p>矩阵元来源：This work。</p>';
+      '<p>数据来源：This work。</p>';
     document.getElementById('hfsPanel').classList.add('active'); return;
   }
   if (!hfs || !level) return;
@@ -7051,6 +7062,13 @@ window.addEventListener('resize', () => { if (infoTooltipTarget) positionInfoToo
     document.body.style.overflow = savedOverflow;
     trigger.focus({ preventScroll: true });
   });
+})();
+</script>
+<script>
+(function() {
+  const hfs = HYPERFINE_DATA['65³S₁'];
+  document.getElementById('ryd65HyperfineRows').innerHTML = hfs.levels.map(l => `<tr><td>³S₁${l.F === .5 ? '关联' : ''}，F=${l.F === .5 ? '1/2' : '3/2'}</td><td>${l.nu.toFixed(10)}</td><td>${l.energyGHz.toFixed(9)}</td><td>${l.shift > 0 ? '+' : '−'}${Math.abs(l.shift).toFixed(6)}</td></tr>`).join('');
+  document.getElementById('ryd65HyperfineSummary').innerHTML = `两支间隔 ΔE/h = +${hfs.splitting.toFixed(6)} MHz；A<sub>hfs</sub><sup>eff</sup> = +${hfs.A.toFixed(6)} MHz；所选两支重心 ē = ${hfs.centroidGHz.toFixed(9)} GHz。`;
 })();
 </script>
 </body>
