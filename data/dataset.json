@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2026.10.26.1",
+  "sourceCommit": "2e2e9d5",
+  "sourceDate": "2026-10-12",
+  "migrationDate": "2026-10-26",
+  "generatedAt": "2026-10-26T08:58:04.003Z",
+  "contentHash": "bb2134ca882d3df4c06b1295cf82de02764fa3ff507b39014703a56b227d1346",
+  "files": [
+    {
+      "path": "data/levels.json",
+      "sha256": "ecf1a74540eb19ff13d13feafb2b4c939f8b7e0e422cde9968cdaf6b7b34060b"
+    },
+    {
+      "path": "data/transitions.json",
+      "sha256": "faaf7a1d01c9891a27d942a64193188a3f83aecd202e147b91241f8b8cae947b"
+    },
+    {
+      "path": "data/hyperfine.json",
+      "sha256": "9918be31886446b9ee2b3c534ff8647e2eecb22a415632dcbfe4cd7802e31176"
+    },
+    {
+      "path": "data/sources.json",
+      "sha256": "2a3414a7ca145f913f821b5fbb58797851d09f2ef5b546108cfea8f5224691cb"
+    },
+    {
+      "path": "data/estimates.json",
+      "sha256": "4b4890a4350af315328d52081a3e4e527f882c53d1c00143d2f7727e54979650"
+    }
+  ],
+  "reviewStatus": "software-migration-only; original sources not rechecked",
+  "physicalValidation": "not-established-by-schema-or-regression-tests",
+  "exports": [
+    {
+      "path": "assets/05.21_yb171_65s_hyperfine.csv",
+      "sha256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec"
+    }
+  ]
+}

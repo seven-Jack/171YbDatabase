@@ -1,0 +1,647 @@
+{
+  "schemaVersion": 1,
+  "isotope": 171,
+  "records": [
+    {
+      "id": "yb171-6s2-1s0",
+      "isotope": 171,
+      "attributes": {
+        "term": "¹S₀",
+        "config": "6s²",
+        "parity": "even",
+        "J": 0,
+        "S": 0,
+        "type": "singlet",
+        "lifetime": "stable",
+        "role": "基态 / |0⟩"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 0,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 0,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        }
+      }
+    },
+    {
+      "id": "yb171-6s6p-3p0",
+      "isotope": 171,
+      "attributes": {
+        "term": "³P₀",
+        "config": "6s6p",
+        "parity": "odd",
+        "J": 0,
+        "S": 1,
+        "type": "triplet",
+        "lifetime": "21.0 s",
+        "role": "亚稳态 / |1⟩"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 17288.439,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 2.143499,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        }
+      }
+    },
+    {
+      "id": "yb171-6s6p-3p1",
+      "isotope": 171,
+      "attributes": {
+        "term": "³P₁",
+        "config": "6s6p",
+        "parity": "odd",
+        "J": 1,
+        "S": 1,
+        "type": "triplet",
+        "lifetime": "872.6 ns",
+        "role": "窄线冷却上能级"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 17992.007,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 2.230731,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        }
+      }
+    },
+    {
+      "id": "yb171-6s6p-3p2",
+      "isotope": 171,
+      "attributes": {
+        "term": "³P₂",
+        "config": "6s6p",
+        "parity": "odd",
+        "J": 2,
+        "S": 1,
+        "type": "triplet",
+        "lifetime": "~8.9 s",
+        "role": "亚稳态 / 四极钟"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 19710.388,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 2.443784,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        }
+      }
+    },
+    {
+      "id": "yb171-6s5d-3d1",
+      "isotope": 171,
+      "attributes": {
+        "term": "³D₁",
+        "config": "6s5d",
+        "parity": "even",
+        "J": 1,
+        "S": 1,
+        "type": "triplet",
+        "lifetime": "332 ns",
+        "role": "repumper 上能级"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 24489.102,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 3.036266,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        }
+      }
+    },
+    {
+      "id": "yb171-6s6p-1p1",
+      "isotope": 171,
+      "attributes": {
+        "term": "¹P₁",
+        "config": "6s6p",
+        "parity": "odd",
+        "J": 1,
+        "S": 0,
+        "type": "singlet",
+        "lifetime": "5.46 ns",
+        "role": "宽线冷却 / 成像"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 25068.222,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 3.108063,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        }
+      }
+    },
+    {
+      "id": "yb171-6s7s-3s1",
+      "isotope": 171,
+      "attributes": {
+        "term": "³S₁",
+        "config": "6s7s",
+        "parity": "even",
+        "J": 1,
+        "S": 1,
+        "type": "triplet",
+        "lifetime": "13.8 ns",
+        "role": "repumper / Rydberg 首成员"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 32694.692,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 4.053632,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        }
+      }
+    },
+    {
+      "id": "yb171-6s65s-3s1-triplet-connected",
+      "isotope": 171,
+      "attributes": {
+        "term": "65³S₁",
+        "config": "6s65s",
+        "J": 1,
+        "S": 1,
+        "parity": "even",
+        "type": "triplet",
+        "lifetime": "估算",
+        "role": "65S 里德堡态"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 50414.958999999995,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "derived",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "derivedFrom": [
+            "yb171-6s6p-3p0.energy_cm",
+            "R2.energy_cm"
+          ],
+          "modelId": "legacy-level-plus-excitation-v1"
+        },
+        "energy_eV": {
+          "value": 6.250658280928287,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "derived",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "derivedFrom": [
+            "yb171-6s65s-3s1-triplet-connected.energy_cm"
+          ],
+          "modelId": "legacy-wavenumber-conversion-v1"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s50s-3s1",
+      "isotope": 171,
+      "attributes": {
+        "term": "50³S₁",
+        "config": "6s50s",
+        "J": 1,
+        "parity": "even",
+        "type": "triplet"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": null,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        },
+        "energy_eV": {
+          "value": null,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s80s-3s1",
+      "isotope": 171,
+      "attributes": {
+        "term": "80³S₁",
+        "config": "6s80s",
+        "J": 1,
+        "parity": "even",
+        "type": "triplet"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": null,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        },
+        "energy_eV": {
+          "value": null,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s65d-3d1",
+      "isotope": 171,
+      "attributes": {
+        "term": "65³D₁",
+        "config": "6s65d",
+        "J": 1,
+        "parity": "even",
+        "type": "triplet"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": null,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        },
+        "energy_eV": {
+          "value": null,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s65d-3d2",
+      "isotope": 171,
+      "attributes": {
+        "term": "65³D₂",
+        "config": "6s65d",
+        "J": 2,
+        "parity": "even",
+        "type": "triplet"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": null,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        },
+        "energy_eV": {
+          "value": null,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        }
+      }
+    }
+  ],
+  "coreLevelIds": [
+    "yb171-6s2-1s0",
+    "yb171-6s6p-3p0",
+    "yb171-6s6p-3p1",
+    "yb171-6s6p-3p2",
+    "yb171-6s5d-3d1",
+    "yb171-6s6p-1p1",
+    "yb171-6s7s-3s1",
+    "yb171-6s65s-3s1-triplet-connected"
+  ],
+  "lowStateRoles": [
+    {
+      "levelId": "yb171-6s2-1s0",
+      "role": "|0⟩ 基态"
+    },
+    {
+      "levelId": "yb171-6s6p-3p0",
+      "role": "|1⟩ 亚稳态"
+    },
+    {
+      "levelId": "yb171-6s6p-3p1",
+      "role": "双光子中间态"
+    },
+    {
+      "levelId": "yb171-6s6p-3p2",
+      "role": "辅助亚稳态"
+    }
+  ],
+  "rydbergGroups": [
+    {
+      "n": 50,
+      "series": "³S₁",
+      "label": "50³S₁",
+      "color": "#c7a98c",
+      "ref": "Peper 2025 / Phys. Rev. X 15, 011009",
+      "transitions": [
+        {
+          "from": "³P₀",
+          "color": "#c7a98c",
+          "note": "R1 · 302.1 nm"
+        }
+      ],
+      "levelId": "yb171-6s50s-3s1",
+      "quantumDefectId": "6sns ³S₁"
+    },
+    {
+      "n": 65,
+      "series": "³S₁",
+      "label": "65³S₁",
+      "color": "#b08f76",
+      "ref": "Ma 2023 / Peper 2024",
+      "transitions": [
+        {
+          "from": "³P₀",
+          "color": "#b08f76",
+          "note": "R2 · 301.9 nm · CZ 门"
+        },
+        {
+          "from": "³P₁",
+          "color": "#a8c9b8",
+          "note": "R6 · 308.4 nm"
+        },
+        {
+          "from": "³P₂",
+          "color": "#8fb5c4",
+          "note": "R7 · 325.7 nm"
+        }
+      ],
+      "levelId": "yb171-6s65s-3s1-triplet-connected",
+      "quantumDefectId": "6sns ³S₁"
+    },
+    {
+      "n": 80,
+      "series": "³S₁",
+      "label": "80³S₁",
+      "color": "#d9c3a8",
+      "ref": "Peper 2025 / Phys. Rev. X 15, 011009",
+      "transitions": [
+        {
+          "from": "³P₀",
+          "color": "#d9c3a8",
+          "note": "R3 · 301.8 nm"
+        }
+      ],
+      "levelId": "yb171-6s80s-3s1",
+      "quantumDefectId": "6sns ³S₁"
+    },
+    {
+      "n": 65,
+      "series": "³D₁",
+      "label": "65³D₁",
+      "color": "#9e92b0",
+      "ref": "Peper 2025 / Phys. Rev. X 15, 011009",
+      "transitions": [
+        {
+          "from": "³P₀",
+          "color": "#9e92b0",
+          "note": "R4 · 301.9 nm"
+        }
+      ],
+      "levelId": "yb171-6s65d-3d1",
+      "quantumDefectId": "6snd ³D₁"
+    },
+    {
+      "n": 65,
+      "series": "³D₂",
+      "label": "65³D₂",
+      "color": "#b8adc7",
+      "ref": "Kroeze 2025 / arXiv:2509.04416",
+      "transitions": [
+        {
+          "from": "³P₀",
+          "color": "#b8adc7",
+          "note": "R5 · 301.9 nm · ΔJ=2（弱）"
+        }
+      ],
+      "levelId": "yb171-6s65d-3d2",
+      "quantumDefectId": "6snd ³D₂"
+    }
+  ]
+}

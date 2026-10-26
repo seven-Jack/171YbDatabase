@@ -1,0 +1,23 @@
+name: 数据纠错
+description: 记录具体物理字段、原值、出处、条件与建议。
+title: "[数据] "
+body:
+  - type: textarea
+    id: field
+    attributes:
+      label: 条目与字段
+      description: 跃迁/态 ID、物理量、网页版本、当前显示值及单位。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 原始出处与定义
+      description: DOI/URL、版本、页/表/公式、同位素、态、外场、温度、矩阵元或寿命定义；无法取得的证据请说明。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议与核查方法
+      description: 原值→建议值、冲突原因、独立测量或派生关系、验收方法。不要把内部一致性当作实验验证。

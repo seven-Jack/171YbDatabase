@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seven-jack.github.io/171YbDatabase/schemas/calculation-config.schema.json",
+  "title": "171Yb fixed-model Rabi calculation configuration",
+  "description": "Versioned context and saved output; restore uses the current catalog and formula and does not trust saved matrix elements or results. This is not physical validation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "kind", "exportedAt", "softwareVersion", "appCommit", "datasetVersion", "datasetHash", "formulaVersion", "transitionId", "matrixElement", "selection", "parameters", "display", "result"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "kind": { "const": "171yb-rabi-config" },
+    "exportedAt": { "type": "string", "format": "date-time", "maxLength": 240 },
+    "softwareVersion": { "$ref": "#/$defs/shortText" },
+    "appCommit": { "anyOf": [{ "$ref": "#/$defs/shortText" }, { "type": "null" }] },
+    "datasetVersion": { "$ref": "#/$defs/shortText" },
+    "datasetHash": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+    "formulaVersion": { "$ref": "#/$defs/shortText" },
+    "transitionId": { "$ref": "#/$defs/shortText", "description": "Must reference an available current-catalog transition, validated at runtime." },
+    "matrixElement": {
+      "type": "object", "additionalProperties": false,
+      "required": ["reduced_ea0", "convention", "sourceId"],
+      "properties": {
+        "reduced_ea0": { "type": ["number", "null"], "minimum": 0 },
+        "convention": { "$ref": "#/$defs/shortText" },
+        "sourceId": { "anyOf": [{ "$ref": "#/$defs/shortText" }, { "type": "null" }] }
+      }
+    },
+    "selection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["F_lower", "F_upper", "diagF_lower", "diagF_upper", "pol", "channel"],
+      "properties": {
+        "F_lower": { "type": "number", "minimum": 0 },
+        "F_upper": { "type": "number", "minimum": 0 },
+        "diagF_lower": { "anyOf": [{ "const": "all" }, { "type": "number", "minimum": 0 }] },
+        "diagF_upper": { "anyOf": [{ "const": "all" }, { "type": "number", "minimum": 0 }] },
+        "pol": { "enum": ["pi", "sigmap", "sigmam"] },
+        "channel": { "anyOf": [{ "$ref": "#/$defs/channel" }, { "type": "null" }] }
+      }
+    },
+    "parameters": {
+      "type": "object", "additionalProperties": false,
+      "required": ["power_W", "waist_m", "targetRabi_Hz"],
+      "properties": {
+        "power_W": { "type": "number", "minimum": 0 },
+        "waist_m": { "type": "number", "exclusiveMinimum": 0, "description": "Gaussian 1/e² intensity radius." },
+        "targetRabi_Hz": { "type": "number", "minimum": 0, "description": "Ordinary frequency Ω/(2π), used as input in inverse mode." }
+      }
+    },
+    "display": {
+      "type": "object", "additionalProperties": false,
+      "required": ["powerUnit", "rabiUnit", "calcMode"],
+      "properties": {
+        "powerUnit": { "enum": ["W", "mW", "µW", "nW"] },
+        "rabiUnit": { "enum": ["Hz", "kHz", "MHz", "GHz"] },
+        "calcMode": { "enum": ["power", "rabi"] },
+        "solveFor": { "enum": ["rabi", "power", "waist"], "description": "Optional for older schemaVersion=1 files. If absent, calcMode=rabi means solve for power; otherwise solve for Rabi frequency." },
+        "units": {
+          "type": "object", "additionalProperties": false,
+          "required": ["power", "rabi", "waist"],
+          "description": "Optional display choices for the three-field calculator; numerical inputs above remain SI. Older files use powerUnit/rabiUnit and µm.",
+          "properties": {
+            "power": { "enum": ["W", "mW", "µW", "nW"] },
+            "rabi": { "enum": ["Hz", "kHz", "MHz", "GHz"] },
+            "waist": { "enum": ["mm", "µm", "nm"] }
+          }
+        }
+      }
+    },
+    "result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "power_W", "frequency_Hz", "omega_rad_s", "piTime_s"],
+      "properties": {
+        "status": { "enum": ["ok", "missing-data", "forbidden", "unsupported", "invalid-input"] },
+        "power_W": { "$ref": "#/$defs/nonnegativeOrNull" },
+        "frequency_Hz": { "$ref": "#/$defs/nonnegativeOrNull" },
+        "omega_rad_s": { "$ref": "#/$defs/nonnegativeOrNull" },
+        "piTime_s": { "$ref": "#/$defs/nonnegativeOrNull", "description": "null when frequency is zero and π time is infinite." }
+      }
+    }
+  },
+  "$defs": {
+    "shortText": { "type": "string", "minLength": 1, "maxLength": 240, "pattern": "\\S" },
+    "nonnegativeOrNull": { "type": ["number", "null"], "minimum": 0 },
+    "channel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["F", "m", "Fp", "mp", "q"],
+      "description": "Runtime verifies this tuple against current-catalog angular channels; matEl and CG are deliberately not imported.",
+      "properties": {
+        "F": { "type": "number", "minimum": 0 }, "m": { "type": "number" },
+        "Fp": { "type": "number", "minimum": 0 }, "mp": { "type": "number" },
+        "q": { "enum": [-1, 0, 1] }
+      }
+    }
+  }
+}

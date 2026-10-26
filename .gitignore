@@ -1,5 +1,9 @@
 # Dependencies (none expected — buildless — but keep ignored just in case)
 node_modules/
+playwright-report/
+test-results/
+# Generated from package.json and Git before preflight/build.
+/src/version.js
 
 # Build / deploy output
 dist/

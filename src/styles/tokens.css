@@ -1,0 +1,31 @@
+  :root {
+    --bg-0: #0a0e16;
+    --bg-1: #0f1524;
+    --bg-2: #161d30;
+    --bg-3: #1e2740;
+    --line: #26314d;
+    --text-0: #e8edf7;
+    --text-1: #b6c0d4;
+    --text-2: #7d88a0;
+    --text-3: #5a6580;
+    --accent: #7aa2ff;
+    --accent-2: #a78bfa;
+    --mono: "Times New Roman", SimSun, "Songti SC", serif;
+    --serif: "Times New Roman", SimSun, "Songti SC", serif;
+    --sans: "Times New Roman", SimSun, "Songti SC", serif;
+
+    /* Rydberg colors */
+    --rydbg: rgba(167, 139, 250, 0.08);
+    --rydborder: rgba(167, 139, 250, 0.3);
+    --rydtext: #c4b5fd;
+
+    /* Strength colors */
+    --strong: #34d399;
+    --weak: #facc15;
+    --forbidden: #f87171;
+
+    /* Multipole colors */
+    --e1: #60a5fa;
+    --m2: #f59e0b;
+    --two: #a78bfa;
+  }

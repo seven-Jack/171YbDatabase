@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "transition.schema.json",
+  "title": "Canonical transition and compatibility presentation views",
+  "type": "object",
+  "required": ["id", "lowerLevelId", "upperLevelId", "category", "quantities", "views"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^[TR][0-9]+$"},
+    "lowerLevelId": {"type": "string", "minLength": 1},
+    "upperLevelId": {"type": "string", "minLength": 1},
+    "category": {"enum": ["core", "rydberg"]},
+    "quantities": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "quantity.schema.json"}},
+    "views": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "object", "required": ["presentation", "quantityFields", "aliases", "legacyNullValues"], "additionalProperties": false, "properties": {"presentation": {"type": "object"}, "quantityFields": {"type": "object", "additionalProperties": {"type": "string"}}, "aliases": {"type": "object", "additionalProperties": {"type": "string"}}, "legacyNullValues": {"type": "object"}}}}
+  }
+}

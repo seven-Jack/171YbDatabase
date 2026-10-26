@@ -1,0 +1,2071 @@
+{
+  "schemaVersion": 1,
+  "isotope": 171,
+  "coreTransitionIds": [
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7",
+    "R2"
+  ],
+  "rydbergTransitionIds": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7"
+  ],
+  "records": [
+    {
+      "id": "T1",
+      "lowerLevelId": "yb171-6s2-1s0",
+      "upperLevelId": "yb171-6s6p-1p1",
+      "category": "core",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 398.9108,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "wavelength_air_nm": {
+          "value": 398.8021,
+          "unit": "nm",
+          "quantity": "wavelength_air_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "frequency_THz": {
+          "value": 751.52747,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 3.108068,
+          "unit": "eV",
+          "quantity": "energy_eV",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "Gamma_per_s_num": {
+          "value": 183000000,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "lifetime_ns": {
+          "value": 5.464,
+          "unit": "ns",
+          "quantity": "lifetime_ns",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "oscillator_strength_f_num": {
+          "value": 1.3098,
+          "unit": "dimensionless",
+          "quantity": "oscillator_strength_f_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "d_num": {
+          "value": 4.147,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 29130000,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "ref-01",
+          "sourceLocator": null,
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 29.13(6) MHz"
+        }
+      },
+      "views": {
+        "core": {
+          "presentation": {
+            "id": "T1",
+            "upper": "¹P₁",
+            "lower": "¹S₀",
+            "label": "蓝 MOT / Zeeman slower",
+            "linewidth_FWHM": "2π × 29.13(6) MHz",
+            "Gamma_per_s": "1.83×10⁸",
+            "Isat": "59.97 mW/cm²",
+            "branching": "≈1 (cycling, 漏率 ~6×10⁻⁸)",
+            "multipole": "E1",
+            "classification": "强",
+            "forbidden_reason": "—",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "use": "一级冷却、Zeeman 慢化、原子成像",
+            "source": "Kroeze 2025 Tbl.18",
+            "color": "#34d399"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "wavelength_air_nm": "wavelength_air_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_eV": "energy_eV",
+            "Gamma_per_s_num": "Gamma_per_s_num",
+            "lifetime_ns": "lifetime_ns",
+            "oscillator_strength_f_num": "oscillator_strength_f_num",
+            "d_num": "d_num"
+          },
+          "aliases": {
+            "oscillator_strength_f": "oscillator_strength_f_num",
+            "d_reduced_ea0": "d_num"
+          },
+          "legacyNullValues": {}
+        }
+      }
+    },
+    {
+      "id": "T2",
+      "lowerLevelId": "yb171-6s2-1s0",
+      "upperLevelId": "yb171-6s6p-3p1",
+      "category": "core",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 555.8007,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "wavelength_air_nm": {
+          "value": 555.6519,
+          "unit": "nm",
+          "quantity": "wavelength_air_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "frequency_THz": {
+          "value": 539.38843,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 2.230731,
+          "unit": "eV",
+          "quantity": "energy_eV",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "Gamma_per_s_num": {
+          "value": 1146000,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "lifetime_ns": {
+          "value": 872.6,
+          "unit": "ns",
+          "quantity": "lifetime_ns",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "oscillator_strength_f_num": {
+          "value": 0.015923,
+          "unit": "dimensionless",
+          "quantity": "oscillator_strength_f_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "d_num": {
+          "value": 0.543,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "internal-t2-calibration",
+          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "evidenceKind": "internal-calibration",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 182400,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "ref-01",
+          "sourceLocator": null,
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 182.4(4) kHz"
+        }
+      },
+      "views": {
+        "core": {
+          "presentation": {
+            "id": "T2",
+            "upper": "³P₁",
+            "lower": "¹S₀",
+            "label": "绿 MOT (窄线冷却)",
+            "linewidth_FWHM": "2π × 182.4(4) kHz",
+            "Gamma_per_s": "1.146×10⁶",
+            "Isat": "138.85 µW/cm²",
+            "branching": "1 (至 ¹S₀)",
+            "multipole": "E1 (intercombination)",
+            "classification": "弱",
+            "forbidden_reason": "自旋禁戒 (ΔS=1)；LS 耦合混合开启弱 E1 通道",
+            "selection_check": "ΔS=1 ✗, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "use": "二级冷却至 µK、核自旋态相干控制/成像",
+            "source": "Kroeze 2025 Tbl.11（内部校准值，文献 0.5398(6)）",
+            "color": "#facc15"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "wavelength_air_nm": "wavelength_air_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_eV": "energy_eV",
+            "Gamma_per_s_num": "Gamma_per_s_num",
+            "lifetime_ns": "lifetime_ns",
+            "oscillator_strength_f_num": "oscillator_strength_f_num",
+            "d_num": "d_num"
+          },
+          "aliases": {
+            "oscillator_strength_f": "oscillator_strength_f_num",
+            "d_reduced_ea0": "d_num"
+          },
+          "legacyNullValues": {}
+        }
+      }
+    },
+    {
+      "id": "T3",
+      "lowerLevelId": "yb171-6s2-1s0",
+      "upperLevelId": "yb171-6s6p-3p0",
+      "category": "core",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 578.4196,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "wavelength_air_nm": {
+          "value": 578.2649,
+          "unit": "nm",
+          "quantity": "wavelength_air_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "frequency_THz": {
+          "value": 518.295837,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 2.143499,
+          "unit": "eV",
+          "quantity": "energy_eV",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "Gamma_per_s_num": {
+          "value": 0.048,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "lifetime_ns": {
+          "value": 21000000000,
+          "unit": "ns",
+          "quantity": "lifetime_ns",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "oscillator_strength_f_num": {
+          "value": 1e-09,
+          "unit": "dimensionless",
+          "quantity": "oscillator_strength_f_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "d_num": {
+          "value": 9.19e-05,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "internal-t3-20260908",
+          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "evidenceKind": "internal-calculation",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "F-reduced-effective"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 0.0076,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "ref-01",
+          "sourceLocator": null,
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 7.6(6) mHz"
+        }
+      },
+      "views": {
+        "core": {
+          "presentation": {
+            "id": "T3",
+            "upper": "³P₀",
+            "lower": "¹S₀",
+            "label": "黄钟跃迁 (optical qubit)",
+            "linewidth_FWHM": "2π × 7.6(6) mHz",
+            "Gamma_per_s": "0.048",
+            "oscillator_strength_f": "~10⁻⁹",
+            "d_reduced_ea0": "9.19×10⁻⁵",
+            "Isat": "—",
+            "branching": "1 (至 ¹S₀)",
+            "multipole": "E1 (hyperfine-mixed)",
+            "classification": "禁戒",
+            "forbidden_reason": "双重禁戒：自旋禁戒 + J=0→J=0 禁戒；¹⁷¹Yb 超精细混合开启 F=1/2→F′=1/2 有效通道，d_reduced = 9.19×10⁻⁵ ea₀，各 mF 子通道矩阵元 = d_red × CG/√(2F′+1)（σ 通道 ≈ ±5.31×10⁻⁵、π 通道 ≈ ±3.75×10⁻⁵），校验锚点 +1/2→−1/2 = 5.30×10⁻⁵ ea₀（2026-09-08 内部补充）",
+            "selection_check": "ΔS=1 ✗, J=0→0 ✗, 奇偶变 ✓",
+            "use": "光钟、光量子比特 |0⟩=¹S₀, |1⟩=³P₀",
+            "source": "Kroeze 2025 Tbl.10 · 2026-09-08 内部补充 (F=1/2→1/2 约化矩阵元 9.19×10⁻⁵)",
+            "hf_induced": true,
+            "color": "#f87171"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "wavelength_air_nm": "wavelength_air_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_eV": "energy_eV",
+            "Gamma_per_s_num": "Gamma_per_s_num",
+            "lifetime_ns": "lifetime_ns",
+            "oscillator_strength_f_num": "oscillator_strength_f_num",
+            "d_num": "d_num"
+          },
+          "aliases": {},
+          "legacyNullValues": {}
+        }
+      }
+    },
+    {
+      "id": "T4",
+      "lowerLevelId": "yb171-6s2-1s0",
+      "upperLevelId": "yb171-6s6p-3p2",
+      "category": "core",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 507.3452,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "wavelength_air_nm": {
+          "value": 507.2088,
+          "unit": "nm",
+          "quantity": "wavelength_air_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "frequency_THz": {
+          "value": 590.90433,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 2.443784,
+          "unit": "eV",
+          "quantity": "energy_eV",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "Gamma_per_s_num": {
+          "value": 0.112,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "lifetime_ns": {
+          "value": 8900000000,
+          "unit": "ns",
+          "quantity": "lifetime_ns",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "oscillator_strength_f_num": {
+          "value": 1e-09,
+          "unit": "dimensionless",
+          "quantity": "oscillator_strength_f_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "d_num": {
+          "value": null,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "no-E1-data",
+          "missingReason": "no-applicable-E1-matrix-element"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 0.0179,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "ref-01",
+          "sourceLocator": null,
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × ~17.9 mHz"
+        }
+      },
+      "views": {
+        "core": {
+          "presentation": {
+            "id": "T4",
+            "upper": "³P₂",
+            "lower": "¹S₀",
+            "label": "绿钟跃迁 (四极)",
+            "linewidth_FWHM": "2π × ~17.9 mHz",
+            "Gamma_per_s": "~0.112",
+            "oscillator_strength_f": "~10⁻⁹",
+            "d_reduced_ea0": "—",
+            "Isat": "—",
+            "branching": "M2 至 ¹S₀ 主导",
+            "multipole": "M2 (磁四极)",
+            "classification": "禁戒",
+            "forbidden_reason": "E1 双重禁戒：自旋禁戒 + ΔJ=2；主导衰变为 M2 磁四极",
+            "selection_check": "ΔS=1 ✗, ΔJ=2 ✗(E1), 奇偶变 ✓ → M2 允许",
+            "use": "量子模拟、辅助钟跃迁、新物理搜寻",
+            "source": "Kroeze 2025 Tbl.12",
+            "color": "#f87171"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "wavelength_air_nm": "wavelength_air_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_eV": "energy_eV",
+            "Gamma_per_s_num": "Gamma_per_s_num",
+            "lifetime_ns": "lifetime_ns",
+            "oscillator_strength_f_num": "oscillator_strength_f_num",
+            "d_num": "d_num"
+          },
+          "aliases": {},
+          "legacyNullValues": {
+            "d_num": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "T5",
+      "lowerLevelId": "yb171-6s6p-3p0",
+      "upperLevelId": "yb171-6s5d-3d1",
+      "category": "core",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 1388.7629,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "wavelength_air_nm": {
+          "value": 1388.3969,
+          "unit": "nm",
+          "quantity": "wavelength_air_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "frequency_THz": {
+          "value": 215.87014,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 0.892767,
+          "unit": "eV",
+          "quantity": "energy_eV",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "Gamma_per_s_num": {
+          "value": 3010000,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "lifetime_ns": {
+          "value": 332,
+          "unit": "ns",
+          "quantity": "lifetime_ns",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "oscillator_strength_f_num": {
+          "value": null,
+          "unit": "dimensionless",
+          "quantity": "oscillator_strength_f_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-provided-in-original-record"
+        },
+        "d_num": {
+          "value": 2.76,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 479000,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "ref-01",
+          "sourceLocator": null,
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 479(16) kHz"
+        }
+      },
+      "views": {
+        "core": {
+          "presentation": {
+            "id": "T5",
+            "upper": "³D₁",
+            "lower": "³P₀",
+            "label": "红外 repumper (黄钟)",
+            "linewidth_FWHM": "2π × 479(16) kHz",
+            "Gamma_per_s": "3.01×10⁶",
+            "oscillator_strength_f": "—",
+            "Isat": "—",
+            "branching": "³P₀ 63.8%, ³P₁ 35.2%, ³P₂ 0.99%",
+            "multipole": "E1",
+            "classification": "强",
+            "forbidden_reason": "—",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "use": "³P₀ 态 repump / 态制备",
+            "source": "Kroeze 2025 Tbl.13",
+            "color": "#34d399"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "wavelength_air_nm": "wavelength_air_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_eV": "energy_eV",
+            "Gamma_per_s_num": "Gamma_per_s_num",
+            "lifetime_ns": "lifetime_ns",
+            "oscillator_strength_f_num": "oscillator_strength_f_num",
+            "d_num": "d_num"
+          },
+          "aliases": {
+            "d_reduced_ea0": "d_num"
+          },
+          "legacyNullValues": {
+            "oscillator_strength_f_num": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "T6",
+      "lowerLevelId": "yb171-6s6p-3p0",
+      "upperLevelId": "yb171-6s7s-3s1",
+      "category": "core",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 649.0866,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "wavelength_air_nm": {
+          "value": 648.9137,
+          "unit": "nm",
+          "quantity": "wavelength_air_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "frequency_THz": {
+          "value": 461.86818,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 1.910133,
+          "unit": "eV",
+          "quantity": "energy_eV",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "Gamma_per_s_num": {
+          "value": 72000000,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "lifetime_ns": {
+          "value": 13.8,
+          "unit": "ns",
+          "quantity": "lifetime_ns",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "oscillator_strength_f_num": {
+          "value": null,
+          "unit": "dimensionless",
+          "quantity": "oscillator_strength_f_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-provided-in-original-record"
+        },
+        "d_num": {
+          "value": 1.96,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 11500000,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "ref-01",
+          "sourceLocator": null,
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 11.5(14) MHz"
+        }
+      },
+      "views": {
+        "core": {
+          "presentation": {
+            "id": "T6",
+            "upper": "³S₁",
+            "lower": "³P₀",
+            "label": "红 repumper (黄钟)",
+            "linewidth_FWHM": "2π × 11.5(14) MHz",
+            "Gamma_per_s": "7.2×10⁷",
+            "oscillator_strength_f": "—",
+            "Isat": "—",
+            "branching": "³P₂ 50.8%, ³P₁ 36.0%, ³P₀ 13.0%",
+            "multipole": "E1",
+            "classification": "强",
+            "forbidden_reason": "—",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "use": "³P₀ 态 repump / 检测",
+            "source": "Kroeze 2025 Tbl.14",
+            "color": "#34d399"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "wavelength_air_nm": "wavelength_air_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_eV": "energy_eV",
+            "Gamma_per_s_num": "Gamma_per_s_num",
+            "lifetime_ns": "lifetime_ns",
+            "oscillator_strength_f_num": "oscillator_strength_f_num",
+            "d_num": "d_num"
+          },
+          "aliases": {
+            "d_reduced_ea0": "d_num"
+          },
+          "legacyNullValues": {
+            "oscillator_strength_f_num": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "T7",
+      "lowerLevelId": "yb171-6s6p-3p2",
+      "upperLevelId": "yb171-6s7s-3s1",
+      "category": "core",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 770.1603,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "wavelength_air_nm": {
+          "value": 769.9559,
+          "unit": "nm",
+          "quantity": "wavelength_air_nm",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "frequency_THz": {
+          "value": 389.25983,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "energy_eV": {
+          "value": 1.609849,
+          "unit": "eV",
+          "quantity": "energy_eV",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "Gamma_per_s_num": {
+          "value": 72000000,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "lifetime_ns": {
+          "value": 13.8,
+          "unit": "ns",
+          "quantity": "lifetime_ns",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null
+        },
+        "oscillator_strength_f_num": {
+          "value": null,
+          "unit": "dimensionless",
+          "quantity": "oscillator_strength_f_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "missingReason": "not-provided-in-original-record"
+        },
+        "d_num": {
+          "value": 4.99,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "ref-01",
+          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 11500000,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "ref-01",
+          "sourceLocator": null,
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 11.5(14) MHz"
+        }
+      },
+      "views": {
+        "core": {
+          "presentation": {
+            "id": "T7",
+            "upper": "³S₁",
+            "lower": "³P₂",
+            "label": "红 repumper (绿钟)",
+            "linewidth_FWHM": "2π × 11.5(14) MHz",
+            "Gamma_per_s": "7.2×10⁷",
+            "oscillator_strength_f": "—",
+            "Isat": "—",
+            "branching": "至 ³P₂ 分支 50.8%",
+            "multipole": "E1",
+            "classification": "强",
+            "forbidden_reason": "—",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=-1 ✓, 奇偶变 ✓",
+            "use": "³P₂ 态 repump / 检测",
+            "source": "Kroeze 2025 Tbl.15",
+            "color": "#34d399"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "wavelength_air_nm": "wavelength_air_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_eV": "energy_eV",
+            "Gamma_per_s_num": "Gamma_per_s_num",
+            "lifetime_ns": "lifetime_ns",
+            "oscillator_strength_f_num": "oscillator_strength_f_num",
+            "d_num": "d_num"
+          },
+          "aliases": {
+            "d_reduced_ea0": "d_num"
+          },
+          "legacyNullValues": {
+            "oscillator_strength_f_num": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "R2",
+      "lowerLevelId": "yb171-6s6p-3p0",
+      "upperLevelId": "yb171-6s65s-3s1-triplet-connected",
+      "category": "rydberg",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 301.87,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "frequency_THz": {
+          "value": 993.11,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "energy_cm": {
+          "value": 33126.52,
+          "unit": "cm^-1",
+          "quantity": "energy_cm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "d_num": {
+          "value": 0.0376,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "ref-17",
+          "sourceLocator": null,
+          "evidenceKind": "internal-calculation",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced"
+        },
+        "Gamma_per_s_num": {
+          "value": 26660,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "energy_eV": {
+          "value": 4.107165029259203,
+          "unit": "eV",
+          "quantity": "energy_eV",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "derived",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1",
+          "derivedFrom": [
+            "R2.energy_cm"
+          ]
+        },
+        "lifetime_ns": {
+          "value": 37509.377344336084,
+          "unit": "ns",
+          "quantity": "lifetime_ns",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "derived",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1",
+          "derivedFrom": [
+            "R2.Gamma_per_s_num"
+          ]
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 4240,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 4.24 kHz",
+          "modelId": "legacy-rydberg-scaling-v1"
+        }
+      },
+      "views": {
+        "core": {
+          "presentation": {
+            "id": "R2",
+            "lower": "³P₀",
+            "upper": "65³S₁",
+            "label": "65S 里德堡激发",
+            "d_reduced_ea0": "0.0376",
+            "linewidth_FWHM": "2π × 4.24 kHz",
+            "multipole": "E1",
+            "classification": "强",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "source": "矩阵元：This work；波长 / 寿命：现有标度估算；实验参见 [4] Muniz 2025，附录 D",
+            "color": "#a78bfa",
+            "approximate": true,
+            "d_convention": "J-reduced, This work",
+            "Gamma_per_s": "26660",
+            "oscillator_strength_f": "待核查",
+            "Isat": "待核查",
+            "branching": "待核查",
+            "forbidden_reason": "E1 允许；矩阵元：This work（J 级约化量）",
+            "use": "65S 激发与 Rabi 示意计算"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_cm": "energy_cm",
+            "d_num": "d_num",
+            "Gamma_per_s_num": "Gamma_per_s_num",
+            "energy_eV": "energy_eV",
+            "lifetime_ns": "lifetime_ns"
+          },
+          "aliases": {},
+          "legacyNullValues": {}
+        },
+        "rydberg": {
+          "presentation": {
+            "id": "R2",
+            "lower": "³P₀",
+            "upper": "65³S₁",
+            "label": "³P₀ → 65³S₁ · CZ 门",
+            "d_reduced_ea0": "0.0376",
+            "linewidth_FWHM": "2π × 4.24 kHz",
+            "multipole": "E1",
+            "classification": "强",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "source": "矩阵元：This work；波长 / 寿命：现有标度估算；实验参见 [4] Muniz 2025，附录 D",
+            "color": "#b08f76"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_cm": "energy_cm",
+            "d_num": "d_num",
+            "Gamma_per_s_num": "Gamma_per_s_num"
+          },
+          "aliases": {},
+          "legacyNullValues": {}
+        }
+      }
+    },
+    {
+      "id": "R1",
+      "lowerLevelId": "yb171-6s6p-3p0",
+      "upperLevelId": "yb171-6s50s-3s1",
+      "category": "rydberg",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 302.06,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "frequency_THz": {
+          "value": 992.49,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "energy_cm": {
+          "value": 33105.94,
+          "unit": "cm^-1",
+          "quantity": "energy_cm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "d_num": {
+          "value": 0.0568,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced",
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "Gamma_per_s_num": {
+          "value": 60760,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 9670,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 9.67 kHz",
+          "modelId": "legacy-rydberg-scaling-v1"
+        }
+      },
+      "views": {
+        "rydberg": {
+          "presentation": {
+            "id": "R1",
+            "lower": "³P₀",
+            "upper": "50³S₁",
+            "label": "³P₀ → 50³S₁ · CZ 门 (低 n)",
+            "d_reduced_ea0": "0.0568",
+            "linewidth_FWHM": "2π × 9.67 kHz",
+            "multipole": "E1",
+            "classification": "强",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+            "color": "#c7a98c"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_cm": "energy_cm",
+            "d_num": "d_num",
+            "Gamma_per_s_num": "Gamma_per_s_num"
+          },
+          "aliases": {},
+          "legacyNullValues": {}
+        }
+      }
+    },
+    {
+      "id": "R3",
+      "lowerLevelId": "yb171-6s6p-3p0",
+      "upperLevelId": "yb171-6s80s-3s1",
+      "category": "rydberg",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 301.78,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "frequency_THz": {
+          "value": 993.4,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "energy_cm": {
+          "value": 33136.35,
+          "unit": "cm^-1",
+          "quantity": "energy_cm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "d_num": {
+          "value": 0.0272,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced",
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "Gamma_per_s_num": {
+          "value": 13980,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 2230,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 2.23 kHz",
+          "modelId": "legacy-rydberg-scaling-v1"
+        }
+      },
+      "views": {
+        "rydberg": {
+          "presentation": {
+            "id": "R3",
+            "lower": "³P₀",
+            "upper": "80³S₁",
+            "label": "³P₀ → 80³S₁ · CZ 门 (高 n)",
+            "d_reduced_ea0": "0.0272",
+            "linewidth_FWHM": "2π × 2.23 kHz",
+            "multipole": "E1",
+            "classification": "强",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+            "color": "#d9c3a8"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_cm": "energy_cm",
+            "d_num": "d_num",
+            "Gamma_per_s_num": "Gamma_per_s_num"
+          },
+          "aliases": {},
+          "legacyNullValues": {}
+        }
+      }
+    },
+    {
+      "id": "R4",
+      "lowerLevelId": "yb171-6s6p-3p0",
+      "upperLevelId": "yb171-6s65d-3d1",
+      "category": "rydberg",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 301.86,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "frequency_THz": {
+          "value": 993.14,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "energy_cm": {
+          "value": 33127.49,
+          "unit": "cm^-1",
+          "quantity": "energy_cm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "d_num": {
+          "value": 0.0535,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced",
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "Gamma_per_s_num": {
+          "value": 36130,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 5750,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 5.75 kHz",
+          "modelId": "legacy-rydberg-scaling-v1"
+        }
+      },
+      "views": {
+        "rydberg": {
+          "presentation": {
+            "id": "R4",
+            "lower": "³P₀",
+            "upper": "65³D₁",
+            "label": "³P₀ → 65³D₁",
+            "d_reduced_ea0": "0.0535",
+            "linewidth_FWHM": "2π × 5.75 kHz",
+            "multipole": "E1",
+            "classification": "强",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+            "color": "#9e92b0"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_cm": "energy_cm",
+            "d_num": "d_num",
+            "Gamma_per_s_num": "Gamma_per_s_num"
+          },
+          "aliases": {},
+          "legacyNullValues": {}
+        }
+      }
+    },
+    {
+      "id": "R5",
+      "lowerLevelId": "yb171-6s6p-3p0",
+      "upperLevelId": "yb171-6s65d-3d2",
+      "category": "rydberg",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 301.86,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "frequency_THz": {
+          "value": 993.14,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "energy_cm": {
+          "value": 33127.48,
+          "unit": "cm^-1",
+          "quantity": "energy_cm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "d_num": {
+          "value": 0,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced",
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "Gamma_per_s_num": {
+          "value": 36140,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 5750,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 5.75 kHz",
+          "modelId": "legacy-rydberg-scaling-v1"
+        }
+      },
+      "views": {
+        "rydberg": {
+          "presentation": {
+            "id": "R5",
+            "lower": "³P₀",
+            "upper": "65³D₂",
+            "label": "³P₀ → 65³D₂ · ΔJ=2 (禁戒)",
+            "d_reduced_ea0": "0 (E1 禁戒)",
+            "linewidth_FWHM": "2π × 5.75 kHz",
+            "multipole": "E1",
+            "classification": "禁戒",
+            "forbidden_reason": "E1 禁戒：ΔJ=2 (J=0→J′=2)；约化矩阵元为零",
+            "selection_check": "ΔS=0 ✓, ΔJ=2 ✗(E1), 奇偶变 ✓",
+            "source": "理论估算 (E1 禁戒)",
+            "color": "#b8adc7"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_cm": "energy_cm",
+            "d_num": "d_num",
+            "Gamma_per_s_num": "Gamma_per_s_num"
+          },
+          "aliases": {},
+          "legacyNullValues": {}
+        }
+      }
+    },
+    {
+      "id": "R6",
+      "lowerLevelId": "yb171-6s6p-3p1",
+      "upperLevelId": "yb171-6s65s-3s1-triplet-connected",
+      "category": "rydberg",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 308.42,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "frequency_THz": {
+          "value": 972.02,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "energy_cm": {
+          "value": 32422.95,
+          "unit": "cm^-1",
+          "quantity": "energy_cm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "d_num": {
+          "value": 0.0667,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced",
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "Gamma_per_s_num": {
+          "value": 26660,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 4240,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 4.24 kHz",
+          "modelId": "legacy-rydberg-scaling-v1"
+        }
+      },
+      "views": {
+        "rydberg": {
+          "presentation": {
+            "id": "R6",
+            "lower": "³P₁",
+            "upper": "65³S₁",
+            "label": "³P₁ → 65³S₁ · 双光子中间态",
+            "d_reduced_ea0": "0.0667",
+            "linewidth_FWHM": "2π × 4.24 kHz",
+            "multipole": "E1",
+            "classification": "强",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=0 ✓, 奇偶变 ✓",
+            "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+            "color": "#a8c9b8"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_cm": "energy_cm",
+            "d_num": "d_num",
+            "Gamma_per_s_num": "Gamma_per_s_num"
+          },
+          "aliases": {},
+          "legacyNullValues": {}
+        }
+      }
+    },
+    {
+      "id": "R7",
+      "lowerLevelId": "yb171-6s6p-3p2",
+      "upperLevelId": "yb171-6s65s-3s1-triplet-connected",
+      "category": "rydberg",
+      "quantities": {
+        "wavelength_vac_nm": {
+          "value": 325.68,
+          "unit": "nm",
+          "quantity": "wavelength_vac_nm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "frequency_THz": {
+          "value": 920.5,
+          "unit": "THz",
+          "quantity": "frequency_THz",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "energy_cm": {
+          "value": 30704.57,
+          "unit": "cm^-1",
+          "quantity": "energy_cm",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "d_num": {
+          "value": 0.0957,
+          "unit": "e*a0",
+          "quantity": "d_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "J-reduced",
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "Gamma_per_s_num": {
+          "value": 26660,
+          "unit": "s^-1",
+          "quantity": "Gamma_per_s_num",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "legacy-not-rechecked",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": null,
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "linewidth_frequency_coefficient_Hz": {
+          "value": 4240,
+          "unit": "Hz",
+          "quantity": "legacy_linewidth_frequency_coefficient",
+          "sourceId": "legacy-scaling",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": null,
+          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "legacyText": "2π × 4.24 kHz",
+          "modelId": "legacy-rydberg-scaling-v1"
+        }
+      },
+      "views": {
+        "rydberg": {
+          "presentation": {
+            "id": "R7",
+            "lower": "³P₂",
+            "upper": "65³S₁",
+            "label": "³P₂ → 65³S₁ · 辅助路径",
+            "d_reduced_ea0": "0.0957",
+            "linewidth_FWHM": "2π × 4.24 kHz",
+            "multipole": "E1",
+            "classification": "强",
+            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=-1 ✓, 奇偶变 ✓",
+            "source": "理论估算 (n*⁻³/² 标度, Ma 2022)",
+            "color": "#8fb5c4"
+          },
+          "quantityFields": {
+            "wavelength_vac_nm": "wavelength_vac_nm",
+            "frequency_THz": "frequency_THz",
+            "energy_cm": "energy_cm",
+            "d_num": "d_num",
+            "Gamma_per_s_num": "Gamma_per_s_num"
+          },
+          "aliases": {},
+          "legacyNullValues": {}
+        }
+      }
+    }
+  ]
+}

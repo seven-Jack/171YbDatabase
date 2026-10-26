@@ -1,0 +1,18 @@
+name: 界面改进
+description: 说明用户操作、当前障碍与可检验的改善。
+title: "[界面] "
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: 操作与障碍
+      description: 对应模块、视口/设备、键盘或触屏、当前截图。
+    validations:
+      required: true
+  - type: textarea
+    id: target
+    attributes:
+      label: 建议与验收
+      description: 具体变化及同视口验收；首页完整能级图、科学含义和所有通道应保留。
+    validations:
+      required: true

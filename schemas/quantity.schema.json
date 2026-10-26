@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantity.schema.json",
+  "title": "Versioned physical quantity with evidence boundary",
+  "type": "object",
+  "required": ["value", "unit", "quantity", "sourceId", "sourceLocator", "evidenceKind", "reviewStatus", "uncertainty", "uncertaintyNote", "conditions", "convention"],
+  "additionalProperties": false,
+  "properties": {
+    "value": {"type": ["number", "null"]},
+    "unit": {"enum": ["nm", "THz", "eV", "cm^-1", "ns", "s", "s^-1", "Hz", "MHz", "GHz", "e*a0", "dimensionless"]},
+    "quantity": {"type": "string", "minLength": 1},
+    "sourceId": {"type": "string", "minLength": 1},
+    "sourceLocator": {"type": ["string", "null"]},
+    "evidenceKind": {"enum": ["legacy-unclassified", "literature-reported", "internal-calibration", "internal-calculation", "scaling-estimate", "derived"]},
+    "reviewStatus": {"enum": ["legacy-not-rechecked", "definition-needs-review", "original-source-located", "conflict-unresolved"]},
+    "uncertainty": {"type": ["number", "null"], "minimum": 0},
+    "uncertaintyNote": {"type": "string", "minLength": 1},
+    "conditions": {"type": ["object", "null"]},
+    "convention": {"type": ["string", "null"]},
+    "missingReason": {"type": "string", "minLength": 1},
+    "derivedFrom": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "modelId": {"type": "string", "minLength": 1},
+    "legacyText": {"type": "string"}
+  }
+}

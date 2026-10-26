@@ -1,0 +1,1007 @@
+{
+  "metadata": {
+    "sourceCommit": "2e2e9d5",
+    "sourceFile": "index.html",
+    "sourceSha256": "436e24e29203f732845899f3ffb553ccd921eec5ec0d056fed634c19a56b545d",
+    "purpose": "Legacy numeric regression snapshot; not physical validation",
+    "recordedAt": "2026-10-26"
+  },
+  "rabi": [
+    {
+      "args": [
+        0.543,
+        1,
+        50
+      ],
+      "result": {
+        "I0": 254647.90894703256,
+        "E0": 13851.61265789858,
+        "fR": 96240011.38142698,
+        "tPi": 5.195344356500079e-9
+      }
+    },
+    {
+      "args": [
+        0.00005305848973852661,
+        1,
+        50
+      ],
+      "result": {
+        "I0": 254647.90894703256,
+        "E0": 13851.61265789858,
+        "fR": 9403.958851412757,
+        "tPi": 0.00005316909696227403
+      }
+    },
+    {
+      "args": [
+        0.012533333333333334,
+        1,
+        50
+      ],
+      "result": {
+        "I0": 254647.90894703256,
+        "E0": 13851.61265789858,
+        "fR": 2221377.7949304204,
+        "tPi": 2.250855307643252e-7
+      }
+    },
+    {
+      "args": [
+        0.543,
+        0,
+        50
+      ],
+      "result": {
+        "I0": 0,
+        "E0": 0,
+        "fR": 0,
+        "tPi": null
+      }
+    },
+    {
+      "args": [
+        0.543,
+        100,
+        25
+      ],
+      "result": {
+        "I0": 101859163.57881303,
+        "E0": 277032.2531579716,
+        "fR": 1924800227.6285398,
+        "tPi": 2.597672178250039e-10
+      }
+    }
+  ],
+  "channels": [
+    {
+      "transition": "T2",
+      "parameters": {
+        "id": "T2",
+        "J": 0,
+        "Jp": 1,
+        "d": 0.543
+      },
+      "rows": [
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 0.5,
+          "mp": -0.5,
+          "q": 0,
+          "cgVal": -0.5773502691896257,
+          "matEl": 0.18100000000000005,
+          "angFactor": 0.3333333333333334
+        },
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 0.5,
+          "mp": 0.5,
+          "q": 1,
+          "cgVal": -0.816496580927726,
+          "matEl": 0.25597265478953024,
+          "angFactor": 0.47140452079103173
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 0.5,
+          "mp": -0.5,
+          "q": -1,
+          "cgVal": 0.816496580927726,
+          "matEl": -0.25597265478953024,
+          "angFactor": -0.47140452079103173
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 0.5,
+          "mp": 0.5,
+          "q": 0,
+          "cgVal": 0.5773502691896257,
+          "matEl": -0.18100000000000005,
+          "angFactor": -0.3333333333333334
+        },
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 1.5,
+          "mp": -1.5,
+          "q": -1,
+          "cgVal": 0.9999999999999999,
+          "matEl": 0.3135011961699668,
+          "angFactor": 0.5773502691896257
+        },
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 1.5,
+          "mp": -0.5,
+          "q": 0,
+          "cgVal": 0.816496580927726,
+          "matEl": 0.25597265478953024,
+          "angFactor": 0.47140452079103173
+        },
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 1.5,
+          "mp": 0.5,
+          "q": 1,
+          "cgVal": 0.5773502691896257,
+          "matEl": 0.18100000000000002,
+          "angFactor": 0.33333333333333337
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 1.5,
+          "mp": -0.5,
+          "q": -1,
+          "cgVal": 0.5773502691896257,
+          "matEl": 0.18100000000000002,
+          "angFactor": 0.33333333333333337
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 1.5,
+          "mp": 0.5,
+          "q": 0,
+          "cgVal": 0.816496580927726,
+          "matEl": 0.25597265478953024,
+          "angFactor": 0.47140452079103173
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 1.5,
+          "mp": 1.5,
+          "q": 1,
+          "cgVal": 0.9999999999999999,
+          "matEl": 0.3135011961699668,
+          "angFactor": 0.5773502691896257
+        }
+      ]
+    },
+    {
+      "transition": "T3",
+      "parameters": {
+        "id": "T3",
+        "J": 0,
+        "Jp": 0,
+        "d": 0.0000919,
+        "hf": true
+      },
+      "rows": [
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 0.5,
+          "mp": -0.5,
+          "q": 0,
+          "cgVal": -0.5773502691896257,
+          "matEl": -0.000037518017893629004,
+          "angFactor": -0.40824829046386296
+        },
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 0.5,
+          "mp": 0.5,
+          "q": 1,
+          "cgVal": -0.816496580927726,
+          "matEl": -0.00005305848973852661,
+          "angFactor": -0.5773502691896257
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 0.5,
+          "mp": -0.5,
+          "q": -1,
+          "cgVal": 0.816496580927726,
+          "matEl": 0.00005305848973852661,
+          "angFactor": 0.5773502691896257
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 0.5,
+          "mp": 0.5,
+          "q": 0,
+          "cgVal": 0.5773502691896257,
+          "matEl": 0.000037518017893629004,
+          "angFactor": 0.40824829046386296
+        }
+      ]
+    },
+    {
+      "transition": "R2",
+      "parameters": {
+        "id": "R2",
+        "J": 0,
+        "Jp": 1,
+        "d": 0.0376
+      },
+      "rows": [
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 0.5,
+          "mp": -0.5,
+          "q": 0,
+          "cgVal": -0.5773502691896257,
+          "matEl": 0.012533333333333336,
+          "angFactor": 0.33333333333333337
+        },
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 0.5,
+          "mp": 0.5,
+          "q": 1,
+          "cgVal": -0.816496580927726,
+          "matEl": 0.017724809981742796,
+          "angFactor": 0.4714045207910318
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 0.5,
+          "mp": -0.5,
+          "q": -1,
+          "cgVal": 0.816496580927726,
+          "matEl": -0.017724809981742796,
+          "angFactor": -0.4714045207910318
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 0.5,
+          "mp": 0.5,
+          "q": 0,
+          "cgVal": 0.5773502691896257,
+          "matEl": -0.012533333333333336,
+          "angFactor": -0.33333333333333337
+        },
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 1.5,
+          "mp": -1.5,
+          "q": -1,
+          "cgVal": 0.9999999999999999,
+          "matEl": 0.02170837012152993,
+          "angFactor": 0.5773502691896257
+        },
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 1.5,
+          "mp": -0.5,
+          "q": 0,
+          "cgVal": 0.816496580927726,
+          "matEl": 0.017724809981742796,
+          "angFactor": 0.4714045207910318
+        },
+        {
+          "F": 0.5,
+          "m": -0.5,
+          "Fp": 1.5,
+          "mp": 0.5,
+          "q": 1,
+          "cgVal": 0.5773502691896257,
+          "matEl": 0.012533333333333336,
+          "angFactor": 0.33333333333333337
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 1.5,
+          "mp": -0.5,
+          "q": -1,
+          "cgVal": 0.5773502691896257,
+          "matEl": 0.012533333333333336,
+          "angFactor": 0.33333333333333337
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 1.5,
+          "mp": 0.5,
+          "q": 0,
+          "cgVal": 0.816496580927726,
+          "matEl": 0.017724809981742796,
+          "angFactor": 0.4714045207910318
+        },
+        {
+          "F": 0.5,
+          "m": 0.5,
+          "Fp": 1.5,
+          "mp": 1.5,
+          "q": 1,
+          "cgVal": 0.9999999999999999,
+          "matEl": 0.02170837012152993,
+          "angFactor": 0.5773502691896257
+        }
+      ]
+    }
+  ],
+  "estimates": [
+    {
+      "args": [
+        50,
+        2.523,
+        50443.0676
+      ],
+      "result": {
+        "n": 50,
+        "nstar": "47.477",
+        "energy_cm": "50394.38",
+        "binding_cm": "48.6842",
+        "radius_um": "0.018",
+        "lifetime_us": "16.5",
+        "C6_ghz_um6": "7.5",
+        "blockade_um": "4.42"
+      }
+    },
+    {
+      "args": [
+        57,
+        2.523,
+        50443.0676
+      ],
+      "result": {
+        "n": 57,
+        "nstar": "54.477",
+        "energy_cm": "50406.09",
+        "binding_cm": "36.9767",
+        "radius_um": "0.024",
+        "lifetime_us": "24.9",
+        "C6_ghz_um6": "34.0",
+        "blockade_um": "5.69"
+      }
+    },
+    {
+      "args": [
+        65,
+        2.523,
+        50443.0676
+      ],
+      "result": {
+        "n": 65,
+        "nstar": "62.477",
+        "energy_cm": "50414.95",
+        "binding_cm": "28.1134",
+        "radius_um": "0.031",
+        "lifetime_us": "37.5",
+        "C6_ghz_um6": "153.5",
+        "blockade_um": "7.32"
+      }
+    },
+    {
+      "args": [
+        80,
+        2.523,
+        50443.0676
+      ],
+      "result": {
+        "n": 80,
+        "nstar": "77.477",
+        "energy_cm": "50424.79",
+        "binding_cm": "18.2814",
+        "radius_um": "0.048",
+        "lifetime_us": "71.5",
+        "C6_ghz_um6": "1636.9",
+        "blockade_um": "10.86"
+      }
+    }
+  ],
+  "linewidthDipole": [
+    {
+      "args": [
+        182400,
+        555.8007
+      ],
+      "value": 0.31163603141690294
+    }
+  ],
+  "allEstimates": [
+    {
+      "series": "6sns ³S₁",
+      "term": "³S₁",
+      "parity": "even",
+      "J": 1,
+      "n": 50,
+      "nstar": "47.477",
+      "energy_cm": "50394.38",
+      "binding_cm": "48.6842",
+      "radius_um": "0.018",
+      "lifetime_us": "16.5",
+      "C6_ghz_um6": "7.5",
+      "blockade_um": "4.42",
+      "source": "理论估算 (量子亏损 δ≈2.52)"
+    },
+    {
+      "series": "6sns ³S₁",
+      "term": "³S₁",
+      "parity": "even",
+      "J": 1,
+      "n": 55,
+      "nstar": "52.477",
+      "energy_cm": "50403.22",
+      "binding_cm": "39.8489",
+      "radius_um": "0.022",
+      "lifetime_us": "22.2",
+      "C6_ghz_um6": "22.5",
+      "blockade_um": "5.31",
+      "source": "理论估算 (量子亏损 δ≈2.52)"
+    },
+    {
+      "series": "6sns ³S₁",
+      "term": "³S₁",
+      "parity": "even",
+      "J": 1,
+      "n": 60,
+      "nstar": "57.477",
+      "energy_cm": "50409.85",
+      "binding_cm": "33.2174",
+      "radius_um": "0.026",
+      "lifetime_us": "29.2",
+      "C6_ghz_um6": "61.3",
+      "blockade_um": "6.28",
+      "source": "理论估算 (量子亏损 δ≈2.52)"
+    },
+    {
+      "series": "6sns ³S₁",
+      "term": "³S₁",
+      "parity": "even",
+      "J": 1,
+      "n": 65,
+      "nstar": "62.477",
+      "energy_cm": "50414.95",
+      "binding_cm": "28.1134",
+      "radius_um": "0.031",
+      "lifetime_us": "37.5",
+      "C6_ghz_um6": "153.5",
+      "blockade_um": "7.32",
+      "source": "理论估算 (量子亏损 δ≈2.52)"
+    },
+    {
+      "series": "6sns ³S₁",
+      "term": "³S₁",
+      "parity": "even",
+      "J": 1,
+      "n": 70,
+      "nstar": "67.477",
+      "energy_cm": "50418.97",
+      "binding_cm": "24.1014",
+      "radius_um": "0.036",
+      "lifetime_us": "47.2",
+      "C6_ghz_um6": "358.0",
+      "blockade_um": "8.43",
+      "source": "理论估算 (量子亏损 δ≈2.52)"
+    },
+    {
+      "series": "6sns ³S₁",
+      "term": "³S₁",
+      "parity": "even",
+      "J": 1,
+      "n": 75,
+      "nstar": "72.477",
+      "energy_cm": "50422.18",
+      "binding_cm": "20.8907",
+      "radius_um": "0.042",
+      "lifetime_us": "58.5",
+      "C6_ghz_um6": "785.8",
+      "blockade_um": "9.61",
+      "source": "理论估算 (量子亏损 δ≈2.52)"
+    },
+    {
+      "series": "6sns ³S₁",
+      "term": "³S₁",
+      "parity": "even",
+      "J": 1,
+      "n": 80,
+      "nstar": "77.477",
+      "energy_cm": "50424.79",
+      "binding_cm": "18.2814",
+      "radius_um": "0.048",
+      "lifetime_us": "71.5",
+      "C6_ghz_um6": "1636.9",
+      "blockade_um": "10.86",
+      "source": "理论估算 (量子亏损 δ≈2.52)"
+    },
+    {
+      "series": "6snd ³D₁",
+      "term": "³D₁",
+      "parity": "even",
+      "J": 1,
+      "n": 50,
+      "nstar": "48.590",
+      "energy_cm": "50396.59",
+      "binding_cm": "46.4794",
+      "radius_um": "0.019",
+      "lifetime_us": "12.3",
+      "C6_ghz_um6": "3.9",
+      "blockade_um": "3.96",
+      "source": "理论估算 (量子亏损 δ≈1.41)"
+    },
+    {
+      "series": "6snd ³D₁",
+      "term": "³D₁",
+      "parity": "even",
+      "J": 1,
+      "n": 55,
+      "nstar": "53.590",
+      "energy_cm": "50404.86",
+      "binding_cm": "38.2109",
+      "radius_um": "0.023",
+      "lifetime_us": "16.6",
+      "C6_ghz_um6": "11.4",
+      "blockade_um": "4.74",
+      "source": "理论估算 (量子亏损 δ≈1.41)"
+    },
+    {
+      "series": "6snd ³D₁",
+      "term": "³D₁",
+      "parity": "even",
+      "J": 1,
+      "n": 60,
+      "nstar": "58.590",
+      "energy_cm": "50411.10",
+      "binding_cm": "31.9674",
+      "radius_um": "0.027",
+      "lifetime_us": "21.6",
+      "C6_ghz_um6": "30.3",
+      "blockade_um": "5.58",
+      "source": "理论估算 (量子亏损 δ≈1.41)"
+    },
+    {
+      "series": "6snd ³D₁",
+      "term": "³D₁",
+      "parity": "even",
+      "J": 1,
+      "n": 65,
+      "nstar": "63.590",
+      "energy_cm": "50415.93",
+      "binding_cm": "27.1379",
+      "radius_um": "0.032",
+      "lifetime_us": "27.6",
+      "C6_ghz_um6": "74.6",
+      "blockade_um": "6.49",
+      "source": "理论估算 (量子亏损 δ≈1.41)"
+    },
+    {
+      "series": "6snd ³D₁",
+      "term": "³D₁",
+      "parity": "even",
+      "J": 1,
+      "n": 70,
+      "nstar": "68.590",
+      "energy_cm": "50419.74",
+      "binding_cm": "23.3256",
+      "radius_um": "0.037",
+      "lifetime_us": "34.7",
+      "C6_ghz_um6": "171.4",
+      "blockade_um": "7.45",
+      "source": "理论估算 (量子亏损 δ≈1.41)"
+    },
+    {
+      "series": "6snd ³D₁",
+      "term": "³D₁",
+      "parity": "even",
+      "J": 1,
+      "n": 75,
+      "nstar": "73.590",
+      "energy_cm": "50422.80",
+      "binding_cm": "20.2636",
+      "radius_um": "0.043",
+      "lifetime_us": "42.9",
+      "C6_ghz_um6": "371.7",
+      "blockade_um": "8.48",
+      "source": "理论估算 (量子亏损 δ≈1.41)"
+    },
+    {
+      "series": "6snd ³D₁",
+      "term": "³D₁",
+      "parity": "even",
+      "J": 1,
+      "n": 80,
+      "nstar": "78.590",
+      "energy_cm": "50425.30",
+      "binding_cm": "17.7672",
+      "radius_um": "0.049",
+      "lifetime_us": "52.2",
+      "C6_ghz_um6": "766.0",
+      "blockade_um": "9.57",
+      "source": "理论估算 (量子亏损 δ≈1.41)"
+    },
+    {
+      "series": "6snd ³D₂",
+      "term": "³D₂",
+      "parity": "even",
+      "J": 2,
+      "n": 50,
+      "nstar": "48.580",
+      "energy_cm": "50396.57",
+      "binding_cm": "46.4985",
+      "radius_um": "0.019",
+      "lifetime_us": "12.3",
+      "C6_ghz_um6": "4.8",
+      "blockade_um": "4.11",
+      "source": "理论估算 (量子亏损 δ≈1.42)"
+    },
+    {
+      "series": "6snd ³D₂",
+      "term": "³D₂",
+      "parity": "even",
+      "J": 2,
+      "n": 55,
+      "nstar": "53.580",
+      "energy_cm": "50404.84",
+      "binding_cm": "38.2251",
+      "radius_um": "0.023",
+      "lifetime_us": "16.6",
+      "C6_ghz_um6": "14.2",
+      "blockade_um": "4.92",
+      "source": "理论估算 (量子亏损 δ≈1.42)"
+    },
+    {
+      "series": "6snd ³D₂",
+      "term": "³D₂",
+      "parity": "even",
+      "J": 2,
+      "n": 60,
+      "nstar": "58.580",
+      "energy_cm": "50411.09",
+      "binding_cm": "31.9783",
+      "radius_um": "0.027",
+      "lifetime_us": "21.6",
+      "C6_ghz_um6": "37.8",
+      "blockade_um": "5.79",
+      "source": "理论估算 (量子亏损 δ≈1.42)"
+    },
+    {
+      "series": "6snd ³D₂",
+      "term": "³D₂",
+      "parity": "even",
+      "J": 2,
+      "n": 65,
+      "nstar": "63.580",
+      "energy_cm": "50415.92",
+      "binding_cm": "27.1465",
+      "radius_um": "0.032",
+      "lifetime_us": "27.6",
+      "C6_ghz_um6": "93.0",
+      "blockade_um": "6.73",
+      "source": "理论估算 (量子亏损 δ≈1.42)"
+    },
+    {
+      "series": "6snd ³D₂",
+      "term": "³D₂",
+      "parity": "even",
+      "J": 2,
+      "n": 70,
+      "nstar": "68.580",
+      "energy_cm": "50419.74",
+      "binding_cm": "23.3324",
+      "radius_um": "0.037",
+      "lifetime_us": "34.7",
+      "C6_ghz_um6": "213.9",
+      "blockade_um": "7.73",
+      "source": "理论估算 (量子亏损 δ≈1.42)"
+    },
+    {
+      "series": "6snd ³D₂",
+      "term": "³D₂",
+      "parity": "even",
+      "J": 2,
+      "n": 75,
+      "nstar": "73.580",
+      "energy_cm": "50422.80",
+      "binding_cm": "20.2691",
+      "radius_um": "0.043",
+      "lifetime_us": "42.9",
+      "C6_ghz_um6": "463.9",
+      "blockade_um": "8.80",
+      "source": "理论估算 (量子亏损 δ≈1.42)"
+    },
+    {
+      "series": "6snd ³D₂",
+      "term": "³D₂",
+      "parity": "even",
+      "J": 2,
+      "n": 80,
+      "nstar": "78.580",
+      "energy_cm": "50425.30",
+      "binding_cm": "17.7718",
+      "radius_um": "0.049",
+      "lifetime_us": "52.2",
+      "C6_ghz_um6": "956.1",
+      "blockade_um": "9.93",
+      "source": "理论估算 (量子亏损 δ≈1.42)"
+    }
+  ],
+  "rydbergTransitions": {
+    "input": [
+      {
+        "id": "R1",
+        "lower": "³P₀",
+        "upper": "50³S₁",
+        "label": "³P₀ → 50³S₁ · CZ 门 (低 n)",
+        "wavelength_vac_nm": 302.06,
+        "frequency_THz": 992.49,
+        "energy_cm": 33105.94,
+        "d_num": 0.0568,
+        "d_reduced_ea0": "0.0568",
+        "Gamma_per_s_num": 60760,
+        "linewidth_FWHM": "2π × 9.67 kHz",
+        "multipole": "E1",
+        "classification": "强",
+        "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+        "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+        "color": "#c7a98c"
+      },
+      {
+        "id": "R2",
+        "lower": "³P₀",
+        "upper": "65³S₁",
+        "label": "³P₀ → 65³S₁ · CZ 门",
+        "wavelength_vac_nm": 301.87,
+        "frequency_THz": 993.11,
+        "energy_cm": 33126.52,
+        "d_num": 0.0376,
+        "d_reduced_ea0": "0.0376",
+        "Gamma_per_s_num": 26660,
+        "linewidth_FWHM": "2π × 4.24 kHz",
+        "multipole": "E1",
+        "classification": "强",
+        "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+        "source": "矩阵元：This work；波长 / 寿命：现有标度估算；实验参见 [4] Muniz 2025，附录 D",
+        "color": "#b08f76"
+      },
+      {
+        "id": "R3",
+        "lower": "³P₀",
+        "upper": "80³S₁",
+        "label": "³P₀ → 80³S₁ · CZ 门 (高 n)",
+        "wavelength_vac_nm": 301.78,
+        "frequency_THz": 993.4,
+        "energy_cm": 33136.35,
+        "d_num": 0.0272,
+        "d_reduced_ea0": "0.0272",
+        "Gamma_per_s_num": 13980,
+        "linewidth_FWHM": "2π × 2.23 kHz",
+        "multipole": "E1",
+        "classification": "强",
+        "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+        "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+        "color": "#d9c3a8"
+      },
+      {
+        "id": "R4",
+        "lower": "³P₀",
+        "upper": "65³D₁",
+        "label": "³P₀ → 65³D₁",
+        "wavelength_vac_nm": 301.86,
+        "frequency_THz": 993.14,
+        "energy_cm": 33127.49,
+        "d_num": 0.0535,
+        "d_reduced_ea0": "0.0535",
+        "Gamma_per_s_num": 36130,
+        "linewidth_FWHM": "2π × 5.75 kHz",
+        "multipole": "E1",
+        "classification": "强",
+        "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+        "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+        "color": "#9e92b0"
+      },
+      {
+        "id": "R5",
+        "lower": "³P₀",
+        "upper": "65³D₂",
+        "label": "³P₀ → 65³D₂ · ΔJ=2 (禁戒)",
+        "wavelength_vac_nm": 301.86,
+        "frequency_THz": 993.14,
+        "energy_cm": 33127.48,
+        "d_num": 0,
+        "d_reduced_ea0": "0 (E1 禁戒)",
+        "Gamma_per_s_num": 36140,
+        "linewidth_FWHM": "2π × 5.75 kHz",
+        "multipole": "E1",
+        "classification": "禁戒",
+        "forbidden_reason": "E1 禁戒：ΔJ=2 (J=0→J′=2)；约化矩阵元为零",
+        "selection_check": "ΔS=0 ✓, ΔJ=2 ✗(E1), 奇偶变 ✓",
+        "source": "理论估算 (E1 禁戒)",
+        "color": "#b8adc7"
+      },
+      {
+        "id": "R6",
+        "lower": "³P₁",
+        "upper": "65³S₁",
+        "label": "³P₁ → 65³S₁ · 双光子中间态",
+        "wavelength_vac_nm": 308.42,
+        "frequency_THz": 972.02,
+        "energy_cm": 32422.95,
+        "d_num": 0.0667,
+        "d_reduced_ea0": "0.0667",
+        "Gamma_per_s_num": 26660,
+        "linewidth_FWHM": "2π × 4.24 kHz",
+        "multipole": "E1",
+        "classification": "强",
+        "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=0 ✓, 奇偶变 ✓",
+        "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+        "color": "#a8c9b8"
+      },
+      {
+        "id": "R7",
+        "lower": "³P₂",
+        "upper": "65³S₁",
+        "label": "³P₂ → 65³S₁ · 辅助路径",
+        "wavelength_vac_nm": 325.68,
+        "frequency_THz": 920.5,
+        "energy_cm": 30704.57,
+        "d_num": 0.0957,
+        "d_reduced_ea0": "0.0957",
+        "Gamma_per_s_num": 26660,
+        "linewidth_FWHM": "2π × 4.24 kHz",
+        "multipole": "E1",
+        "classification": "强",
+        "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=-1 ✓, 奇偶变 ✓",
+        "source": "理论估算 (n*⁻³/² 标度, Ma 2022)",
+        "color": "#8fb5c4"
+      }
+    ],
+    "output": [
+      {
+        "id": "R1",
+        "lower": "³P₀",
+        "upper": "50³S₁",
+        "upper_full": "6s50s ³S₁",
+        "label": "³P₀ → 50³S₁ · CZ 门 (低 n)",
+        "n": 50,
+        "energy_cm": 33105.94,
+        "wavelength_vac_nm": 302.06,
+        "frequency_THz": 992.49,
+        "excitation": "单光子",
+        "rab_freq": "2π × 1–10 MHz",
+        "multipole": "E1",
+        "classification": "强",
+        "forbidden_reason": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+        "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+        "color": "#c7a98c"
+      },
+      {
+        "id": "R2",
+        "lower": "³P₀",
+        "upper": "65³S₁",
+        "upper_full": "6s65s ³S₁",
+        "label": "³P₀ → 65³S₁ · CZ 门",
+        "n": 65,
+        "energy_cm": 33126.52,
+        "wavelength_vac_nm": 301.87,
+        "frequency_THz": 993.11,
+        "excitation": "单光子",
+        "rab_freq": "2π × 1–10 MHz",
+        "multipole": "E1",
+        "classification": "强",
+        "forbidden_reason": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+        "source": "矩阵元：This work；波长 / 寿命：现有标度估算；实验参见 [4] Muniz 2025，附录 D",
+        "color": "#b08f76"
+      },
+      {
+        "id": "R3",
+        "lower": "³P₀",
+        "upper": "80³S₁",
+        "upper_full": "6s80s ³S₁",
+        "label": "³P₀ → 80³S₁ · CZ 门 (高 n)",
+        "n": 80,
+        "energy_cm": 33136.35,
+        "wavelength_vac_nm": 301.78,
+        "frequency_THz": 993.4,
+        "excitation": "单光子",
+        "rab_freq": "2π × 1–10 MHz",
+        "multipole": "E1",
+        "classification": "强",
+        "forbidden_reason": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+        "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+        "color": "#d9c3a8"
+      },
+      {
+        "id": "R4",
+        "lower": "³P₀",
+        "upper": "65³D₁",
+        "upper_full": "6s65d ³D₁",
+        "label": "³P₀ → 65³D₁",
+        "n": 65,
+        "energy_cm": 33127.49,
+        "wavelength_vac_nm": 301.86,
+        "frequency_THz": 993.14,
+        "excitation": "单光子",
+        "rab_freq": "2π × 1–10 MHz",
+        "multipole": "E1",
+        "classification": "强",
+        "forbidden_reason": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+        "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+        "color": "#9e92b0"
+      },
+      {
+        "id": "R5",
+        "lower": "³P₀",
+        "upper": "65³D₂",
+        "upper_full": "6s65d ³D₂",
+        "label": "³P₀ → 65³D₂ · ΔJ=2 (禁戒)",
+        "n": 65,
+        "energy_cm": 33127.48,
+        "wavelength_vac_nm": 301.86,
+        "frequency_THz": 993.14,
+        "excitation": "单光子",
+        "rab_freq": "2π × <10 kHz (估计)",
+        "multipole": "E1",
+        "classification": "禁戒",
+        "forbidden_reason": "E1 禁戒：ΔJ=2 (J=0→J′=2)；约化矩阵元为零",
+        "source": "理论估算 (E1 禁戒)",
+        "color": "#b8adc7"
+      },
+      {
+        "id": "R6",
+        "lower": "³P₁",
+        "upper": "65³S₁",
+        "upper_full": "6s65s ³S₁",
+        "label": "³P₁ → 65³S₁ · 双光子中间态",
+        "n": 65,
+        "energy_cm": 32422.95,
+        "wavelength_vac_nm": 308.42,
+        "frequency_THz": 972.02,
+        "excitation": "单光子",
+        "rab_freq": "2π × 1–10 MHz",
+        "multipole": "E1",
+        "classification": "强",
+        "forbidden_reason": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=0 ✓, 奇偶变 ✓",
+        "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+        "color": "#a8c9b8"
+      },
+      {
+        "id": "R7",
+        "lower": "³P₂",
+        "upper": "65³S₁",
+        "upper_full": "6s65s ³S₁",
+        "label": "³P₂ → 65³S₁ · 辅助路径",
+        "n": 65,
+        "energy_cm": 30704.57,
+        "wavelength_vac_nm": 325.68,
+        "frequency_THz": 920.5,
+        "excitation": "单光子",
+        "rab_freq": "2π × 1–10 MHz",
+        "multipole": "E1",
+        "classification": "强",
+        "forbidden_reason": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=-1 ✓, 奇偶变 ✓",
+        "source": "理论估算 (n*⁻³/² 标度, Ma 2022)",
+        "color": "#8fb5c4"
+      }
+    ]
+  }
+}

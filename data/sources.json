@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "references": [
+    {
+      "id": "ref-01",
+      "referenceNumber": 1,
+      "title": "Kroeze, Kristensen, Pucher",
+      "detail": "Reference Data for ¹⁷¹Yb: Energies, Lifetimes, Hyperfine & Reduced Matrix Elements",
+      "publication": "arXiv:2509.04416v2 (2026) · 待发表",
+      "url": "https://arxiv.org/abs/2509.04416v2",
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-02",
+      "referenceNumber": 2,
+      "title": "Peper et al.",
+      "detail": "Spectroscopy and Modeling of ¹⁷¹Yb Rydberg States for High-Fidelity Two-Qubit Gates",
+      "publication": "Phys. Rev. X 15, 011009 (2025)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-03",
+      "referenceNumber": 3,
+      "title": "Kuroda, Hughes, Poitrinal, Peper, Thompson",
+      "detail": "Microwave Spectroscopy and MQDT Analysis of Yb Rydberg States",
+      "publication": "Phys. Rev. A 112, 042817 (2025)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-04",
+      "referenceNumber": 4,
+      "title": "Muniz et al.",
+      "detail": "High-Fidelity Universal Gates in the ¹⁷¹Yb Ground-State Nuclear-Spin Qubit",
+      "publication": "PRX Quantum 6, 020334 (2025)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-05",
+      "referenceNumber": 5,
+      "title": "Ma et al.",
+      "detail": "Universal Gate Operations on Nuclear Spin Qubits in an Optical Tweezer Array of ¹⁷¹Yb Atoms",
+      "publication": "Phys. Rev. X 12, 021028 (2022)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-06",
+      "referenceNumber": 6,
+      "title": "Okuno et al.",
+      "detail": "High-Resolution Spectroscopy and Single-Photon Rydberg Excitation of Reconfigurable Yb Atom Tweezer Arrays",
+      "publication": "J. Phys. Soc. Jpn. 91, 084301 (2022)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-07",
+      "referenceNumber": 7,
+      "title": "Wilson et al.",
+      "detail": "Trapping Alkaline Earth Rydberg Atoms in Optical Tweezer Arrays",
+      "publication": "Phys. Rev. Lett. 128, 033201 (2022)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-08",
+      "referenceNumber": 8,
+      "title": "Saskin et al.",
+      "detail": "Narrow-Line Cooling and Imaging of Ytterbium Atoms in an Optical Tweezer Array",
+      "publication": "Phys. Rev. Lett. 122, 143002 (2019)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-09",
+      "referenceNumber": 9,
+      "title": "Burgers et al.",
+      "detail": "Controlling Rydberg Excitation through an Ion-Core Transition",
+      "publication": "PRX Quantum 3, 020326 (2022)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-10",
+      "referenceNumber": 10,
+      "title": "Halter et al.",
+      "detail": "Trap-Loss Spectroscopy of Rydberg States in Yb",
+      "publication": "J. Phys. B 56, 055001 (2023)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-11",
+      "referenceNumber": 11,
+      "title": "Lehec et al.",
+      "detail": "Laser and Microwave Spectroscopy of Even-Parity Rydberg States of Yb and MQDT Analysis",
+      "publication": "Phys. Rev. A 98, 062506 (2018)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-12",
+      "referenceNumber": 12,
+      "title": "Aymar et al.",
+      "detail": "Three-Step Laser Spectroscopy and MQDT Analysis of Yb Rydberg States",
+      "publication": "J. Phys. B 17, 3645 (1984)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-13",
+      "referenceNumber": 13,
+      "title": "Fisk et al.",
+      "detail": "¹⁷¹Yb⁺ 12.6 GHz Hyperfine Clock Transition Precision Measurement",
+      "publication": "IEEE Trans. Instrum. Meas. 46, 457 (1997)",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-14",
+      "referenceNumber": 14,
+      "title": "NIST Atomic Spectra Database",
+      "detail": "Yb I Energy Levels and Transition Probabilities",
+      "publication": "https://physics.nist.gov/asd",
+      "url": "https://physics.nist.gov/asd",
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-15",
+      "referenceNumber": 15,
+      "title": "Chen et al.",
+      "detail": "Analyzing the Rydberg-based optical-metastable-ground architecture for ¹⁷¹Yb nuclear spins",
+      "publication": "Phys. Rev. A 105, 052438 (2022) · Fig. 2 · 10.1103/PhysRevA.105.052438",
+      "url": "https://doi.org/10.1103/PhysRevA.105.052438",
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-16",
+      "referenceNumber": 16,
+      "title": "Ma et al.",
+      "detail": "High-fidelity gates and mid-circuit erasure conversion in an atomic qubit",
+      "publication": "Nature 622, 279–284 (2023) · 6s59s · 10.1038/s41586-023-06438-1",
+      "url": "https://doi.org/10.1038/s41586-023-06438-1",
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "ref-17",
+      "referenceNumber": 17,
+      "title": "This work",
+      "detail": "³P₀ → 6s65s ³S₁ 电子态约化偶极矩阵元",
+      "publication": "d = 0.0376 ea₀ · 本工作计算",
+      "url": null,
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    }
+  ],
+  "sources": [
+    {
+      "id": "legacy-levels",
+      "title": "Existing level catalog at commit 2e2e9d5",
+      "detail": "Original root index.html CORE_LEVELS and RYDBERG_QC_DATA; no independent original-source reconciliation performed in this migration.",
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "legacy-hfs",
+      "title": "Existing hyperfine catalog at commit 2e2e9d5",
+      "detail": "Original HYPERFINE_DATA; literature A constants and scaled Rydberg estimates retain their existing values and unresolved source status.",
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "legacy-scaling",
+      "title": "Existing scaling estimates",
+      "detail": "Original calcRydberg and RYDBERG_QC_TRANSITIONS; approximate single-channel/scaling values, not independently validated state-specific predictions.",
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "internal-t2-calibration",
+      "title": "T2 internal calibration",
+      "detail": "Original record uses 0.543 ea0 and separately states literature 0.5398(6) ea0. This migration preserves the distinction; calibration rationale and source require independent review.",
+      "conflicts": [
+        {
+          "field": "dipole",
+          "adoptedValue": 0.543,
+          "reportedLiteratureText": "0.5398(6)",
+          "unit": "e*a0",
+          "resolution": "unresolved; current software baseline retained"
+        }
+      ],
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "internal-t3-20260908",
+      "title": "T3 internal supplement dated 2026-09-08",
+      "detail": "Original record specifies an effective F-reduced matrix element 9.19e-5 ea0; not a bare J=0 to J=0 E1 reduced element.",
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    },
+    {
+      "id": "this-work-hyperfine-65s",
+      "title": "This work: saved 65S zero-field data",
+      "detail": "Existing assets/05.21_yb171_65s_hyperfine.csv and original data card; no new MQDT calculation or original-run audit performed.",
+      "artifactLocator": "05.21_yb171_65s_hyperfine.ipynb / R005 saved results; original page refers to R008 for three zero-field roots",
+      "artifactSha256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec",
+      "notebookRevision": null,
+      "runInputHash": null,
+      "physicalValidation": "not-established-in-this-migration",
+      "reviewStatus": "legacy-not-rechecked",
+      "reviewedAt": null,
+      "rightsStatus": "not-established"
+    }
+  ]
+}
