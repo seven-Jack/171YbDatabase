@@ -1,6 +1,8 @@
 import {formatLifetime} from './format.js';
 import {getQuantity,getSourceRecord} from '../data/catalog.js';
 import {createFieldView,renderFieldSourceHTML,escapeHTML,formatFrequency} from './source-panel.js';
+import {DIAGRAM_SUPPLEMENTAL_SOURCE_COUNT,renderDiagramProvenanceIndexHTML} from './diagram-references.js';
+import {renderCompactTooltip} from './compact-tooltip.js';
 
 export const CORE_SUMMARY_COLUMNS=Object.freeze(['id','label','wavelength_vac_nm','d_num','source']);
 const NUMERIC_COLUMNS=new Set(['wavelength_vac_nm','frequency_THz','energy_eV','lifetime_ns','Gamma_per_s_num','oscillator_strength_f_num','d_num','n','nstar','energy_cm','binding_cm','radius_um','lifetime_us','C6_ghz_um6','blockade_um','delta0','delta2']);
@@ -32,8 +34,22 @@ export function formatLinewidthDisplay(row) {
     frequencyText:coefficient?.value!==null&&Number.isFinite(coefficient?.value)?formatFrequency(coefficient.value):'频率系数待核查',
     originalText:coefficient?.legacyText||row.linewidth_FWHM||'原记录缺失',
     decayText:Number.isFinite(row.Gamma_per_s_num)?`${row.Gamma_per_s_num} s⁻¹`:'缺失',
-    reviewText:'按当前页面线宽频率约定展示保存系数；原文定义尚未重核'
+    reviewText:coefficient?.conditions?.sourceConflict?'按原文式(47)展示 Δν=Γ/2π；表内多写的 2π 作为来源冲突保留':'按当前页面线宽频率约定展示保存系数；该记录定义待核查'
   };
+}
+
+// A per-field summary keeps provenance attached to the quantity that owns it.
+// Full source conditions remain in the table's existing source disclosures.
+export function buildTableTooltipModel(row,column,tableId='core',title=null) {
+  const field=createFieldView(row.id,column),quantity=getQuantity(row.id,column);
+  if (!field) return {id:row.id||'',title:title||column,rows:[{label:'数值',value:String(row[column]??'未提供')}],footnote:'来源待补充'};
+  let value=field.valueText;
+  if (row.approximate&&['wavelength_vac_nm','frequency_THz','energy_eV','energy_cm'].includes(column)&&quantity?.value!==null) value='≈'+value;
+  const rows=[{label:'数值',value,sourceIds:quantity?.sourceId?[quantity.sourceId]:[]}];
+  if (field.convention&&column!=='linewidth_frequency_coefficient_Hz') rows.push({label:'约定',value:field.convention});
+  rows.push({label:'依据',value:field.kind});
+  const footnote=column==='linewidth_frequency_coefficient_Hz'&&quantity?.conditions?.sourceConflict?'Δν=Γ/2π · 原表 2π 标注冲突':column==='lifetime_ns'?(quantity?.conditions?.sourceEvidenceType?'总辐射寿命 · 条件见来源':'定义待核查 · 寿命条件未注明'):field.review;
+  return {id:row.id||'',title:title||field.label,rows,footnote};
 }
 
 function sourceSummaryHTML(row) {
@@ -43,7 +59,7 @@ function sourceSummaryHTML(row) {
 }
 
 const initialized=new WeakMap();
-export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STATES,QUANTUM_DEFECTS,REFERENCES}, {showInfoTooltip,hideInfoTooltip,buildInfoHtml}={}) {
+export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STATES,QUANTUM_DEFECTS,REFERENCES}, {showInfoTooltip,hideInfoTooltip,scheduleInfoTooltipHide}={}) {
   const tabs=document.getElementById('tableTabs');
   if (tabs&&initialized.has(tabs)) return initialized.get(tabs);
   const cleanups=[];
@@ -56,37 +72,37 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
   const defectCols=['series','term','delta0','delta2','range','note','source'];
   const definitions=[['core',CORE_TRANSITIONS,coreCols,false],['rydberg',RYDBERG_TRANSITIONS,rydCols,true],['states',RYDBERG_STATES,stateCols,true],['defects',QUANTUM_DEFECTS,defectCols,true]];
 
-  function infoTip(title,source,note,content) {
-    return `<button type="button" class="info-tip" aria-label="${escapeHTML(title)}，查看来源说明" data-title="${escapeHTML(title)}" data-source="${escapeHTML(source)}" data-derivation="${escapeHTML(note)}">${content}</button>`;
+  function infoTip(model,content) {
+    return `<button type="button" class="info-tip" aria-label="${escapeHTML(model.title)}，查看来源说明" data-tooltip="${escapeHTML(JSON.stringify(model))}">${content}</button>`;
   }
   function attachTableInfoTooltips(table) {
     table.querySelectorAll('tbody .info-tip').forEach(element=>{
-      const html=typeof buildInfoHtml==='function'?buildInfoHtml(escapeHTML(element.dataset.title),escapeHTML(element.dataset.source),escapeHTML(element.dataset.derivation)):`<strong>${escapeHTML(element.dataset.title)}</strong><p>${escapeHTML(element.dataset.source)}</p><p>${escapeHTML(element.dataset.derivation)}</p>`;
+      const html=renderCompactTooltip(JSON.parse(element.dataset.tooltip));
       element.addEventListener('mouseenter',()=>showInfoTooltip?.(element,html));
-      element.addEventListener('mouseleave',()=>hideInfoTooltip?.());
+      element.addEventListener('mouseleave',()=>scheduleInfoTooltipHide?scheduleInfoTooltipHide():hideInfoTooltip?.());
       element.addEventListener('focus',()=>showInfoTooltip?.(element,html));
-      element.addEventListener('blur',()=>hideInfoTooltip?.());
+      element.addEventListener('blur',()=>scheduleInfoTooltipHide?scheduleInfoTooltipHide():hideInfoTooltip?.());
       element.addEventListener('click',()=>showInfoTooltip?.(element,html));
     });
   }
   function formatCell(row,column,tableId) {
     const source=row.source||'详见来源与条件';
     const field=createFieldView(row.id,column);
-    const fieldSource=field?`${field.sourceTitle}；${field.review}`:source;
+    const cellTip=(title,content,quantityColumn=column)=>infoTip(buildTableTooltipModel(row,quantityColumn,tableId,title),content);
     if (tableId==='core') {
       switch(column) {
         case 'id':return `<span class="mono">${escapeHTML(row.id)}</span>`;
         case 'label':return `<div class="trans-label">${escapeHTML(row.label)}</div><div class="trans-pair">${escapeHTML(row.lower)} → ${escapeHTML(row.upper)}</div>`;
-        case 'wavelength_vac_nm':return `<div class="wl-cell"><span class="wl-dot" style="background:${escapeHTML(row.color)}"></span>${infoTip('真空波长 λ',fieldSource,'保留原记录；频率、波长和能量可来自独立记录，不擅自相互覆盖。',escapeHTML(row.approximate?'≈'+row.wavelength_vac_nm.toFixed(2):row.wavelength_vac_nm.toFixed(4)))}</div><div class="wl-sub">空气：${Number.isFinite(row.wavelength_air_nm)?row.wavelength_air_nm.toFixed(4):'待补充'} nm</div>`;
-        case 'frequency_THz':return infoTip('跃迁频率 ν',fieldSource,'保存的普通频率；不因界面整理重算或替换原记录。',`<span class="mono">${row.frequency_THz.toFixed(5)} THz</span>`);
-        case 'energy_eV':return infoTip('能量差 ΔE',fieldSource,'保留原记录；推导来源见对应字段。',`<span class="mono">${row.energy_eV.toFixed(4)} eV</span>`);
-        case 'lifetime_ns':return infoTip('寿命 τ',fieldSource,'寿命定义、条件与衰变通道需结合来源；不直接等同其他寿命定义。',`<span class="mono">${escapeHTML(formatLifetime(row.lifetime_ns))}</span>`);
+        case 'wavelength_vac_nm':return `<div class="wl-cell"><span class="wl-dot" style="background:${escapeHTML(row.color)}"></span>${cellTip('真空波长 λ',escapeHTML(row.approximate?'≈'+row.wavelength_vac_nm.toFixed(2):row.wavelength_vac_nm.toFixed(4)))}</div><div class="wl-sub">空气：${Number.isFinite(row.wavelength_air_nm)?row.wavelength_air_nm.toFixed(4):'待补充'} nm</div>`;
+        case 'frequency_THz':return cellTip('跃迁频率 ν',`<span class="mono">${row.frequency_THz.toFixed(5)} THz</span>`);
+        case 'energy_eV':return cellTip('能量差 ΔE',`<span class="mono">${row.energy_eV.toFixed(4)} eV</span>`);
+        case 'lifetime_ns':return cellTip('寿命 τ',`<span class="mono">${escapeHTML(formatLifetime(row.lifetime_ns))}</span>`);
         case 'Gamma_per_s_num': {
           const linewidth=formatLinewidthDisplay(row);
-          return `<div class="mono">${escapeHTML(linewidth.frequencyText)}</div><details class="linewidth-original"><summary>Γ 与原记录</summary><p>衰减率 Γ = ${escapeHTML(linewidth.decayText)}</p><p>原记录：${escapeHTML(linewidth.originalText)}</p><p>${escapeHTML(linewidth.reviewText)}</p></details>`;
+          return `<div class="mono">${cellTip('线宽频率系数',escapeHTML(linewidth.frequencyText),'linewidth_frequency_coefficient_Hz')}</div><details class="linewidth-original"><summary>Γ 与原记录</summary><p>衰减率 Γ = ${escapeHTML(linewidth.decayText)}</p><p>原记录：${escapeHTML(linewidth.originalText)}</p><p>${escapeHTML(linewidth.reviewText)}</p></details>`;
         }
-        case 'oscillator_strength_f_num':return infoTip('振子强度 f',fieldSource,'原记录未提供的值保持缺失。',`<span class="mono">${getQuantity(row.id,column)?.value===null?'缺失':escapeHTML(row.oscillator_strength_f)}</span>`);
-        case 'd_num':return `<div>${infoTip('约化矩阵元 d',fieldSource,field?.convention||'矩阵元层级约定待核查',`<span class="mono">${getQuantity(row.id,'d_num')?.value===null?'缺少适用 E1 数据':escapeHTML(row.d_reduced_ea0)+' ea₀'}</span>`)}</div><div class="wl-sub">${escapeHTML(field?.convention||'约定待核查')}</div>`;
+        case 'oscillator_strength_f_num':return cellTip('振子强度 f',`<span class="mono">${getQuantity(row.id,column)?.value===null?'缺失':escapeHTML(row.oscillator_strength_f)}</span>`);
+        case 'd_num':return `<div>${cellTip('约化矩阵元 d',`<span class="mono">${getQuantity(row.id,'d_num')?.value===null?'缺少适用 E1 数据':escapeHTML(row.d_reduced_ea0)+' ea₀'}</span>`)}</div><div class="wl-sub">${escapeHTML(field?.convention||'约定待核查')}</div>`;
         case 'classification':return `<span class="badge badge-${row.classification==='强'?'strong':row.classification==='弱'?'weak':'forbidden'}">${escapeHTML(row.classification)}</span>`;
         case 'multipole':return `<span class="badge badge-${row.multipole.includes('M2')?'m2':'e1'}">${escapeHTML(row.multipole)}</span>`;
         case 'forbidden_reason':return `<div class="reason-text">${escapeHTML(row.forbidden_reason)}</div><div class="wl-sub">${escapeHTML(row.selection_check)}</div>`;
@@ -96,6 +112,7 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
     }
     if (column==='id') return `<span class="mono">${escapeHTML(row.id)}</span>`;
     if (column==='source') return `<div class="src-text">${escapeHTML(source)}</div>`;
+    if (tableId==='states'&&['lifetime_us','C6_ghz_um6','blockade_um'].includes(column)) return '<span class="mono" title="历史标度锚点缺乏适用态证据；数值归档于 data/literature，不作为预测展示">—</span>';
     if (column==='label') return `<div class="trans-label">${escapeHTML(row.label)}</div><div class="trans-pair">${escapeHTML(row.lower)} → ${escapeHTML(row.upper_full||row.upper)}</div>`;
     if (column==='wavelength_vac_nm') return `<div class="wl-cell"><span class="wl-dot" style="background:${escapeHTML(row.color)}"></span>${escapeHTML(row.wavelength_vac_nm)} nm</div>`;
     if (column==='forbidden_reason'||column==='note') return `<div class="reason-text">${escapeHTML(row[column]||'未提供')}</div>`;
@@ -159,7 +176,26 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
   tabButtons.forEach(button=>{const count=button.querySelector('.count');if(count)count.textContent=counts[button.dataset.tab];});
   const metaCore=document.getElementById('metaCoreCount');if(metaCore)metaCore.textContent=`${counts.core} 条`;
   const list=document.getElementById('refList');
-  if (list) list.innerHTML=REFERENCES.map(reference=>{const source=getSourceRecord('ref-'+String(reference.num).padStart(2,'0'));const url=source?.url&&/^https:\/\//.test(source.url)?source.url:null;return `<div class="ref-item"><div class="ref-num">[${reference.num}]</div><div class="ref-text"><strong>${escapeHTML(reference.title)}</strong> — ${escapeHTML(reference.detail)}<span class="ref-doi">${escapeHTML(reference.doi)}${url?` · <a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">原文链接</a>`:''}</span></div></div>`;}).join('');
+  if (list) list.innerHTML=REFERENCES.map(reference=>{
+    const sourceId=reference.id||'ref-'+String(reference.num).padStart(2,'0');
+    const source=getSourceRecord(sourceId);
+    const url=source?.url&&/^https:\/\//.test(source.url)?source.url:null;
+    return `<div class="ref-item" id="diagram-source-${escapeHTML(sourceId)}" role="listitem"><div class="ref-num">[${reference.num}]</div><div class="ref-text"><strong class="ref-author">${escapeHTML(reference.title)}</strong><p class="ref-title">${escapeHTML(reference.detail)}</p><div class="ref-meta"><span class="ref-doi">${escapeHTML(reference.doi)}</span>${url?`<a class="ref-original" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer" aria-label="参考文献 ${reference.num}：${escapeHTML(reference.title)}，打开原文">原文链接 <span aria-hidden="true">↗</span></a>`:''}</div></div></div>`;
+  }).join('');
+  if (list) {
+    list.parentElement.querySelector(':scope > .diagram-provenance-index')?.remove();
+    list.insertAdjacentHTML('afterend',renderDiagramProvenanceIndexHTML());
+    // A small citation can point into a collapsed provenance index.
+    const revealSource=hash=>{
+      if (!hash?.startsWith('#diagram-source-')) return;
+      document.getElementById(hash.slice(1))?.closest('details')?.setAttribute('open','');
+    };
+    bind(document,'click',event=>revealSource(event.target.closest?.('a[href^="#diagram-source-"]')?.getAttribute('href')));
+    bind(window,'hashchange',()=>revealSource(window.location.hash));
+    revealSource(window.location.hash);
+  }
+  const referenceCount=document.getElementById('referenceCount');
+  if(referenceCount) referenceCount.textContent=`${REFERENCES.length} 项文献 · ${DIAGRAM_SUPPLEMENTAL_SOURCE_COUNT} 项数据记录`;
   const api=Object.freeze({destroy(){cleanups.forEach(cleanup=>cleanup());if(tabs)initialized.delete(tabs);}});
   if(tabs)initialized.set(tabs,api);
   return api;

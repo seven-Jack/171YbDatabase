@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "ionization": {
+    "isotope": 174,
+    "value_cm": 50443.07041,
+    "uncertainty_cm": 0.00025,
+    "sourceId": "lehec-2018-arxiv-v2",
+    "pdfPages": [
+      1,
+      10
+    ],
+    "evidenceKind": "MQDT inferred from spectroscopy; not direct pure ionization measurement"
+  },
+  "RydbergConstant": {
+    "value_m_inverse": 10973696.959,
+    "sourceId": "lehec-2018-arxiv-v2",
+    "pdfPage": 5,
+    "isotope": 174,
+    "kind": "finite-mass corrected"
+  },
+  "records": [
+    {
+      "sourceId": "lehec-2018-arxiv-v2",
+      "pdfPage": 10,
+      "table": "VI",
+      "isotope": 174,
+      "series": "6sns1S0",
+      "nValidityInclusive": [
+        23,
+        80
+      ],
+      "I_cm": 50443.07041,
+      "coefficients": {
+        "delta0": 4.278337,
+        "delta1": -5.625,
+        "delta2": 91.65,
+        "delta3": -156050,
+        "delta4": -49725000,
+        "delta5": 11021000000
+      },
+      "coefficientUncertainty": null,
+      "formula": "delta(n)=delta0+delta1/(n-delta0)^2+delta2/(n-delta0)^4+...",
+      "formulaLocator": "Eq.(2),PDFp4",
+      "conventionNote": "Source indexes delta1,delta2,...; delta2 here multiplies inversefourthpower, not the delta2 naming of every other author. Missing higher coefficients were not fitted in restricted model; not measured zeros.",
+      "evidenceKind": "Ritz fit to174Yb spectroscopy, conditional range; not171Yb data",
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; do not transplant into171mixed-state model"
+    },
+    {
+      "sourceId": "lehec-2018-arxiv-v2",
+      "pdfPage": 10,
+      "table": "VI",
+      "isotope": 174,
+      "series": "6sns1S0",
+      "nValidityInclusive": [
+        34,
+        80
+      ],
+      "I_cm": 50443.07041,
+      "coefficients": {
+        "delta0": 4.278312,
+        "delta1": -5.4898,
+        "delta2": -320.02
+      },
+      "coefficientUncertainty": null,
+      "formula": "delta(n)=delta0+delta1/(n-delta0)^2+delta2/(n-delta0)^4+...",
+      "formulaLocator": "Eq.(2),PDFp4",
+      "conventionNote": "Source indexes delta1,delta2,...; delta2 here multiplies inversefourthpower, not the delta2 naming of every other author. Missing higher coefficients were not fitted in restricted model; not measured zeros.",
+      "evidenceKind": "Ritz fit to174Yb spectroscopy, conditional range; not171Yb data",
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; do not transplant into171mixed-state model"
+    },
+    {
+      "sourceId": "lehec-2018-arxiv-v2",
+      "pdfPage": 10,
+      "table": "VI",
+      "isotope": 174,
+      "series": "6snd1D2",
+      "nValidityInclusive": [
+        31,
+        80
+      ],
+      "I_cm": 50443.07041,
+      "coefficients": {
+        "delta0": 2.713094,
+        "delta1": -1.8646,
+        "delta2": -2145.5,
+        "delta3": 3940500,
+        "delta4": -3103600000,
+        "delta5": 1069000000000
+      },
+      "coefficientUncertainty": null,
+      "formula": "delta(n)=delta0+delta1/(n-delta0)^2+delta2/(n-delta0)^4+...",
+      "formulaLocator": "Eq.(2),PDFp4",
+      "conventionNote": "Source indexes delta1,delta2,...; delta2 here multiplies inversefourthpower, not the delta2 naming of every other author. Missing higher coefficients were not fitted in restricted model; not measured zeros.",
+      "evidenceKind": "Ritz fit to174Yb spectroscopy, conditional range; not171Yb data",
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; do not transplant into171mixed-state model"
+    },
+    {
+      "sourceId": "lehec-2018-arxiv-v2",
+      "pdfPage": 10,
+      "table": "VI",
+      "isotope": 174,
+      "series": "6snd1D2",
+      "nValidityInclusive": [
+        40,
+        80
+      ],
+      "I_cm": 50443.07041,
+      "coefficients": {
+        "delta0": 2.713011,
+        "delta1": -1.1047,
+        "delta2": -373.87
+      },
+      "coefficientUncertainty": null,
+      "formula": "delta(n)=delta0+delta1/(n-delta0)^2+delta2/(n-delta0)^4+...",
+      "formulaLocator": "Eq.(2),PDFp4",
+      "conventionNote": "Source indexes delta1,delta2,...; delta2 here multiplies inversefourthpower, not the delta2 naming of every other author. Missing higher coefficients were not fitted in restricted model; not measured zeros.",
+      "evidenceKind": "Ritz fit to174Yb spectroscopy, conditional range; not171Yb data",
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; do not transplant into171mixed-state model"
+    },
+    {
+      "sourceId": "lehec-2018-arxiv-v2",
+      "pdfPage": 10,
+      "table": "VI",
+      "isotope": 174,
+      "series": "6snd3D2",
+      "nValidityInclusive": [
+        28,
+        80
+      ],
+      "I_cm": 50443.07041,
+      "coefficients": {
+        "delta0": 2.748679,
+        "delta1": -0.52,
+        "delta2": -1186.01,
+        "delta3": 1564600,
+        "delta4": -981340000,
+        "delta5": 242600000000
+      },
+      "coefficientUncertainty": null,
+      "formula": "delta(n)=delta0+delta1/(n-delta0)^2+delta2/(n-delta0)^4+...",
+      "formulaLocator": "Eq.(2),PDFp4",
+      "conventionNote": "Source indexes delta1,delta2,...; delta2 here multiplies inversefourthpower, not the delta2 naming of every other author. Missing higher coefficients were not fitted in restricted model; not measured zeros.",
+      "evidenceKind": "Ritz fit to174Yb spectroscopy, conditional range; not171Yb data",
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; do not transplant into171mixed-state model"
+    },
+    {
+      "sourceId": "lehec-2018-arxiv-v2",
+      "pdfPage": 10,
+      "table": "VI",
+      "isotope": 174,
+      "series": "6snd3D2",
+      "nValidityInclusive": [
+        35,
+        80
+      ],
+      "I_cm": 50443.07041,
+      "coefficients": {
+        "delta0": 2.748627,
+        "delta1": -0.1034,
+        "delta2": -2.1
+      },
+      "coefficientUncertainty": null,
+      "formula": "delta(n)=delta0+delta1/(n-delta0)^2+delta2/(n-delta0)^4+...",
+      "formulaLocator": "Eq.(2),PDFp4",
+      "conventionNote": "Source indexes delta1,delta2,...; delta2 here multiplies inversefourthpower, not the delta2 naming of every other author. Missing higher coefficients were not fitted in restricted model; not measured zeros.",
+      "evidenceKind": "Ritz fit to174Yb spectroscopy, conditional range; not171Yb data",
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; do not transplant into171mixed-state model"
+    }
+  ]
+}

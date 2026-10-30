@@ -1,0 +1,95 @@
+/* Reading surfaces only: never style the main transition diagram or calculators. */
+:is(#secReference, #secBibliography) {
+  --reference-edge: #293950;
+  --reference-muted: #9aadc6;
+  --reference-gold: #dec18b;
+  margin-top: 76px;
+}
+:is(#secReference, #secBibliography) .section-head { margin-bottom: 24px; gap: 20px; }
+:is(#secReference, #secBibliography) .section-index { color: #bba57f; font-size: 9px; letter-spacing: .22em; margin-bottom: 10px; }
+:is(#secReference, #secBibliography) .section-title { font-size: clamp(24px,2.5vw,32px); font-weight: 500; }
+:is(#secReference, #secBibliography) .reference-eyebrow { display: block; color: #93a9c6; font-size: 9px; letter-spacing: .19em; line-height: 1.6; }
+:is(#secReference, #secBibliography) a:focus-visible { outline: 2px solid #91b9f2; outline-offset: 4px; border-radius: 3px; }
+#secReference .reference-jump { display: inline-flex; gap: 14px; align-items: center; flex-shrink: 0; padding: 9px 0; font-size: 12px; color: #b4cbed; text-decoration: none; }
+#secReference .reference-jump:hover { color: #e3c897; }
+#secReference .info-grid { grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); gap: 20px; }
+#secReference .info-card { min-width: 0; padding: 26px; border: 1px solid var(--reference-edge); border-radius: 14px; background: linear-gradient(145deg,#18305233,transparent 50%),#0b1421; box-shadow: inset 0 1px #b4d3ff08; }
+#secReference .reference-card-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-bottom: 22px; }
+#secReference .reference-card-head h3 { margin: 6px 0 0; font: 500 19px/1.5 var(--font-ui); color: #e2eaf6; letter-spacing: -.02em; }
+#secReference .reference-chip { flex-shrink: 0; padding: 6px 9px; border-radius: 5px; border: 1px solid #2d405a; background: #112035; color: #aabedb; font-size: 10px; white-space: nowrap; }
+#secReference .info-card ul { margin: 0; }
+#secReference .info-card li { font-size: 12px; line-height: 1.9; color: #b4c4da; border-color: #23334a; }
+#secReference .info-card li strong { color: #dce7f6; font-weight: 500; }
+#secReference .selection-rules > li { display: grid; grid-template-columns: 105px minmax(0,1fr); gap: 0 15px; padding: 15px 0; }
+#secReference .selection-rules > li:first-child { padding-top: 0; }
+#secReference .selection-rules > li > strong { grid-column: 1; grid-row: 1 / span 4; font-size: 12px; color: #d9bf91; }
+#secReference .rule-code { grid-column: 2; display: block; font: inherit; margin: 0; color: #b4c4da; }
+#secReference .rule-code + .rule-code { margin-top: 9px; }
+#secReference .info-card a { color: #a5c6f3; text-decoration-color: #55739b; text-underline-offset: 4px; }
+#secReference .info-card a:hover { color: #e3c897; text-decoration-color: currentColor; }
+#secReference .rule-code a { display: inline-block; margin-left: 8px; }
+#secReference .info-card li.convention-note { display: block; padding: 16px 0 0; color: #91a5c0; font-size: 11px; line-height: 1.9; }
+#secReference .hyperfine-card { background: radial-gradient(ellipse at 100% 0,#6a512521,transparent 65%),#0b1421; }
+#secReference .hyperfine-card .reference-chip { border-color: #5a4c36; background: #2a261d; color: #d7bd8f; }
+#secReference .hyperfine-constants .ground-state-note { margin: 0 0 10px; padding: 13px 15px; border: 1px solid #2b3b53; border-radius: 7px; background: #111e31; color: #aebfd5; }
+#secReference .hyperfine-constants .constant-row { display: grid; grid-template-columns: minmax(0,1fr) 16px minmax(138px,.8fr); align-items: baseline; gap: 6px; padding: 14px 2px; }
+#secReference .constant-equals { color: #738aa8; text-align: center; }
+#secReference .constant-value { text-align: right; white-space: nowrap; font: 400 19px/1.5 var(--font-number); font-variant-numeric: tabular-nums; letter-spacing: -.02em; color: #dec18b; }
+#secReference .constant-unit { display: inline-block; width: 30px; margin-left: 8px; font: 10px var(--font-ui); letter-spacing: 0; color: #98abc5; text-align: left; }
+#secReference .ionic-constant { margin-top: 5px; }
+#secReference .ionic-constant strong { font-size: 11px; }
+#secReference .info-card.ryd { grid-column: 1 / -1; background: linear-gradient(120deg,#132a4944,transparent 55%),#0b1421; }
+#secReference .ryd .reference-card-head { border-bottom: 1px solid #293950; padding-bottom: 20px; }
+#secReference .reference-card-caption { color: #98afce; font-size: 11px; letter-spacing: .04em; }
+#secReference .keypoints { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 36px; counter-reset: notes; }
+#secReference .keypoints li { min-width: 0; padding: 22px 0 22px 32px; counter-increment: notes; }
+#secReference .keypoints li::before { content: counter(notes,decimal-leading-zero); top: 24px; font: 10px/1.6 var(--font-number); color: #bea57c; }
+#secReference .keypoints li:nth-last-child(-n+2) { border-bottom: 0; padding-bottom: 0; }
+#secReference .keypoints h4 { margin: 0 0 7px; font: 500 13px/1.6 var(--font-ui); color: #dce7f6; }
+#secReference .keypoints p { margin: 0; color: #a7bad4; line-height: 1.9; overflow-wrap: anywhere; }
+
+/* A compact bibliography: fixed original numbering, readable titles, clear exits. */
+#secBibliography .reference-index-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding: 16px 22px; border: 1px solid var(--reference-edge); border-bottom: 0; border-radius: 12px 12px 0 0; background: #101d30; }
+#secBibliography .reference-index-bar p { margin: 0; font-size: 11px; line-height: 1.7; color: #9cafca; }
+#secBibliography .reference-total { margin-left: auto; color: #ddc18e; font: 11px/1.6 var(--font-ui); white-space: nowrap; }
+#secBibliography .ref-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 34px; padding: 2px 24px; border: 1px solid var(--reference-edge); border-radius: 0 0 12px 12px; background: #0b1421; }
+#secBibliography .ref-item { min-width: 0; display: grid; grid-template-columns: 30px minmax(0,1fr); gap: 13px; align-items: start; padding: 23px 0; border-bottom: 1px solid #25344a; }
+#secBibliography .ref-num { padding-top: 1px; color: #c4aa7d; font: 11px/1.8 var(--font-number); }
+#secBibliography .ref-text { min-width: 0; font: 12px/1.7 var(--font-ui); }
+#secBibliography .ref-author { display: block; font-size: 11px; font-weight: 400; color: #9fbbe0; }
+#secBibliography .ref-title { margin: 5px 0 10px; font-size: 13px; line-height: 1.75; font-weight: 400; color: #e0e8f4; overflow-wrap: anywhere; }
+#secBibliography .ref-meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 12px; }
+#secBibliography .ref-doi { margin: 0; font: 11px/1.8 var(--font-ui); color: #8fa4c0; overflow-wrap: anywhere; }
+#secBibliography .ref-original { display: inline-flex; align-items: center; gap: 8px; padding: 3px 0; color: #d2b884; font-size: 11px; text-decoration: none; white-space: nowrap; }
+#secBibliography .ref-original:hover { color: #f1d5a0; text-decoration: underline; text-underline-offset: 4px; }
+#secBibliography .ref-item:last-child { border-bottom: 0; }
+#secBibliography .ref-item:nth-last-child(2):nth-child(odd) { border-bottom: 0; }
+
+@media(max-width:1000px) {
+  #secReference .info-grid { grid-template-columns: minmax(0,1fr); }
+  #secReference .info-card.ryd { grid-column: auto; }
+  #secReference .hyperfine-constants .constant-row { grid-template-columns: minmax(0,1fr) 16px 150px; }
+  #secBibliography .ref-list { column-gap: 24px; }
+}
+@media(max-width:640px) {
+  :is(#secReference, #secBibliography) { margin-top: 54px; }
+  :is(#secReference, #secBibliography) .section-head { align-items: flex-start; flex-direction: column; gap: 8px; }
+  #secReference .info-card { padding: 20px; }
+  #secReference .reference-card-head { gap: 12px; flex-wrap: wrap; padding-bottom: 20px; }
+  #secReference .reference-card-head h3 { font-size: 18px; }
+  #secReference .selection-rules > li { grid-template-columns: minmax(0,1fr); gap: 8px; }
+  #secReference .selection-rules > li > strong { grid-row: auto; }
+  #secReference .rule-code { grid-column: 1; }
+  #secReference .rule-code + .rule-code { margin-top: 0; }
+  #secReference .hyperfine-constants .constant-row { grid-template-columns: minmax(0,1fr) 12px 118px; gap: 4px; }
+  #secReference .constant-value { font-size: 17px; }
+  #secReference .constant-unit { width: 27px; margin-left: 5px; }
+  #secReference .keypoints { grid-template-columns: minmax(0,1fr); }
+  #secReference .keypoints li:nth-last-child(-n+2) { border-bottom: 1px solid #23334a; padding-bottom: 22px; }
+  #secReference .keypoints li:last-child { border-bottom: 0; padding-bottom: 0; }
+  #secBibliography .reference-index-bar { padding: 15px 18px; gap: 7px 12px; }
+  #secBibliography .reference-index-bar p { order: 2; flex-basis: 100%; }
+  #secBibliography .ref-list { grid-template-columns: minmax(0,1fr); padding-inline: 18px; }
+  #secBibliography .ref-item { grid-template-columns: 26px minmax(0,1fr); gap: 9px; padding: 21px 0; }
+  #secBibliography .ref-item:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid #25344a; }
+}

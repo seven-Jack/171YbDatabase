@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 1,
+  "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/8.pdf",
+  "sha256": "14034e18a46ceb8b68c854d74f663ccce0a487ff40ff39d46e81f01dac14895b",
+  "extractedAt": "2026-10-30",
+  "metadata": {
+    "number": 8,
+    "sourceId": "rambow-1976-pra",
+    "doi": "10.1103/PhysRevA.14.738",
+    "title": "Radiative lifetimes and alignment depolarization cross sections for YbI and II by the Hanle effect in a flowing helium system",
+    "evidenceKind": "measurement-plus-literature-comparison",
+    "temperature_K": null,
+    "BBR_temperature_K": null,
+    "isotopeScope": "natural mixture; neutralYbI and ionYbII separate; not171Yb-specific",
+    "method": "Hanle Lorentzian widths; double extrapolation tozeroYb density and zeroHe pressure; collisional broadening/coherence narrowing treated. TableI lifetimes do NOT include hyperfine correction. Quoted error limits maximumconfidence, not established1sigma."
+  },
+  "nullMeaning": "missing/unreported/infinite model values are explicitly flagged, never numeric zero",
+  "tables": [
+    {
+      "table": "I",
+      "pdfPhysicalPage": 4,
+      "printedPage": 741,
+      "columns": [
+        "species",
+        "line_A",
+        "state",
+        "configuration",
+        "level_energy_cm",
+        "gJ",
+        "sigma_1e15cm2",
+        "tau_ns",
+        "other_lifetimes_ns"
+      ],
+      "units": {
+        "line_A": "angstrom",
+        "level_energy_cm": "cm^-1 (abstract for corresponding lines)",
+        "gJ": "dimensionless",
+        "sigma_1e15cm2": "10^-15cm^2",
+        "tau_ns": "ns"
+      },
+      "notes": [
+        "Errors maximumconfidence limits; not established1sigma. Table values exclude HFS correction; neutral lifetimes mayincrease3%, ion5%.",
+        "Other-data keys:a BaumannWandelRef5;b BudickSnirRef9;c BurshteinRef8;d KomarovskiiPenkinRef6;e LangeRef7;f BudickSnirRef10.",
+        "SOURCE_INTERNAL_CONFLICT:abstract gives14.4(0.4),9.32(0.6),sigma6s8p5.16(4.0);TableI gives14.4(0.5),9.3(0.6),sigma51.6(4.0). Keep printed table and abstract separately.",
+        "Term3464A transcribed as printed(3 1/2,3 1/2)1o; do not reinterpret jj/configuration without another source."
+      ],
+      "rows": [
+        {
+          "rowIndex": 1,
+          "species": "YbI",
+          "line_A": "5556",
+          "state": "3P1o",
+          "configuration": "4f14 6s6p",
+          "level_energy_cm": "17992",
+          "gJ": "1.48",
+          "sigma_1e15cm2": "5.0(1.0)",
+          "tau_ns": "820(20)",
+          "other_lifetimes_ns": "827(40)[a];760(80)[b];850(80)[c];980(70)[d]",
+          "parsedCells": {
+            "species": {
+              "raw": "YbI",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "line_A": {
+              "raw": "5556",
+              "value": 5556.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "state": {
+              "raw": "3P1o",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "configuration": {
+              "raw": "4f14 6s6p",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "level_energy_cm": {
+              "raw": "17992",
+              "value": 17992.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "gJ": {
+              "raw": "1.48",
+              "value": 1.48,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "sigma_1e15cm2": {
+              "raw": "5.0(1.0)",
+              "value": 5.0,
+              "uncertainty": 1.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_ns": {
+              "raw": "820(20)",
+              "value": 820.0,
+              "uncertainty": 20.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "other_lifetimes_ns": {
+              "raw": "827(40)[a];760(80)[b];850(80)[c];980(70)[d]",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "species": "YbI",
+          "line_A": "3988",
+          "state": "1P1o",
+          "configuration": "4f14 6s6p",
+          "level_energy_cm": "25068",
+          "gJ": "1.035",
+          "sigma_1e15cm2": "5.9(1.0)",
+          "tau_ns": "5.12(0.12)",
+          "other_lifetimes_ns": "5.5(0.25)[a];12[f];5.63(0.25)[e];6.4(0.2)[d]",
+          "parsedCells": {
+            "species": {
+              "raw": "YbI",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "line_A": {
+              "raw": "3988",
+              "value": 3988.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "state": {
+              "raw": "1P1o",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "configuration": {
+              "raw": "4f14 6s6p",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "level_energy_cm": {
+              "raw": "25068",
+              "value": 25068.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "gJ": {
+              "raw": "1.035",
+              "value": 1.035,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "sigma_1e15cm2": {
+              "raw": "5.9(1.0)",
+              "value": 5.9,
+              "uncertainty": 1.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_ns": {
+              "raw": "5.12(0.12)",
+              "value": 5.12,
+              "uncertainty": 0.12,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "other_lifetimes_ns": {
+              "raw": "5.5(0.25)[a];12[f];5.63(0.25)[e];6.4(0.2)[d]",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 3,
+          "species": "YbI",
+          "line_A": "3464",
+          "state": "(3 1/2,3 1/2)1o",
+          "configuration": "4f13 5d6s2",
+          "level_energy_cm": "28857",
+          "gJ": "1.26",
+          "sigma_1e15cm2": "5.9(1.2)",
+          "tau_ns": "14.4(0.5)",
+          "other_lifetimes_ns": "17[b];14.3(0.9)[e];18.3[d]",
+          "parsedCells": {
+            "species": {
+              "raw": "YbI",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "line_A": {
+              "raw": "3464",
+              "value": 3464.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "state": {
+              "raw": "(3 1/2,3 1/2)1o",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "configuration": {
+              "raw": "4f13 5d6s2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "level_energy_cm": {
+              "raw": "28857",
+              "value": 28857.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "gJ": {
+              "raw": "1.26",
+              "value": 1.26,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "sigma_1e15cm2": {
+              "raw": "5.9(1.2)",
+              "value": 5.9,
+              "uncertainty": 1.2,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_ns": {
+              "raw": "14.4(0.5)",
+              "value": 14.4,
+              "uncertainty": 0.5,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "other_lifetimes_ns": {
+              "raw": "17[b];14.3(0.9)[e];18.3[d]",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 4,
+          "species": "YbI",
+          "line_A": "2672",
+          "state": "(?)1o",
+          "configuration": "?",
+          "level_energy_cm": "37414",
+          "gJ": "1.02",
+          "sigma_1e15cm2": "17.9(2.0)",
+          "tau_ns": "77.4(6.0)",
+          "other_lifetimes_ns": "57.3(4)[e];93[d]",
+          "parsedCells": {
+            "species": {
+              "raw": "YbI",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "line_A": {
+              "raw": "2672",
+              "value": 2672.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "state": {
+              "raw": "(?)1o",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "configuration": {
+              "raw": "?",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "level_energy_cm": {
+              "raw": "37414",
+              "value": 37414.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "gJ": {
+              "raw": "1.02",
+              "value": 1.02,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "sigma_1e15cm2": {
+              "raw": "17.9(2.0)",
+              "value": 17.9,
+              "uncertainty": 2.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_ns": {
+              "raw": "77.4(6.0)",
+              "value": 77.4,
+              "uncertainty": 6.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "other_lifetimes_ns": {
+              "raw": "57.3(4)[e];93[d]",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 5,
+          "species": "YbI",
+          "line_A": "2464",
+          "state": "1P1o",
+          "configuration": "4f14 6s7p",
+          "level_energy_cm": "40564",
+          "gJ": "1.01",
+          "sigma_1e15cm2": "28.2(3.0)",
+          "tau_ns": "9.3(0.6)",
+          "other_lifetimes_ns": "10.4(1.5)[e];12.4[d]",
+          "parsedCells": {
+            "species": {
+              "raw": "YbI",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "line_A": {
+              "raw": "2464",
+              "value": 2464.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "state": {
+              "raw": "1P1o",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "configuration": {
+              "raw": "4f14 6s7p",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "level_energy_cm": {
+              "raw": "40564",
+              "value": 40564.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "gJ": {
+              "raw": "1.01",
+              "value": 1.01,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "sigma_1e15cm2": {
+              "raw": "28.2(3.0)",
+              "value": 28.2,
+              "uncertainty": 3.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_ns": {
+              "raw": "9.3(0.6)",
+              "value": 9.3,
+              "uncertainty": 0.6,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "other_lifetimes_ns": {
+              "raw": "10.4(1.5)[e];12.4[d]",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 6,
+          "species": "YbI",
+          "line_A": "2272",
+          "state": "1P1o",
+          "configuration": "4f14 6s8p",
+          "level_energy_cm": "44017",
+          "gJ": "1.00",
+          "sigma_1e15cm2": "51.6(4.0)",
+          "tau_ns": "39.1(3.5)",
+          "other_lifetimes_ns": "—",
+          "parsedCells": {
+            "species": {
+              "raw": "YbI",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "line_A": {
+              "raw": "2272",
+              "value": 2272.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "state": {
+              "raw": "1P1o",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "configuration": {
+              "raw": "4f14 6s8p",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "level_energy_cm": {
+              "raw": "44017",
+              "value": 44017.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "gJ": {
+              "raw": "1.00",
+              "value": 1.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "sigma_1e15cm2": {
+              "raw": "51.6(4.0)",
+              "value": 51.6,
+              "uncertainty": 4.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_ns": {
+              "raw": "39.1(3.5)",
+              "value": 39.1,
+              "uncertainty": 3.5,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "other_lifetimes_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            }
+          }
+        },
+        {
+          "rowIndex": 7,
+          "species": "YbII",
+          "line_A": "3290",
+          "state": "2P3/2o",
+          "configuration": "4f14 6p",
+          "level_energy_cm": "30392",
+          "gJ": "1.333",
+          "sigma_1e15cm2": "7.2(2.5)",
+          "tau_ns": "5.8(0.6)",
+          "other_lifetimes_ns": "7.3(0.6)[c]",
+          "parsedCells": {
+            "species": {
+              "raw": "YbII",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "line_A": {
+              "raw": "3290",
+              "value": 3290.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "state": {
+              "raw": "2P3/2o",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "configuration": {
+              "raw": "4f14 6p",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "level_energy_cm": {
+              "raw": "30392",
+              "value": 30392.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "gJ": {
+              "raw": "1.333",
+              "value": 1.333,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "sigma_1e15cm2": {
+              "raw": "7.2(2.5)",
+              "value": 7.2,
+              "uncertainty": 2.5,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_ns": {
+              "raw": "5.8(0.6)",
+              "value": 5.8,
+              "uncertainty": 0.6,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "other_lifetimes_ns": {
+              "raw": "7.3(0.6)[c]",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

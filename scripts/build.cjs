@@ -23,7 +23,10 @@ function build(directory, options = {}) {
     if (!fs.existsSync(source)) continue;
     if (fs.lstatSync(source).isSymbolicLink()) throw new Error(`Publishing symlinks is not supported: ${name}`);
     if (fs.statSync(source).isDirectory()) filesBelow(source);
-    fs.cpSync(source, path.join(output, name), { recursive: true });
+    // Local evidence includes full copyrighted papers, source text and audit
+    // snapshots. Only the canonical runtime data belongs in the web artifact.
+    fs.cpSync(source, path.join(output, name), { recursive: true,
+      filter: candidate => name!=='data'||!candidate.startsWith(path.join(source,'literature')) });
   }
   const datasetPath = path.join(root, 'data', 'dataset.json');
   const dataset = fs.existsSync(datasetPath) ? JSON.parse(fs.readFileSync(datasetPath, 'utf8')) : {};

@@ -1,0 +1,11 @@
+isotope,evidence,A_3P1_MHz,A_3P2_MHz,sourceFootnote
+25Mg,theory-this-work,-146.1,-129.7,
+25Mg,experiment,-144.977(5),-128.445(5),a:[21]
+43Ca,theory-this-work,-199.2,-173.1,
+43Ca,experiment,-198.890(1),-171.962(2),b:[22];c:[23]
+87Sr,theory-this-work,-258.7,-211.4,
+87Sr,experiment,-260.083(5),-212.765(1),d:[24]
+171Yb,theory-this-work,3964,2704,
+171Yb,experiment,3957.97(47),2677.6,e:[25];f:[26]
+173Yb,theory-this-work,-1092,-745,
+173Yb,experiment,-1094.20(60),-737.7,e:[25];f:[26]

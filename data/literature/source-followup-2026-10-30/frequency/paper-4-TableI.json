@@ -1,0 +1,159 @@
+{
+  "paperNumber": 4,
+  "sourceId": "qiao-2023-apl",
+  "doi": "10.1063/5.0155776",
+  "context": "Yb isotope MTS in Ne hollow-cathode lamp; absolute pressure correction estimated; reference-isotope174; natural width not inferred from broadened MTS",
+  "tables": 7,
+  "pdf": "references/papers/4.pdf",
+  "sha256": "e2d263f0b1762d45b04bdbba8c3adc4fdf4ff098427054b4f8124f624e295df4",
+  "table": "TableI",
+  "pdfPage": 4,
+  "printedPage": "224002-3",
+  "columns": [
+    "shift",
+    "uncertainty"
+  ],
+  "note": "Table locking offset-0.088 differs from body PDFp5 -0.880(3); retain both, not formally corrected.",
+  "rows": [
+    {
+      "label": "Pressure",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift": {
+          "printed": "-14.0",
+          "unit": "MHz",
+          "value": "-14.0",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "uncertainty": {
+          "printed": "3.2",
+          "unit": "MHz",
+          "value": "3.2",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "Probe power",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift": {
+          "printed": "-5.26",
+          "unit": "MHz",
+          "value": "-5.26",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "uncertainty": {
+          "printed": "0.2",
+          "unit": "MHz",
+          "value": "0.2",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "Lamp current",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift": {
+          "printed": "5.46",
+          "unit": "MHz",
+          "value": "5.46",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "uncertainty": {
+          "printed": "0.05",
+          "unit": "MHz",
+          "value": "0.05",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "RAM",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift": {
+          "printed": "-1.33",
+          "unit": "MHz",
+          "value": "-1.33",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "uncertainty": {
+          "printed": "0.09",
+          "unit": "MHz",
+          "value": "0.09",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "Locking offset",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift": {
+          "printed": "-0.088",
+          "unit": "MHz",
+          "value": "-0.088",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "uncertainty": {
+          "printed": "0.003",
+          "unit": "MHz",
+          "value": "0.003",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "Total",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift": {
+          "printed": "-15.2",
+          "unit": "MHz",
+          "value": "-15.2",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "uncertainty": {
+          "printed": "3.2",
+          "unit": "MHz",
+          "value": "3.2",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    }
+  ],
+  "rawPageText": "paper-4-page-4.txt",
+  "renderedVerified": "rendered/paper-4-p4.png"
+}

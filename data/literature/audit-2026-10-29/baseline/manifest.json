@@ -1,0 +1,40 @@
+{
+  "auditDate": "2026-10-29",
+  "files": [
+    {
+      "path": "data/levels.json",
+      "baseline": "data/literature/audit-2026-10-29/baseline/levels.json",
+      "sha256": "ecf1a74540eb19ff13d13feafb2b4c939f8b7e0e422cde9968cdaf6b7b34060b"
+    },
+    {
+      "path": "data/transitions.json",
+      "baseline": "data/literature/audit-2026-10-29/baseline/transitions.json",
+      "sha256": "faaf7a1d01c9891a27d942a64193188a3f83aecd202e147b91241f8b8cae947b"
+    },
+    {
+      "path": "data/hyperfine.json",
+      "baseline": "data/literature/audit-2026-10-29/baseline/hyperfine.json",
+      "sha256": "9918be31886446b9ee2b3c534ff8647e2eecb22a415632dcbfe4cd7802e31176"
+    },
+    {
+      "path": "data/sources.json",
+      "baseline": "data/literature/audit-2026-10-29/baseline/sources.json",
+      "sha256": "2a3414a7ca145f913f821b5fbb58797851d09f2ef5b546108cfea8f5224691cb"
+    },
+    {
+      "path": "data/estimates.json",
+      "baseline": "data/literature/audit-2026-10-29/baseline/estimates.json",
+      "sha256": "f3976a7f8732b267678eef0b08415b06372313d13d2e5e0d5945be0428c57ddd"
+    },
+    {
+      "path": "data/dataset.json",
+      "baseline": "data/literature/audit-2026-10-29/baseline/dataset.json",
+      "sha256": "fb5d3fae0134e59aa342537b61b911ff7a90febd1c969d2146ef803a04b29822"
+    },
+    {
+      "path": "assets/05.21_yb171_65s_hyperfine.csv",
+      "sha256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec",
+      "policy": "preserve original saved calculation, no recomputation"
+    }
+  ]
+}

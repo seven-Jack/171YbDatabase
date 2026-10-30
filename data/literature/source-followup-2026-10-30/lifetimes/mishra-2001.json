@@ -1,0 +1,3066 @@
+{
+  "schemaVersion": 1,
+  "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/2.pdf",
+  "sha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
+  "extractedAt": "2026-10-30",
+  "metadata": {
+    "number": 2,
+    "sourceId": "mishra-2001-jqsrt",
+    "doi": "10.1016/S0022-4073(00)00117-5",
+    "title": "Radiative lifetimes of the first excited 3Po2,0 metastable levels in Kr I, Xe I, Yb I and Hg-like atoms",
+    "evidenceKind": "theoretical-calculation",
+    "temperature_K": null,
+    "BBR_temperature_K": null,
+    "F_scope": "line-as-a-whole statistical average in Tables3,5; resolvedF components separately inTable4",
+    "model": "First-order hyperfine perturbation within(ns np), spin-orbit mixing; M1/M2/HFI-E1; E2 omitted; no BBR term specified for Table5. Table7 T=300K is laser-gain context only."
+  },
+  "nullMeaning": "missing/unreported/infinite model values are explicitly flagged, never numeric zero",
+  "tables": [
+    {
+      "table": "1",
+      "pdfPhysicalPage": 5,
+      "printedPage": 773,
+      "columns": [
+        "m",
+        "qz_2m",
+        "qplus_2m",
+        "qminus_2m"
+      ],
+      "units": {
+        "m": "dimensionless",
+        "orbitalOperators": "length"
+      },
+      "notes": [
+        "Formula strings transcribed as printed; m=-1 qz also prints(x+i*y), retained without silently repairing tensor convention."
+      ],
+      "rows": [
+        {
+          "rowIndex": 1,
+          "m": -2,
+          "qz_2m": "0",
+          "qplus_2m": "0",
+          "qminus_2m": "-sqrt(6)*(x-i*y)",
+          "parsedCells": {
+            "m": {
+              "raw": "-2",
+              "value": -2.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "qz_2m": {
+              "raw": "0",
+              "value": 0.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "qplus_2m": {
+              "raw": "0",
+              "value": 0.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "qminus_2m": {
+              "raw": "-sqrt(6)*(x-i*y)",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "m": -1,
+          "qz_2m": "sqrt(3/2)*(x+i*y)",
+          "qplus_2m": "0",
+          "qminus_2m": "-sqrt(6)*z",
+          "parsedCells": {
+            "m": {
+              "raw": "-1",
+              "value": -1.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "qz_2m": {
+              "raw": "sqrt(3/2)*(x+i*y)",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "qplus_2m": {
+              "raw": "0",
+              "value": 0.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "qminus_2m": {
+              "raw": "-sqrt(6)*z",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 3,
+          "m": 0,
+          "qz_2m": "2*z",
+          "qplus_2m": "x-i*y",
+          "qminus_2m": "-x-i*y",
+          "parsedCells": {
+            "m": {
+              "raw": "0",
+              "value": 0.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "qz_2m": {
+              "raw": "2*z",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "qplus_2m": {
+              "raw": "x-i*y",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "qminus_2m": {
+              "raw": "-x-i*y",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 4,
+          "m": 1,
+          "qz_2m": "sqrt(3/2)*(x+i*y)",
+          "qplus_2m": "sqrt(6)*z",
+          "qminus_2m": "0",
+          "parsedCells": {
+            "m": {
+              "raw": "1",
+              "value": 1.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "qz_2m": {
+              "raw": "sqrt(3/2)*(x+i*y)",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "qplus_2m": {
+              "raw": "sqrt(6)*z",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "qminus_2m": {
+              "raw": "0",
+              "value": 0.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 5,
+          "m": 2,
+          "qz_2m": "0",
+          "qplus_2m": "sqrt(6)*(x+i*y)",
+          "qminus_2m": "0",
+          "parsedCells": {
+            "m": {
+              "raw": "2",
+              "value": 2.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "qz_2m": {
+              "raw": "0",
+              "value": 0.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "qplus_2m": {
+              "raw": "sqrt(6)*(x+i*y)",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "qminus_2m": {
+              "raw": "0",
+              "value": 0.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": "2",
+      "pdfPhysicalPage": 7,
+      "printedPage": 775,
+      "columns": [
+        "atom",
+        "M2_3P2_to_1S0",
+        "M1_3P2_to_3P1",
+        "M1_3P0_to_3P1"
+      ],
+      "units": {
+        "rates": "s^-1"
+      },
+      "notes": [
+        "Same rates for isotopic species in this model. Dash marks radiative emission impossible when ordering excludes the finalstate; never substituted with numeric zero."
+      ],
+      "rows": [
+        {
+          "rowIndex": 1,
+          "atom": "Mg",
+          "M2_3P2_to_1S0": "2.2e-4",
+          "M1_3P2_to_3P1": "9.10e-7",
+          "M1_3P0_to_3P1": "—",
+          "parsedCells": {
+            "atom": {
+              "raw": "Mg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "M2_3P2_to_1S0": {
+              "raw": "2.2e-4",
+              "value": 0.00022,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P2_to_3P1": {
+              "raw": "9.10e-7",
+              "value": 9.1e-07,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P0_to_3P1": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "atom": "Zn",
+          "M2_3P2_to_1S0": "1.2e-3",
+          "M1_3P2_to_3P1": "7.93e-4",
+          "M1_3P0_to_3P1": "—",
+          "parsedCells": {
+            "atom": {
+              "raw": "Zn",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "M2_3P2_to_1S0": {
+              "raw": "1.2e-3",
+              "value": 0.0012,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P2_to_3P1": {
+              "raw": "7.93e-4",
+              "value": 0.000793,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P0_to_3P1": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            }
+          }
+        },
+        {
+          "rowIndex": 3,
+          "atom": "Cd",
+          "M2_3P2_to_1S0": "1.1e-3",
+          "M1_3P2_to_3P1": "2.16e-2",
+          "M1_3P0_to_3P1": "—",
+          "parsedCells": {
+            "atom": {
+              "raw": "Cd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "M2_3P2_to_1S0": {
+              "raw": "1.1e-3",
+              "value": 0.0011,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P2_to_3P1": {
+              "raw": "2.16e-2",
+              "value": 0.0216,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P0_to_3P1": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            }
+          }
+        },
+        {
+          "rowIndex": 4,
+          "atom": "Hg",
+          "M2_3P2_to_1S0": "3.5e-3",
+          "M1_3P2_to_3P1": "1.349",
+          "M1_3P0_to_3P1": "—",
+          "parsedCells": {
+            "atom": {
+              "raw": "Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "M2_3P2_to_1S0": {
+              "raw": "3.5e-3",
+              "value": 0.0035,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P2_to_3P1": {
+              "raw": "1.349",
+              "value": 1.349,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P0_to_3P1": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            }
+          }
+        },
+        {
+          "rowIndex": 5,
+          "atom": "Yb",
+          "M2_3P2_to_1S0": "1.8e-4",
+          "M1_3P2_to_3P1": "6.77e-2",
+          "M1_3P0_to_3P1": "—",
+          "parsedCells": {
+            "atom": {
+              "raw": "Yb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "M2_3P2_to_1S0": {
+              "raw": "1.8e-4",
+              "value": 0.00018,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P2_to_3P1": {
+              "raw": "6.77e-2",
+              "value": 0.0677,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P0_to_3P1": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            }
+          }
+        },
+        {
+          "rowIndex": 6,
+          "atom": "Kr",
+          "M2_3P2_to_1S0": "1.0e-2",
+          "M1_3P2_to_3P1": "—",
+          "M1_3P0_to_3P1": "2.041",
+          "parsedCells": {
+            "atom": {
+              "raw": "Kr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "M2_3P2_to_1S0": {
+              "raw": "1.0e-2",
+              "value": 0.01,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P2_to_3P1": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "M1_3P0_to_3P1": {
+              "raw": "2.041",
+              "value": 2.041,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 7,
+          "atom": "Xe",
+          "M2_3P2_to_1S0": "1.0e-2",
+          "M1_3P2_to_3P1": "—",
+          "M1_3P0_to_3P1": "11.920",
+          "parsedCells": {
+            "atom": {
+              "raw": "Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "M2_3P2_to_1S0": {
+              "raw": "1.0e-2",
+              "value": 0.01,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "M1_3P2_to_3P1": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "M1_3P0_to_3P1": {
+              "raw": "11.920",
+              "value": 11.92,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": "3",
+      "pdfPhysicalPage": 8,
+      "printedPage": 776,
+      "columns": [
+        "atom",
+        "abundance_percent",
+        "I",
+        "HFI_E1_3P2_to_1S0",
+        "HFI_E1_3P0_to_1S0"
+      ],
+      "units": {
+        "rates": "s^-1",
+        "abundance_percent": "%"
+      },
+      "notes": [
+        "Eq15: A(line)=sum_F[(2F+1)A(F,Fground)]/sum_F(2F+1); not an F-resolved rate. Natural species also averaged by isotopic abundance."
+      ],
+      "rows": [
+        {
+          "rowIndex": 1,
+          "atom": "25Mg",
+          "abundance_percent": "10.11",
+          "I": "5/2",
+          "HFI_E1_3P2_to_1S0": "3.60e-4",
+          "HFI_E1_3P0_to_1S0": "1.69e-3",
+          "parsedCells": {
+            "atom": {
+              "raw": "25Mg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "10.11",
+              "value": 10.11,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "3.60e-4",
+              "value": 0.00036,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "1.69e-3",
+              "value": 0.00169,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "atom": "naturalMg",
+          "abundance_percent": "—",
+          "I": "—",
+          "HFI_E1_3P2_to_1S0": "3.64e-5",
+          "HFI_E1_3P0_to_1S0": "1.71e-4",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalMg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "I": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "3.64e-5",
+              "value": 3.64e-05,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "1.71e-4",
+              "value": 0.000171,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 3,
+          "atom": "67Zn",
+          "abundance_percent": "4.11",
+          "I": "5/2",
+          "HFI_E1_3P2_to_1S0": "7.43e-3",
+          "HFI_E1_3P0_to_1S0": "1.80e-2",
+          "parsedCells": {
+            "atom": {
+              "raw": "67Zn",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "4.11",
+              "value": 4.11,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "7.43e-3",
+              "value": 0.00743,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "1.80e-2",
+              "value": 0.018,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 4,
+          "atom": "naturalZn",
+          "abundance_percent": "—",
+          "I": "—",
+          "HFI_E1_3P2_to_1S0": "3.05e-4",
+          "HFI_E1_3P0_to_1S0": "7.39e-4",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalZn",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "I": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "3.05e-4",
+              "value": 0.000305,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "7.39e-4",
+              "value": 0.000739,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 5,
+          "atom": "111Cd",
+          "abundance_percent": "12.75",
+          "I": "1/2",
+          "HFI_E1_3P2_to_1S0": "0.030",
+          "HFI_E1_3P0_to_1S0": "0.056",
+          "parsedCells": {
+            "atom": {
+              "raw": "111Cd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "12.75",
+              "value": 12.75,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.030",
+              "value": 0.03,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "0.056",
+              "value": 0.056,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 6,
+          "atom": "113Cd",
+          "abundance_percent": "12.26",
+          "I": "1/2",
+          "HFI_E1_3P2_to_1S0": "0.033",
+          "HFI_E1_3P0_to_1S0": "0.062",
+          "parsedCells": {
+            "atom": {
+              "raw": "113Cd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "12.26",
+              "value": 12.26,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.033",
+              "value": 0.033,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "0.062",
+              "value": 0.062,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 7,
+          "atom": "naturalCd",
+          "abundance_percent": "—",
+          "I": "—",
+          "HFI_E1_3P2_to_1S0": "0.008",
+          "HFI_E1_3P0_to_1S0": "0.015",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalCd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "I": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.008",
+              "value": 0.008,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "0.015",
+              "value": 0.015,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 8,
+          "atom": "199Hg",
+          "abundance_percent": "16.84",
+          "I": "1/2",
+          "HFI_E1_3P2_to_1S0": "0.587",
+          "HFI_E1_3P0_to_1S0": "0.669",
+          "parsedCells": {
+            "atom": {
+              "raw": "199Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "16.84",
+              "value": 16.84,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.587",
+              "value": 0.587,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "0.669",
+              "value": 0.669,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 9,
+          "atom": "201Hg",
+          "abundance_percent": "13.22",
+          "I": "3/2",
+          "HFI_E1_3P2_to_1S0": "0.401",
+          "HFI_E1_3P0_to_1S0": "0.457",
+          "parsedCells": {
+            "atom": {
+              "raw": "201Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "13.22",
+              "value": 13.22,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.401",
+              "value": 0.401,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "0.457",
+              "value": 0.457,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 10,
+          "atom": "naturalHg",
+          "abundance_percent": "—",
+          "I": "—",
+          "HFI_E1_3P2_to_1S0": "0.152",
+          "HFI_E1_3P0_to_1S0": "0.173",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalHg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "I": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.152",
+              "value": 0.152,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "0.173",
+              "value": 0.173,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 11,
+          "atom": "171Yb",
+          "abundance_percent": "14.34",
+          "I": "1/2",
+          "HFI_E1_3P2_to_1S0": "0.044",
+          "HFI_E1_3P0_to_1S0": "0.062",
+          "parsedCells": {
+            "atom": {
+              "raw": "171Yb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "14.34",
+              "value": 14.34,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.044",
+              "value": 0.044,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "0.062",
+              "value": 0.062,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 12,
+          "atom": "173Yb",
+          "abundance_percent": "16.18",
+          "I": "5/2",
+          "HFI_E1_3P2_to_1S0": "0.045",
+          "HFI_E1_3P0_to_1S0": "0.055",
+          "parsedCells": {
+            "atom": {
+              "raw": "173Yb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "16.18",
+              "value": 16.18,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.045",
+              "value": 0.045,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "0.055",
+              "value": 0.055,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 13,
+          "atom": "naturalYb",
+          "abundance_percent": "—",
+          "I": "—",
+          "HFI_E1_3P2_to_1S0": "0.014",
+          "HFI_E1_3P0_to_1S0": "0.018",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalYb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "I": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.014",
+              "value": 0.014,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "0.018",
+              "value": 0.018,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 14,
+          "atom": "83Kr",
+          "abundance_percent": "11.55",
+          "I": "9/2",
+          "HFI_E1_3P2_to_1S0": "0.038",
+          "HFI_E1_3P0_to_1S0": "1.638",
+          "parsedCells": {
+            "atom": {
+              "raw": "83Kr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "11.55",
+              "value": 11.55,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "9/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.038",
+              "value": 0.038,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "1.638",
+              "value": 1.638,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 15,
+          "atom": "naturalKr",
+          "abundance_percent": "—",
+          "I": "—",
+          "HFI_E1_3P2_to_1S0": "0.004",
+          "HFI_E1_3P0_to_1S0": "0.188",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalKr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "I": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.004",
+              "value": 0.004,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "0.188",
+              "value": 0.188,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 16,
+          "atom": "129Xe",
+          "abundance_percent": "26.24",
+          "I": "1/2",
+          "HFI_E1_3P2_to_1S0": "0.261",
+          "HFI_E1_3P0_to_1S0": "3.615",
+          "parsedCells": {
+            "atom": {
+              "raw": "129Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "26.24",
+              "value": 26.24,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.261",
+              "value": 0.261,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "3.615",
+              "value": 3.615,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 17,
+          "atom": "131Xe",
+          "abundance_percent": "21.24",
+          "I": "3/2",
+          "HFI_E1_3P2_to_1S0": "0.119",
+          "HFI_E1_3P0_to_1S0": "1.571",
+          "parsedCells": {
+            "atom": {
+              "raw": "131Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "21.24",
+              "value": 21.24,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "I": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.119",
+              "value": 0.119,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "1.571",
+              "value": 1.571,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 18,
+          "atom": "naturalXe",
+          "abundance_percent": "—",
+          "I": "—",
+          "HFI_E1_3P2_to_1S0": "0.093",
+          "HFI_E1_3P0_to_1S0": "1.270",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalXe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "abundance_percent": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "I": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "HFI_E1_3P2_to_1S0": {
+              "raw": "0.093",
+              "value": 0.093,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "HFI_E1_3P0_to_1S0": {
+              "raw": "1.270",
+              "value": 1.27,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": "4",
+      "pdfPhysicalPage": 9,
+      "printedPage": 777,
+      "columns": [
+        "atom",
+        "F_upper",
+        "F_lower",
+        "HFI_E1_rate"
+      ],
+      "units": {
+        "HFI_E1_rate": "s^-1"
+      },
+      "notes": [
+        "All entries3P2->1S0;171Yb F=5/2 absent because E1 to Fground1/2 fails angular condition."
+      ],
+      "rows": [
+        {
+          "rowIndex": 1,
+          "atom": "25Mg",
+          "F_upper": "3/2",
+          "F_lower": "5/2",
+          "HFI_E1_rate": "0.0003",
+          "parsedCells": {
+            "atom": {
+              "raw": "25Mg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0003",
+              "value": 0.0003,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "atom": "25Mg",
+          "F_upper": "5/2",
+          "F_lower": "5/2",
+          "HFI_E1_rate": "0.0007",
+          "parsedCells": {
+            "atom": {
+              "raw": "25Mg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0007",
+              "value": 0.0007,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 3,
+          "atom": "25Mg",
+          "F_upper": "7/2",
+          "F_lower": "5/2",
+          "HFI_E1_rate": "0.0007",
+          "parsedCells": {
+            "atom": {
+              "raw": "25Mg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "7/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0007",
+              "value": 0.0007,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 4,
+          "atom": "67Zn",
+          "F_upper": "3/2",
+          "F_lower": "5/2",
+          "HFI_E1_rate": "0.0068",
+          "parsedCells": {
+            "atom": {
+              "raw": "67Zn",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0068",
+              "value": 0.0068,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 5,
+          "atom": "67Zn",
+          "F_upper": "5/2",
+          "F_lower": "5/2",
+          "HFI_E1_rate": "0.0136",
+          "parsedCells": {
+            "atom": {
+              "raw": "67Zn",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0136",
+              "value": 0.0136,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 6,
+          "atom": "67Zn",
+          "F_upper": "7/2",
+          "F_lower": "5/2",
+          "HFI_E1_rate": "0.0142",
+          "parsedCells": {
+            "atom": {
+              "raw": "67Zn",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "7/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0142",
+              "value": 0.0142,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 7,
+          "atom": "111Cd",
+          "F_upper": "3/2",
+          "F_lower": "1/2",
+          "HFI_E1_rate": "0.0756",
+          "parsedCells": {
+            "atom": {
+              "raw": "111Cd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0756",
+              "value": 0.0756,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 8,
+          "atom": "113Cd",
+          "F_upper": "3/2",
+          "F_lower": "1/2",
+          "HFI_E1_rate": "0.0827",
+          "parsedCells": {
+            "atom": {
+              "raw": "113Cd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0827",
+              "value": 0.0827,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 9,
+          "atom": "199Hg",
+          "F_upper": "3/2",
+          "F_lower": "1/2",
+          "HFI_E1_rate": "1.4670",
+          "parsedCells": {
+            "atom": {
+              "raw": "199Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "1.4670",
+              "value": 1.467,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 10,
+          "atom": "201Hg",
+          "F_upper": "1/2",
+          "F_lower": "3/2",
+          "HFI_E1_rate": "0.1902",
+          "parsedCells": {
+            "atom": {
+              "raw": "201Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.1902",
+              "value": 0.1902,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 11,
+          "atom": "201Hg",
+          "F_upper": "3/2",
+          "F_lower": "3/2",
+          "HFI_E1_rate": "0.6251",
+          "parsedCells": {
+            "atom": {
+              "raw": "201Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.6251",
+              "value": 0.6251,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 12,
+          "atom": "201Hg",
+          "F_upper": "5/2",
+          "F_lower": "3/2",
+          "HFI_E1_rate": "0.8572",
+          "parsedCells": {
+            "atom": {
+              "raw": "201Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.8572",
+              "value": 0.8572,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 13,
+          "atom": "171Yb",
+          "F_upper": "3/2",
+          "F_lower": "1/2",
+          "HFI_E1_rate": "0.1097",
+          "parsedCells": {
+            "atom": {
+              "raw": "171Yb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.1097",
+              "value": 0.1097,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 14,
+          "atom": "173Yb",
+          "F_upper": "3/2",
+          "F_lower": "5/2",
+          "HFI_E1_rate": "0.0249",
+          "parsedCells": {
+            "atom": {
+              "raw": "173Yb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0249",
+              "value": 0.0249,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 15,
+          "atom": "173Yb",
+          "F_upper": "5/2",
+          "F_lower": "5/2",
+          "HFI_E1_rate": "0.0633",
+          "parsedCells": {
+            "atom": {
+              "raw": "173Yb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0633",
+              "value": 0.0633,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 16,
+          "atom": "173Yb",
+          "F_upper": "7/2",
+          "F_lower": "5/2",
+          "HFI_E1_rate": "0.0880",
+          "parsedCells": {
+            "atom": {
+              "raw": "173Yb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "7/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0880",
+              "value": 0.088,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 17,
+          "atom": "83Kr",
+          "F_upper": "7/2",
+          "F_lower": "9/2",
+          "HFI_E1_rate": "0.0187",
+          "parsedCells": {
+            "atom": {
+              "raw": "83Kr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "7/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "9/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0187",
+              "value": 0.0187,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 18,
+          "atom": "83Kr",
+          "F_upper": "9/2",
+          "F_lower": "9/2",
+          "HFI_E1_rate": "0.0596",
+          "parsedCells": {
+            "atom": {
+              "raw": "83Kr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "9/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "9/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0596",
+              "value": 0.0596,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 19,
+          "atom": "83Kr",
+          "F_upper": "11/2",
+          "F_lower": "9/2",
+          "HFI_E1_rate": "0.0979",
+          "parsedCells": {
+            "atom": {
+              "raw": "83Kr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "11/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "9/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0979",
+              "value": 0.0979,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 20,
+          "atom": "129Xe",
+          "F_upper": "3/2",
+          "F_lower": "1/2",
+          "HFI_E1_rate": "0.6527",
+          "parsedCells": {
+            "atom": {
+              "raw": "129Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.6527",
+              "value": 0.6527,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 21,
+          "atom": "131Xe",
+          "F_upper": "1/2",
+          "F_lower": "3/2",
+          "HFI_E1_rate": "0.0982",
+          "parsedCells": {
+            "atom": {
+              "raw": "131Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "1/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.0982",
+              "value": 0.0982,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 22,
+          "atom": "131Xe",
+          "F_upper": "3/2",
+          "F_lower": "3/2",
+          "HFI_E1_rate": "0.2467",
+          "parsedCells": {
+            "atom": {
+              "raw": "131Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.2467",
+              "value": 0.2467,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 23,
+          "atom": "131Xe",
+          "F_upper": "5/2",
+          "F_lower": "3/2",
+          "HFI_E1_rate": "0.1985",
+          "parsedCells": {
+            "atom": {
+              "raw": "131Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_upper": {
+              "raw": "5/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "F_lower": {
+              "raw": "3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "HFI_E1_rate": {
+              "raw": "0.1985",
+              "value": 0.1985,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": "5",
+      "pdfPhysicalPage": 9,
+      "printedPage": 777,
+      "columns": [
+        "atom",
+        "tau_3P2_s",
+        "tau_3P0_s"
+      ],
+      "units": {
+        "tau_3P2_s": "s",
+        "tau_3P0_s": "s"
+      },
+      "notes": [
+        "Uses line-as-a-whole averaged HFI rates in Table3;8.9s is not the F=3/2 resolved lifetime. No uncertainties supplied; no BBR temperature stated. Infinity only within considered single-photon model."
+      ],
+      "rows": [
+        {
+          "rowIndex": 1,
+          "atom": "25Mg",
+          "tau_3P2_s": "1721",
+          "tau_3P0_s": "591.7",
+          "parsedCells": {
+            "atom": {
+              "raw": "25Mg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "1721",
+              "value": 1721.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "591.7",
+              "value": 591.7,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "atom": "evenMg",
+          "tau_3P2_s": "4526",
+          "tau_3P0_s": "∞",
+          "parsedCells": {
+            "atom": {
+              "raw": "evenMg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "4526",
+              "value": 4526.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "∞",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "infinite-within-single-photon-model"
+            }
+          }
+        },
+        {
+          "rowIndex": 3,
+          "atom": "naturalMg",
+          "tau_3P2_s": "3882",
+          "tau_3P0_s": "5848",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalMg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "3882",
+              "value": 3882.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "5848",
+              "value": 5848.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 4,
+          "atom": "67Zn",
+          "tau_3P2_s": "106.1",
+          "tau_3P0_s": "55.6",
+          "parsedCells": {
+            "atom": {
+              "raw": "67Zn",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "106.1",
+              "value": 106.1,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "55.6",
+              "value": 55.6,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 5,
+          "atom": "evenZn",
+          "tau_3P2_s": "501.8",
+          "tau_3P0_s": "∞",
+          "parsedCells": {
+            "atom": {
+              "raw": "evenZn",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "501.8",
+              "value": 501.8,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "∞",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "infinite-within-single-photon-model"
+            }
+          }
+        },
+        {
+          "rowIndex": 6,
+          "atom": "naturalZn",
+          "tau_3P2_s": "435.2",
+          "tau_3P0_s": "1350",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalZn",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "435.2",
+              "value": 435.2,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "1350",
+              "value": 1350.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 7,
+          "atom": "111Cd",
+          "tau_3P2_s": "19.0",
+          "tau_3P0_s": "17.9",
+          "parsedCells": {
+            "atom": {
+              "raw": "111Cd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "19.0",
+              "value": 19.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "17.9",
+              "value": 17.9,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 8,
+          "atom": "113Cd",
+          "tau_3P2_s": "18.0",
+          "tau_3P0_s": "16.1",
+          "parsedCells": {
+            "atom": {
+              "raw": "113Cd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "18.0",
+              "value": 18.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "16.1",
+              "value": 16.1,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 9,
+          "atom": "evenCd",
+          "tau_3P2_s": "44.1",
+          "tau_3P0_s": "∞",
+          "parsedCells": {
+            "atom": {
+              "raw": "evenCd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "44.1",
+              "value": 44.1,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "∞",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "infinite-within-single-photon-model"
+            }
+          }
+        },
+        {
+          "rowIndex": 10,
+          "atom": "naturalCd",
+          "tau_3P2_s": "32.7",
+          "tau_3P0_s": "67.2",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalCd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "32.7",
+              "value": 32.7,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "67.2",
+              "value": 67.2,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 11,
+          "atom": "199Hg",
+          "tau_3P2_s": "0.52",
+          "tau_3P0_s": "1.5",
+          "parsedCells": {
+            "atom": {
+              "raw": "199Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "0.52",
+              "value": 0.52,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "1.5",
+              "value": 1.5,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 12,
+          "atom": "201Hg",
+          "tau_3P2_s": "0.57",
+          "tau_3P0_s": "2.2",
+          "parsedCells": {
+            "atom": {
+              "raw": "201Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "0.57",
+              "value": 0.57,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "2.2",
+              "value": 2.2,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 13,
+          "atom": "evenHg",
+          "tau_3P2_s": "0.74",
+          "tau_3P0_s": "∞",
+          "parsedCells": {
+            "atom": {
+              "raw": "evenHg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "0.74",
+              "value": 0.74,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "∞",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "infinite-within-single-photon-model"
+            }
+          }
+        },
+        {
+          "rowIndex": 14,
+          "atom": "naturalHg",
+          "tau_3P2_s": "0.67",
+          "tau_3P0_s": "5.78",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalHg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "0.67",
+              "value": 0.67,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "5.78",
+              "value": 5.78,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 15,
+          "atom": "171Yb",
+          "tau_3P2_s": "8.9",
+          "tau_3P0_s": "16.1",
+          "parsedCells": {
+            "atom": {
+              "raw": "171Yb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "8.9",
+              "value": 8.9,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "16.1",
+              "value": 16.1,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 16,
+          "atom": "173Yb",
+          "tau_3P2_s": "8.7",
+          "tau_3P0_s": "18.0",
+          "parsedCells": {
+            "atom": {
+              "raw": "173Yb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "8.7",
+              "value": 8.7,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "18.0",
+              "value": 18.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 17,
+          "atom": "evenYb",
+          "tau_3P2_s": "14.7",
+          "tau_3P0_s": "∞",
+          "parsedCells": {
+            "atom": {
+              "raw": "evenYb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "14.7",
+              "value": 14.7,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "∞",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "infinite-within-single-photon-model"
+            }
+          }
+        },
+        {
+          "rowIndex": 18,
+          "atom": "naturalYb",
+          "tau_3P2_s": "12.3",
+          "tau_3P0_s": "55.9",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalYb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "12.3",
+              "value": 12.3,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "55.9",
+              "value": 55.9,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 19,
+          "atom": "83Kr",
+          "tau_3P2_s": "20.7",
+          "tau_3P0_s": "0.272",
+          "parsedCells": {
+            "atom": {
+              "raw": "83Kr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "20.7",
+              "value": 20.7,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "0.272",
+              "value": 0.272,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 20,
+          "atom": "evenKr",
+          "tau_3P2_s": "96",
+          "tau_3P0_s": "0.490",
+          "parsedCells": {
+            "atom": {
+              "raw": "evenKr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "96",
+              "value": 96.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "0.490",
+              "value": 0.49,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 21,
+          "atom": "naturalKr",
+          "tau_3P2_s": "67.7",
+          "tau_3P0_s": "0.448",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalKr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "67.7",
+              "value": 67.7,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "0.448",
+              "value": 0.448,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 22,
+          "atom": "129Xe",
+          "tau_3P2_s": "3.7",
+          "tau_3P0_s": "0.064",
+          "parsedCells": {
+            "atom": {
+              "raw": "129Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "3.7",
+              "value": 3.7,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "0.064",
+              "value": 0.064,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 23,
+          "atom": "131Xe",
+          "tau_3P2_s": "7.8",
+          "tau_3P0_s": "0.074",
+          "parsedCells": {
+            "atom": {
+              "raw": "131Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "7.8",
+              "value": 7.8,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "0.074",
+              "value": 0.074,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 24,
+          "atom": "evenXe",
+          "tau_3P2_s": "100",
+          "tau_3P0_s": "0.084",
+          "parsedCells": {
+            "atom": {
+              "raw": "evenXe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "100",
+              "value": 100.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "0.084",
+              "value": 0.084,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 25,
+          "atom": "naturalXe",
+          "tau_3P2_s": "9.7",
+          "tau_3P0_s": "0.076",
+          "parsedCells": {
+            "atom": {
+              "raw": "naturalXe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "tau_3P2_s": {
+              "raw": "9.7",
+              "value": 9.7,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "tau_3P0_s": {
+              "raw": "0.076",
+              "value": 0.076,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": "6",
+      "pdfPhysicalPage": 10,
+      "printedPage": 778,
+      "columns": [
+        "atom",
+        "alpha",
+        "A_1P1_to_1S0"
+      ],
+      "units": {
+        "alpha": "dimensionless",
+        "A_1P1_to_1S0": "s^-1"
+      },
+      "notes": [
+        "Adopted calculation inputs, not new measurements of current paper."
+      ],
+      "rows": [
+        {
+          "rowIndex": 1,
+          "atom": "Mg",
+          "alpha": "0.99998",
+          "A_1P1_to_1S0": "4.26e8",
+          "parsedCells": {
+            "atom": {
+              "raw": "Mg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "alpha": {
+              "raw": "0.99998",
+              "value": 0.99998,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A_1P1_to_1S0": {
+              "raw": "4.26e8",
+              "value": 426000000.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "atom": "Zn",
+          "alpha": "0.99983",
+          "A_1P1_to_1S0": "7.09e8",
+          "parsedCells": {
+            "atom": {
+              "raw": "Zn",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "alpha": {
+              "raw": "0.99983",
+              "value": 0.99983,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A_1P1_to_1S0": {
+              "raw": "7.09e8",
+              "value": 709000000.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 3,
+          "atom": "Cd",
+          "alpha": "0.99899",
+          "A_1P1_to_1S0": "6.02e8",
+          "parsedCells": {
+            "atom": {
+              "raw": "Cd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "alpha": {
+              "raw": "0.99899",
+              "value": 0.99899,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A_1P1_to_1S0": {
+              "raw": "6.02e8",
+              "value": 602000000.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 4,
+          "atom": "Hg",
+          "alpha": "0.98510",
+          "A_1P1_to_1S0": "7.63e8",
+          "parsedCells": {
+            "atom": {
+              "raw": "Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "alpha": {
+              "raw": "0.98510",
+              "value": 0.9851,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A_1P1_to_1S0": {
+              "raw": "7.63e8",
+              "value": 763000000.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 5,
+          "atom": "Yb",
+          "alpha": "0.99504",
+          "A_1P1_to_1S0": "2.09e8",
+          "parsedCells": {
+            "atom": {
+              "raw": "Yb",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "alpha": {
+              "raw": "0.99504",
+              "value": 0.99504,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A_1P1_to_1S0": {
+              "raw": "2.09e8",
+              "value": 209000000.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 6,
+          "atom": "Kr",
+          "alpha": "0.69622",
+          "A_1P1_to_1S0": "2.50e8",
+          "parsedCells": {
+            "atom": {
+              "raw": "Kr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "alpha": {
+              "raw": "0.69622",
+              "value": 0.69622,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A_1P1_to_1S0": {
+              "raw": "2.50e8",
+              "value": 250000000.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 7,
+          "atom": "Xe",
+          "alpha": "0.63873",
+          "A_1P1_to_1S0": "3.16e8",
+          "parsedCells": {
+            "atom": {
+              "raw": "Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "alpha": {
+              "raw": "0.63873",
+              "value": 0.63873,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A_1P1_to_1S0": {
+              "raw": "3.16e8",
+              "value": 316000000.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": "7",
+      "pdfPhysicalPage": 11,
+      "printedPage": 779,
+      "columns": [
+        "atom",
+        "transition",
+        "wavenumber_cm",
+        "A21",
+        "k_over_N2"
+      ],
+      "units": {
+        "wavenumber_cm": "cm^-1",
+        "A21": "s^-1",
+        "k_over_N2": "printed k(nu0)(m^-1)/N2(m^-3); dimensionally m^2"
+      },
+      "notes": [
+        "T=300K Doppler-gain calculation, N1<<N2, selected even isotopes to avoidHFS. This temperature does not label Table5 lifetimes. I A21 calculated usingEq3."
+      ],
+      "rows": [
+        {
+          "rowIndex": 1,
+          "atom": "132Xe",
+          "transition": "3P0->3P1",
+          "wavenumber_cm": "8151.629",
+          "A21": "11.92",
+          "k_over_N2": "2.541e-21",
+          "parsedCells": {
+            "atom": {
+              "raw": "132Xe",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "transition": {
+              "raw": "3P0->3P1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "wavenumber_cm": {
+              "raw": "8151.629",
+              "value": 8151.629,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A21": {
+              "raw": "11.92",
+              "value": 11.92,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "k_over_N2": {
+              "raw": "2.541e-21",
+              "value": 2.541e-21,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "atom": "84Kr",
+          "transition": "3P0->3P1",
+          "wavenumber_cm": "4274.853",
+          "A21": "2.04",
+          "k_over_N2": "2.407e-21",
+          "parsedCells": {
+            "atom": {
+              "raw": "84Kr",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "transition": {
+              "raw": "3P0->3P1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "wavenumber_cm": {
+              "raw": "4274.853",
+              "value": 4274.853,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A21": {
+              "raw": "2.04",
+              "value": 2.04,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "k_over_N2": {
+              "raw": "2.407e-21",
+              "value": 2.407e-21,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 3,
+          "atom": "200Hg",
+          "transition": "3P2->3P1",
+          "wavenumber_cm": "4630.677",
+          "A21": "1.34",
+          "k_over_N2": "1.917e-21",
+          "parsedCells": {
+            "atom": {
+              "raw": "200Hg",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "transition": {
+              "raw": "3P2->3P1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "wavenumber_cm": {
+              "raw": "4630.677",
+              "value": 4630.677,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A21": {
+              "raw": "1.34",
+              "value": 1.34,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "k_over_N2": {
+              "raw": "1.917e-21",
+              "value": 1.917e-21,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 4,
+          "atom": "112Cd",
+          "transition": "3P2->3P1",
+          "wavenumber_cm": "1170.866",
+          "A21": "0.02",
+          "k_over_N2": "1.434e-21",
+          "parsedCells": {
+            "atom": {
+              "raw": "112Cd",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "transition": {
+              "raw": "3P2->3P1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "wavenumber_cm": {
+              "raw": "1170.866",
+              "value": 1170.866,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A21": {
+              "raw": "0.02",
+              "value": 0.02,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "k_over_N2": {
+              "raw": "1.434e-21",
+              "value": 1.434e-21,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        },
+        {
+          "rowIndex": 5,
+          "atom": "I",
+          "transition": "2P1/2->2P3/2",
+          "wavenumber_cm": "7603.150",
+          "A21": "7.90",
+          "k_over_N2": "2.036e-21",
+          "parsedCells": {
+            "atom": {
+              "raw": "I",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "transition": {
+              "raw": "2P1/2->2P3/2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "wavenumber_cm": {
+              "raw": "7603.150",
+              "value": 7603.15,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "A21": {
+              "raw": "7.90",
+              "value": 7.9,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "k_over_N2": {
+              "raw": "2.036e-21",
+              "value": 2.036e-21,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

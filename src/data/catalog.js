@@ -41,7 +41,7 @@ export const CORE_LEVELS = deepFreeze(CATALOG.levels.coreLevelIds.map(legacyLeve
 export const CORE_TRANSITIONS = deepFreeze(CATALOG.transitions.coreTransitionIds.map(id=>legacyTransition(id,'core')));
 export const RYDBERG_QC_TRANSITIONS = deepFreeze(CATALOG.transitions.rydbergTransitionIds.map(id=>legacyTransition(id,'rydberg')));
 export const QUANTUM_DEFECTS = CATALOG.estimates.quantumDefects;
-export const REFERENCES = deepFreeze(CATALOG.sources.references.map(reference=>({num:reference.referenceNumber,title:reference.title,detail:reference.detail,doi:reference.publication})));
+export const REFERENCES = deepFreeze(CATALOG.sources.references.map(reference=>({id:reference.id,num:reference.referenceNumber,title:reference.title,detail:reference.detail,doi:reference.publication})));
 export const ESTIMATE_CONFIG = CATALOG.estimates;
 export const {R_INF,E_I_CM,E_I_EV,A0_UM} = ESTIMATE_CONFIG.constants;
 export const ns_values = ESTIMATE_CONFIG.ns_values;

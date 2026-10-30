@@ -1,0 +1,6 @@
+sourceId,table,pdfPhysicalPage,printedPage,m,qz_2m,qplus_2m,qminus_2m
+mishra-2001-jqsrt,1,5,773,-2,0,0,-sqrt(6)*(x-i*y)
+mishra-2001-jqsrt,1,5,773,-1,sqrt(3/2)*(x+i*y),0,-sqrt(6)*z
+mishra-2001-jqsrt,1,5,773,0,2*z,x-i*y,-x-i*y
+mishra-2001-jqsrt,1,5,773,1,sqrt(3/2)*(x+i*y),sqrt(6)*z,0
+mishra-2001-jqsrt,1,5,773,2,0,sqrt(6)*(x+i*y),0

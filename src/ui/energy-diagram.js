@@ -1,5 +1,29 @@
-export function initEnergyDiagram({ CORE_LEVELS, CORE_TRANSITIONS, HYPERFINE_DATA, E_I_EV }, { showTooltip, moveTooltip, hideTooltip, attachInfoTooltip }) {
+// Main diagram geometry retains the published original; details are scoped hover cards.
+import { renderLevelDetails } from './diagram-details.js';
+import { chooseDiagramPanelPosition } from './diagram-placement.js';
+import { readDiagramGeometry } from './diagram-geometry.js';
+export function initEnergyDiagram({ CORE_LEVELS, CORE_TRANSITIONS, HYPERFINE_DATA, E_I_EV }, { showTooltip, moveTooltip, hideTooltip, scheduleTooltipHide }) {
 let attachHfsHover;
+let hfsAnchor = null;
+function closeHyperfinePanel() {
+  document.getElementById('hfsPanel').classList.remove('active');
+  document.querySelectorAll('.core-level-group').forEach(g=>g.classList.remove('selected'));
+}
+function positionHyperfinePanel() {
+  const panel = document.getElementById('hfsPanel');
+  if (!hfsAnchor || !panel.classList.contains('active')) return;
+  const svg=document.getElementById('levelDiagram');
+  const {plot,segments,levels}=readDiagramGeometry(svg);
+  const position=chooseDiagramPanelPosition({
+    viewport:{width:window.innerWidth,height:window.innerHeight},
+    panel:{width:panel.offsetWidth,height:panel.offsetHeight},
+    anchor:hfsAnchor.getBoundingClientRect(),plot,segments,levels
+  });
+  panel.style.left=position.left+'px';
+  panel.style.top=position.top+'px';
+}
+window.addEventListener('resize',positionHyperfinePanel);
+window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{passive:true});
 (function() {
   let hfsLeaveTimer = null;
   let hfsPanelHovered = false;
@@ -12,22 +36,29 @@ let attachHfsHover;
         if (panel) panel.classList.remove('active');
         document.querySelectorAll('.core-level-group').forEach(g => g.classList.remove('selected'));
       }
-    }, isTouch ? 900 : 220);
+    }, isTouch ? 900 : 380);
   }
 
   attachHfsHover = function(el, termGetter) {
     el.addEventListener('mouseenter', (e) => {
       if (hfsLeaveTimer) clearTimeout(hfsLeaveTimer);
       const term = typeof termGetter === 'function' ? termGetter(el, e) : termGetter;
-      if (term && typeof showHyperfinePanel === 'function') showHyperfinePanel(term);
+      if (term) { hfsAnchor = el; hideTooltip(); showHyperfinePanel(term); }
     });
     el.addEventListener('mouseleave', () => scheduleClose(false));
+    el.addEventListener('focus', (e) => {
+      if (hfsLeaveTimer) clearTimeout(hfsLeaveTimer);
+      const term = typeof termGetter === 'function' ? termGetter(el,e) : termGetter;
+      hfsAnchor=el; hideTooltip(); showHyperfinePanel(term);
+    });
+    el.addEventListener('blur', () => scheduleClose(false));
+    el.addEventListener('keydown', e => { if(e.key==='Escape') closeHyperfinePanel(); });
     el.addEventListener('touchstart', (e) => {
       e.stopPropagation();
       const term = typeof termGetter === 'function' ? termGetter(el, e) : termGetter;
-      if (term && typeof showHyperfinePanel === 'function') showHyperfinePanel(term);
+      if (term) { hfsAnchor = el; hideTooltip(); showHyperfinePanel(term); }
     }, { passive: true });
-    el.addEventListener('touchend', () => scheduleClose(true));
+    // Touch cards remain until closed or another object is selected.
   };
 
   const panel = document.getElementById('hfsPanel');
@@ -35,7 +66,10 @@ let attachHfsHover;
     panel.addEventListener('mouseenter', () => { hfsPanelHovered = true; if (hfsLeaveTimer) clearTimeout(hfsLeaveTimer); });
     panel.addEventListener('mouseleave', () => { hfsPanelHovered = false; scheduleClose(false); });
     panel.addEventListener('touchstart', (e) => { e.stopPropagation(); hfsPanelHovered = true; if (hfsLeaveTimer) clearTimeout(hfsLeaveTimer); }, { passive: true });
-    panel.addEventListener('touchend', () => { hfsPanelHovered = false; scheduleClose(true); });
+    panel.addEventListener('focusin', () => { hfsPanelHovered=true; if(hfsLeaveTimer) clearTimeout(hfsLeaveTimer); });
+    panel.addEventListener('focusout', e => { if(!panel.contains(e.relatedTarget)) { hfsPanelHovered=false; scheduleClose(false); } });
+    panel.addEventListener('keydown', e => { if(e.key==='Escape') closeHyperfinePanel(); });
+    panel.addEventListener('click', e => { if(e.target.closest('a')) closeHyperfinePanel(); });
   }
 })();
 
@@ -43,8 +77,7 @@ let attachHfsHover;
   const svg = document.getElementById('levelDiagram');
   svg.replaceChildren();
   svg.setAttribute('role', 'img');
-  svg.setAttribute('aria-label', '¹⁷¹Yb 完整能级图，八条跃迁。横向浏览，或用图下按钮选择跃迁。');
-  svg.setAttribute('viewBox','-30 0 1030 760');
+  svg.setAttribute('aria-label', '¹⁷¹Yb 原始能级跃迁图，八条跃迁。点击连线进入对应的超精细分量。');
   const NS = 'http://www.w3.org/2000/svg';
   const W = 1000, H = 760;
   const padTop = 85, padBottom = 30;
@@ -173,7 +206,7 @@ let attachHfsHover;
   }
 
   // High-segment ticks (sparse, every 1 eV in the compressed region)
-  const highTicks = [4, 5, 6, E_I_EV];
+  const highTicks = [3, 4, 5, 6, E_I_EV];
   highTicks.forEach(eV => {
     const y = eVtoY(eV);
     const tick = document.createElementNS(NS, 'line');
@@ -193,7 +226,7 @@ let attachHfsHover;
 
   const axisTit = document.createElementNS(NS, 'text');
   axisTit.setAttribute('x', axisX - 7);
-  axisTit.setAttribute('y', padTop - 25);
+  axisTit.setAttribute('y', padTop - 6);
   axisTit.setAttribute('text-anchor', 'end');
   axisTit.setAttribute('fill', '#5a6580');
   axisTit.setAttribute('font-size', '10');
@@ -316,6 +349,9 @@ let attachHfsHover;
 
     // Hover/touch handler for hyperfine panel
     g.classList.add('core-level-group');
+    g.setAttribute('tabindex','0');
+    g.setAttribute('aria-label',level.config+' '+level.term+'，能级与超精细结构');
+    g.setAttribute('aria-controls','hfsPanel');
     attachHfsHover(g, () => level.term);
 
     svg.appendChild(g);
@@ -447,15 +483,24 @@ let attachHfsHover;
     if (!lowerPos) return null;
     const sameSide = lower.parity === (t.upper_parity || levelMap[t.upper]?.parity);
 
-    const upperPos=levelPos[t.upper];
-    const upperParity=levelMap[t.upper].parity;
+    let upperPos, upperParity;
+    if (isCore) {
+      upperPos = levelPos[t.upper];
+      upperParity = levelMap[t.upper].parity;
+    } else {
+      // Rydberg transition - find matching rydLevel by series term and n
+      const upperTerm = t.upper.replace(/^n/, ''); // e.g. "n³S₁" → "³S₁", "n³D₂" → "³D₂"
+      const rl = rydLevels.find(r => r.n === t.n && r.series === 'n' + upperTerm);
+      if (!rl) return null;
+      const y = eVtoY(rl.energy_eV);
+      const x = rl.parity === 'even' ? colEven : colOddR;
+      upperPos = { x, y };
+      upperParity = rl.parity;
+    }
+
     const g = document.createElementNS(NS, 'g');
     g.setAttribute('class', 'transition-line');
     g.setAttribute('data-id', t.id);
-    g.dataset.wavelength=String(t.wavelength_vac_nm);
-    g.dataset.spectrum=t.spectrum.region.toLowerCase();
-    g.dataset.color=t.color;
-    g.setAttribute('aria-label', t.id+' '+t.lower+' → '+t.upper+' '+t.wavelength_vac_nm+' nm '+t.spectrum.label);
     const clsKey = t.classification.startsWith('强') ? 'strong' : t.classification.startsWith('弱') ? 'weak' : 'forbidden';
     g.setAttribute('data-strength', clsKey);
     g.setAttribute('data-category', isCore ? 'core' : 'rydberg');
@@ -515,7 +560,7 @@ let attachHfsHover;
     const _dx = x2 - x1, _dy = y2 - y1;
     const _len = Math.sqrt(_dx*_dx + _dy*_dy) || 1;
     const _ux = _dx / _len, _uy = _dy / _len;
-    const _textStr = (isCore ? t.wavelength_vac_nm.toFixed(2) : t.wavelength_vac_nm.toFixed(1)) + ' nm'+(t.spectrum.region==='visible'?'':' '+t.spectrum.region);
+    const _textStr = (isCore ? t.wavelength_vac_nm.toFixed(2) : t.wavelength_vac_nm.toFixed(1)) + ' nm';
     const _textW = _textStr.length * (isCore ? 6.8 : 5.8);
     const _gapHalf = _textW / 2 + 5;
     const _midX = (x1 + x2) / 2;
@@ -532,7 +577,7 @@ let attachHfsHover;
     line1.setAttribute('stroke', t.color);
     line1.setAttribute('stroke-width', strokeW);
     line1.setAttribute('stroke-linecap', 'round');
-    if (isDashed || t.spectrum.dash) line1.setAttribute('stroke-dasharray', t.spectrum.dash || '5 3');
+    if (isDashed) line1.setAttribute('stroke-dasharray', '5 3');
     line1.style.transition = 'stroke-width 0.2s, opacity 0.2s';
     g.appendChild(line1);
 
@@ -543,7 +588,7 @@ let attachHfsHover;
     line2.setAttribute('stroke', t.color);
     line2.setAttribute('stroke-width', strokeW);
     line2.setAttribute('stroke-linecap', 'round');
-    if (isDashed || t.spectrum.dash) line2.setAttribute('stroke-dasharray', t.spectrum.dash || '5 3');
+    if (isDashed) line2.setAttribute('stroke-dasharray', '5 3');
     line2.style.transition = 'stroke-width 0.2s, opacity 0.2s';
     g.appendChild(line2);
 
@@ -589,7 +634,7 @@ let attachHfsHover;
     wlLabel.setAttribute('x', 0);
     wlLabel.setAttribute('y', isCore ? 4 : 3);
     wlLabel.setAttribute('text-anchor', 'middle');
-    wlLabel.setAttribute('fill', '#e8edf7');
+    wlLabel.setAttribute('fill', t.color);
     wlLabel.setAttribute('font-size', isCore ? '11.5' : '9.5');
     wlLabel.setAttribute('font-family', 'Times New Roman, SimSun, Songti SC, serif');
     wlLabel.setAttribute('font-weight', isCore ? '600' : '400');
@@ -616,14 +661,15 @@ let attachHfsHover;
 
     // Hover
     g.addEventListener('mouseenter', (e) => {
-      showTooltip(e, t, isCore);
+      closeHyperfinePanel();
+      showTooltip(e, t, isCore, g);
       g.querySelectorAll('.trans-main-line').forEach(el => {
         el.setAttribute('stroke-width', parseFloat(el.getAttribute('stroke-width')) * 1.6);
       });
     });
     g.addEventListener('mousemove', moveTooltip);
     g.addEventListener('mouseleave', () => {
-      hideTooltip();
+      scheduleTooltipHide();
       const origW = t.classification.startsWith('强') ? (isCore ? 2.5 : 1.5) : t.classification.startsWith('弱') ? 2 : 1.2;
       g.querySelectorAll('.trans-main-line').forEach(el => {
         el.setAttribute('stroke-width', origW);
@@ -682,138 +728,16 @@ let attachHfsHover;
 // HYPERFINE PANEL
 // ============================================================
 function showHyperfinePanel(term) {
-  const panel = document.getElementById('hfsPanel');
-  const content = document.getElementById('hfsContent');
-  const hfs = HYPERFINE_DATA[term];
-  const level = CORE_LEVELS.find(l => l.term === term);
-  if (term === '65³S₁') {
-    const groups = [
-      { F: '3/2', y: 55, color: '#f59e0b', m: ['+3/2', '+1/2', '−1/2', '−3/2'] },
-      { F: '1/2', y: 175, color: '#a78bfa', m: ['+1/2', '−1/2'] }
-    ];
-    let diagram = '<svg viewBox="0 0 350 250" width="100%" role="img" aria-label="65S 超精细与 mF 示意结构">';
-    groups.forEach(group => {
-      diagram += `<text x="12" y="${group.y - 12}" fill="${group.color}" font-size="13">F=${group.F}</text><line x1="12" y1="${group.y}" x2="120" y2="${group.y}" stroke="${group.color}" stroke-width="2"/>`;
-      group.m.forEach((m, i) => {
-        const y = group.y + (i - (group.m.length - 1) / 2) * 23;
-        diagram += `<line x1="120" y1="${group.y}" x2="205" y2="${y}" stroke="${group.color}" stroke-dasharray="3 3" opacity="0.4"/><line x1="205" y1="${y}" x2="275" y2="${y}" stroke="${group.color}" stroke-width="2"/><text x="282" y="${y + 4}" fill="${group.color}" font-size="12">mF=${m}</text>`;
-      });
-    });
-    diagram += '<text x="12" y="235" fill="#8c96aa" font-size="11">F / mF 位置为示意；零场同一 F 内 mF 简并</text></svg>';
-    content.innerHTML = '<div class="hfs-title-pill">³S₁ 超精细结构 · 6s65s · J=1 · I=1/2 · 零场 A<sub>hfs</sub><sup>eff</sup></div>' + diagram +
-      '<div class="hfs-info">' +
-      `<div class="hfs-row"><span>F = 1/2 · δE/h</span><strong>${hfs.levels[0].shift.toFixed(6)} MHz</strong></div>` +
-      '<div class="hfs-row" style="padding-left:12px"><span>mF ∈</span><strong>−½, +½</strong></div>' +
-      `<div class="hfs-row"><span>F = 3/2 · δE/h</span><strong>+${hfs.levels[1].shift.toFixed(6)} MHz</strong></div>` +
-      '<div class="hfs-row" style="padding-left:12px"><span>mF ∈</span><strong>−³⁄₂, −½, +½, +³⁄₂</strong></div>' +
-      '<div class="hfs-row" style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px"><span>A<sub>hfs</sub><sup>eff</sup></span><strong>+' + hfs.A.toFixed(6) + ' MHz</strong></div>' +
-      '<div class="hfs-row"><span>简并度</span><strong>2 + 4 = 6</strong></div></div>' +
-      '<p>数据来源：This work。</p>';
-    document.getElementById('hfsPanel').classList.add('active'); return;
-  }
-  if (!hfs || !level) return;
-
-  // Format F value as fraction: 0.5→1/2, 1.5→3/2, 2.5→5/2
-  function fStr(F) { return F === 0.5 ? '1/2' : F === 1.5 ? '3/2' : F === 2.5 ? '5/2' : F; }
-
-  let html = '<div class="hfs-title-pill"><span class="lg-level">' + term + '</span> 超精细结构 · ' + level.config + ' · J=' + level.J + ' · I=1/2';
-  if (hfs.A !== 0) html += ' · A = ' + (hfs.A > 0 ? '+' : '') + hfs.A + ' MHz';
-  html += '</div>';
-
-  if (hfs.A === 0) {
-    // J=0 state: no hyperfine splitting, but still draw F=1/2 with mF = ±1/2 sublevels
-    html += '<div class="hfs-no-split" style="margin-bottom:10px"><div class="icon">○</div>J=0 态无超精细分裂 · 仅 F = I = 1/2 · mF = ±1/2</div>';
-    // Fall through to SVG drawing code below (single level, shift=0)
-  }
-
-  // Draw SVG hyperfine diagram with Zeeman splitting parallel lines
-  const hasTwoF = hfs.levels.length === 2;
-  const svgW = 300;
-  const maxShift = Math.max(...hfs.levels.map(l => Math.abs(l.shift)));
-  const scale = maxShift > 0 ? 45 / maxShift : 0;
-  // Calculate max mF sublevels for height
-  let maxSubLines = 1;
-  hfs.levels.forEach(lv => { maxSubLines = Math.max(maxSubLines, Math.round(lv.F * 2 + 1)); });
-  const mFSpacing = 14;
-  const maxZeemanH = (maxSubLines - 1) * mFSpacing;
-  const svgH = hasTwoF ? (180 + maxZeemanH) : (120 + maxZeemanH);
-  const refY = svgH / 2;
-  const mainX1 = 35, mainX2 = 115;
-  const zeemanX1 = 145, zeemanX2 = 230;
-
-  let svg = '<svg viewBox="0 0 ' + svgW + ' ' + svgH + '" style="width:100%;height:auto">';
-  // Reference line (no hfs, center of gravity)
-  svg += '<line x1="20" y1="' + refY + '" x2="' + (svgW - 10) + '" y2="' + refY + '" stroke="#5a6580" stroke-width="1" stroke-dasharray="3 3"/>';
-  svg += '<text x="15" y="' + (refY + 4) + '" text-anchor="end" fill="#7d88a0" font-size="9" font-family="monospace">E₀</text>';
-  // B field indicator
-  svg += '<text x="' + ((zeemanX1 + zeemanX2) / 2) + '" y="14" text-anchor="middle" fill="#5a6580" font-size="8" font-family="monospace" opacity="0.5">B →</text>';
-
-  // Sort levels: highest shift (highest energy) first = top of diagram
-  const sortedLevels = [...hfs.levels].sort((a, b) => b.shift - a.shift);
-  sortedLevels.forEach((lv) => {
-    const y = refY - lv.shift * scale; // positive shift = higher energy = smaller Y
-    const color = lv.F === 0.5 ? '#a78bfa' : lv.F === 1.5 ? '#f59e0b' : '#22d391';
-
-    // F level main line (B=0 side)
-    svg += '<line x1="' + mainX1 + '" y1="' + y + '" x2="' + mainX2 + '" y2="' + y + '" stroke="' + color + '" stroke-width="2.5" stroke-linecap="round"/>';
-    // F label — centered on the line with dark background for readability
-    var fLabelText = 'F=' + fStr(lv.F);
-    var fLabelX = (mainX1 + mainX2) / 2;
-    svg += '<rect x="' + (fLabelX - 20) + '" y="' + (y - 8) + '" width="40" height="16" fill="#0a0e16" opacity="0.9" rx="3"/>';
-    svg += '<text x="' + fLabelX + '" y="' + (y + 4) + '" text-anchor="middle" fill="' + color + '" font-size="12" font-family="serif" font-weight="600">' + fLabelText + '</text>';
-    // Shift label
-    svg += '<text x="' + (mainX1 - 4) + '" y="' + (y + 4) + '" text-anchor="end" fill="#7d88a0" font-size="9" font-family="monospace">' + (lv.shift > 0 ? '+' : '') + lv.shift.toFixed(0) + '</text>';
-
-    // mF sublevels — Zeeman splitting parallel horizontal lines
-    const mFVals = [];
-    for (let m = lv.F; m >= -lv.F; m -= 1) mFVals.push(m); // highest mF first (top)
-    const mFOffset = (mFVals.length - 1) * mFSpacing / 2;
-    mFVals.forEach((mF, mi) => {
-      const mFY = y - mFOffset + mi * mFSpacing;
-      // Connector from F level to mF line
-      svg += '<line x1="' + mainX2 + '" y1="' + y + '" x2="' + zeemanX1 + '" y2="' + mFY + '" stroke="' + color + '" stroke-width="0.5" opacity="0.25"/>';
-      // mF parallel horizontal line
-      svg += '<line x1="' + zeemanX1 + '" y1="' + mFY + '" x2="' + zeemanX2 + '" y2="' + mFY + '" stroke="' + color + '" stroke-width="1.2" opacity="0.65"/>';
-      // mF label
-      const mFStr = mF === 0.5 ? '+½' : mF === -0.5 ? '-½' : mF === 1.5 ? '+³⁄₂' : mF === -1.5 ? '-³⁄₂' : mF === 2.5 ? '+⁵⁄₂' : mF === -2.5 ? '-⁵⁄₂' : mF;
-      svg += '<text x="' + (zeemanX2 + 4) + '" y="' + (mFY + 3) + '" fill="' + color + '" font-size="9" font-family="monospace" opacity="0.85">' + mFStr + '</text>';
-    });
-  });
-
-  // Connect reference to F levels with thin dashed lines
-  sortedLevels.forEach((lv) => {
-    const y = refY - lv.shift * scale;
-    svg += '<line x1="' + ((mainX1 + mainX2) / 2) + '" y1="' + refY + '" x2="' + ((mainX1 + mainX2) / 2) + '" y2="' + y + '" stroke="#5a6580" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.3"/>';
-  });
-
-  svg += '</svg>';
-  html += '<div class="hfs-svg-wrap">' + svg + '</div>';
-
-  // Info table
-  html += '<div class="hfs-info">';
-  hfs.levels.forEach(lv => {
-    const mFs = [];
-    for (let m = -lv.F; m <= lv.F; m += 1) mFs.push(m === 0.5 ? '+½' : m === -0.5 ? '-½' : m === 1.5 ? '+³⁄₂' : m === -1.5 ? '-³⁄₂' : m === 2.5 ? '+⁵⁄₂' : m === -2.5 ? '-⁵⁄₂' : m);
-    html += '<div class="hfs-row"><span>F = ' + fStr(lv.F) + '</span><strong>' + (lv.shift > 0 ? '+' : '') + lv.shift.toFixed(2) + ' MHz</strong></div>';
-    html += '<div class="hfs-row" style="padding-left:12px"><span>mF ∈</span><strong>' + mFs.join(', ') + '</strong></div>';
-  });
-  html += '<div class="hfs-row" style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px"><span>A_hfs</span><strong id="hfsAVal">' + (hfs.A > 0 ? '+' : '') + hfs.A + ' MHz</strong></div>';
-  html += '<div class="hfs-row"><span>简并度</span><strong>' + (hasTwoF ? (hfs.levels[0].F * 2 + 1) + ' + ' + (hfs.levels[1].F * 2 + 1) + ' = ' + ((hfs.levels[0].F * 2 + 1) + (hfs.levels[1].F * 2 + 1)) : '1') + '</strong></div>';
-  html += '</div>';
-
-  content.innerHTML = html;
+  const panel=document.getElementById('hfsPanel');
+  const level=CORE_LEVELS.find(l=>l.term===term), hfs=HYPERFINE_DATA[term];
+  if (!level||!hfs) return;
+  document.getElementById('hfsContent').innerHTML=renderLevelDetails(level,hfs);
   panel.classList.add('active');
-  // Ensure panel click doesn't propagate to document (which would close it)
-  panel.onclick = (e) => e.stopPropagation();
-
-  const hfsAVal = document.getElementById('hfsAVal');
-  if (hfsAVal) {
-    attachInfoTooltip(hfsAVal, '超精细分裂常数 A_hfs', '由原子束/光谱实验测量得到', 'ΔE_hfs = A_hfs · K/2，其中 K = F(F+1) − J(J+1) − I(I+1)，I = 1/2。');
-  }
+  document.querySelectorAll('.core-level-group').forEach(g=>g.classList.toggle('selected',g.dataset.term===term));
+  positionHyperfinePanel();
 }
 
 // Hover-aware close is managed by attachHfsHover; no global click close needed.
 
-  document.querySelectorAll('#levelDiagram text').forEach(text=>{text.setAttribute('font-size',Math.max(14,Number(text.getAttribute('font-size'))||14));text.setAttribute('font-family','Times New Roman, SimSun, Songti SC, serif');});
 
 }

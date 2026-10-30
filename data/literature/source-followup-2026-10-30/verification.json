@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-30T14:31:31+08:00",
+  "datasetVersion": "2026.10.30.1",
+  "unitPassed": 183,
+  "unitFailed": 0,
+  "dataValidation": "passed",
+  "preflight": "passed",
+  "build": "passed",
+  "artifactCheck": "69files/95localreferences passed",
+  "browser": {
+    "runtime": "installed GoogleChrome via Playwright",
+    "casesPassed": 15,
+    "failed": 0,
+    "projects": [
+      "desktop1440",
+      "desktop1024",
+      "mobile390"
+    ],
+    "scope": "newsourceanchors,adopteddata,invalidpredictionsuppression,complete8paths,E1/F/M2calculationboundaries"
+  },
+  "integrity": {
+    "projectPDFsUnchanged": 31,
+    "numberedOriginalsUnchanged": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
+    "mainPlotProtectedFilesUnchanged": true,
+    "saved65SCSVUnchanged": true,
+    "PDFmetadataPrivacy": "generatedTitle/Subject omitted; raw originals unmodified",
+    "localEvidenceExcludedFromDist": true
+  },
+  "noMQDTRun": true,
+  "noCommitPushDeployment": true,
+  "scientificValidation": "Source transcription/arithmetic and engineering checks are separate; unresolved original-source and model boundaries remain documented."
+}

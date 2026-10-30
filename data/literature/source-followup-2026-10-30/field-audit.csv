@@ -1,0 +1,49 @@
+path,oldValue,newValue,unit,oldUncertainty,newUncertainty,sourceId,sourceLocator,status
+transitions/T1/Gamma_per_s_num,183000000.0,183000000.0,s^-1,400000.0,400000.0,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, total_decay_rate",primary-source-followup
+transitions/T1/lifetime_ns,5.464,5.464,ns,0.011,0.011,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, upper_state_lifetime",primary-source-followup
+transitions/T1/d_num,4.147,4.147,e*a0,0.004,0.004,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, dipole_reduced_J_Racah",primary-source-followup
+transitions/T2/Gamma_per_s_num,1146000.0,1146000.0,s^-1,2500.0,2500.0,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, total_decay_rate",primary-source-followup
+transitions/T2/lifetime_ns,872.6,872.6,ns,1.9,1.9,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, upper_state_lifetime",primary-source-followup
+transitions/T2/d_num,0.5398,0.5398,e*a0,0.0006,0.0006,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, dipole_reduced_J_Racah",primary-source-followup
+transitions/T4/wavelength_vac_nm,507.34517,507.3452995130081,nm,4e-05,,qiao-2023-rinp,"Qiao2023RINP Table2 PDFp5, five corrected hyperfine component frequencies + clock ref01 Table9 p24",primary-source-followup
+transitions/T4/wavelength_air_nm,507.20882,,nm,4e-05,,ref-01,KroezeTable11 old air wavelength archived; Edlen/Buck conversion not recomputed for updated Ritz frequency,primary-source-followup
+transitions/T4/frequency_THz,590.90433,590.9041796341969,THz,4e-05,,qiao-2023-rinp,"Qiao2023RINP Table2 PDFp5, five corrected hyperfine component frequencies + clock ref01 Table9 p24",primary-source-followup
+transitions/T4/energy_eV,2.44378393,2.4437833276904413,eV,1.7e-07,,qiao-2023-rinp,"Qiao2023RINP Table2 PDFp5, five corrected hyperfine component frequencies + clock ref01 Table9 p24",primary-source-followup
+transitions/T4/Gamma_per_s_num,0.112,0.112,s^-1,,,mishra-2001-jqsrt,Mishra2001 Table5 PDFp9 printed8.9s; inverse lifetime rounded0.112/s; original printed component sum0.11188/s separately retained,primary-source-followup
+transitions/T4/lifetime_ns,8900000000.0,8900000000.0,ns,,,mishra-2001-jqsrt,"Mishra2001 Eq15 PDFp7; Tables3/4/5 PDFpp8-9, printed776-777",primary-source-followup
+transitions/T4/linewidth_frequency_coefficient_Hz,0.0179,0.0179,Hz,,,mishra-2001-jqsrt,"Mishra2001 Table5 PDFp9 printed8.9s; equivalentwidth=1/(2*pi*tau), rounded17.9mHz; not a printed Mishra linewidth",primary-source-followup
+transitions/T5/wavelength_vac_nm,1388.7629464,1388.7629464,nm,6e-07,6e-07,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, wavelength_vac",primary-source-followup
+transitions/T5/wavelength_air_nm,1388.396915,1388.396915,nm,1.4e-05,1.4e-05,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, wavelength_air",primary-source-followup
+transitions/T5/frequency_THz,215.87014457,215.87014457,THz,9e-08,9e-08,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, frequency_nu",primary-source-followup
+transitions/T5/energy_eV,0.8927671836,0.8927671836,eV,4e-10,4e-10,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, transition_energy",primary-source-followup
+transitions/T5/Gamma_per_s_num,3010000.0,3010000.0,s^-1,100000.0,100000.0,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, total_decay_rate",primary-source-followup
+transitions/T5/lifetime_ns,332.0,332.0,ns,11.0,11.0,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, upper_state_lifetime",primary-source-followup
+transitions/T5/oscillator_strength_f_num,,,dimensionless,,,ref-01,arXiv:2509.04416v2 Table12 p25; oscillator strength not listed,primary-source-followup
+transitions/T5/d_num,2.76,2.76,e*a0,0.07,0.07,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, dipole_reduced_J_Racah",primary-source-followup
+transitions/T5/linewidth_frequency_coefficient_Hz,479000.0,479000.0,Hz,16000.0,16000.0,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, linewidth_FWHM_nu",primary-source-followup
+transitions/T6/wavelength_vac_nm,649.08662928,649.08662928,nm,3.1e-07,3.1e-07,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, wavelength_vac",primary-source-followup
+transitions/T6/wavelength_air_nm,648.913718,648.913718,nm,6e-06,6e-06,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, wavelength_air",primary-source-followup
+transitions/T6/frequency_THz,461.86817672,461.86817672,THz,2.2e-07,2.2e-07,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, frequency_nu",primary-source-followup
+transitions/T6/energy_eV,1.9101332987,1.9101332987,eV,9e-10,9e-10,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, transition_energy",primary-source-followup
+transitions/T6/Gamma_per_s_num,72000000.0,72000000.0,s^-1,9000000.0,9000000.0,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, total_decay_rate",primary-source-followup
+transitions/T6/lifetime_ns,13.8,13.8,ns,1.7,1.7,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, upper_state_lifetime",primary-source-followup
+transitions/T6/oscillator_strength_f_num,,,dimensionless,,,ref-01,arXiv:2509.04416v2 Table13 p26; oscillator strength not listed,primary-source-followup
+transitions/T6/d_num,1.96,1.96,e*a0,0.15,0.15,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, dipole_reduced_J_Racah",primary-source-followup
+transitions/T6/linewidth_frequency_coefficient_Hz,11500000.0,11500000.0,Hz,1400000.0,1400000.0,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, linewidth_FWHM_nu",primary-source-followup
+transitions/T7/wavelength_vac_nm,770.16026840069,770.16026840069,nm,1.1871149320701517e-06,1.1871149320701517e-06,ref-01,"arXiv:2509.04416v2, Table14 p26 frequency; lambda=c/nu; printed lambda fails same-row consistency",primary-source-followup
+transitions/T7/wavelength_air_nm,769.955919,769.955919,nm,8e-06,8e-06,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, wavelength_air",primary-source-followup
+transitions/T7/frequency_THz,389.2598337,389.2598337,THz,6e-07,6e-07,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, frequency_nu",primary-source-followup
+transitions/T7/energy_eV,1.6098493199,1.6098493199,eV,2.4e-09,2.4e-09,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, transition_energy",primary-source-followup
+transitions/T7/Gamma_per_s_num,72000000.0,72000000.0,s^-1,9000000.0,9000000.0,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, total_decay_rate",primary-source-followup
+transitions/T7/lifetime_ns,13.8,13.8,ns,1.7,1.7,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, upper_state_lifetime",primary-source-followup
+transitions/T7/oscillator_strength_f_num,,,dimensionless,,,ref-01,arXiv:2509.04416v2 Table14 p26; oscillator strength not listed,primary-source-followup
+transitions/T7/d_num,4.99,4.99,e*a0,0.32,0.32,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, dipole_reduced_J_Racah",primary-source-followup
+transitions/T7/linewidth_frequency_coefficient_Hz,11500000.0,11500000.0,Hz,1400000.0,1400000.0,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, linewidth_FWHM_nu",primary-source-followup
+levels/yb171-6s6p-3p2/energy_cm,19710.4467,19710.44180284872,cm^-1,0.0014,,qiao-2023-rinp,"Qiao2023RINP Table2 PDFp5, five corrected hyperfine component frequencies + clock ref01 Table9 p24",primary-source-followup
+levels/yb171-6s6p-3p2/energy_eV,2.44378393,2.4437833276904413,eV,1.7e-07,,qiao-2023-rinp,"Qiao2023RINP Table2 PDFp5, five corrected hyperfine component frequencies + clock ref01 Table9 p24",primary-source-followup
+levels/yb171-6s7s-3s1/energy_cm,32694.75222474007,32694.75222474007,cm^-1,7.000000000000643e-06,7.000000000000643e-06,ref-01,arXiv2509.04416v2 Table9 p24 + Table13 p26,primary-source-followup
+levels/yb171-6s7s-3s1/energy_eV,4.0536326475389615,4.0536326475389615,eV,9.000000000000889e-10,9.000000000000889e-10,ref-01,arXiv2509.04416v2 Table9 p24 + Table13 p26,primary-source-followup
+hyperfine/³P₂,2680.9,2680.9,MHz,2.0,2.0,ref-01,"arXiv2509.04416v2 Table5 p21, 3P2:A_over_h",primary-comparison-confirmed
+hyperfine/³D₁,-2038.3,-2038.3,MHz,0.11,0.11,ref-01,"arXiv2509.04416v2 Table5 p21, 3D1:A_over_h",primary-comparison-confirmed
+hyperfine/³S₁,6838.41,6838.41,MHz,0.26,0.26,ref-01,"arXiv2509.04416v2 Table5 p21, 3S1:A_over_h",primary-comparison-confirmed
+estimates,,,,,,,,ionic-frequency-source-corrected

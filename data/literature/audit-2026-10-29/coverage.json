@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-29",
+  "transitionQuantityCount": 107,
+  "levelQuantityCount": 24,
+  "allCanonicalQuantityPathsCovered": true,
+  "hyperfineStateRecords": 11,
+  "saved65SRecordCovered": true,
+  "estimateModelCovered": true,
+  "auditRecordCount": 144,
+  "statusCounts": {
+    "adopted-compilation": 66,
+    "unsupported-value-removed": 2,
+    "pending-internal-artifact": 3,
+    "theory-definition-pending": 3,
+    "quarantined-estimate-or-missing": 57,
+    "derived-source-conflict": 3,
+    "source-conflict-retained": 1,
+    "reference-definition": 2,
+    "derived-compilation": 2,
+    "quarantined-estimate": 4,
+    "quarantined-model": 1
+  },
+  "meaning": "Coverage measures audit disposition, not number of physically validated measurements."
+}

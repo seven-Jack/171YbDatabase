@@ -1,0 +1,155 @@
+{
+  "paperNumber": 6,
+  "sourceId": "zhao-2024-pra",
+  "doi": "10.1103/PhysRevA.110.042816",
+  "context": "Yb isotope1389nm MTS in Ne hollow-cathode lamp; absolute systematic uncertainty dominated by pressure estimate; magnetic field280mG; spectrum linewidth not natural lifetime",
+  "tables": 4,
+  "pdf": "references/papers/6.pdf",
+  "sha256": "5c0e26a7ffb56471aff199941159da7686533620e5341f7633cfba594ab322ae",
+  "table": "TableIII",
+  "pdfPage": 5,
+  "printedPage": "042816-5",
+  "columns": [
+    "relative_shift"
+  ],
+  "note": "relative to174Yb; common absolute pressure error does not enter as independent per-line3.2MHz",
+  "rows": [
+    {
+      "label": "173Yb Fg5/2 Fe3/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "relative_shift": {
+          "printed": "-1668.5(16)",
+          "unit": "MHz",
+          "value": "-1668.5",
+          "uncertainty": "1.6",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb Fg1/2 Fe3/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "relative_shift": {
+          "printed": "-791.8(8)",
+          "unit": "MHz",
+          "value": "-791.8",
+          "uncertainty": "0.8",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "173Yb Fg5/2 Fe5/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "relative_shift": {
+          "printed": "-764.9(8)",
+          "unit": "MHz",
+          "value": "-764.9",
+          "uncertainty": "0.8",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "176Yb",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "relative_shift": {
+          "printed": "-114.6(6)",
+          "unit": "MHz",
+          "value": "-114.6",
+          "uncertainty": "0.6",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "174Yb",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "relative_shift": {
+          "printed": "0",
+          "unit": "MHz",
+          "value": "0",
+          "uncertainty": null,
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "172Yb",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "relative_shift": {
+          "printed": "121.5(7)",
+          "unit": "MHz",
+          "value": "121.5",
+          "uncertainty": "0.7",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "170Yb",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "relative_shift": {
+          "printed": "284.5(20)",
+          "unit": "MHz",
+          "value": "284.5",
+          "uncertainty": "2.0",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "173Yb Fg5/2 Fe7/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "relative_shift": {
+          "printed": "1561.2(11)",
+          "unit": "MHz",
+          "value": "1561.2",
+          "uncertainty": "1.1",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb Fg1/2 Fe1/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "relative_shift": {
+          "printed": "2267.4(8)",
+          "unit": "MHz",
+          "value": "2267.4",
+          "uncertainty": "0.8",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    }
+  ],
+  "rawPageText": "paper-6-page-5.txt",
+  "renderedVerified": "rendered/paper-6-p5.png"
+}

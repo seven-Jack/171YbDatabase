@@ -27,5 +27,7 @@ test('saved 65S frequencies satisfy the published internal difference, 2:4 centr
   assert.ok(Math.abs(2*lower.shift+4*upper.shift)<1e-8);
   assert.ok(Math.abs((2/3)*hfs.splitting-hfs.A)<1e-10);
   assert.equal(CATALOG.hyperfine.saved65S.conditions.magneticField_G,0);
-  assert.equal(CATALOG.hyperfine.saved65S.physicalValidation,'independent-experimental-validation-and-total-model-uncertainty-not-established');
+  assert.match(CATALOG.hyperfine.saved65S.physicalValidation,/saved CSV,notebook and validation identity\/configuration checked/);
+  assert.match(CATALOG.hyperfine.saved65S.physicalValidation,/original code revision.*branch\/model uncertainty.*unestablished/);
+  assert.equal(CATALOG.hyperfine.saved65S.reviewStatus,'definition-needs-review');
 });

@@ -1,0 +1,31 @@
+id,table,pdfPhysicalPage,printedPage,isotope,state,transitionId,lowerState,upperState,parameter,sourcePrintedValue,valueDecimal,uncertaintyDecimal,unit,sourceReferenceNumbers,evidenceType,approximate,status,birgeRatio,convention,conditions,reviewFlags,F,theoreticalAsterisk
+table-05:1S0:gJ,5,21,21,171,1S0,,,,1S0:gJ,—,,,,[73],compilation-adopted,False,not-applicable,,,,,,False
+table-05:1S0:A_over_h,5,21,21,171,1S0,,,,1S0:A_over_h,0,0,,MHz,[],definition-J0,False,numeric,,E_F/h=(A/h)[F(F+1)-I(I+1)-J(J+1)]/2; I=1/2,,,,
+table-05:1S0:F=0.5:zeeman_coefficient,5,21,21,171,1S0,,,,1S0:F=0.5:zeeman_coefficient,-0.7505(6),-0.7505,0.0006,kHz/G,[73],compilation-reported,False,numeric,,muB*gF/h,,,0.5,
+table-05:1P1:gJ,5,21,21,171,1P1,,,,1P1:gJ,1.035(5),1.035,0.005,,[171],compilation-adopted,False,numeric,,,,,,False
+table-05:1P1:A_over_h,5,21,21,171,1P1,,,,1P1:A_over_h,-214.06(17),-214.06,0.17,MHz,"[65, 66, 67, 172, 173, 174, 175, 176, 177, 178, 179]",compilation-weighted-recommendation,False,numeric,3.3,E_F/h=(A/h)[F(F+1)-I(I+1)-J(J+1)]/2; I=1/2,,,,
+table-05:1P1:F=0.5:zeeman_coefficient,5,21,21,171,1P1,,,,1P1:F=0.5:zeeman_coefficient,1932(9),1932,9,kHz/G,[171],compilation-reported,False,numeric,,muB*gF/h,,,0.5,
+table-05:1P1:F=1.5:zeeman_coefficient,5,21,21,171,1P1,,,,1P1:F=1.5:zeeman_coefficient,965(5),965,5,kHz/G,[171],compilation-reported,False,numeric,,muB*gF/h,,,1.5,
+table-05:3P0:gJ,5,21,21,171,3P0,,,,3P0:gJ,—,,,,"[49, 50, 83, 84]",compilation-adopted,False,not-applicable,,,,,,False
+table-05:3P0:A_over_h,5,21,21,171,3P0,,,,3P0:A_over_h,0,0,,MHz,[],definition-J0,False,numeric,,E_F/h=(A/h)[F(F+1)-I(I+1)-J(J+1)]/2; I=1/2,,,,
+table-05:3P0:F=0.5:zeeman_coefficient,5,21,21,171,3P0,,,,3P0:F=0.5:zeeman_coefficient,-1.1496(6),-1.1496,0.0006,kHz/G,"[49, 50, 83, 84]",compilation-reported,False,numeric,,muB*gF/h,,,0.5,
+table-05:3P1:gJ,5,21,21,171,3P1,,,,3P1:gJ,1.492820(31),1.492820,0.000031,,"[171, 180]",compilation-adopted,False,numeric,,,,,,False
+table-05:3P1:A_over_h,5,21,21,171,3P1,,,,3P1:A_over_h,3957.85(5),3957.85,0.05,MHz,"[127, 128, 181, 182, 183, 184, 185, 186, 187, 188, 189]",compilation-weighted-recommendation,False,numeric,2.6,E_F/h=(A/h)[F(F+1)-I(I+1)-J(J+1)]/2; I=1/2,,,,
+table-05:3P1:F=0.5:zeeman_coefficient,5,21,21,171,3P1,,,,3P1:F=0.5:zeeman_coefficient,2786.10(6),2786.10,0.06,kHz/G,"[171, 180]",compilation-reported,False,numeric,,muB*gF/h,,,0.5,
+table-05:3P1:F=1.5:zeeman_coefficient,5,21,21,171,3P1,,,,3P1:F=1.5:zeeman_coefficient,1392.674(29),1392.674,0.029,kHz/G,"[171, 180]",compilation-reported,False,numeric,,muB*gF/h,,,1.5,
+table-05:3P2:gJ,5,21,21,171,3P2,,,,3P2:gJ,1.501,1.501,,,[],theoretical,False,numeric,,,,,,True
+table-05:3P2:A_over_h,5,21,21,171,3P2,,,,3P2:A_over_h,2680.9(20),2680.9,2.0,MHz,"[190, 191, 192, 193]",compilation-weighted-recommendation,False,numeric,6.3,E_F/h=(A/h)[F(F+1)-I(I+1)-J(J+1)]/2; I=1/2,,,,
+table-05:3P2:F=1.5:zeeman_coefficient,5,21,21,171,3P2,,,,3P2:F=1.5:zeeman_coefficient,~2521,2521,,kHz/G,[],theoretical-derived,True,numeric,,muB*gF/h,,,1.5,
+table-05:3P2:F=2.5:zeeman_coefficient,5,21,21,171,3P2,,,,3P2:F=2.5:zeeman_coefficient,~1681,1681,,kHz/G,[],theoretical-derived,True,numeric,,muB*gF/h,,,2.5,
+table-05:3D1:gJ,5,21,21,171,3D1,,,,3D1:gJ,0.499,0.499,,,[],theoretical,False,numeric,,,,,,True
+table-05:3D1:A_over_h,5,21,21,171,3D1,,,,3D1:A_over_h,-2038.30(11),-2038.30,0.11,MHz,"[69, 85, 86, 194, 195]",compilation-weighted-recommendation,False,numeric,1.0,E_F/h=(A/h)[F(F+1)-I(I+1)-J(J+1)]/2; I=1/2,,,,
+table-05:3D1:F=0.5:zeeman_coefficient,5,21,21,171,3D1,,,,3D1:F=0.5:zeeman_coefficient,~931,931,,kHz/G,[],theoretical-derived,True,numeric,,muB*gF/h,,,0.5,
+table-05:3D1:F=1.5:zeeman_coefficient,5,21,21,171,3D1,,,,3D1:F=1.5:zeeman_coefficient,~465,465,,kHz/G,[],theoretical-derived,True,numeric,,muB*gF/h,,,1.5,
+table-05:3D2:gJ,5,21,21,171,3D2,,,,3D2:gJ,1.167,1.167,,,[],theoretical,False,numeric,,,,,,True
+table-05:3D2:A_over_h,5,21,21,171,3D2,,,,3D2:A_over_h,1313.8(33),1313.8,3.3,MHz,"[68, 69]",compilation-weighted-recommendation,False,numeric,,E_F/h=(A/h)[F(F+1)-I(I+1)-J(J+1)]/2; I=1/2,,,,
+table-05:3D2:F=1.5:zeeman_coefficient,5,21,21,171,3D2,,,,3D2:F=1.5:zeeman_coefficient,~1960,1960,,kHz/G,[],theoretical-derived,True,numeric,,muB*gF/h,,,1.5,
+table-05:3D2:F=2.5:zeeman_coefficient,5,21,21,171,3D2,,,,3D2:F=2.5:zeeman_coefficient,~1307,1307,,kHz/G,[],theoretical-derived,True,numeric,,muB*gF/h,,,2.5,
+table-05:3S1:gJ,5,21,21,171,3S1,,,,3S1:gJ,2.01(1),2.01,0.01,,[196],compilation-adopted,False,numeric,,,,,,False
+table-05:3S1:A_over_h,5,21,21,171,3S1,,,,3S1:A_over_h,6838.41(26),6838.41,0.26,MHz,"[177, 190, 192, 197, 198, 199]",compilation-weighted-recommendation,False,numeric,3.1,E_F/h=(A/h)[F(F+1)-I(I+1)-J(J+1)]/2; I=1/2,,,,
+table-05:3S1:F=0.5:zeeman_coefficient,5,21,21,171,3S1,,,,3S1:F=0.5:zeeman_coefficient,3751(19),3751,19,kHz/G,[196],compilation-reported,False,numeric,,muB*gF/h,,,0.5,
+table-05:3S1:F=1.5:zeeman_coefficient,5,21,21,171,3S1,,,,3S1:F=1.5:zeeman_coefficient,1875(9),1875,9,kHz/G,[196],compilation-reported,False,numeric,,muB*gF/h,,,1.5,

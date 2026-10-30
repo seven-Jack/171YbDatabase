@@ -1,0 +1,89 @@
+{
+  "checkedOn": "2026-10-30",
+  "purpose": "Compare current Rabi-power implementation with primary 171Yb experiments without fitting an input to the target Rabi frequency.",
+  "primaryCase": {
+    "id": "peper-2025-nu54p28",
+    "source": {
+      "title": "Spectroscopy and Modeling of 171Yb Rydberg States for High-Fidelity Two-Qubit Gates",
+      "authors": "Michael Peper et al.",
+      "journal": "Physical Review X 15, 011009 (2025)",
+      "doi": "10.1103/PhysRevX.15.011009",
+      "url": "https://arxiv.org/abs/2406.01482",
+      "locator": "Section V, printed pages 011009-9 and 011009-10; Appendix E1, Figure 18 on page 011009-23",
+      "localPath": "references/papers/2025_Peper_171Yb_Spectroscopy-modeling_published.pdf",
+      "sha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a"
+    },
+    "reportedExperiment": {
+      "isotope": "171Yb",
+      "lower": "6s6p 3P0, F=1/2, mF=+1/2",
+      "upper": "triplet-connected nu approximately 54.28, L=0, F=1/2, mF=-1/2",
+      "upperNu": 54.28,
+      "wavelength_nm": 302,
+      "totalPower_mW": 20,
+      "waist_um": 12,
+      "waistConvention": "1/e^2 intensity radius",
+      "polarization": "Linear perpendicular to magnetic field; half the total power drives sigma-",
+      "q": -1,
+      "componentPower_mW": 10,
+      "rabiOrdinary_MHz": 2.5,
+      "powerUncertainty_mW": null,
+      "waistUncertainty_um": null,
+      "rabiUncertainty_MHz": null,
+      "uncertaintyNote": "Section V states working values without a joint power, waist and Rabi uncertainty budget. Unknown is not zero."
+    },
+    "independentDipole": {
+      "dEff_ea0": null,
+      "reason": "No independently traceable numerical physical dipole for this exact state and experimental field has been adopted in the website catalog.",
+      "figure18": "Contains state-specific calculated multipole matrix elements with F/mF dependence. Figure-generation values, fixed code version and operator normalization have not been closed; no graphical value is adopted as an exact input.",
+      "operatorBoundary": "Equation A22 writes r^k Y_kq; the physical dipole convention must be reconciled before importing Q as e*r*C^1_q. Do not apply an extra CG factor to a fully resolved matrix element."
+    },
+    "admissibility": "experimental-power-waist-rabi-complete-independent-dipole-unresolved",
+    "currentR2Applicable": false,
+    "currentR2Reason": "The saved R2 transition is n=65. A nu=54.28 F=1/2 state cannot use the n=65 dipole 0.0376 ea0 or an assumed n^-3/2 correction without an independently validated state map.",
+    "verdict": "independent-absolute-validation-not-completed"
+  },
+  "auxiliaryCase": {
+    "id": "pizzocaro-2017-clock-pi-operating-point",
+    "source": {
+      "title": "Absolute frequency measurement of the 1S0-3P0 transition of 171Yb",
+      "authors": "Marco Pizzocaro et al.",
+      "journal": "Metrologia 54, 102-112 (2017)",
+      "doi": "10.1088/1681-7575/aa4e62",
+      "url": "https://arxiv.org/pdf/1609.01610v2#page=4",
+      "locator": "arXiv v2 PDF page 4, Section II.E, clock interrogation and Figures 3-4",
+      "localPath": "references/papers/2017_Pizzocaro_171Yb_Absolute-frequency_arXiv1609.01610v2.pdf",
+      "sha256": "1d20e391c49bd9e9af8adeebfeccf7580a12c71d636aff44616f139a4951bfbc"
+    },
+    "reportedExperiment": {
+      "transitionId": "T3",
+      "isotope": "171Yb",
+      "wavelength_nm": 578,
+      "power_nW": 70,
+      "waist_um": 200,
+      "waistConvention": "1/e^2 intensity radius",
+      "pol": "pi",
+      "channel": {"F": 0.5, "m": 0.5, "Fp": 0.5, "mp": 0.5, "q": 0},
+      "magneticField_mT": 0.14,
+      "piPulseTime_ms": 60,
+      "directlyReportedRabiOrdinary_Hz": null,
+      "frequencyEvidence": "Nominal Omega/(2*pi) derived as 1/(2*t_pi) from the stated experimental pi-pulse time; not a separately reported Rabi-oscillation fit.",
+      "typicalSpectrumFWHM_Hz": 20,
+      "spectrumLimitation": "The paper attributes the typical 20 Hz linewidth to clock-laser frequency noise.",
+      "typicalTemperature_uK": 7,
+      "temperatureUncertainty_uK": 3,
+      "typicalLatticeDepth_Er": 200,
+      "powerUncertainty_nW": null,
+      "waistUncertainty_um": null,
+      "piTimeUncertainty_ms": null
+    },
+    "admissibility": "auxiliary-pi-time-derived-operating-point-only",
+    "notEstablished": ["A matched independent direct fitted Rabi frequency and uncertainty", "A complete motional and spatial averaging correction", "A calibrated absolute Rabi uncertainty budget", "A unique cause for disagreement with the beam-centre calculator"]
+  },
+  "screenedNearMatches": [
+    {"doi":"10.1103/PhysRevX.13.041035","reason":"Clock Rabi approximately110 kHz and waist approximately20 um are reported, but90 mW is source SHG output before delivery losses, not a closed atom-plane power for that measurement."},
+    {"doi":"10.1103/PRXQuantum.6.020334","reason":"Clock waists400x35 um and Rabi rates3-15 kHz are reported; a matching atom-plane clock power was not located."},
+    {"doi":"10.1088/1674-1056/ac5392","reason":"5 mW belongs to the separate detuned sideband-cooling beam; carrier Rabi310 Hz is measured with the probe path. Those inputs must not be combined."},
+    {"doi":"10.1038/s41567-026-03258-8","reason":"200 mW refers to generated UV source output;1 mW/40 um refers to the369.5 nm autoionization beam. Neither is a matched clock/Rydberg Rabi input."},
+    {"arxiv":"2502.17406v2","reason":"Telecom excitation2.5 mW and approximately30 MHz are reported; the1389 nm waist is only described as several times larger than the35 um clock waist."}
+  ]
+}

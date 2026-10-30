@@ -12,8 +12,15 @@ const {exportData,sha256}=require('../../scripts/export-data.cjs');
 const root=fileURLToPath(new URL('../../',import.meta.url));
 const baseline=JSON.parse(fs.readFileSync(new URL('../fixtures/catalog-baseline.json',import.meta.url),'utf8'));
 
-test('production catalog compatibility values exactly preserve the saved legacy software baseline',()=>{
-  for (const key of ['HYPERFINE_DATA','RYDBERG_QC_DATA','CORE_LEVELS','CORE_TRANSITIONS','QUANTUM_DEFECTS','RYDBERG_QC_TRANSITIONS','REFERENCES','R_INF','E_I_CM','E_I_EV','A0_UM','ns_values']) assert.deepEqual(data[key],baseline.expected[key],key);
+test('historical fixture stays an explicit pre-audit record while model constants remain quarantined',()=>{
+  // Keep the historical fixture rather than replacing it with newly adopted data.
+  assert.equal(baseline.expected.CORE_TRANSITIONS.find(row=>row.id==='T2').d_num,.543);
+  assert.equal(baseline.expected.CORE_TRANSITIONS.find(row=>row.id==='T3').oscillator_strength_f_num,1e-9);
+  for(const key of ['R_INF','E_I_CM','E_I_EV','ns_values']) assert.deepEqual(data[key],baseline.expected[key],key);
+  assert.equal(data.CATALOG.estimates.evidenceKind,'scaling-estimate');
+  assert.equal(data.CATALOG.estimates.reviewStatus,'conflict-unresolved');
+  assert.equal(data.QUANTUM_DEFECTS.length,baseline.expected.QUANTUM_DEFECTS.length);
+  assert.equal(data.CATALOG.hyperfine.saved65S.evidenceKind,'internal-calculation');
 });
 
 test('all eight homepage paths reference unique canonical levels and transitions',()=>{
@@ -27,22 +34,31 @@ test('all eight homepage paths reference unique canonical levels and transitions
   }
 });
 
-test('source distinctions remain field specific and unknown uncertainty does not turn into zero',()=>{
+test('field sources separate adopted literature, unresolved internal elements and missing quantities',()=>{
   assert.equal(data.getQuantity('R2','d_num').sourceId,'ref-17');
   assert.equal(data.getQuantity('R2','d_num').evidenceKind,'internal-calculation');
+  assert.equal(data.getQuantity('R2','d_num').reviewStatus,'definition-needs-review');
   assert.equal(data.getQuantity('R2','wavelength_vac_nm').evidenceKind,'scaling-estimate');
-  assert.equal(data.getQuantity('T2','d_num').sourceId,'internal-t2-calibration');
+  const t2=data.getQuantity('T2','d_num');
+  assert.equal(t2.sourceId,'ref-01');
+  assert.equal(t2.value,.5398);assert.equal(t2.uncertainty,.0006);
+  assert.equal(t2.evidenceKind,'literature-reported');
+  assert.match(t2.conditions.sourceEvidenceType,/^compilation-derived/);
+  assert.equal(t2.conditions.primaryOriginalsAllRead,false);
   assert.equal(data.getQuantity('T3','d_num').convention,'F-reduced-effective');
-  assert.equal(data.getQuantity('T4','d_num').value,null);
-  assert.ok(data.getQuantity('T4','d_num').missingReason);
+  assert.equal(data.getQuantity('T3','d_num').reviewStatus,'definition-needs-review');
+  for(const [id,key] of [['T4','d_num'],['T3','oscillator_strength_f_num'],['T4','oscillator_strength_f_num']]) {
+    const quantity=data.getQuantity(id,key);assert.equal(quantity.value,null);assert.ok(quantity.missingReason);
+  }
   for (const record of data.CATALOG.transitions.records) for (const quantity of Object.values(record.quantities)) {
-    assert.equal(quantity.uncertainty,null);
-    assert.ok(quantity.uncertaintyNote);
+    if(quantity.uncertainty===null) assert.ok(quantity.uncertaintyNote);
+    else assert.ok(Number.isFinite(quantity.uncertainty)&&quantity.uncertainty>=0);
     assert.ok(data.getSourceRecord(quantity.sourceId));
     assert.notEqual(quantity.reviewStatus,'verified');
   }
-  assert.equal(data.getQuantity('T2','linewidth_frequency_coefficient_Hz').value,182400);
-  assert.equal(data.getQuantity('T2','linewidth_frequency_coefficient_Hz').reviewStatus,'definition-needs-review');
+  const linewidth=data.getQuantity('T2','linewidth_frequency_coefficient_Hz');
+  assert.equal(linewidth.value,182400);assert.equal(linewidth.reviewStatus,'conflict-unresolved');
+  assert.match(linewidth.conditions.sourceConflict,/2PI_NOTATION_CONFLICT/);
 });
 
 test('canonical data and compatibility exports cannot be modified by UI consumers',()=>{

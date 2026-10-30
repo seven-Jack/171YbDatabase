@@ -3,7 +3,41 @@ import { cg, reducedFFromJJ, matrixElement_F_q, getFs, formatCG, computeHfChanne
 import { spRabi } from '../physics/rabi.js';
 import { rabiToDisplay as displayRabi } from '../physics/units.js';
 import { createCalculatorStore } from '../state/store.js';
-export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC_DATA,HYPERFINE_DATA,RYDBERG_QC_TRANSITIONS=[]}, {tooltip,moveTooltip,hideTooltip}) {
+import { getTransitionRecord } from '../data/catalog.js';
+
+// The displayed result is a channel calculation; references identify its
+// retained input matrix element rather than asserting a measured Rabi result.
+export function buildHyperfineTooltipModel(transition, channel, polarization, hfInduced=false) {
+  const fraction=value=>({0.5:'1/2',1.5:'3/2',2.5:'5/2'}[value]??String(value));
+  const magnetic=value=>`${value<0?'−':value>0?'+':''}${fraction(Math.abs(value))}`;
+  const sourceId=getTransitionRecord(transition?.id)?.quantities.d_num?.sourceId;
+  const sourceIds=sourceId?[sourceId]:[];
+  const matrix=Number.isFinite(channel.matEl)
+    ? `${channel.matEl<0?'−':'+'}${hfInduced?Math.abs(channel.matEl).toExponential(2):Math.abs(channel.matEl).toFixed(5)} ea₀`
+    : '—';
+  return {
+    id:transition?.id||'',title:`${polarization} 超精细分量`,
+    rows:[
+      {label:'初态',value:`|F=${fraction(channel.F)}, mF=${magnetic(channel.m)}⟩`},
+      {label:'末态',value:`|F′=${fraction(channel.Fp)}, mF′=${magnetic(channel.mp)}⟩`},
+      {label:'d_eff',value:matrix,sourceIds},
+      {label:'Ω/2π',value:channel.rabiStr||'—',sourceIds}
+    ],
+    footnote:`输入 d：${hfInduced?'有效 F':'J'} 级约化量 · 模型换算`
+  };
+}
+export function syncPolarizationView(buttons, rule, pol) {
+  const ruleMap = { pi: 'Δm<sub>F</sub> = 0', sigmap: 'Δm<sub>F</sub> = +1', sigmam: 'Δm<sub>F</sub> = −1' };
+  if (!Object.hasOwn(ruleMap, pol)) throw new RangeError('未知偏振');
+  buttons.forEach(button => {
+    const active = button.dataset.pol === pol;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+  if (rule) rule.innerHTML = ruleMap[pol];
+}
+
+export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC_DATA,HYPERFINE_DATA,RYDBERG_QC_TRANSITIONS=[]}, {showCompactTooltip,scheduleTooltipHide}, {onChannelSelected}={}) {
   // ---- State ----
   const store = createCalculatorStore({
     transition: null, // { id, lower, upper, ... }
@@ -103,22 +137,13 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     return [ch.F, ch.m, ch.Fp, ch.mp, ch.q].join('|');
   }
   function selectHFChannel(ln) {
-    const already = state.selectedChannel &&
-      state.selectedChannel.F === ln.F &&
-      state.selectedChannel.m === ln.m &&
-      state.selectedChannel.Fp === ln.Fp &&
-      state.selectedChannel.mp === ln.mp &&
-      state.selectedChannel.q === (state.pol === 'pi' ? 0 : state.pol === 'sigmap' ? 1 : -1);
-    if (already) {
-      state.selectedChannel = null;
-    } else {
-      const q = state.pol === 'pi' ? 0 : state.pol === 'sigmap' ? 1 : -1;
-      state.selectedChannel = { F: ln.F, m: ln.m, Fp: ln.Fp, mp: ln.mp, q: q, cgVal: ln.cgVal, matEl: ln.matEl };
-      state.F_lower = ln.F;
-      state.F_upper = ln.Fp;
-    }
+    const q = state.pol === 'pi' ? 0 : state.pol === 'sigmap' ? 1 : -1;
+    state.selectedChannel = { F: ln.F, m: ln.m, Fp: ln.Fp, mp: ln.mp, q: q, cgVal: ln.cgVal, matEl: ln.matEl };
+    state.F_lower = ln.F;
+    state.F_upper = ln.Fp;
     recalc();
     notifyChanged();
+    onChannelSelected?.();
   }
 
   // ---- Render hyperfine transition diagram (filtered by selected polarization and F display) ----
@@ -137,7 +162,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       sigmap: { label: 'σ⁺', color: state.transition.color, rule: 'ΔmF = +1' },
       sigmam: { label: 'σ⁻', color: state.transition.color, rule: 'ΔmF = −1' }
     }[state.pol];
-    if (elTransRule) elTransRule.innerHTML = polInfo.rule.replace(/F/g, '<sub>F</sub>');
+    // Polarization controls and rule are synchronized at the recalc boundary.
 
     // For J=0→0 with I=1/2, F=F'=1/2 only; enumerate the allowed channels for the selected pol.
     const q = state.pol === 'pi' ? 0 : state.pol === 'sigmap' ? 1 : -1;
@@ -349,19 +374,9 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       hit.style.cursor = 'pointer';
       hit.addEventListener('click', () => selectHFChannel(ln));
       hit.addEventListener('mouseenter', e => {
-        tooltip.innerHTML = `
-          <div class="tt-title" style="color:${polInfo.color}">${polInfo.label} 超精细诱导跃迁</div>
-          <div class="tt-row"><span class="tt-key">初态</span><span class="tt-val">|F=${fStr(ln.F)}, mF=${mStr(ln.m)}⟩</span></div>
-          <div class="tt-row"><span class="tt-key">末态</span><span class="tt-val">|F′=${fStr(ln.Fp)}, mF′=${mStr(ln.mp)}⟩</span></div>
-          <div class="tt-row"><span class="tt-key">角向因子</span><span class="tt-val">${formatCG(ln.matEl / dRed)}（CG/√(2F′+1)）</span></div>
-          <div class="tt-row"><span class="tt-key">矩阵元 (d×CG/√2)</span><span class="tt-val">${ln.matEl >= 0 ? '+' : '−'}${Math.abs(ln.matEl).toExponential(2)} ea₀</span></div>
-          <div class="tt-row"><span class="tt-key">Ω/2π</span><span class="tt-val">${ln.rabiStr}</span></div>
-        `;
-        tooltip.classList.add('show');
-        moveTooltip(e);
+        showCompactTooltip(e,buildHyperfineTooltipModel(state.transition,ln,polInfo.label,true),{target:hit,plot:svg});
       });
-      hit.addEventListener('mousemove', moveTooltip);
-      hit.addEventListener('mouseleave', hideTooltip);
+      hit.addEventListener('mouseleave', scheduleTooltipHide);
       arrowG.appendChild(hit);
     });
 
@@ -405,7 +420,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       sigmam: { label: 'σ⁻', color: state.transition.color, rule: 'ΔmF = −1' }
     }[state.pol];
 
-    if (elTransRule) elTransRule.innerHTML = polInfo.rule.replace(/F/g, '<sub>F</sub>');
+    // Polarization controls and rule are synchronized at the recalc boundary.
 
     const lowerFs = state.diagF_lower === 'all' ? getFs(J) : [parseFloat(state.diagF_lower)];
     // Sort upper F′ manifolds by hyperfine energy shift (descending ⇒ highest energy on top).
@@ -667,19 +682,9 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       hit.style.cursor = 'pointer';
       hit.addEventListener('click', () => selectHFChannel(ln));
       hit.addEventListener('mouseenter', e => {
-        tooltip.innerHTML = `
-          <div class="tt-title" style="color:${polInfo.color}">${polInfo.label} 跃迁</div>
-          <div class="tt-row"><span class="tt-key">初态</span><span class="tt-val">|F=${fStr(ln.F)}, mF=${mStr(ln.m)}⟩</span></div>
-          <div class="tt-row"><span class="tt-key">末态</span><span class="tt-val">|F′=${fStr(ln.Fp)}, mF′=${mStr(ln.mp)}⟩</span></div>
-          <div class="tt-row"><span class="tt-key">CG 系数</span><span class="tt-val">${formatCG(angFactor)}</span></div>
-          <div class="tt-row"><span class="tt-key">矩阵元</span><span class="tt-val">${Math.abs(ln.matEl).toFixed(5)} ea₀</span></div>
-          <div class="tt-row"><span class="tt-key">Ω/2π</span><span class="tt-val">${ln.rabiStr}</span></div>
-        `;
-        tooltip.classList.add('show');
-        moveTooltip(e);
+        showCompactTooltip(e,buildHyperfineTooltipModel(state.transition,ln,polInfo.label),{target:hit,plot:svg});
       });
-      hit.addEventListener('mousemove', moveTooltip);
-      hit.addEventListener('mouseleave', hideTooltip);
+      hit.addEventListener('mouseleave', scheduleTooltipHide);
       arrowG.appendChild(hit);
     })
 
@@ -724,7 +729,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
         ? '<span style="font-family:\'JetBrains Mono\',monospace;color:var(--accent)">' + (ch.matEl >= 0 ? '+' : '−') + Math.abs(ch.matEl).toExponential(2) + '</span>'
         : '<span style="font-family:\'JetBrains Mono\',monospace">' + (ch.matEl >= 0 ? '+' : '−') + Math.abs(ch.matEl).toFixed(4) + '</span>';
       html += `<tr class="${cls}" data-key="${key}">
-        <td><button type="button" class="channel-select" data-channel-key="${key}" aria-pressed="${key === selKey}">|F=${fStr(ch.F)}, m<sub>F</sub>=${mStr(ch.m)}⟩</button></td>
+        <td><button type="button" class="channel-select" data-channel-key="${key}" aria-pressed="${key === selKey}" aria-controls="secRabi" title="选择此通道并进入 Rabi 计算">|F=${fStr(ch.F)}, m<sub>F</sub>=${mStr(ch.m)}⟩</button></td>
         <td>|F′=${fStr(ch.Fp)}, m<sub>F</sub>′=${mStr(ch.mp)}⟩</td>
         <td>${polLabel(ch.q)}</td>
         <td style="font-family:'JetBrains Mono',monospace">${angCell}</td>
@@ -733,7 +738,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     }
     elCGTableBody.innerHTML = html;
     elCGTableBody.querySelectorAll('[data-channel-key]').forEach(button=>{
-      const choose=()=>{const ch=channels.find(c=>channelKey(c)===button.dataset.channelKey);state.pol=ch.q===0?'pi':ch.q===1?'sigmap':'sigmam';state.selectedChannel=null;selectHFChannel(ch);syncPolarizationButtons();};
+      const choose=()=>{const ch=channels.find(c=>channelKey(c)===button.dataset.channelKey);state.pol=ch.q===0?'pi':ch.q===1?'sigmap':'sigmam';selectHFChannel(ch);};
       button.addEventListener('click',choose);
       button.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();choose();}});
       if(button.dataset.channelKey===focusedChannel)button.focus({preventScroll:true});
@@ -744,6 +749,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
 
   // ---- Full recalc & render ----
   function recalc() {
+    syncPolarizationButtons();
     // Matrix elements (effective dipole; drives Rabi-P viz via state.dEff)
     const { dEff } = computeDEff();
     state.dEff = dEff;
@@ -819,14 +825,8 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
 
   // Polarization segment (shared between input panel and diagram toolbar)
   function setPolarization(pol) {
+    if (!['pi', 'sigmap', 'sigmam'].includes(pol)) throw new RangeError('未知偏振');
     state.pol = pol;
-  document.querySelectorAll('[data-pol]').forEach(b => {
-    b.classList.toggle('active', b.dataset.pol === pol);
-  });
-    if (elTransRule) {
-      const ruleMap = { pi: 'ΔmF = 0', sigmap: 'ΔmF = +1', sigmam: 'ΔmF = −1' };
-      elTransRule.innerHTML = ruleMap[pol].replace(/F/g, '<sub>F</sub>');
-    }
     // Changing polarization invalidates a previously selected channel
     state.selectedChannel = null;
     recalc();
@@ -842,11 +842,11 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
 
 
   function syncPolarizationButtons() {
-    document.querySelectorAll('[data-pol]').forEach(b=>{const active=b.dataset.pol===state.pol;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+    syncPolarizationView(document.querySelectorAll('[data-pol]'), elTransRule, state.pol);
   }
   function notifyChanged() { store.publish(); }
   const api = Object.freeze({
-    loadTransition(t) { loadTransition(t); syncPolarizationButtons(); },
+    loadTransition,
     getState: store.getState,
     onChange: store.subscribe,
     patchInputs(patch) { for(const [key,value] of Object.entries(patch)) state[key]=value; recalc(); },
@@ -857,7 +857,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       for(const key of ['F_lower','F_upper','diagF_lower','diagF_upper','pol','P_mW','w_um','fR_MHz','selectedChannel','calcMode','powerUnit','rabiUnit','solveFor','calculatorUnits'])if(key in snapshot)state[key]=snapshot[key];
       if(elDiagFLower)elDiagFLower.value=state.diagF_lower;
       if(elDiagFUpper)elDiagFUpper.value=state.diagF_upper;
-      syncPolarizationButtons();recalc();
+      recalc();
     },
     channels: () => computeCGChannels(),
     setPolarization,

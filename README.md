@@ -5,6 +5,22 @@
 - 网页：https://seven-Jack.github.io/171YbDatabase/
 - 源码：https://github.com/seven-Jack/171YbDatabase
 
+## 新下载原文核对（2026-10-30）
+
+已收到1–8及10号PDF，编号原件未改动，第9篇仍缺。新增36张完整表、688条记录，累计71表1645条；最新[审计报告](references/audits/source-followup-20261030.md)、[提取入口](data/literature/source-followup-2026-10-30/README.md)及[剩余缺文献](references/missing-downloads.md)。
+
+当前数据版本**2026.10.30.1**：3P2质心工作值改为原文五分量Ritz派生，协方差未知而不填造精确1σ；8.9s明确为统计平均率倒数；离子芯频率采用Fisk原始测量。主图布局和保存65SCSV未改，未重算MQDT，未发布。
+
+[低能级Rabi–power核查](references/audits/low-state-rabi-validation-20261030.md)覆盖399、556、649、770和1389nm的指定mF/偏振通道、功率/束腰正反算及原文数据链。五条均与所列理论基准相容；这不代表独立实验标定，578nm的既有差异和507nm的M2边界继续保留。
+
+## 文献与数据来源核查（2026-10-29 至 30，本地未发布）
+
+- [文献入口](references/README.md)：22份PDF版本文件、完整书目索引与[待补全文清单](references/missing-downloads.md)。原paper库未修改。
+- [提取数据](data/literature/README.md)：35张表、957条带单位、误差、态/同位素条件和页码的记录；包含汇编、理论及比较数据，不等于957个独立测量。
+- [订正报告](references/audits/data-source-audit-2026-10-29.md)：131个能级/跃迁物理量全部有审计处置，另审查HFS、保存65S和历史模型。T2默认d采用0.5398(6)ea₀；源内冲突和不明内部值明确保留待核。
+
+首轮数据版本为2026.10.29.1。states表和生产数组已停止输出无合法锚点的寿命、C₆和阻塞半径；R2历史字段仍带未验证标签。旧值和原文保留于审计快照；保存65S CSV字节不变，未运行MQDT。文献全文与内部工件仅在本地归档，不进入网页构建包。
+
 ## 本地预览与检查
 
 需要 Node.js 22 或更新的受支持版本。开发依赖只用于检查，网站运行无需前端框架或服务器计算。
@@ -12,12 +28,14 @@
 ```sh
 npm ci
 npm run check
-python3 -m http.server 8765
+npm run preview
 ```
 
-打开 `http://127.0.0.1:8765/` 预览源站，或 `http://127.0.0.1:8765/dist/` 预览构建产物；ES Modules / JSON 需通过 HTTP，不能双击 `file://`。浏览器回归检查见 `docs/testing.md`：先 `npx playwright install chromium`，再 `npm run test:e2e`，测试会在 Pages 仓库子路径访问实际 `dist/`。
+打开 <http://localhost:8766/index.html> 预览实际 `dist/` 构建产物。预览服务仅监听本机，使用 HTTP/1.1 并禁用缓存；文献原件不在可访问范围内。修改源码后重新运行 `npm run check` 更新构建。端口被占用时先停止对应预览，或用 `PORT=8767 npm run preview` 指定其他端口。ES Modules / JSON 需通过 HTTP，不能双击 `file://`。浏览器回归检查见 `docs/testing.md`：先 `npx playwright install chromium`，再 `npm run test:e2e`，测试会在 Pages 仓库子路径访问实际 `dist/`。
 
-`npm run check` 执行数据校验、预检、Node 测试、干净构建及产物检查。构建仅清理本仓库 `dist/`，复制 `index.html`、`src/`、`data/` 和 `assets/`，生成版本与文件 hash 清单。GitHub Pages 仅发布 `dist/`。`wrangler.jsonc` 是旧 Cloudflare 配置，不参与当前发布。
+`npm run check` 执行数据校验、预检、Node 测试、干净构建及产物检查。构建仅清理本仓库 `dist/`，复制 `index.html`、`src/`、运行时 `data/` 和 `assets/`；排除本地 `data/literature/` 及 `references/`，生成版本与文件 hash 清单。GitHub Pages 仅发布 `dist/`。`wrangler.jsonc` 是旧 Cloudflare 配置，不参与当前发布。
+
+Git公开跟踪结构化文献数据、来源索引、哈希、核查脚本和报告。原始PDF、全文文本、论文页截图及Notebook原件由`.gitignore`保留在本地。新检出缺少PDF时只将原件字节校验标为`unavailable`，其余数值和保护哈希检查照常运行；把PDF放到索引指定路径后会自动核对，原件被改动仍会失败。详见[文献归档约定](references/README.md)。
 
 ## 后续同步与网页发布
 
@@ -48,7 +66,7 @@ PR 和工作分支运行 `.github/workflows/check.yml`，覆盖实际构建产�
 `npm test` 预检 HTML / 正式模块并运行 Node 数据、计算、状态和构建测试；`npm run test:e2e` 另查实际页面。检查内容和实际通过范围分别记录，不能用旧的独立模块测试代表正式入口。项目没有独立 lint 或 typecheck 命令。
 
 - 核心跃迁表、里德堡示例路径和参考文献混合了文献数据、内部参数与简化估算。逐行查看“来源”列，不要把整张表视为同一精度的数据集。
-- 里德堡态参数表使用单通道量子亏损和幂律标度；寿命、C₆ 与阻塞半径是示意估算，不适合作为实验设定或逐态预测。它没有包含完整 MQDT、态追踪和不确定度传播。
+- 里德堡态参数表的能量/尺度仍是单通道示意；寿命、C₆与阻塞半径因锚点来源问题已停止在该表输出。历史模型没有完整MQDT、态追踪和不确定度传播。
 - R5（³P₀→65³D₂）在当前模型中是 E1 禁戒路径；页面没有为其他多极通道提供经核查的矩阵元。
 - Rabi 图根据当前所选矩阵元和光束参数计算。运行成功只说明页面计算链路正常，不等于模型得到实验验证。
 

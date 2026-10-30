@@ -9,8 +9,10 @@ export const I = 0.5;
 export const R_INF = 109737.31568160; // cm^-1, retained estimate model
 export const E_I_CM = 50443.0676; // cm^-1, retained estimate model
 export const E_I_EV = 6.25414330;
-export const A0_UM = 0.0529177210903 / 10000;
-export const FORMULA_VERSION = '1.0.0';
+// CODATA 2018 a0 mantissa retained; 1 m = 10^6 micrometres.
+// NIST Extensive Listing (2018), p.1, Bohr radius.
+export const A0_UM = A0 * 1e6;
+export const FORMULA_VERSION = '1.0.1';
 
 /** Expected input-domain failure, suitable for an explicit UI error. */
 export class PhysicsInputError extends RangeError {

@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-30",
+  "sourcePDFs": [
+    {
+      "path": "references/papers/1.pdf",
+      "sha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+      "afterSha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/10.pdf",
+      "sha256": "1bdc3d40c247b1e725d2541ffb03aae7d930abd653deb0df00f530539450873b",
+      "afterSha256": "1bdc3d40c247b1e725d2541ffb03aae7d930abd653deb0df00f530539450873b",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf",
+      "sha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3",
+      "afterSha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2.pdf",
+      "sha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
+      "afterSha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2001_Fang_Yb_Radiative-lifetimes-Rydberg-states_published.pdf",
+      "sha256": "b4ac15f7330220bd5888f884421b28ffd11dd02c74b48a95091f1c15ca8ef177",
+      "afterSha256": "b4ac15f7330220bd5888f884421b28ffd11dd02c74b48a95091f1c15ca8ef177",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf",
+      "sha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f",
+      "afterSha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.pdf",
+      "sha256": "628816472904aabb4e88172b958f1b80b791a3b7f6d72b06cb2302aa70424e83",
+      "afterSha256": "628816472904aabb4e88172b958f1b80b791a3b7f6d72b06cb2302aa70424e83",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf",
+      "sha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e",
+      "afterSha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2018_Lehec_Yb_Even-parity-MQDT_arXiv1805.02712v2.pdf",
+      "sha256": "38057d7e2e2e7abd5d8d9ec9c2909eb685b625c6fb73cebe2eb8dfaac1f1ccf4",
+      "afterSha256": "38057d7e2e2e7abd5d8d9ec9c2909eb685b625c6fb73cebe2eb8dfaac1f1ccf4",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2019_Saskin_174Yb_Narrow-line-cooling-and-imaging_published-print.pdf",
+      "sha256": "7a3330aaf5c798266b04b2fdb4c461acb2b10ab4c9fefc9b15f12cf686d97716",
+      "afterSha256": "7a3330aaf5c798266b04b2fdb4c461acb2b10ab4c9fefc9b15f12cf686d97716",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2021_Burgers_174Yb_Ion-core-control_arXiv2110.06902v1.pdf",
+      "sha256": "24b9d9c2d467b609b57dd8c10652fc70bd2cef7e906fd18caa309069bd65f284",
+      "afterSha256": "24b9d9c2d467b609b57dd8c10652fc70bd2cef7e906fd18caa309069bd65f284",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2022_Chen_171Yb_OMG-architecture_arXiv2201.04083v3.pdf",
+      "sha256": "1c812aeb51e0009e93551b09fd1a182b6912aeeec03415f81df952f09d3d899f",
+      "afterSha256": "1c812aeb51e0009e93551b09fd1a182b6912aeeec03415f81df952f09d3d899f",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2022_Halter_174Yb_Trap-loss-spectroscopy_arXiv2211.04748v2.pdf",
+      "sha256": "47c724a73142b37e882599ec16bed9a40be68d282232bf95e4111fbb7d2b581d",
+      "afterSha256": "47c724a73142b37e882599ec16bed9a40be68d282232bf95e4111fbb7d2b581d",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2022_Ma_171Yb_Universal-nuclear-spin-gates_published-print.pdf",
+      "sha256": "28842cae29d58fc635b93c777d597a6ccea9d41ca022a833007cad27896fa2a5",
+      "afterSha256": "28842cae29d58fc635b93c777d597a6ccea9d41ca022a833007cad27896fa2a5",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2022_Okuno_Yb_Metastable-Rydberg-excitation_arXiv2204.07995v1.pdf",
+      "sha256": "dc91616b29454e06ee5a933c0cdd8b6a088766e1395a2fdbc8977634f4a8f9c8",
+      "afterSha256": "dc91616b29454e06ee5a933c0cdd8b6a088766e1395a2fdbc8977634f4a8f9c8",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2022_Wilson_174Yb_Trapping-Rydberg-atoms_published.pdf",
+      "sha256": "cafb618ffa6f60aa23a134b3ad73bdaa07679c02c234fdb7f83b8306d850d787",
+      "afterSha256": "cafb618ffa6f60aa23a134b3ad73bdaa07679c02c234fdb7f83b8306d850d787",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2023_Ma_171Yb_Mid-circuit-erasure-gates_arXiv2305.05493v1.pdf",
+      "sha256": "605afdb1ef7d3e76004024c409cf44c34037305556aabdae5d2644ca7116ee7a",
+      "afterSha256": "605afdb1ef7d3e76004024c409cf44c34037305556aabdae5d2644ca7116ee7a",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2023_Ma_171Yb_Mid-circuit-erasure-gates_published.pdf",
+      "sha256": "9b477683f712c305c3ab2f5f45ab1b7538584a8dd39ef7a6785b24ebbbf376e7",
+      "afterSha256": "9b477683f712c305c3ab2f5f45ab1b7538584a8dd39ef7a6785b24ebbbf376e7",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2024_Muniz_171Yb_Universal-gates_arXiv2411.11708v2.pdf",
+      "sha256": "867b41ec2620c1e9ee393438ae95cb03cb8e67ab5c66dfd9b15ac07d2dcb7061",
+      "afterSha256": "867b41ec2620c1e9ee393438ae95cb03cb8e67ab5c66dfd9b15ac07d2dcb7061",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2024_Peper_171Yb_Spectroscopy-modeling_local-supplement.pdf",
+      "sha256": "7bab7cf336bcc82be834b31ee364e11c1362c996ddf1c2187ec340040b1a36eb",
+      "afterSha256": "7bab7cf336bcc82be834b31ee364e11c1362c996ddf1c2187ec340040b1a36eb",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_arXiv2507.11487v1.pdf",
+      "sha256": "66abd4d74c1d7ce3f0b5bd5ebc51c1cc1743b3da98680229967eec5b86c08606",
+      "afterSha256": "66abd4d74c1d7ce3f0b5bd5ebc51c1cc1743b3da98680229967eec5b86c08606",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_published.pdf",
+      "sha256": "30823c38c870ec150528e375d58a63d5272a52da171c6f0d02ee7b8a8f49a5f6",
+      "afterSha256": "30823c38c870ec150528e375d58a63d5272a52da171c6f0d02ee7b8a8f49a5f6",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2025_Muniz_171Yb_Universal-gates_published.pdf",
+      "sha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e",
+      "afterSha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2025_Peper_171Yb_Spectroscopy-modeling_published.pdf",
+      "sha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a",
+      "afterSha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+      "sha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "afterSha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/3.pdf",
+      "sha256": "3bdd0ddd781d41583a0530446f9247d4d38f98e816651b14c39bcf4b42f12dc0",
+      "afterSha256": "3bdd0ddd781d41583a0530446f9247d4d38f98e816651b14c39bcf4b42f12dc0",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/4.pdf",
+      "sha256": "e2d263f0b1762d45b04bdbba8c3adc4fdf4ff098427054b4f8124f624e295df4",
+      "afterSha256": "e2d263f0b1762d45b04bdbba8c3adc4fdf4ff098427054b4f8124f624e295df4",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/5.pdf",
+      "sha256": "3aecb39c63b436ef56cd59bc1c38e6c09cc300c5e4d34ba7120f43e4ad1d12de",
+      "afterSha256": "3aecb39c63b436ef56cd59bc1c38e6c09cc300c5e4d34ba7120f43e4ad1d12de",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/6.pdf",
+      "sha256": "5c0e26a7ffb56471aff199941159da7686533620e5341f7633cfba594ab322ae",
+      "afterSha256": "5c0e26a7ffb56471aff199941159da7686533620e5341f7633cfba594ab322ae",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/7.pdf",
+      "sha256": "b058a900e9aaa292d3800087a823b57de74049434ee2ee663ac05aaa4c173bf0",
+      "afterSha256": "b058a900e9aaa292d3800087a823b57de74049434ee2ee663ac05aaa4c173bf0",
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/8.pdf",
+      "sha256": "14034e18a46ceb8b68c854d74f663ccce0a487ff40ff39d46e81f01dac14895b",
+      "afterSha256": "14034e18a46ceb8b68c854d74f663ccce0a487ff40ff39d46e81f01dac14895b",
+      "unchanged": true
+    }
+  ],
+  "all31OriginalPDFsUnchanged": true,
+  "protectedMainDiagramAndSavedCSV": {
+    "src/ui/energy-diagram.js": "684dfbce178dc78dde9cf4991c14122a6d0cc2978cabc91e368e7e4ce9d49394",
+    "src/ui/diagram-geometry.js": "4a2c855802766d936e2bdc994adbe6d4b9003c81b32c7e2f0ec6cb8763385177",
+    "src/ui/diagram-presentation.js": "f315eab1ed3c8c74efca3951791454f720b21bcc1cfca81e6b817815efd4ab49",
+    "src/styles/original-diagram.css": "5e2252c836949cfd13c0bc5ecb268a795f2d094f0caf6e497b375ffd6a4dcb6c",
+    "src/styles/quantum.css": "c9907e9ce75fd3fca4282a1f1d835a9fad8cdbf0c9781e7f20ea059474ab73a9",
+    "assets/05.21_yb171_65s_hyperfine.csv": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec"
+  },
+  "allProtectedFilesUnchanged": true
+}

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "facts": [
+    {
+      "id": "mishra-171-P2-line-average",
+      "sourceId": "mishra-2001-jqsrt",
+      "pdfPhysicalPage": [
+        7,
+        8,
+        9
+      ],
+      "printedPage": [
+        775,
+        776,
+        777
+      ],
+      "table": [
+        "3",
+        "4",
+        "5"
+      ],
+      "isotope": 171,
+      "state": "6s6p3P2",
+      "reportedLifetime_s": 8.9,
+      "uncertainty": null,
+      "convention": "line-as-a-whole statistical-hyperfine average, not F-resolved",
+      "equation": "A_line=sum(2F+1)*A(F,Fground)/sum(2F+1),Eq15",
+      "HFI_E1_line_rate_per_s": 0.044,
+      "HFI_E1_F32_to_F12_per_s": 0.1097,
+      "M1_to_3P1_per_s": 0.0677,
+      "M2_to_1S0_per_s": 0.00018,
+      "temperature_K": null,
+      "BBRTemperature_K": null,
+      "evidenceKind": "theory",
+      "doNot": "Do not assign8.9s or1/8.9 to bothF manifolds or reverse it to universalE1d."
+    },
+    {
+      "id": "mishra-derived-arithmetic-boundaries",
+      "sourceId": "mishra-2001-jqsrt",
+      "evidenceKind": "derived-audit-arithmetic-not-new-model",
+      "line_average_rate_per_s": 0.11188,
+      "inverse_line_average_rate_s": 8.93814801573114,
+      "conditional_F32_inverse_rate_s": 5.631264782070052,
+      "conditional_F52_inverse_rate_s": 14.731879787860931,
+      "conditions": "Illustrates printed-table model only; no uncertainty/new calculation validated;HFI E1F52=0 only by stated angular restriction. Keep separate from Porsev2004 theory."
+    },
+    {
+      "id": "baumann-174-3S1",
+      "sourceId": "baumann-1985-jpb",
+      "pdfPhysicalPage": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "printedPage": [
+        "L601",
+        "L602",
+        "L603",
+        "L604"
+      ],
+      "isotope": 174,
+      "state": "6s7s3S1",
+      "lifetime_ns": 15.9,
+      "uncertainty_ns": 1.9,
+      "uncertaintyConvention": "reported parentheses; statistical confidence not specified",
+      "gJ": 2.01,
+      "gJ_uncertainty": 0.01,
+      "temperature_K": null,
+      "BBRTemperature_K": null,
+      "evidenceKind": "direct time-resolved fluorescence measurement",
+      "noOscillatorStrength": "Explicit pL604:accurate branching ratios missing, oscillator strengths cannot be given.",
+      "doNot": "Do not replace171Yb compilation13.8(1.7) with174Yb single measurement or claim measured d/f/branching."
+    },
+    {
+      "id": "rambow-neutral-lifetimes",
+      "sourceId": "rambow-1976-pra",
+      "pdfPhysicalPage": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "isotope": null,
+      "isotopeScope": "natural mixture",
+      "P1_triplet_lifetime_ns": 820,
+      "P1_triplet_error_limit_ns": 20,
+      "P1_singlet_lifetime_ns": 5.12,
+      "P1_singlet_error_limit_ns": 0.12,
+      "uncertaintyConvention": "maximum confidence limits; HFS excluded",
+      "method": "zero Yb density and zero He pressure double extrapolation, correctedcollisional broadening/coherencenarrowing",
+      "HFS_note": "source leaves uncorrected; can raise neutral lifetimes as much as3%, ion5%; extra uncertainty, not appliedcorrection",
+      "temperature_K": null,
+      "BBRTemperature_K": null,
+      "doNot": "Do not label171Yb-specific,1sigma,or HFS-corrected."
+    },
+    {
+      "id": "3S1-weighted-compilation-reconstruction",
+      "sourceId": "baumann-1985-jpb",
+      "evidenceKind": "derived-audit-arithmetic",
+      "inputs": [
+        {
+          "value_ns": 12.5,
+          "uncertainty_ns": 1.5,
+          "origin": "Lange1970 reproduced in Baumann1985 Table1; original proceedings not obtained"
+        },
+        {
+          "value_ns": 15.9,
+          "uncertainty_ns": 1.9,
+          "origin": "Baumann1985 Table1 thiswork;174Yb selected"
+        }
+      ],
+      "inverseVarianceWeightedMean_ns": 13.805460750853241,
+      "formalStandardUncertainty_ns": 1.1773241483001393,
+      "BirgeRatio": 1.404527054112447,
+      "BirgeScaledUncertainty_ns": 1.6535836177474403,
+      "conclusion": "13.8(1.7)ns compilation is reproducible from printed inputs after Birge inflation; not a new171Yb measurement; inputconfidence/correlation/modeltransfer not independently validated"
+    }
+  ]
+}

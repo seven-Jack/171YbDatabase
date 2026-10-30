@@ -1,0 +1,3463 @@
+{
+  "scope": "local supplied Kroeze v2 compilation compared with current canonical files; proposals only",
+  "canonicalQuantityKeysObserved": [
+    "Gamma_per_s_num",
+    "d_num",
+    "energy_cm",
+    "energy_eV",
+    "frequency_THz",
+    "lifetime_ns",
+    "linewidth_frequency_coefficient_Hz",
+    "oscillator_strength_f_num",
+    "wavelength_air_nm",
+    "wavelength_vac_nm"
+  ],
+  "canonicalSnapshotHashes": {
+    "transitions.json": "4c5a0fa0336d95a94da241de212358ecafeeb061856f606f0d1d2ad0a5f41776",
+    "levels.json": "e2f4cf9d218498129ae4783ee638b510a8ed07e5af767f84673fa66feabc3351",
+    "hyperfine.json": "816a54732d7bd53405e29397503d8ec4da1d322555af88499022d62126d62f2a"
+  },
+  "records": [
+    {
+      "file": "data/transitions.json",
+      "recordId": "T1",
+      "field": "frequency_THz",
+      "current": {
+        "value": 751.5274711,
+        "unit": "THz",
+        "quantity": "frequency_THz",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, frequency_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 8e-07,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-weighted-recommendation",
+          "sourceRecord": "table-08:frequency_nu",
+          "sourceDecimal": "751.5274711",
+          "sourceUncertaintyDecimal": "8E-7",
+          "sourceReferenceNumbers": [
+            66,
+            104,
+            105,
+            106
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": 6.3
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "751.5274711(8)"
+      },
+      "proposedValueDecimal": "751.5274711",
+      "proposedUncertaintyDecimal": "8E-7",
+      "sourceRecordId": "table-08:frequency_nu",
+      "sourceLocator": "Table 8, PDF/printed p23",
+      "sourceOriginalReferenceNumbers": [
+        66,
+        104,
+        105,
+        106
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-weighted-recommendation",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T1",
+      "field": "energy_eV",
+      "current": {
+        "value": 3.1080678856,
+        "unit": "eV",
+        "quantity": "energy_eV",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, transition_energy",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 3.2e-09,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-08:transition_energy",
+          "sourceDecimal": "3.1080678856",
+          "sourceUncertaintyDecimal": "3.2E-9",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            66,
+            104,
+            105,
+            106,
+            133,
+            135,
+            136,
+            139,
+            210,
+            211,
+            212
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "3.1080678856(32)"
+      },
+      "proposedValueDecimal": "3.1080678856",
+      "proposedUncertaintyDecimal": "3.2E-9",
+      "sourceRecordId": "table-08:transition_energy",
+      "sourceLocator": "Table 8, PDF/printed p23",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        66,
+        104,
+        105,
+        106
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T1",
+      "field": "wavelength_vac_nm",
+      "current": {
+        "value": 398.9108443,
+        "unit": "nm",
+        "quantity": "wavelength_vac_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, wavelength_vac",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 4e-07,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-08:wavelength_vac",
+          "sourceDecimal": "398.9108443",
+          "sourceUncertaintyDecimal": "4E-7",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            66,
+            104,
+            105,
+            106,
+            133,
+            135,
+            136,
+            139,
+            210,
+            211,
+            212
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "398.9108443(4)"
+      },
+      "proposedValueDecimal": "398.9108443",
+      "proposedUncertaintyDecimal": "4E-7",
+      "sourceRecordId": "table-08:wavelength_vac",
+      "sourceLocator": "Table 8, PDF/printed p23",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        66,
+        104,
+        105,
+        106
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T1",
+      "field": "wavelength_air_nm",
+      "current": {
+        "value": 398.80207,
+        "unit": "nm",
+        "quantity": "wavelength_air_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, wavelength_air",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 4e-06,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-08:wavelength_air",
+          "sourceDecimal": "398.802070",
+          "sourceUncertaintyDecimal": "0.000004",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            66,
+            104,
+            105,
+            106,
+            133,
+            135,
+            136,
+            139,
+            210,
+            211,
+            212
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded"
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "398.802070(4)"
+      },
+      "proposedValueDecimal": "398.802070",
+      "proposedUncertaintyDecimal": "0.000004",
+      "sourceRecordId": "table-08:wavelength_air",
+      "sourceLocator": "Table 8, PDF/printed p23",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        66,
+        104,
+        105,
+        106
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T1",
+      "field": "energy_cm",
+      "current": null,
+      "proposedValueDecimal": "25068.258091",
+      "proposedUncertaintyDecimal": "0.000026",
+      "sourceRecordId": "table-08:wavenumber_vac",
+      "sourceLocator": "Table 8, PDF/printed p23",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        66,
+        104,
+        105,
+        106
+      ],
+      "action": "add-reported-wavenumber-field-if-schema-supports",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T1",
+      "field": "lifetime_ns",
+      "current": {
+        "value": 5.464,
+        "unit": "ns",
+        "quantity": "lifetime_ns",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, upper_state_lifetime",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 0.011,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-weighted-recommendation",
+          "sourceRecord": "table-08:upper_state_lifetime",
+          "sourceDecimal": "5.464",
+          "sourceUncertaintyDecimal": "0.011",
+          "sourceReferenceNumbers": [
+            133,
+            135,
+            136,
+            139,
+            210,
+            211,
+            212
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": 2.3,
+          "temperature_K": null,
+          "BBRTemperature_K": null
+        },
+        "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+        "legacyText": "5.464(11)"
+      },
+      "proposedValueDecimal": "5.464",
+      "proposedUncertaintyDecimal": "0.011",
+      "sourceRecordId": "table-08:upper_state_lifetime",
+      "sourceLocator": "Table 8, PDF/printed p23",
+      "sourceOriginalReferenceNumbers": [
+        133,
+        135,
+        136,
+        139,
+        210,
+        211,
+        212
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-weighted-recommendation",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T1",
+      "field": "Gamma_per_s_num",
+      "current": {
+        "value": 183000000.0,
+        "unit": "s^-1",
+        "quantity": "Gamma_per_s_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, total_decay_rate",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 400000.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-08:total_decay_rate",
+          "sourceDecimal": "183000000.0",
+          "sourceUncertaintyDecimal": "400000",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            66,
+            104,
+            105,
+            106,
+            133,
+            135,
+            136,
+            139,
+            210,
+            211,
+            212
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+        "legacyText": "183.0(4)e6"
+      },
+      "proposedValueDecimal": "183000000.0",
+      "proposedUncertaintyDecimal": "400000",
+      "sourceRecordId": "table-08:total_decay_rate",
+      "sourceLocator": "Table 8, PDF/printed p23",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        133,
+        135,
+        136,
+        139,
+        210,
+        211,
+        212
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T1",
+      "field": "linewidth_frequency_coefficient_Hz",
+      "current": {
+        "value": 29130000.0,
+        "unit": "Hz",
+        "quantity": "ordinary_frequency_FWHM",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, linewidth_FWHM_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "conflict-unresolved",
+        "uncertainty": 60000.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-08:linewidth_FWHM_nu",
+          "sourceDecimal": "29.13",
+          "sourceUncertaintyDecimal": "0.06",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            66,
+            104,
+            105,
+            106,
+            133,
+            135,
+            136,
+            139,
+            210,
+            211,
+            212
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi"
+        },
+        "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
+        "legacyText": "2π × 29.13(6) MHz"
+      },
+      "proposedValueDecimal": "2.913E+7",
+      "proposedUncertaintyDecimal": "6E+4",
+      "sourceRecordId": "table-08:linewidth_FWHM_nu",
+      "sourceLocator": "Table 8, PDF/printed p23",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        133,
+        135,
+        136,
+        139,
+        210,
+        211,
+        212
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [
+        "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+      ],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T1",
+      "field": "oscillator_strength_f_num",
+      "current": {
+        "value": 1.3098,
+        "unit": "dimensionless",
+        "quantity": "oscillator_strength_f_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, oscillator_strength",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 0.0027,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-08:oscillator_strength",
+          "sourceDecimal": "1.3098",
+          "sourceUncertaintyDecimal": "0.0027",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            66,
+            104,
+            105,
+            106,
+            133,
+            135,
+            136,
+            139,
+            210,
+            211,
+            212
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": null,
+        "legacyText": "1.3098(27)"
+      },
+      "proposedValueDecimal": "1.3098",
+      "proposedUncertaintyDecimal": "0.0027",
+      "sourceRecordId": "table-08:oscillator_strength",
+      "sourceLocator": "Table 8, PDF/printed p23",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        66,
+        104,
+        105,
+        106,
+        133,
+        135,
+        136,
+        139,
+        210,
+        211,
+        212
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T1",
+      "field": "d_num",
+      "current": {
+        "value": 4.147,
+        "unit": "e*a0",
+        "quantity": "d_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, dipole_reduced_J_Racah",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 0.004,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+          "sourceRecord": "table-08:dipole_reduced_J_Racah",
+          "sourceDecimal": "4.147",
+          "sourceUncertaintyDecimal": "0.004",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            66,
+            104,
+            105,
+            106,
+            132,
+            133,
+            135,
+            136,
+            139,
+            210,
+            211,
+            212
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "definition": "<Jg||er||Je>_R Racah-Wigner, Eq54; includes adopted theoretical branching ratios"
+        },
+        "convention": "J-reduced",
+        "legacyText": "4.147(4)"
+      },
+      "proposedValueDecimal": "4.147",
+      "proposedUncertaintyDecimal": "0.004",
+      "sourceRecordId": "table-08:dipole_reduced_J_Racah",
+      "sourceLocator": "Table 8, PDF/printed p23",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        66,
+        104,
+        105,
+        106,
+        132,
+        133,
+        135,
+        136,
+        139,
+        210,
+        211,
+        212
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T3",
+      "field": "frequency_THz",
+      "current": {
+        "value": 518.2958365908636,
+        "unit": "THz",
+        "quantity": "frequency_THz",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, frequency_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 1e-13,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-adopted",
+          "sourceRecord": "table-09:frequency_nu",
+          "sourceDecimal": "518.29583659086363",
+          "sourceUncertaintyDecimal": "1.0E-13",
+          "sourceReferenceNumbers": [
+            121
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": null
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "518.29583659086363(10)"
+      },
+      "proposedValueDecimal": "518.29583659086363",
+      "proposedUncertaintyDecimal": "1.0E-13",
+      "sourceRecordId": "table-09:frequency_nu",
+      "sourceLocator": "Table 9, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [
+        121
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-adopted",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T3",
+      "field": "energy_eV",
+      "current": {
+        "value": 2.1434993488389615,
+        "unit": "eV",
+        "quantity": "energy_eV",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, transition_energy",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 4e-16,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-09:transition_energy",
+          "sourceDecimal": "2.1434993488389615",
+          "sourceUncertaintyDecimal": "4E-16",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            121,
+            213,
+            214
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "2.1434993488389615(4)"
+      },
+      "proposedValueDecimal": "2.1434993488389615",
+      "proposedUncertaintyDecimal": "4E-16",
+      "sourceRecordId": "table-09:transition_energy",
+      "sourceLocator": "Table 9, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        121
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T3",
+      "field": "wavelength_vac_nm",
+      "current": {
+        "value": 578.4195759161624,
+        "unit": "nm",
+        "quantity": "wavelength_vac_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, wavelength_vac",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 1.1e-13,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-09:wavelength_vac",
+          "sourceDecimal": "578.41957591616250",
+          "sourceUncertaintyDecimal": "1.1E-13",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            121,
+            213,
+            214
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "578.41957591616250(11)"
+      },
+      "proposedValueDecimal": "578.41957591616250",
+      "proposedUncertaintyDecimal": "1.1E-13",
+      "sourceRecordId": "table-09:wavelength_vac",
+      "sourceLocator": "Table 9, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        121
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T3",
+      "field": "wavelength_air_nm",
+      "current": {
+        "value": 578.264935,
+        "unit": "nm",
+        "quantity": "wavelength_air_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, wavelength_air",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 6e-06,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-09:wavelength_air",
+          "sourceDecimal": "578.264935",
+          "sourceUncertaintyDecimal": "0.000006",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            121,
+            213,
+            214
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded"
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "578.264935(6)"
+      },
+      "proposedValueDecimal": "578.264935",
+      "proposedUncertaintyDecimal": "0.000006",
+      "sourceRecordId": "table-09:wavelength_air",
+      "sourceLocator": "Table 9, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        121
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T3",
+      "field": "energy_cm",
+      "current": null,
+      "proposedValueDecimal": "17288.488177740069",
+      "proposedUncertaintyDecimal": "3E-12",
+      "sourceRecordId": "table-09:wavenumber_vac",
+      "sourceLocator": "Table 9, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        121
+      ],
+      "action": "add-reported-wavenumber-field-if-schema-supports",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T3",
+      "field": "lifetime_ns",
+      "current": {
+        "value": 21000000000.0,
+        "unit": "ns",
+        "quantity": "lifetime_ns",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, upper_state_lifetime",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 1800000000.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-weighted-recommendation",
+          "sourceRecord": "table-09:upper_state_lifetime",
+          "sourceDecimal": "21.0",
+          "sourceUncertaintyDecimal": "1.8",
+          "sourceReferenceNumbers": [
+            213,
+            214
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": 1.3,
+          "temperature_K": null,
+          "BBRTemperature_K": null
+        },
+        "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+        "legacyText": "21.0(18)"
+      },
+      "proposedValueDecimal": "2.10E+10",
+      "proposedUncertaintyDecimal": "1.8E+9",
+      "sourceRecordId": "table-09:upper_state_lifetime",
+      "sourceLocator": "Table 9, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [
+        213,
+        214
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-weighted-recommendation",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T3",
+      "field": "Gamma_per_s_num",
+      "current": {
+        "value": 0.048,
+        "unit": "s^-1",
+        "quantity": "Gamma_per_s_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, total_decay_rate",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 0.004,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-09:total_decay_rate",
+          "sourceDecimal": "0.048",
+          "sourceUncertaintyDecimal": "0.004",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            121,
+            213,
+            214
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+        "legacyText": "0.048(4)"
+      },
+      "proposedValueDecimal": "0.048",
+      "proposedUncertaintyDecimal": "0.004",
+      "sourceRecordId": "table-09:total_decay_rate",
+      "sourceLocator": "Table 9, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        213,
+        214
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T3",
+      "field": "linewidth_frequency_coefficient_Hz",
+      "current": {
+        "value": 0.0076,
+        "unit": "Hz",
+        "quantity": "ordinary_frequency_FWHM",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, linewidth_FWHM_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "conflict-unresolved",
+        "uncertainty": 0.0006,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-09:linewidth_FWHM_nu",
+          "sourceDecimal": "7.6",
+          "sourceUncertaintyDecimal": "0.6",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            121,
+            213,
+            214
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi"
+        },
+        "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
+        "legacyText": "2π × 7.6(6) mHz"
+      },
+      "proposedValueDecimal": "0.0076",
+      "proposedUncertaintyDecimal": "0.0006",
+      "sourceRecordId": "table-09:linewidth_FWHM_nu",
+      "sourceLocator": "Table 9, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        213,
+        214
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [
+        "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+      ],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T2",
+      "field": "frequency_THz",
+      "current": {
+        "value": 539.38842684,
+        "unit": "THz",
+        "quantity": "frequency_THz",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, frequency_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 1.2e-07,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-weighted-recommendation",
+          "sourceRecord": "table-10:frequency_nu",
+          "sourceDecimal": "539.38842684",
+          "sourceUncertaintyDecimal": "1.2E-7",
+          "sourceReferenceNumbers": [
+            181,
+            182,
+            184
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": 2.9
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "539.38842684(12)"
+      },
+      "proposedValueDecimal": "539.38842684",
+      "proposedUncertaintyDecimal": "1.2E-7",
+      "sourceRecordId": "table-10:frequency_nu",
+      "sourceLocator": "Table 10, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [
+        181,
+        182,
+        184
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-weighted-recommendation",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T2",
+      "field": "energy_eV",
+      "current": {
+        "value": 2.230731293,
+        "unit": "eV",
+        "quantity": "energy_eV",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, transition_energy",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 5e-10,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-10:transition_energy",
+          "sourceDecimal": "2.2307312930",
+          "sourceUncertaintyDecimal": "5E-10",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            133,
+            134,
+            136,
+            137,
+            139,
+            181,
+            182,
+            184,
+            195,
+            212,
+            215,
+            216,
+            217,
+            218
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "2.2307312930(5)"
+      },
+      "proposedValueDecimal": "2.2307312930",
+      "proposedUncertaintyDecimal": "5E-10",
+      "sourceRecordId": "table-10:transition_energy",
+      "sourceLocator": "Table 10, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        181,
+        182,
+        184
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T2",
+      "field": "wavelength_vac_nm",
+      "current": {
+        "value": 555.80068663,
+        "unit": "nm",
+        "quantity": "wavelength_vac_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, wavelength_vac",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 1.3e-07,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-10:wavelength_vac",
+          "sourceDecimal": "555.80068663",
+          "sourceUncertaintyDecimal": "1.3E-7",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            133,
+            134,
+            136,
+            137,
+            139,
+            181,
+            182,
+            184,
+            195,
+            212,
+            215,
+            216,
+            217,
+            218
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "555.80068663(13)"
+      },
+      "proposedValueDecimal": "555.80068663",
+      "proposedUncertaintyDecimal": "1.3E-7",
+      "sourceRecordId": "table-10:wavelength_vac",
+      "sourceLocator": "Table 10, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        181,
+        182,
+        184
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T2",
+      "field": "wavelength_air_nm",
+      "current": {
+        "value": 555.651877,
+        "unit": "nm",
+        "quantity": "wavelength_air_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, wavelength_air",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 6e-06,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-10:wavelength_air",
+          "sourceDecimal": "555.651877",
+          "sourceUncertaintyDecimal": "0.000006",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            133,
+            134,
+            136,
+            137,
+            139,
+            181,
+            182,
+            184,
+            195,
+            212,
+            215,
+            216,
+            217,
+            218
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded"
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "555.651877(6)"
+      },
+      "proposedValueDecimal": "555.651877",
+      "proposedUncertaintyDecimal": "0.000006",
+      "sourceRecordId": "table-10:wavelength_air",
+      "sourceLocator": "Table 10, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        181,
+        182,
+        184
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T2",
+      "field": "energy_cm",
+      "current": null,
+      "proposedValueDecimal": "17992.061256",
+      "proposedUncertaintyDecimal": "0.000004",
+      "sourceRecordId": "table-10:wavenumber_vac",
+      "sourceLocator": "Table 10, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        181,
+        182,
+        184
+      ],
+      "action": "add-reported-wavenumber-field-if-schema-supports",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T2",
+      "field": "lifetime_ns",
+      "current": {
+        "value": 872.6,
+        "unit": "ns",
+        "quantity": "lifetime_ns",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, upper_state_lifetime",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 1.9,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-weighted-recommendation",
+          "sourceRecord": "table-10:upper_state_lifetime",
+          "sourceDecimal": "872.6",
+          "sourceUncertaintyDecimal": "1.9",
+          "sourceReferenceNumbers": [
+            133,
+            134,
+            136,
+            137,
+            139,
+            195,
+            212,
+            215,
+            216,
+            217,
+            218
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": 1.2,
+          "temperature_K": null,
+          "BBRTemperature_K": null
+        },
+        "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+        "legacyText": "872.6(19)"
+      },
+      "proposedValueDecimal": "872.6",
+      "proposedUncertaintyDecimal": "1.9",
+      "sourceRecordId": "table-10:upper_state_lifetime",
+      "sourceLocator": "Table 10, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [
+        133,
+        134,
+        136,
+        137,
+        139,
+        195,
+        212,
+        215,
+        216,
+        217,
+        218
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-weighted-recommendation",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T2",
+      "field": "Gamma_per_s_num",
+      "current": {
+        "value": 1146000.0,
+        "unit": "s^-1",
+        "quantity": "Gamma_per_s_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, total_decay_rate",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 2500.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-10:total_decay_rate",
+          "sourceDecimal": "1146000.0000",
+          "sourceUncertaintyDecimal": "2500",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            133,
+            134,
+            136,
+            137,
+            139,
+            181,
+            182,
+            184,
+            195,
+            212,
+            215,
+            216,
+            217,
+            218
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+        "legacyText": "1.1460(25)e6"
+      },
+      "proposedValueDecimal": "1146000.0000",
+      "proposedUncertaintyDecimal": "2500",
+      "sourceRecordId": "table-10:total_decay_rate",
+      "sourceLocator": "Table 10, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        133,
+        134,
+        136,
+        137,
+        139,
+        195,
+        212,
+        215,
+        216,
+        217,
+        218
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T2",
+      "field": "linewidth_frequency_coefficient_Hz",
+      "current": {
+        "value": 182400.0,
+        "unit": "Hz",
+        "quantity": "ordinary_frequency_FWHM",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, linewidth_FWHM_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "conflict-unresolved",
+        "uncertainty": 400.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-10:linewidth_FWHM_nu",
+          "sourceDecimal": "182.4",
+          "sourceUncertaintyDecimal": "0.4",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            133,
+            134,
+            136,
+            137,
+            139,
+            181,
+            182,
+            184,
+            195,
+            212,
+            215,
+            216,
+            217,
+            218
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi"
+        },
+        "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
+        "legacyText": "2π × 182.4(4) kHz"
+      },
+      "proposedValueDecimal": "1.824E+5",
+      "proposedUncertaintyDecimal": "4E+2",
+      "sourceRecordId": "table-10:linewidth_FWHM_nu",
+      "sourceLocator": "Table 10, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        133,
+        134,
+        136,
+        137,
+        139,
+        195,
+        212,
+        215,
+        216,
+        217,
+        218
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [
+        "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+      ],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T2",
+      "field": "oscillator_strength_f_num",
+      "current": {
+        "value": 0.015923,
+        "unit": "dimensionless",
+        "quantity": "oscillator_strength_f_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, oscillator_strength",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 3.5e-05,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-10:oscillator_strength",
+          "sourceDecimal": "0.015923",
+          "sourceUncertaintyDecimal": "0.000035",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            133,
+            134,
+            136,
+            137,
+            139,
+            181,
+            182,
+            184,
+            195,
+            212,
+            215,
+            216,
+            217,
+            218
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": null,
+        "legacyText": "0.015923(35)"
+      },
+      "proposedValueDecimal": "0.015923",
+      "proposedUncertaintyDecimal": "0.000035",
+      "sourceRecordId": "table-10:oscillator_strength",
+      "sourceLocator": "Table 10, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        133,
+        134,
+        136,
+        137,
+        139,
+        181,
+        182,
+        184,
+        195,
+        212,
+        215,
+        216,
+        217,
+        218
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T2",
+      "field": "d_num",
+      "current": {
+        "value": 0.5398,
+        "unit": "e*a0",
+        "quantity": "d_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, dipole_reduced_J_Racah",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 0.0006,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived-from-lifetime-frequency-Eq54",
+          "sourceRecord": "table-10:dipole_reduced_J_Racah",
+          "sourceDecimal": "0.5398",
+          "sourceUncertaintyDecimal": "0.0006",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            133,
+            134,
+            136,
+            137,
+            139,
+            181,
+            182,
+            184,
+            195,
+            212,
+            215,
+            216,
+            217,
+            218
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "definition": "<Jg||er||Je>_R Racah-Wigner, Eq54; includes adopted theoretical branching ratios",
+          "replacedInternalCalibration": "0.543 ea0 archived in audit baseline; rationale/artifact unavailable"
+        },
+        "convention": "J-reduced",
+        "legacyText": "0.5398(6)"
+      },
+      "proposedValueDecimal": "0.5398",
+      "proposedUncertaintyDecimal": "0.0006",
+      "sourceRecordId": "table-10:dipole_reduced_J_Racah",
+      "sourceLocator": "Table 10, PDF/printed p24",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        133,
+        134,
+        136,
+        137,
+        139,
+        181,
+        182,
+        184,
+        195,
+        212,
+        215,
+        216,
+        217,
+        218
+      ],
+      "action": "separate-literature-0.5398(6)-from-internal-0.543-calibration",
+      "evidenceType": "compilation-derived-from-lifetime-frequency-Eq54",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T4",
+      "field": "frequency_THz",
+      "current": {
+        "value": 590.90433,
+        "unit": "THz",
+        "quantity": "frequency_THz",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, frequency_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 4e-05,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-adopted",
+          "sourceRecord": "table-11:frequency_nu",
+          "sourceDecimal": "590.90433",
+          "sourceUncertaintyDecimal": "0.00004",
+          "sourceReferenceNumbers": [
+            123
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": null
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "590.90433(4)"
+      },
+      "proposedValueDecimal": "590.90433",
+      "proposedUncertaintyDecimal": "0.00004",
+      "sourceRecordId": "table-11:frequency_nu",
+      "sourceLocator": "Table 11, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [
+        123
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-adopted",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T4",
+      "field": "energy_eV",
+      "current": {
+        "value": 2.44378393,
+        "unit": "eV",
+        "quantity": "energy_eV",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, transition_energy",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 1.7e-07,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-11:transition_energy",
+          "sourceDecimal": "2.44378393",
+          "sourceUncertaintyDecimal": "1.7E-7",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            123,
+            129
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "2.44378393(17)"
+      },
+      "proposedValueDecimal": "2.44378393",
+      "proposedUncertaintyDecimal": "1.7E-7",
+      "sourceRecordId": "table-11:transition_energy",
+      "sourceLocator": "Table 11, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        123
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T4",
+      "field": "wavelength_vac_nm",
+      "current": {
+        "value": 507.34517,
+        "unit": "nm",
+        "quantity": "wavelength_vac_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, wavelength_vac",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 4e-05,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-11:wavelength_vac",
+          "sourceDecimal": "507.34517",
+          "sourceUncertaintyDecimal": "0.00004",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            123,
+            129
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "507.34517(4)"
+      },
+      "proposedValueDecimal": "507.34517",
+      "proposedUncertaintyDecimal": "0.00004",
+      "sourceRecordId": "table-11:wavelength_vac",
+      "sourceLocator": "Table 11, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        123
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T4",
+      "field": "wavelength_air_nm",
+      "current": {
+        "value": 507.20882,
+        "unit": "nm",
+        "quantity": "wavelength_air_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, wavelength_air",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 4e-05,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-11:wavelength_air",
+          "sourceDecimal": "507.20882",
+          "sourceUncertaintyDecimal": "0.00004",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            123,
+            129
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded"
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "507.20882(4)"
+      },
+      "proposedValueDecimal": "507.20882",
+      "proposedUncertaintyDecimal": "0.00004",
+      "sourceRecordId": "table-11:wavelength_air",
+      "sourceLocator": "Table 11, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        123
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T4",
+      "field": "energy_cm",
+      "current": null,
+      "proposedValueDecimal": "19710.4467",
+      "proposedUncertaintyDecimal": "0.0014",
+      "sourceRecordId": "table-11:wavenumber_vac",
+      "sourceLocator": "Table 11, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        123
+      ],
+      "action": "add-reported-wavenumber-field-if-schema-supports",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T4",
+      "field": "lifetime_ns",
+      "current": {
+        "value": 8900000000.0,
+        "unit": "ns",
+        "quantity": "lifetime_ns",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, upper_state_lifetime",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "definition-needs-review",
+        "uncertainty": null,
+        "uncertaintyNote": "approximate source value; no numerical uncertainty supplied; theory is not an isotope/F-resolved measurement",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "theory-adopted",
+          "sourceRecord": "table-11:upper_state_lifetime",
+          "sourceDecimal": "8.9",
+          "sourceUncertaintyDecimal": null,
+          "sourceReferenceNumbers": [
+            129
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": null,
+          "temperature_K": null,
+          "BBRTemperature_K": null,
+          "stateBoundary": "theoretical compilation estimate; F=3/2 HFI-E1 and F=5/2 non-E1 channels differ; not a universal F-resolved171Yb lifetime"
+        },
+        "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+        "legacyText": "~8.9"
+      },
+      "proposedValueDecimal": "8.9E+9",
+      "proposedUncertaintyDecimal": null,
+      "sourceRecordId": "table-11:upper_state_lifetime",
+      "sourceLocator": "Table 11, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [
+        129
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "retain-approximate-theory-label-and-hfs-induced-E1-dominance",
+      "evidenceType": "theory-adopted",
+      "reviewFlags": [
+        "THEORY_LIFETIME_F_SCOPE_UNRESOLVED"
+      ],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T4",
+      "field": "Gamma_per_s_num",
+      "current": {
+        "value": 0.112,
+        "unit": "s^-1",
+        "quantity": "Gamma_per_s_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, total_decay_rate",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "definition-needs-review",
+        "uncertainty": null,
+        "uncertaintyNote": "approximate source value; no numerical uncertainty supplied; theory is not an isotope/F-resolved measurement",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-11:total_decay_rate",
+          "sourceDecimal": "0.112",
+          "sourceUncertaintyDecimal": null,
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            123,
+            129
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "stateBoundary": "theoretical compilation estimate; F=3/2 HFI-E1 and F=5/2 non-E1 channels differ; not a universal F-resolved171Yb lifetime"
+        },
+        "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+        "legacyText": "~0.112"
+      },
+      "proposedValueDecimal": "0.112",
+      "proposedUncertaintyDecimal": null,
+      "sourceRecordId": "table-11:total_decay_rate",
+      "sourceLocator": "Table 11, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        129
+      ],
+      "action": "retain-approximate-theory-label-and-hfs-induced-E1-dominance",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [
+        "THEORY_LIFETIME_F_SCOPE_UNRESOLVED"
+      ],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T4",
+      "field": "linewidth_frequency_coefficient_Hz",
+      "current": {
+        "value": 0.0179,
+        "unit": "Hz",
+        "quantity": "ordinary_frequency_FWHM",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, linewidth_FWHM_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "definition-needs-review",
+        "uncertainty": null,
+        "uncertaintyNote": "approximate source value; no numerical uncertainty supplied; theory is not an isotope/F-resolved measurement",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-11:linewidth_FWHM_nu",
+          "sourceDecimal": "17.9",
+          "sourceUncertaintyDecimal": null,
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            123,
+            129
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi",
+          "stateBoundary": "theoretical compilation estimate; F=3/2 HFI-E1 and F=5/2 non-E1 channels differ; not a universal F-resolved171Yb lifetime"
+        },
+        "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
+        "legacyText": "2π × ~17.9 mHz"
+      },
+      "proposedValueDecimal": "0.0179",
+      "proposedUncertaintyDecimal": null,
+      "sourceRecordId": "table-11:linewidth_FWHM_nu",
+      "sourceLocator": "Table 11, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        129
+      ],
+      "action": "retain-approximate-theory-label-and-hfs-induced-E1-dominance",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [
+        "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT",
+        "THEORY_LIFETIME_F_SCOPE_UNRESOLVED"
+      ],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T5",
+      "field": "frequency_THz",
+      "current": {
+        "value": 215.87014457,
+        "unit": "THz",
+        "quantity": "frequency_THz",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, frequency_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 9e-08,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-adopted",
+          "sourceRecord": "table-12:frequency_nu",
+          "sourceDecimal": "215.87014457",
+          "sourceUncertaintyDecimal": "9E-8",
+          "sourceReferenceNumbers": [
+            85,
+            86,
+            194
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": null
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "215.87014457(9)"
+      },
+      "proposedValueDecimal": "215.87014457",
+      "proposedUncertaintyDecimal": "9E-8",
+      "sourceRecordId": "table-12:frequency_nu",
+      "sourceLocator": "Table 12, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [
+        85,
+        86,
+        194
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-adopted",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T5",
+      "field": "energy_eV",
+      "current": {
+        "value": 0.8927671836,
+        "unit": "eV",
+        "quantity": "energy_eV",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, transition_energy",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 4e-10,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-12:transition_energy",
+          "sourceDecimal": "0.8927671836",
+          "sourceUncertaintyDecimal": "4E-10",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            85,
+            86,
+            137,
+            194,
+            195
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "0.8927671836(4)"
+      },
+      "proposedValueDecimal": "0.8927671836",
+      "proposedUncertaintyDecimal": "4E-10",
+      "sourceRecordId": "table-12:transition_energy",
+      "sourceLocator": "Table 12, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        85,
+        86,
+        194
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T5",
+      "field": "wavelength_vac_nm",
+      "current": {
+        "value": 1388.7629464,
+        "unit": "nm",
+        "quantity": "wavelength_vac_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, wavelength_vac",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 6e-07,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-12:wavelength_vac",
+          "sourceDecimal": "1388.7629464",
+          "sourceUncertaintyDecimal": "6E-7",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            85,
+            86,
+            137,
+            194,
+            195
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "1388.7629464(6)"
+      },
+      "proposedValueDecimal": "1388.7629464",
+      "proposedUncertaintyDecimal": "6E-7",
+      "sourceRecordId": "table-12:wavelength_vac",
+      "sourceLocator": "Table 12, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        85,
+        86,
+        194
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T5",
+      "field": "wavelength_air_nm",
+      "current": {
+        "value": 1388.396915,
+        "unit": "nm",
+        "quantity": "wavelength_air_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, wavelength_air",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 1.4e-05,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-12:wavelength_air",
+          "sourceDecimal": "1388.396915",
+          "sourceUncertaintyDecimal": "0.000014",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            85,
+            86,
+            137,
+            194,
+            195
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded"
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "1388.396915(14)"
+      },
+      "proposedValueDecimal": "1388.396915",
+      "proposedUncertaintyDecimal": "0.000014",
+      "sourceRecordId": "table-12:wavelength_air",
+      "sourceLocator": "Table 12, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        85,
+        86,
+        194
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T5",
+      "field": "energy_cm",
+      "current": null,
+      "proposedValueDecimal": "7200.6529453",
+      "proposedUncertaintyDecimal": "0.0000029",
+      "sourceRecordId": "table-12:wavenumber_vac",
+      "sourceLocator": "Table 12, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        85,
+        86,
+        194
+      ],
+      "action": "add-reported-wavenumber-field-if-schema-supports",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T5",
+      "field": "lifetime_ns",
+      "current": {
+        "value": 332.0,
+        "unit": "ns",
+        "quantity": "lifetime_ns",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, upper_state_lifetime",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 11.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-weighted-recommendation",
+          "sourceRecord": "table-12:upper_state_lifetime",
+          "sourceDecimal": "332",
+          "sourceUncertaintyDecimal": "11",
+          "sourceReferenceNumbers": [
+            137,
+            195
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": 1.6,
+          "temperature_K": null,
+          "BBRTemperature_K": null
+        },
+        "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+        "legacyText": "332(11)"
+      },
+      "proposedValueDecimal": "332",
+      "proposedUncertaintyDecimal": "11",
+      "sourceRecordId": "table-12:upper_state_lifetime",
+      "sourceLocator": "Table 12, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [
+        137,
+        195
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-weighted-recommendation",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T5",
+      "field": "Gamma_per_s_num",
+      "current": {
+        "value": 3010000.0,
+        "unit": "s^-1",
+        "quantity": "Gamma_per_s_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, total_decay_rate",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 100000.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-12:total_decay_rate",
+          "sourceDecimal": "3010000.00",
+          "sourceUncertaintyDecimal": "100000",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            85,
+            86,
+            137,
+            194,
+            195
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+        "legacyText": "3.01(10)e6"
+      },
+      "proposedValueDecimal": "3010000.00",
+      "proposedUncertaintyDecimal": "100000",
+      "sourceRecordId": "table-12:total_decay_rate",
+      "sourceLocator": "Table 12, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        137,
+        195
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T5",
+      "field": "linewidth_frequency_coefficient_Hz",
+      "current": {
+        "value": 479000.0,
+        "unit": "Hz",
+        "quantity": "ordinary_frequency_FWHM",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, linewidth_FWHM_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "conflict-unresolved",
+        "uncertainty": 16000.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-12:linewidth_FWHM_nu",
+          "sourceDecimal": "479",
+          "sourceUncertaintyDecimal": "16",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            85,
+            86,
+            137,
+            194,
+            195
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi"
+        },
+        "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
+        "legacyText": "2π × 479(16) kHz"
+      },
+      "proposedValueDecimal": "4.79E+5",
+      "proposedUncertaintyDecimal": "1.6E+4",
+      "sourceRecordId": "table-12:linewidth_FWHM_nu",
+      "sourceLocator": "Table 12, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        137,
+        195
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [
+        "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+      ],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T5",
+      "field": "d_num",
+      "current": {
+        "value": 2.76,
+        "unit": "e*a0",
+        "quantity": "d_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, dipole_reduced_J_Racah",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 0.07,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+          "sourceRecord": "table-12:dipole_reduced_J_Racah",
+          "sourceDecimal": "2.76",
+          "sourceUncertaintyDecimal": "0.07",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            85,
+            86,
+            132,
+            137,
+            194,
+            195
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "definition": "<Jg||er||Je>_R Racah-Wigner, Eq54; includes adopted theoretical branching ratios"
+        },
+        "convention": "J-reduced",
+        "legacyText": "2.76(7)"
+      },
+      "proposedValueDecimal": "2.76",
+      "proposedUncertaintyDecimal": "0.07",
+      "sourceRecordId": "table-12:dipole_reduced_J_Racah",
+      "sourceLocator": "Table 12, PDF/printed p25",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        85,
+        86,
+        132,
+        137,
+        194,
+        195
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T6",
+      "field": "frequency_THz",
+      "current": {
+        "value": 461.86817672,
+        "unit": "THz",
+        "quantity": "frequency_THz",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, frequency_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 2.2e-07,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-adopted",
+          "sourceRecord": "table-13:frequency_nu",
+          "sourceDecimal": "461.86817672",
+          "sourceUncertaintyDecimal": "2.2E-7",
+          "sourceReferenceNumbers": [
+            190,
+            198
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": null
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "461.86817672(22)"
+      },
+      "proposedValueDecimal": "461.86817672",
+      "proposedUncertaintyDecimal": "2.2E-7",
+      "sourceRecordId": "table-13:frequency_nu",
+      "sourceLocator": "Table 13, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [
+        190,
+        198
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-adopted",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T6",
+      "field": "energy_eV",
+      "current": {
+        "value": 1.9101332987,
+        "unit": "eV",
+        "quantity": "energy_eV",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, transition_energy",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 9e-10,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-13:transition_energy",
+          "sourceDecimal": "1.9101332987",
+          "sourceUncertaintyDecimal": "9E-10",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            135,
+            190,
+            196,
+            198
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "1.9101332987(9)"
+      },
+      "proposedValueDecimal": "1.9101332987",
+      "proposedUncertaintyDecimal": "9E-10",
+      "sourceRecordId": "table-13:transition_energy",
+      "sourceLocator": "Table 13, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        190,
+        198
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T6",
+      "field": "wavelength_vac_nm",
+      "current": {
+        "value": 649.08662928,
+        "unit": "nm",
+        "quantity": "wavelength_vac_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, wavelength_vac",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 3.1e-07,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-13:wavelength_vac",
+          "sourceDecimal": "649.08662928",
+          "sourceUncertaintyDecimal": "3.1E-7",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            135,
+            190,
+            196,
+            198
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "649.08662928(31)"
+      },
+      "proposedValueDecimal": "649.08662928",
+      "proposedUncertaintyDecimal": "3.1E-7",
+      "sourceRecordId": "table-13:wavelength_vac",
+      "sourceLocator": "Table 13, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        190,
+        198
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T6",
+      "field": "wavelength_air_nm",
+      "current": {
+        "value": 648.913718,
+        "unit": "nm",
+        "quantity": "wavelength_air_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, wavelength_air",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 6e-06,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-13:wavelength_air",
+          "sourceDecimal": "648.913718",
+          "sourceUncertaintyDecimal": "0.000006",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            135,
+            190,
+            196,
+            198
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded"
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "648.913718(6)"
+      },
+      "proposedValueDecimal": "648.913718",
+      "proposedUncertaintyDecimal": "0.000006",
+      "sourceRecordId": "table-13:wavelength_air",
+      "sourceLocator": "Table 13, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        190,
+        198
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T6",
+      "field": "energy_cm",
+      "current": null,
+      "proposedValueDecimal": "15406.264047",
+      "proposedUncertaintyDecimal": "0.000007",
+      "sourceRecordId": "table-13:wavenumber_vac",
+      "sourceLocator": "Table 13, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        190,
+        198
+      ],
+      "action": "add-reported-wavenumber-field-if-schema-supports",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T6",
+      "field": "lifetime_ns",
+      "current": {
+        "value": 13.8,
+        "unit": "ns",
+        "quantity": "lifetime_ns",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, upper_state_lifetime",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 1.7,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-weighted-recommendation",
+          "sourceRecord": "table-13:upper_state_lifetime",
+          "sourceDecimal": "13.8",
+          "sourceUncertaintyDecimal": "1.7",
+          "sourceReferenceNumbers": [
+            135,
+            196
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": 1.4,
+          "temperature_K": null,
+          "BBRTemperature_K": null
+        },
+        "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+        "legacyText": "13.8(17)"
+      },
+      "proposedValueDecimal": "13.8",
+      "proposedUncertaintyDecimal": "1.7",
+      "sourceRecordId": "table-13:upper_state_lifetime",
+      "sourceLocator": "Table 13, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [
+        135,
+        196
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-weighted-recommendation",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T6",
+      "field": "Gamma_per_s_num",
+      "current": {
+        "value": 72000000.0,
+        "unit": "s^-1",
+        "quantity": "Gamma_per_s_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, total_decay_rate",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 9000000.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-13:total_decay_rate",
+          "sourceDecimal": "72000000.0",
+          "sourceUncertaintyDecimal": "9000000",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            135,
+            190,
+            196,
+            198
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+        "legacyText": "7.2(9)e7"
+      },
+      "proposedValueDecimal": "72000000.0",
+      "proposedUncertaintyDecimal": "9000000",
+      "sourceRecordId": "table-13:total_decay_rate",
+      "sourceLocator": "Table 13, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        135,
+        196
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T6",
+      "field": "linewidth_frequency_coefficient_Hz",
+      "current": {
+        "value": 11500000.0,
+        "unit": "Hz",
+        "quantity": "ordinary_frequency_FWHM",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, linewidth_FWHM_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "conflict-unresolved",
+        "uncertainty": 1400000.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-13:linewidth_FWHM_nu",
+          "sourceDecimal": "11.5",
+          "sourceUncertaintyDecimal": "1.4",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            135,
+            190,
+            196,
+            198
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi"
+        },
+        "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
+        "legacyText": "2π × 11.5(14) MHz"
+      },
+      "proposedValueDecimal": "1.15E+7",
+      "proposedUncertaintyDecimal": "1.4E+6",
+      "sourceRecordId": "table-13:linewidth_FWHM_nu",
+      "sourceLocator": "Table 13, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        135,
+        196
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [
+        "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+      ],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T6",
+      "field": "d_num",
+      "current": {
+        "value": 1.96,
+        "unit": "e*a0",
+        "quantity": "d_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, dipole_reduced_J_Racah",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 0.15,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+          "sourceRecord": "table-13:dipole_reduced_J_Racah",
+          "sourceDecimal": "1.96",
+          "sourceUncertaintyDecimal": "0.15",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            132,
+            135,
+            190,
+            196,
+            198
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "definition": "<Jg||er||Je>_R Racah-Wigner, Eq54; includes adopted theoretical branching ratios"
+        },
+        "convention": "J-reduced",
+        "legacyText": "1.96(15)"
+      },
+      "proposedValueDecimal": "1.96",
+      "proposedUncertaintyDecimal": "0.15",
+      "sourceRecordId": "table-13:dipole_reduced_J_Racah",
+      "sourceLocator": "Table 13, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        132,
+        135,
+        190,
+        196,
+        198
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T7",
+      "field": "frequency_THz",
+      "current": {
+        "value": 389.2598337,
+        "unit": "THz",
+        "quantity": "frequency_THz",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, frequency_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 6e-07,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-adopted",
+          "sourceRecord": "table-14:frequency_nu",
+          "sourceDecimal": "389.2598337",
+          "sourceUncertaintyDecimal": "6E-7",
+          "sourceReferenceNumbers": [
+            190
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": null
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "389.2598337(6)"
+      },
+      "proposedValueDecimal": "389.2598337",
+      "proposedUncertaintyDecimal": "6E-7",
+      "sourceRecordId": "table-14:frequency_nu",
+      "sourceLocator": "Table 14, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [
+        190
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-adopted",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T7",
+      "field": "energy_eV",
+      "current": {
+        "value": 1.6098493199,
+        "unit": "eV",
+        "quantity": "energy_eV",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, transition_energy",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 2.4e-09,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-14:transition_energy",
+          "sourceDecimal": "1.6098493199",
+          "sourceUncertaintyDecimal": "2.4E-9",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            135,
+            190,
+            196
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "1.6098493199(24)"
+      },
+      "proposedValueDecimal": "1.6098493199",
+      "proposedUncertaintyDecimal": "2.4E-9",
+      "sourceRecordId": "table-14:transition_energy",
+      "sourceLocator": "Table 14, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        190
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T7",
+      "field": "wavelength_vac_nm",
+      "current": {
+        "value": 770.16026840069,
+        "unit": "nm",
+        "quantity": "wavelength_vac_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table14 p26 frequency; lambda=c/nu; printed lambda fails same-row consistency",
+        "evidenceKind": "derived",
+        "reviewStatus": "conflict-unresolved",
+        "uncertainty": 1.1871149320701517e-06,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-14:wavelength_vac",
+          "sourceDecimal": "770.160284",
+          "sourceUncertaintyDecimal": "0.000011",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            135,
+            190,
+            196
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "sourceConflict": "Table14 prints770.160284(11)nm; frequency and wavenumber instead imply770.1602684006901nm"
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "770.160284(11)",
+        "derivedFrom": [
+          "T7.frequency_THz",
+          "SI exact c=299792458 m/s"
+        ]
+      },
+      "proposedValueDecimal": "770.160268400690117234667050622027740952610904",
+      "proposedUncertaintyDecimal": "0.00000118711493207015175873975674046848529127233849",
+      "sourceRecordId": "table-14:wavelength_vac",
+      "sourceLocator": "Table 14, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        190
+      ],
+      "action": "use-explicit-frequency-derived-candidate-or-mark-unresolved-source-conflict",
+      "evidenceType": "derived-from-reported-frequency-and-exact-c",
+      "reviewFlags": [
+        "SOURCE_LAMBDA_CENTRAL_INCONSISTENT_WITH_FREQUENCY",
+        "SOURCE_LAMBDA_UNCERTAINTY_INCONSISTENT_WITH_FREQUENCY"
+      ],
+      "applied": false,
+      "sourceReportedValueDecimal": "770.160284",
+      "sourceReportedUncertaintyDecimal": "0.000011",
+      "derivedFrom": [
+        "table-14:frequency_nu",
+        "table-01:c"
+      ]
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T7",
+      "field": "wavelength_air_nm",
+      "current": {
+        "value": 769.955919,
+        "unit": "nm",
+        "quantity": "wavelength_air_nm",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, wavelength_air",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "conflict-unresolved",
+        "uncertainty": 8e-06,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-14:wavelength_air",
+          "sourceDecimal": "769.955919",
+          "sourceUncertaintyDecimal": "0.000008",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            135,
+            190,
+            196
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded",
+          "sourceConflict": "Table14 vacuum-wavelength/frequency mismatch; air value retained as reported, not independently recalculated"
+        },
+        "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+        "legacyText": "769.955919(8)"
+      },
+      "proposedValueDecimal": "769.955919",
+      "proposedUncertaintyDecimal": "0.000008",
+      "sourceRecordId": "table-14:wavelength_air",
+      "sourceLocator": "Table 14, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        190
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T7",
+      "field": "energy_cm",
+      "current": null,
+      "proposedValueDecimal": "12984.310422",
+      "proposedUncertaintyDecimal": "0.000019",
+      "sourceRecordId": "table-14:wavenumber_vac",
+      "sourceLocator": "Table 14, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        190
+      ],
+      "action": "add-reported-wavenumber-field-if-schema-supports",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T7",
+      "field": "lifetime_ns",
+      "current": {
+        "value": 13.8,
+        "unit": "ns",
+        "quantity": "lifetime_ns",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, upper_state_lifetime",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 1.7,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-weighted-recommendation",
+          "sourceRecord": "table-14:upper_state_lifetime",
+          "sourceDecimal": "13.8",
+          "sourceUncertaintyDecimal": "1.7",
+          "sourceReferenceNumbers": [
+            135,
+            196
+          ],
+          "dependencyReferenceNumbers": [],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "birgeRatio": 1.4,
+          "temperature_K": null,
+          "BBRTemperature_K": null
+        },
+        "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+        "legacyText": "13.8(17)"
+      },
+      "proposedValueDecimal": "13.8",
+      "proposedUncertaintyDecimal": "1.7",
+      "sourceRecordId": "table-14:upper_state_lifetime",
+      "sourceLocator": "Table 14, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [
+        135,
+        196
+      ],
+      "dependencyReferenceNumbers": [],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-weighted-recommendation",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T7",
+      "field": "Gamma_per_s_num",
+      "current": {
+        "value": 72000000.0,
+        "unit": "s^-1",
+        "quantity": "Gamma_per_s_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, total_decay_rate",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 9000000.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-14:total_decay_rate",
+          "sourceDecimal": "72000000.0",
+          "sourceUncertaintyDecimal": "9000000",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            135,
+            190,
+            196
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+        "legacyText": "7.2(9)e7"
+      },
+      "proposedValueDecimal": "72000000.0",
+      "proposedUncertaintyDecimal": "9000000",
+      "sourceRecordId": "table-14:total_decay_rate",
+      "sourceLocator": "Table 14, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        135,
+        196
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T7",
+      "field": "linewidth_frequency_coefficient_Hz",
+      "current": {
+        "value": 11500000.0,
+        "unit": "Hz",
+        "quantity": "ordinary_frequency_FWHM",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, linewidth_FWHM_nu",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "conflict-unresolved",
+        "uncertainty": 1400000.0,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-14:linewidth_FWHM_nu",
+          "sourceDecimal": "11.5",
+          "sourceUncertaintyDecimal": "1.4",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            135,
+            190,
+            196
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi"
+        },
+        "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
+        "legacyText": "2π × 11.5(14) MHz"
+      },
+      "proposedValueDecimal": "1.15E+7",
+      "proposedUncertaintyDecimal": "1.4E+6",
+      "sourceRecordId": "table-14:linewidth_FWHM_nu",
+      "sourceLocator": "Table 14, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        135,
+        196
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived",
+      "reviewFlags": [
+        "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+      ],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T7",
+      "field": "d_num",
+      "current": {
+        "value": 4.99,
+        "unit": "e*a0",
+        "quantity": "d_num",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, dipole_reduced_J_Racah",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 0.32,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+          "sourceRecord": "table-14:dipole_reduced_J_Racah",
+          "sourceDecimal": "4.99",
+          "sourceUncertaintyDecimal": "0.32",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            132,
+            135,
+            190,
+            196
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false,
+          "definition": "<Jg||er||Je>_R Racah-Wigner, Eq54; includes adopted theoretical branching ratios"
+        },
+        "convention": "J-reduced",
+        "legacyText": "4.99(32)"
+      },
+      "proposedValueDecimal": "4.99",
+      "proposedUncertaintyDecimal": "0.32",
+      "sourceRecordId": "table-14:dipole_reduced_J_Racah",
+      "sourceLocator": "Table 14, PDF/printed p26",
+      "sourceOriginalReferenceNumbers": [],
+      "dependencyReferenceNumbers": [
+        15,
+        132,
+        135,
+        190,
+        196
+      ],
+      "action": "update-precision-uncertainty-and-source",
+      "evidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+      "reviewFlags": [],
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T3",
+      "field": "oscillator_strength_f_num",
+      "action": "provenance-and-convention-correction",
+      "reason": "Table9 does not report f; current1e-9 must be missing unless a separate valid source is provided.",
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T4",
+      "field": "oscillator_strength_f_num",
+      "action": "provenance-and-convention-correction",
+      "reason": "Table11 does not report f; current1e-9 must be missing unless a separate valid source is provided.",
+      "applied": false
+    },
+    {
+      "file": "data/transitions.json",
+      "recordId": "T3",
+      "field": "d_num",
+      "action": "provenance-and-convention-correction",
+      "reason": "Table9 does not report d. Effective F-reduced9.19e-5 cannot be relabeled electronic J-reduced for J=0->0; require separate HFS-induced derivation/source.",
+      "applied": false
+    },
+    {
+      "file": "data/levels.json",
+      "recordId": "yb171-6s6p-3p0",
+      "field": "energy_cm",
+      "current": {
+        "value": 17288.48817774007,
+        "unit": "cm^-1",
+        "quantity": "level_energy",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, wavenumber_vac",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 3e-12,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-09:wavenumber_vac",
+          "sourceDecimal": "17288.488177740069",
+          "sourceUncertaintyDecimal": "3E-12",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            121,
+            213,
+            214
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+        "legacyText": "17288.488177740069(3)"
+      },
+      "proposedValueDecimal": "17288.488177740069",
+      "proposedUncertaintyDecimal": "3E-12",
+      "sourceRecordId": "table-09:wavenumber_vac",
+      "action": "use-isotope171-hyperfine-centroid-or-explicitly-relabel-current-energy-reference",
+      "applied": false
+    },
+    {
+      "file": "data/levels.json",
+      "recordId": "yb171-6s6p-3p1",
+      "field": "energy_cm",
+      "current": {
+        "value": 17992.061256,
+        "unit": "cm^-1",
+        "quantity": "level_energy",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, wavenumber_vac",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 4e-06,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-10:wavenumber_vac",
+          "sourceDecimal": "17992.061256",
+          "sourceUncertaintyDecimal": "0.000004",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            133,
+            134,
+            136,
+            137,
+            139,
+            181,
+            182,
+            184,
+            195,
+            212,
+            215,
+            216,
+            217,
+            218
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+        "legacyText": "17992.061256(4)"
+      },
+      "proposedValueDecimal": "17992.061256",
+      "proposedUncertaintyDecimal": "0.000004",
+      "sourceRecordId": "table-10:wavenumber_vac",
+      "action": "use-isotope171-hyperfine-centroid-or-explicitly-relabel-current-energy-reference",
+      "applied": false
+    },
+    {
+      "file": "data/levels.json",
+      "recordId": "yb171-6s6p-3p2",
+      "field": "energy_cm",
+      "current": {
+        "value": 19710.4467,
+        "unit": "cm^-1",
+        "quantity": "level_energy",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, wavenumber_vac",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 0.0014,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-11:wavenumber_vac",
+          "sourceDecimal": "19710.4467",
+          "sourceUncertaintyDecimal": "0.0014",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            123,
+            129
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+        "legacyText": "19710.4467(14)"
+      },
+      "proposedValueDecimal": "19710.4467",
+      "proposedUncertaintyDecimal": "0.0014",
+      "sourceRecordId": "table-11:wavenumber_vac",
+      "action": "use-isotope171-hyperfine-centroid-or-explicitly-relabel-current-energy-reference",
+      "applied": false
+    },
+    {
+      "file": "data/levels.json",
+      "recordId": "yb171-6s6p-1p1",
+      "field": "energy_cm",
+      "current": {
+        "value": 25068.258091,
+        "unit": "cm^-1",
+        "quantity": "level_energy",
+        "sourceId": "ref-01",
+        "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, wavenumber_vac",
+        "evidenceKind": "literature-reported",
+        "reviewStatus": "original-source-located",
+        "uncertainty": 2.6e-05,
+        "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+        "conditions": {
+          "isotope": 171,
+          "sourceEvidenceType": "compilation-derived",
+          "sourceRecord": "table-08:wavenumber_vac",
+          "sourceDecimal": "25068.258091",
+          "sourceUncertaintyDecimal": "0.000026",
+          "sourceReferenceNumbers": [],
+          "dependencyReferenceNumbers": [
+            66,
+            104,
+            105,
+            106,
+            133,
+            135,
+            136,
+            139,
+            210,
+            211,
+            212
+          ],
+          "auditDate": "2026-10-29",
+          "primaryOriginalsAllRead": false
+        },
+        "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+        "legacyText": "25068.258091(26)"
+      },
+      "proposedValueDecimal": "25068.258091",
+      "proposedUncertaintyDecimal": "0.000026",
+      "sourceRecordId": "table-08:wavenumber_vac",
+      "action": "use-isotope171-hyperfine-centroid-or-explicitly-relabel-current-energy-reference",
+      "applied": false
+    },
+    {
+      "file": "data/hyperfine.json",
+      "recordId": "1S0",
+      "field": "A_over_h",
+      "proposedValueDecimal": "0",
+      "proposedUncertaintyDecimal": null,
+      "sourceRecordId": "table-05:1S0:A_over_h",
+      "sourceOriginalReferenceNumbers": [],
+      "birgeRatio": null,
+      "action": "retain-central-value-add-uncertainty-full-weighted-compilation-citations",
+      "applied": false
+    },
+    {
+      "file": "data/hyperfine.json",
+      "recordId": "1P1",
+      "field": "A_over_h",
+      "proposedValueDecimal": "-214.06",
+      "proposedUncertaintyDecimal": "0.17",
+      "sourceRecordId": "table-05:1P1:A_over_h",
+      "sourceOriginalReferenceNumbers": [
+        65,
+        66,
+        67,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179
+      ],
+      "birgeRatio": 3.3,
+      "action": "retain-central-value-add-uncertainty-full-weighted-compilation-citations",
+      "applied": false
+    },
+    {
+      "file": "data/hyperfine.json",
+      "recordId": "3P0",
+      "field": "A_over_h",
+      "proposedValueDecimal": "0",
+      "proposedUncertaintyDecimal": null,
+      "sourceRecordId": "table-05:3P0:A_over_h",
+      "sourceOriginalReferenceNumbers": [],
+      "birgeRatio": null,
+      "action": "retain-central-value-add-uncertainty-full-weighted-compilation-citations",
+      "applied": false
+    },
+    {
+      "file": "data/hyperfine.json",
+      "recordId": "3P1",
+      "field": "A_over_h",
+      "proposedValueDecimal": "3957.85",
+      "proposedUncertaintyDecimal": "0.05",
+      "sourceRecordId": "table-05:3P1:A_over_h",
+      "sourceOriginalReferenceNumbers": [
+        127,
+        128,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189
+      ],
+      "birgeRatio": 2.6,
+      "action": "retain-central-value-add-uncertainty-full-weighted-compilation-citations",
+      "applied": false
+    },
+    {
+      "file": "data/hyperfine.json",
+      "recordId": "3P2",
+      "field": "A_over_h",
+      "proposedValueDecimal": "2680.9",
+      "proposedUncertaintyDecimal": "2.0",
+      "sourceRecordId": "table-05:3P2:A_over_h",
+      "sourceOriginalReferenceNumbers": [
+        190,
+        191,
+        192,
+        193
+      ],
+      "birgeRatio": 6.3,
+      "action": "retain-central-value-add-uncertainty-full-weighted-compilation-citations",
+      "applied": false
+    },
+    {
+      "file": "data/hyperfine.json",
+      "recordId": "3D1",
+      "field": "A_over_h",
+      "proposedValueDecimal": "-2038.30",
+      "proposedUncertaintyDecimal": "0.11",
+      "sourceRecordId": "table-05:3D1:A_over_h",
+      "sourceOriginalReferenceNumbers": [
+        69,
+        85,
+        86,
+        194,
+        195
+      ],
+      "birgeRatio": 1.0,
+      "action": "retain-central-value-add-uncertainty-full-weighted-compilation-citations",
+      "applied": false
+    },
+    {
+      "file": "data/hyperfine.json",
+      "recordId": "3D2",
+      "field": "A_over_h",
+      "proposedValueDecimal": "1313.8",
+      "proposedUncertaintyDecimal": "3.3",
+      "sourceRecordId": "table-05:3D2:A_over_h",
+      "sourceOriginalReferenceNumbers": [
+        68,
+        69
+      ],
+      "birgeRatio": null,
+      "action": "retain-central-value-add-uncertainty-full-weighted-compilation-citations",
+      "applied": false
+    },
+    {
+      "file": "data/hyperfine.json",
+      "recordId": "3S1",
+      "field": "A_over_h",
+      "proposedValueDecimal": "6838.41",
+      "proposedUncertaintyDecimal": "0.26",
+      "sourceRecordId": "table-05:3S1:A_over_h",
+      "sourceOriginalReferenceNumbers": [
+        177,
+        190,
+        192,
+        197,
+        198,
+        199
+      ],
+      "birgeRatio": 3.1,
+      "action": "retain-central-value-add-uncertainty-full-weighted-compilation-citations",
+      "applied": false
+    },
+    {
+      "file": "data/levels.json",
+      "recordId": "yb171-6s5d-3d1",
+      "field": "energy_cm",
+      "candidateValueDecimal": "24489.141123040069",
+      "derivedFrom": [
+        "table-09:wavenumber_vac",
+        "table-12:wavenumber_vac"
+      ],
+      "action": "derived-centroid-candidate-requires-covariance-check",
+      "applied": false
+    },
+    {
+      "file": "data/levels.json",
+      "recordId": "yb171-6s7s-3s1",
+      "field": "energy_cm",
+      "candidateValueDecimal": "32694.752224740069",
+      "alternativeValueDecimal": "32694.757122",
+      "pathDifference_cmInverse": "0.004897259931",
+      "pathDifference_MHz": "146.8161592179400398",
+      "derivedFrom": [
+        "table-09:wavenumber_vac",
+        "table-13:wavenumber_vac"
+      ],
+      "alternativeFrom": [
+        "table-11:wavenumber_vac",
+        "table-14:wavenumber_vac"
+      ],
+      "action": "unresolved-path-conflict-do-not-average-or-silently-adopt",
+      "applied": false
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "paperNumber": 4,
+  "sourceId": "qiao-2023-apl",
+  "doi": "10.1063/5.0155776",
+  "context": "Yb isotope MTS in Ne hollow-cathode lamp; absolute pressure correction estimated; reference-isotope174; natural width not inferred from broadened MTS",
+  "tables": 7,
+  "pdf": "references/papers/4.pdf",
+  "sha256": "e2d263f0b1762d45b04bdbba8c3adc4fdf4ff098427054b4f8124f624e295df4",
+  "table": "TableVII",
+  "pdfPage": 6,
+  "printedPage": "224002-5",
+  "columns": [
+    "A_173",
+    "B_173"
+  ],
+  "note": "",
+  "rows": [
+    {
+      "label": "6s6p3P2",
+      "referenceInPaper": "14",
+      "evidenceKind": "comparison-quoted-from-reference",
+      "cells": {
+        "A_173": {
+          "printed": "-742(5)",
+          "unit": "MHz",
+          "value": "-742",
+          "uncertainty": "5",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "14"
+        },
+        "B_173": {
+          "printed": "1342(38)",
+          "unit": "MHz",
+          "value": "1342",
+          "uncertainty": "38",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "14"
+        }
+      }
+    },
+    {
+      "label": "6s6p3P2",
+      "referenceInPaper": "12",
+      "evidenceKind": "comparison-quoted-from-reference",
+      "cells": {
+        "A_173": {
+          "printed": "-742.71(29)",
+          "unit": "MHz",
+          "value": "-742.71",
+          "uncertainty": "0.29",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "12"
+        },
+        "B_173": {
+          "printed": "1342.3(19)",
+          "unit": "MHz",
+          "value": "1342.3",
+          "uncertainty": "1.9",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "12"
+        }
+      }
+    },
+    {
+      "label": "6s6p3P2",
+      "referenceInPaper": "15",
+      "evidenceKind": "comparison-quoted-from-reference",
+      "cells": {
+        "A_173": {
+          "printed": "-742.11(2)",
+          "unit": "MHz",
+          "value": "-742.11",
+          "uncertainty": "0.02",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "15"
+        },
+        "B_173": {
+          "printed": "1339.2(2)",
+          "unit": "MHz",
+          "value": "1339.2",
+          "uncertainty": "0.2",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "15"
+        }
+      }
+    },
+    {
+      "label": "6s6p3P2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "A_173": {
+          "printed": "-742.5(1)",
+          "unit": "MHz",
+          "value": "-742.5",
+          "uncertainty": "0.1",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "B_173": {
+          "printed": "1340.2(9)",
+          "unit": "MHz",
+          "value": "1340.2",
+          "uncertainty": "0.9",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    }
+  ],
+  "rawPageText": "paper-4-page-6.txt",
+  "renderedVerified": "rendered/paper-4-p6.png"
+}

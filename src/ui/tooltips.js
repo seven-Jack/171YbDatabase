@@ -1,60 +1,106 @@
-import { formatLifetime } from './format.js';
+import { renderTransitionTooltip } from './diagram-details.js';
+import { chooseDiagramPanelPosition } from './diagram-placement.js';
+import { readDiagramGeometry } from './diagram-geometry.js';
+import { renderCompactTooltip, positionWorkspaceTooltip } from './compact-tooltip.js';
 export function createTooltips() {
 const tooltip = document.getElementById('tooltip');
 
-function showTooltip(e, t, isCore) {
-  const clsLabel = t.classification.startsWith('强') ? '强 E1' : t.classification.startsWith('弱') ? '弱 intercombination' : t.classification;
-  let rows = '';
-  if (isCore) {
-    rows = `
-      <div class="tt-row"><span class="tt-key">跃迁</span><span class="tt-val">${t.lower} → ${t.upper}</span></div>
-      <div class="tt-row"><span class="tt-key">波长 (真空)</span><span class="tt-val">${t.approximate ? '≈' + t.wavelength_vac_nm.toFixed(2) : t.wavelength_vac_nm.toFixed(4)} nm</span></div>
-      <div class="tt-row"><span class="tt-key">频率</span><span class="tt-val">${t.frequency_THz.toFixed(5)} THz</span></div>
-      <div class="tt-row"><span class="tt-key">线宽</span><span class="tt-val">${t.linewidth_FWHM}</span></div>
-      <div class="tt-row"><span class="tt-key">寿命</span><span class="tt-val">${formatLifetime(t.lifetime_ns)}</span></div>
-      <div class="tt-row"><span class="tt-key">振子强度</span><span class="tt-val">${t.oscillator_strength_f}</span></div>
-      <div class="tt-row"><span class="tt-key">矩阵元</span><span class="tt-val">${t.d_reduced_ea0} ea₀${t.approximate ? "（This work，J 级约化量）" : ""}</span></div>
-      <div class="tt-row"><span class="tt-key">多极性</span><span class="tt-val">${t.multipole}</span></div>
-      <div class="tt-row"><span class="tt-key">强度</span><span class="tt-val">${clsLabel}</span></div>
-    `;
-  } else {
-    rows = `
-      <div class="tt-row"><span class="tt-key">跃迁</span><span class="tt-val">${t.label}</span></div>
-      <div class="tt-row"><span class="tt-key">波长</span><span class="tt-val">${t.wavelength_vac_nm} nm</span></div>
-      <div class="tt-row"><span class="tt-key">ΔE</span><span class="tt-val">${t.energy_cm} cm⁻¹</span></div>
-      <div class="tt-row"><span class="tt-key">n</span><span class="tt-val">${t.n}</span></div>
-      <div class="tt-row"><span class="tt-key">激发方式</span><span class="tt-val">${t.excitation}</span></div>
-      <div class="tt-row"><span class="tt-key">强度</span><span class="tt-val">${clsLabel}</span></div>
-    `;
-  }
-  tooltip.innerHTML = `
-    <div class="tt-title" style="color:${t.color}">${t.id} · ${t.label}</div>
-    ${rows}
-  `;
-  tooltip.classList.add('show');
-  moveTooltip(e);
+let tooltipLeaveTimer;
+let diagramTarget=null;
+let workspaceContext=null;
+function positionDiagramTooltip() {
+  if (!diagramTarget||!tooltip.classList.contains('show')) return;
+  const geometry=readDiagramGeometry(diagramTarget.ownerSVGElement);
+  if (!geometry.plot) return;
+  // The wavelength label anchors the card without treating a diagonal's whole
+  // bounding box as occupied. All actual lines remain obstacles below.
+  const anchor=(diagramTarget.querySelector('text')||diagramTarget).getBoundingClientRect();
+  const position=chooseDiagramPanelPosition({viewport:{width:window.innerWidth,height:window.innerHeight},
+    panel:{width:tooltip.offsetWidth,height:tooltip.offsetHeight},anchor,...geometry});
+  tooltip.style.left=position.left+'px';
+  tooltip.style.top=position.top+'px';
 }
+function showTooltip(e, t, isCore, target=null) {
+  clearTimeout(tooltipLeaveTimer);
+  hideInfoTooltip();
+  workspaceContext=null;
+  tooltip.classList.remove('workspace-tooltip');
+  diagramTarget=target;
+  tooltip.innerHTML=renderTransitionTooltip(t,isCore);
+  tooltip.classList.add('diagram-transition-tooltip','show');
+  if (diagramTarget) positionDiagramTooltip();
+  else moveTooltip(e);
+}
+function showCompactTooltip(e,model,{target=e?.currentTarget,plot=target?.ownerSVGElement||target}={}) {
+  if (!target) return;
+  clearTimeout(tooltipLeaveTimer);
+  hideInfoTooltip();
+  diagramTarget=null;
+  const sameTarget=workspaceContext?.target===target&&workspaceContext?.plot===plot;
+  const oldWidth=tooltip.offsetWidth,oldHeight=tooltip.offsetHeight;
+  tooltip.innerHTML=renderCompactTooltip(model);
+  tooltip.classList.remove('diagram-transition-tooltip');
+  tooltip.classList.add('workspace-tooltip','show');
+  workspaceContext={target,plot};
+  if (!sameTarget||oldWidth!==tooltip.offsetWidth||oldHeight!==tooltip.offsetHeight) positionWorkspaceTooltip(tooltip,target,plot,e);
+}
+function positionWorkspaceCard() {
+  if (workspaceContext&&tooltip.classList.contains('show')) {
+    const {target,plot}=workspaceContext;
+    positionWorkspaceTooltip(tooltip,target,plot);
+  }
+}
+function scheduleTooltipHide() {
+  clearTimeout(tooltipLeaveTimer);
+  tooltipLeaveTimer=setTimeout(hideTooltip,380);
+}
+tooltip.addEventListener('mouseenter',()=>clearTimeout(tooltipLeaveTimer));
+tooltip.addEventListener('mouseleave',scheduleTooltipHide);
+tooltip.addEventListener('focusin',()=>clearTimeout(tooltipLeaveTimer));
+tooltip.addEventListener('focusout',e=>{if(!tooltip.contains(e.relatedTarget)) scheduleTooltipHide();});
+tooltip.addEventListener('click',e=>{if(e.target.closest('a'))hideTooltip();});
+tooltip.addEventListener('keydown',e=>{if(e.key==='Escape')hideTooltip();});
 
 function moveTooltip(e) {
+  if (workspaceContext) {
+    if (e.currentTarget===workspaceContext.target) return;
+    workspaceContext=null;
+    clearTimeout(tooltipLeaveTimer);
+    tooltip.classList.remove('workspace-tooltip');
+  }
+  if (diagramTarget) {
+    // Keep the main card stationary while following the same transition.
+    if (!e.currentTarget||e.currentTarget===diagramTarget) return;
+    // Other scientific diagrams share this tooltip and keep their cursor mode.
+    diagramTarget=null;
+    clearTimeout(tooltipLeaveTimer);
+    tooltip.classList.remove('diagram-transition-tooltip');
+  }
   const x = e.clientX + 14;
   const y = e.clientY + 14;
   const tw = tooltip.offsetWidth;
   const th = tooltip.offsetHeight;
-  const px = Math.min(x, window.innerWidth - tw - 8);
-  const py = Math.min(y, window.innerHeight - th - 8);
+  const px = Math.max(8, Math.min(x, window.innerWidth - tw - 8));
+  const py = Math.max(8, Math.min(y, window.innerHeight - th - 8));
   tooltip.style.left = px + 'px';
   tooltip.style.top = py + 'px';
 }
 
 function hideTooltip() {
-  tooltip.classList.remove('show');
+  clearTimeout(tooltipLeaveTimer);
+  diagramTarget=null;
+  workspaceContext=null;
+  tooltip.classList.remove('show','diagram-transition-tooltip','workspace-tooltip');
 }
+window.addEventListener('resize',positionDiagramTooltip);
+window.addEventListener('resize',positionWorkspaceCard);
 
 // ============================================================
 // INFO TOOLTIP (source + derivation for fixed values)
 // ============================================================
 const infoTooltip = document.getElementById('infoTooltip');
 let infoTooltipTarget = null;
+let infoLeaveTimer;
 
 function buildInfoHtml(title, source, derivation) {
   return `<div class="tt-title">${title}</div>
@@ -63,13 +109,20 @@ function buildInfoHtml(title, source, derivation) {
 }
 function showInfoTooltip(el, html) {
   if (!infoTooltip) return;
+  clearTimeout(infoLeaveTimer);
+  hideTooltip();
   infoTooltipTarget = el;
   infoTooltip.innerHTML = html;
+  infoTooltip.classList.toggle('workspace-tooltip',html.includes('data-compact-tooltip'));
   infoTooltip.classList.add('show');
   positionInfoTooltip(el);
 }
 function positionInfoTooltip(el) {
   if (!infoTooltip || !el) return;
+  if (infoTooltip.classList.contains('workspace-tooltip')) {
+    positionWorkspaceTooltip(infoTooltip,el,el.closest('.table-wrap')||el);
+    return;
+  }
   const rect = el.getBoundingClientRect();
   const tw = infoTooltip.offsetWidth;
   const th = infoTooltip.offsetHeight;
@@ -82,8 +135,22 @@ function positionInfoTooltip(el) {
   infoTooltip.style.top = py + 'px';
 }
 function hideInfoTooltip() {
-  if (infoTooltip) infoTooltip.classList.remove('show');
+  clearTimeout(infoLeaveTimer);
+  if (infoTooltip) infoTooltip.classList.remove('show','workspace-tooltip');
   infoTooltipTarget = null;
+}
+function scheduleInfoTooltipHide() {
+  clearTimeout(infoLeaveTimer);
+  infoLeaveTimer=setTimeout(hideInfoTooltip,380);
+}
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){hideTooltip();hideInfoTooltip();}});
+if (infoTooltip) {
+  infoTooltip.addEventListener('mouseenter',()=>clearTimeout(infoLeaveTimer));
+  infoTooltip.addEventListener('mouseleave',scheduleInfoTooltipHide);
+  infoTooltip.addEventListener('focusin',()=>clearTimeout(infoLeaveTimer));
+  infoTooltip.addEventListener('focusout',e=>{if(!infoTooltip.contains(e.relatedTarget))scheduleInfoTooltipHide();});
+  infoTooltip.addEventListener('click',e=>{if(e.target.closest('a'))hideInfoTooltip();});
+  infoTooltip.addEventListener('keydown',e=>{if(e.key==='Escape')hideInfoTooltip();});
 }
 function attachInfoTooltip(el, title, source, derivation) {
   if (!el) return;
@@ -104,5 +171,5 @@ window.addEventListener('resize', () => { if (infoTooltipTarget) positionInfoToo
 })();
 
 
-return { tooltip, showTooltip, moveTooltip, hideTooltip, attachInfoTooltip, buildInfoHtml, showInfoTooltip, hideInfoTooltip };
+return { tooltip, showTooltip, showCompactTooltip, moveTooltip, hideTooltip, scheduleTooltipHide, attachInfoTooltip, buildInfoHtml, showInfoTooltip, hideInfoTooltip, scheduleInfoTooltipHide };
 }

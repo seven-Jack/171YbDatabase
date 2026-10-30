@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2026.10.29.1",
+  "sourceCommit": "2e2e9d5",
+  "sourceDate": "2026-10-29",
+  "migrationDate": "2026-10-26",
+  "generatedAt": "2026-10-29T15:33:46.570Z",
+  "contentHash": "11894b2a2f84f18e2c2762b3f75206dcf24de21347972e08db28bcdffd68f427",
+  "files": [
+    {
+      "path": "data/levels.json",
+      "sha256": "63e1dbdb9b14acce47ef457edd51fe9ec29fc43c74b6b5417de92a45be95c36f"
+    },
+    {
+      "path": "data/transitions.json",
+      "sha256": "79141b85c70822b0722aaebd089a76666b4091a8b3410b3ec4505ff8232218b3"
+    },
+    {
+      "path": "data/hyperfine.json",
+      "sha256": "72be1be7d2ed48973d49db47d61a74f96460464f8c2e9a3cf91e3a3d76445a1b"
+    },
+    {
+      "path": "data/sources.json",
+      "sha256": "c4858b2d86ecc4902c1b38c4bdc889f053893c8604480f940546b87996860f66"
+    },
+    {
+      "path": "data/estimates.json",
+      "sha256": "18273398a2e912bdcf665097c79c52b5e3ad2d60bb32ea223a56f507f9c30695"
+    }
+  ],
+  "reviewStatus": "field-complete-source-audit; adopted-compilation plus explicit conflicts and quarantined estimates",
+  "physicalValidation": "not established for all records: compilation, theory, source conflicts, missing originals and internal models are explicitly distinguished",
+  "exports": [
+    {
+      "path": "assets/05.21_yb171_65s_hyperfine.csv",
+      "sha256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec"
+    }
+  ],
+  "auditReport": "references/audits/data-source-audit-2026-10-29.md"
+}

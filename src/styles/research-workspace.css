@@ -1,0 +1,210 @@
+/* Scoped to the three research views. The original main diagram is excluded. */
+:is(#secCalc, #secRabi, #secData) {
+  --workspace-surface: #0b1421;
+  --workspace-edge: #27384f;
+  --workspace-muted: #91a5bf;
+  --workspace-blue: #91b9f2;
+  --workspace-gold: #dec18b;
+  margin-top: 76px;
+}
+:is(#secCalc, #secRabi, #secData) .section-head { margin-bottom: 24px; }
+:is(#secCalc, #secRabi, #secData) .section-index { color: #bba57f; font-size: 9px; letter-spacing: .22em; margin-bottom: 10px; }
+:is(#secCalc, #secRabi, #secData) .section-title { font-size: clamp(24px,2.5vw,32px); font-weight: 500; }
+:is(#secCalc, #secRabi) .section-object-context { padding: 12px 0 0; border-top: 1px solid #233248; margin-top: 6px; }
+:is(#secCalc, #secRabi) .section-object-context [data-workflow-object] { color: #d7e3f4; }
+:is(#secCalc, #secRabi) .workspace-panel-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+:is(#secCalc, #secRabi) .workspace-eyebrow { display: block; font-size: 9px; letter-spacing: .19em; line-height: 1.5; color: var(--workspace-muted); margin-bottom: 7px; }
+:is(#secCalc, #secRabi) .workspace-panel-head h3 { margin: 0; font-size: 18px; font-weight: 500; letter-spacing: -.02em; }
+:is(#secCalc, #secRabi) .workspace-chip { flex-shrink: 0; color: #a7bddb; font-size: 10px; line-height: 1.5; padding: 5px 9px; border: 1px solid #2a3c56; border-radius: 5px; background: #112035; }
+:is(#secCalc, #secRabi, #secData) :is(button,select,input):focus-visible { outline: 2px solid var(--workspace-blue); outline-offset: 3px; }
+
+/* Channels: aligned panel headers, grouped controls, and a single selection accent. */
+#secCalc .hf-matrix-diagram-grid { grid-template-columns: minmax(0,1fr) minmax(0,1.12fr); gap: 18px; }
+#secCalc .hf-calc-panel { padding: 24px; border-color: var(--workspace-edge); border-radius: 14px; background: linear-gradient(150deg,#10203855,transparent 46%),var(--workspace-surface); box-shadow: inset 0 1px #b4d3ff0a; }
+#secCalc .hf-trans-toolbar { display: flex; align-items: end; flex-wrap: wrap; gap: 12px; margin: 0 0 17px; padding-bottom: 16px; border-bottom: 1px solid #233248; }
+#secCalc .hf-filter-field { display: grid; gap: 6px; font-size: 11px; color: var(--workspace-muted); flex: 1 1 96px; }
+#secCalc .hf-mf-select { width: 100%; min-height: 35px; background: #080f19; color: #dce8f9; border: 1px solid #2a3b53; font: 12px var(--font-ui); padding-inline: 9px; }
+#secCalc .polarization-label { display: none; }
+#secCalc .hf-pol-seg { display: flex; padding: 3px; border: 1px solid #293b54; background: #080f19; height: 35px; gap: 2px; }
+#secCalc .hf-pol-seg button { min-width: 34px; min-height: 27px; padding: 4px 9px; color: #9caec5; background: transparent; border: 0; box-shadow: none; }
+#secCalc .hf-pol-seg button.active { color: #ebcf9d; background: #322c21; box-shadow: inset 0 0 0 1px #6d5b3a; }
+#secCalc .hf-trans-rule { flex-basis: 100%; text-align: right; color: #c7b58f; font-size: 11px; margin: -4px 0 -4px; }
+#secCalc #hfTransTitle { font-size: 11px; color: #a9bdd9; padding: 0 0 13px; line-height: 1.7; }
+#secCalc .trans-lines-wrap:has(svg) { border: 1px solid #20314a; background: radial-gradient(ellipse at 50% 10%,#192e4d66,transparent 80%),#080f19; border-radius: 9px; padding: 20px 8px; flex: 1 0 auto; }
+#secCalc .hf-trans-svg { min-height: 300px; }
+#secCalc .hf-trans-svg .hf-trans-arrow { stroke: #91b9f2; filter: none; }
+#secCalc .hf-trans-svg .hf-trans-arrow.selected { stroke: #e3c286; filter: drop-shadow(0 0 3px #e3c28633); }
+#secCalc .hf-trans-svg text[transform] { fill: #a7c9f6; }
+#secCalc .hf-trans-svg .hf-trans-arrow.selected + text { fill: #e3c286; }
+#secCalc .channel-color-key { display: flex; align-items: center; flex-wrap: wrap; gap: 9px 18px; padding-top: 16px; font-size: 10px; color: #a9bbd2; }
+#secCalc .channel-color-key span { display: inline-flex; align-items: center; gap: 7px; }
+#secCalc .channel-color-key i { width: 16px; height: 1px; background: #91b9f2; }
+#secCalc .channel-color-key span:nth-child(2) i { background: #e3c286; }
+#secCalc .channel-color-key small { margin-left: auto; color: var(--workspace-muted); font-size: 10px; }
+#secCalc .matrix-caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; font-size: 10px; line-height: 1.8; margin: 0 0 17px; color: #93a9c5; }
+#secCalc .matrix-unit { color: #c4b391; }
+#secCalc .cg-table-wrap { border: 1px solid #26364d; border-radius: 9px; max-height: 510px; scrollbar-width: thin; }
+#secCalc .cg-table { border-collapse: separate; border-spacing: 0; }
+#secCalc .cg-table th { position: sticky; top: 0; z-index: 1; background: #142238; border: 0; border-bottom: 1px solid #30435e; padding: 11px 7px; font-size: 11px; font-weight: 500; color: #c7d7ef; line-height: 1.5; }
+#secCalc .cg-table th > span { display: block; color: #819abb; font-size: 10px; font-weight: 400; white-space: nowrap; }
+#secCalc .cg-table td { height: 43px; padding: 8px 7px; border: 0; border-bottom: 1px solid #223149; font-size: 11px; white-space: nowrap; color: #c9d6e8; }
+#secCalc .cg-table tr:last-child td { border-bottom: 0; }
+#secCalc .cg-table tr:hover td { background: #14243b; }
+#secCalc .cg-table td:nth-child(4) { color: #a7c7f1; }
+#secCalc .cg-table td:last-child { text-align: right; padding-right: 12px; font-variant-numeric: tabular-nums; }
+#secCalc .channel-select { color: inherit; padding: 5px 0; min-height: 28px; }
+#secCalc .cg-table tr.selected-cg td { color: #e4cc9f; background: #28251f; box-shadow: inset 0 -1px #64563c55; }
+#secCalc .cg-table tr.selected-cg td:first-child { box-shadow: inset 2px 0 #dec18b, inset 0 -1px #64563c55; }
+#secCalc .selection-rule { font-size: 11px; color: #9fb0c7; padding: 0 2px; margin: 17px 0; }
+#secCalc .technical-notes { gap: 28px; border-color: #25354c; }
+#secCalc :is(.technical-note > summary,.calc-note-header) { color: #afbdd0; font-size: 11px; }
+
+/* Coupling: compact inputs beside a clear result and its evidence. */
+#secRabi .calculation-toolbar { gap: 8px 10px; margin: 0 0 16px; }
+#secRabi .calculation-toolbar > label { color: #9bafc9; font-size: 11px; }
+#secRabi #configExport { margin-left: auto; }
+#secRabi .calculation-toolbar :is(select,button) { background: #0c1726; border: 1px solid #2a3b54; color: #bdcce1; min-height: 36px; font-size: 11px; }
+#secRabi .calculation-toolbar #calcSolveFor { color: #e4d0a7; min-width: 210px; }
+#secRabi .coupling-console { display: grid; grid-template-columns: minmax(0,.88fr) minmax(0,1.12fr); border: 1px solid #33405a; border-radius: 14px; overflow: hidden; margin-bottom: 20px; background: #0b1421; }
+#secRabi .coupling-inputs { padding: 26px; border-right: 1px solid #293950; }
+#secRabi .workspace-help { color: #8fa5c0; font-size: 11px; margin: -4px 0 22px; }
+#secRabi .rp-calc-mini { display: grid; grid-template-columns: minmax(0,1fr); gap: 18px; padding: 0; margin: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+#secRabi .rp-calc-field { display: grid; grid-template-columns: minmax(0,1fr) 76px; gap: 7px 0; min-width: 0; }
+#secRabi .rp-calc-field label { grid-column: 1 / -1; font-size: 12px; color: #b1c6e2; }
+#secRabi .rp-calc-field label span { margin-right: 9px; color: #8fa4bf; font-size: 11px; }
+#secRabi .rp-calc-field input[type="number"] { width: 100%; min-width: 0; height: 43px; border: 1px solid #2b3d57; border-right: 0; border-radius: 6px 0 0 6px; background: #080f1a; color: #e6eefb; font-size: 21px; padding: 8px 12px; }
+#secRabi .rp-calc-field .rp-calc-unit { width: 100%; height: 43px; border: 1px solid #2b3d57; border-left-color: #20324b; background: #101e31; color: #a9bdd8; border-radius: 0 6px 6px 0; padding: 6px 10px; }
+#secRabi .rp-calc-field input[type="number"][readonly] { color: #e7cb94; background: #26251f; border-color: #6b5839; }
+#secRabi .rp-calc-field:has(input[readonly]) .rp-calc-unit { color: #e0c896; border-color: #6b5839; background: #2c291f; }
+#secRabi .rabi-result { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px; padding: 30px 32px; margin: 0; border: 0; border-radius: 0; background: radial-gradient(ellipse at 100% 0,#66512d22,transparent 68%),linear-gradient(150deg,#11203455,transparent); }
+#secRabi .rabi-result > span { font-size: 12px; color: #aec0d7; }
+#secRabi .rabi-result > strong { color: #e7c98f; font-size: clamp(34px,4vw,54px); line-height: 1.25; font-weight: 400; letter-spacing: -.045em; padding: 2px 0 4px; overflow-wrap: anywhere; }
+#secRabi .rabi-result > small { font-size: 11px; color: #a0b4ce; line-height: 1.8; }
+#secRabi .result-evidence { width: 100%; padding-top: 15px; margin-top: 6px; border-color: #394334; font-size: 11px; line-height: 1.8; }
+#secRabi .result-evidence p { margin: 5px 0; }
+#secRabi .result-evidence .result-validation { color: #c6b694; font-size: 11px; }
+#secRabi .result-evidence summary { min-height: 26px; color: #b7c9e1; }
+#secRabi .result-evidence a { color: #9dbce5; font-size: 11px; text-underline-offset: 4px; }
+#secRabi #powerConvention { font-size: 11px; color: #8fa4c0; margin: -3px 0 22px; line-height: 1.8; }
+#secRabi :is(#inputError,#configStatus):empty { display: none; }
+#secRabi .rabi-viz-grid { gap: 18px; align-items: start; }
+#secRabi .rabi-chart-card { padding: 24px; border: 1px solid #2a3b53; border-radius: 14px; background: linear-gradient(145deg,#14284444,transparent 45%),#0b1421; }
+#secRabi .rabi-chart-card h3 { font-size: 18px; font-weight: 500; margin: 0 0 9px; }
+#secRabi .rabi-chart-card .chart-sub { margin: 0 0 18px; font-size: 11px; color: #9aafca; }
+#secRabi .rabi-chart-card .chart-scale-note { margin: -8px 0 14px; color: #849bb9; font-size: 10px; }
+#secRabi .heat-scale-summary { margin: 0 0 18px; color: #a6bad5; font: 400 10px/1.7 var(--font-ui); }
+#secRabi .heat-scale-summary #heatColorQuantity { white-space: nowrap; }
+#secRabi .heat-scale-summary .chart-scale-note { margin: 0; font: inherit; color: inherit; }
+#secRabi .heat-scale-summary .chart-scale-note::before { content: ' · '; color: #7b94b5; }
+#secRabi .chart-toolbar { top: 24px; right: 24px; display: flex; gap: 3px; padding: 3px; border: 1px solid #2c3f59; border-radius: 7px; background: #08111e; }
+#secRabi .chart-toolbar button { margin: 0; border: 0; background: transparent; color: #9eafc5; font-size: 10px; padding: 5px 10px; }
+#secRabi .chart-toolbar button.active { color: #dec18b; background: #302a20; }
+#secRabi .chart-frame > .chart-top-legend { background: #111f32; border-left: 2px solid #557bb1; padding: 8px 10px; margin-bottom: 12px; color: #b4c8e4; }
+#secRabi .axis-ctl { background: #0d192b; border-color: #293c56; padding: 5px; }
+#secRabi .axis-ctl :is(input[type="number"],select) { background: #08111e; color: #bed0e8; border-color: #293b52; }
+#secRabi .chart-legend { border-top: 1px solid #24354d; padding-top: 15px; margin-top: 17px; gap: 10px 16px; }
+#secRabi .chart-legend .lg-winput { border-color: #30435f; background: #101d30; color: #d7e4f5; }
+/* Share intrinsic heading / plot / footer rows, so explanatory text and the
+   curve legend cannot shift one canvas or shorten the neighbouring card. */
+#secRabi .rabi-viz-grid[data-chart-layout="matched"] {
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  grid-template-rows: auto auto auto;
+  column-gap: var(--ui-panel-gap,20px); row-gap: 0; align-items: stretch;
+}
+#secRabi .rabi-viz-grid[data-chart-layout="matched"] > .rabi-chart-card {
+  display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0;
+}
+#secRabi .rabi-chart-heading { position: relative; min-width: 0; }
+#secRabi .rabi-chart-heading:has(.chart-toolbar) > :is(h3,.workspace-eyebrow) { padding-right: 124px; }
+#secRabi .rabi-chart-heading .chart-toolbar { top: 0; right: 0; }
+#secRabi .rabi-viz-grid[data-chart-layout="matched"] .chart-frame { align-self: start; min-width: 0; }
+#secRabi .rabi-viz-grid[data-chart-layout="matched"] .rabi-canvas-wrap { aspect-ratio: 4 / 3; }
+#secRabi .rabi-viz-grid[data-chart-layout="matched"] .chart-legend { align-self: start; }
+@media(max-width:1080px) {
+  #secRabi .rabi-viz-grid[data-chart-layout="matched"] {
+    grid-template-columns: minmax(0,1fr); grid-template-rows: none;
+    grid-auto-rows: 1fr; row-gap: var(--ui-panel-gap,20px);
+  }
+  #secRabi .rabi-viz-grid[data-chart-layout="matched"] > .rabi-chart-card {
+    grid-row: auto; grid-template-rows: auto auto minmax(0,1fr);
+  }
+}
+@media(max-width:640px) {
+  #secRabi .rabi-chart-heading:has(.chart-toolbar) > :is(h3,.workspace-eyebrow) { padding-right: 0; }
+}
+#secRabi .rabi-formula-open { color: #d6bc8b; border: 1px solid #594c35; border-radius: 6px; padding: 7px 12px; font-size: 11px; background: #25231b66; }
+
+/* Data: tabbed reference surface with typographic, not decorative, hierarchy. */
+#secData .data-section-caption { color: #8da3bf; font-size: 12px; line-height: 1.8; }
+#secData .tab-bar { margin-bottom: 0; display: flex; flex-wrap: wrap; gap: 4px; border: 1px solid #2a3b53; border-bottom: 0; border-radius: 12px 12px 0 0; padding: 9px 12px; background: #0c1727; }
+#secData .tab-btn { display: flex; align-items: center; gap: 12px; border: 1px solid transparent; border-radius: 6px; padding: 10px 15px; color: #94a9c5; background: transparent; font-size: 12px; }
+#secData .tab-btn .count { display: inline-block; min-width: 21px; text-align: center; border: 0; border-radius: 4px; padding: 1px 4px; font-size: 10px; color: #879db9; background: #18263c; }
+#secData .tab-btn.active { color: #e6c993; background: #302a20; border-color: #685537; }
+#secData .tab-btn.active .count { background: #4b3e28; color: #ecd2a4; }
+#secData .table-wrap { background: #0b1421; border: 1px solid #293a52; border-radius: 0 0 12px 12px; }
+#secData .table-controls { margin: 0; padding: 13px 20px; justify-content: flex-end; border-bottom: 1px solid #24354d; }
+#secData .table-columns-toggle { color: #a9c6ef; background: #112139; border-color: #334c70; font-size: 11px; padding: 6px 11px; min-height: 32px; }
+#secData .table-scroll { scrollbar-width: thin; scrollbar-color: #405676 #0b1421; }
+#secData .data-table { border-collapse: separate; border-spacing: 0; }
+#secData .data-table th { background: #142138; padding: 13px 18px; border: 0; border-bottom: 1px solid #30425d; color: #a9bdd9; font-size: 11px; font-weight: 500; }
+#secData .table-sort-button { color: inherit; font: inherit; }
+#secData .data-table th:is([aria-sort="ascending"],[aria-sort="descending"]) { color: #e2c590; }
+#secData .data-table td { padding: 19px 18px; border: 0; border-bottom: 1px solid #223249; font-size: 12px; line-height: 1.7; color: #c4d1e4; vertical-align: middle; }
+#secData .data-table tbody tr:last-child td { border-bottom: 0; }
+#secData .data-table tbody tr:hover { background: #12243b; }
+#secData .data-table[data-column-mode="summary"] th[data-column="id"] { width: 62px; }
+#secData .data-table[data-column-mode="summary"] th[data-column="label"] { width: 23%; }
+#secData .data-table[data-column-mode="summary"] th[data-column="wavelength_vac_nm"] { width: 18%; }
+#secData .data-table[data-column-mode="summary"] th[data-column="d_num"] { width: 21%; }
+#secData .data-table td:first-child > .mono { color: #dbbd89; font-size: 11px; }
+#secData .trans-pair { color: #e2ebf9; font-size: 15px; font-weight: 500; margin-top: 3px; letter-spacing: -.01em; }
+#secData .trans-label { color: #8ea6c5; font-size: 10px; }
+#secData .wl-cell { color: #dce7f7; gap: 8px; font-size: 14px; font-variant-numeric: tabular-nums; }
+#secData .wl-dot { width: 5px; height: 5px; box-shadow: none; }
+#secData .wl-sub { color: #8ba1bc; font-size: 10px; margin-top: 4px; }
+#secData .table-source-details > summary { font-size: 11px; color: #aac2e3; line-height: 1.8; max-width: 31ch; cursor: pointer; }
+#secData .table-source-details[open] { min-width: 225px; }
+#secData .table-source-details .source-grid { min-width: 0; max-width: 360px; }
+#secData .table-source-details .source-field-value { font-size: 18px; }
+#secData .table-source-details :is(.source-meta,.source-audit,.source-extra,.source-links) { font-size: 11px; }
+
+@media (max-width: 1100px) {
+  #secCalc .hf-matrix-diagram-grid { grid-template-columns: minmax(0,1fr); }
+  #secCalc .hf-trans-toolbar { align-items: center; }
+  #secCalc .hf-filter-field { flex: 0 1 145px; }
+  #secCalc .hf-trans-rule { flex-basis: auto; margin: 0 0 0 auto; }
+  #secCalc .hf-trans-svg { max-height: 400px; }
+  #secCalc .cg-table-wrap { max-height: 510px; }
+  #secRabi .coupling-inputs { padding: 23px; }
+  #secRabi .rabi-result { padding: 25px; }
+}
+@media (max-width: 780px) {
+  :is(#secCalc,#secRabi,#secData) { margin-top: 52px; }
+  #secRabi .coupling-console { grid-template-columns: minmax(0,1fr); }
+  #secRabi .coupling-inputs { border-right: 0; border-bottom: 1px solid #293950; }
+  #secRabi .rabi-result { padding: 26px 23px; }
+  #secData .tab-btn { flex: 1 1 calc(50% - 4px); justify-content: space-between; padding: 9px 10px; }
+}
+@media (max-width: 640px) {
+  #secCalc .hf-calc-panel, #secRabi .rabi-chart-card { padding: 18px 14px; }
+  :is(#secCalc,#secRabi) .workspace-panel-head h3 { font-size: 17px; }
+  #secCalc .hf-filter-field { flex: 1 1 38%; }
+  #secCalc .hf-pol-seg { margin-top: 2px; }
+  #secCalc .hf-trans-svg { width: 100%; min-width: 0; max-width: 100%; min-height: 250px; }
+  #secCalc .matrix-caption { font-size: 10px; }
+  #secCalc .cg-table th, #secCalc .cg-table td { padding-inline: 8px; }
+  #secCalc .channel-color-key small { width: 100%; margin: 0; }
+  #secRabi .calculation-toolbar > label { flex-basis: 100%; }
+  #secRabi .calculation-toolbar #calcSolveFor { width: 100%; min-width: 0; }
+  #secRabi #configExport { margin-left: 0; }
+  #secRabi .coupling-inputs { padding: 22px 18px; }
+  #secRabi .rabi-result { padding: 26px 18px; }
+  #secRabi .rabi-result > strong { font-size: 40px; }
+  #secRabi .chart-toolbar { top: 18px; right: 14px; }
+  #secRabi .chart-toolbar button { padding-inline: 7px; }
+  #secRabi .rabi-chart-card h3 { font-size: 16px; }
+  #secRabi .rabi-chart-card .workspace-eyebrow { font-size: 8px; }
+  #secData .tab-bar { padding: 8px; }
+  #secData .table-controls { padding: 10px 12px; }
+  #secData .data-table th, #secData .data-table td { padding-inline: 12px; }
+}

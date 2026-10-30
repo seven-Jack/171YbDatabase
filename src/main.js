@@ -9,49 +9,47 @@ import { initEnergyDiagram } from './ui/energy-diagram.js';
 import { initHyperfineCalculator } from './ui/hyperfine-diagram.js';
 import { initRabiCharts } from './ui/rabi-chart.js';
 import { initDataTables } from './ui/data-table.js';
-import { initSourcePanel } from './ui/source-panel.js';
+import { initSourcePanel, createFieldView } from './ui/source-panel.js';
 import { initPageControls } from './ui/page-controls.js';
+import { initWorkflowNavigation } from './ui/workflow-navigation.js';
+import { initDiagramNavigation } from './ui/transition-navigation.js';
+import { initTransitionKnowledge } from './ui/transition-knowledge.js';
+import { initSelectionContext } from './ui/selection-context.js';
+import { createChannelNavigation } from './ui/channel-navigation.js';
+import { preventNumberInputWheelChanges } from './ui/number-input-wheel.js';
 
-function start() {
+export function start() {
   const CORE_TRANSITIONS=catalog.CORE_TRANSITIONS.map(decorateTransition);
   const RYDBERG_QC_TRANSITIONS=catalog.RYDBERG_QC_TRANSITIONS.map(decorateTransition);
   const data={...catalog, CORE_TRANSITIONS, RYDBERG_QC_TRANSITIONS,
     RYDBERG_STATES:generateRydbergStates(catalog.ESTIMATE_CONFIG),
     RYDBERG_TRANSITIONS:buildRydbergTransitions(RYDBERG_QC_TRANSITIONS)};
   const tooltips=createTooltips();
-  initEnergyDiagram(data,tooltips);
-  const calculator=initHyperfineCalculator(data,tooltips);
-  const charts=initRabiCharts(calculator);
+  initEnergyDiagram({...data,CORE_TRANSITIONS:catalog.CORE_TRANSITIONS},tooltips);
+  const calculator=initHyperfineCalculator(data,tooltips,{onChannelSelected:createChannelNavigation({
+    destination:document.getElementById('secRabi'),hideTooltip:tooltips.hideTooltip
+  })});
+  const charts=initRabiCharts(calculator,tooltips);
+  preventNumberInputWheelChanges(document.getElementById('secRabi'));
   initDataTables(data,tooltips);
   initSourcePanel(calculator,CORE_TRANSITIONS);
   initPageControls(catalog.HYPERFINE_DATA);
-  const picker=document.getElementById('transitionPicker');
-  const legend=document.getElementById('spectrumLegend');
-  for(const t of CORE_TRANSITIONS){
-    const button=document.createElement('button');
-    button.type='button';button.dataset.selectTransition=t.id;
-    button.textContent=`${t.id} · ${t.wavelength_vac_nm.toFixed(t.approximate?2:1)} nm${t.spectrum.region==='visible'?'':' '+t.spectrum.region}`;
-    button.setAttribute('aria-label',`${t.id} ${t.lower} → ${t.upper}，${t.wavelength_vac_nm} nm，${t.spectrum.label}`);
-    button.style.setProperty('--transition-color',t.color);
-    const choose=()=>calculator.loadTransition(t);
-    button.addEventListener('click',choose);
-    button.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();choose();}});
-    picker.append(button);
-    const swatch=document.createElement('span');
-    const line=document.createElement('i');line.style.borderColor=t.color;
-    if(t.spectrum.dash)line.style.borderTopStyle='dashed';
-    swatch.append(line,document.createTextNode(`${Math.round(t.wavelength_vac_nm)} nm${t.spectrum.region==='visible'?'':' '+t.spectrum.region}`));
-    legend.append(swatch);
-  }
-  document.getElementById('levelDiagram').addEventListener('click',event=>{
-    const element=event.target.closest('.transition-line[data-id]');
-    const transition=element&&CORE_TRANSITIONS.find(t=>t.id===element.dataset.id);
-    if(transition){calculator.loadTransition(transition);document.querySelector('.flow-step[data-gstep="1"]')?.classList.add('done');}
-  });
-  document.getElementById('hfsClose').addEventListener('click',()=>{
+  initTransitionKnowledge({transitions:CORE_TRANSITIONS,calculator});
+  initWorkflowNavigation(calculator);
+  initSelectionContext({calculator});
+  const closeLevelDetails=()=>{
     document.getElementById('hfsPanel').classList.remove('active');
     document.querySelectorAll('.core-level-group').forEach(g=>g.classList.remove('selected'));
-    picker.querySelector('[aria-pressed="true"]')?.focus({preventScroll:true});
+  };
+  const levelDiagram=document.getElementById('levelDiagram');
+  levelDiagram.setAttribute('tabindex','-1');
+  initDiagramNavigation({svg:levelDiagram,transitions:CORE_TRANSITIONS,calculator,
+    destination:document.getElementById('secCalc'),hideTooltip:tooltips.hideTooltip,closeLevelDetails});
+  document.getElementById('hfsClose').addEventListener('click',()=>{
+    closeLevelDetails();
+    const lines=[...levelDiagram.querySelectorAll('.transition-line[role="button"]')];
+    const available=lines.filter(line=>line.getAttribute('aria-disabled')!=='true');
+    (available.find(line=>line.getAttribute('aria-pressed')==='true')||available[0]||levelDiagram).focus({preventScroll:true});
   });
   const versions={softwareVersion:SOFTWARE_VERSION,appCommit:APP_COMMIT,
     datasetVersion:catalog.DATASET_VERSION,datasetHash:catalog.DATASET_MANIFEST.contentHash,formulaVersion:FORMULA_VERSION};
@@ -82,7 +80,6 @@ function start() {
     finally{configFile.value='';}
   });
   calculator.onChange(state=>{
-    picker.querySelectorAll('[data-select-transition]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.selectTransition===state.transition?.id)));
     document.querySelectorAll('#levelDiagram .transition-line').forEach(g=>g.classList.toggle('selected-trans',g.dataset.id===state.transition?.id));
     document.getElementById('powerConvention').textContent=document.getElementById('powerAxisConvention').value==='sigma-double'&&state.pol!=='pi'?'σ± 图横轴显示 2P；计算输入仍为偏振分量功率 P。这是换算视图，不是实验标定。':'P 为所选偏振分量功率；图横轴与计算输入一致；w₀ 为 1/e² 强度半径，计算位置为光束中心。';
     const result=document.getElementById('rabiResult');
@@ -95,17 +92,42 @@ function start() {
       ?`P=${Number(state.P_mW.toPrecision(6))} mW · w₀=${Number(state.w_um.toPrecision(6))} µm · d_eff=${Number(state.dEff.toPrecision(6))} ea₀ · ${state.selectedChannel?'所选通道':'当前偏振及 F 对的最强允许通道'}`
       :state.inputError||'请先选择适用跃迁与输入';
     result.append(title,value,context);
+    if(state.transition){
+      const dipole=createFieldView(state.transition.id,'d_num');
+      const lifetime=createFieldView(state.transition.id,'lifetime_ns');
+      const evidence=document.createElement('div');evidence.className='result-evidence';
+      const validation=document.createElement('p');validation.className='result-validation';
+      validation.textContent='模型换算 · 未独立验证 · 总不确定度未建立';
+      const basis=document.createElement('p');basis.className='result-basis';
+      basis.textContent=dipole?`矩阵元：${dipole.kind} · ${dipole.convention||'约定待核查'} · ${dipole.review}`:'矩阵元：当前记录缺失';
+      evidence.append(validation,basis);
+      if(dipole?.missingArtifact){const artifact=document.createElement('p');artifact.className='evidence-missing';artifact.textContent='计算原始证据：Notebook / Run 及版本定位待补充。';evidence.append(artifact);}
+      if(lifetime){const scope=document.createElement('p');scope.textContent='寿命条件：温度与包含过程未知';evidence.append(scope);}
+      const detail=document.createElement('details');
+      const summary=document.createElement('summary');summary.textContent='证据详情与适用条件';detail.append(summary);
+      const explanation=document.createElement('p');explanation.textContent='此卡只按当前模型换算；来源定位或内部检查不构成独立物理 / 实验验证。';detail.append(explanation);
+      if(dipole){const uncertainty=document.createElement('p');uncertainty.textContent=`矩阵元不确定度：${dipole.uncertainty}`;detail.append(uncertainty);}
+      if(lifetime){const life=document.createElement('p');life.textContent=`寿命依据：${lifetime.kind} · ${lifetime.review} · ${lifetime.uncertainty}；温度与包含过程未在当前结构化记录中明确，请查来源详情。`;detail.append(life);}
+      evidence.append(detail);
+      const sourceLink=document.createElement('a');sourceLink.href='#selectedSource';sourceLink.textContent='查看数值与原始来源';evidence.append(sourceLink);
+      result.append(evidence);
+    }
   });
-  document.getElementById('versionInfo').textContent=`软件 ${SOFTWARE_VERSION} · 数据 ${catalog.DATASET_VERSION} · 公式 ${FORMULA_VERSION} · ${APP_COMMIT?APP_COMMIT.slice(0,8):'本地开发版'}${WORKTREE_DIRTY?' · 含本地未提交改动':''}`;
+  const versionInfo=document.getElementById('versionInfo');
+  const versionEntries=[['软件',SOFTWARE_VERSION],['数据',catalog.DATASET_VERSION],['公式',FORMULA_VERSION],['代码基线',APP_COMMIT?APP_COMMIT.slice(0,8):'本地开发版'],['界面修订',document.documentElement.dataset.uiRevision||'未标记']];
+  versionInfo.replaceChildren();
+  for(const [label,value] of versionEntries){
+    const entry=document.createElement('div');entry.className='version-entry';
+    const term=document.createElement('dt');term.textContent=label;
+    const description=document.createElement('dd');description.textContent=value;
+    entry.append(term,description);versionInfo.append(entry);
+  }
+  const versionState=document.getElementById('versionState');
+  versionState.textContent=WORKTREE_DIRTY?'含本地未提交改动':'工作区无未提交改动';
+  versionState.dataset.dirty=String(WORKTREE_DIRTY);
   document.documentElement.dataset.appReady='true';
 }
 function formatFrequency(hz){
   const [scale,unit]=Math.abs(hz)>=1e9?[1e9,'GHz']:Math.abs(hz)>=1e6?[1e6,'MHz']:Math.abs(hz)>=1e3?[1e3,'kHz']:[1,'Hz'];
   return `${Number((hz/scale).toPrecision(6))} ${unit}`;
-}
-try{start();}catch(error){
-  console.error(error);
-  const banner=document.getElementById('appError');
-  banner.hidden=false;banner.textContent='页面初始化失败：'+error.message;
-  document.documentElement.dataset.appReady='error';
 }

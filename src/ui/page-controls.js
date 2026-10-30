@@ -1,5 +1,17 @@
 export function initPageControls(HYPERFINE_DATA) {
   document.querySelectorAll("[data-hfs-a]").forEach(el=>{el.textContent=String(HYPERFINE_DATA[el.dataset.hfsA].A);});
+  // Background changes are independent of the selected line palette and physics.
+  const opticalStage = document.querySelector('.diagram-wrap[data-canvas-theme]');
+  document.querySelectorAll('[data-canvas-tone]').forEach(button => {
+    button.addEventListener('click', () => {
+      if (!opticalStage || !['silver', 'deep'].includes(button.dataset.canvasTone)) return;
+      opticalStage.dataset.canvasTheme = button.dataset.canvasTone;
+      document.querySelectorAll('[data-canvas-tone]').forEach(option => {
+        option.setAttribute('aria-pressed', String(option === button));
+      });
+      opticalStage.dispatchEvent(new CustomEvent('canvas-theme-change'));
+    });
+  });
 // ===== Changelog toggle =====
 (function() {
   const panel = document.getElementById('changelogPanel');
@@ -42,66 +54,6 @@ export function initPageControls(HYPERFINE_DATA) {
 
 
 
-// ===== Step-by-step guide: jump + progress (v5.3, merged to 3 steps in v5.4) =====
-(function() {
-  var targets = { 1: '#secLevel', 2: '#secCalc', 3: '#secRabi' };
-
-  // Step cards jump to their section
-  document.querySelectorAll('.flow-step').forEach(function(el) {
-    function jumpToSection() {
-      var t = document.querySelector(targets[el.dataset.gstep]);
-      if (t) t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth', block: 'start' });
-    }
-    el.addEventListener('click', jumpToSection);
-    el.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        jumpToSection();
-      }
-    });
-  });
-
-  var done = {};
-  function markDone(n) {
-    if (done[n]) return;
-    done[n] = true;
-    var card = document.querySelector('.flow-step[data-gstep="' + n + '"]');
-    if (card) {
-      card.classList.add('done');
-      var num = card.querySelector('.fs-num');
-      if (num) num.textContent = '✓';
-    }
-    // Step 1 has two section chips (core level diagram + rydberg diagram) — light all
-    document.querySelectorAll('.guide-sub[data-gstep="' + n + '"]').forEach(function(chip) {
-      chip.classList.add('done');
-    });
-  }
-
-  // Clicking a transition in either diagram = chose a transition (step 1),
-  // auto-filled params (step 2) and refreshed Rabi-P charts (step 3)
-  document.addEventListener('click', function(e) {
-    var t = e.target;
-    if (!t || !t.closest) return;
-    if (t.closest('.transition-line')) { markDone(1); markDone(2); markDone(3); }
-    if (t.closest('.ryd-transition-line')) { markDone(1); markDone(2); markDone(3); }
-  }, true);
-
-  // Interacting with calc / rabi-viz controls also counts as progress
-  function inSection(e, sel) {
-    var t = e.target;
-    return t && t.closest && t.closest(sel + ' select, ' + sel + ' input, ' + sel + ' button, ' + sel + ' canvas, ' + sel + ' .cg-table tbody tr, ' + sel + ' .trans-lines-wrap');
-  }
-  ['change', 'input'].forEach(function(ev) {
-    document.addEventListener(ev, function(e) {
-      if (inSection(e, '.hf-calc-section')) markDone(2);
-      if (inSection(e, '.rabi-viz-section')) markDone(3);
-    });
-  });
-  document.addEventListener('click', function(e) {
-    if (inSection(e, '.hf-calc-section')) markDone(2);
-    if (inSection(e, '.rabi-viz-section')) markDone(3);
-  });
-})();
 (function() {
   const dialog = document.getElementById('rabiFormulaDialog');
   const trigger = document.getElementById('rabiFormulaOpen');

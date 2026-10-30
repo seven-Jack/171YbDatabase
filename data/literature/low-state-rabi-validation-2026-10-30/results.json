@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-30",
+  "datasetVersion": "2026.10.30.1",
+  "formulaVersion": "1.0.1",
+  "theoryVerdict": "all-five-published-theory-compatible",
+  "independentExperimentalVerdict": "no-new-complete-matched-P-waist-measured-Rabi-case-established-in-this-review",
+  "sourceHashes": [
+    {
+      "sourceId": "kroeze-2026",
+      "localPath": "references/papers/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+      "expectedSha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "status": "verified",
+      "verified": true,
+      "sha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "unchanged": true
+    },
+    {
+      "sourceId": "beloy-2012",
+      "localPath": "references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf",
+      "expectedSha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e",
+      "status": "verified",
+      "verified": true,
+      "sha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e",
+      "unchanged": true
+    },
+    {
+      "sourceId": "porsev-1999",
+      "localPath": "references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf",
+      "expectedSha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3",
+      "status": "verified",
+      "verified": true,
+      "sha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3",
+      "unchanged": true
+    }
+  ],
+  "cases": [
+    {
+      "transitionId": "T1",
+      "sourceId": "kroeze-2026",
+      "table": 8,
+      "printedPage": 23,
+      "J_lower": 0,
+      "J_upper": 1,
+      "channel": {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": 1
+      },
+      "pol": "sigmap",
+      "sourceDipole_ea0": 4.147,
+      "canonicalDipole_ea0": 4.147,
+      "canonicalDipoleSourceId": "ref-01",
+      "canonicalDipoleUncertainty_ea0": 0.004,
+      "dEff_ea0": 2.394271566329378,
+      "angularFactorMagnitude": 0.5773502691896257,
+      "angularFactorSquared": 0.3333333333333333,
+      "power_mW": 1,
+      "waist_um": 500,
+      "I0_W_m2": 2546.4790894703256,
+      "E0_V_m": 1385.161265789858,
+      "calculatedRabi_MHz": 42.43549222721293,
+      "publishedRabi_MHz": 42.44,
+      "publishedRabiUncertainty_MHz": 0.04,
+      "difference_MHz": -0.004507772787064823,
+      "relativeDifference_percent": -0.010621519290920922,
+      "withinPublishedUncertainty": true,
+      "inversePowerAtPublishedRabi_mW": 1.0002124642356134,
+      "inverseWaistAtPublishedRabi_um": 499.9468924035455,
+      "publishedFrequencyBounds_MHz": [
+        42.4,
+        42.48
+      ],
+      "compatiblePowerBounds_mW": [
+        0.9983279381082304,
+        1.0020987673796184
+      ],
+      "compatibleWaistBounds_um": [
+        499.4761326178548,
+        500.41854041524704
+      ],
+      "lifetimeBranchRoute": {
+        "partialRate_s_inv": 183016094.43631038,
+        "sourceWavelength_nm": 398.9108443,
+        "reconstructedDipole_ea0": 4.147493488059561,
+        "differenceFromAdopted_ea0": 0.0004934880595603985,
+        "withinPrintedDipoleUncertainty": true,
+        "boundary": "Algebraic consistency of shared source inputs; no independent lifetime/branching experiment is claimed."
+      },
+      "cyclingIsatRoute": {
+        "calculatedRabi_MHz": 42.44215976703551,
+        "withinPublishedRabiUncertainty": true,
+        "boundary": "Two-level cycling-channel algebraic cross-check of compiled source inputs."
+      },
+      "angularSumRule": {
+        "expectedDipoleSquared_ea0_2": 5.732536333333335,
+        "upperSublevelCount": 6,
+        "maxRelativeError": 4.440892098500626e-16
+      },
+      "verdict": "published-theory-compatible"
+    },
+    {
+      "transitionId": "T2",
+      "sourceId": "kroeze-2026",
+      "table": 10,
+      "printedPage": 24,
+      "J_lower": 0,
+      "J_upper": 1,
+      "channel": {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": 1
+      },
+      "pol": "sigmap",
+      "sourceDipole_ea0": 0.5398,
+      "canonicalDipole_ea0": 0.5398,
+      "canonicalDipoleSourceId": "ref-01",
+      "canonicalDipoleUncertainty_ea0": 0.0006,
+      "dEff_ea0": 0.3116536753085599,
+      "angularFactorMagnitude": 0.5773502691896257,
+      "angularFactorSquared": 0.3333333333333333,
+      "power_mW": 1,
+      "waist_um": 500,
+      "I0_W_m2": 2546.4790894703256,
+      "E0_V_m": 1385.161265789858,
+      "calculatedRabi_MHz": 5.523674633289015,
+      "publishedRabi_MHz": 5.523,
+      "publishedRabiUncertainty_MHz": 0.006,
+      "difference_MHz": 0.0006746332890150697,
+      "relativeDifference_percent": 0.012214978979097069,
+      "withinPublishedUncertainty": true,
+      "inversePowerAtPublishedRabi_mW": 0.9997557451748423,
+      "inverseWaistAtPublishedRabi_um": 500.0610748948955,
+      "publishedFrequencyBounds_MHz": [
+        5.5169999999999995,
+        5.529
+      ],
+      "compatiblePowerBounds_mW": [
+        0.9975847235674611,
+        1.001929126588319
+      ],
+      "compatibleWaistBounds_um": [
+        499.518415019806,
+        500.604915106853
+      ],
+      "lifetimeBranchRoute": {
+        "partialRate_s_inv": 1146000.4584001831,
+        "sourceWavelength_nm": 555.80068663,
+        "reconstructedDipole_ea0": 0.5397570472049487,
+        "differenceFromAdopted_ea0": -0.00004295279505128757,
+        "withinPrintedDipoleUncertainty": true,
+        "boundary": "Algebraic consistency of shared source inputs; no independent lifetime/branching experiment is claimed."
+      },
+      "cyclingIsatRoute": {
+        "calculatedRabi_MHz": 5.523152570609128,
+        "withinPublishedRabiUncertainty": true,
+        "boundary": "Two-level cycling-channel algebraic cross-check of compiled source inputs."
+      },
+      "angularSumRule": {
+        "expectedDipoleSquared_ea0_2": 0.09712801333333332,
+        "upperSublevelCount": 6,
+        "maxRelativeError": 3.3306690738754696e-16
+      },
+      "verdict": "published-theory-compatible"
+    },
+    {
+      "transitionId": "T5",
+      "sourceId": "kroeze-2026",
+      "table": 12,
+      "printedPage": 25,
+      "J_lower": 0,
+      "J_upper": 1,
+      "channel": {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": 1
+      },
+      "pol": "sigmap",
+      "sourceDipole_ea0": 2.76,
+      "canonicalDipole_ea0": 2.76,
+      "canonicalDipoleSourceId": "ref-01",
+      "canonicalDipoleUncertainty_ea0": 0.07,
+      "dEff_ea0": 1.593486742963367,
+      "angularFactorMagnitude": 0.5773502691896257,
+      "angularFactorSquared": 0.3333333333333333,
+      "power_mW": 1,
+      "waist_um": 500,
+      "I0_W_m2": 2546.4790894703256,
+      "E0_V_m": 1385.161265789858,
+      "calculatedRabi_MHz": 28.242575005331016,
+      "publishedRabi_MHz": 28.3,
+      "publishedRabiUncertainty_MHz": 0.8,
+      "difference_MHz": -0.05742499466898465,
+      "relativeDifference_percent": -0.2029151755087777,
+      "withinPublishedUncertainty": true,
+      "inversePowerAtPublishedRabi_mW": 1.0040706893854638,
+      "inverseWaistAtPublishedRabi_um": 498.9854241224563,
+      "publishedFrequencyBounds_MHz": [
+        27.5,
+        29.1
+      ],
+      "compatiblePowerBounds_mW": [
+        0.9481058058506875,
+        1.0616403007635316
+      ],
+      "compatibleWaistBounds_um": [
+        485.2676117754471,
+        513.5013637332913
+      ],
+      "lifetimeBranchRoute": {
+        "partialRate_s_inv": 1921686.7469879517,
+        "sourceWavelength_nm": 1388.7629464,
+        "reconstructedDipole_ea0": 2.7606464150234227,
+        "differenceFromAdopted_ea0": 0.000646415023422886,
+        "withinPrintedDipoleUncertainty": true,
+        "boundary": "Algebraic consistency of shared source inputs; no independent lifetime/branching experiment is claimed."
+      },
+      "cyclingIsatRoute": null,
+      "angularSumRule": {
+        "expectedDipoleSquared_ea0_2": 2.5391999999999997,
+        "upperSublevelCount": 6,
+        "maxRelativeError": 4.440892098500626e-16
+      },
+      "verdict": "published-theory-compatible"
+    },
+    {
+      "transitionId": "T6",
+      "sourceId": "kroeze-2026",
+      "table": 13,
+      "printedPage": 26,
+      "J_lower": 0,
+      "J_upper": 1,
+      "channel": {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": 1
+      },
+      "pol": "sigmap",
+      "sourceDipole_ea0": 1.96,
+      "canonicalDipole_ea0": 1.96,
+      "canonicalDipoleSourceId": "ref-01",
+      "canonicalDipoleUncertainty_ea0": 0.15,
+      "dEff_ea0": 1.1316065276116665,
+      "angularFactorMagnitude": 0.5773502691896257,
+      "angularFactorSquared": 0.3333333333333333,
+      "power_mW": 1,
+      "waist_um": 500,
+      "I0_W_m2": 2546.4790894703256,
+      "E0_V_m": 1385.161265789858,
+      "calculatedRabi_MHz": 20.05632138059739,
+      "publishedRabi_MHz": 20,
+      "publishedRabiUncertainty_MHz": 1.6,
+      "difference_MHz": 0.05632138059738878,
+      "relativeDifference_percent": 0.2816069029869528,
+      "withinPublishedUncertainty": true,
+      "inversePowerAtPublishedRabi_mW": 0.9943915636595221,
+      "inverseWaistAtPublishedRabi_um": 501.40803451493474,
+      "publishedFrequencyBounds_MHz": [
+        18.4,
+        21.6
+      ],
+      "compatiblePowerBounds_mW": [
+        0.841653019481419,
+        1.159858319852466
+      ],
+      "compatibleWaistBounds_um": [
+        464.2666986249397,
+        545.0087331684075
+      ],
+      "lifetimeBranchRoute": {
+        "partialRate_s_inv": 9420289.855072463,
+        "sourceWavelength_nm": 649.08662928,
+        "reconstructedDipole_ea0": 1.95305032801505,
+        "differenceFromAdopted_ea0": -0.006949671984950001,
+        "withinPrintedDipoleUncertainty": true,
+        "boundary": "Algebraic consistency of shared source inputs; no independent lifetime/branching experiment is claimed."
+      },
+      "cyclingIsatRoute": null,
+      "angularSumRule": {
+        "expectedDipoleSquared_ea0_2": 1.2805333333333333,
+        "upperSublevelCount": 6,
+        "maxRelativeError": 4.440892098500626e-16
+      },
+      "verdict": "published-theory-compatible"
+    },
+    {
+      "transitionId": "T7",
+      "sourceId": "kroeze-2026",
+      "table": 14,
+      "printedPage": 26,
+      "J_lower": 2,
+      "J_upper": 1,
+      "channel": {
+        "F": 2.5,
+        "m": 2.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": -1
+      },
+      "pol": "sigmam",
+      "sourceDipole_ea0": 4.99,
+      "canonicalDipole_ea0": 4.99,
+      "canonicalDipoleSourceId": "ref-01",
+      "canonicalDipoleUncertainty_ea0": 0.32,
+      "dEff_ea0": 2.2315958415447894,
+      "angularFactorMagnitude": 0.44721359549995776,
+      "angularFactorSquared": 0.19999999999999984,
+      "power_mW": 1,
+      "waist_um": 500,
+      "I0_W_m2": 2546.4790894703256,
+      "E0_V_m": 1385.161265789858,
+      "calculatedRabi_MHz": 39.55226688563824,
+      "publishedRabi_MHz": 39.5,
+      "publishedRabiUncertainty_MHz": 2.6,
+      "difference_MHz": 0.05226688563823956,
+      "relativeDifference_percent": 0.13232122946389424,
+      "withinPublishedUncertainty": true,
+      "inversePowerAtPublishedRabi_mW": 0.9973588188311553,
+      "inverseWaistAtPublishedRabi_um": 500.66160614731945,
+      "publishedFrequencyBounds_MHz": [
+        36.9,
+        42.1
+      ],
+      "compatiblePowerBounds_mW": [
+        0.8703821447259663,
+        1.132977884367587
+      ],
+      "compatibleWaistBounds_um": [
+        469.74188700282946,
+        535.938575686155
+      ],
+      "lifetimeBranchRoute": {
+        "partialRate_s_inv": 36811594.20289855,
+        "sourceWavelength_nm": 770.160284,
+        "reconstructedDipole_ea0": 4.989893753246827,
+        "differenceFromAdopted_ea0": -0.00010624675317316701,
+        "withinPrintedDipoleUncertainty": true,
+        "boundary": "Algebraic consistency of shared source inputs; no independent lifetime/branching experiment is claimed."
+      },
+      "cyclingIsatRoute": null,
+      "angularSumRule": {
+        "expectedDipoleSquared_ea0_2": 8.300033333333333,
+        "upperSublevelCount": 6,
+        "maxRelativeError": 8.881784197001252e-16
+      },
+      "verdict": "published-theory-compatible"
+    }
+  ],
+  "strengthCrossChecks": [
+    {
+      "transitionId": "T2",
+      "sourceId": "beloy-2012",
+      "locator": "Table III, Experiment",
+      "dJ_ea0": 0.542,
+      "dJ_uncertainty_ea0": 0.002,
+      "evidenceKind": "dipole-inferred-from-171Yb-experimental-lifetime",
+      "isDirectMeasuredRabiBenchmark": false,
+      "adoptedDipole_ea0": 0.5398,
+      "alternativeRabi_MHz": 5.5461868307570334,
+      "dipoleRelativeDifference_percent": 0.40755835494630244,
+      "printedDipoleIntervalsOverlap": true,
+      "comparisonBoundary": "Source-strength cross-check only; intervals are not independent statistical samples and this is not a directly measured Rabi benchmark."
+    },
+    {
+      "transitionId": "T5",
+      "sourceId": "beloy-2012",
+      "locator": "Table III, Experiment / Method II",
+      "dJ_ea0": 2.77,
+      "dJ_uncertainty_ea0": 0.04,
+      "evidenceKind": "dipole-inferred-from-171Yb-experimental-lifetime-and-theoretical-branching",
+      "isDirectMeasuredRabiBenchmark": false,
+      "adoptedDipole_ea0": 2.76,
+      "alternativeRabi_MHz": 28.34490317564019,
+      "dipoleRelativeDifference_percent": 0.36231884057971175,
+      "printedDipoleIntervalsOverlap": true,
+      "comparisonBoundary": "Source-strength cross-check only; intervals are not independent statistical samples and this is not a directly measured Rabi benchmark."
+    },
+    {
+      "transitionId": "T5",
+      "sourceId": "porsev-1999",
+      "locator": "Table I, 5d6s 3D1 / 6s6p 3P0",
+      "dJ_ea0": 2.61,
+      "dJ_uncertainty_ea0": 0.1,
+      "evidenceKind": "CI+MBPT-theory",
+      "isDirectMeasuredRabiBenchmark": false,
+      "adoptedDipole_ea0": 2.76,
+      "alternativeRabi_MHz": 26.707652450693466,
+      "dipoleRelativeDifference_percent": -5.434782608695654,
+      "printedDipoleIntervalsOverlap": true,
+      "comparisonBoundary": "Source-strength cross-check only; intervals are not independent statistical samples and this is not a directly measured Rabi benchmark."
+    },
+    {
+      "transitionId": "T6",
+      "sourceId": "porsev-1999",
+      "locator": "Table I, 6s7s 3S1 / 6s6p 3P0",
+      "dJ_ea0": 1.98,
+      "dJ_uncertainty_ea0": 0.1,
+      "evidenceKind": "CI+MBPT-theory",
+      "isDirectMeasuredRabiBenchmark": false,
+      "adoptedDipole_ea0": 1.96,
+      "alternativeRabi_MHz": 20.260977721215728,
+      "dipoleRelativeDifference_percent": 1.0204081632652962,
+      "printedDipoleIntervalsOverlap": true,
+      "comparisonBoundary": "Source-strength cross-check only; intervals are not independent statistical samples and this is not a directly measured Rabi benchmark."
+    },
+    {
+      "transitionId": "T7",
+      "sourceId": "porsev-1999",
+      "locator": "Table I, 6s7s 3S1 / 6s6p 3P2",
+      "dJ_ea0": 5.05,
+      "dJ_uncertainty_ea0": 0.2,
+      "evidenceKind": "CI+MBPT-theory",
+      "isDirectMeasuredRabiBenchmark": false,
+      "adoptedDipole_ea0": 4.99,
+      "alternativeRabi_MHz": 40.027845244984576,
+      "dipoleRelativeDifference_percent": 1.2024048096192397,
+      "printedDipoleIntervalsOverlap": true,
+      "comparisonBoundary": "Source-strength cross-check only; intervals are not independent statistical samples and this is not a directly measured Rabi benchmark."
+    }
+  ],
+  "unsupportedCase": {
+    "transitionId": "T4",
+    "multipole": "M2 激发 / HFS 诱导 E1 衰变",
+    "canonicalDipole_ea0": null,
+    "calculatorStatus": "unsupported",
+    "calculatedRabi_MHz": null
+  },
+  "interpretation": "Bare coherent coupling at the beam centre. A lossy/open transition requires optical Bloch dynamics to predict observed flopping, pumping or linewidth; ideal pi time alone is not experimental fidelity."
+}

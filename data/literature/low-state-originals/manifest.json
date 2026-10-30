@@ -1,0 +1,57 @@
+{
+  "createdAt": "2026-10-29",
+  "scope": "Four original-source PDFs; all 14 numbered tables (3+5+5+1) retained with raw precision, provenance classes, units and table pages",
+  "records": [
+    {
+      "file": "data/literature/low-state-originals/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.json",
+      "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf",
+      "sourceSha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3",
+      "tableCount": 3,
+      "rowCount": 80,
+      "tablePages": {
+        "Table I": 10,
+        "Table II": 10,
+        "Table III": 11
+      }
+    },
+    {
+      "file": "data/literature/low-state-originals/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.json",
+      "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf",
+      "sourceSha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f",
+      "tableCount": 5,
+      "rowCount": 38,
+      "tablePages": {
+        "Table I": 3,
+        "Table II": 6,
+        "Table III": 7,
+        "Table IV": 8,
+        "Table V": 9
+      }
+    },
+    {
+      "file": "data/literature/low-state-originals/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.json",
+      "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.pdf",
+      "sourceSha256": "628816472904aabb4e88172b958f1b80b791a3b7f6d72b06cb2302aa70424e83",
+      "tableCount": 1,
+      "rowCount": 21,
+      "tablePages": {
+        "Table I": 4
+      }
+    },
+    {
+      "file": "data/literature/low-state-originals/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.json",
+      "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf",
+      "sourceSha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e",
+      "tableCount": 5,
+      "rowCount": 42,
+      "tablePages": {
+        "Table I": 2,
+        "Table II": 3,
+        "Table III": 4,
+        "Table IV": 6,
+        "Table V": 7
+      }
+    }
+  ],
+  "caution": "Raw numeric strings retain original parentheses/plus-minus/ranges; null is not zero. No canonical data file is changed by this extraction."
+}

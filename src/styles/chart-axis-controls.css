@@ -1,0 +1,67 @@
+/* Editing belongs to the existing axes; no detached axis settings panel. */
+#secRabi .rabi-viz-grid .chart-frame { padding: 0; }
+#secRabi .rabi-canvas-wrap {
+  overflow: clip;
+  --axis-left: 60px;
+  --axis-right: 116px;
+  --axis-top: 20px;
+  --axis-bottom: 60px;
+}
+/* Canvas pixel buffers must not stretch the responsive 4:3 parent on resize. */
+#secRabi .rabi-canvas-wrap > canvas { position: absolute; inset: 0; }
+.chart-axis-layer { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+#secRabi .chart-axis-max {
+  position: absolute; box-sizing: border-box; width: 54px; height: 22px;
+  margin: 0; padding: 1px 2px; border: 1px solid transparent; border-bottom: 1px solid #7ea8df; border-radius: 3px;
+  background: #17325266; color: #b9d5ff;
+  font: 400 var(--chart-axis-size,12px)/18px var(--chart-font,var(--font-ui)); font-variant-numeric: tabular-nums;
+  text-align: center; cursor: text; pointer-events: auto; appearance: textfield;
+  -moz-appearance: textfield;
+}
+#secRabi .chart-axis-max::-webkit-inner-spin-button,
+#secRabi .chart-axis-max::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.chart-axis-max-x {
+  left: calc(100% - var(--axis-right));
+  top: calc(100% - var(--axis-bottom) + 5px);
+  transform: translateX(-50%);
+}
+#secRabi .chart-axis-max-y {
+  left: calc(var(--axis-left) - 6px); top: var(--axis-top);
+  width: 48px; text-align: right; transform: translate(-100%,-50%);
+}
+#secRabi .chart-axis-max:hover { color: #e7f1ff; border-bottom-color: #c2dcff; background: #1c3d6388; }
+#secRabi .chart-axis-max:focus { color: #eef5ff; background: #192f4c; border-color: #91b9f2; box-shadow: 0 0 0 2px #5286d222; outline: none; }
+#secRabi .chart-axis-max[aria-invalid="true"] { color: #ffb6af; border-color: #ae605e; background: #371e27; }
+.chart-axis-title {
+  position: absolute; display: flex; align-items: center; justify-content: center; gap: 3px;
+  height: 24px; margin: 0; color: var(--chart-text,#a7b8d0);
+  font: 400 var(--chart-axis-size,12px)/1.4 var(--chart-font,var(--font-ui)); white-space: nowrap;
+}
+.chart-axis-title-x {
+  left: calc(var(--axis-left) + (100% - var(--axis-left) - var(--axis-right)) / 2);
+  bottom: 0; transform: translateX(-50%);
+}
+.chart-axis-title-y {
+  left: 16px; top: calc(var(--axis-top) + (100% - var(--axis-top) - var(--axis-bottom)) / 2);
+  transform: translate(-50%,-50%) rotate(-90deg);
+}
+#secRabi .chart-axis-title select {
+  box-sizing: border-box; width: 34px; min-width: 0; height: 21px; min-height: 0;
+  margin: 0; padding: 0 1px; border: 0; border-bottom: 1px solid #bd9b60;
+  border-radius: 3px; color: #f1d39c; background: #614d2b33; font: inherit;
+  text-align: center; cursor: pointer; pointer-events: auto;
+  appearance: none; -webkit-appearance: none;
+}
+#secRabi .chart-axis-title select:hover { color: #ffe6b7; border-bottom-color: #efd49f; background: #73582c55; }
+#secRabi .chart-axis-title select:focus-visible { outline: 2px solid #91b9f2; outline-offset: 2px; border-radius: 2px; }
+#secRabi .chart-axis-title select option { color: #e5edf8; background: #101b2e; }
+.chart-axis-feedback { min-width: 0; }
+.chart-axis-feedback:empty { display: none; }
+#secRabi .chart-axis-feedback > p:not([hidden]) {
+  margin: 6px 0 0; padding: 6px 8px; border: 1px solid #754d53; border-radius: 5px;
+  color: #edc1bc; background: #2b1d29; font: 400 10px/1.6 var(--font-ui);
+  overflow-wrap: anywhere;
+}
+@media(max-width:600px) {
+  #secRabi .chart-axis-title select { width: 31px; }
+}

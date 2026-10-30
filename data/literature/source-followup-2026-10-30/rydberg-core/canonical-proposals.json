@@ -1,0 +1,107 @@
+{
+  "scope": "proposals only; parent decides canonical integration; no canonical file modified",
+  "records": [
+    {
+      "path": "sources.references.ref-13",
+      "old": {
+        "id": "ref-13",
+        "referenceNumber": 13,
+        "title": "Fisk et al.",
+        "detail": "原Fisk条目身份未确认；TIM46,457(1997)不可作已核准书目",
+        "publication": "IEEE Trans. Instrum. Meas. 46, 457 (1997)",
+        "url": null,
+        "reviewStatus": "conflict-unresolved",
+        "reviewedAt": "2026-10-29",
+        "rightsStatus": "not-established",
+        "identityStatus": "unresolved-citation-possible-mismatch",
+        "bibliographyAudit": "references/bibliography-audit.json",
+        "numericalValidation": "not-implied-by-bibliographic-verification",
+        "evidenceNotes": [
+          "Original IEEE Trans. Instrum. Meas. 46, 457 (1997) could not be validated against a primary record. Do not fabricate a DOI or keep the paraphrase as an exact title.",
+          "A similar candidate exists: Accurate measurement of the 12.6 GHz clock transition in trapped 171Yb+ ions, P. T. H. Fisk / M. J. Sellars / M. A. Lawn / G. Coles, IEEE Trans. Ultrason. Ferroelectr. Freq. Control 44(2),344–354 (1997), candidate DOI10.1109/58.585119. IEEE blocked metadata with robot verification; not accepted as the resolved identity.",
+          "The primary URL was reached but exposed only a robot-verification page, not bibliographic verification. Manual original-PDF review is required."
+        ],
+        "year": 1997
+      },
+      "action": "replace malformed bibliography with supplied identifiable primary article; retain old citation history",
+      "proposedMetadata": {
+        "detail": "Accurate Measurement of the12.6GHz “Clock” Transition in Trapped171Yb+ Ions",
+        "authors": [
+          "Peter T.H.Fisk",
+          "Matthew J.Sellars",
+          "Malcolm A.Lawn",
+          "Colin Coles"
+        ],
+        "publication": "IEEE Transactions on Ultrasonics,Ferroelectrics,and Frequency Control44(2),344–354(1997)",
+        "doi": "10.1109/58.585119",
+        "localArtifact": "references/papers/10.pdf",
+        "identityStatus": "original-supplied-PDF-read-and-verified",
+        "oldCitationBoundary": "TIM46,457(1997) remains unverified; do not claim both journal citations denote the same publication"
+      },
+      "sourceLocator": "paper10 first page printed344, final result printed352/PDF9"
+    },
+    {
+      "path": "estimates.ionization.A_ion_GHz",
+      "old": 12.6428,
+      "proposedValueDecimal": "12.642812118466",
+      "proposedUncertaintyDecimal": "0.000000000002",
+      "unit": "GHz",
+      "sourceId": "ref-13",
+      "sourceLocator": "Fisk1997 V.B/VI, printed352/PDF9",
+      "action": "can adopt corrected isolated-ion clock frequency as explicitly sourced scalar; no change to Peper fitted thresholds",
+      "boundary": "zero temperature/velocity/E/B extrapolation relativeTAI; finite trap conditions and shifts inTablesI-IV; does not validate neutral171YbMQDT"
+    },
+    {
+      "path": "sources.references.ref-12",
+      "old": {
+        "id": "ref-12",
+        "referenceNumber": 12,
+        "title": "Aymar et al.",
+        "detail": "Three-step laser spectroscopy and multichannel quantum defect analysis of odd-parity Rydberg states of neutral ytterbium",
+        "publication": "J. Phys. B: Atom. Mol. Phys. 17, 3645 (1984)",
+        "url": "https://doi.org/10.1088/0022-3700/17/18/006",
+        "reviewStatus": "original-source-located",
+        "reviewedAt": "2026-10-29",
+        "rightsStatus": "local-research-copy; redistribution-not-assumed",
+        "identityStatus": "verified-primary-search-metadata",
+        "bibliographyAudit": "references/bibliography-audit.json",
+        "numericalValidation": "not-implied-by-bibliographic-verification",
+        "evidenceNotes": [
+          "IOP indexed primary metadata confirms exact title, all authors, DOI, and page. Direct IOP page blocked by robots, no legal open PDF verified. This is odd-parity, not the older 1980 even-parity article."
+        ],
+        "year": 1984,
+        "authors": [
+          "M. Aymar",
+          "R. J. Champeau",
+          "C. Delsart",
+          "O. Robaux"
+        ],
+        "doi": "10.1088/0022-3700/17/18/006",
+        "arxivVersion": null
+      },
+      "action": "add verified local original locator and isotope/model scope",
+      "sourceLocator": "paper7 Section2 PDF3/3646; Table1-4 PDF5,6,7-8,16; Section3.2.2PDF10/3653",
+      "isotope": 174,
+      "boundary": "energy-only MQDT does not uniquely identify singlet/triplet mixing; np/nf odd parity, not validation of171Yb3D scalar defects"
+    },
+    {
+      "path": "estimates.constants.E_I_CM",
+      "old": 50443.0676,
+      "action": "retain171Yb compilation default; store174Yb original separately",
+      "newOriginalFact": {
+        "value": "50443.08",
+        "uncertainty": "0.05",
+        "unit": "cm^-1",
+        "isotope": 174,
+        "sourceId": "ref-12",
+        "evidenceKind": "MQDT-fit threshold under chosen intermediate energy references"
+      },
+      "boundary": "no mass/isotope conversion or global refit performed"
+    },
+    {
+      "path": "literature.aymar.Table3d/4A3",
+      "action": "retain source values and label source-internal assignment discrepancy",
+      "details": "Table3 labelsA3 at50252.77cm^-1; Section3.2.6/Table4 locateperturberA3 at50228.09cm^-1. No silent correction."
+    }
+  ]
+}

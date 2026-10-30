@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "title": "Experimental investigation of excited-state lifetimes in atomic ytterbium",
+    "publishedYear": 1996,
+    "publishedDOI": "10.1103/PhysRevA.53.3103",
+    "archiveFilenameYear": 2011,
+    "archiveYearMeaning": "repository/archive creation, not paper publication year",
+    "evidence": "pulsed-laser fluorescence/cascade lifetime experiment",
+    "isotope": "natural Yb beam; not isotope-resolved",
+    "ovenTemperatureK": 750,
+    "ambientTemperatureK": null,
+    "F": null,
+    "visualChecks": [
+      4
+    ]
+  },
+  "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.pdf",
+  "sha256": "628816472904aabb4e88172b958f1b80b791a3b7f6d72b06cb2302aa70424e83",
+  "extractedAt": "2026-10-29",
+  "nullMeaning": "blank/dash/unreported; never numeric zero",
+  "tables": [
+    {
+      "table": "Table I",
+      "pdfPage": 4,
+      "columns": [
+        "parity",
+        "energy_cm-1",
+        "leadingConfigurationAndTerm",
+        "excitationDetectionScheme",
+        "detectedFluorescence_nm",
+        "thisWorkLifetime_ns",
+        "otherLiteratureLifetimes_ns"
+      ],
+      "unit": "energy cm^-1; wavelength nm; lifetime ns",
+      "rows": [
+        {
+          "parity": "even",
+          "energy_cm-1": "24489.102",
+          "leadingConfigurationAndTerm": "4f14 5d6s 3D1",
+          "excitationDetectionScheme": "a",
+          "detectedFluorescence_nm": "556",
+          "thisWorkLifetime_ns": "380(30)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "even",
+          "energy_cm-1": "24751.948",
+          "leadingConfigurationAndTerm": "4f14 5d6s 3D2",
+          "excitationDetectionScheme": "a",
+          "detectedFluorescence_nm": "556",
+          "thisWorkLifetime_ns": "460(30)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "even",
+          "energy_cm-1": "27677.665",
+          "leadingConfigurationAndTerm": "4f14 5d6s 1D2",
+          "excitationDetectionScheme": "a",
+          "detectedFluorescence_nm": "399,556",
+          "thisWorkLifetime_ns": "6700(500)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "even",
+          "energy_cm-1": "47584.34",
+          "leadingConfigurationAndTerm": "4f13 5d6s6p 1P1",
+          "excitationDetectionScheme": "d",
+          "detectedFluorescence_nm": "330,338",
+          "thisWorkLifetime_ns": "125(12)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "17992.007",
+          "leadingConfigurationAndTerm": "4f14 6s6p 3P1",
+          "excitationDetectionScheme": "a",
+          "detectedFluorescence_nm": "556",
+          "thisWorkLifetime_ns": "850(50)",
+          "otherLiteratureLifetimes_ns": "827(40)[12];760(80)[13];860(40)[14];820(20)[15];850(80)[16];850(80)[17];875(20)[18];872(2)[19];840[20]"
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "38174.17",
+          "leadingConfigurationAndTerm": "4f14 6s7p 3P1",
+          "excitationDetectionScheme": "c",
+          "detectedFluorescence_nm": "399",
+          "thisWorkLifetime_ns": "120(30)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "38422.36",
+          "leadingConfigurationAndTerm": "4f13 5d6s2 3D1",
+          "excitationDetectionScheme": "c",
+          "detectedFluorescence_nm": "399",
+          "thisWorkLifetime_ns": "120(30)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "42647.72",
+          "leadingConfigurationAndTerm": "4f13 5d2 6s 5D2",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "551",
+          "thisWorkLifetime_ns": "140(13)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "42725.78",
+          "leadingConfigurationAndTerm": "4f14 5d6p 3F2",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "548",
+          "thisWorkLifetime_ns": "68(9)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "43254.78",
+          "leadingConfigurationAndTerm": "4f14 5f6s 3F3",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "540",
+          "thisWorkLifetime_ns": "88(10)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "43297.51",
+          "leadingConfigurationAndTerm": "4f14 5f6s 1F3",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "539",
+          "thisWorkLifetime_ns": "62(9)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "43433.85",
+          "leadingConfigurationAndTerm": "4f14 5f6s 3F2",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "528,535",
+          "thisWorkLifetime_ns": "26(7)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "43532.77",
+          "leadingConfigurationAndTerm": "4f13 5d2 6s 5D1",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "525,532",
+          "thisWorkLifetime_ns": "1820(200)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "43659.38",
+          "leadingConfigurationAndTerm": "4f14 6s8p 3P1",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "522,529",
+          "thisWorkLifetime_ns": "140(20)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "43805.69",
+          "leadingConfigurationAndTerm": "4f14 6s8p 3P2",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "518,525,539",
+          "thisWorkLifetime_ns": "140(20)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "43815.67",
+          "leadingConfigurationAndTerm": "4f13 5d2 6s 5P3",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "525,539",
+          "thisWorkLifetime_ns": "120(12)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "44017.60",
+          "leadingConfigurationAndTerm": "4f14 6s8p 1P1",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "512,519",
+          "thisWorkLifetime_ns": "50(20)",
+          "otherLiteratureLifetimes_ns": "39.1(3.5)[15];47(4)[17]"
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "44251.88",
+          "leadingConfigurationAndTerm": "4f13 5d2 6s 5S2",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "513,527",
+          "thisWorkLifetime_ns": "450(30)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "44453.47",
+          "leadingConfigurationAndTerm": "4f14 5d6p 3F3",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "508",
+          "thisWorkLifetime_ns": "22(7)",
+          "otherLiteratureLifetimes_ns": null
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "45155.33",
+          "leadingConfigurationAndTerm": "4f14 5d6p 1D2",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "503",
+          "thisWorkLifetime_ns": "25(20)",
+          "otherLiteratureLifetimes_ns": "14(1)[17]"
+        },
+        {
+          "parity": "odd",
+          "energy_cm-1": "45956.27",
+          "leadingConfigurationAndTerm": "4f14 6s6f 3F2",
+          "excitationDetectionScheme": "b",
+          "detectedFluorescence_nm": "466,472",
+          "thisWorkLifetime_ns": "53(9)",
+          "otherLiteratureLifetimes_ns": null
+        }
+      ],
+      "notes": [
+        "All 21 measured state rows retained, plus prior comparison entries. Uncertainty is author error estimate incorporating unexplained spread and systematics, not upgraded to a stated 1-sigma meaning.",
+        "Natural Yb atomic beam, no isotope-resolved lifetimes assigned. Oven approximately 750 K; ambient BBR temperature unspecified. Excitation/detection schemes a-d refer Fig.2."
+      ]
+    }
+  ],
+  "criticalInterpretation": {
+    "3D1LifetimeNs": {
+      "value": 380,
+      "uncertainty": 30
+    },
+    "3P1LifetimeNs": {
+      "value": 850,
+      "uncertainty": 50
+    },
+    "3S1": "Not a new measurement in this table. Text p6 cites 12.5(1.5)ns and15.9(1.9)ns from older references."
+  }
+}

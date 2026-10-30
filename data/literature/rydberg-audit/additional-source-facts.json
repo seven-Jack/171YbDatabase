@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "facts": [
+    {
+      "sourceId": "okuno-2022-arxiv-v1",
+      "pdfPage": 6,
+      "isotope": 174,
+      "kind": "singleatomtweezer Rydberg excitation demonstration",
+      "initialState": "3P2,mJ=0",
+      "finalState": "6s78d3D3",
+      "tweezerArray": [
+        5,
+        5
+      ],
+      "metastablePreparation": {
+        "wavelength_nm": 507,
+        "duration_ms": 20,
+        "probability": 0.4
+      },
+      "RydbergLaser": {
+        "wavelength_nm": 325,
+        "duration_ms": 10
+      },
+      "detection": "electricfieldionization then5ms770nmrepumpandfluorescencereturnloss",
+      "RydbergLifetime_us": null,
+      "lifetimeNote": "No Rydberg decay lifetime measurement identified in this source; pulse duration or resonance width is not lifetime."
+    },
+    {
+      "sourceId": "okuno-2022-arxiv-v1",
+      "pdfPage": 6,
+      "isotope": 174,
+      "kind": "separateensemble spectroscopy used forTableI",
+      "trap_nm": 1070,
+      "atomCountApprox": 100000,
+      "atomTemperature_uK": 5,
+      "initial": "3P2,mJ=2",
+      "preparation507nm_ms": 18.75,
+      "Rydberg325nm_us": 250,
+      "ionizationFieldAfterExcitation_V_cm": 17,
+      "MCP_resolution_us": 2,
+      "averages": 10,
+      "B_G": null
+    },
+    {
+      "sourceId": "okuno-2022-arxiv-v1",
+      "pdfPages": [
+        5,
+        6
+      ],
+      "isotope": 174,
+      "kind": "metastable highres spectroscopy andsidebandtemperature",
+      "B_G": 2.8,
+      "Bdirection": "alongtweezerlightpolarization",
+      "tweezer_nm": 532,
+      "relativePolarizability_3P2_mJ0_to_1S0_adopted": 1.016,
+      "polarizabilityEvidence": "citedRef32, not new absolute measurement",
+      "atomTemperature_uK": 1.9,
+      "temperatureUncertainty_uK": 1.02,
+      "meanVibrationalOccupation": 1.46,
+      "occupationUncertainty": 1.01,
+      "temperatureLocator": "Fig7captionp6",
+      "notRydbergLifetime": true
+    },
+    {
+      "sourceId": "burgers-2021-arxiv-v1",
+      "kind": "version-boundary",
+      "publishedDOI": "10.1103/PRXQuantum.3.020326",
+      "publishedCorrectionDate": "2022-08-24",
+      "use": "LocalV1 is useful accessibleprimarymaterial, not presumedidenticaltolatercorrectedpublication. Source-levelrawtablespreserved, notautomaticallyusedtocorrectcanonical171records."
+    }
+  ],
+  "noScientificComputationRun": true
+}

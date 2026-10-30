@@ -1,0 +1,1356 @@
+{
+  "date": "2026-10-29",
+  "scope": "Original and methodological references supporting current core/low-state records and ionization constants, plus explicit3P2 theory check",
+  "count": 78,
+  "notClaimed": "Not all these original papers have been acquired/read. Compilation-source verification does not close this queue.",
+  "items": [
+    {
+      "kroezeReferenceNumber": 15,
+      "citationAsExtracted": "[15] P. J. Mohr, D. B. Newell, B. N. Taylor, and E. Tiesinga, CODATA recommended values of the fundamental physical constants: 2022, Rev. Mod. Phys. 97, 025002 (2025).",
+      "citationPdfPage": 33,
+      "affectedFields": [
+        "T1.d_num",
+        "T1.energy_eV",
+        "T1.oscillator_strength_f_num",
+        "T1.wavelength_air_nm",
+        "T1.wavelength_vac_nm",
+        "T2.d_num",
+        "T2.energy_eV",
+        "T2.oscillator_strength_f_num",
+        "T2.wavelength_air_nm",
+        "T2.wavelength_vac_nm",
+        "T3.energy_eV",
+        "T3.wavelength_air_nm",
+        "T3.wavelength_vac_nm",
+        "T4.energy_eV",
+        "T4.wavelength_air_nm",
+        "T4.wavelength_vac_nm",
+        "T5.d_num",
+        "T5.energy_eV",
+        "T5.wavelength_air_nm",
+        "T5.wavelength_vac_nm",
+        "T6.d_num",
+        "T6.energy_eV",
+        "T6.wavelength_air_nm",
+        "T6.wavelength_vac_nm",
+        "T7.d_num",
+        "T7.energy_eV",
+        "T7.wavelength_air_nm",
+        "T7.wavelength_vac_nm",
+        "yb171-6s6p-1p1.energy_cm",
+        "yb171-6s6p-1p1.energy_eV",
+        "yb171-6s6p-3p0.energy_cm",
+        "yb171-6s6p-3p0.energy_eV",
+        "yb171-6s6p-3p1.energy_cm",
+        "yb171-6s6p-3p1.energy_eV",
+        "yb171-6s6p-3p2.energy_cm",
+        "yb171-6s6p-3p2.energy_eV"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 21,
+      "citationAsExtracted": "[21] M. Kaja, D. Studer, R. Heinke, T. Kieck, and K. Wendt, Characterization of the field ionization extension for the laser ion source and trap: Measurement of the ionization potential of ytterbium, Nucl. Instruments Methods Phys. Res. Sect. B Beam Interact. with Mater. Atoms 547, 165213 (2024).",
+      "citationPdfPage": 34,
+      "affectedFields": [
+        "compiled171Yb ionization centroid"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 22,
+      "citationAsExtracted": "[22] H. Lehec, A. Zuliani, W. Maineult, E. Luc-Koenig, P. Pillet, P. Cheinet, F. Niyaz, and T. F. Gallagher, Laser and microwave spectroscopy of even-parity Rydberg states of neutral ytterbium and multichannel-quantum-defect-theory analysis, Phys. Rev. A 98, 062506 (2018).",
+      "citationPdfPage": 34,
+      "affectedFields": [
+        "compiled171Yb ionization centroid"
+      ],
+      "resolvedSourceId": "ref-11",
+      "doi": "10.1103/PhysRevA.98.062506",
+      "localDocuments": [
+        "references/papers/2018_Lehec_Yb_Even-parity-MQDT_arXiv1805.02712v2.pdf"
+      ],
+      "status": "local-fulltext-indexed;field-specific-validation-still-required",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "resolvedCurrentCitation": "Phys. Rev. A 98, 062506 (2018)"
+    },
+    {
+      "kroezeReferenceNumber": 23,
+      "citationAsExtracted": "[23] P. Chhetri, C. Moodley, S. Raeder, M. Block, F. Giacoppo, S. Götz, F. Heßberger, M. Eibach, O. Kaleja, M. Laatiaoui, A. Mistry, T. Murböck, and T. Walther, Investigation of the First Ionization Potential of Ytterbium in Argon Buffer Gas, Acta Phys. Pol. B 49, 599 (2018).",
+      "citationPdfPage": 34,
+      "affectedFields": [
+        "compiled171Yb ionization centroid"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 24,
+      "citationAsExtracted": "[24] M. Aymar, R. J. Champeau, C. Delsart, and O. Robaux, Three-step laser spectroscopy and multichannel quantum defect analysis of odd-parity Rydberg states of neutral ytterbium, J. Phys. B Mol. Phys. 17, 3645 (1984).",
+      "citationPdfPage": 34,
+      "affectedFields": [
+        "compiled171Yb ionization centroid"
+      ],
+      "resolvedSourceId": "ref-12",
+      "doi": "10.1088/0022-3700/17/18/006",
+      "localDocuments": [
+        "references/papers/7.pdf"
+      ],
+      "status": "original-local-PDF-read;all-numbered-tables-extracted;field-specific-applicability-audited",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "followupAudit": "references/audits/source-followup-20261030.md",
+      "resolvedCurrentCitation": "J. Phys. B: Atom. Mol. Phys. 17, 3645 (1984)"
+    },
+    {
+      "kroezeReferenceNumber": 25,
+      "citationAsExtracted": "[25] P. Camus, A. Debarre, and C. Morillon, Highly excited levels of neutral ytterbium. I. Two-photon and two-step spectroscopy of even spectra, J. Phys. B Mol. Phys. 13, 1073 (1980).",
+      "citationPdfPage": 34,
+      "affectedFields": [
+        "compiled171Yb ionization centroid"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 26,
+      "citationAsExtracted": "[26] P. Camus and F. S. Tomkins, Spectre d’absorption de Yb I, J. Phys. 30, 545 (1969).",
+      "citationPdfPage": 34,
+      "affectedFields": [
+        "compiled171Yb ionization centroid"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 27,
+      "citationAsExtracted": "[27] G. R. Hertel, Surface Ionization. III. The First Ionization Potentials of the Lanthanides, J. Chem. Phys. 48, 2053 (1968).",
+      "citationPdfPage": 34,
+      "affectedFields": [
+        "compiled171Yb ionization centroid"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 28,
+      "citationAsExtracted": "[28] K. F. Zmbov and J. L. Margrave, The First Ionization Potentials of Samarium, Europium, Gadolinium, Dysprosium, Holmium, Erbium, Thulium, and Ytterbium by the Electron-Impact Method, J. Phys. Chem. 70, 3014 (1966).",
+      "citationPdfPage": 34,
+      "affectedFields": [
+        "compiled171Yb ionization centroid"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 29,
+      "citationAsExtracted": "[29] M. J. Dresser and D. E. Hudson, Surface Ionization of Some Rare Earths on Tungsten, Phys. Rev. 137, A673 (1965).",
+      "citationPdfPage": 34,
+      "affectedFields": [
+        "compiled171Yb ionization centroid"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 63,
+      "citationAsExtracted": "[63] M. Peper, Y. Li, D. Y. Knapp, M. Bileska, S. Ma, G. Liu, P. Peng, B. Zhang, S. P. Horvath, A. P. Burgers, and J. D. Thompson, Spectroscopy and Modeling of 171 Yb Rydberg States for High-Fidelity Two-Qubit Gates, Phys. Rev. X 15, 011009 (2025).",
+      "citationPdfPage": 35,
+      "affectedFields": [
+        "Peper171Yb ionic thresholds / MQDT"
+      ],
+      "resolvedSourceId": "ref-02",
+      "doi": "10.1103/PhysRevX.15.011009",
+      "localDocuments": [
+        "references/papers/2025_Peper_171Yb_Spectroscopy-modeling_published.pdf",
+        "references/papers/2024_Peper_171Yb_Spectroscopy-modeling_local-supplement.pdf"
+      ],
+      "status": "local-fulltext-indexed;field-specific-validation-still-required",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "resolvedCurrentCitation": "Phys. Rev. X 15, 011009 (2025)"
+    },
+    {
+      "kroezeReferenceNumber": 65,
+      "citationAsExtracted": "[65] D. Das, S. Barthwal, A. Banerjee, and V. Natarajan, Absolute frequency measurements in Yb with 0.08 ppb uncertainty: Isotope shifts and hyperfine structure in the 399-nm 1 S0 →1 P1 line, Phys. Rev. A 72, 032506 (2005).",
+      "citationPdfPage": 35,
+      "affectedFields": [
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 66,
+      "citationAsExtracted": "[66] M. Kleinert, M. E. Gold Dahl, and S. Bergeson, Measurement of the Yb I 1 S0 -1 P1 transition frequency at 399 nm using an optical frequency comb, Phys. Rev. A 94, 052511 (2016).",
+      "citationPdfPage": 35,
+      "affectedFields": [
+        "T1.d_num",
+        "T1.energy_eV",
+        "T1.frequency_THz",
+        "T1.oscillator_strength_f_num",
+        "T1.wavelength_air_nm",
+        "T1.wavelength_vac_nm",
+        "yb171-6s6p-1p1.energy_cm",
+        "yb171-6s6p-1p1.energy_eV",
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 67,
+      "citationAsExtracted": "[67] Y. Chaiko, Isotope shifts of resonance lines in the spectrum of ytterbium, Opt. Spectrosc. 20, 424 (1966).",
+      "citationPdfPage": 35,
+      "affectedFields": [
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 69,
+      "citationAsExtracted": "[69] C. J. Bowers, D. Budker, S. J. Freedman, G. Gwinner, J. E. Stalnaker, and D. DeMille, Experimental investigation of the 6s2 1 S0 →5d6s 3 D1,2 forbidden transitions in atomic ytterbium, Phys. Rev. A 59, 3513 (1999).",
+      "citationPdfPage": 35,
+      "affectedFields": [
+        "³D₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 85,
+      "citationAsExtracted": "[85] D. Ai, T. Jin, T. Zhang, L. Luo, L. Liu, M. Zhou, and X. Xu, Absolute frequency measurement of the 6s6p 3 P0 → 5d6s 3 D1 transition based on ultracold ytterbium atoms, Phys. Rev. A 107, 063107 (2023).",
+      "citationPdfPage": 36,
+      "affectedFields": [
+        "T5.d_num",
+        "T5.energy_eV",
+        "T5.frequency_THz",
+        "T5.wavelength_air_nm",
+        "T5.wavelength_vac_nm",
+        "³D₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 86,
+      "citationAsExtracted": "[86] D. Ai, T. Jin, T. Zhang, L. Luo, L. Liu, M. Zhou, and X. Xu, Erratum: Absolute frequency measurement of the 6s6p 3 P0 → 5d6s 3 D1 transition based on ultracold ytterbium atoms [Phys. Rev. A 107, 063107 (2023)], Phys. Rev. A 109, 039902 (2024).",
+      "citationPdfPage": 36,
+      "affectedFields": [
+        "T5.d_num",
+        "T5.energy_eV",
+        "T5.frequency_THz",
+        "T5.wavelength_air_nm",
+        "T5.wavelength_vac_nm",
+        "³D₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 99,
+      "citationAsExtracted": "[99] B. Edlén, The Refractive Index of Air, Metrologia 2, 71 (1966).",
+      "citationPdfPage": 36,
+      "affectedFields": [
+        "T1.wavelength_air_nm",
+        "T2.wavelength_air_nm",
+        "T3.wavelength_air_nm",
+        "T4.wavelength_air_nm",
+        "T5.wavelength_air_nm",
+        "T6.wavelength_air_nm",
+        "T7.wavelength_air_nm"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 100,
+      "citationAsExtracted": "[100] E. R. Peck and K. Reeder, Dispersion of Air, J. Opt. Soc. Am. 62, 958 (1972).",
+      "citationPdfPage": 36,
+      "affectedFields": [
+        "T1.wavelength_air_nm",
+        "T2.wavelength_air_nm",
+        "T3.wavelength_air_nm",
+        "T4.wavelength_air_nm",
+        "T5.wavelength_air_nm",
+        "T6.wavelength_air_nm",
+        "T7.wavelength_air_nm"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 101,
+      "citationAsExtracted": "[101] A. L. Buck, New Equations for Computing Vapor Pressure and Enhancement Factor, J. Appl. Meteorol. 20, 1527 (1981).",
+      "citationPdfPage": 36,
+      "affectedFields": [
+        "T1.wavelength_air_nm",
+        "T2.wavelength_air_nm",
+        "T3.wavelength_air_nm",
+        "T4.wavelength_air_nm",
+        "T5.wavelength_air_nm",
+        "T6.wavelength_air_nm",
+        "T7.wavelength_air_nm"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 102,
+      "citationAsExtracted": "[102] Buck Research Instruments, LLC, CR-1A Hygrometer with Autofill: Operating Manual , Buck Research Instruments, LLC, Boulder, CO, USA (2012).",
+      "citationPdfPage": 36,
+      "affectedFields": [
+        "T1.wavelength_air_nm",
+        "T2.wavelength_air_nm",
+        "T3.wavelength_air_nm",
+        "T4.wavelength_air_nm",
+        "T5.wavelength_air_nm",
+        "T6.wavelength_air_nm",
+        "T7.wavelength_air_nm"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 104,
+      "citationAsExtracted": "[104] T. Lauprêtre, L. Groult, B. Achi, M. Petersen, Y. Kersalé, M. Delehaye, and C. Lacroûte, Absolute frequency mea- surements of the 1 S0 →1 P1 transition in ytterbium, OSA Contin. 3, 50 (2020).",
+      "citationPdfPage": 36,
+      "affectedFields": [
+        "T1.d_num",
+        "T1.energy_eV",
+        "T1.frequency_THz",
+        "T1.oscillator_strength_f_num",
+        "T1.wavelength_air_nm",
+        "T1.wavelength_vac_nm",
+        "yb171-6s6p-1p1.energy_cm",
+        "yb171-6s6p-1p1.energy_eV"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 105,
+      "citationAsExtracted": "[105] T. Tanabe, D. Akamatsu, H. Inaba, S. Okubo, T. Kobayashi, M. Yasuda, K. Hosaka, and F.-L. Hong, A frequency- stabilized light source at 399 nm using an Yb hollow-cathode lamp, Jpn. J. Appl. Phys. 57, 062501 (2018).",
+      "citationPdfPage": 36,
+      "affectedFields": [
+        "T1.d_num",
+        "T1.energy_eV",
+        "T1.frequency_THz",
+        "T1.oscillator_strength_f_num",
+        "T1.wavelength_air_nm",
+        "T1.wavelength_vac_nm",
+        "yb171-6s6p-1p1.energy_cm",
+        "yb171-6s6p-1p1.energy_eV"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 106,
+      "citationAsExtracted": "[106] A. H. Nizamani, J. J. McLoughlin, and W. K. Hensinger, Doppler-free Yb spectroscopy with the fluorescence spot technique, Phys. Rev. A 82, 043408 (2010).",
+      "citationPdfPage": 36,
+      "affectedFields": [
+        "T1.d_num",
+        "T1.energy_eV",
+        "T1.frequency_THz",
+        "T1.oscillator_strength_f_num",
+        "T1.wavelength_air_nm",
+        "T1.wavelength_vac_nm",
+        "yb171-6s6p-1p1.energy_cm",
+        "yb171-6s6p-1p1.energy_eV"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 121,
+      "citationAsExtracted": "[121] H. S. Margolis, G. Panfilo, G. Petit, C. Oates, T. Ido, and S. Bize, The CIPM list ’Recommended values of standard frequencies’: 2021 update, Metrologia 61, 035005 (2024).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "T3.energy_eV",
+        "T3.frequency_THz",
+        "T3.wavelength_air_nm",
+        "T3.wavelength_vac_nm",
+        "yb171-6s6p-3p0.energy_cm",
+        "yb171-6s6p-3p0.energy_eV"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 123,
+      "citationAsExtracted": "[123] A. Yamaguchi, Metastable State of Ultracold and Quantum Degenerate Ytterbium Atoms: High-Resolution Spectroscopy and Cold Collisions, Ph.D. thesis, Kyoto University (2008).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "T4.energy_eV",
+        "T4.frequency_THz",
+        "T4.wavelength_air_nm",
+        "T4.wavelength_vac_nm",
+        "yb171-6s6p-3p2.energy_cm",
+        "yb171-6s6p-3p2.energy_eV"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 127,
+      "citationAsExtracted": "[127] W. A. van Wijngaarden and J. Li, Measurement of isotope shifts and hyperfine splittings of ytterbium by means of acousto-optic modulation, J. Opt. Soc. Am. B 11, 2163 (1994).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 128,
+      "citationAsExtracted": "[128] D. L. Clark, M. E. Cage, D. A. Lewis, and G. W. Greenlees, Optical isotopic shifts and hyperfine splittings for Yb, Phys. Rev. A 20, 239 (1979).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 129,
+      "citationAsExtracted": "[129] A. P. Mishra and T. Balasubramanian, Radiative lifetimes of the first excited 3 Po2,0 metastable levels in Kr I, Xe I, Yb I and Hg-like atoms, J. Quant. Spectrosc. Radiat. Transf. 69, 769 (2001).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "T4.Gamma_per_s_num",
+        "T4.lifetime_ns",
+        "T4.linewidth_frequency_coefficient_Hz"
+      ],
+      "resolvedSourceId": "mishra-2001-jqsrt",
+      "doi": "10.1016/S0022-4073(00)00117-5",
+      "localDocuments": [
+        "references/papers/2.pdf"
+      ],
+      "status": "original-local-PDF-read;all-numbered-tables-extracted;field-specific-applicability-audited",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "followupAudit": "references/audits/source-followup-20261030.md",
+      "resolvedCurrentCitation": "Journal of Quantitative Spectroscopy and Radiative Transfer69(6),769–780(2001)"
+    },
+    {
+      "kroezeReferenceNumber": 130,
+      "citationAsExtracted": "[130] S. G. Porsev and A. Derevianko, Hyperfine quenching of the metastable 3 P0,2 states in divalent atoms, Phys. Rev. A 69, 042506 (2004).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "additional F-dependent HFI-E1 theory for3P2"
+      ],
+      "resolvedSourceId": "porsev-2004-pra",
+      "doi": "10.1103/PhysRevA.69.042506",
+      "localDocuments": [
+        "references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf"
+      ],
+      "status": "local-fulltext-indexed;field-specific-validation-still-required",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "resolvedCurrentCitation": "Phys. Rev. A 69, 042506 (2004)"
+    },
+    {
+      "kroezeReferenceNumber": 132,
+      "citationAsExtracted": "[132] S. G. Porsev, Y. G. Rakhlina, and M. G. Kozlov, Electric-dipole amplitudes, lifetimes, and polarizabilities of the low-lying levels of atomic ytterbium, Phys. Rev. A 60, 2781 (1999).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "T1.d_num",
+        "T5.d_num",
+        "T6.d_num",
+        "T7.d_num"
+      ],
+      "resolvedSourceId": "porsev-1999-pra",
+      "doi": "10.1103/PhysRevA.60.2781",
+      "localDocuments": [
+        "references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf"
+      ],
+      "status": "local-fulltext-indexed;field-specific-validation-still-required",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "resolvedCurrentCitation": "Phys. Rev. A 60, 2781 (1999)"
+    },
+    {
+      "kroezeReferenceNumber": 133,
+      "citationAsExtracted": "[133] K. B. Blagoev, V. A. Komarovskii, and N. P. Penkin, Opt. Spectrosc. 45, 832 (1978).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "T1.Gamma_per_s_num",
+        "T1.d_num",
+        "T1.lifetime_ns",
+        "T1.linewidth_frequency_coefficient_Hz",
+        "T1.oscillator_strength_f_num",
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 134,
+      "citationAsExtracted": "[134] M. L. Burshtein, Y. F. Verolainen, V. A. Komarovskii, A. L. Osherovich, and N. P. Penkin, Lifetimes of the 3 P1 level of Yb I and the 2 P3/2,1/2 level of Yb II, Opt. Spectrosc. 37, 351 (1974).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": "burshtein-1974-optspec",
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "resolvedCurrentCitation": "Optics and Spectroscopy 37, 351 (1974)"
+    },
+    {
+      "kroezeReferenceNumber": 135,
+      "citationAsExtracted": "[135] W. Lange, J. Luther, and A. Stendel, in Proceedings, 2nd Conference of European Group for Atomic Spectroscopy (Hanover, 1970) p. 31.",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "T1.Gamma_per_s_num",
+        "T1.d_num",
+        "T1.lifetime_ns",
+        "T1.linewidth_frequency_coefficient_Hz",
+        "T1.oscillator_strength_f_num",
+        "T6.Gamma_per_s_num",
+        "T6.d_num",
+        "T6.lifetime_ns",
+        "T6.linewidth_frequency_coefficient_Hz",
+        "T7.Gamma_per_s_num",
+        "T7.d_num",
+        "T7.lifetime_ns",
+        "T7.linewidth_frequency_coefficient_Hz"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 136,
+      "citationAsExtracted": "[136] V. A. Komarovskii and N. P. Penkin, Oscillator Strengths of the Spectral Lines of Tm I and Yb I, Opt. Spectrosc. 26, 483 (1969).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "T1.Gamma_per_s_num",
+        "T1.d_num",
+        "T1.lifetime_ns",
+        "T1.linewidth_frequency_coefficient_Hz",
+        "T1.oscillator_strength_f_num",
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 137,
+      "citationAsExtracted": "[137] C. J. Bowers, D. Budker, E. D. Commins, D. DeMille, S. J. Freedman, A.-T. Nguyen, S.-Q. Shang, and M. Zolotorev, Experimental investigation of excited-state lifetimes in atomic ytterbium, Phys. Rev. A 53, 3103 (1996).",
+      "citationPdfPage": 37,
+      "affectedFields": [
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num",
+        "T5.Gamma_per_s_num",
+        "T5.d_num",
+        "T5.lifetime_ns",
+        "T5.linewidth_frequency_coefficient_Hz"
+      ],
+      "resolvedSourceId": "bowers-1996-pra",
+      "doi": "10.1103/PhysRevA.53.3103",
+      "localDocuments": [
+        "references/papers/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.pdf"
+      ],
+      "status": "local-fulltext-indexed;field-specific-validation-still-required",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "resolvedCurrentCitation": "Phys. Rev. A 53, 3103 (1996)"
+    },
+    {
+      "kroezeReferenceNumber": 139,
+      "citationAsExtracted": "[139] F. H. K. Rambow and L. D. Schearer, Radiative lifetimes and alignment depolarization cross sections for YbI and II by the Hanle effect in a flowing helium system, Phys. Rev. A 14, 738 (1976).",
+      "citationPdfPage": 38,
+      "affectedFields": [
+        "T1.Gamma_per_s_num",
+        "T1.d_num",
+        "T1.lifetime_ns",
+        "T1.linewidth_frequency_coefficient_Hz",
+        "T1.oscillator_strength_f_num",
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": "rambow-1976-pra",
+      "doi": "10.1103/PhysRevA.14.738",
+      "localDocuments": [
+        "references/papers/8.pdf"
+      ],
+      "status": "original-local-PDF-read;all-numbered-tables-extracted;field-specific-applicability-audited",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "followupAudit": "references/audits/source-followup-20261030.md",
+      "resolvedCurrentCitation": "Physical Review A14(2),738–743(1976)"
+    },
+    {
+      "kroezeReferenceNumber": 140,
+      "citationAsExtracted": "[140] A. Corney, Atomic and Laser Spectroscopy (Clarendon Press, Oxford University Press, Oxford, United Kingdom, 1977).",
+      "citationPdfPage": 38,
+      "affectedFields": [
+        "T1.oscillator_strength_f_num",
+        "T2.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 141,
+      "citationAsExtracted": "[141] W. Demtröder, Laser Spectroscopy (Springer-Verlag Berlin, Heidelberg, Germany, 2008).",
+      "citationPdfPage": 38,
+      "affectedFields": [
+        "T1.d_num",
+        "T2.d_num",
+        "T5.d_num",
+        "T6.d_num",
+        "T7.d_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 142,
+      "citationAsExtracted": "[142] D. M. Brink and G. R. Satchler, Angular Momentum, Oxford Library of the Physical Sciences (Clarendon Press, Oxford, 1968).",
+      "citationPdfPage": 38,
+      "affectedFields": [
+        "T1.d_num",
+        "T2.d_num",
+        "T5.d_num",
+        "T6.d_num",
+        "T7.d_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 143,
+      "citationAsExtracted": "[143] D. A. Steck, Quantum and Atom Optics, Available online at http://steck.us/teaching (2007), revision 0.16.4, 7 May 2025.",
+      "citationPdfPage": 38,
+      "affectedFields": [
+        "T1.d_num",
+        "T2.d_num",
+        "T5.d_num",
+        "T6.d_num",
+        "T7.d_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 144,
+      "citationAsExtracted": "[144] P. Barakhshan, A. Marrs, A. Bhosale, B. Arora, R. Eigenmann, and M. S. Safronova, Portal for High-Precision Atomic Data and Computation (version 2.0), University of Delaware, Newark, DE, USA. https://www.udel.edu/atom (2022), accessed May 25, 2025. Original data source cited where available.",
+      "citationPdfPage": 38,
+      "affectedFields": [
+        "T1.d_num",
+        "T2.d_num",
+        "T5.d_num",
+        "T6.d_num",
+        "T7.d_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 172,
+      "citationAsExtracted": "[172] W.-L. Wang and X.-Y. Xu, A novel method to measure the isotope shifts and hyperfine splittings of all ytterbium isotopes for a 399-nm transition, Chin. Phys. B 19, 123202 (2010).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 173,
+      "citationAsExtracted": "[173] A. Banerjee, U. D. Rapol, D. Das, A. Krishna, and V. Natarajan, Precise measurements of UV atomic lines: Hyperfine structure and isotope shifts in the 398.8 nm line of Yb, Eur. Lett. 63, 340 (2003).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 174,
+      "citationAsExtracted": "[174] R. Zinkstok, E. J. van Duijn, S. Witte, and W. Hogervorst, Hyperfine structure and isotope shift of transitions in Yb I using UV and deep-UV cw laser light and the angular distribution of fluorescence radiation, J. Phys. B Mol. Opt. Phys. 35, 305 (2002).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 175,
+      "citationAsExtracted": "[175] T. Loftus, J. R. Bochinski, and T. W. Mossberg, Optical double-resonance cooled-atom spectroscopy, Phys. Rev. A 63, 023402 (2001).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 176,
+      "citationAsExtracted": "[176] K. Deilamian, J. D. Gillaspy, and D. E. Kelleher, Isotope shifts and hyperfine splittings of the 398.8-nm Yb I line, J. Opt. Soc. Am. B 10, 789 (1993).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 177,
+      "citationAsExtracted": "[177] R. W. Berends and L. Maleki, Hyperfine structure and isotope shifts of transitions in neutral and singly ionized ytterbium, J. Opt. Soc. Am. B 9, 332 (1992).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³S₁.A",
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 178,
+      "citationAsExtracted": "[178] H. Liening, Level-crossing-spectroscopy with additional optical pumping in the ground state, Zeitschrift für Phys. A Atoms Nucl. 320, 363 (1985).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 179,
+      "citationAsExtracted": "[179] P. Grundevik, M. Gustavsson, A. Rosén, and S. Rydberg, Analysis of the isotope shifts and hyperfine structure in the 3 988 Å (6s6p 1 P1 ↔ 6s2 1 S0 ) YbI line, Zeitschrift für Phys. A Atoms Nucl. 292, 307 (1979).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "¹P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 181,
+      "citationAsExtracted": "[181] D. M. Jones, F. van Kann, and J. J. McFerran, Intercombination line frequencies in 171 Yb validated with the clock transition, Appl. Opt. 62, 3932 (2023).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "T2.d_num",
+        "T2.energy_eV",
+        "T2.frequency_THz",
+        "T2.oscillator_strength_f_num",
+        "T2.wavelength_air_nm",
+        "T2.wavelength_vac_nm",
+        "yb171-6s6p-3p1.energy_cm",
+        "yb171-6s6p-3p1.energy_eV",
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 182,
+      "citationAsExtracted": "[182] P. E. Atkinson, J. S. Schelfhout, and J. J. McFerran, Hyperfine constants and line separations for the 1 S0 -3 P1 inter- combination line in neutral ytterbium with sub-Doppler resolution, Phys. Rev. A 100, 042505 (2019).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "T2.d_num",
+        "T2.energy_eV",
+        "T2.frequency_THz",
+        "T2.oscillator_strength_f_num",
+        "T2.wavelength_air_nm",
+        "T2.wavelength_vac_nm",
+        "yb171-6s6p-3p1.energy_cm",
+        "yb171-6s6p-3p1.energy_eV",
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 183,
+      "citationAsExtracted": "[183] J. J. McFerran, An inverted crossover resonance aiding laser cooling of 171 Yb, J. Opt. Soc. Am. B 33, 1278 (2016).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 184,
+      "citationAsExtracted": "[184] K. Pandey, A. K. Singh, P. V. K. Kumar, M. V. Suryanarayana, and V. Natarajan, Isotope shifts and hyperfine structure in the 555.8-nm 1 S0 →3 P1 line of Yb, Phys. Rev. A 80, 022518 (2009).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "T2.d_num",
+        "T2.energy_eV",
+        "T2.frequency_THz",
+        "T2.oscillator_strength_f_num",
+        "T2.wavelength_air_nm",
+        "T2.wavelength_vac_nm",
+        "yb171-6s6p-3p1.energy_cm",
+        "yb171-6s6p-3p1.energy_eV",
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 185,
+      "citationAsExtracted": "[185] W.-G. Jin, T. Horiguchi, M. Wakasugi, T. Hasegawa, and W. Yang, Systematic Study of Isotope Shiftsand Hyperfine Structures in Yb I by Atomic-Beam Laser Spectroscopy, J. Phys. Soc. Jpn. 60, 2896 (1991).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 186,
+      "citationAsExtracted": "[186] F. Buchinger, A. Mueller, B. Schinzler, K. Wendt, C. Ekström, W. Klempt, and R. Neugart, Fast-beam laser spec- troscopy on metastable atoms applied to neutron-deficient ytterbium isotopes, Nucl. Instruments Methods Phys. Res. 202, 159 (1982).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 187,
+      "citationAsExtracted": "[187] J. H. Broadhurst, M. E. Cage, D. L. Clark, G. W. Greenlees, J. A. R. Griffith, and G. R. Isaak, High resolution measurements of isotope shifts and hyperfine splittings for ytterbium using a CW tunable laser, J. Phys. B Mol. Phys. 7, L513 (1974).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 188,
+      "citationAsExtracted": "[188] G. Wandel, Doppelresonanzexperimente zur Untersuchung der Hyperfeinstruktur des 6s6p 3 P1 -Zustandes von 171 Yb und 173 Yb, Zeitschrift für Phys. A Hadron. Nucl. 231, 434 (1970).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 189,
+      "citationAsExtracted": "[189] M. Baumann, H. Liening, and G. Wandel, Die Hyperfeinstruktur des 6s6p 3 P1 -Zustandes von 171 Yb und 173 Yb, Zeitschrift für Phys. A Hadron. Nucl. 221, 245 (1969).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³P₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 190,
+      "citationAsExtracted": "[190] H. Qiao, C.-Y. Sun, C.-Q. Peng, Q.-C. Qi, C.-C. Zhao, M. Zhou, and X.-Y. Xu, Frequency measurement of 6s6p 3 P0,2 -6s7s 3 S1 transitions in ultracold 171 Yb atoms referenced to local optical clock, Results Phys. 48, 106439 (2023).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "T6.d_num",
+        "T6.energy_eV",
+        "T6.frequency_THz",
+        "T6.wavelength_air_nm",
+        "T6.wavelength_vac_nm",
+        "T7.d_num",
+        "T7.energy_eV",
+        "T7.frequency_THz",
+        "T7.wavelength_air_nm",
+        "T7.wavelength_vac_nm",
+        "³P₂.A",
+        "³S₁.A"
+      ],
+      "resolvedSourceId": "qiao-2023-rinp",
+      "doi": "10.1016/j.rinp.2023.106439",
+      "localDocuments": [
+        "references/papers/1.pdf"
+      ],
+      "status": "original-local-PDF-read;all-numbered-tables-extracted;field-specific-applicability-audited",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "followupAudit": "references/audits/source-followup-20261030.md",
+      "resolvedCurrentCitation": "Results in Physics 48, 106439 (2023)"
+    },
+    {
+      "kroezeReferenceNumber": 191,
+      "citationAsExtracted": "[191] A. K. Singh, Hyperfine Structure-Measurement in Alkali-metal Atoms and Ytterbium Atom, Ph.D. thesis, Indian Insti- tute of Science, Bengaluru (2014).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³P₂.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 192,
+      "citationAsExtracted": "[192] T. Wakui, W.-G. Jin, K. Hasegawa, H. Uematsu, T. Minowa, and H. Katsuragawa, High-Resolution Diode-Laser Spectroscopy of the Rare-Earth Elements, J. Phys. Soc. Jpn. 72, 2219 (2003).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³P₂.A",
+        "³S₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 193,
+      "citationAsExtracted": "[193] J. Maier, C. S. Kischkel, and M. Baumann, Hyperfine structure and isotope shift of some even parity levels in the YbI spectrum, Zeitschrift für Phys. D Atoms Mol. Clust. 21, 145 (1991).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³P₂.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 194,
+      "citationAsExtracted": "[194] C. Zhao, Q. Qi, C. Sun, C. Peng, T. Jin, T. Zhang, S. Lei, Y. Xia, S. Feng, and X. Xu, Absolute frequency measurements of the 6s6p 3 P0 -5d6s 3 D1 transitions in 170,171,172,173,174,176 Yb by modulation transfer spectroscopy, Phys. Rev. A 110, 042816 (2024).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "T5.d_num",
+        "T5.energy_eV",
+        "T5.frequency_THz",
+        "T5.wavelength_air_nm",
+        "T5.wavelength_vac_nm",
+        "³D₁.A"
+      ],
+      "resolvedSourceId": "zhao-2024-pra",
+      "doi": "10.1103/PhysRevA.110.042816",
+      "localDocuments": [
+        "references/papers/6.pdf"
+      ],
+      "status": "original-local-PDF-read;all-numbered-tables-extracted;field-specific-applicability-audited",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "followupAudit": "references/audits/source-followup-20261030.md",
+      "resolvedCurrentCitation": "Phys. Rev. A 110, 042816 (2024)"
+    },
+    {
+      "kroezeReferenceNumber": 195,
+      "citationAsExtracted": "[195] K. Beloy, J. A. Sherman, N. D. Lemke, N. Hinkley, C. W. Oates, and A. D. Ludlow, Determination of the 5d6s 3 D1 state lifetime and blackbody-radiation clock shift in Yb, Phys. Rev. A 86, 051404 (2012).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num",
+        "T5.Gamma_per_s_num",
+        "T5.d_num",
+        "T5.lifetime_ns",
+        "T5.linewidth_frequency_coefficient_Hz",
+        "³D₁.A"
+      ],
+      "resolvedSourceId": "beloy-2012-pra",
+      "doi": "10.1103/PhysRevA.86.051404",
+      "localDocuments": [
+        "references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf"
+      ],
+      "status": "local-fulltext-indexed;field-specific-validation-still-required",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "resolvedCurrentCitation": "Phys. Rev. A 86, 051404(R) (2012)"
+    },
+    {
+      "kroezeReferenceNumber": 196,
+      "citationAsExtracted": "[196] M. Baumann, M. Braun, A. Gaiser, and H. Liening, Radiative lifetimes and gJ factors of low-lying even-parity levels in the Yb I spectrum, J. Phys. B Mol. Phys. 18, L601 (1985).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "T6.Gamma_per_s_num",
+        "T6.d_num",
+        "T6.lifetime_ns",
+        "T6.linewidth_frequency_coefficient_Hz",
+        "T7.Gamma_per_s_num",
+        "T7.d_num",
+        "T7.lifetime_ns",
+        "T7.linewidth_frequency_coefficient_Hz"
+      ],
+      "resolvedSourceId": "baumann-1985-jpb",
+      "doi": "10.1088/0022-3700/18/17/001",
+      "localDocuments": [
+        "references/papers/3.pdf"
+      ],
+      "status": "original-local-PDF-read;all-numbered-tables-extracted;field-specific-applicability-audited",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "followupAudit": "references/audits/source-followup-20261030.md",
+      "resolvedCurrentCitation": "J. Phys. B: Atom. Mol. Phys. 18, L601 (1985)"
+    },
+    {
+      "kroezeReferenceNumber": 197,
+      "citationAsExtracted": "[197] H. Qiao, L. Liu, M. Zhou, L. Luo, and X. Xu, Investigation of the 6s6p 3 P2 -6s7s s S1 transition of ytterbium atoms with modulation-transfer spectroscopy, Appl. Phys. Lett. 122, 3 (2023).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "³S₁.A"
+      ],
+      "resolvedSourceId": "qiao-2023-apl",
+      "doi": "10.1063/5.0155776",
+      "localDocuments": [
+        "references/papers/4.pdf"
+      ],
+      "status": "original-local-PDF-read;all-numbered-tables-extracted;field-specific-applicability-audited",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "followupAudit": "references/audits/source-followup-20261030.md",
+      "resolvedCurrentCitation": "Applied Physics Letters122(22),224002(2023)"
+    },
+    {
+      "kroezeReferenceNumber": 198,
+      "citationAsExtracted": "[198] M. Zhou, S. Zhang, L. Luo, and X. Xu, Characterization of ytterbium resonance lines at 649 nm with modulation- 40 R. M. Kroeze, S. L. Kristensen, S. Pucher REFERENCES transfer spectroscopy, Phys. Rev. A 101, 062506 (2020).",
+      "citationPdfPage": 39,
+      "affectedFields": [
+        "T6.d_num",
+        "T6.energy_eV",
+        "T6.frequency_THz",
+        "T6.wavelength_air_nm",
+        "T6.wavelength_vac_nm",
+        "³S₁.A"
+      ],
+      "resolvedSourceId": "zhou-2020-pra",
+      "doi": "10.1103/PhysRevA.101.062506",
+      "localDocuments": [
+        "references/papers/5.pdf"
+      ],
+      "status": "original-local-PDF-read;all-numbered-tables-extracted;field-specific-applicability-audited",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "followupAudit": "references/audits/source-followup-20261030.md",
+      "resolvedCurrentCitation": "Phys. Rev. A 101, 062506 (2020)"
+    },
+    {
+      "kroezeReferenceNumber": 199,
+      "citationAsExtracted": "[199] C. Schulz, E. Arnold, W. Borchers, W. Neu, R. Neugart, M. Neuroth, E. W. Otten, M. Scherf, K. Wendt, P. Lievens, Y. A. Kudryavtsev, V. S. Letokhov, V. I. Mishin, and V. V. Petrunin, Resonance ionization spectroscopy on a fast atomic ytterbium beam, J. Phys. B Mol. Opt. Phys. 24, 4831 (1991).",
+      "citationPdfPage": 40,
+      "affectedFields": [
+        "³S₁.A"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 210,
+      "citationAsExtracted": "[210] Y. Takasu, K. Komori, K. Honda, M. Kumakura, T. Yabuzaki, and Y. Takahashi, Photoassociation Spectroscopy of Laser-Cooled Ytterbium Atoms, Phys. Rev. Lett. 93, 123202 (2004).",
+      "citationPdfPage": 40,
+      "affectedFields": [
+        "T1.Gamma_per_s_num",
+        "T1.d_num",
+        "T1.lifetime_ns",
+        "T1.linewidth_frequency_coefficient_Hz",
+        "T1.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 211,
+      "citationAsExtracted": "[211] T. Andersen, O. Poulsen, P. S. Ramanujam, and A. P. Petkov, Lifetimes of some excited states in the rare earths: La ii, Ce ii, Pr ii, Nd ii, Sm ii, Yb i, Yb ii, and Lu ii, Sol. Phys. 44, 257 (1975).",
+      "citationPdfPage": 40,
+      "affectedFields": [
+        "T1.Gamma_per_s_num",
+        "T1.d_num",
+        "T1.lifetime_ns",
+        "T1.linewidth_frequency_coefficient_Hz",
+        "T1.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 212,
+      "citationAsExtracted": "[212] M. Baumann and G. Wandel, Lifetimes of the excited states (6s6p) 1 P1 and (6s6p) 3 P1 of ytterbium, Phys. Lett. 22, 283 (1966).",
+      "citationPdfPage": 40,
+      "affectedFields": [
+        "T1.Gamma_per_s_num",
+        "T1.d_num",
+        "T1.lifetime_ns",
+        "T1.linewidth_frequency_coefficient_Hz",
+        "T1.oscillator_strength_f_num",
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 213,
+      "citationAsExtracted": "[213] J. L. Siegel, W. F. McGrew, Y. S. Hassan, C.-C. Chen, K. Beloy, T. Grogan, X. Zhang, and A. D. Ludlow, Excited-Band Coherent Delocalization for Improved Optical Lattice Clock Performance, Phys. Rev. Lett. 132, 133201 (2024).",
+      "citationPdfPage": 40,
+      "affectedFields": [
+        "T3.Gamma_per_s_num",
+        "T3.lifetime_ns",
+        "T3.linewidth_frequency_coefficient_Hz"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 214,
+      "citationAsExtracted": "[214] C.-Y. Xu, J. Singh, J. C. Zappala, K. G. Bailey, M. R. Dietrich, J. P. Greene, W. Jiang, N. D. Lemke, Z.-T. Lu, P. Mueller, and T. P. O’Connor, Measurement of the Hyperfine Quenching Rate of the Clock Transition in 171 Yb, Phys. Rev. Lett. 113, 033003 (2014).",
+      "citationPdfPage": 40,
+      "affectedFields": [
+        "T3.Gamma_per_s_num",
+        "T3.lifetime_ns",
+        "T3.linewidth_frequency_coefficient_Hz"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 215,
+      "citationAsExtracted": "[215] J. E. Golub, Y. S. Bai, and T. W. Mossberg, Radiative and dynamical properties of homogeneously prepared atomic samples, Phys. Rev. A 37, 119 (1988).",
+      "citationPdfPage": 40,
+      "affectedFields": [
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 216,
+      "citationAsExtracted": "[216] M. Gustavsson, H. Lundberg, L. Nilsson, and S. Svanberg, Lifetime measurements for excited states of rare-earth atoms using pulse modulation of a cw dye-laser beam, J. Opt. Soc. Am. 69, 984 (1979).",
+      "citationPdfPage": 40,
+      "affectedFields": [
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 217,
+      "citationAsExtracted": "[217] W. Gornik, D. Kaiser, W. Lange, J. Luther, and H.-H. Schulz, Quantum beats under pulsed dye laser excitation, Opt. Commun. 6, 327 (1972).",
+      "citationPdfPage": 40,
+      "affectedFields": [
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    },
+    {
+      "kroezeReferenceNumber": 218,
+      "citationAsExtracted": "[218] B. Budick and J. Snir, Hyperfine-Structure Anomalies of Stable Ytterbium Isotopes, Phys. Rev. A 1, 545 (1970).",
+      "citationPdfPage": 40,
+      "affectedFields": [
+        "T2.Gamma_per_s_num",
+        "T2.d_num",
+        "T2.lifetime_ns",
+        "T2.linewidth_frequency_coefficient_Hz",
+        "T2.oscillator_strength_f_num"
+      ],
+      "resolvedSourceId": null,
+      "doi": null,
+      "localDocuments": [],
+      "status": "primary-fulltext-or-identity-still-needed",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+    }
+  ],
+  "followupCheckedAt": "2026-10-30"
+}

@@ -1,0 +1,146 @@
+{
+  "paperNumber": 4,
+  "sourceId": "qiao-2023-apl",
+  "doi": "10.1063/5.0155776",
+  "context": "Yb isotope MTS in Ne hollow-cathode lamp; absolute pressure correction estimated; reference-isotope174; natural width not inferred from broadened MTS",
+  "tables": 7,
+  "pdf": "references/papers/4.pdf",
+  "sha256": "e2d263f0b1762d45b04bdbba8c3adc4fdf4ff098427054b4f8124f624e295df4",
+  "table": "TableIII",
+  "pdfPage": 5,
+  "printedPage": "224002-4",
+  "columns": [
+    "this_work_frequency",
+    "reference11_frequency",
+    "difference"
+  ],
+  "note": "",
+  "rows": [
+    {
+      "label": "170Yb",
+      "referenceInPaper": "This work and[11]",
+      "evidenceKind": "comparison-quoted-from-reference",
+      "cells": {
+        "this_work_frequency": {
+          "printed": "389259634.0(35)",
+          "unit": "MHz",
+          "value": "389259634.0",
+          "uncertainty": "3.5",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "reference11_frequency": {
+          "printed": "389259442(33)",
+          "unit": "MHz",
+          "value": "389259442",
+          "uncertainty": "33",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "This work and[11]"
+        },
+        "difference": {
+          "printed": "192(33)",
+          "unit": "MHz",
+          "value": "192",
+          "uncertainty": "33",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "This work and[11]"
+        }
+      }
+    },
+    {
+      "label": "172Yb",
+      "referenceInPaper": "This work and[11]",
+      "evidenceKind": "comparison-quoted-from-reference",
+      "cells": {
+        "this_work_frequency": {
+          "printed": "389260184.2(32)",
+          "unit": "MHz",
+          "value": "389260184.2",
+          "uncertainty": "3.2",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "reference11_frequency": {
+          "printed": "389259973(24)",
+          "unit": "MHz",
+          "value": "389259973",
+          "uncertainty": "24",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "This work and[11]"
+        },
+        "difference": {
+          "printed": "211(24)",
+          "unit": "MHz",
+          "value": "211",
+          "uncertainty": "24",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "This work and[11]"
+        }
+      }
+    },
+    {
+      "label": "174Yb",
+      "referenceInPaper": "This work and[11]",
+      "evidenceKind": "comparison-quoted-from-reference",
+      "cells": {
+        "this_work_frequency": {
+          "printed": "389260605.8(32)",
+          "unit": "MHz",
+          "value": "389260605.8",
+          "uncertainty": "3.2",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "reference11_frequency": {
+          "printed": "389260412(24)",
+          "unit": "MHz",
+          "value": "389260412",
+          "uncertainty": "24",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "This work and[11]"
+        },
+        "difference": {
+          "printed": "194(24)",
+          "unit": "MHz",
+          "value": "194",
+          "uncertainty": "24",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "This work and[11]"
+        }
+      }
+    },
+    {
+      "label": "176Yb",
+      "referenceInPaper": "This work and[11]",
+      "evidenceKind": "comparison-quoted-from-reference",
+      "cells": {
+        "this_work_frequency": {
+          "printed": "389261029.9(32)",
+          "unit": "MHz",
+          "value": "389261029.9",
+          "uncertainty": "3.2",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        },
+        "reference11_frequency": {
+          "printed": "389260849(23)",
+          "unit": "MHz",
+          "value": "389260849",
+          "uncertainty": "23",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "This work and[11]"
+        },
+        "difference": {
+          "printed": "181(23)",
+          "unit": "MHz",
+          "value": "181",
+          "uncertainty": "23",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "This work and[11]"
+        }
+      }
+    }
+  ],
+  "rawPageText": "paper-4-page-5.txt",
+  "renderedVerified": "rendered/paper-4-p5.png"
+}

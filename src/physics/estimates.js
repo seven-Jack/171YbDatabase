@@ -3,12 +3,12 @@ import { R_INF, E_I_CM, A0_UM, finiteNumber, positiveNumber, PhysicsInputError }
 export const ESTIMATE_MODEL = Object.freeze({
   id: 'legacy-single-channel-scaling-v1',
   evidenceKind: 'simplified-estimate',
-  reference: 'Retained index.html model at 2e2e9d5; source and validity pending independent review',
+  reference: 'Legacy index.html scaling at 2e2e9d5; a0 micrometre conversion corrected in formula 1.0.1; model validity pending independent review',
   scope: 'Illustrative quantum-defect and power-law scaling only; not state-resolved MQDT or experimental prediction',
   nValues: Object.freeze([50, 55, 60, 65, 70, 75, 80]),
 });
 
-/** Retained formatted table API. lower_cm was unused in the original model. */
+/** Formatted scaling API; radius is a hydrogenic size-scale estimate, not an MQDT expectation. lower_cm remains unused. */
 export function calcRydberg(n, delta, lower_cm, config = {}) {
   finiteNumber(n, 'n');
   finiteNumber(delta, 'delta');
@@ -48,7 +48,11 @@ export function createRydbergStateEstimates(ns = ESTIMATE_MODEL.nValues, config 
 }
 
 export function generateRydbergStates(config = {}) {
-  return createRydbergStateEstimates(config.ns_values ?? ESTIMATE_MODEL.nValues, config.constants ?? config);
+  const rows=createRydbergStateEstimates(config.ns_values ?? ESTIMATE_MODEL.nValues, config.constants ?? config);
+  const suppressed=Object.keys(config.publicOutputPolicy||{});
+  if (!suppressed.length) return rows;
+  return rows.map(row=>({...row,...Object.fromEntries(suppressed.map(field=>[field,null])),
+    source:'历史单通道示意；指定171Yb分支未验证；寿命/C₆/阻塞半径锚点已隔离'}));
 }
 
 /** Retained R1–R7 view-model formatting; source records are injected by the data layer. */
@@ -60,7 +64,7 @@ export function buildRydbergTransitions(qcRows) {
     const upper_full = m ? `6s${n}${m[2].toLowerCase()} ³${m[2]}${m[3]}` : r.upper;
     return { id: r.id, lower: r.lower, upper: r.upper, upper_full, label: r.label, n,
       energy_cm: r.energy_cm, wavelength_vac_nm: r.wavelength_vac_nm, frequency_THz: r.frequency_THz,
-      excitation: '单光子', rab_freq: r.classification === '强' ? '2π × 1–10 MHz' : r.classification === '弱' ? '2π × 100 kHz–1 MHz' : '2π × <10 kHz (估计)',
+      excitation: '单光子', rab_freq: '需指定通道、功率与束腰',
       multipole: r.multipole, classification: r.classification,
       forbidden_reason: r.forbidden_reason || r.selection_check || '—', source: r.source, color: r.color };
   });

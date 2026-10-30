@@ -28,121 +28,393 @@
       "category": "core",
       "quantities": {
         "wavelength_vac_nm": {
-          "value": 398.9108,
+          "value": 398.9108443,
           "unit": "nm",
           "quantity": "wavelength_vac_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, wavelength_vac",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 4e-07,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-08:wavelength_vac",
+            "sourceDecimal": "398.9108443",
+            "sourceUncertaintyDecimal": "4E-7",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              66,
+              104,
+              105,
+              106
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              37
+            ],
+            "sourceDependencyRecordIds": [
+              "table-08:frequency_nu",
+              "table-01:c"
+            ]
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "398.9108443(4)"
         },
         "wavelength_air_nm": {
-          "value": 398.8021,
+          "value": 398.80207,
           "unit": "nm",
           "quantity": "wavelength_air_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, wavelength_air",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 4e-06,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-08:wavelength_air",
+            "sourceDecimal": "398.802070",
+            "sourceUncertaintyDecimal": "0.000004",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              66,
+              104,
+              105,
+              106
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              99,
+              100,
+              101,
+              102
+            ],
+            "sourceEquations": [
+              39,
+              40
+            ],
+            "sourceDependencyRecordIds": [
+              "table-08:wavelength_vac"
+            ],
+            "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "398.802070(4)"
         },
         "frequency_THz": {
-          "value": 751.52747,
+          "value": 751.5274711,
           "unit": "THz",
           "quantity": "frequency_THz",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, frequency_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 8e-07,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-weighted-recommendation",
+            "sourceRecord": "table-08:frequency_nu",
+            "sourceDecimal": "751.5274711",
+            "sourceUncertaintyDecimal": "8E-7",
+            "sourceReferenceNumbers": [
+              66,
+              104,
+              105,
+              106
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": 6.3
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "751.5274711(8)"
         },
         "energy_eV": {
-          "value": 3.108068,
+          "value": 3.1080678856,
           "unit": "eV",
           "quantity": "energy_eV",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, transition_energy",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 3.2e-09,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-08:transition_energy",
+            "sourceDecimal": "3.1080678856",
+            "sourceUncertaintyDecimal": "3.2E-9",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              66,
+              104,
+              105,
+              106
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              35,
+              36
+            ],
+            "sourceDependencyRecordIds": [
+              "table-08:frequency_nu",
+              "table-01:h",
+              "table-01:e"
+            ]
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "3.1080678856(32)"
         },
         "Gamma_per_s_num": {
-          "value": 183000000,
+          "value": 183000000.0,
           "unit": "s^-1",
           "quantity": "Gamma_per_s_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, total_decay_rate",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 400000.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-08:total_decay_rate",
+            "sourceDecimal": "183000000.0",
+            "sourceUncertaintyDecimal": "400000",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              133,
+              135,
+              136,
+              139,
+              210,
+              211,
+              212
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46
+            ],
+            "sourceDependencyRecordIds": [
+              "table-08:upper_state_lifetime"
+            ],
+            "historicalLifetimeBoundary": "RambowTableI natural-mixture errors are maximum confidence limits,excludeHFS correction; not171-resolved1sigma; other compilation inputs still not all primary-rechecked"
+          },
+          "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+          "legacyText": "183.0(4)e6"
         },
         "lifetime_ns": {
           "value": 5.464,
           "unit": "ns",
           "quantity": "lifetime_ns",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, upper_state_lifetime",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 0.011,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-weighted-recommendation",
+            "sourceRecord": "table-08:upper_state_lifetime",
+            "sourceDecimal": "5.464",
+            "sourceUncertaintyDecimal": "0.011",
+            "sourceReferenceNumbers": [
+              133,
+              135,
+              136,
+              139,
+              210,
+              211,
+              212
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": 2.3,
+            "temperature_K": null,
+            "BBRTemperature_K": null,
+            "historicalLifetimeBoundary": "RambowTableI natural-mixture errors are maximum confidence limits,excludeHFS correction; not171-resolved1sigma; other compilation inputs still not all primary-rechecked"
+          },
+          "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+          "legacyText": "5.464(11)"
         },
         "oscillator_strength_f_num": {
           "value": 1.3098,
           "unit": "dimensionless",
           "quantity": "oscillator_strength_f_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, oscillator_strength",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 0.0027,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-08:oscillator_strength",
+            "sourceDecimal": "1.3098",
+            "sourceUncertaintyDecimal": "0.0027",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              66,
+              104,
+              105,
+              106,
+              133,
+              135,
+              136,
+              139,
+              210,
+              211,
+              212
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              140
+            ],
+            "sourceEquations": [
+              50
+            ],
+            "sourceDependencyRecordIds": [
+              "table-08:frequency_nu",
+              "table-08:upper_state_lifetime",
+              "table-01:epsilon0",
+              "table-01:electron_mass",
+              "table-01:c",
+              "table-01:e"
+            ]
+          },
+          "convention": null,
+          "legacyText": "1.3098(27)"
         },
         "d_num": {
           "value": 4.147,
           "unit": "e*a0",
           "quantity": "d_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 18 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, dipole_reduced_J_Racah",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "J-reduced"
+          "reviewStatus": "original-source-located",
+          "uncertainty": 0.004,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+            "sourceRecord": "table-08:dipole_reduced_J_Racah",
+            "sourceDecimal": "4.147",
+            "sourceUncertaintyDecimal": "0.004",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              66,
+              104,
+              105,
+              106,
+              132,
+              133,
+              135,
+              136,
+              139,
+              210,
+              211,
+              212
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              141,
+              142,
+              143,
+              144
+            ],
+            "sourceEquations": [
+              52,
+              54
+            ],
+            "sourceDependencyRecordIds": [
+              "table-08:frequency_nu",
+              "table-08:upper_state_lifetime",
+              "table-01:epsilon0",
+              "table-01:hbar",
+              "table-01:c",
+              "table-01:e",
+              "table-01:a0",
+              "table-08:branching_ratio:1P1->1S0"
+            ],
+            "definition": "<Jg||er||Je>_R Racah-Wigner, Eq54; includes adopted theoretical branching ratios",
+            "historicalLifetimeBoundary": "RambowTableI natural-mixture errors are maximum confidence limits,excludeHFS correction; not171-resolved1sigma; other compilation inputs still not all primary-rechecked"
+          },
+          "convention": "J-reduced",
+          "legacyText": "4.147(4)"
         },
         "linewidth_frequency_coefficient_Hz": {
-          "value": 29130000,
+          "value": 29130000.0,
           "unit": "Hz",
-          "quantity": "legacy_linewidth_frequency_coefficient",
+          "quantity": "ordinary_frequency_FWHM",
           "sourceId": "ref-01",
-          "sourceLocator": null,
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, linewidth_FWHM_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "definition-needs-review",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "reviewStatus": "conflict-unresolved",
+          "uncertainty": 60000.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-08:linewidth_FWHM_nu",
+            "sourceDecimal": "29.13",
+            "sourceUncertaintyDecimal": "0.06",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              133,
+              135,
+              136,
+              139,
+              210,
+              211,
+              212
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46,
+              47
+            ],
+            "reviewFlags": [
+              "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+            ],
+            "sourceDependencyRecordIds": [
+              "table-08:upper_state_lifetime"
+            ],
+            "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi"
+          },
+          "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
           "legacyText": "2π × 29.13(6) MHz"
         }
       },
@@ -153,16 +425,16 @@
             "upper": "¹P₁",
             "lower": "¹S₀",
             "label": "蓝 MOT / Zeeman slower",
-            "linewidth_FWHM": "2π × 29.13(6) MHz",
+            "linewidth_FWHM": "29.13(6) MHz",
             "Gamma_per_s": "1.83×10⁸",
             "Isat": "59.97 mW/cm²",
-            "branching": "≈1 (cycling, 漏率 ~6×10⁻⁸)",
+            "branching": "≈1 (cycling, 漏率 ~6×10⁻⁸)（理论分支比；非完整实测）",
             "multipole": "E1",
             "classification": "强",
             "forbidden_reason": "—",
             "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
             "use": "一级冷却、Zeeman 慢化、原子成像",
-            "source": "Kroeze 2025 Tbl.18",
+            "source": "Kroeze et al.2026, arXiv2509.04416v2 Table8 p23",
             "color": "#34d399"
           },
           "quantityFields": {
@@ -190,121 +462,406 @@
       "category": "core",
       "quantities": {
         "wavelength_vac_nm": {
-          "value": 555.8007,
+          "value": 555.80068663,
           "unit": "nm",
           "quantity": "wavelength_vac_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, wavelength_vac",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 1.3e-07,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-10:wavelength_vac",
+            "sourceDecimal": "555.80068663",
+            "sourceUncertaintyDecimal": "1.3E-7",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              181,
+              182,
+              184
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              37
+            ],
+            "sourceDependencyRecordIds": [
+              "table-10:frequency_nu",
+              "table-01:c"
+            ]
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "555.80068663(13)"
         },
         "wavelength_air_nm": {
-          "value": 555.6519,
+          "value": 555.651877,
           "unit": "nm",
           "quantity": "wavelength_air_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, wavelength_air",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 6e-06,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-10:wavelength_air",
+            "sourceDecimal": "555.651877",
+            "sourceUncertaintyDecimal": "0.000006",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              181,
+              182,
+              184
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              99,
+              100,
+              101,
+              102
+            ],
+            "sourceEquations": [
+              39,
+              40
+            ],
+            "sourceDependencyRecordIds": [
+              "table-10:wavelength_vac"
+            ],
+            "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "555.651877(6)"
         },
         "frequency_THz": {
-          "value": 539.38843,
+          "value": 539.38842684,
           "unit": "THz",
           "quantity": "frequency_THz",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, frequency_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 1.2e-07,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-weighted-recommendation",
+            "sourceRecord": "table-10:frequency_nu",
+            "sourceDecimal": "539.38842684",
+            "sourceUncertaintyDecimal": "1.2E-7",
+            "sourceReferenceNumbers": [
+              181,
+              182,
+              184
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": 2.9
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "539.38842684(12)"
         },
         "energy_eV": {
-          "value": 2.230731,
+          "value": 2.230731293,
           "unit": "eV",
           "quantity": "energy_eV",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, transition_energy",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 5e-10,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-10:transition_energy",
+            "sourceDecimal": "2.2307312930",
+            "sourceUncertaintyDecimal": "5E-10",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              181,
+              182,
+              184
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              35,
+              36
+            ],
+            "sourceDependencyRecordIds": [
+              "table-10:frequency_nu",
+              "table-01:h",
+              "table-01:e"
+            ]
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "2.2307312930(5)"
         },
         "Gamma_per_s_num": {
-          "value": 1146000,
+          "value": 1146000.0,
           "unit": "s^-1",
           "quantity": "Gamma_per_s_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, total_decay_rate",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 2500.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-10:total_decay_rate",
+            "sourceDecimal": "1146000.0000",
+            "sourceUncertaintyDecimal": "2500",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              133,
+              134,
+              136,
+              137,
+              139,
+              195,
+              212,
+              215,
+              216,
+              217,
+              218
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46
+            ],
+            "sourceDependencyRecordIds": [
+              "table-10:upper_state_lifetime"
+            ],
+            "historicalLifetimeBoundary": "RambowTableI natural-mixture errors are maximum confidence limits,excludeHFS correction; not171-resolved1sigma; other compilation inputs still not all primary-rechecked"
+          },
+          "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+          "legacyText": "1.1460(25)e6"
         },
         "lifetime_ns": {
           "value": 872.6,
           "unit": "ns",
           "quantity": "lifetime_ns",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, upper_state_lifetime",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 1.9,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-weighted-recommendation",
+            "sourceRecord": "table-10:upper_state_lifetime",
+            "sourceDecimal": "872.6",
+            "sourceUncertaintyDecimal": "1.9",
+            "sourceReferenceNumbers": [
+              133,
+              134,
+              136,
+              137,
+              139,
+              195,
+              212,
+              215,
+              216,
+              217,
+              218
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": 1.2,
+            "temperature_K": null,
+            "BBRTemperature_K": null,
+            "historicalLifetimeBoundary": "RambowTableI natural-mixture errors are maximum confidence limits,excludeHFS correction; not171-resolved1sigma; other compilation inputs still not all primary-rechecked"
+          },
+          "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+          "legacyText": "872.6(19)"
         },
         "oscillator_strength_f_num": {
           "value": 0.015923,
           "unit": "dimensionless",
           "quantity": "oscillator_strength_f_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 11 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, oscillator_strength",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 3.5e-05,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-10:oscillator_strength",
+            "sourceDecimal": "0.015923",
+            "sourceUncertaintyDecimal": "0.000035",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              133,
+              134,
+              136,
+              137,
+              139,
+              181,
+              182,
+              184,
+              195,
+              212,
+              215,
+              216,
+              217,
+              218
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              140
+            ],
+            "sourceEquations": [
+              50
+            ],
+            "sourceDependencyRecordIds": [
+              "table-10:frequency_nu",
+              "table-10:upper_state_lifetime",
+              "table-01:epsilon0",
+              "table-01:electron_mass",
+              "table-01:c",
+              "table-01:e"
+            ]
+          },
+          "convention": null,
+          "legacyText": "0.015923(35)"
         },
         "d_num": {
-          "value": 0.543,
+          "value": 0.5398,
           "unit": "e*a0",
           "quantity": "d_num",
-          "sourceId": "internal-t2-calibration",
-          "sourceLocator": "Table 11 (original page label; not rechecked)",
-          "evidenceKind": "internal-calibration",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "J-reduced"
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, dipole_reduced_J_Racah",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 0.0006,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived-from-lifetime-frequency-Eq54",
+            "sourceRecord": "table-10:dipole_reduced_J_Racah",
+            "sourceDecimal": "0.5398",
+            "sourceUncertaintyDecimal": "0.0006",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              133,
+              134,
+              136,
+              137,
+              139,
+              181,
+              182,
+              184,
+              195,
+              212,
+              215,
+              216,
+              217,
+              218
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction. Table10 does not quote beta separately; Eq54 uses an implicit dominant/single branch, not a newly measured beta.",
+            "methodReferenceNumbers": [
+              141,
+              142,
+              143,
+              144
+            ],
+            "sourceEquations": [
+              52,
+              54
+            ],
+            "sourceDependencyRecordIds": [
+              "table-10:frequency_nu",
+              "table-10:upper_state_lifetime",
+              "table-01:epsilon0",
+              "table-01:hbar",
+              "table-01:c",
+              "table-01:e",
+              "table-01:a0"
+            ],
+            "definition": "<Jg||er||Je>_R Racah-Wigner, Eq54; includes adopted theoretical branching ratios",
+            "replacedInternalCalibration": "0.543 ea0 archived in audit baseline; rationale/artifact unavailable",
+            "historicalLifetimeBoundary": "RambowTableI natural-mixture errors are maximum confidence limits,excludeHFS correction; not171-resolved1sigma; other compilation inputs still not all primary-rechecked"
+          },
+          "convention": "J-reduced",
+          "legacyText": "0.5398(6)"
         },
         "linewidth_frequency_coefficient_Hz": {
-          "value": 182400,
+          "value": 182400.0,
           "unit": "Hz",
-          "quantity": "legacy_linewidth_frequency_coefficient",
+          "quantity": "ordinary_frequency_FWHM",
           "sourceId": "ref-01",
-          "sourceLocator": null,
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, linewidth_FWHM_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "definition-needs-review",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "reviewStatus": "conflict-unresolved",
+          "uncertainty": 400.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-10:linewidth_FWHM_nu",
+            "sourceDecimal": "182.4",
+            "sourceUncertaintyDecimal": "0.4",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              133,
+              134,
+              136,
+              137,
+              139,
+              195,
+              212,
+              215,
+              216,
+              217,
+              218
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46,
+              47
+            ],
+            "reviewFlags": [
+              "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+            ],
+            "sourceDependencyRecordIds": [
+              "table-10:upper_state_lifetime"
+            ],
+            "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi"
+          },
+          "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
           "legacyText": "2π × 182.4(4) kHz"
         }
       },
@@ -315,7 +872,7 @@
             "upper": "³P₁",
             "lower": "¹S₀",
             "label": "绿 MOT (窄线冷却)",
-            "linewidth_FWHM": "2π × 182.4(4) kHz",
+            "linewidth_FWHM": "182.4(4) kHz",
             "Gamma_per_s": "1.146×10⁶",
             "Isat": "138.85 µW/cm²",
             "branching": "1 (至 ¹S₀)",
@@ -324,7 +881,7 @@
             "forbidden_reason": "自旋禁戒 (ΔS=1)；LS 耦合混合开启弱 E1 通道",
             "selection_check": "ΔS=1 ✗, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
             "use": "二级冷却至 µK、核自旋态相干控制/成像",
-            "source": "Kroeze 2025 Tbl.11（内部校准值，文献 0.5398(6)）",
+            "source": "Kroeze et al.2026, arXiv2509.04416v2 Table10 p24",
             "color": "#facc15"
           },
           "quantityFields": {
@@ -352,121 +909,285 @@
       "category": "core",
       "quantities": {
         "wavelength_vac_nm": {
-          "value": 578.4196,
+          "value": 578.4195759161624,
           "unit": "nm",
           "quantity": "wavelength_vac_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, wavelength_vac",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 1.1e-13,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-09:wavelength_vac",
+            "sourceDecimal": "578.41957591616250",
+            "sourceUncertaintyDecimal": "1.1E-13",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              121
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              37
+            ],
+            "sourceDependencyRecordIds": [
+              "table-09:frequency_nu",
+              "table-01:c"
+            ]
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "578.41957591616250(11)"
         },
         "wavelength_air_nm": {
-          "value": 578.2649,
+          "value": 578.264935,
           "unit": "nm",
           "quantity": "wavelength_air_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, wavelength_air",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 6e-06,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-09:wavelength_air",
+            "sourceDecimal": "578.264935",
+            "sourceUncertaintyDecimal": "0.000006",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              121
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              99,
+              100,
+              101,
+              102
+            ],
+            "sourceEquations": [
+              39,
+              40
+            ],
+            "sourceDependencyRecordIds": [
+              "table-09:wavelength_vac"
+            ],
+            "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "578.264935(6)"
         },
         "frequency_THz": {
-          "value": 518.295837,
+          "value": 518.2958365908636,
           "unit": "THz",
           "quantity": "frequency_THz",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, frequency_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 1e-13,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-adopted",
+            "sourceRecord": "table-09:frequency_nu",
+            "sourceDecimal": "518.29583659086363",
+            "sourceUncertaintyDecimal": "1.0E-13",
+            "sourceReferenceNumbers": [
+              121
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": null
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "518.29583659086363(10)"
         },
         "energy_eV": {
-          "value": 2.143499,
+          "value": 2.1434993488389615,
           "unit": "eV",
           "quantity": "energy_eV",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, transition_energy",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 4e-16,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-09:transition_energy",
+            "sourceDecimal": "2.1434993488389615",
+            "sourceUncertaintyDecimal": "4E-16",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              121
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              35,
+              36
+            ],
+            "sourceDependencyRecordIds": [
+              "table-09:frequency_nu",
+              "table-01:h",
+              "table-01:e"
+            ]
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "2.1434993488389615(4)"
         },
         "Gamma_per_s_num": {
           "value": 0.048,
           "unit": "s^-1",
           "quantity": "Gamma_per_s_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, total_decay_rate",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 0.004,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-09:total_decay_rate",
+            "sourceDecimal": "0.048",
+            "sourceUncertaintyDecimal": "0.004",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              213,
+              214
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46
+            ],
+            "sourceDependencyRecordIds": [
+              "table-09:upper_state_lifetime"
+            ]
+          },
+          "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+          "legacyText": "0.048(4)"
         },
         "lifetime_ns": {
-          "value": 21000000000,
+          "value": 21000000000.0,
           "unit": "ns",
           "quantity": "lifetime_ns",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, upper_state_lifetime",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 1800000000.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-weighted-recommendation",
+            "sourceRecord": "table-09:upper_state_lifetime",
+            "sourceDecimal": "21.0",
+            "sourceUncertaintyDecimal": "1.8",
+            "sourceReferenceNumbers": [
+              213,
+              214
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": 1.3,
+            "temperature_K": null,
+            "BBRTemperature_K": null
+          },
+          "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+          "legacyText": "21.0(18)"
         },
         "oscillator_strength_f_num": {
-          "value": 1e-09,
+          "value": null,
           "unit": "dimensionless",
           "quantity": "oscillator_strength_f_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2 Table 9, p24; oscillator strength not listed",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "uncertaintyNote": "no supported oscillator strength supplied; legacy1e-9 was not traceable",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedLegacyValue": 1e-09
+          },
+          "convention": null,
+          "missingReason": "not-provided-in-cited-source"
         },
         "d_num": {
           "value": 9.19e-05,
           "unit": "e*a0",
           "quantity": "d_num",
           "sourceId": "internal-t3-20260908",
-          "sourceLocator": "Table 10 (original page label; not rechecked)",
+          "sourceLocator": "internal supplement2026-09-08; no original notebook/run artifact located; NOT Table9",
           "evidenceKind": "internal-calculation",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unverified-internal-record",
+            "definition": "effective F-reduced171Yb F=1/2->F=1/2; not electronic J=0->J=0 E1 matrix element"
+          },
           "convention": "F-reduced-effective"
         },
         "linewidth_frequency_coefficient_Hz": {
           "value": 0.0076,
           "unit": "Hz",
-          "quantity": "legacy_linewidth_frequency_coefficient",
+          "quantity": "ordinary_frequency_FWHM",
           "sourceId": "ref-01",
-          "sourceLocator": null,
+          "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, linewidth_FWHM_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "definition-needs-review",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "reviewStatus": "conflict-unresolved",
+          "uncertainty": 0.0006,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-09:linewidth_FWHM_nu",
+            "sourceDecimal": "7.6",
+            "sourceUncertaintyDecimal": "0.6",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              213,
+              214
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46,
+              47
+            ],
+            "reviewFlags": [
+              "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+            ],
+            "sourceDependencyRecordIds": [
+              "table-09:upper_state_lifetime"
+            ],
+            "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi"
+          },
+          "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
           "legacyText": "2π × 7.6(6) mHz"
         }
       },
@@ -477,10 +1198,10 @@
             "upper": "³P₀",
             "lower": "¹S₀",
             "label": "黄钟跃迁 (optical qubit)",
-            "linewidth_FWHM": "2π × 7.6(6) mHz",
+            "linewidth_FWHM": "7.6(6) mHz",
             "Gamma_per_s": "0.048",
-            "oscillator_strength_f": "~10⁻⁹",
-            "d_reduced_ea0": "9.19×10⁻⁵",
+            "oscillator_strength_f": "未提供",
+            "d_reduced_ea0": "9.19e-05",
             "Isat": "—",
             "branching": "1 (至 ¹S₀)",
             "multipole": "E1 (hyperfine-mixed)",
@@ -488,7 +1209,7 @@
             "forbidden_reason": "双重禁戒：自旋禁戒 + J=0→J=0 禁戒；¹⁷¹Yb 超精细混合开启 F=1/2→F′=1/2 有效通道，d_reduced = 9.19×10⁻⁵ ea₀，各 mF 子通道矩阵元 = d_red × CG/√(2F′+1)（σ 通道 ≈ ±5.31×10⁻⁵、π 通道 ≈ ±3.75×10⁻⁵），校验锚点 +1/2→−1/2 = 5.30×10⁻⁵ ea₀（2026-09-08 内部补充）",
             "selection_check": "ΔS=1 ✗, J=0→0 ✗, 奇偶变 ✓",
             "use": "光钟、光量子比特 |0⟩=¹S₀, |1⟩=³P₀",
-            "source": "Kroeze 2025 Tbl.10 · 2026-09-08 内部补充 (F=1/2→1/2 约化矩阵元 9.19×10⁻⁵)",
+            "source": "Kroeze et al.2026, arXiv2509.04416v2 Table9 p24；d为2026-09-08内部F级有效量，原始计算待补",
             "hf_induced": true,
             "color": "#f87171"
           },
@@ -514,123 +1235,310 @@
       "category": "core",
       "quantities": {
         "wavelength_vac_nm": {
-          "value": 507.3452,
+          "value": 507.3452995130081,
           "unit": "nm",
           "quantity": "wavelength_vac_nm",
-          "sourceId": "ref-01",
-          "sourceLocator": "Table 12 (original page label; not rechecked)",
-          "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "sourceId": "qiao-2023-rinp",
+          "sourceLocator": "Qiao2023RINP Table2 PDFp5, five corrected hyperfine component frequencies + clock ref01 Table9 p24",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "uncertaintyNote": "actual propagated1sigma unavailable without covariance; conservative standard-deviation bound retained separately",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-30",
+            "sourceEvidenceType": "derived-five-component-F-centroid-Ritz",
+            "sourceRecord": "frequency/arithmetic-and-recommendations.json",
+            "originalPDF": "references/papers/1.pdf",
+            "originalPDFSha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+            "formulaMHz": "clock+(nu649low+2nu649high)/3-(5nu770a+nu770b+9nu770c)/15",
+            "rawComponentsMHz": [
+              "461861338.03(21)",
+              "461871596.07(31)",
+              "389257019.71(65)",
+              "389267277.10(37)",
+              "389260569.95(89)"
+            ],
+            "derivedFrequencyDecimalTHz": "590.9041796341969633333333333333333333333",
+            "conservativeStdUpperBoundMHz": 1.0520001,
+            "uncertaintyBoundary": "Cross-transition covariances not supplied. Sum|weight|u bounds the propagated standard deviation given reported marginal uncertainties, including0.1Hz clock. It is not an actual reconstructed1sigma or a hard confidence interval; unreported systematics/second-order HFS are not bounded.",
+            "centroidDefinition": "first-order171YbF-degeneracy endpoint centroids; no intensity weighting or new fit",
+            "legacySourceCauseEstablished": false,
+            "sourceDecimal": "507.3452995130081009080319663335114400588",
+            "supersededIndependentSource": {
+              "sourceId": "ref-01",
+              "value": 507.34517,
+              "uncertainty": 4e-05,
+              "locator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, wavelength_vac"
+            },
+            "sourceConflict": "Previous Kroeze/Yamaguchi590.90433(4)THz disagrees with this explicit Ritz centroid by150.365803MHz; cause not established. Old value and derivation alternatives preserved."
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "507.34517(4)",
+          "derivedFrom": [
+            "Qiao2023RINP.Table2.five-hyperfine-components",
+            "T3.frequency_THz",
+            "exact SI c,h,e where applicable"
+          ]
         },
         "wavelength_air_nm": {
-          "value": 507.2088,
+          "value": null,
           "unit": "nm",
           "quantity": "wavelength_air_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "sourceLocator": "KroezeTable11 old air wavelength archived; Edlen/Buck conversion not recomputed for updated Ritz frequency",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "uncertaintyNote": "air wavelength unavailable for updated working frequency; refractive-index/environment uncertainty not reconstructed",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-30",
+            "supersededValueNm": 507.20882,
+            "updatedVacuumWavelengthNm": 507.3452995130081
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "507.20882(4)",
+          "missingReason": "not-recomputed-for-updated-vacuum-frequency"
         },
         "frequency_THz": {
-          "value": 590.90433,
+          "value": 590.9041796341969,
           "unit": "THz",
           "quantity": "frequency_THz",
-          "sourceId": "ref-01",
-          "sourceLocator": "Table 12 (original page label; not rechecked)",
-          "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "sourceId": "qiao-2023-rinp",
+          "sourceLocator": "Qiao2023RINP Table2 PDFp5, five corrected hyperfine component frequencies + clock ref01 Table9 p24",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "uncertaintyNote": "actual propagated1sigma unavailable without covariance; conservative standard-deviation bound retained separately",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-30",
+            "sourceEvidenceType": "derived-five-component-F-centroid-Ritz",
+            "sourceRecord": "frequency/arithmetic-and-recommendations.json",
+            "originalPDF": "references/papers/1.pdf",
+            "originalPDFSha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+            "formulaMHz": "clock+(nu649low+2nu649high)/3-(5nu770a+nu770b+9nu770c)/15",
+            "rawComponentsMHz": [
+              "461861338.03(21)",
+              "461871596.07(31)",
+              "389257019.71(65)",
+              "389267277.10(37)",
+              "389260569.95(89)"
+            ],
+            "derivedFrequencyDecimalTHz": "590.9041796341969633333333333333333333333",
+            "conservativeStdUpperBoundMHz": 1.0520001,
+            "uncertaintyBoundary": "Cross-transition covariances not supplied. Sum|weight|u bounds the propagated standard deviation given reported marginal uncertainties, including0.1Hz clock. It is not an actual reconstructed1sigma or a hard confidence interval; unreported systematics/second-order HFS are not bounded.",
+            "centroidDefinition": "first-order171YbF-degeneracy endpoint centroids; no intensity weighting or new fit",
+            "legacySourceCauseEstablished": false,
+            "sourceDecimal": "590.9041796341969633333333333333333333333",
+            "supersededIndependentSource": {
+              "sourceId": "ref-01",
+              "value": 590.90433,
+              "uncertainty": 4e-05,
+              "locator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, frequency_nu"
+            },
+            "sourceConflict": "Previous Kroeze/Yamaguchi590.90433(4)THz disagrees with this explicit Ritz centroid by150.365803MHz; cause not established. Old value and derivation alternatives preserved."
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "590.90433(4)",
+          "derivedFrom": [
+            "Qiao2023RINP.Table2.five-hyperfine-components",
+            "T3.frequency_THz",
+            "exact SI c,h,e where applicable"
+          ]
         },
         "energy_eV": {
-          "value": 2.443784,
+          "value": 2.4437833276904413,
           "unit": "eV",
           "quantity": "energy_eV",
-          "sourceId": "ref-01",
-          "sourceLocator": "Table 12 (original page label; not rechecked)",
-          "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "sourceId": "qiao-2023-rinp",
+          "sourceLocator": "Qiao2023RINP Table2 PDFp5, five corrected hyperfine component frequencies + clock ref01 Table9 p24",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "uncertaintyNote": "actual propagated1sigma unavailable without covariance; conservative standard-deviation bound retained separately",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-30",
+            "sourceEvidenceType": "derived-five-component-F-centroid-Ritz",
+            "sourceRecord": "frequency/arithmetic-and-recommendations.json",
+            "originalPDF": "references/papers/1.pdf",
+            "originalPDFSha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+            "formulaMHz": "clock+(nu649low+2nu649high)/3-(5nu770a+nu770b+9nu770c)/15",
+            "rawComponentsMHz": [
+              "461861338.03(21)",
+              "461871596.07(31)",
+              "389257019.71(65)",
+              "389267277.10(37)",
+              "389260569.95(89)"
+            ],
+            "derivedFrequencyDecimalTHz": "590.9041796341969633333333333333333333333",
+            "conservativeStdUpperBoundMHz": 1.0520001,
+            "uncertaintyBoundary": "Cross-transition covariances not supplied. Sum|weight|u bounds the propagated standard deviation given reported marginal uncertainties, including0.1Hz clock. It is not an actual reconstructed1sigma or a hard confidence interval; unreported systematics/second-order HFS are not bounded.",
+            "centroidDefinition": "first-order171YbF-degeneracy endpoint centroids; no intensity weighting or new fit",
+            "legacySourceCauseEstablished": false,
+            "sourceDecimal": "2.443783327690441413567416000650525028191",
+            "supersededIndependentSource": {
+              "sourceId": "ref-01",
+              "value": 2.44378393,
+              "uncertainty": 1.7e-07,
+              "locator": "arXiv:2509.04416v2, Table 11, PDF/printed p.25, transition_energy"
+            },
+            "sourceConflict": "Previous Kroeze/Yamaguchi590.90433(4)THz disagrees with this explicit Ritz centroid by150.365803MHz; cause not established. Old value and derivation alternatives preserved."
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "2.44378393(17)",
+          "derivedFrom": [
+            "Qiao2023RINP.Table2.five-hyperfine-components",
+            "T3.frequency_THz",
+            "exact SI c,h,e where applicable"
+          ]
         },
         "Gamma_per_s_num": {
           "value": 0.112,
           "unit": "s^-1",
           "quantity": "Gamma_per_s_num",
-          "sourceId": "ref-01",
-          "sourceLocator": "Table 12 (original page label; not rechecked)",
-          "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "sourceId": "mishra-2001-jqsrt",
+          "sourceLocator": "Mishra2001 Table5 PDFp9 printed8.9s; inverse lifetime rounded0.112/s; original printed component sum0.11188/s separately retained",
+          "evidenceKind": "derived",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "uncertaintyNote": "theoretical model uncertainty not supplied; rate-statistical-average convention confirmed; not F-resolved",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-30",
+            "sourceEvidenceType": "theory-hyperfine-statistical-rate-average",
+            "originalPDF": "references/papers/2.pdf",
+            "originalPDFSha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
+            "primaryOriginalsAllRead": true,
+            "stateBoundary": "F=3/2 and F=5/2 do not share this lifetime: inverse of(2F+1)-weighted HFI rate plusM1+M2; not the average of lifetimes",
+            "FWeights": [
+              4,
+              6
+            ],
+            "HFIWholeLineRatePerS": 0.044,
+            "HFI_F32_to_F12_RatePerS": 0.1097,
+            "M1RatePerS": 0.0677,
+            "M2RatePerS": 0.00018,
+            "tableRateSumPerS": 0.11188,
+            "temperatureK": null,
+            "BBRTemperatureK": null,
+            "BBRModel": "not added as an experimental thermal environment; no temperature inferred"
+          },
+          "convention": "statistically-averaged-total-decay-rate; not-F-resolved",
+          "legacyText": "~0.112",
+          "derivedFrom": [
+            "T4.lifetime_ns",
+            "Gamma_average=1/tau_average_rate_inverse"
+          ]
         },
         "lifetime_ns": {
-          "value": 8900000000,
+          "value": 8900000000.0,
           "unit": "ns",
           "quantity": "lifetime_ns",
-          "sourceId": "ref-01",
-          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "sourceId": "mishra-2001-jqsrt",
+          "sourceLocator": "Mishra2001 Eq15 PDFp7; Tables3/4/5 PDFpp8-9, printed776-777",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "uncertaintyNote": "theoretical model uncertainty not supplied; rate-statistical-average convention confirmed; not F-resolved",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-30",
+            "sourceEvidenceType": "theory-hyperfine-statistical-rate-average",
+            "originalPDF": "references/papers/2.pdf",
+            "originalPDFSha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
+            "primaryOriginalsAllRead": true,
+            "stateBoundary": "F=3/2 and F=5/2 do not share this lifetime: inverse of(2F+1)-weighted HFI rate plusM1+M2; not the average of lifetimes",
+            "FWeights": [
+              4,
+              6
+            ],
+            "HFIWholeLineRatePerS": 0.044,
+            "HFI_F32_to_F12_RatePerS": 0.1097,
+            "M1RatePerS": 0.0677,
+            "M2RatePerS": 0.00018,
+            "tableRateSumPerS": 0.11188,
+            "temperatureK": null,
+            "BBRTemperatureK": null,
+            "BBRModel": "not added as an experimental thermal environment; no temperature inferred"
+          },
+          "convention": "inverse-of-statistically-averaged-total-decay-rate; not-F-resolved",
+          "legacyText": "~8.9"
         },
         "oscillator_strength_f_num": {
-          "value": 1e-09,
+          "value": null,
           "unit": "dimensionless",
           "quantity": "oscillator_strength_f_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2 Table 11, p25; oscillator strength not listed",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "uncertaintyNote": "no supported oscillator strength supplied; legacy1e-9 was not traceable",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedLegacyValue": 1e-09
+          },
+          "convention": null,
+          "missingReason": "not-provided-in-cited-source"
         },
         "d_num": {
           "value": null,
           "unit": "e*a0",
           "quantity": "d_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 12 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2 Table11 p25 has no universal E1 matrix element; F-specific HFI treatment required",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data"
+          },
           "convention": "no-E1-data",
           "missingReason": "no-applicable-E1-matrix-element"
         },
         "linewidth_frequency_coefficient_Hz": {
           "value": 0.0179,
           "unit": "Hz",
-          "quantity": "legacy_linewidth_frequency_coefficient",
-          "sourceId": "ref-01",
-          "sourceLocator": null,
-          "evidenceKind": "literature-reported",
+          "quantity": "ordinary_frequency_FWHM",
+          "sourceId": "mishra-2001-jqsrt",
+          "sourceLocator": "Mishra2001 Table5 PDFp9 printed8.9s; equivalentwidth=1/(2*pi*tau), rounded17.9mHz; not a printed Mishra linewidth",
+          "evidenceKind": "derived",
           "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
-          "legacyText": "2π × ~17.9 mHz"
+          "uncertaintyNote": "theoretical model uncertainty not supplied; rate-statistical-average convention confirmed; not F-resolved",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-30",
+            "sourceEvidenceType": "theory-hyperfine-statistical-rate-average",
+            "originalPDF": "references/papers/2.pdf",
+            "originalPDFSha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
+            "primaryOriginalsAllRead": true,
+            "stateBoundary": "F=3/2 and F=5/2 do not share this lifetime: inverse of(2F+1)-weighted HFI rate plusM1+M2; not the average of lifetimes",
+            "FWeights": [
+              4,
+              6
+            ],
+            "HFIWholeLineRatePerS": 0.044,
+            "HFI_F32_to_F12_RatePerS": 0.1097,
+            "M1RatePerS": 0.0677,
+            "M2RatePerS": 0.00018,
+            "tableRateSumPerS": 0.11188,
+            "temperatureK": null,
+            "BBRTemperatureK": null,
+            "BBRModel": "not added as an experimental thermal environment; no temperature inferred",
+            "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT retained from old Kroeze table; displayedcoefficient usesGamma/(2*pi), and is an equivalent statistically-averaged rate width, not F-resolved line width"
+          },
+          "convention": "equivalent-frequency-width-of-statistically-averaged-rate=Gamma/(2*pi); not-F-resolved",
+          "legacyText": "2π × ~17.9 mHz",
+          "derivedFrom": [
+            "T4.lifetime_ns",
+            "equivalent width=1/(2*pi*tau_average_rate_inverse)"
+          ]
         }
       },
       "views": {
@@ -640,18 +1548,18 @@
             "upper": "³P₂",
             "lower": "¹S₀",
             "label": "绿钟跃迁 (四极)",
-            "linewidth_FWHM": "2π × ~17.9 mHz",
+            "linewidth_FWHM": "约17.9 mHz（统计平均率对应；非F分辨）",
             "Gamma_per_s": "~0.112",
-            "oscillator_strength_f": "~10⁻⁹",
+            "oscillator_strength_f": "未提供",
             "d_reduced_ea0": "—",
             "Isat": "—",
-            "branching": "M2 至 ¹S₀ 主导",
-            "multipole": "M2 (磁四极)",
+            "branching": "F相关：HFS诱导E1与非E1衰变；分支比未提供",
+            "multipole": "M2 激发 / HFS 诱导 E1 衰变",
             "classification": "禁戒",
-            "forbidden_reason": "E1 双重禁戒：自旋禁戒 + ΔJ=2；主导衰变为 M2 磁四极",
+            "forbidden_reason": "电子J=0→2的裸E1禁戒；HFS诱导E1只允许适用F通道。8.9s是统计平均HFI率加M1/M2后总率的倒数，不能用于所有F；无通用E1 d。",
             "selection_check": "ΔS=1 ✗, ΔJ=2 ✗(E1), 奇偶变 ✓ → M2 允许",
             "use": "量子模拟、辅助钟跃迁、新物理搜寻",
-            "source": "Kroeze 2025 Tbl.12",
+            "source": "频率/真空λ：Qiao2023 Table2五分量Ritz派生；τ：Mishra2001 Table5统计平均理论",
             "color": "#f87171"
           },
           "quantityFields": {
@@ -678,122 +1586,366 @@
       "category": "core",
       "quantities": {
         "wavelength_vac_nm": {
-          "value": 1388.7629,
+          "value": 1388.7629464,
           "unit": "nm",
           "quantity": "wavelength_vac_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, wavelength_vac",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 6e-07,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-12:wavelength_vac",
+            "sourceDecimal": "1388.7629464",
+            "sourceUncertaintyDecimal": "6E-7",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              85,
+              86,
+              194
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              37
+            ],
+            "sourceDependencyRecordIds": [
+              "table-12:frequency_nu",
+              "table-01:c"
+            ],
+            "followupPrimarySourcesRead": [
+              "zhao-2024-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "1388.7629464(6)"
         },
         "wavelength_air_nm": {
-          "value": 1388.3969,
+          "value": 1388.396915,
           "unit": "nm",
           "quantity": "wavelength_air_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, wavelength_air",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 1.4e-05,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-12:wavelength_air",
+            "sourceDecimal": "1388.396915",
+            "sourceUncertaintyDecimal": "0.000014",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              85,
+              86,
+              194
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              99,
+              100,
+              101,
+              102
+            ],
+            "sourceEquations": [
+              39,
+              40
+            ],
+            "sourceDependencyRecordIds": [
+              "table-12:wavelength_vac"
+            ],
+            "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded",
+            "followupPrimarySourcesRead": [
+              "zhao-2024-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "1388.396915(14)"
         },
         "frequency_THz": {
-          "value": 215.87014,
+          "value": 215.87014457,
           "unit": "THz",
           "quantity": "frequency_THz",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, frequency_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 9e-08,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-adopted",
+            "sourceRecord": "table-12:frequency_nu",
+            "sourceDecimal": "215.87014457",
+            "sourceUncertaintyDecimal": "9E-8",
+            "sourceReferenceNumbers": [
+              85,
+              86,
+              194
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": null,
+            "followupPrimarySourcesRead": [
+              "zhao-2024-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "215.87014457(9)"
         },
         "energy_eV": {
-          "value": 0.892767,
+          "value": 0.8927671836,
           "unit": "eV",
           "quantity": "energy_eV",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, transition_energy",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 4e-10,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-12:transition_energy",
+            "sourceDecimal": "0.8927671836",
+            "sourceUncertaintyDecimal": "4E-10",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              85,
+              86,
+              194
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              35,
+              36
+            ],
+            "sourceDependencyRecordIds": [
+              "table-12:frequency_nu",
+              "table-01:h",
+              "table-01:e"
+            ],
+            "followupPrimarySourcesRead": [
+              "zhao-2024-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "0.8927671836(4)"
         },
         "Gamma_per_s_num": {
-          "value": 3010000,
+          "value": 3010000.0,
           "unit": "s^-1",
           "quantity": "Gamma_per_s_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, total_decay_rate",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 100000.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-12:total_decay_rate",
+            "sourceDecimal": "3010000.00",
+            "sourceUncertaintyDecimal": "100000",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              137,
+              195
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46
+            ],
+            "sourceDependencyRecordIds": [
+              "table-12:upper_state_lifetime"
+            ],
+            "followupPrimarySourcesRead": [
+              "zhao-2024-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+          "legacyText": "3.01(10)e6"
         },
         "lifetime_ns": {
-          "value": 332,
+          "value": 332.0,
           "unit": "ns",
           "quantity": "lifetime_ns",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, upper_state_lifetime",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 11.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-weighted-recommendation",
+            "sourceRecord": "table-12:upper_state_lifetime",
+            "sourceDecimal": "332",
+            "sourceUncertaintyDecimal": "11",
+            "sourceReferenceNumbers": [
+              137,
+              195
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": 1.6,
+            "temperature_K": null,
+            "BBRTemperature_K": null,
+            "followupPrimarySourcesRead": [
+              "zhao-2024-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+          "legacyText": "332(11)"
         },
         "oscillator_strength_f_num": {
           "value": null,
           "unit": "dimensionless",
           "quantity": "oscillator_strength_f_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2 Table12 p25; oscillator strength not listed",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "followupPrimarySourcesRead": [
+              "zhao-2024-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
           "convention": null,
-          "missingReason": "not-provided-in-original-record"
+          "missingReason": "not-provided-in-cited-source"
         },
         "d_num": {
           "value": 2.76,
           "unit": "e*a0",
           "quantity": "d_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 13 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, dipole_reduced_J_Racah",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "J-reduced"
+          "reviewStatus": "original-source-located",
+          "uncertainty": 0.07,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+            "sourceRecord": "table-12:dipole_reduced_J_Racah",
+            "sourceDecimal": "2.76",
+            "sourceUncertaintyDecimal": "0.07",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              85,
+              86,
+              132,
+              137,
+              194,
+              195
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              141,
+              142,
+              143,
+              144
+            ],
+            "sourceEquations": [
+              52,
+              54
+            ],
+            "sourceDependencyRecordIds": [
+              "table-12:frequency_nu",
+              "table-12:upper_state_lifetime",
+              "table-01:epsilon0",
+              "table-01:hbar",
+              "table-01:c",
+              "table-01:e",
+              "table-01:a0",
+              "table-12:branching_ratio:3D1->3P0"
+            ],
+            "definition": "<Jg||er||Je>_R Racah-Wigner, Eq54; includes adopted theoretical branching ratios",
+            "followupPrimarySourcesRead": [
+              "zhao-2024-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "J-reduced",
+          "legacyText": "2.76(7)"
         },
         "linewidth_frequency_coefficient_Hz": {
-          "value": 479000,
+          "value": 479000.0,
           "unit": "Hz",
-          "quantity": "legacy_linewidth_frequency_coefficient",
+          "quantity": "ordinary_frequency_FWHM",
           "sourceId": "ref-01",
-          "sourceLocator": null,
+          "sourceLocator": "arXiv:2509.04416v2, Table 12, PDF/printed p.25, linewidth_FWHM_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "definition-needs-review",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "reviewStatus": "conflict-unresolved",
+          "uncertainty": 16000.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-12:linewidth_FWHM_nu",
+            "sourceDecimal": "479",
+            "sourceUncertaintyDecimal": "16",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              137,
+              195
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46,
+              47
+            ],
+            "reviewFlags": [
+              "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+            ],
+            "sourceDependencyRecordIds": [
+              "table-12:upper_state_lifetime"
+            ],
+            "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi",
+            "followupPrimarySourcesRead": [
+              "zhao-2024-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
           "legacyText": "2π × 479(16) kHz"
         }
       },
@@ -804,17 +1956,17 @@
             "upper": "³D₁",
             "lower": "³P₀",
             "label": "红外 repumper (黄钟)",
-            "linewidth_FWHM": "2π × 479(16) kHz",
+            "linewidth_FWHM": "479(16) kHz",
             "Gamma_per_s": "3.01×10⁶",
             "oscillator_strength_f": "—",
             "Isat": "—",
-            "branching": "³P₀ 63.8%, ³P₁ 35.2%, ³P₂ 0.99%",
+            "branching": "³P₀ 63.8%, ³P₁ 35.2%, ³P₂ 0.99%（理论分支比；非完整实测）",
             "multipole": "E1",
             "classification": "强",
             "forbidden_reason": "—",
             "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
             "use": "³P₀ 态 repump / 态制备",
-            "source": "Kroeze 2025 Tbl.13",
+            "source": "Kroeze et al.2026, arXiv2509.04416v2 Table12 p25",
             "color": "#34d399"
           },
           "quantityFields": {
@@ -843,122 +1995,378 @@
       "category": "core",
       "quantities": {
         "wavelength_vac_nm": {
-          "value": 649.0866,
+          "value": 649.08662928,
           "unit": "nm",
           "quantity": "wavelength_vac_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, wavelength_vac",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 3.1e-07,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-13:wavelength_vac",
+            "sourceDecimal": "649.08662928",
+            "sourceUncertaintyDecimal": "3.1E-7",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              190,
+              198
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              37
+            ],
+            "sourceDependencyRecordIds": [
+              "table-13:frequency_nu",
+              "table-01:c"
+            ],
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "zhou-2020-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "649.08662928(31)"
         },
         "wavelength_air_nm": {
-          "value": 648.9137,
+          "value": 648.913718,
           "unit": "nm",
           "quantity": "wavelength_air_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, wavelength_air",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 6e-06,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-13:wavelength_air",
+            "sourceDecimal": "648.913718",
+            "sourceUncertaintyDecimal": "0.000006",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              190,
+              198
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              99,
+              100,
+              101,
+              102
+            ],
+            "sourceEquations": [
+              39,
+              40
+            ],
+            "sourceDependencyRecordIds": [
+              "table-13:wavelength_vac"
+            ],
+            "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded",
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "zhou-2020-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "648.913718(6)"
         },
         "frequency_THz": {
-          "value": 461.86818,
+          "value": 461.86817672,
           "unit": "THz",
           "quantity": "frequency_THz",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, frequency_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 2.2e-07,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-adopted",
+            "sourceRecord": "table-13:frequency_nu",
+            "sourceDecimal": "461.86817672",
+            "sourceUncertaintyDecimal": "2.2E-7",
+            "sourceReferenceNumbers": [
+              190,
+              198
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": null,
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "zhou-2020-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "461.86817672(22)"
         },
         "energy_eV": {
-          "value": 1.910133,
+          "value": 1.9101332987,
           "unit": "eV",
           "quantity": "energy_eV",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, transition_energy",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 9e-10,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-13:transition_energy",
+            "sourceDecimal": "1.9101332987",
+            "sourceUncertaintyDecimal": "9E-10",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              190,
+              198
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              35,
+              36
+            ],
+            "sourceDependencyRecordIds": [
+              "table-13:frequency_nu",
+              "table-01:h",
+              "table-01:e"
+            ],
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "zhou-2020-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "1.9101332987(9)"
         },
         "Gamma_per_s_num": {
-          "value": 72000000,
+          "value": 72000000.0,
           "unit": "s^-1",
           "quantity": "Gamma_per_s_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, total_decay_rate",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 9000000.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-13:total_decay_rate",
+            "sourceDecimal": "72000000.0",
+            "sourceUncertaintyDecimal": "9000000",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              135,
+              196
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46
+            ],
+            "sourceDependencyRecordIds": [
+              "table-13:upper_state_lifetime"
+            ],
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "zhou-2020-pra"
+            ],
+            "followupAuditDate": "2026-10-30",
+            "lifetimeCompilationInputsVerified": "BaumannTable1:12.5(1.5)ns historical reproduced Lange1970 +174Yb15.9(1.9)ns; weighted mean13.80546ns,Birgeinflatedu1.65363ns reproduces13.8(1.7), not a171-only direct measurement",
+            "sourceDefinitionConflict": "Some resonance papers callbeta*Gamma_total/(2*pi) a natural linewidth; do not substitute branch partial width for total upper-stateGamma/(2*pi)"
+          },
+          "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+          "legacyText": "7.2(9)e7"
         },
         "lifetime_ns": {
           "value": 13.8,
           "unit": "ns",
           "quantity": "lifetime_ns",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, upper_state_lifetime",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 1.7,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-weighted-recommendation",
+            "sourceRecord": "table-13:upper_state_lifetime",
+            "sourceDecimal": "13.8",
+            "sourceUncertaintyDecimal": "1.7",
+            "sourceReferenceNumbers": [
+              135,
+              196
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": 1.4,
+            "temperature_K": null,
+            "BBRTemperature_K": null,
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "zhou-2020-pra"
+            ],
+            "followupAuditDate": "2026-10-30",
+            "lifetimeCompilationInputsVerified": "BaumannTable1:12.5(1.5)ns historical reproduced Lange1970 +174Yb15.9(1.9)ns; weighted mean13.80546ns,Birgeinflatedu1.65363ns reproduces13.8(1.7), not a171-only direct measurement",
+            "sourceDefinitionConflict": "Some resonance papers callbeta*Gamma_total/(2*pi) a natural linewidth; do not substitute branch partial width for total upper-stateGamma/(2*pi)"
+          },
+          "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+          "legacyText": "13.8(17)"
         },
         "oscillator_strength_f_num": {
           "value": null,
           "unit": "dimensionless",
           "quantity": "oscillator_strength_f_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2 Table13 p26; oscillator strength not listed",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "zhou-2020-pra"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
           "convention": null,
-          "missingReason": "not-provided-in-original-record"
+          "missingReason": "not-provided-in-cited-source"
         },
         "d_num": {
           "value": 1.96,
           "unit": "e*a0",
           "quantity": "d_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 14 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, dipole_reduced_J_Racah",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "J-reduced"
+          "reviewStatus": "original-source-located",
+          "uncertainty": 0.15,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+            "sourceRecord": "table-13:dipole_reduced_J_Racah",
+            "sourceDecimal": "1.96",
+            "sourceUncertaintyDecimal": "0.15",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              132,
+              135,
+              190,
+              196,
+              198
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              141,
+              142,
+              143,
+              144
+            ],
+            "sourceEquations": [
+              52,
+              54
+            ],
+            "sourceDependencyRecordIds": [
+              "table-13:frequency_nu",
+              "table-13:upper_state_lifetime",
+              "table-01:epsilon0",
+              "table-01:hbar",
+              "table-01:c",
+              "table-01:e",
+              "table-01:a0",
+              "table-13:branching_ratio:3S1->3P0"
+            ],
+            "definition": "<Jg||er||Je>_R Racah-Wigner, Eq54; includes adopted theoretical branching ratios",
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "zhou-2020-pra"
+            ],
+            "followupAuditDate": "2026-10-30",
+            "lifetimeCompilationInputsVerified": "BaumannTable1:12.5(1.5)ns historical reproduced Lange1970 +174Yb15.9(1.9)ns; weighted mean13.80546ns,Birgeinflatedu1.65363ns reproduces13.8(1.7), not a171-only direct measurement",
+            "sourceDefinitionConflict": "Some resonance papers callbeta*Gamma_total/(2*pi) a natural linewidth; do not substitute branch partial width for total upper-stateGamma/(2*pi)"
+          },
+          "convention": "J-reduced",
+          "legacyText": "1.96(15)"
         },
         "linewidth_frequency_coefficient_Hz": {
-          "value": 11500000,
+          "value": 11500000.0,
           "unit": "Hz",
-          "quantity": "legacy_linewidth_frequency_coefficient",
+          "quantity": "ordinary_frequency_FWHM",
           "sourceId": "ref-01",
-          "sourceLocator": null,
+          "sourceLocator": "arXiv:2509.04416v2, Table 13, PDF/printed p.26, linewidth_FWHM_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "definition-needs-review",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "reviewStatus": "conflict-unresolved",
+          "uncertainty": 1400000.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-13:linewidth_FWHM_nu",
+            "sourceDecimal": "11.5",
+            "sourceUncertaintyDecimal": "1.4",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              135,
+              196
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46,
+              47
+            ],
+            "reviewFlags": [
+              "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+            ],
+            "sourceDependencyRecordIds": [
+              "table-13:upper_state_lifetime"
+            ],
+            "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi",
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "zhou-2020-pra"
+            ],
+            "followupAuditDate": "2026-10-30",
+            "lifetimeCompilationInputsVerified": "BaumannTable1:12.5(1.5)ns historical reproduced Lange1970 +174Yb15.9(1.9)ns; weighted mean13.80546ns,Birgeinflatedu1.65363ns reproduces13.8(1.7), not a171-only direct measurement",
+            "sourceDefinitionConflict": "Some resonance papers callbeta*Gamma_total/(2*pi) a natural linewidth; do not substitute branch partial width for total upper-stateGamma/(2*pi)"
+          },
+          "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
           "legacyText": "2π × 11.5(14) MHz"
         }
       },
@@ -969,17 +2377,17 @@
             "upper": "³S₁",
             "lower": "³P₀",
             "label": "红 repumper (黄钟)",
-            "linewidth_FWHM": "2π × 11.5(14) MHz",
+            "linewidth_FWHM": "11.5(14) MHz",
             "Gamma_per_s": "7.2×10⁷",
             "oscillator_strength_f": "—",
             "Isat": "—",
-            "branching": "³P₂ 50.8%, ³P₁ 36.0%, ³P₀ 13.0%",
+            "branching": "³P₂ 50.8%, ³P₁ 36.0%, ³P₀ 13.0%（理论分支比；非完整实测）",
             "multipole": "E1",
             "classification": "强",
             "forbidden_reason": "—",
-            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
             "use": "³P₀ 态 repump / 检测",
-            "source": "Kroeze 2025 Tbl.14",
+            "source": "Kroeze et al.2026, arXiv2509.04416v2 Table13 p26",
             "color": "#34d399"
           },
           "quantityFields": {
@@ -1008,122 +2416,383 @@
       "category": "core",
       "quantities": {
         "wavelength_vac_nm": {
-          "value": 770.1603,
+          "value": 770.16026840069,
           "unit": "nm",
           "quantity": "wavelength_vac_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 15 (original page label; not rechecked)",
-          "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "sourceLocator": "arXiv:2509.04416v2, Table14 p26 frequency; lambda=c/nu; printed lambda fails same-row consistency",
+          "evidenceKind": "derived",
+          "reviewStatus": "conflict-unresolved",
+          "uncertainty": 1.1871149320701517e-06,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-14:wavelength_vac",
+            "sourceDecimal": "770.160284",
+            "sourceUncertaintyDecimal": "0.000011",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              190
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              37
+            ],
+            "reviewFlags": [
+              "SOURCE_LAMBDA_CENTRAL_INCONSISTENT_WITH_FREQUENCY",
+              "SOURCE_LAMBDA_UNCERTAINTY_INCONSISTENT_WITH_FREQUENCY"
+            ],
+            "sourceDependencyRecordIds": [
+              "table-14:frequency_nu",
+              "table-01:c"
+            ],
+            "sourceConflict": "Table14 prints770.160284(11)nm; frequency and wavenumber instead imply770.1602684006901nm",
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "qiao-2023-apl"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "770.160284(11)",
+          "derivedFrom": [
+            "T7.frequency_THz",
+            "SI exact c=299792458 m/s"
+          ]
         },
         "wavelength_air_nm": {
-          "value": 769.9559,
+          "value": 769.955919,
           "unit": "nm",
           "quantity": "wavelength_air_nm",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, wavelength_air",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "conflict-unresolved",
+          "uncertainty": 8e-06,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-14:wavelength_air",
+            "sourceDecimal": "769.955919",
+            "sourceUncertaintyDecimal": "0.000008",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              190
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              99,
+              100,
+              101,
+              102
+            ],
+            "sourceEquations": [
+              39,
+              40
+            ],
+            "sourceDependencyRecordIds": [
+              "table-14:wavelength_vac"
+            ],
+            "airDefinition": "101325 Pa,25 degC,50%RH; source refractive-index uncertainty1e-8; ambient variation excluded",
+            "sourceConflict": "Table14 vacuum-wavelength/frequency mismatch; air value retained as reported, not independently recalculated",
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "qiao-2023-apl"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "769.955919(8)"
         },
         "frequency_THz": {
-          "value": 389.25983,
+          "value": 389.2598337,
           "unit": "THz",
           "quantity": "frequency_THz",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, frequency_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 6e-07,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-adopted",
+            "sourceRecord": "table-14:frequency_nu",
+            "sourceDecimal": "389.2598337",
+            "sourceUncertaintyDecimal": "6E-7",
+            "sourceReferenceNumbers": [
+              190
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": null,
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "qiao-2023-apl"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "389.2598337(6)"
         },
         "energy_eV": {
-          "value": 1.609849,
+          "value": 1.6098493199,
           "unit": "eV",
           "quantity": "energy_eV",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, transition_energy",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 2.4e-09,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-14:transition_energy",
+            "sourceDecimal": "1.6098493199",
+            "sourceUncertaintyDecimal": "2.4E-9",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              190
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              35,
+              36
+            ],
+            "sourceDependencyRecordIds": [
+              "table-14:frequency_nu",
+              "table-01:h",
+              "table-01:e"
+            ],
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "qiao-2023-apl"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
+          "convention": "hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)",
+          "legacyText": "1.6098493199(24)"
         },
         "Gamma_per_s_num": {
-          "value": 72000000,
+          "value": 72000000.0,
           "unit": "s^-1",
           "quantity": "Gamma_per_s_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, total_decay_rate",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 9000000.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-14:total_decay_rate",
+            "sourceDecimal": "72000000.0",
+            "sourceUncertaintyDecimal": "9000000",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              135,
+              196
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46
+            ],
+            "sourceDependencyRecordIds": [
+              "table-14:upper_state_lifetime"
+            ],
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "qiao-2023-apl"
+            ],
+            "followupAuditDate": "2026-10-30",
+            "lifetimeCompilationInputsVerified": "BaumannTable1:12.5(1.5)ns historical reproduced Lange1970 +174Yb15.9(1.9)ns; weighted mean13.80546ns,Birgeinflatedu1.65363ns reproduces13.8(1.7), not a171-only direct measurement",
+            "sourceDefinitionConflict": "Some resonance papers callbeta*Gamma_total/(2*pi) a natural linewidth; do not substitute branch partial width for total upper-stateGamma/(2*pi)"
+          },
+          "convention": "total spontaneous decay rate Gamma=1/tau; not branch-specific Einstein A",
+          "legacyText": "7.2(9)e7"
         },
         "lifetime_ns": {
           "value": 13.8,
           "unit": "ns",
           "quantity": "lifetime_ns",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, upper_state_lifetime",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": null
+          "reviewStatus": "original-source-located",
+          "uncertainty": 1.7,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-weighted-recommendation",
+            "sourceRecord": "table-14:upper_state_lifetime",
+            "sourceDecimal": "13.8",
+            "sourceUncertaintyDecimal": "1.7",
+            "sourceReferenceNumbers": [
+              135,
+              196
+            ],
+            "dependencyReferenceNumbers": [],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "birgeRatio": 1.4,
+            "temperature_K": null,
+            "BBRTemperature_K": null,
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "qiao-2023-apl"
+            ],
+            "followupAuditDate": "2026-10-30",
+            "lifetimeCompilationInputsVerified": "BaumannTable1:12.5(1.5)ns historical reproduced Lange1970 +174Yb15.9(1.9)ns; weighted mean13.80546ns,Birgeinflatedu1.65363ns reproduces13.8(1.7), not a171-only direct measurement",
+            "sourceDefinitionConflict": "Some resonance papers callbeta*Gamma_total/(2*pi) a natural linewidth; do not substitute branch partial width for total upper-stateGamma/(2*pi)"
+          },
+          "convention": "total upper-state radiative lifetime; not inverse partial decay rate or trap survival",
+          "legacyText": "13.8(17)"
         },
         "oscillator_strength_f_num": {
           "value": null,
           "unit": "dimensionless",
           "quantity": "oscillator_strength_f_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2 Table14 p26; oscillator strength not listed",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "qiao-2023-apl"
+            ],
+            "followupAuditDate": "2026-10-30"
+          },
           "convention": null,
-          "missingReason": "not-provided-in-original-record"
+          "missingReason": "not-provided-in-cited-source"
         },
         "d_num": {
           "value": 4.99,
           "unit": "e*a0",
           "quantity": "d_num",
           "sourceId": "ref-01",
-          "sourceLocator": "Table 15 (original page label; not rechecked)",
+          "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, dipole_reduced_J_Racah",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "legacy-not-rechecked",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "J-reduced"
+          "reviewStatus": "original-source-located",
+          "uncertainty": 0.32,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived-from-lifetime-frequency-theory-branching",
+            "sourceRecord": "table-14:dipole_reduced_J_Racah",
+            "sourceDecimal": "4.99",
+            "sourceUncertaintyDecimal": "0.32",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              132,
+              135,
+              190,
+              196
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [
+              141,
+              142,
+              143,
+              144
+            ],
+            "sourceEquations": [
+              52,
+              54
+            ],
+            "sourceDependencyRecordIds": [
+              "table-14:frequency_nu",
+              "table-14:upper_state_lifetime",
+              "table-01:epsilon0",
+              "table-01:hbar",
+              "table-01:c",
+              "table-01:e",
+              "table-01:a0",
+              "table-14:branching_ratio:3S1->3P2"
+            ],
+            "definition": "<Jg||er||Je>_R Racah-Wigner, Eq54; includes adopted theoretical branching ratios",
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "qiao-2023-apl"
+            ],
+            "followupAuditDate": "2026-10-30",
+            "lifetimeCompilationInputsVerified": "BaumannTable1:12.5(1.5)ns historical reproduced Lange1970 +174Yb15.9(1.9)ns; weighted mean13.80546ns,Birgeinflatedu1.65363ns reproduces13.8(1.7), not a171-only direct measurement",
+            "sourceDefinitionConflict": "Some resonance papers callbeta*Gamma_total/(2*pi) a natural linewidth; do not substitute branch partial width for total upper-stateGamma/(2*pi)"
+          },
+          "convention": "J-reduced",
+          "legacyText": "4.99(32)"
         },
         "linewidth_frequency_coefficient_Hz": {
-          "value": 11500000,
+          "value": 11500000.0,
           "unit": "Hz",
-          "quantity": "legacy_linewidth_frequency_coefficient",
+          "quantity": "ordinary_frequency_FWHM",
           "sourceId": "ref-01",
-          "sourceLocator": null,
+          "sourceLocator": "arXiv:2509.04416v2, Table 14, PDF/printed p.26, linewidth_FWHM_nu",
           "evidenceKind": "literature-reported",
-          "reviewStatus": "definition-needs-review",
-          "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
-          "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
+          "reviewStatus": "conflict-unresolved",
+          "uncertainty": 1400000.0,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-14:linewidth_FWHM_nu",
+            "sourceDecimal": "11.5",
+            "sourceUncertaintyDecimal": "1.4",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              135,
+              196
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              46,
+              47
+            ],
+            "reviewFlags": [
+              "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT"
+            ],
+            "sourceDependencyRecordIds": [
+              "table-14:upper_state_lifetime"
+            ],
+            "sourceConflict": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT: Eq47 defines Delta_nu=Gamma/(2pi), tables print an extra2pi",
+            "followupPrimarySourcesRead": [
+              "qiao-2023-rinp",
+              "qiao-2023-apl"
+            ],
+            "followupAuditDate": "2026-10-30",
+            "lifetimeCompilationInputsVerified": "BaumannTable1:12.5(1.5)ns historical reproduced Lange1970 +174Yb15.9(1.9)ns; weighted mean13.80546ns,Birgeinflatedu1.65363ns reproduces13.8(1.7), not a171-only direct measurement",
+            "sourceDefinitionConflict": "Some resonance papers callbeta*Gamma_total/(2*pi) a natural linewidth; do not substitute branch partial width for total upper-stateGamma/(2*pi)"
+          },
+          "convention": "ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict",
           "legacyText": "2π × 11.5(14) MHz"
         }
       },
@@ -1134,17 +2803,17 @@
             "upper": "³S₁",
             "lower": "³P₂",
             "label": "红 repumper (绿钟)",
-            "linewidth_FWHM": "2π × 11.5(14) MHz",
+            "linewidth_FWHM": "11.5(14) MHz",
             "Gamma_per_s": "7.2×10⁷",
             "oscillator_strength_f": "—",
             "Isat": "—",
-            "branching": "至 ³P₂ 分支 50.8%",
+            "branching": "至 ³P₂ 分支 50.8%（理论分支比；非完整实测）",
             "multipole": "E1",
             "classification": "强",
             "forbidden_reason": "—",
-            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=-1 ✓, 奇偶变 ✓",
+            "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=-1 ✓, 奇偶变 ✓",
             "use": "³P₂ 态 repump / 检测",
-            "source": "Kroeze 2025 Tbl.15",
+            "source": "Kroeze et al.2026, arXiv2509.04416v2 Table14 p26",
             "color": "#34d399"
           },
           "quantityFields": {
@@ -1179,10 +2848,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1193,10 +2867,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1207,10 +2886,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1221,10 +2905,15 @@
           "sourceId": "ref-17",
           "sourceLocator": null,
           "evidenceKind": "internal-calculation",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unverified-internal-record",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "J-reduced"
         },
         "Gamma_per_s_num": {
@@ -1234,10 +2923,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1248,10 +2942,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "derived",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1",
           "derivedFrom": [
@@ -1265,10 +2964,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "derived",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1",
           "derivedFrom": [
@@ -1284,8 +2988,13 @@
           "evidenceKind": "scaling-estimate",
           "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
           "legacyText": "2π × 4.24 kHz",
           "modelId": "legacy-rydberg-scaling-v1"
@@ -1302,8 +3011,8 @@
             "linewidth_FWHM": "2π × 4.24 kHz",
             "multipole": "E1",
             "classification": "强",
-            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
-            "source": "矩阵元：This work；波长 / 寿命：现有标度估算；实验参见 [4] Muniz 2025，附录 D",
+            "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "source": "历史标度示意，非逐态文献值；d为内部记录",
             "color": "#a78bfa",
             "approximate": true,
             "d_convention": "J-reduced, This work",
@@ -1336,8 +3045,8 @@
             "linewidth_FWHM": "2π × 4.24 kHz",
             "multipole": "E1",
             "classification": "强",
-            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
-            "source": "矩阵元：This work；波长 / 寿命：现有标度估算；实验参见 [4] Muniz 2025，附录 D",
+            "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "source": "历史标度示意，非逐态文献值；d为内部记录",
             "color": "#b08f76"
           },
           "quantityFields": {
@@ -1365,10 +3074,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1379,10 +3093,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1393,10 +3112,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1407,10 +3131,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "J-reduced",
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1421,10 +3150,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1437,8 +3171,13 @@
           "evidenceKind": "scaling-estimate",
           "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
           "legacyText": "2π × 9.67 kHz",
           "modelId": "legacy-rydberg-scaling-v1"
@@ -1455,8 +3194,8 @@
             "linewidth_FWHM": "2π × 9.67 kHz",
             "multipole": "E1",
             "classification": "强",
-            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
-            "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+            "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "source": "历史标度示意；指定态/条件未验证，不能归为Peper或Ma的逐态测量",
             "color": "#c7a98c"
           },
           "quantityFields": {
@@ -1484,10 +3223,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1498,10 +3242,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1512,10 +3261,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1526,10 +3280,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "J-reduced",
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1540,10 +3299,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1556,8 +3320,13 @@
           "evidenceKind": "scaling-estimate",
           "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
           "legacyText": "2π × 2.23 kHz",
           "modelId": "legacy-rydberg-scaling-v1"
@@ -1574,8 +3343,8 @@
             "linewidth_FWHM": "2π × 2.23 kHz",
             "multipole": "E1",
             "classification": "强",
-            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
-            "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+            "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
+            "source": "历史标度示意；指定态/条件未验证，不能归为Peper或Ma的逐态测量",
             "color": "#d9c3a8"
           },
           "quantityFields": {
@@ -1603,10 +3372,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1617,10 +3391,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1631,10 +3410,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1645,10 +3429,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "J-reduced",
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1659,10 +3448,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1675,8 +3469,13 @@
           "evidenceKind": "scaling-estimate",
           "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
           "legacyText": "2π × 5.75 kHz",
           "modelId": "legacy-rydberg-scaling-v1"
@@ -1694,7 +3493,7 @@
             "multipole": "E1",
             "classification": "强",
             "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
-            "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+            "source": "历史标度示意；指定态/条件未验证，不能归为Peper或Ma的逐态测量",
             "color": "#9e92b0"
           },
           "quantityFields": {
@@ -1722,10 +3521,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1736,10 +3540,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1750,10 +3559,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1764,10 +3578,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "J-reduced",
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1778,10 +3597,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1794,8 +3618,13 @@
           "evidenceKind": "scaling-estimate",
           "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
           "legacyText": "2π × 5.75 kHz",
           "modelId": "legacy-rydberg-scaling-v1"
@@ -1812,9 +3641,9 @@
             "linewidth_FWHM": "2π × 5.75 kHz",
             "multipole": "E1",
             "classification": "禁戒",
-            "forbidden_reason": "E1 禁戒：ΔJ=2 (J=0→J′=2)；约化矩阵元为零",
+            "forbidden_reason": "理想纯J电子E1模型：J=0→2，约化矩阵元为零；不据此推断所有混合本征态/F通道均为零。",
             "selection_check": "ΔS=0 ✓, ΔJ=2 ✗(E1), 奇偶变 ✓",
-            "source": "理论估算 (E1 禁戒)",
+            "source": "历史标度示意；指定态/条件未验证，不能归为Peper或Ma的逐态测量",
             "color": "#b8adc7"
           },
           "quantityFields": {
@@ -1842,10 +3671,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1856,10 +3690,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1870,10 +3709,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1884,10 +3728,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "J-reduced",
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1898,10 +3747,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1914,8 +3768,13 @@
           "evidenceKind": "scaling-estimate",
           "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
           "legacyText": "2π × 4.24 kHz",
           "modelId": "legacy-rydberg-scaling-v1"
@@ -1932,8 +3791,8 @@
             "linewidth_FWHM": "2π × 4.24 kHz",
             "multipole": "E1",
             "classification": "强",
-            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=0 ✓, 奇偶变 ✓",
-            "source": "理论估算 (n*⁻³/² 标度, Peper 2025)",
+            "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=0 ✓, 奇偶变 ✓",
+            "source": "历史标度示意；指定态/条件未验证，不能归为Peper或Ma的逐态测量",
             "color": "#a8c9b8"
           },
           "quantityFields": {
@@ -1961,10 +3820,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1975,10 +3839,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -1989,10 +3858,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -2003,10 +3877,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "J-reduced",
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -2017,10 +3896,15 @@
           "sourceId": "legacy-scaling",
           "sourceLocator": null,
           "evidenceKind": "scaling-estimate",
-          "reviewStatus": "legacy-not-rechecked",
+          "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": null,
           "modelId": "legacy-rydberg-scaling-v1"
         },
@@ -2033,8 +3917,13 @@
           "evidenceKind": "scaling-estimate",
           "reviewStatus": "definition-needs-review",
           "uncertainty": null,
-          "uncertaintyNote": "not-established-in-this-migration",
-          "conditions": null,
+          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "auditDisposition": "unsupported-model-or-missing-data",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+          },
           "convention": "coefficient-of-legacy-2pi-expression; reconcile source before physical relabeling",
           "legacyText": "2π × 4.24 kHz",
           "modelId": "legacy-rydberg-scaling-v1"
@@ -2051,8 +3940,8 @@
             "linewidth_FWHM": "2π × 4.24 kHz",
             "multipole": "E1",
             "classification": "强",
-            "selection_check": "ΔS=0 ✓, ΔL=+1 ✓, ΔJ=-1 ✓, 奇偶变 ✓",
-            "source": "理论估算 (n*⁻³/² 标度, Ma 2022)",
+            "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=-1 ✓, 奇偶变 ✓",
+            "source": "历史标度示意；指定态/条件未验证，不能归为Peper或Ma的逐态测量",
             "color": "#8fb5c4"
           },
           "quantityFields": {

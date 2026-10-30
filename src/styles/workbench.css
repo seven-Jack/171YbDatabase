@@ -1,0 +1,50 @@
+/* Quiet hierarchy around the single optical stage. */
+.section-nav a { position: relative; }
+.section-nav a[aria-current="location"] { color: var(--accent-strong); }
+.section-nav a[aria-current="location"]::after { content: ''; position: absolute; left: 4px; right: 4px; bottom: -7px; height: 2px; background: var(--accent); }
+.flow-step-link { display: flex; gap: 6px; align-items: center; min-height: 32px; color: inherit; text-decoration: none; border-radius: 4px; }
+.flow-step-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.flow-step.is-current .fs-num, .flow-step.is-current .fs-name { color: var(--accent); }
+.flow-step:not(.is-current) .fs-num { color: var(--text-3); }
+.object-workspace { display: grid; grid-template-columns: minmax(0,1fr); gap: 20px; align-items: start; }
+.object-workspace .source-grid { gap: 12px 22px; }
+.object-workspace .source-field-value { font-size: 23px; }
+.object-workspace #selectedSource { border-bottom: 0; }
+.object-workspace .transition-knowledge { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.15fr) minmax(0,1.1fr); gap: 0 36px; padding: 18px 0 24px; border-top: 1px solid var(--line); }
+.object-workspace .knowledge-header { grid-column: 1; grid-row: 1; padding-bottom: 18px; }
+.object-workspace .knowledge-levels { grid-column: 1; grid-row: 2; align-self: start; }
+.object-workspace .knowledge-section { grid-row: 1 / 3; margin: 0; padding: 0 0 0 28px; border-top: 0; border-left: 1px solid var(--line); }
+.object-workspace .knowledge-section:nth-of-type(1) { grid-column: 2; }
+.object-workspace .knowledge-section:nth-of-type(2) { grid-column: 3; }
+.workflow-handoff { display: flex; align-items: center; justify-content: space-between; gap: 10px 24px; border-top: 1px solid var(--line); padding: 16px 0 0; font: 400 12px/1.7 var(--font-ui); color: var(--text-3); }
+.workflow-next, .workflow-handoff a { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font: 500 12px/1.7 var(--font-ui); text-decoration: none; white-space: nowrap; }
+.workflow-handoff a:hover, .workflow-next:hover { text-decoration: underline; text-underline-offset: 4px; }
+.section-object-context { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px 12px!important; }
+.section-object-context [data-workflow-object] { color: var(--text-1); }
+.section-object-context a { margin-left: auto; color: var(--accent); font-size: 11px; text-underline-offset: 3px; white-space: nowrap; }
+/* Fine blue edge and precise numeric typography provide the technical detail. */
+.diagram-wrap { border-radius: 12px; }
+.diagram-wrap::before { height: 1px; }
+.source-field-value, .current-context, .section-object-context { font-variant-numeric: tabular-nums; }
+@media(max-width:1100px) {
+  .object-workspace .transition-knowledge { gap: 0 24px; }
+  .object-workspace .knowledge-section { padding-left: 20px; }
+}
+@media(max-width:780px) {
+  .object-workspace { gap: 16px; }
+  .object-workspace .transition-knowledge { display: block; }
+  .object-workspace .knowledge-section { border-left: 0; border-top: 1px solid var(--line); padding: 18px 0 0; }
+  .object-workspace .knowledge-section + .knowledge-section { margin-top: 20px; }
+  .workflow-next { justify-self: start; }
+}
+@media(max-width:640px) {
+  .flow-guide { align-items: flex-start; }
+  .flow-caption { font-size: 9px; line-height: 32px; }
+  .section-nav a[aria-current="location"]::after { left: 0; right: 0; bottom: -3px; }
+  .object-workspace .source-grid { grid-template-columns: minmax(0,1fr); gap: 0; }
+  .object-workspace .source-field-value { font-size: 23px; }
+  .workflow-handoff { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .workflow-handoff span { font-size: 11px; }
+  .section-object-context a { margin-left: 0; }
+  .section-object-context [data-workflow-object] { flex-basis: calc(100% - 65px); }
+}

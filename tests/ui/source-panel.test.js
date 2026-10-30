@@ -21,7 +21,8 @@ test('line-width main display separates the frequency coefficient from the untou
   assert.equal(t2.frequencyText,'182.4 kHz');
   assert.equal(t2.originalText,'2π × 182.4(4) kHz');
   assert.match(t2.decayText,/1146000 s⁻¹/);
-  assert.match(t2.reviewText,/尚未重核/);
+  assert.match(t2.reviewText,/Δν=Γ\/2π/);
+  assert.match(t2.reviewText,/来源冲突保留/);
   assert.equal(formatLinewidthDisplay(CORE_TRANSITIONS.find(row=>row.id==='T3')).frequencyText,'7.6 mHz');
   assert.equal(formatFrequency(29130000),'29.13 MHz');
 });
@@ -34,18 +35,21 @@ test('R2 makes dipole, wavelength and derived-lifetime evidence visibly distinct
   assert.match(html,/由标度估算推导/);
   assert.match(html,/0\.0376 ea₀/);
   assert.match(html,/J 级约化量/);
-  assert.match(html,/原文尚未重核/);
+  assert.match(html,/定义待核查/);
   assert.match(html,/Notebook \/ Run 及版本定位待补充/);
   assert.match(html,/原文页 \/ 表 \/ 式：待核查/);
   assert.doesNotMatch(html,/已验证|实验验证通过/);
   assert.equal(getTransitionRecord('R2').quantities.d_num.value,.0376);
 });
 
-test('T2 calibration conflict and T3 F-reduced convention remain accessible',()=>{
+test('T2 adopts the located literature derivation while T3 retains its unresolved F convention',()=>{
   const t2=renderFieldSourceHTML(createFieldView('T2','d_num'));
   assert.match(t2,/0\.5398\(6\)/);
-  assert.match(t2,/0\.543 ea₀/);
-  assert.match(t2,/内部校准/);
+  assert.match(t2,/0\.5398 ea₀/);
+  assert.match(t2,/文献推导值/);
+  assert.match(t2,/0\.0006 e\*a0/);
+  assert.match(t2,/Table 10/);
+  assert.doesNotMatch(t2,/>内部校准</);
   const t3=buildSourceView(selected('T3'));
   assert.equal(t3.convention,'有效 F 级约化量');
   assert.match(t3.channel,/当前 F 对与偏振内最强允许通道/);

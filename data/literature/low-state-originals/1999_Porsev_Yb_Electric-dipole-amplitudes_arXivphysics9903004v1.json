@@ -1,0 +1,723 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "title": "E1 amplitudes, lifetimes, and polarizabilities of the low-lying levels of atomic ytterbium",
+    "arxiv": "physics/9903004v1",
+    "publishedDOI": "10.1103/PhysRevA.60.2781",
+    "evidence": "ab initio CI+MBPT; comparison data explicitly separated",
+    "isotope": null,
+    "F": null,
+    "temperatureK": null,
+    "visualChecks": [
+      10,
+      11
+    ]
+  },
+  "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf",
+  "sha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3",
+  "extractedAt": "2026-10-29",
+  "nullMeaning": "blank/dash/unreported; never numeric zero",
+  "tables": [
+    {
+      "table": "Table I",
+      "pdfPage": 10,
+      "columns": [
+        "rowState",
+        "columnState",
+        "matrixElement",
+        "evidence",
+        "sourceFootnote"
+      ],
+      "unit": "|<LJ||r||LJ>| in atomic units; equivalent E1 magnitude in e a0 for D=e r",
+      "rows": [
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 3P0o",
+          "matrixElement": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "0.54(8)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 3P2o",
+          "matrixElement": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "4.40(80)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D1",
+          "columnState": "6s6p 3P0o",
+          "matrixElement": "2.61(10)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D1",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "2.26(10)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D1",
+          "columnState": "6s6p 3P2o",
+          "matrixElement": "0.60(12)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D1",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "0.27(10)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D2",
+          "columnState": "6s6p 3P0o",
+          "matrixElement": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D2",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "4.03(16)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D2",
+          "columnState": "6s6p 3P2o",
+          "matrixElement": "2.39(10)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D2",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "0.32(6)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D3",
+          "columnState": "6s6p 3P0o",
+          "matrixElement": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D3",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D3",
+          "columnState": "6s6p 3P2o",
+          "matrixElement": "6.12(30)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 3D3",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 1D2",
+          "columnState": "6s6p 3P0o",
+          "matrixElement": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 1D2",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "0.54(10)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 1D2",
+          "columnState": "6s6p 3P2o",
+          "matrixElement": "0.38(8)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "5d6s 1D2",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "3.60(70)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s7s 3S1",
+          "columnState": "6s6p 3P0o",
+          "matrixElement": "1.98(10)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s7s 3S1",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "3.53(15)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s7s 3S1",
+          "columnState": "6s6p 3P2o",
+          "matrixElement": "5.05(20)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s7s 3S1",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "0.73(15)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s7s 1S0",
+          "columnState": "6s6p 3P0o",
+          "matrixElement": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s7s 1S0",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "0.22(4)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s7s 1S0",
+          "columnState": "6s6p 3P2o",
+          "matrixElement": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s7s 1S0",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "4.31(80)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "0.44",
+          "evidence": "theory",
+          "sourceFootnote": "a:[22]"
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "0.549(4)",
+          "evidence": "experiment",
+          "sourceFootnote": "c:[23]"
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "0.553(13)",
+          "evidence": "experiment",
+          "sourceFootnote": "d:[24]"
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "4.44",
+          "evidence": "theory",
+          "sourceFootnote": "a:[22]"
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "4.89",
+          "evidence": "theory",
+          "sourceFootnote": "b:[21]"
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "4.13(10)",
+          "evidence": "experiment",
+          "sourceFootnote": "d:[24]"
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "4.02",
+          "evidence": "experiment",
+          "sourceFootnote": "e:[25]"
+        },
+        {
+          "rowState": "6s2 1S0",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "4.26",
+          "evidence": "experiment",
+          "sourceFootnote": "f:[26]"
+        },
+        {
+          "rowState": "5d6s 3D1",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "2.2(1)",
+          "evidence": "experiment",
+          "sourceFootnote": "g:[27]"
+        },
+        {
+          "rowState": "5d6s 3D1",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "0.24",
+          "evidence": "theory",
+          "sourceFootnote": "a:[22]"
+        },
+        {
+          "rowState": "5d6s 3D2",
+          "columnState": "6s6p 1P1o",
+          "matrixElement": "0.60",
+          "evidence": "theory",
+          "sourceFootnote": "a:[22]"
+        },
+        {
+          "rowState": "6s7s 3S1",
+          "columnState": "6s6p 3P0o",
+          "matrixElement": "1.36",
+          "evidence": "theory",
+          "sourceFootnote": "b:[21]"
+        },
+        {
+          "rowState": "6s7s 3S1",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "2.50",
+          "evidence": "theory",
+          "sourceFootnote": "b:[21]"
+        },
+        {
+          "rowState": "6s7s 3S1",
+          "columnState": "6s6p 3P2o",
+          "matrixElement": "3.77",
+          "evidence": "theory",
+          "sourceFootnote": "b:[21]"
+        },
+        {
+          "rowState": "6s7s 1S0",
+          "columnState": "6s6p 3P1o",
+          "matrixElement": "0.22(2)",
+          "evidence": "experiment",
+          "sourceFootnote": "h:[28]"
+        }
+      ],
+      "notes": [
+        "L gauge. Dash retained as null, not zero. This-work values are ab initio theory. Isotope/F/temperature not specified in table."
+      ]
+    },
+    {
+      "table": "Table II",
+      "pdfPage": 10,
+      "columns": [
+        "state",
+        "configuration",
+        "lifetime",
+        "unit",
+        "evidence",
+        "sourceFootnote"
+      ],
+      "unit": "per row; note explicit seconds exception for 3P2",
+      "rows": [
+        {
+          "state": "3D1",
+          "configuration": "5d6s",
+          "lifetime": "372(30)",
+          "unit": "ns",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3D2",
+          "configuration": "5d6s",
+          "lifetime": "430(35)",
+          "unit": "ns",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3D3",
+          "configuration": "5d6s",
+          "lifetime": "540(55)",
+          "unit": "ns",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "1D2",
+          "configuration": "5d6s",
+          "lifetime": "4400(1800)",
+          "unit": "ns",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3S1",
+          "configuration": "6s7s",
+          "lifetime": "13.5(1.1)",
+          "unit": "ns",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "1S0",
+          "configuration": "6s7s",
+          "lifetime": "33(13)",
+          "unit": "ns",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3P1o",
+          "configuration": "6s6p",
+          "lifetime": "875(250)",
+          "unit": "ns",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3P2o",
+          "configuration": "6s6p",
+          "lifetime": "15.0(1.5)",
+          "unit": "s",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "1P1o",
+          "configuration": "6s6p",
+          "lifetime": "5(2)",
+          "unit": "ns",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3D1",
+          "configuration": "5d6s",
+          "lifetime": "380(30)",
+          "unit": "ns",
+          "evidence": "experiment",
+          "sourceFootnote": "a:[27]"
+        },
+        {
+          "state": "3D2",
+          "configuration": "5d6s",
+          "lifetime": "460(30)",
+          "unit": "ns",
+          "evidence": "experiment",
+          "sourceFootnote": "a:[27]"
+        },
+        {
+          "state": "1D2",
+          "configuration": "5d6s",
+          "lifetime": "6700(500)",
+          "unit": "ns",
+          "evidence": "experiment",
+          "sourceFootnote": "a:[27]"
+        },
+        {
+          "state": "3S1",
+          "configuration": "6s7s",
+          "lifetime": "12.5(1.5)",
+          "unit": "ns",
+          "evidence": "experiment",
+          "sourceFootnote": "b:[33]"
+        },
+        {
+          "state": "3S1",
+          "configuration": "6s7s",
+          "lifetime": "15.9(1.9)",
+          "unit": "ns",
+          "evidence": "experiment",
+          "sourceFootnote": "c:[34]"
+        },
+        {
+          "state": "1S0",
+          "configuration": "6s7s",
+          "lifetime": "45.8(1.0)",
+          "unit": "ns",
+          "evidence": "experiment",
+          "sourceFootnote": "d:[28]"
+        },
+        {
+          "state": "3P1o",
+          "configuration": "6s6p",
+          "lifetime": "760–875",
+          "unit": "ns",
+          "evidence": "experimental-range",
+          "sourceFootnote": "e:[35]"
+        },
+        {
+          "state": "3P1o",
+          "configuration": "6s6p",
+          "lifetime": "1294",
+          "unit": "ns",
+          "evidence": "theory",
+          "sourceFootnote": "f:[22]"
+        },
+        {
+          "state": "3P2o",
+          "configuration": "6s6p",
+          "lifetime": "14.5",
+          "unit": "s",
+          "evidence": "theory",
+          "sourceFootnote": "f:[22]"
+        },
+        {
+          "state": "1P1o",
+          "configuration": "6s6p",
+          "lifetime": "5.1–6.4",
+          "unit": "ns",
+          "evidence": "experimental-range",
+          "sourceFootnote": "e:[35]"
+        },
+        {
+          "state": "1P1o",
+          "configuration": "6s6p",
+          "lifetime": "4.78",
+          "unit": "ns",
+          "evidence": "theory",
+          "sourceFootnote": "f:[22]"
+        }
+      ],
+      "notes": [
+        "Theory uses Table I reduced matrix elements and experimental transition frequencies. No isotope/F resolution assigned."
+      ]
+    },
+    {
+      "table": "Table III",
+      "pdfPage": 11,
+      "columns": [
+        "state",
+        "configuration",
+        "alpha0",
+        "alpha2",
+        "evidence",
+        "sourceFootnote"
+      ],
+      "unit": "a.u. polarizability",
+      "rows": [
+        {
+          "state": "1S0",
+          "configuration": "6s2",
+          "alpha0": "118(45)",
+          "alpha2": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3D1",
+          "configuration": "5d6s",
+          "alpha0": "47",
+          "alpha2": "22",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3D2",
+          "configuration": "5d6s",
+          "alpha0": "36",
+          "alpha2": "17",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3D3",
+          "configuration": "5d6s",
+          "alpha0": "-9",
+          "alpha2": "118(24)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "1D2",
+          "configuration": "5d6s",
+          "alpha0": "4",
+          "alpha2": "150",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "1S0",
+          "configuration": "6s7s",
+          "alpha0": "2072",
+          "alpha2": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3S1",
+          "configuration": "6s7s",
+          "alpha0": "2030",
+          "alpha2": "0.8",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3P0o",
+          "configuration": "6s6p",
+          "alpha0": "252(25)",
+          "alpha2": null,
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3P1o",
+          "configuration": "6s6p",
+          "alpha0": "278(15)",
+          "alpha2": "24.3(1.5)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3P2o",
+          "configuration": "6s6p",
+          "alpha0": "383(32)",
+          "alpha2": "-76(6)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "1P1o",
+          "configuration": "6s6p",
+          "alpha0": "501(200)",
+          "alpha2": "-118(60)",
+          "evidence": "theory-this-work",
+          "sourceFootnote": ""
+        },
+        {
+          "state": "3D1",
+          "configuration": "5d6s",
+          "alpha0": null,
+          "alpha2": "28(4)",
+          "evidence": "experiment",
+          "sourceFootnote": "a:[23]"
+        },
+        {
+          "state": "3D2",
+          "configuration": "5d6s",
+          "alpha0": null,
+          "alpha2": "28(8)",
+          "evidence": "experiment",
+          "sourceFootnote": "a:[23]"
+        },
+        {
+          "state": "3P1o",
+          "configuration": "6s6p",
+          "alpha0": null,
+          "alpha2": "24.06(1.37)",
+          "evidence": "experiment",
+          "sourceFootnote": "b:[36]"
+        },
+        {
+          "state": "3P1o",
+          "configuration": "6s6p",
+          "alpha0": null,
+          "alpha2": "24.26(0.84)",
+          "evidence": "experiment",
+          "sourceFootnote": "c:[37]"
+        },
+        {
+          "state": "3P1o",
+          "configuration": "6s6p",
+          "alpha0": null,
+          "alpha2": "23.33(0.52)",
+          "evidence": "experiment",
+          "sourceFootnote": "d:[31]"
+        },
+        {
+          "state": "1P1o",
+          "configuration": "6s6p",
+          "alpha0": null,
+          "alpha2": "-57.4(5.6)",
+          "evidence": "experiment",
+          "sourceFootnote": "b:[36]"
+        }
+      ],
+      "notes": [
+        "Uncertainties indicated only where author analysis allowed; values without errors may be order-of-magnitude estimates."
+      ]
+    }
+  ],
+  "criticalInterpretation": {
+    "3S1": {
+      "matrixElements_ea0": {
+        "3P0": {
+          "value": 1.98,
+          "uncertainty": 0.1
+        },
+        "3P1": {
+          "value": 3.53,
+          "uncertainty": 0.15
+        },
+        "3P2": {
+          "value": 5.05,
+          "uncertainty": 0.2
+        },
+        "1P1": {
+          "value": 0.73,
+          "uncertainty": 0.15
+        }
+      },
+      "branchingRatios": "Not tabulated in original Table I/II. Must derive from omega^3 |d|^2 / (2Je+1) and normalize over all four channels; not direct measured ratios.",
+      "lifetimeTheoryNs": {
+        "value": 13.5,
+        "uncertainty": 1.1
+      },
+      "experimentComparisons": [
+        {
+          "value": 12.5,
+          "uncertainty": 1.5,
+          "unit": "ns",
+          "originalReference": "[33] Lange, Luther, Steudel, EGAS proceedings (Hanover 1970), p31"
+        },
+        {
+          "value": 15.9,
+          "uncertainty": 1.9,
+          "unit": "ns",
+          "originalReference": "[34] Baumann et al. JPB18 L601 (1985)"
+        }
+      ]
+    },
+    "3D1": {
+      "theoryLifetimeNs": {
+        "value": 372,
+        "uncertainty": 30
+      },
+      "theoryDipole3P0_ea0": {
+        "value": 2.61,
+        "uncertainty": 0.1
+      }
+    }
+  }
+}

@@ -1476,5 +1476,4 @@
     color: var(--text-2);
   }
 
-  /* Latin and digits use Times New Roman; CJK falls back to Song typefaces. */
-  *:not(.katex):not(.katex *) { font-family: "Times New Roman", SimSun, "Songti SC", serif !important; }
+  /* Type is inherited from the theme; mathematical notation keeps native math fonts. */

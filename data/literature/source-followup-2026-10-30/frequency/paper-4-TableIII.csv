@@ -1,0 +1,13 @@
+paperNumber,sourceId,table,pdfPage,printedPage,label,referenceInPaper,column,printed,value,uncertainty,unit,bound,uncertaintyBound
+4,qiao-2023-apl,TableIII,5,224002-4,170Yb,This work and[11],this_work_frequency,389259634.0(35),389259634.0,3.5,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,170Yb,This work and[11],reference11_frequency,389259442(33),389259442,33,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,170Yb,This work and[11],difference,192(33),192,33,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,172Yb,This work and[11],this_work_frequency,389260184.2(32),389260184.2,3.2,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,172Yb,This work and[11],reference11_frequency,389259973(24),389259973,24,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,172Yb,This work and[11],difference,211(24),211,24,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,174Yb,This work and[11],this_work_frequency,389260605.8(32),389260605.8,3.2,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,174Yb,This work and[11],reference11_frequency,389260412(24),389260412,24,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,174Yb,This work and[11],difference,194(24),194,24,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,176Yb,This work and[11],this_work_frequency,389261029.9(32),389261029.9,3.2,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,176Yb,This work and[11],reference11_frequency,389260849(23),389260849,23,MHz,,
+4,qiao-2023-apl,TableIII,5,224002-4,176Yb,This work and[11],difference,181(23),181,23,MHz,,

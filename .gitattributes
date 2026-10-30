@@ -1,3 +1,6 @@
 # Preserve the official CIE download bytes, including their original CRLF lines.
 assets/spectral/CIE_xyz_1931_2deg.csv -text whitespace=cr-at-eol
 assets/spectral/CIE_xyz_1931_2deg.csv_metadata.json -text whitespace=cr-at-eol
+
+# Preserve extracted CSV bytes and accept their standard CRLF record endings.
+*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol

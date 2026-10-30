@@ -1,0 +1,480 @@
+{
+  "paperNumber": 1,
+  "sourceId": "qiao-2023-rinp",
+  "doi": "10.1016/j.rinp.2023.106439",
+  "context": "171Yb ultracold optical lattice; comb referenced to local578nm clock; reported shifts corrected; no cross-line covariance matrix supplied",
+  "tables": 3,
+  "pdf": "references/papers/1.pdf",
+  "sha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+  "table": "Table1",
+  "pdfPage": 4,
+  "printedPage": "4",
+  "columns": [
+    "shift_with_uncertainty"
+  ],
+  "note": "Zeeman rows were merged in original separately for649 and770 groups; expanded cells are not independent experiments. Values transcribed from rendered table; minus glyph corrupt in Poppler text.",
+  "rows": [
+    {
+      "label": "171Yb 649nm Fg1/2 Fe1/2; Lattice light",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "-5.20(0.15)",
+          "unit": "MHz",
+          "value": "-5.20",
+          "uncertainty": "0.15",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe3/2; Lattice light",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "-6.09(0.12)",
+          "unit": "MHz",
+          "value": "-6.09",
+          "uncertainty": "0.12",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe1/2; Lattice light",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "7.80(0.58)",
+          "unit": "MHz",
+          "value": "7.80",
+          "uncertainty": "0.58",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe3/2; Lattice light",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "9.12(0.01)",
+          "unit": "MHz",
+          "value": "9.12",
+          "uncertainty": "0.01",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg5/2 Fe3/2; Lattice light",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "6.75(0.75)",
+          "unit": "MHz",
+          "value": "6.75",
+          "uncertainty": "0.75",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe1/2; Probe",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "-0.01(0.01)",
+          "unit": "MHz",
+          "value": "-0.01",
+          "uncertainty": "0.01",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe3/2; Probe",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "0.10(0.02)",
+          "unit": "MHz",
+          "value": "0.10",
+          "uncertainty": "0.02",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe1/2; Probe",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "-0.02(0.05)",
+          "unit": "MHz",
+          "value": "-0.02",
+          "uncertainty": "0.05",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe3/2; Probe",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "-0.26(0.02)",
+          "unit": "MHz",
+          "value": "-0.26",
+          "uncertainty": "0.02",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg5/2 Fe3/2; Probe",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "-0.22(0.05)",
+          "unit": "MHz",
+          "value": "-0.22",
+          "uncertainty": "0.05",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe1/2; Collision",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "0.44(0.09)",
+          "unit": "MHz",
+          "value": "0.44",
+          "uncertainty": "0.09",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe3/2; Collision",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "0.39(0.16)",
+          "unit": "MHz",
+          "value": "0.39",
+          "uncertainty": "0.16",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe1/2; Collision",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "0.03(0.17)",
+          "unit": "MHz",
+          "value": "0.03",
+          "uncertainty": "0.17",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe3/2; Collision",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "-0.07(0.18)",
+          "unit": "MHz",
+          "value": "-0.07",
+          "uncertainty": "0.18",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg5/2 Fe3/2; Collision",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "0.04(0.20)",
+          "unit": "MHz",
+          "value": "0.04",
+          "uncertainty": "0.20",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe1/2; Zeeman",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "<0.01 (<0.01)",
+          "unit": "MHz",
+          "value": "0.01",
+          "uncertainty": "0.01",
+          "bound": "less-than",
+          "uncertaintyBound": "less-than",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe3/2; Zeeman",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "<0.01 (<0.01)",
+          "unit": "MHz",
+          "value": "0.01",
+          "uncertainty": "0.01",
+          "bound": "less-than",
+          "uncertaintyBound": "less-than",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe1/2; Zeeman",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "<0.01 (<0.01)",
+          "unit": "MHz",
+          "value": "0.01",
+          "uncertainty": "0.01",
+          "bound": "less-than",
+          "uncertaintyBound": "less-than",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe3/2; Zeeman",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "<0.01 (<0.01)",
+          "unit": "MHz",
+          "value": "0.01",
+          "uncertainty": "0.01",
+          "bound": "less-than",
+          "uncertaintyBound": "less-than",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg5/2 Fe3/2; Zeeman",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "<0.01 (<0.01)",
+          "unit": "MHz",
+          "value": "0.01",
+          "uncertainty": "0.01",
+          "bound": "less-than",
+          "uncertaintyBound": "less-than",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe1/2; Statistical",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "0(0.11)",
+          "unit": "MHz",
+          "value": "0",
+          "uncertainty": "0.11",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe3/2; Statistical",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "0(0.24)",
+          "unit": "MHz",
+          "value": "0",
+          "uncertainty": "0.24",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe1/2; Statistical",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "0(0.24)",
+          "unit": "MHz",
+          "value": "0",
+          "uncertainty": "0.24",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe3/2; Statistical",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "0(0.32)",
+          "unit": "MHz",
+          "value": "0",
+          "uncertainty": "0.32",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg5/2 Fe3/2; Statistical",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "0(0.44)",
+          "unit": "MHz",
+          "value": "0",
+          "uncertainty": "0.44",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe1/2; Total",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "-4.77(0.21)",
+          "unit": "MHz",
+          "value": "-4.77",
+          "uncertainty": "0.21",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649nm Fg1/2 Fe3/2; Total",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "-5.60(0.31)",
+          "unit": "MHz",
+          "value": "-5.60",
+          "uncertainty": "0.31",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe1/2; Total",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "7.81(0.65)",
+          "unit": "MHz",
+          "value": "7.81",
+          "uncertainty": "0.65",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg3/2 Fe3/2; Total",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "8.79(0.37)",
+          "unit": "MHz",
+          "value": "8.79",
+          "uncertainty": "0.37",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770nm Fg5/2 Fe3/2; Total",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "shift_with_uncertainty": {
+          "printed": "6.57(0.89)",
+          "unit": "MHz",
+          "value": "6.57",
+          "uncertainty": "0.89",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    }
+  ],
+  "rawPageText": "paper-1-page-4.txt",
+  "renderedVerified": "rendered/paper-1-p4.png"
+}

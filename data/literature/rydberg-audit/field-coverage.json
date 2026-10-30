@@ -1,0 +1,2662 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-10-29",
+  "readOnlyCanonical": true,
+  "inputSha256": {
+    "estimates.json": "f3976a7f8732b267678eef0b08415b06372313d13d2e5e0d5945be0428c57ddd",
+    "hyperfine.json": "9918be31886446b9ee2b3c534ff8647e2eecb22a415632dcbfe4cd7802e31176",
+    "levels.json": "ecf1a74540eb19ff13d13feafb2b4c939f8b7e0e422cde9968cdaf6b7b34060b",
+    "transitions.json": "faaf7a1d01c9891a27d942a64193188a3f83aecd202e147b91241f8b8cae947b"
+  },
+  "coverageScope": "all estimates leaves; everyR1-R7 quantity; allRydberg-level quantity fields; all4legacyRydbergHFS rows and fullsaved65S leaves",
+  "records": [
+    {
+      "file": "data/estimates.json",
+      "path": "schemaVersion",
+      "valueAtAudit": 1,
+      "assessment": "legacy-model-metadata",
+      "reason": "Archival single-channel/scaling model metadata, not a measured171Yb quantity",
+      "sourceEvidence": [],
+      "recommendedAction": "retain modelId and add explicit legacy/unvalidated status"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "modelId",
+      "valueAtAudit": "legacy-rydberg-scaling-v1",
+      "assessment": "legacy-model-metadata",
+      "reason": "Archival single-channel/scaling model metadata, not a measured171Yb quantity",
+      "sourceEvidence": [],
+      "recommendedAction": "retain modelId and add explicit legacy/unvalidated status"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "evidenceKind",
+      "valueAtAudit": "scaling-estimate",
+      "assessment": "legacy-model-metadata",
+      "reason": "Archival single-channel/scaling model metadata, not a measured171Yb quantity",
+      "sourceEvidence": [],
+      "recommendedAction": "retain modelId and add explicit legacy/unvalidated status"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "reviewStatus",
+      "valueAtAudit": "legacy-not-rechecked",
+      "assessment": "legacy-model-metadata",
+      "reason": "Archival single-channel/scaling model metadata, not a measured171Yb quantity",
+      "sourceEvidence": [],
+      "recommendedAction": "retain modelId and add explicit legacy/unvalidated status"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "constants.R_INF",
+      "valueAtAudit": 109737.3156816,
+      "assessment": "historical-physical-constant",
+      "reason": "CODATA2018 infinite-mass Rydberg constant; not isotope reduced-mass Rydberg constant",
+      "sourceEvidence": [],
+      "recommendedAction": "retain versioned constant; prevent use as isotope-resolved spectroscopy"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "constants.E_I_CM",
+      "valueAtAudit": 50443.0676,
+      "assessment": "verified-review-compilation-only",
+      "reason": "Kroeze v2 Table2/p20 and explanation p3 give171 centroid compilation; its scale conflicts with Peper channel-threshold centroid",
+      "sourceEvidence": [
+        "kroeze-171-ionization-compilation"
+      ],
+      "recommendedAction": "cite Kroeze review with uncertainty; keep separate calibration from Peper E_I0/E_I1; no mixed-model derivation"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "constants.E_I_EV",
+      "valueAtAudit": 6.2541433,
+      "assessment": "verified-review-compilation-only",
+      "reason": "Kroeze v2 Table2/p20 and explanation p3 give171 centroid compilation; its scale conflicts with Peper channel-threshold centroid",
+      "sourceEvidence": [
+        "kroeze-171-ionization-compilation"
+      ],
+      "recommendedAction": "cite Kroeze review with uncertainty; keep separate calibration from Peper E_I0/E_I1; no mixed-model derivation"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "constants.A0_UM",
+      "valueAtAudit": 5.29177210903e-05,
+      "assessment": "constant-or-provenance-metadata",
+      "reason": "Versioned CODATA2018 Bohr radius conversion only; no atomic-state evidence",
+      "sourceEvidence": [],
+      "recommendedAction": "retain explicit version and unit-conversion provenance"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "ns_values[0]",
+      "valueAtAudit": 50,
+      "assessment": "user-interface-grid",
+      "reason": "Chosen integer-n grid, not measured levels",
+      "sourceEvidence": [],
+      "recommendedAction": "retain grid only when legacy-model boundaries are visible"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "ns_values[1]",
+      "valueAtAudit": 55,
+      "assessment": "user-interface-grid",
+      "reason": "Chosen integer-n grid, not measured levels",
+      "sourceEvidence": [],
+      "recommendedAction": "retain grid only when legacy-model boundaries are visible"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "ns_values[2]",
+      "valueAtAudit": 60,
+      "assessment": "user-interface-grid",
+      "reason": "Chosen integer-n grid, not measured levels",
+      "sourceEvidence": [],
+      "recommendedAction": "retain grid only when legacy-model boundaries are visible"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "ns_values[3]",
+      "valueAtAudit": 65,
+      "assessment": "user-interface-grid",
+      "reason": "Chosen integer-n grid, not measured levels",
+      "sourceEvidence": [],
+      "recommendedAction": "retain grid only when legacy-model boundaries are visible"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "ns_values[4]",
+      "valueAtAudit": 70,
+      "assessment": "user-interface-grid",
+      "reason": "Chosen integer-n grid, not measured levels",
+      "sourceEvidence": [],
+      "recommendedAction": "retain grid only when legacy-model boundaries are visible"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "ns_values[5]",
+      "valueAtAudit": 75,
+      "assessment": "user-interface-grid",
+      "reason": "Chosen integer-n grid, not measured levels",
+      "sourceEvidence": [],
+      "recommendedAction": "retain grid only when legacy-model boundaries are visible"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "ns_values[6]",
+      "valueAtAudit": 80,
+      "assessment": "user-interface-grid",
+      "reason": "Chosen integer-n grid, not measured levels",
+      "sourceEvidence": [],
+      "recommendedAction": "retain grid only when legacy-model boundaries are visible"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[0].series",
+      "valueAtAudit": "6sns ¹S₀",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[0].term",
+      "valueAtAudit": "¹S₀",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[0].delta0",
+      "valueAtAudit": 4.2721,
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[0].delta2",
+      "valueAtAudit": "—",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[0].range",
+      "valueAtAudit": "n = 70–90",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[0].note",
+      "valueAtAudit": "单重态 S 系列",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[0].source",
+      "valueAtAudit": "Halter 2023 / J. Phys. B 56, 055001",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[1].series",
+      "valueAtAudit": "6snp ¹P₁",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[1].term",
+      "valueAtAudit": "¹P₁",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[1].delta0",
+      "valueAtAudit": 3.9535,
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[1].delta2",
+      "valueAtAudit": "—",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[1].range",
+      "valueAtAudit": "n = 70–90",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[1].note",
+      "valueAtAudit": "单重态 P 系列",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[1].source",
+      "valueAtAudit": "Halter 2023 / J. Phys. B 56, 055001",
+      "assessment": "verified-source-wrong-isotope-for171-use",
+      "reason": "Halter174Yb n70-90 constant-defect fit, uncertainties .0025/.0009; no171 value or delta2 was fitted",
+      "sourceEvidence": [
+        "halter-singlet-qd"
+      ],
+      "recommendedAction": "retain only as174 comparison with uncertainty and fit range; exclude171 calculations"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[2].series",
+      "valueAtAudit": "6sns ³S₁",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "No2.523 found in examined Peper main/supp; Peper171S needs multiple channels/core thresholds. Model mu0=.438426851 is not a direct scalar replacement",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "wilson-174-triplet-qd"
+      ],
+      "recommendedAction": "archive2.523 as unsupported legacy; require isotope/branch-specific MQDT or independently sourced fit before numerical use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[2].term",
+      "valueAtAudit": "³S₁",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "No2.523 found in examined Peper main/supp; Peper171S needs multiple channels/core thresholds. Model mu0=.438426851 is not a direct scalar replacement",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "wilson-174-triplet-qd"
+      ],
+      "recommendedAction": "archive2.523 as unsupported legacy; require isotope/branch-specific MQDT or independently sourced fit before numerical use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[2].delta0",
+      "valueAtAudit": 2.523,
+      "assessment": "unsupported-scalar-defect",
+      "reason": "No2.523 found in examined Peper main/supp; Peper171S needs multiple channels/core thresholds. Model mu0=.438426851 is not a direct scalar replacement",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "wilson-174-triplet-qd"
+      ],
+      "recommendedAction": "archive2.523 as unsupported legacy; require isotope/branch-specific MQDT or independently sourced fit before numerical use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[2].delta2",
+      "valueAtAudit": "—",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "No2.523 found in examined Peper main/supp; Peper171S needs multiple channels/core thresholds. Model mu0=.438426851 is not a direct scalar replacement",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "wilson-174-triplet-qd"
+      ],
+      "recommendedAction": "archive2.523 as unsupported legacy; require isotope/branch-specific MQDT or independently sourced fit before numerical use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[2].range",
+      "valueAtAudit": "高 n",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "No2.523 found in examined Peper main/supp; Peper171S needs multiple channels/core thresholds. Model mu0=.438426851 is not a direct scalar replacement",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "wilson-174-triplet-qd"
+      ],
+      "recommendedAction": "archive2.523 as unsupported legacy; require isotope/branch-specific MQDT or independently sourced fit before numerical use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[2].note",
+      "valueAtAudit": "高 n 三重连通系列 MQDT 有效量子亏损附近值（n=57: ν=54.2839 → δ_eff≈2.72）",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "No2.523 found in examined Peper main/supp; Peper171S needs multiple channels/core thresholds. Model mu0=.438426851 is not a direct scalar replacement",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "wilson-174-triplet-qd"
+      ],
+      "recommendedAction": "archive2.523 as unsupported legacy; require isotope/branch-specific MQDT or independently sourced fit before numerical use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[2].source",
+      "valueAtAudit": "高 n MQDT 有效值 (Peper 2025 / Phys. Rev. X 15, 011009)",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "No2.523 found in examined Peper main/supp; Peper171S needs multiple channels/core thresholds. Model mu0=.438426851 is not a direct scalar replacement",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "wilson-174-triplet-qd"
+      ],
+      "recommendedAction": "archive2.523 as unsupported legacy; require isotope/branch-specific MQDT or independently sourced fit before numerical use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[3].series",
+      "valueAtAudit": "6snd ³D₁",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[3].term",
+      "valueAtAudit": "³D₁",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[3].delta0",
+      "valueAtAudit": 1.41,
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[3].delta2",
+      "valueAtAudit": "—",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[3].range",
+      "valueAtAudit": "低 n (近似)",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[3].note",
+      "valueAtAudit": "三重态 D 系列；高 n 用 MQDT 6-channel",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[3].source",
+      "valueAtAudit": "Peper 2025 / Phys. Rev. X 15, 011009",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[4].series",
+      "valueAtAudit": "6snd ³D₂",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[4].term",
+      "valueAtAudit": "³D₂",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[4].delta0",
+      "valueAtAudit": 1.42,
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[4].delta2",
+      "valueAtAudit": "—",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[4].range",
+      "valueAtAudit": "低 n (近似)",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[4].note",
+      "valueAtAudit": "6snd 为零场偶宇称 D 系列；p–f 混合属于奇宇称 6snp / 6snf，可影响 D 态 Stark 位移及相互作用计算，并非 D 态零场内禀 p–f 混合。δ₀=1.42 的原数值出处未独立核验。",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[4].source",
+      "valueAtAudit": "原记录引 Kuroda 2025 / Phys. Rev. A 112, 042817；仅用于混合机制背景，不是对该 ¹⁷¹Yb ³D₂ 数值的验证",
+      "assessment": "unsupported-scalar-defect",
+      "reason": "1.41/1.42 not established by examined sources; Peper171D are6-channel mixed series and Kuroda background does not validate legacy number",
+      "sourceEvidence": [
+        "peper-supplement PDFpp8-9 TablesS9-S10"
+      ],
+      "recommendedAction": "archive legacy D defects; do not replace with fractional eigenchannel mu or unrelated isotope"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[5].series",
+      "valueAtAudit": "6snf ³F₂,₃,₄",
+      "assessment": "source-misattribution",
+      "reason": "Kuroda f-series model mu0 near .07-.08 (174V1); main .026 concerns g states, and .02100 concerns mixing angle. No universal171f delta=.02 established",
+      "sourceEvidence": [
+        "kuroda-f-versus-g",
+        "kuroda-f3-channel",
+        "kuroda-published-f-mixing"
+      ],
+      "recommendedAction": "remove verified-source appearance; archive .02 as unsupported and use state-resolved odd-parity MQDT when available"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[5].term",
+      "valueAtAudit": "³F_J",
+      "assessment": "source-misattribution",
+      "reason": "Kuroda f-series model mu0 near .07-.08 (174V1); main .026 concerns g states, and .02100 concerns mixing angle. No universal171f delta=.02 established",
+      "sourceEvidence": [
+        "kuroda-f-versus-g",
+        "kuroda-f3-channel",
+        "kuroda-published-f-mixing"
+      ],
+      "recommendedAction": "remove verified-source appearance; archive .02 as unsupported and use state-resolved odd-parity MQDT when available"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[5].delta0",
+      "valueAtAudit": 0.02,
+      "assessment": "source-misattribution",
+      "reason": "Kuroda f-series model mu0 near .07-.08 (174V1); main .026 concerns g states, and .02100 concerns mixing angle. No universal171f delta=.02 established",
+      "sourceEvidence": [
+        "kuroda-f-versus-g",
+        "kuroda-f3-channel",
+        "kuroda-published-f-mixing"
+      ],
+      "recommendedAction": "remove verified-source appearance; archive .02 as unsupported and use state-resolved odd-parity MQDT when available"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[5].delta2",
+      "valueAtAudit": "—",
+      "assessment": "source-misattribution",
+      "reason": "Kuroda f-series model mu0 near .07-.08 (174V1); main .026 concerns g states, and .02100 concerns mixing angle. No universal171f delta=.02 established",
+      "sourceEvidence": [
+        "kuroda-f-versus-g",
+        "kuroda-f3-channel",
+        "kuroda-published-f-mixing"
+      ],
+      "recommendedAction": "remove verified-source appearance; archive .02 as unsupported and use state-resolved odd-parity MQDT when available"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[5].range",
+      "valueAtAudit": "高 n",
+      "assessment": "source-misattribution",
+      "reason": "Kuroda f-series model mu0 near .07-.08 (174V1); main .026 concerns g states, and .02100 concerns mixing angle. No universal171f delta=.02 established",
+      "sourceEvidence": [
+        "kuroda-f-versus-g",
+        "kuroda-f3-channel",
+        "kuroda-published-f-mixing"
+      ],
+      "recommendedAction": "remove verified-source appearance; archive .02 as unsupported and use state-resolved odd-parity MQDT when available"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[5].note",
+      "valueAtAudit": "近氢行为，量子亏损极小",
+      "assessment": "source-misattribution",
+      "reason": "Kuroda f-series model mu0 near .07-.08 (174V1); main .026 concerns g states, and .02100 concerns mixing angle. No universal171f delta=.02 established",
+      "sourceEvidence": [
+        "kuroda-f-versus-g",
+        "kuroda-f3-channel",
+        "kuroda-published-f-mixing"
+      ],
+      "recommendedAction": "remove verified-source appearance; archive .02 as unsupported and use state-resolved odd-parity MQDT when available"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "quantumDefects[5].source",
+      "valueAtAudit": "Kuroda 2025 / Phys. Rev. A 112, 042817",
+      "assessment": "source-misattribution",
+      "reason": "Kuroda f-series model mu0 near .07-.08 (174V1); main .026 concerns g states, and .02100 concerns mixing angle. No universal171f delta=.02 established",
+      "sourceEvidence": [
+        "kuroda-f-versus-g",
+        "kuroda-f3-channel",
+        "kuroda-published-f-mixing"
+      ],
+      "recommendedAction": "remove verified-source appearance; archive .02 as unsupported and use state-resolved odd-parity MQDT when available"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "ionization.E_I0",
+      "valueAtAudit": 50442.795744,
+      "assessment": "verified-model-channel-threshold",
+      "reason": "Exact printed Peper171 thresholds, Fcore0/Fcore1; source gives no uncertainty for adopted model limits",
+      "sourceEvidence": [
+        "peper-171-ion-thresholds"
+      ],
+      "recommendedAction": "retain with explicit channel/core, energy reference, model adoption and no uncertainty claim"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "ionization.E_I1",
+      "valueAtAudit": 50443.217463,
+      "assessment": "verified-model-channel-threshold",
+      "reason": "Exact printed Peper171 thresholds, Fcore0/Fcore1; source gives no uncertainty for adopted model limits",
+      "sourceEvidence": [
+        "peper-171-ion-thresholds"
+      ],
+      "recommendedAction": "retain with explicit channel/core, energy reference, model adoption and no uncertainty claim"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "ionization.A_ion_GHz",
+      "valueAtAudit": 12.6428,
+      "assessment": "rounded-literature-value",
+      "reason": "Peper p4 states12.642812GHz; Kroeze Table2 cites Blatt1983 at12.6428121242(12)GHz;12.6428 is rounded",
+      "sourceEvidence": [
+        "peper-2025 PDFp4",
+        "kroeze-2026-v2 Table2"
+      ],
+      "recommendedAction": "replace display provenance with exact cited source/version; original Blatt needed before claiming independent primary verification"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "lifetimeReference.tau_us",
+      "valueAtAudit": 0.0138,
+      "assessment": "unsupported-lifetime-extrapolation",
+      "reason": "Low7s13.8ns normalization does not establish highn171 triplet radiative/effective lifetime or BBR temperature; Fang is singlet n21-27, Wilson174n75 survival, Muniz17165F3/2 at518G",
+      "sourceEvidence": [
+        "fang-2001 Table1",
+        "wilson-174-n75-survival",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "preserve as archival illustration only; no validated lifetime or linewidth output from this anchor"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "lifetimeReference.n",
+      "valueAtAudit": 7,
+      "assessment": "unsupported-lifetime-extrapolation",
+      "reason": "Low7s13.8ns normalization does not establish highn171 triplet radiative/effective lifetime or BBR temperature; Fang is singlet n21-27, Wilson174n75 survival, Muniz17165F3/2 at518G",
+      "sourceEvidence": [
+        "fang-2001 Table1",
+        "wilson-174-n75-survival",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "preserve as archival illustration only; no validated lifetime or linewidth output from this anchor"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "lifetimeReference.delta",
+      "valueAtAudit": 2.523,
+      "assessment": "unsupported-lifetime-extrapolation",
+      "reason": "Low7s13.8ns normalization does not establish highn171 triplet radiative/effective lifetime or BBR temperature; Fang is singlet n21-27, Wilson174n75 survival, Muniz17165F3/2 at518G",
+      "sourceEvidence": [
+        "fang-2001 Table1",
+        "wilson-174-n75-survival",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "preserve as archival illustration only; no validated lifetime or linewidth output from this anchor"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "c6Reference.n",
+      "valueAtAudit": 57,
+      "assessment": "invalid-anchor-mapping",
+      "reason": "34 belongs to171 nu54.28 specific F/mF/B/theta workpoint; n57 in Peper paragraph is Rb comparison with76. delta2.523 cannot convert source nu to n",
+      "sourceEvidence": [
+        "peper-34-c6"
+      ],
+      "recommendedAction": "archive entire c6Reference as invalid mapping; separately store Peper condition-bound coefficient; exclude extrapolatedC6 and derived blockade from validated use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "c6Reference.delta",
+      "valueAtAudit": 2.523,
+      "assessment": "invalid-anchor-mapping",
+      "reason": "34 belongs to171 nu54.28 specific F/mF/B/theta workpoint; n57 in Peper paragraph is Rb comparison with76. delta2.523 cannot convert source nu to n",
+      "sourceEvidence": [
+        "peper-34-c6"
+      ],
+      "recommendedAction": "archive entire c6Reference as invalid mapping; separately store Peper condition-bound coefficient; exclude extrapolatedC6 and derived blockade from validated use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "c6Reference.value_GHz_um6",
+      "valueAtAudit": 34,
+      "assessment": "invalid-anchor-mapping",
+      "reason": "34 belongs to171 nu54.28 specific F/mF/B/theta workpoint; n57 in Peper paragraph is Rb comparison with76. delta2.523 cannot convert source nu to n",
+      "sourceEvidence": [
+        "peper-34-c6"
+      ],
+      "recommendedAction": "archive entire c6Reference as invalid mapping; separately store Peper condition-bound coefficient; exclude extrapolatedC6 and derived blockade from validated use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "c6Reference.blockadeReferenceRabi_MHz",
+      "valueAtAudit": 1,
+      "assessment": "invalid-anchor-mapping",
+      "reason": "34 belongs to171 nu54.28 specific F/mF/B/theta workpoint; n57 in Peper paragraph is Rb comparison with76. delta2.523 cannot convert source nu to n",
+      "sourceEvidence": [
+        "peper-34-c6"
+      ],
+      "recommendedAction": "archive entire c6Reference as invalid mapping; separately store Peper condition-bound coefficient; exclude extrapolatedC6 and derived blockade from validated use"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "scope",
+      "valueAtAudit": "Legacy single-channel quantum-defect and power-law estimates; no MQDT, state tracking, or uncertainty propagation; not an experimental setting.",
+      "assessment": "legacy-model-metadata",
+      "reason": "Archival single-channel/scaling model metadata, not a measured171Yb quantity",
+      "sourceEvidence": [],
+      "recommendedAction": "retain modelId and add explicit legacy/unvalidated status"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "constantProvenance.A0_UM.sourceVersion",
+      "valueAtAudit": "CODATA 2018",
+      "assessment": "constant-or-provenance-metadata",
+      "reason": "Versioned CODATA2018 Bohr radius conversion only; no atomic-state evidence",
+      "sourceEvidence": [],
+      "recommendedAction": "retain explicit version and unit-conversion provenance"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "constantProvenance.A0_UM.sourceUrl",
+      "valueAtAudit": "https://physics.nist.gov/cuu/pdf/all_2018.pdf",
+      "assessment": "constant-or-provenance-metadata",
+      "reason": "Versioned CODATA2018 Bohr radius conversion only; no atomic-state evidence",
+      "sourceEvidence": [],
+      "recommendedAction": "retain explicit version and unit-conversion provenance"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "constantProvenance.A0_UM.sourceLocator",
+      "valueAtAudit": "p.1, Bohr radius row",
+      "assessment": "constant-or-provenance-metadata",
+      "reason": "Versioned CODATA2018 Bohr radius conversion only; no atomic-state evidence",
+      "sourceEvidence": [],
+      "recommendedAction": "retain explicit version and unit-conversion provenance"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "constantProvenance.A0_UM.conversion",
+      "valueAtAudit": "A0 in metres times 10^6; 2018 mantissa retained",
+      "assessment": "constant-or-provenance-metadata",
+      "reason": "Versioned CODATA2018 Bohr radius conversion only; no atomic-state evidence",
+      "sourceEvidence": [],
+      "recommendedAction": "retain explicit version and unit-conversion provenance"
+    },
+    {
+      "file": "data/estimates.json",
+      "path": "constantProvenance.A0_UM.reviewScope",
+      "valueAtAudit": "unit conversion only; not validation of the scaling model",
+      "assessment": "constant-or-provenance-metadata",
+      "reason": "Versioned CODATA2018 Bohr radius conversion only; no atomic-state evidence",
+      "sourceEvidence": [],
+      "recommendedAction": "retain explicit version and unit-conversion provenance"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R2.quantities.wavelength_vac_nm",
+      "valueAtAudit": 301.87,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Upper level is labeled triplet-connected while energy comes from legacy scalarQD, not selectedF branch. PeperTableS25 has independent branch-resolved energy evidence but canonical R2 upper energy is different",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json TableS25 nu60.1761918",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "keep legacy approximate label; map F/mF/B and energy-reference before any replacement or Rabi source validation"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R2.quantities.frequency_THz",
+      "valueAtAudit": 993.11,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Upper level is labeled triplet-connected while energy comes from legacy scalarQD, not selectedF branch. PeperTableS25 has independent branch-resolved energy evidence but canonical R2 upper energy is different",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json TableS25 nu60.1761918",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "keep legacy approximate label; map F/mF/B and energy-reference before any replacement or Rabi source validation"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R2.quantities.energy_cm",
+      "valueAtAudit": 33126.52,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Upper level is labeled triplet-connected while energy comes from legacy scalarQD, not selectedF branch. PeperTableS25 has independent branch-resolved energy evidence but canonical R2 upper energy is different",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json TableS25 nu60.1761918",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "keep legacy approximate label; map F/mF/B and energy-reference before any replacement or Rabi source validation"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R2.quantities.d_num",
+      "valueAtAudit": 0.0376,
+      "assessment": "internal-number-without-generating-artifact",
+      "reason": "0.0376 is website-saved J-reduced convention; no matching generating artifact found in examined savedR005/R006. R006 F-reduced values and branch are different, cannot validate this number",
+      "sourceEvidence": [
+        "internal-evidence/r006-states.csv",
+        "internal-evidence/r006-reduced_tdm.csv"
+      ],
+      "recommendedAction": "retain This work, legacy-unverified J-reduced, provenance-gap flag; do not cite Peper/Muniz as numerical source"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R2.quantities.Gamma_per_s_num",
+      "valueAtAudit": 26660,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R2.quantities.energy_eV",
+      "valueAtAudit": 4.107165029259203,
+      "assessment": "derived-from-unverified-input",
+      "reason": "Unit conversion retains unsupported legacy energy input, not new evidence",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "carry parent-input review status through derived value"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R2.quantities.lifetime_ns",
+      "valueAtAudit": 37509.377344336084,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R2.quantities.linewidth_frequency_coefficient_Hz",
+      "valueAtAudit": 4240,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R1.quantities.wavelength_vac_nm",
+      "valueAtAudit": 302.06,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R1.quantities.frequency_THz",
+      "valueAtAudit": 992.49,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R1.quantities.energy_cm",
+      "valueAtAudit": 33105.94,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R1.quantities.d_num",
+      "valueAtAudit": 0.0568,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "n*^-3/2 scaling and series/angular factors not source-validated for selected171mixed state; no uncertainty trace",
+      "sourceEvidence": [
+        "legacy scaling only"
+      ],
+      "recommendedAction": "do not call literature-measured or validated calculated TDM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R1.quantities.Gamma_per_s_num",
+      "valueAtAudit": 60760,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R1.quantities.linewidth_frequency_coefficient_Hz",
+      "valueAtAudit": 9670,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R3.quantities.wavelength_vac_nm",
+      "valueAtAudit": 301.78,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R3.quantities.frequency_THz",
+      "valueAtAudit": 993.4,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R3.quantities.energy_cm",
+      "valueAtAudit": 33136.35,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R3.quantities.d_num",
+      "valueAtAudit": 0.0272,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "n*^-3/2 scaling and series/angular factors not source-validated for selected171mixed state; no uncertainty trace",
+      "sourceEvidence": [
+        "legacy scaling only"
+      ],
+      "recommendedAction": "do not call literature-measured or validated calculated TDM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R3.quantities.Gamma_per_s_num",
+      "valueAtAudit": 13980,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R3.quantities.linewidth_frequency_coefficient_Hz",
+      "valueAtAudit": 2230,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R4.quantities.wavelength_vac_nm",
+      "valueAtAudit": 301.86,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R4.quantities.frequency_THz",
+      "valueAtAudit": 993.14,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R4.quantities.energy_cm",
+      "valueAtAudit": 33127.49,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R4.quantities.d_num",
+      "valueAtAudit": 0.0535,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "n*^-3/2 scaling and series/angular factors not source-validated for selected171mixed state; no uncertainty trace",
+      "sourceEvidence": [
+        "legacy scaling only"
+      ],
+      "recommendedAction": "do not call literature-measured or validated calculated TDM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R4.quantities.Gamma_per_s_num",
+      "valueAtAudit": 36130,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R4.quantities.linewidth_frequency_coefficient_Hz",
+      "valueAtAudit": 5750,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R5.quantities.wavelength_vac_nm",
+      "valueAtAudit": 301.86,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R5.quantities.frequency_THz",
+      "valueAtAudit": 993.14,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R5.quantities.energy_cm",
+      "valueAtAudit": 33127.48,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Saved single-channel estimate not a resolved171Yb F/mF line; no source model-input and uncertainty trace established",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "retain archival value only; exclude verified spectroscopy/Rabi predictions"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R5.quantities.d_num",
+      "valueAtAudit": 0,
+      "assessment": "conditional-pure-J-selection-rule",
+      "reason": "J0->J2 electronic E1 reduced matrix element is zero in pure-J basis;171hyperfine/channel-mixed eigenstates require separate F-state audit, zero is not a universal physical-rate assertion",
+      "sourceEvidence": [
+        "canonical legacy-rydberg-scaling-v1"
+      ],
+      "recommendedAction": "label ideal pure-J E1 selection-rule zero; no full171state validation"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R5.quantities.Gamma_per_s_num",
+      "valueAtAudit": 36140,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R5.quantities.linewidth_frequency_coefficient_Hz",
+      "valueAtAudit": 5750,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R6.quantities.wavelength_vac_nm",
+      "valueAtAudit": 308.42,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Upper level is labeled triplet-connected while energy comes from legacy scalarQD, not selectedF branch. PeperTableS25 has independent branch-resolved energy evidence but canonical R2 upper energy is different",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json TableS25 nu60.1761918",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "keep legacy approximate label; map F/mF/B and energy-reference before any replacement or Rabi source validation"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R6.quantities.frequency_THz",
+      "valueAtAudit": 972.02,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Upper level is labeled triplet-connected while energy comes from legacy scalarQD, not selectedF branch. PeperTableS25 has independent branch-resolved energy evidence but canonical R2 upper energy is different",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json TableS25 nu60.1761918",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "keep legacy approximate label; map F/mF/B and energy-reference before any replacement or Rabi source validation"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R6.quantities.energy_cm",
+      "valueAtAudit": 32422.95,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Upper level is labeled triplet-connected while energy comes from legacy scalarQD, not selectedF branch. PeperTableS25 has independent branch-resolved energy evidence but canonical R2 upper energy is different",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json TableS25 nu60.1761918",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "keep legacy approximate label; map F/mF/B and energy-reference before any replacement or Rabi source validation"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R6.quantities.d_num",
+      "valueAtAudit": 0.0667,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "n*^-3/2 scaling and series/angular factors not source-validated for selected171mixed state; no uncertainty trace",
+      "sourceEvidence": [
+        "legacy scaling only"
+      ],
+      "recommendedAction": "do not call literature-measured or validated calculated TDM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R6.quantities.Gamma_per_s_num",
+      "valueAtAudit": 26660,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R6.quantities.linewidth_frequency_coefficient_Hz",
+      "valueAtAudit": 4240,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R7.quantities.wavelength_vac_nm",
+      "valueAtAudit": 325.68,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Upper level is labeled triplet-connected while energy comes from legacy scalarQD, not selectedF branch. PeperTableS25 has independent branch-resolved energy evidence but canonical R2 upper energy is different",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json TableS25 nu60.1761918",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "keep legacy approximate label; map F/mF/B and energy-reference before any replacement or Rabi source validation"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R7.quantities.frequency_THz",
+      "valueAtAudit": 920.5,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Upper level is labeled triplet-connected while energy comes from legacy scalarQD, not selectedF branch. PeperTableS25 has independent branch-resolved energy evidence but canonical R2 upper energy is different",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json TableS25 nu60.1761918",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "keep legacy approximate label; map F/mF/B and energy-reference before any replacement or Rabi source validation"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R7.quantities.energy_cm",
+      "valueAtAudit": 30704.57,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "Upper level is labeled triplet-connected while energy comes from legacy scalarQD, not selectedF branch. PeperTableS25 has independent branch-resolved energy evidence but canonical R2 upper energy is different",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json TableS25 nu60.1761918",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "keep legacy approximate label; map F/mF/B and energy-reference before any replacement or Rabi source validation"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R7.quantities.d_num",
+      "valueAtAudit": 0.0957,
+      "assessment": "unverified-scaling-estimate",
+      "reason": "n*^-3/2 scaling and series/angular factors not source-validated for selected171mixed state; no uncertainty trace",
+      "sourceEvidence": [
+        "legacy scaling only"
+      ],
+      "recommendedAction": "do not call literature-measured or validated calculated TDM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R7.quantities.Gamma_per_s_num",
+      "valueAtAudit": 26660,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/transitions.json",
+      "path": "records.R7.quantities.linewidth_frequency_coefficient_Hz",
+      "valueAtAudit": 4240,
+      "assessment": "unsupported-lifetime-linewidth-estimate",
+      "reason": "LegacyGamma from unvalidated lifetime normalization; total population loss vs partial EinsteinA vs frequencyFWHM unresolved. R5 zero optical E1 matrix element does not require zero total upper-level decay",
+      "sourceEvidence": [
+        "fang-2001 definitions",
+        "muniz-171-65s"
+      ],
+      "recommendedAction": "archive as rate/lifetime illustration with definition-needs-review; do not promote to naturalFWHM"
+    },
+    {
+      "file": "data/levels.json",
+      "path": "records.yb171-6s65s-3s1-triplet-connected.quantities.energy_cm",
+      "valueAtAudit": 50414.958999999995,
+      "assessment": "derived-from-unverified-excitation",
+      "reason": "Sum of lowP0 energy and legacyR2 excitation does not identify selectedF branch; cannot combine this total energy with saved MQDT hyperfine data",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json"
+      ],
+      "recommendedAction": "retain approximate archival energy; exclude state-resolved verified use"
+    },
+    {
+      "file": "data/levels.json",
+      "path": "records.yb171-6s65s-3s1-triplet-connected.quantities.energy_eV",
+      "valueAtAudit": 6.250658280928287,
+      "assessment": "derived-from-unverified-excitation",
+      "reason": "Sum of lowP0 energy and legacyR2 excitation does not identify selectedF branch; cannot combine this total energy with saved MQDT hyperfine data",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json"
+      ],
+      "recommendedAction": "retain approximate archival energy; exclude state-resolved verified use"
+    },
+    {
+      "file": "data/levels.json",
+      "path": "records.yb171-6s50s-3s1.quantities.energy_cm",
+      "valueAtAudit": null,
+      "assessment": "honest-missing",
+      "reason": "Original canonical row has no measured energy, retain null; no source value inferred merely from an integern",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json"
+      ],
+      "recommendedAction": "retain null with missingReason"
+    },
+    {
+      "file": "data/levels.json",
+      "path": "records.yb171-6s50s-3s1.quantities.energy_eV",
+      "valueAtAudit": null,
+      "assessment": "honest-missing",
+      "reason": "Original canonical row has no measured energy, retain null; no source value inferred merely from an integern",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json"
+      ],
+      "recommendedAction": "retain null with missingReason"
+    },
+    {
+      "file": "data/levels.json",
+      "path": "records.yb171-6s80s-3s1.quantities.energy_cm",
+      "valueAtAudit": null,
+      "assessment": "honest-missing",
+      "reason": "Original canonical row has no measured energy, retain null; no source value inferred merely from an integern",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json"
+      ],
+      "recommendedAction": "retain null with missingReason"
+    },
+    {
+      "file": "data/levels.json",
+      "path": "records.yb171-6s80s-3s1.quantities.energy_eV",
+      "valueAtAudit": null,
+      "assessment": "honest-missing",
+      "reason": "Original canonical row has no measured energy, retain null; no source value inferred merely from an integern",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json"
+      ],
+      "recommendedAction": "retain null with missingReason"
+    },
+    {
+      "file": "data/levels.json",
+      "path": "records.yb171-6s65d-3d1.quantities.energy_cm",
+      "valueAtAudit": null,
+      "assessment": "honest-missing",
+      "reason": "Original canonical row has no measured energy, retain null; no source value inferred merely from an integern",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json"
+      ],
+      "recommendedAction": "retain null with missingReason"
+    },
+    {
+      "file": "data/levels.json",
+      "path": "records.yb171-6s65d-3d1.quantities.energy_eV",
+      "valueAtAudit": null,
+      "assessment": "honest-missing",
+      "reason": "Original canonical row has no measured energy, retain null; no source value inferred merely from an integern",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json"
+      ],
+      "recommendedAction": "retain null with missingReason"
+    },
+    {
+      "file": "data/levels.json",
+      "path": "records.yb171-6s65d-3d2.quantities.energy_cm",
+      "valueAtAudit": null,
+      "assessment": "honest-missing",
+      "reason": "Original canonical row has no measured energy, retain null; no source value inferred merely from an integern",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json"
+      ],
+      "recommendedAction": "retain null with missingReason"
+    },
+    {
+      "file": "data/levels.json",
+      "path": "records.yb171-6s65d-3d2.quantities.energy_eV",
+      "valueAtAudit": null,
+      "assessment": "honest-missing",
+      "reason": "Original canonical row has no measured energy, retain null; no source value inferred merely from an integern",
+      "sourceEvidence": [
+        "peper-s-f12-tables-s25-s27.json"
+      ],
+      "recommendedAction": "retain null with missingReason"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.levelId",
+      "valueAtAudit": "yb171-6s50s-3s1",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.legacy.A",
+      "valueAtAudit": 5.734,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.legacy.levels[0].F",
+      "valueAtAudit": 0.5,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.legacy.levels[0].shift",
+      "valueAtAudit": -5.734,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.legacy.levels[1].F",
+      "valueAtAudit": 1.5,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.legacy.levels[1].shift",
+      "valueAtAudit": 2.867,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.sourceId",
+      "valueAtAudit": "legacy-hfs",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.evidenceKind",
+      "valueAtAudit": "scaling-estimate",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.reviewStatus",
+      "valueAtAudit": "legacy-not-rechecked",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.unit",
+      "valueAtAudit": "MHz",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.uncertainty",
+      "valueAtAudit": null,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.50³S₁.uncertaintyNote",
+      "valueAtAudit": "not-established-in-this-migration",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.levelId",
+      "valueAtAudit": "yb171-6s80s-3s1",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.legacy.A",
+      "valueAtAudit": 1.32,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.legacy.levels[0].F",
+      "valueAtAudit": 0.5,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.legacy.levels[0].shift",
+      "valueAtAudit": -1.32,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.legacy.levels[1].F",
+      "valueAtAudit": 1.5,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.legacy.levels[1].shift",
+      "valueAtAudit": 0.66,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.sourceId",
+      "valueAtAudit": "legacy-hfs",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.evidenceKind",
+      "valueAtAudit": "scaling-estimate",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.reviewStatus",
+      "valueAtAudit": "legacy-not-rechecked",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.unit",
+      "valueAtAudit": "MHz",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.uncertainty",
+      "valueAtAudit": null,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.80³S₁.uncertaintyNote",
+      "valueAtAudit": "not-established-in-this-migration",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.levelId",
+      "valueAtAudit": "yb171-6s65d-3d1",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.legacy.A",
+      "valueAtAudit": -0.767,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.legacy.levels[0].F",
+      "valueAtAudit": 0.5,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.legacy.levels[0].shift",
+      "valueAtAudit": 0.767,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.legacy.levels[1].F",
+      "valueAtAudit": 1.5,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.legacy.levels[1].shift",
+      "valueAtAudit": -0.383,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.sourceId",
+      "valueAtAudit": "legacy-hfs",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.evidenceKind",
+      "valueAtAudit": "scaling-estimate",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.reviewStatus",
+      "valueAtAudit": "legacy-not-rechecked",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.unit",
+      "valueAtAudit": "MHz",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.uncertainty",
+      "valueAtAudit": null,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₁.uncertaintyNote",
+      "valueAtAudit": "not-established-in-this-migration",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.levelId",
+      "valueAtAudit": "yb171-6s65d-3d2",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.legacy.A",
+      "valueAtAudit": -0.289,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.legacy.levels[0].F",
+      "valueAtAudit": 1.5,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.legacy.levels[0].shift",
+      "valueAtAudit": 0.434,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.legacy.levels[1].F",
+      "valueAtAudit": 2.5,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.legacy.levels[1].shift",
+      "valueAtAudit": -0.289,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.sourceId",
+      "valueAtAudit": "legacy-hfs",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.evidenceKind",
+      "valueAtAudit": "scaling-estimate",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.reviewStatus",
+      "valueAtAudit": "legacy-not-rechecked",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.unit",
+      "valueAtAudit": "MHz",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.uncertainty",
+      "valueAtAudit": null,
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "states.65³D₂.uncertaintyNote",
+      "valueAtAudit": "not-established-in-this-migration",
+      "assessment": "unverified-legacy-hyperfine-scaling",
+      "reason": "No source/state-resolved171A established for these50S/80S/65D rows; strong ionic-core hyperfine mixing prevents assuming simple bareJ n^-3 A predicts fullhighn splitting",
+      "sourceEvidence": [
+        "peper-s-f12-mqdt",
+        "peper-2025 PDFpp4-5"
+      ],
+      "recommendedAction": "archive as illustrative schematic only; exclude physical F splitting until branch/model source is established"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.levelId",
+      "valueAtAudit": "yb171-6s65s-3s1-triplet-connected",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.sourceId",
+      "valueAtAudit": "this-work-hyperfine-65s",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.evidenceKind",
+      "valueAtAudit": "internal-calculation",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.reviewStatus",
+      "valueAtAudit": "legacy-not-rechecked",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.conditions.magneticField_G",
+      "valueAtAudit": 0,
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.conditions.electricField_V_cm",
+      "valueAtAudit": null,
+      "assessment": "configuration-can-be-completed",
+      "reason": "OriginalR005 validation conditions electric_field=0 and notebook condition no external E were read this audit",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "set field0V/cm with direct savedrun locator; keep internal model scope"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.conditionsNote",
+      "valueAtAudit": "The CSV records B=0; the old page states no external electric field, but the original run configuration has not been reopened in this migration.",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.energyReference",
+      "valueAtAudit": "ionic-hyperfine-centroid",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.effectiveAConvention",
+      "valueAtAudit": "frequency-defined A_eff=(2/3)*splitting; selected zero-field branches only",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.physicalValidation",
+      "valueAtAudit": "independent-experimental-validation-and-total-model-uncertainty-not-established",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[0]",
+      "valueAtAudit": "isotope",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[1]",
+      "valueAtAudit": "n_label",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[2]",
+      "valueAtAudit": "term",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[3]",
+      "valueAtAudit": "F",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[4]",
+      "valueAtAudit": "B_G",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[5]",
+      "valueAtAudit": "nu_upper",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[6]",
+      "valueAtAudit": "energy_over_h_Hz_relative_ionic_hfs_centroid",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[7]",
+      "valueAtAudit": "selected_pair_centroid_over_h_Hz",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[8]",
+      "valueAtAudit": "shift_over_h_MHz",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[9]",
+      "valueAtAudit": "splitting_F32_minus_F12_MHz",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[10]",
+      "valueAtAudit": "A_eff_over_h_MHz",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[11]",
+      "valueAtAudit": "triplet_channel_weight_diagnostic",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[12]",
+      "valueAtAudit": "P_S1_in_retained_6sns",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.columns[13]",
+      "valueAtAudit": "g_F",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].isotope",
+      "valueAtAudit": "171",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].n_label",
+      "valueAtAudit": "65",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].term",
+      "valueAtAudit": "3S1 triplet-connected",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].F",
+      "valueAtAudit": "0.5",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].B_G",
+      "valueAtAudit": "0.0",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].nu_upper",
+      "valueAtAudit": "60.1761270465",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].energy_over_h_Hz_relative_ionic_hfs_centroid",
+      "valueAtAudit": "-905339807668.5577",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].selected_pair_centroid_over_h_Hz",
+      "valueAtAudit": "-897664643289.6215",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].shift_over_h_MHz",
+      "valueAtAudit": "-7675.16437893628",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].splitting_F32_minus_F12_MHz",
+      "valueAtAudit": "11512.746568404542",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Saved modelg; PeperTableS26 measured g2.42(13) atnu60.1761918 supports branch identity, not absolute TDM/lifetime/C6 validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].A_eff_over_h_MHz",
+      "valueAtAudit": "7675.164378936361",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].triplet_channel_weight_diagnostic",
+      "valueAtAudit": "0.9082363430484395",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Recoupled-channel diagnostic only; not rigorous wholewavefunction P(S=1)",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].P_S1_in_retained_6sns",
+      "valueAtAudit": "0.8594064354527566",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Normalized spin projection within retained6sns subspace; omitted-channel/model error not totalphysical uncertainty",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[0].g_F",
+      "valueAtAudit": "2.2944137538533558",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Saved modelg; PeperTableS26 measured g2.42(13) atnu60.1761918 supports branch identity, not absolute TDM/lifetime/C6 validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].isotope",
+      "valueAtAudit": "171",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].n_label",
+      "valueAtAudit": "65",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].term",
+      "valueAtAudit": "3S1 triplet-connected",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].F",
+      "valueAtAudit": "1.5",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].B_G",
+      "valueAtAudit": "0.0",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].nu_upper",
+      "valueAtAudit": "60.561073029",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].energy_over_h_Hz_relative_ionic_hfs_centroid",
+      "valueAtAudit": "-893827061100.1532",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].selected_pair_centroid_over_h_Hz",
+      "valueAtAudit": "-897664643289.6215",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].shift_over_h_MHz",
+      "valueAtAudit": "3837.5821894682617",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].splitting_F32_minus_F12_MHz",
+      "valueAtAudit": "11512.746568404542",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Saved modelg; PeperTableS26 measured g2.42(13) atnu60.1761918 supports branch identity, not absolute TDM/lifetime/C6 validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].A_eff_over_h_MHz",
+      "valueAtAudit": "7675.164378936361",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].triplet_channel_weight_diagnostic",
+      "valueAtAudit": "1.0",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Recoupled-channel diagnostic only; not rigorous wholewavefunction P(S=1)",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].P_S1_in_retained_6sns",
+      "valueAtAudit": "1.0",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Normalized spin projection within retained6sns subspace; omitted-channel/model error not totalphysical uncertainty",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.rows[1].g_F",
+      "valueAtAudit": "1.3347899158789458",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Saved modelg; PeperTableS26 measured g2.42(13) atnu60.1761918 supports branch identity, not absolute TDM/lifetime/C6 validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.lineEnding",
+      "valueAtAudit": "CRLF",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.finalNewline",
+      "valueAtAudit": true,
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    },
+    {
+      "file": "data/hyperfine.json",
+      "path": "saved65S.csv.compatibilityPath",
+      "valueAtAudit": "assets/05.21_yb171_65s_hyperfine.csv",
+      "assessment": "verified-saved-internal-record",
+      "reason": "Value/convention preserved in project CSV and originalR005 validation artifact; no model rerun or independent experimental splitting validation",
+      "sourceEvidence": [
+        "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+        "internal-evidence/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "recommendedAction": "retain internal-calculation and source precision, explicitly not experimental uncertainty"
+    }
+  ]
+}

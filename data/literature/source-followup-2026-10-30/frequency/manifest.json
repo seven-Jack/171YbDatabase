@@ -1,0 +1,41 @@
+{
+  "sourcePDFs": {
+    "1": {
+      "sourceId": "qiao-2023-rinp",
+      "doi": "10.1016/j.rinp.2023.106439",
+      "context": "171Yb ultracold optical lattice; comb referenced to local578nm clock; reported shifts corrected; no cross-line covariance matrix supplied",
+      "tables": 3,
+      "pdf": "references/papers/1.pdf",
+      "sha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783"
+    },
+    "4": {
+      "sourceId": "qiao-2023-apl",
+      "doi": "10.1063/5.0155776",
+      "context": "Yb isotope MTS in Ne hollow-cathode lamp; absolute pressure correction estimated; reference-isotope174; natural width not inferred from broadened MTS",
+      "tables": 7,
+      "pdf": "references/papers/4.pdf",
+      "sha256": "e2d263f0b1762d45b04bdbba8c3adc4fdf4ff098427054b4f8124f624e295df4"
+    },
+    "5": {
+      "sourceId": "zhou-2020-pra",
+      "doi": "10.1103/PhysRevA.101.062506",
+      "context": "Yb isotope649nm MTS in Ne hollow-cathode lamp; absolute common uncertainty3.2MHz; relative shifts separately measured; HCL22degC pressure-rate reference is not complete BBR temperature",
+      "tables": 4,
+      "pdf": "references/papers/5.pdf",
+      "sha256": "3aecb39c63b436ef56cd59bc1c38e6c09cc300c5e4d34ba7120f43e4ad1d12de"
+    },
+    "6": {
+      "sourceId": "zhao-2024-pra",
+      "doi": "10.1103/PhysRevA.110.042816",
+      "context": "Yb isotope1389nm MTS in Ne hollow-cathode lamp; absolute systematic uncertainty dominated by pressure estimate; magnetic field280mG; spectrum linewidth not natural lifetime",
+      "tables": 4,
+      "pdf": "references/papers/6.pdf",
+      "sha256": "5c0e26a7ffb56471aff199941159da7686533620e5341f7633cfba594ab322ae"
+    }
+  },
+  "tableCount": 18,
+  "rowCount": 162,
+  "allNumberedTablesCovered": true,
+  "numberedOriginalsUnchanged": true,
+  "printedNotationPolicy": "raw page text and rendered PNG are authoritative for glyph/spacing; table cells transcribed visually, signed numeric spelling normalized only where Poppler corrupts minus sign; comparison entries never upgraded to thispapermeasurement"
+}
