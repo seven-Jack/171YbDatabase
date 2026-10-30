@@ -1,0 +1,53 @@
+{
+  "parameters": {
+    "isotope": 171,
+    "n_label": 65,
+    "mu_seed": 4.438,
+    "L": 0,
+    "B_G": 0.0,
+    "Fs": [
+      0.5,
+      1.5
+    ],
+    "initial_mFs": [
+      -0.5,
+      0.5
+    ],
+    "qs": [
+      -1,
+      0,
+      1
+    ],
+    "nu_seed": 60.562
+  },
+  "software": {
+    "python": "3.11.7",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "rydcalc_commit": "d17b981af24b0ef7132819d53504bc84c42f95b2",
+    "rydcalc_python_sha256": {
+      "MQDTclass.py": "5b4dbeb05c67555322904ebb3b8ead8cb6ca4c14603bd7c931af9e30a90bfe9a",
+      "__init__.py": "3584d06b7177a9a8cfd4b813fa839b6fe9a51fd92a2e8221d2bbcabe20cbdd8f",
+      "alkali.py": "cb97e0642a3847b9b8086968b278ebd8dd9f0c2f863bc3f9536bf35935bd2117",
+      "alkali_data.py": "42e5755b3a6fcf5ac5e5db8ee8d5b8346bceaf23fb9f8ea6ffe865e8a8b6d886",
+      "alkaline.py": "93826d97479c1d2d4c932f9ccb3d1bcdae01ac581d0ab3c138f8616138a282c2",
+      "alkaline_data.py": "48adfd29679799c03447b6bf2c4e8d3fbc27cab5e42c4bbdb78c1a048f07c501",
+      "alkaline_hyperfine.py": "a80bef7fe268ca84d1c531e6409ad90299ff80eaac107814a728303e8ed7b268",
+      "analysis.py": "a814d0dcaf3e27c285039020bba9caa1b24f4772081826938b56f5585982b7c6",
+      "constants.py": "edf2021f7e9a9bce1027c2d8b2e44c543059850e2df462746332e38f5e1071ee",
+      "database_constructor.py": "8592ca7ec29257627578d1149c4b65c13927e32acb51816ffd867c8f5f02eb17",
+      "db_manager.py": "629153366c2251a9bb351625bd6df265f8e70e8f25d583c4c36fd91d37e7c2c5",
+      "defects.py": "eecaab3b671490b95bd08a521b6f6d95d6f010e9cd58e593fcd84916ae1e064e",
+      "hydrogen.py": "5eee0cab53769bd93e038e855ffced359678ddb1fb8d58763ab72f8c84562638",
+      "pair_basis.py": "06fa7f6dbf33dac73d88e790526919efb553a9a739134132a9a2817023c1c5ed",
+      "ponderomotive.py": "f9c0e3e60008e2a2fb7b762a34ad580b37a2dace77ba0604f18aaf5ac6873fef",
+      "rydcalc.py": "efe856b0c2fac1599e6d70cc2c63fb108e7aca645d10807bc1c847ae8ef3a4e2",
+      "setupc.py": "9a40a7992e136709cea1000e205e2e0856e72ae0ea793d095369aafcc03f1e31",
+      "single_basis.py": "b7cd5896dfcf9d0e1a48a60d91a653415ff2260bb3d801a6a3251f3b3ab34034",
+      "utils.py": "e0bc2a8d778e8c45d6d78da1678ec332906e912b87575a8872595ecde37511a6"
+    }
+  },
+  "convention": "d_q=<final|d_q|initial>; q=mf-mi; atomic unit=e*a0; B=0",
+  "checks": "passed: local root, Hermiticity, polarization, reduced ME, angular sum",
+  "scope": "internal consistency only; absolute radial accuracy and experimental state mapping unvalidated"
+}

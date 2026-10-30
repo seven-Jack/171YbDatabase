@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-10-30T09:00:41+08:00",
+  "datasetVersion": "2026.10.29.1",
+  "softwareChecks": {
+    "command": "npm run check",
+    "unitTestsPassed": 176,
+    "dataValidation": "passed",
+    "preflight": "passed",
+    "build": "passed;68packagedfiles plusartifactmanifest",
+    "artifactCheck": "passed;69files,95localreferences"
+  },
+  "browserChecks": {
+    "runtime": "installedGoogleChrome via Playwright channel chrome; no browser installation",
+    "projects": [
+      "desktop1440",
+      "desktop1024",
+      "mobile390"
+    ],
+    "initial": {
+      "scenarios": 78,
+      "passed": 66,
+      "failed": 12,
+      "cause": "9ambiguous legacy selectors plus3timeouts"
+    },
+    "focusedRecheck": {
+      "passed": 15,
+      "failed": 0,
+      "changes": "only disambiguated test selector; original timeouts unchanged"
+    },
+    "newLiteratureScenarios": {
+      "passed": 9,
+      "failed": 0
+    },
+    "distinctScenariosWithPassingEvidence": 87,
+    "interpretation": "Passing evidence collected across3runs, not a claim that the first full run passed"
+  },
+  "integrity": {
+    "originalLibraryPDFsUnchanged": 47,
+    "indexedPDFsValidated": 22,
+    "sourceGraphResolved": true,
+    "deliveryLinksResolved": true,
+    "all131CanonicalQuantityPathsHaveAuditDisposition": true,
+    "saved65SCSV_SHA256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec",
+    "literatureExcludedFromDist": true,
+    "referencesExcludedFromDist": true
+  },
+  "scientificValidation": "not established for all records; unresolved source/model boundaries documented; engineering checks do not resolve physical conflicts",
+  "publication": "localonly;no commit/push/deployment performed",
+  "logs": {
+    "check.log": {
+      "path": "references/audits/verification-logs/check.log",
+      "sha256": "adce18dcbc1ab98ee9f345f1fd13ea069246881661872916669fb1ba7c04a112"
+    },
+    "chrome-initial-78.log": {
+      "path": "references/audits/verification-logs/chrome-initial-78.log",
+      "sha256": "9dde8e90efb427ee88b33379bdb872e256b38b3e57fbf543000c3051c975d428"
+    },
+    "chrome-recheck-15.log": {
+      "path": "references/audits/verification-logs/chrome-recheck-15.log",
+      "sha256": "119ff5e13ab275ea429bb94216fea94db2f0b966b812dab468443f822a3d18ae"
+    },
+    "chrome-literature-9.log": {
+      "path": "references/audits/verification-logs/chrome-literature-9.log",
+      "sha256": "0bd2b6672a1e1dd20bd31390a64b9448ddf8e5714e37c2ec0f32019b1e53db1d"
+    }
+  }
+}

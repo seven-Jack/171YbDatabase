@@ -1,0 +1,11 @@
+paperNumber,sourceId,table,pdfPage,printedPage,label,referenceInPaper,column,printed,value,uncertainty,unit,bound,uncertaintyBound
+1,qiao-2023-rinp,Table3,5,5,6s7s3S1,This work,splitting,10258.04(0.37),10258.04,0.37,MHz,,
+1,qiao-2023-rinp,Table3,5,5,6s7s3S1,[34],splitting,10256.75(0.29),10256.75,0.29,MHz,,
+1,qiao-2023-rinp,Table3,5,5,6s7s3S1,[36],splitting,"10,290",10290,,MHz,,
+1,qiao-2023-rinp,Table3,5,5,6s7s3S1,[37],splitting,10285.8,10285.8,,MHz,,
+1,qiao-2023-rinp,Table3,5,5,6s7s3S1,[38],splitting,10256(14),10256,14,MHz,,
+1,qiao-2023-rinp,Table3,5,5,6s7s3S1,[39],splitting,10215(15),10215,15,MHz,,
+1,qiao-2023-rinp,Table3,5,5,6s7s3S1,[40],splitting,10271.6(2.6),10271.6,2.6,MHz,,
+1,qiao-2023-rinp,Table3,5,5,6s6p3P2,[41],splitting,6705(18),6705,18,MHz,,
+1,qiao-2023-rinp,Table3,5,5,6s6p3P2,[40],splitting,6680.7(2.4),6680.7,2.4,MHz,,
+1,qiao-2023-rinp,Table3,5,5,6s6p3P2,This work,splitting,6707.15(0.96),6707.15,0.96,MHz,,

@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf",
+  "sha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e",
+  "metadata": {
+    "title": "Determination of the 5d6s 3D1 state lifetime and blackbody radiation clock shift in Yb",
+    "arxiv": "1208.0552v1",
+    "publishedDOI": "10.1103/PhysRevA.86.051404",
+    "isotope": "171Yb",
+    "setup": "one-dimensional optical lattice, approximately 10^4 atoms; lifetime zero-density extrapolation",
+    "atomicTemperatureK": null,
+    "lifetimeAmbientTemperatureK": null,
+    "BBRShiftEvaluationTemperatureK": 300,
+    "visualChecks": [
+      2,
+      3,
+      4,
+      6,
+      7
+    ]
+  },
+  "tables": [
+    {
+      "table": "Table I",
+      "pdfPage": 2,
+      "columns": [
+        "clockState",
+        "intermediateState",
+        "alpha0",
+        "alpha0_minus_0.75alphaMagic"
+      ],
+      "unit": "all quantities in atomic units unless column explicitly says ns",
+      "rows": [
+        {
+          "clockState": "6s2 1S0",
+          "intermediateState": "6s6p 3P1",
+          "alpha0": "2",
+          "alpha0_minus_0.75alphaMagic": "-1"
+        },
+        {
+          "clockState": "6s2 1S0",
+          "intermediateState": "6s6p 1P1",
+          "alpha0": "100",
+          "alpha0_minus_0.75alphaMagic": "-4"
+        },
+        {
+          "clockState": "6s2 1S0",
+          "intermediateState": "(4f13)5d6s2 (7/2,5/2)1",
+          "alpha0": "21",
+          "alpha0_minus_0.75alphaMagic": "1"
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "5d6s 3D1",
+          "alpha0": "20.3 D^2",
+          "alpha0_minus_0.75alphaMagic": "26.8 D^2"
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "6s7s 3S1",
+          "alpha0": "37",
+          "alpha0_minus_0.75alphaMagic": "-65"
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "6s6d 3D1",
+          "alpha0": "22",
+          "alpha0_minus_0.75alphaMagic": "-3"
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "6s8s 3S1",
+          "alpha0": "2",
+          "alpha0_minus_0.75alphaMagic": "0"
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "mixed states",
+          "alpha0": "39",
+          "alpha0_minus_0.75alphaMagic": "0"
+        }
+      ],
+      "notes": [
+        "Approximate rounded contributions. D is unspecified reduced matrix element 3P0–3D1. Zero rounded contributions do not assert exact zero amplitude."
+      ]
+    },
+    {
+      "table": "Table II",
+      "pdfPage": 3,
+      "columns": [
+        "uncertaintySource",
+        "u_tau_3D1_ns",
+        "u_tau_3P1_ns"
+      ],
+      "unit": "ns; uncertainty components, not lifetime estimates",
+      "rows": [
+        {
+          "uncertaintySource": "Atomic interactions",
+          "u_tau_3D1_ns": "4.3",
+          "u_tau_3P1_ns": "3.3"
+        },
+        {
+          "uncertaintySource": "Fit biases",
+          "u_tau_3D1_ns": "0.9",
+          "u_tau_3P1_ns": "1.5"
+        },
+        {
+          "uncertaintySource": "Zeeman quantum beats",
+          "u_tau_3D1_ns": "3.0",
+          "u_tau_3P1_ns": "3.0"
+        },
+        {
+          "uncertaintySource": "1388 nm finite excitation",
+          "u_tau_3D1_ns": "3.3",
+          "u_tau_3P1_ns": "4.3"
+        },
+        {
+          "uncertaintySource": "1388 nm stray light",
+          "u_tau_3D1_ns": "3.4",
+          "u_tau_3P1_ns": "4.6"
+        },
+        {
+          "uncertaintySource": "Event counter timing",
+          "u_tau_3D1_ns": "0.2",
+          "u_tau_3P1_ns": "0.4"
+        },
+        {
+          "uncertaintySource": "Total quadrature sum",
+          "u_tau_3D1_ns": "7.1",
+          "u_tau_3P1_ns": "7.4"
+        }
+      ],
+      "notes": [
+        "Results extrapolated to zero atomic density; atomic interaction component largely statistical."
+      ]
+    },
+    {
+      "table": "Table III",
+      "pdfPage": 4,
+      "columns": [
+        "method",
+        "D_3P0_3D1_ea0",
+        "d_1S0_3P1_ea0",
+        "evidence"
+      ],
+      "unit": "e a0",
+      "rows": [
+        {
+          "method": "Experiment present",
+          "D_3P0_3D1_ea0": "2.77(4)",
+          "d_1S0_3P1_ea0": "0.542(2)",
+          "evidence": "present lifetime + branching model"
+        },
+        {
+          "method": "Semi-empirical present",
+          "D_3P0_3D1_ea0": "2.80(7)",
+          "d_1S0_3P1_ea0": null,
+          "evidence": "experimental polarizability constraints + theory"
+        },
+        {
+          "method": "Experiment [17]",
+          "D_3P0_3D1_ea0": "2.58(10)",
+          "d_1S0_3P1_ea0": "0.547(16)",
+          "evidence": "prior lifetime-derived experimental comparison"
+        },
+        {
+          "method": "Calculation [38]",
+          "D_3P0_3D1_ea0": "2.61(10)",
+          "d_1S0_3P1_ea0": "0.54(8)",
+          "evidence": "theory"
+        },
+        {
+          "method": "Calculation [18]",
+          "D_3P0_3D1_ea0": "2.91(7)",
+          "d_1S0_3P1_ea0": "0.587",
+          "evidence": "theory"
+        },
+        {
+          "method": "Calculation [39]",
+          "D_3P0_3D1_ea0": "2.58(23)",
+          "d_1S0_3P1_ea0": "0.41(1)",
+          "evidence": "theory"
+        }
+      ],
+      "notes": [
+        "Table labels Experiment for inferred E1 elements; upper-state lifetime is directly fitted, dipole inference additionally uses branching fraction."
+      ]
+    },
+    {
+      "table": "Table IV",
+      "pdfPage": 6,
+      "columns": [
+        "clockState",
+        "intermediateState",
+        "omega_au",
+        "d_ea0",
+        "alpha0",
+        "alphaMagic",
+        "alpha0_minus_0.75alphaMagic",
+        "alpha2frequencyOver1000",
+        "rhoOver1000",
+        "sourceFootnote"
+      ],
+      "unit": "all quantities in atomic units unless column explicitly says ns",
+      "rows": [
+        {
+          "clockState": "6s2 1S0",
+          "intermediateState": "6s6p 3P1",
+          "omega_au": "0.08198",
+          "d_ea0": "0.542 ± 0.002",
+          "alpha0": "2.39 ± 0.02",
+          "alphaMagic": "5.14 ± 0.04",
+          "alpha0_minus_0.75alphaMagic": "-1.47 ± 0.01",
+          "alpha2frequencyOver1000": "0.355 ± 0.003",
+          "rhoOver1000": "-0.219 ± 0.002",
+          "sourceFootnote": "a:present experiment"
+        },
+        {
+          "clockState": "6s2 1S0",
+          "intermediateState": "6s6p 1P1",
+          "omega_au": "0.11422",
+          "d_ea0": "4.148 ± 0.002",
+          "alpha0": "100.40 ± 0.09",
+          "alphaMagic": "138.7 ± 0.1",
+          "alpha0_minus_0.75alphaMagic": "-3.601 ± 0.003",
+          "alpha2frequencyOver1000": "7.696 ± 0.007",
+          "rhoOver1000": "-0.2760 ± 0.0003",
+          "sourceFootnote": "b:[21]"
+        },
+        {
+          "clockState": "6s2 1S0",
+          "intermediateState": "(4f13)5d6s2 (7/2,5/2)1",
+          "omega_au": "0.13148",
+          "d_ea0": "2.03 ± 0.04",
+          "alpha0": "20.8 ± 0.8",
+          "alphaMagic": "26 ± 1",
+          "alpha0_minus_0.75alphaMagic": "1.10 ± 0.04",
+          "alpha2frequencyOver1000": "1.20 ± 0.05",
+          "rhoOver1000": "0.063 ± 0.002",
+          "sourceFootnote": "c:weighted mean [22]"
+        },
+        {
+          "clockState": "6s2 1S0",
+          "intermediateState": "all others",
+          "omega_au": null,
+          "d_ea0": null,
+          "alpha0": "chi1",
+          "alphaMagic": "(1.00,1.14)chi1",
+          "alpha0_minus_0.75alphaMagic": "(0.15,0.25)chi1",
+          "alpha2frequencyOver1000": "(0.00,0.03)chi1",
+          "rhoOver1000": "(0.000,0.005)chi1",
+          "sourceFootnote": ""
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "5d6s 3D1",
+          "omega_au": "0.03281",
+          "d_ea0": "2.77 ± 0.04",
+          "alpha0": "156 ± 4",
+          "alphaMagic": "-67 ± 2",
+          "alpha0_minus_0.75alphaMagic": "206 ± 5",
+          "alpha2frequencyOver1000": "145 ± 4",
+          "rhoOver1000": "192 ± 5",
+          "sourceFootnote": "a:present experiment"
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "6s7s 3S1",
+          "omega_au": "0.07020",
+          "d_ea0": "2.0 ± 0.1",
+          "alpha0": "37 ± 4",
+          "alphaMagic": "136 ± 16",
+          "alpha0_minus_0.75alphaMagic": "-65 ± 8",
+          "alpha2frequencyOver1000": "7.4 ± 0.9",
+          "rhoOver1000": "-13 ± 2",
+          "sourceFootnote": "d:[23]"
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "6s6d 3D1",
+          "omega_au": "0.10261",
+          "d_ea0": "1.82 ± 0.03",
+          "alpha0": "21.6 ± 0.7",
+          "alphaMagic": "33 ± 1",
+          "alpha0_minus_0.75alphaMagic": "-3.02 ± 0.09",
+          "alpha2frequencyOver1000": "2.05 ± 0.06",
+          "rhoOver1000": "-0.287 ± 0.009",
+          "sourceFootnote": "e:[46]"
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "6s8s 3S1",
+          "omega_au": "0.11084",
+          "d_ea0": "0.64 ± 0.04",
+          "alpha0": "2.4 ± 0.3",
+          "alphaMagic": "3.4 ± 0.4",
+          "alpha0_minus_0.75alphaMagic": "-0.15 ± 0.02",
+          "alpha2frequencyOver1000": "0.20 ± 0.02",
+          "rhoOver1000": "-0.012 ± 0.001",
+          "sourceFootnote": "d:[23]"
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "mixed states",
+          "omega_au": null,
+          "d_ea0": null,
+          "alpha0": "chi2",
+          "alphaMagic": "(1.33,1.38)chi2",
+          "alpha0_minus_0.75alphaMagic": "(-0.033,0.004)chi2",
+          "alpha2frequencyOver1000": "(0.07,0.08)chi2",
+          "rhoOver1000": "(-0.0025,0.0003)chi2",
+          "sourceFootnote": ""
+        },
+        {
+          "clockState": "6s6p 3P0",
+          "intermediateState": "all others",
+          "omega_au": null,
+          "d_ea0": null,
+          "alpha0": "chi3",
+          "alphaMagic": "(1.00,1.31)chi3",
+          "alpha0_minus_0.75alphaMagic": "(0.02,0.25)chi3",
+          "alpha2frequencyOver1000": "(0.00,0.07)chi3",
+          "rhoOver1000": "(0.000,0.005)chi3",
+          "sourceFootnote": ""
+        },
+        {
+          "clockState": "3P0 minus 1S0",
+          "intermediateState": "Delta main",
+          "omega_au": null,
+          "d_ea0": null,
+          "alpha0": "93 ± 6",
+          "alphaMagic": "-64 ± 16",
+          "alpha0_minus_0.75alphaMagic": "142 ± 10",
+          "alpha2frequencyOver1000": "146 ± 4",
+          "rhoOver1000": "179 ± 5",
+          "sourceFootnote": ""
+        },
+        {
+          "clockState": "3P0 minus 1S0",
+          "intermediateState": "Delta mixed states",
+          "omega_au": null,
+          "d_ea0": null,
+          "alpha0": "39 ± 13",
+          "alphaMagic": "52 ± 17",
+          "alpha0_minus_0.75alphaMagic": "0.0 ± 0.5",
+          "alpha2frequencyOver1000": "2.7 ± 0.9",
+          "rhoOver1000": "0.1 ± 0.1",
+          "sourceFootnote": ""
+        },
+        {
+          "clockState": "3P0 minus 1S0",
+          "intermediateState": "Delta all others",
+          "omega_au": null,
+          "d_ea0": null,
+          "alpha0": "16 ± 16",
+          "alphaMagic": "20 ± 20",
+          "alpha0_minus_0.75alphaMagic": "0 ± 6",
+          "alpha2frequencyOver1000": "1 ± 1",
+          "rhoOver1000": "0.08 ± 0.08",
+          "sourceFootnote": ""
+        },
+        {
+          "clockState": "3P0 minus 1S0",
+          "intermediateState": "Delta total",
+          "omega_au": null,
+          "d_ea0": null,
+          "alpha0": "148 ± 21",
+          "alphaMagic": "8 ± 31",
+          "alpha0_minus_0.75alphaMagic": "142 ± 11",
+          "alpha2frequencyOver1000": "149 ± 4",
+          "rhoOver1000": "179 ± 5",
+          "sourceFootnote": ""
+        },
+        {
+          "clockState": "3P0 minus 1S0",
+          "intermediateState": "Delta expt",
+          "omega_au": null,
+          "d_ea0": null,
+          "alpha0": "145.726 ± 0.003",
+          "alphaMagic": "0",
+          "alpha0_minus_0.75alphaMagic": "145.726 ± 0.003",
+          "alpha2frequencyOver1000": null,
+          "rhoOver1000": null,
+          "sourceFootnote": ""
+        }
+      ],
+      "notes": [
+        "Magic frequency omega*=0.06000 a.u. alpha2frequency means alpha^(2), NOT tensor polarizability alpha_2; source table scales by 10^3. chi expressions are preserved as ranges, not converted to measurements.",
+        "Transition-energy/frequency omega is in atomic units (energy/hbar); no THz conversion inferred here. Explicit numerical transition rows derive from experimental inputs; aggregate missing-state contributions contain theory estimates."
+      ]
+    },
+    {
+      "table": "Table V",
+      "pdfPage": 7,
+      "columns": [
+        "determination",
+        "D_ea0",
+        "alpha0",
+        "alphaMagic",
+        "alpha0_minus_0.75alphaMagic",
+        "alpha2frequencyOver1000",
+        "rhoOver1000"
+      ],
+      "unit": "all quantities in atomic units unless column explicitly says ns",
+      "rows": [
+        {
+          "determination": "unspecified",
+          "D_ea0": "D",
+          "alpha0": "20.32 D^2",
+          "alphaMagic": "-8.666 D^2",
+          "alpha0_minus_0.75alphaMagic": "26.82 D^2",
+          "alpha2frequencyOver1000": "18.88 D^2",
+          "rhoOver1000": "24.92 D^2"
+        },
+        {
+          "determination": "experiment present",
+          "D_ea0": "2.77 ± 0.04",
+          "alpha0": "156 ± 4",
+          "alphaMagic": "-67 ± 2",
+          "alpha0_minus_0.75alphaMagic": "206 ± 5",
+          "alpha2frequencyOver1000": "145 ± 4",
+          "rhoOver1000": "192 ± 5"
+        },
+        {
+          "determination": "semi-empirical present",
+          "D_ea0": "2.80 ± 0.07",
+          "alpha0": "159 ± 8",
+          "alphaMagic": "-68 ± 3",
+          "alpha0_minus_0.75alphaMagic": "210 ± 11",
+          "alpha2frequencyOver1000": "148 ± 7",
+          "rhoOver1000": "195 ± 10"
+        },
+        {
+          "determination": "experiment [17]",
+          "D_ea0": "2.58 ± 0.10",
+          "alpha0": "135 ± 10",
+          "alphaMagic": "-58 ± 4",
+          "alpha0_minus_0.75alphaMagic": "179 ± 14",
+          "alpha2frequencyOver1000": "126 ± 10",
+          "rhoOver1000": "166 ± 13"
+        },
+        {
+          "determination": "theory [18]",
+          "D_ea0": "2.91 ± 0.07",
+          "alpha0": "172 ± 8",
+          "alphaMagic": "-73 ± 4",
+          "alpha0_minus_0.75alphaMagic": "227 ± 11",
+          "alpha2frequencyOver1000": "160 ± 8",
+          "rhoOver1000": "211 ± 10"
+        },
+        {
+          "determination": "theory [39]",
+          "D_ea0": "2.58 ± 0.23",
+          "alpha0": "135 ± 24",
+          "alphaMagic": "-58 ± 10",
+          "alpha0_minus_0.75alphaMagic": "179 ± 32",
+          "alpha2frequencyOver1000": "126 ± 22",
+          "rhoOver1000": "166 ± 30"
+        }
+      ],
+      "notes": [
+        "Comparison of 3P0–3D1 contribution only, not full polarizability. alpha^(2) is a frequency-expansion atomic factor, not tensor polarizability."
+      ]
+    }
+  ],
+  "criticalInterpretation": {
+    "lifetimes": [
+      {
+        "state": "5d6s 3D1",
+        "value": 329.3,
+        "uncertainty": 7.1,
+        "unit": "ns",
+        "page": 4,
+        "evidence": "experiment zero-density extrapolation"
+      },
+      {
+        "state": "6s6p 3P1",
+        "value": 866.1,
+        "uncertainty": 7.4,
+        "unit": "ns",
+        "page": 4,
+        "evidence": "experiment zero-density extrapolation"
+      }
+    ],
+    "D_3P0_3D1": {
+      "value": 2.77,
+      "uncertainty": 0.04,
+      "unit": "e a0",
+      "definition": "electronic J-reduced <6s6p 3P0||D||5d6s 3D1>",
+      "evidence": "inferred from experimental lifetime and theoretically computable branching fraction zeta0=0.64(1)",
+      "branchingTo3P0": {
+        "value": 0.64,
+        "uncertainty": 0.01,
+        "evidence": "LS-coupling calculation/model, not full measured branching distribution"
+      },
+      "transitionFrequencyHzApprox": 215870000000000.0,
+      "formula": "D^2=(3*pi*epsilon0*hbar*c^3*zeta0)*(2Jupper+1)/(omega0^3*tau_3D1)",
+      "page": 2
+    },
+    "hfsSplitting_3D1": {
+      "value": 3.07,
+      "uncertainty": 0.07,
+      "unit": "GHz",
+      "FUpper": [
+        "1/2",
+        "3/2"
+      ],
+      "page": 4,
+      "note": "Both hyperfine components systematically excited; observed lifetime not separately reported per F."
+    },
+    "oldValues": "2.58(10),2.61(10),2.91(7),2.58(23) retained as distinct experimental/theoretical records. None is internal adopted dipole calibration.",
+    "temperatureBoundary": "300 K is the explicit ideal BBR-shift evaluation, not an explicitly reported atomic temperature or separately calibrated lifetime ambient temperature."
+  },
+  "extractedAt": "2026-10-29"
+}

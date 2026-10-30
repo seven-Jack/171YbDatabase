@@ -1,5 +1,9 @@
 # Dependencies (none expected — buildless — but keep ignored just in case)
 node_modules/
+playwright-report/
+test-results/
+# Generated from package.json and Git before preflight/build.
+/src/version.js
 
 # Build / deploy output
 dist/
@@ -37,3 +41,12 @@ source_package/
 skills/
 routes.json
 thumbnail.png
+
+# Original papers and extracted page content stay in the local research archive.
+/references/papers/
+/references/local-only/
+/data/literature/**/*.txt
+/data/literature/**/*.png
+!/data/literature/**/browser*.png
+/data/literature/**/*.ipynb
+/data/literature/rydberg-audit/additional-source-excerpts.json

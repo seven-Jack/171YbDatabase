@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-30",
+  "documents": [
+    {
+      "number": 1,
+      "sourceId": "qiao-2023-rinp",
+      "path": "references/papers/1.pdf",
+      "sha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+      "bytes": 2049726,
+      "title": "Frequency measurement of 6s6p ³P₀,₂−6s7s ³S₁ transitions in ultracold ¹⁷¹Yb atoms referenced to local optical clock",
+      "doi": "10.1016/j.rinp.2023.106439",
+      "version": "Results in Physics 48, 106439 (2023); user downloaded publisher PDF; original numbered filename retained",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2211379723002322",
+      "status": "PDF header,parse,title and DOI identity checked; source values reviewed separately"
+    },
+    {
+      "number": 2,
+      "sourceId": "mishra-2001-jqsrt",
+      "path": "references/papers/2.pdf",
+      "sha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
+      "bytes": 257461,
+      "title": "Radiative lifetimes of the first excited ³Pᵒ₂,₀ metastable levels in Kr I, Xe I, Yb I and Hg-like atoms",
+      "doi": "10.1016/S0022-4073(00)00117-5",
+      "version": "Journal of Quantitative Spectroscopy and Radiative Transfer69(6),769–780(2001); user downloaded publisher PDF; original numbered filename retained",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0022407300001175",
+      "status": "PDF header,parse,title and DOI identity checked; source values reviewed separately"
+    },
+    {
+      "number": 3,
+      "sourceId": "baumann-1985-jpb",
+      "path": "references/papers/3.pdf",
+      "sha256": "3bdd0ddd781d41583a0530446f9247d4d38f98e816651b14c39bcf4b42f12dc0",
+      "bytes": 632863,
+      "title": "Radiative lifetimes and gJ factors of low-lying even-parity levels in the Yb I spectrum",
+      "doi": "10.1088/0022-3700/18/17/001",
+      "version": "J. Phys. B: Atom. Mol. Phys. 18, L601 (1985); user downloaded publisher PDF; original numbered filename retained",
+      "url": "https://doi.org/10.1088/0022-3700/18/17/001",
+      "status": "PDF header,parse,title and DOI identity checked; source values reviewed separately"
+    },
+    {
+      "number": 4,
+      "sourceId": "qiao-2023-apl",
+      "path": "references/papers/4.pdf",
+      "sha256": "e2d263f0b1762d45b04bdbba8c3adc4fdf4ff098427054b4f8124f624e295df4",
+      "bytes": 1615226,
+      "title": "Investigation of the 6s6p ³P₂−6s7s ³S₁ transition of ytterbium atoms with modulation-transfer spectroscopy",
+      "doi": "10.1063/5.0155776",
+      "version": "Applied Physics Letters122(22),224002(2023); user downloaded publisher PDF; original numbered filename retained",
+      "url": "https://pubs.aip.org/apl/article/122/22/224002/2893691/Investigation-of-the-6s6p-3P2-6s7s-3S1-transition",
+      "status": "PDF header,parse,title and DOI identity checked; source values reviewed separately"
+    },
+    {
+      "number": 5,
+      "sourceId": "zhou-2020-pra",
+      "path": "references/papers/5.pdf",
+      "sha256": "3aecb39c63b436ef56cd59bc1c38e6c09cc300c5e4d34ba7120f43e4ad1d12de",
+      "bytes": 1056459,
+      "title": "Characterization of ytterbium resonance lines at 649 nm with modulation-transfer spectroscopy",
+      "doi": "10.1103/PhysRevA.101.062506",
+      "version": "Phys. Rev. A 101, 062506 (2020); user downloaded publisher PDF; original numbered filename retained",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.101.062506",
+      "status": "PDF header,parse,title and DOI identity checked; source values reviewed separately"
+    },
+    {
+      "number": 6,
+      "sourceId": "zhao-2024-pra",
+      "path": "references/papers/6.pdf",
+      "sha256": "5c0e26a7ffb56471aff199941159da7686533620e5341f7633cfba594ab322ae",
+      "bytes": 741210,
+      "title": "Absolute frequency measurements of the 6s6p ³P₀−5d6s ³D₁ transitions in ¹⁷⁰,¹⁷¹,¹⁷²,¹⁷³,¹⁷⁴,¹⁷⁶Yb by modulation transfer spectroscopy",
+      "doi": "10.1103/PhysRevA.110.042816",
+      "version": "Phys. Rev. A 110, 042816 (2024); user downloaded publisher PDF; original numbered filename retained",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.042816",
+      "status": "PDF header,parse,title and DOI identity checked; source values reviewed separately"
+    },
+    {
+      "number": 7,
+      "sourceId": "ref-12",
+      "path": "references/papers/7.pdf",
+      "sha256": "b058a900e9aaa292d3800087a823b57de74049434ee2ee663ac05aaa4c173bf0",
+      "bytes": 1933731,
+      "title": "Three-step laser spectroscopy and multichannel quantum defect analysis of odd-parity Rydberg states of neutral ytterbium",
+      "doi": "10.1088/0022-3700/17/18/006",
+      "version": "J. Phys. B: Atom. Mol. Phys. 17, 3645 (1984); user downloaded publisher PDF; original numbered filename retained",
+      "url": "https://doi.org/10.1088/0022-3700/17/18/006",
+      "status": "PDF header,parse,title and DOI identity checked; source values reviewed separately"
+    },
+    {
+      "number": 8,
+      "sourceId": "rambow-1976-pra",
+      "path": "references/papers/8.pdf",
+      "sha256": "14034e18a46ceb8b68c854d74f663ccce0a487ff40ff39d46e81f01dac14895b",
+      "bytes": 2257973,
+      "title": "Radiative lifetimes and alignment depolarization cross sections for YbI and II by the Hanle effect in a flowing helium system",
+      "doi": "10.1103/PhysRevA.14.738",
+      "version": "Physical Review A14(2),738–743(1976); user downloaded publisher PDF; original numbered filename retained",
+      "url": "https://journals.aps.org/pra/issues/14/2",
+      "status": "PDF header,parse,title and DOI identity checked; source values reviewed separately"
+    },
+    {
+      "number": 10,
+      "sourceId": "ref-13",
+      "path": "references/papers/10.pdf",
+      "sha256": "1bdc3d40c247b1e725d2541ffb03aae7d930abd653deb0df00f530539450873b",
+      "bytes": 2165103,
+      "title": "Accurate Measurement of the 12.6 GHz “Clock” Transition in Trapped ¹⁷¹Yb⁺ Ions",
+      "doi": "10.1109/58.585119",
+      "version": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control44(2),344–354(1997); user downloaded publisher PDF; original numbered filename retained",
+      "url": "https://ieeexplore.ieee.org/document/585119",
+      "status": "PDF header,parse,title and DOI identity checked; source values reviewed separately"
+    }
+  ],
+  "notReceived": [
+    {
+      "number": 9,
+      "sourceId": "burshtein-1974-optspec",
+      "status": "user unable to locate; remains missing"
+    }
+  ]
+}

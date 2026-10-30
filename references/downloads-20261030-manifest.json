@@ -1,0 +1,256 @@
+{
+  "date": "2026-10-30",
+  "policy": "all source PDFs preserved byte-for-byte; numbered names not renamed",
+  "files": [
+    {
+      "path": "references/papers/1.pdf",
+      "bytes": 2049726,
+      "sha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+      "newNumberedDownload": true,
+      "pdfMetadata": {
+        "Pages": "6",
+        "Encrypted": "no",
+        "Page size": "595 x 842 pts (A4)",
+        "File size": "2049726 bytes",
+        "PDF version": "1.3"
+      }
+    },
+    {
+      "path": "references/papers/10.pdf",
+      "bytes": 2165103,
+      "sha256": "1bdc3d40c247b1e725d2541ffb03aae7d930abd653deb0df00f530539450873b",
+      "newNumberedDownload": true,
+      "pdfMetadata": {
+        "Pages": "11",
+        "Encrypted": "no",
+        "Page size": "595 x 842 pts (A4)",
+        "File size": "2165103 bytes",
+        "PDF version": "1.3"
+      }
+    },
+    {
+      "path": "references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf",
+      "bytes": 132741,
+      "sha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2.pdf",
+      "bytes": 257461,
+      "sha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
+      "newNumberedDownload": true,
+      "pdfMetadata": {
+        "Pages": "12",
+        "Encrypted": "no",
+        "Page size": "595 x 842 pts (A4)",
+        "File size": "257461 bytes",
+        "PDF version": "1.3"
+      }
+    },
+    {
+      "path": "references/papers/2001_Fang_Yb_Radiative-lifetimes-Rydberg-states_published.pdf",
+      "bytes": 124384,
+      "sha256": "b4ac15f7330220bd5888f884421b28ffd11dd02c74b48a95091f1c15ca8ef177",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf",
+      "bytes": 152202,
+      "sha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.pdf",
+      "bytes": 130856,
+      "sha256": "628816472904aabb4e88172b958f1b80b791a3b7f6d72b06cb2302aa70424e83",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf",
+      "bytes": 1094263,
+      "sha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2018_Lehec_Yb_Even-parity-MQDT_arXiv1805.02712v2.pdf",
+      "bytes": 498113,
+      "sha256": "38057d7e2e2e7abd5d8d9ec9c2909eb685b625c6fb73cebe2eb8dfaac1f1ccf4",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2019_Saskin_174Yb_Narrow-line-cooling-and-imaging_published-print.pdf",
+      "bytes": 263554,
+      "sha256": "7a3330aaf5c798266b04b2fdb4c461acb2b10ab4c9fefc9b15f12cf686d97716",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2021_Burgers_174Yb_Ion-core-control_arXiv2110.06902v1.pdf",
+      "bytes": 989806,
+      "sha256": "24b9d9c2d467b609b57dd8c10652fc70bd2cef7e906fd18caa309069bd65f284",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2022_Chen_171Yb_OMG-architecture_arXiv2201.04083v3.pdf",
+      "bytes": 6480680,
+      "sha256": "1c812aeb51e0009e93551b09fd1a182b6912aeeec03415f81df952f09d3d899f",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2022_Halter_174Yb_Trap-loss-spectroscopy_arXiv2211.04748v2.pdf",
+      "bytes": 665060,
+      "sha256": "47c724a73142b37e882599ec16bed9a40be68d282232bf95e4111fbb7d2b581d",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2022_Ma_171Yb_Universal-nuclear-spin-gates_published-print.pdf",
+      "bytes": 2825586,
+      "sha256": "28842cae29d58fc635b93c777d597a6ccea9d41ca022a833007cad27896fa2a5",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2022_Okuno_Yb_Metastable-Rydberg-excitation_arXiv2204.07995v1.pdf",
+      "bytes": 2695002,
+      "sha256": "dc91616b29454e06ee5a933c0cdd8b6a088766e1395a2fdbc8977634f4a8f9c8",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2022_Wilson_174Yb_Trapping-Rydberg-atoms_published.pdf",
+      "bytes": 1088014,
+      "sha256": "cafb618ffa6f60aa23a134b3ad73bdaa07679c02c234fdb7f83b8306d850d787",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2023_Ma_171Yb_Mid-circuit-erasure-gates_arXiv2305.05493v1.pdf",
+      "bytes": 5152170,
+      "sha256": "605afdb1ef7d3e76004024c409cf44c34037305556aabdae5d2644ca7116ee7a",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2023_Ma_171Yb_Mid-circuit-erasure-gates_published.pdf",
+      "bytes": 10893597,
+      "sha256": "9b477683f712c305c3ab2f5f45ab1b7538584a8dd39ef7a6785b24ebbbf376e7",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2024_Muniz_171Yb_Universal-gates_arXiv2411.11708v2.pdf",
+      "bytes": 1278981,
+      "sha256": "867b41ec2620c1e9ee393438ae95cb03cb8e67ab5c66dfd9b15ac07d2dcb7061",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2024_Peper_171Yb_Spectroscopy-modeling_local-supplement.pdf",
+      "bytes": 391437,
+      "sha256": "7bab7cf336bcc82be834b31ee364e11c1362c996ddf1c2187ec340040b1a36eb",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_arXiv2507.11487v1.pdf",
+      "bytes": 11033346,
+      "sha256": "66abd4d74c1d7ce3f0b5bd5ebc51c1cc1743b3da98680229967eec5b86c08606",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_published.pdf",
+      "bytes": 2650131,
+      "sha256": "30823c38c870ec150528e375d58a63d5272a52da171c6f0d02ee7b8a8f49a5f6",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2025_Muniz_171Yb_Universal-gates_published.pdf",
+      "bytes": 1803757,
+      "sha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2025_Peper_171Yb_Spectroscopy-modeling_published.pdf",
+      "bytes": 3414281,
+      "sha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+      "bytes": 1848415,
+      "sha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "newNumberedDownload": false
+    },
+    {
+      "path": "references/papers/3.pdf",
+      "bytes": 632863,
+      "sha256": "3bdd0ddd781d41583a0530446f9247d4d38f98e816651b14c39bcf4b42f12dc0",
+      "newNumberedDownload": true,
+      "pdfMetadata": {
+        "Pages": "5",
+        "Encrypted": "no",
+        "Page size": "595 x 842 pts (A4)",
+        "File size": "632863 bytes",
+        "PDF version": "1.3"
+      }
+    },
+    {
+      "path": "references/papers/4.pdf",
+      "bytes": 1615226,
+      "sha256": "e2d263f0b1762d45b04bdbba8c3adc4fdf4ff098427054b4f8124f624e295df4",
+      "newNumberedDownload": true,
+      "pdfMetadata": {
+        "Pages": "7",
+        "Encrypted": "no",
+        "Page size": "595 x 842 pts (A4)",
+        "File size": "1615226 bytes",
+        "PDF version": "1.4"
+      }
+    },
+    {
+      "path": "references/papers/5.pdf",
+      "bytes": 1056459,
+      "sha256": "3aecb39c63b436ef56cd59bc1c38e6c09cc300c5e4d34ba7120f43e4ad1d12de",
+      "newNumberedDownload": true,
+      "pdfMetadata": {
+        "Pages": "8",
+        "Encrypted": "no",
+        "Page size": "595 x 842 pts (A4)",
+        "File size": "1056459 bytes",
+        "PDF version": "1.3"
+      }
+    },
+    {
+      "path": "references/papers/6.pdf",
+      "bytes": 741210,
+      "sha256": "5c0e26a7ffb56471aff199941159da7686533620e5341f7633cfba594ab322ae",
+      "newNumberedDownload": true,
+      "pdfMetadata": {
+        "Pages": "7",
+        "Encrypted": "no",
+        "Page size": "595 x 842 pts (A4)",
+        "File size": "741210 bytes",
+        "PDF version": "1.3"
+      }
+    },
+    {
+      "path": "references/papers/7.pdf",
+      "bytes": 1933731,
+      "sha256": "b058a900e9aaa292d3800087a823b57de74049434ee2ee663ac05aaa4c173bf0",
+      "newNumberedDownload": true,
+      "pdfMetadata": {
+        "Pages": "18",
+        "Encrypted": "no",
+        "Page size": "595 x 842 pts (A4)",
+        "File size": "1933731 bytes",
+        "PDF version": "1.3"
+      }
+    },
+    {
+      "path": "references/papers/8.pdf",
+      "bytes": 2257973,
+      "sha256": "14034e18a46ceb8b68c854d74f663ccce0a487ff40ff39d46e81f01dac14895b",
+      "newNumberedDownload": true,
+      "pdfMetadata": {
+        "Pages": "6",
+        "Encrypted": "no",
+        "Page size": "595 x 842 pts (A4)",
+        "File size": "2257973 bytes",
+        "PDF version": "1.3"
+      }
+    }
+  ],
+  "metadataPolicy": "Raw PDF metadata Title/Subject intentionally omitted: downloaded PDFs can embed temporary signed URLs. Original PDF bytes unchanged."
+}

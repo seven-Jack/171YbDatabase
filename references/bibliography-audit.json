@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-10-29",
+  "scope": "All 17 reference entries plus 6 internal source records in data/sources.json; bibliography identity only",
+  "policy": "Primary publisher/arXiv/NIST metadata; local first pages checked where available; no restricted publisher downloads, credentials, VPN, or modifications to original paper library. Null means not verified, not zero.",
+  "summary": {
+    "sourceRecords": 23,
+    "externalIdentityVerified": 15,
+    "externalUnresolved": 1,
+    "internalNotLiterature": 7
+  },
+  "records": [
+    {
+      "oldSourceId": "ref-01",
+      "exactTitle": "¹⁷¹Yb Reference Data",
+      "authors": [
+        "Ronen M. Kroeze",
+        "Sofus Laguna Kristensen",
+        "Sebastian Pucher"
+      ],
+      "year": 2026,
+      "doi": "10.48550/arXiv.2509.04416",
+      "arxivVersion": "2509.04416v2",
+      "publication": "arXiv:2509.04416v2; revised 2026-02-13; PDF dated 2026-02-16",
+      "verifiedURLs": [
+        "https://arxiv.org/abs/2509.04416v2",
+        "https://arxiv.org/pdf/2509.04416v2"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/2509.04416v2",
+      "localPaths": [
+        "/Users/seven/Desktop/paper/atomic data/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf"
+      ],
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/paper/atomic data/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+          "bytes": 1848415,
+          "sha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200"
+        }
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "secondary compilation and derivation reference; follow its numbered references to original measurements",
+      "evidenceNotes": [
+        "Replace the invented descriptive title with the exact title. arXiv first submission is 2025-09-04; v2 revision is 2026-02-13, not a new 2026 journal publication.",
+        "Primary arXiv page and 40-page PDF accessed; local first page checked. Its adopted averages and theory-derived quantities must retain that evidence type."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-01",
+        "referenceNumber": 1,
+        "title": "Kroeze, Kristensen, Pucher",
+        "detail": "Reference Data for ¹⁷¹Yb: Energies, Lifetimes, Hyperfine & Reduced Matrix Elements",
+        "publication": "arXiv:2509.04416v2 (2026) · 待发表",
+        "url": "https://arxiv.org/abs/2509.04416v2",
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-02",
+      "exactTitle": "Spectroscopy and Modeling of ¹⁷¹Yb Rydberg States for High-Fidelity Two-Qubit Gates",
+      "authors": [
+        "Michael Peper",
+        "Yiyi Li",
+        "Daniel Y. Knapp",
+        "Mila Bileska",
+        "Shuo Ma",
+        "Genyue Liu",
+        "Pai Peng",
+        "Bichen Zhang",
+        "Sebastian P. Horvath",
+        "Alex P. Burgers",
+        "Jeff D. Thompson"
+      ],
+      "year": 2025,
+      "doi": "10.1103/PhysRevX.15.011009",
+      "arxivVersion": "2406.01482v2",
+      "publication": "Phys. Rev. X 15, 011009 (2025)",
+      "verifiedURLs": [
+        "https://journals.aps.org/prx/pdf/10.1103/PhysRevX.15.011009",
+        "https://arxiv.org/abs/2406.01482"
+      ],
+      "oaPdfUrl": "https://journals.aps.org/prx/pdf/10.1103/PhysRevX.15.011009",
+      "localPaths": [
+        "/Users/seven/Desktop/paper/lifetime/Peper 等 - 2025 - Spectroscopy and Modeling of Yb 171 Rydberg States for High-Fidelity Two-Qubit Gates.pdf"
+      ],
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/paper/lifetime/Peper 等 - 2025 - Spectroscopy and Modeling of Yb 171 Rydberg States for High-Fidelity Two-Qubit Gates.pdf",
+          "bytes": 3414281,
+          "sha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a"
+        }
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary spectroscopy and MQDT modeling for 174Yb/171Yb; gate result is experiment-specific",
+      "evidenceNotes": [
+        "Publication identity confirmed, not a mismatched PRX article. Local first page and APS PDF agree; published 2025-01-17. arXiv v2 revised 2024-11-13. Versioned arXiv PDF fetch failed in web tool, but APS open PDF succeeded."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-02",
+        "referenceNumber": 2,
+        "title": "Peper et al.",
+        "detail": "Spectroscopy and Modeling of ¹⁷¹Yb Rydberg States for High-Fidelity Two-Qubit Gates",
+        "publication": "Phys. Rev. X 15, 011009 (2025)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-03",
+      "exactTitle": "Microwave spectroscopy and multichannel quantum defect analysis of ytterbium 6snp, 6snf, and 6sng Rydberg states",
+      "authors": [
+        "Rin Kuroda",
+        "Vernon M. Hughes",
+        "Martin Poitrinal",
+        "Michael Peper",
+        "Jeff D. Thompson"
+      ],
+      "year": 2025,
+      "doi": "10.1103/mzsv-rckx",
+      "arxivVersion": "2507.11487v1",
+      "publication": "Phys. Rev. A 112, 042817 (2025)",
+      "verifiedURLs": [
+        "https://journals.aps.org/pra/abstract/10.1103/mzsv-rckx",
+        "https://arxiv.org/abs/2507.11487"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [
+        "/Users/seven/Desktop/paper/lifetime/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_arXiv2507.11487v1.pdf",
+        "/Users/seven/Desktop/paper/lifetime/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_published.pdf"
+      ],
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/paper/lifetime/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_arXiv2507.11487v1.pdf",
+          "bytes": 11033346,
+          "sha256": "66abd4d74c1d7ce3f0b5bd5ebc51c1cc1743b3da98680229967eec5b86c08606"
+        },
+        {
+          "path": "/Users/seven/Desktop/paper/lifetime/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_published.pdf",
+          "bytes": 2650131,
+          "sha256": "30823c38c870ec150528e375d58a63d5272a52da171c6f0d02ee7b8a8f49a5f6"
+        }
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary 171Yb/174Yb microwave spectroscopy and MQDT; p/f/g states",
+      "evidenceNotes": [
+        "Canonical title was shortened; publication title differs from the arXiv v1 title. The actual DOI is 10.1103/mzsv-rckx; do not invent 10.1103/PhysRevA.112.042817. Published 2025-10-28.",
+        "Local published and arXiv PDFs exist. APS displays subscription access and a CHORUS accepted-manuscript link. arXiv PDF direct web fetch failed twice; metadata accessible. No missing local download."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-03",
+        "referenceNumber": 3,
+        "title": "Kuroda, Hughes, Poitrinal, Peper, Thompson",
+        "detail": "Microwave Spectroscopy and MQDT Analysis of Yb Rydberg States",
+        "publication": "Phys. Rev. A 112, 042817 (2025)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-04",
+      "exactTitle": "High-Fidelity Universal Gates in the ¹⁷¹Yb Ground-State Nuclear-Spin Qubit",
+      "authors": [
+        "J. A. Muniz",
+        "M. Stone",
+        "D. T. Stack",
+        "M. Jaffe",
+        "J. M. Kindem",
+        "L. Wadleigh",
+        "E. Zalys-Geller",
+        "X. Zhang",
+        "C.-A. Chen",
+        "M. A. Norcia",
+        "J. Epstein",
+        "E. Halperin",
+        "F. Hummel",
+        "T. Wilkason",
+        "M. Li",
+        "K. Barnes",
+        "P. Battaglino",
+        "T. C. Bohdanowicz",
+        "G. Booth",
+        "A. Brown",
+        "M. O. Brown",
+        "W. B. Cairncross",
+        "K. Cassella",
+        "R. Coxe",
+        "D. Crow",
+        "M. Feldkamp",
+        "C. Griger",
+        "A. Heinz",
+        "A. M. W. Jones",
+        "H. Kim",
+        "J. King",
+        "K. Kotru",
+        "J. Lauigan",
+        "J. Marjanovic",
+        "E. Megidish",
+        "M. Meredith",
+        "M. McDonald",
+        "R. Morshead",
+        "S. Narayanaswami",
+        "C. Nishiguchi",
+        "T. Paule",
+        "K. A. Pawlak",
+        "K. L. Pudenz",
+        "D. Rodríguez Pérez",
+        "A. Ryou",
+        "J. Simon",
+        "A. Smull",
+        "M. Urbanek",
+        "R. J. M. van de Veerdonk",
+        "Z. Vendeiro",
+        "T.-Y. Wu",
+        "X. Xie",
+        "B. J. Bloom"
+      ],
+      "year": 2025,
+      "doi": "10.1103/PRXQuantum.6.020334",
+      "arxivVersion": "2411.11708v2",
+      "publication": "PRX Quantum 6, 020334 (2025)",
+      "verifiedURLs": [
+        "https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.6.020334",
+        "https://arxiv.org/abs/2411.11708",
+        "https://arxiv.org/pdf/2411.11708v2"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/2411.11708v2",
+      "localPaths": [
+        "/Users/seven/Desktop/paper/lifetime/2024_Muniz_171Yb_Universal-gates_arXiv2411.11708v2.pdf",
+        "/Users/seven/Desktop/paper/lifetime/2025_Muniz_171Yb_Universal-gates_published.pdf"
+      ],
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/paper/lifetime/2024_Muniz_171Yb_Universal-gates_arXiv2411.11708v2.pdf",
+          "bytes": 1278981,
+          "sha256": "867b41ec2620c1e9ee393438ae95cb03cb8e67ab5c66dfd9b15ac07d2dcb7061"
+        },
+        {
+          "path": "/Users/seven/Desktop/paper/lifetime/2025_Muniz_171Yb_Universal-gates_published.pdf",
+          "bytes": 1803757,
+          "sha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e"
+        }
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary experimental ground-state nuclear-spin gates",
+      "evidenceNotes": [
+        "Publication identity correct. APS explicitly open access / CC BY 4.0; publication 2025-05-21. Local published and arXiv v2 PDFs checked; arXiv v2 revised 2024-12-02."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-04",
+        "referenceNumber": 4,
+        "title": "Muniz et al.",
+        "detail": "High-Fidelity Universal Gates in the ¹⁷¹Yb Ground-State Nuclear-Spin Qubit",
+        "publication": "PRX Quantum 6, 020334 (2025)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-05",
+      "exactTitle": "Universal Gate Operations on Nuclear Spin Qubits in an Optical Tweezer Array of ¹⁷¹Yb Atoms",
+      "authors": [
+        "Shuo Ma",
+        "Alex P. Burgers",
+        "Genyue Liu",
+        "Jack Wilson",
+        "Bichen Zhang",
+        "Jeff D. Thompson"
+      ],
+      "year": 2022,
+      "doi": "10.1103/PhysRevX.12.021028",
+      "arxivVersion": "2112.06799v1",
+      "publication": "Phys. Rev. X 12, 021028 (2022)",
+      "verifiedURLs": [
+        "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.12.021028",
+        "https://arxiv.org/abs/2112.06799",
+        "https://arxiv.org/pdf/2112.06799v1"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/2112.06799v1",
+      "localPaths": [
+        "/Users/seven/Desktop/paper/atomic data/2022_Ma_171Yb_Universal-nuclear-spin-gates_published-print.pdf"
+      ],
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/paper/atomic data/2022_Ma_171Yb_Universal-nuclear-spin-gates_published-print.pdf",
+          "bytes": 2825586,
+          "sha256": "28842cae29d58fc635b93c777d597a6ccea9d41ca022a833007cad27896fa2a5"
+        }
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary 171Yb ground nuclear-spin gate and cooling experiment",
+      "evidenceNotes": [
+        "Local printed publication first page agrees with arXiv DOI/journal reference; published 2022-05-03."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-05",
+        "referenceNumber": 5,
+        "title": "Ma et al.",
+        "detail": "Universal Gate Operations on Nuclear Spin Qubits in an Optical Tweezer Array of ¹⁷¹Yb Atoms",
+        "publication": "Phys. Rev. X 12, 021028 (2022)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-06",
+      "exactTitle": "High-resolution spectroscopy and single-photon Rydberg excitation of reconfigurable ytterbium atom tweezer arrays utilizing a metastable state",
+      "authors": [
+        "Daichi Okuno",
+        "Yuma Nakamura",
+        "Toshi Kusano",
+        "Yosuke Takasu",
+        "Nobuyuki Takei",
+        "Hideki Konishi",
+        "Yoshiro Takahashi"
+      ],
+      "year": 2022,
+      "doi": "10.7566/JPSJ.91.084301",
+      "arxivVersion": "2204.07995v1",
+      "publication": "J. Phys. Soc. Jpn. 91, 084301 (2022)",
+      "verifiedURLs": [
+        "https://arxiv.org/abs/2204.07995",
+        "https://arxiv.org/pdf/2204.07995v1"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/2204.07995v1",
+      "localPaths": [],
+      "localArtifacts": [],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary metastable 3P2 single-photon excitation and D-state spectroscopy",
+      "evidenceNotes": [
+        "Canonical paraphrase omitted the final phrase utilizing a metastable state. Journal reference and DOI verified through arXiv. PDF 10 pages accessible. Isotope/state relevance must be checked at numerical-field level."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-06",
+        "referenceNumber": 6,
+        "title": "Okuno et al.",
+        "detail": "High-Resolution Spectroscopy and Single-Photon Rydberg Excitation of Reconfigurable Yb Atom Tweezer Arrays",
+        "publication": "J. Phys. Soc. Jpn. 91, 084301 (2022)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-07",
+      "exactTitle": "Trapping Alkaline Earth Rydberg Atoms Optical Tweezer Arrays",
+      "authors": [
+        "J. T. Wilson",
+        "S. Saskin",
+        "Y. Meng",
+        "S. Ma",
+        "R. Dilip",
+        "A. P. Burgers",
+        "J. D. Thompson"
+      ],
+      "year": 2022,
+      "doi": "10.1103/PhysRevLett.128.033201",
+      "arxivVersion": "1912.08754v2",
+      "publication": "Phys. Rev. Lett. 128, 033201 (2022)",
+      "verifiedURLs": [
+        "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.128.033201",
+        "https://arxiv.org/abs/1912.08754",
+        "https://arxiv.org/pdf/1912.08754v2"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/1912.08754v2",
+      "localPaths": [
+        "/Users/seven/Desktop/paper/Rydberg interaction/Trapping-Alkaline-Earth-Rydberg-Atoms-Optical-Tweezer-Arrays.pdf"
+      ],
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/paper/Rydberg interaction/Trapping-Alkaline-Earth-Rydberg-Atoms-Optical-Tweezer-Arrays.pdf",
+          "bytes": 1088014,
+          "sha256": "cafb618ffa6f60aa23a134b3ad73bdaa07679c02c234fdb7f83b8306d850d787"
+        }
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary 174Yb trapped triplet-S Rydberg experiment",
+      "evidenceNotes": [
+        "The unusual published title really omits in; APS and local PDF agree. The preprint has a different title: Trapped arrays of alkaline earth Rydberg atoms in optical tweezers. Published 2022-01-20.",
+        "174Yb trapping/lifetime/coherence evidence is not a direct measurement of a specified 171Yb hyperfine state."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-07",
+        "referenceNumber": 7,
+        "title": "Wilson et al.",
+        "detail": "Trapping Alkaline Earth Rydberg Atoms in Optical Tweezer Arrays",
+        "publication": "Phys. Rev. Lett. 128, 033201 (2022)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-08",
+      "exactTitle": "Narrow-Line Cooling and Imaging of Ytterbium Atoms in an Optical Tweezer Array",
+      "authors": [
+        "S. Saskin",
+        "J. T. Wilson",
+        "B. Grinkemeyer",
+        "J. D. Thompson"
+      ],
+      "year": 2019,
+      "doi": "10.1103/PhysRevLett.122.143002",
+      "arxivVersion": "1810.10517v1",
+      "publication": "Phys. Rev. Lett. 122, 143002 (2019)",
+      "verifiedURLs": [
+        "https://arxiv.org/abs/1810.10517",
+        "https://arxiv.org/pdf/1810.10517v1"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/1810.10517v1",
+      "localPaths": [
+        "/Users/seven/Desktop/paper/2019_Saskin_174Yb_Narrow-line-cooling-and-imaging_published-print.pdf"
+      ],
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/paper/2019_Saskin_174Yb_Narrow-line-cooling-and-imaging_published-print.pdf",
+          "bytes": 263554,
+          "sha256": "7a3330aaf5c798266b04b2fdb4c461acb2b10ab4c9fefc9b15f12cf686d97716"
+        }
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary 174Yb 532-nm tweezer cooling/imaging",
+      "evidenceNotes": [
+        "Published title/citation verified against local first page; arXiv DOI agrees. Publication 2019-04-10. Not direct evidence for every 171Yb cooling/hyperfine parameter."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-08",
+        "referenceNumber": 8,
+        "title": "Saskin et al.",
+        "detail": "Narrow-Line Cooling and Imaging of Ytterbium Atoms in an Optical Tweezer Array",
+        "publication": "Phys. Rev. Lett. 122, 143002 (2019)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-09",
+      "exactTitle": "Controlling Rydberg Excitations Using Ion-Core Transitions in Alkaline-Earth Atom-Tweezer Arrays",
+      "authors": [
+        "Alex P. Burgers",
+        "Shuo Ma",
+        "Sam Saskin",
+        "Jack Wilson",
+        "Miguel A. Alarcón",
+        "Chris H. Greene",
+        "Jeff D. Thompson"
+      ],
+      "year": 2022,
+      "doi": "10.1103/PRXQuantum.3.020326",
+      "arxivVersion": "2110.06902v1",
+      "publication": "PRX Quantum 3, 020326 (2022)",
+      "verifiedURLs": [
+        "https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.3.020326",
+        "https://arxiv.org/abs/2110.06902",
+        "https://arxiv.org/pdf/2110.06902"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/2110.06902",
+      "localPaths": [],
+      "localArtifacts": [],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary ion-core light-shift and scattering spectroscopy",
+      "evidenceNotes": [
+        "Canonical title was a substantial paraphrase. APS explicitly open access / CC BY 4.0; published 2022-05-06."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-09",
+        "referenceNumber": 9,
+        "title": "Burgers et al.",
+        "detail": "Controlling Rydberg Excitation through an Ion-Core Transition",
+        "publication": "PRX Quantum 3, 020326 (2022)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-10",
+      "exactTitle": "Trap-loss spectroscopy of Rydberg states in ytterbium",
+      "authors": [
+        "Christian Halter",
+        "Alexander Miethke",
+        "Christian Sillus",
+        "Apoorva Hegde",
+        "Axel Goerlitz"
+      ],
+      "year": 2023,
+      "doi": "10.1088/1361-6455/acb74b",
+      "arxivVersion": "2211.04748v2",
+      "publication": "J. Phys. B: At. Mol. Opt. Phys. 56, 055001 (2023)",
+      "verifiedURLs": [
+        "https://arxiv.org/abs/2211.04748",
+        "https://arxiv.org/pdf/2211.04748v2"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/2211.04748v2",
+      "localPaths": [
+        "/Users/seven/Desktop/171YbDatabase/references/papers/2022_Halter_174Yb_Trap-loss-spectroscopy_arXiv2211.04748v2.pdf"
+      ],
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/171YbDatabase/references/papers/2022_Halter_174Yb_Trap-loss-spectroscopy_arXiv2211.04748v2.pdf",
+          "bytes": 665060,
+          "sha256": "47c724a73142b37e882599ec16bed9a40be68d282232bf95e4111fbb7d2b581d"
+        }
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary Rydberg 1S0/1P1 trap-loss spectroscopy, n=70–90",
+      "evidenceNotes": [
+        "arXiv primary page provides title, full authors, v2 date 2022-11-21, and related journal DOI. PDF accessible. IOP direct access blocked by robots; journal volume/article metadata corroborates existing citation but was not fetched directly.",
+        "Project reference copy now downloaded under preprint year 2022; formal publication year remains 2023."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-10",
+        "referenceNumber": 10,
+        "title": "Halter et al.",
+        "detail": "Trap-Loss Spectroscopy of Rydberg States in Yb",
+        "publication": "J. Phys. B 56, 055001 (2023)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-11",
+      "exactTitle": "Laser and microwave spectroscopy of even-parity Rydberg states of neutral ytterbium and multichannel-quantum-defect-theory analysis",
+      "authors": [
+        "H. Lehec",
+        "A. Zuliani",
+        "W. Maineult",
+        "E. Luc-Koenig",
+        "P. Pillet",
+        "P. Cheinet",
+        "F. Niyaz",
+        "T. F. Gallagher"
+      ],
+      "year": 2018,
+      "doi": "10.1103/PhysRevA.98.062506",
+      "arxivVersion": "1805.02712v2",
+      "publication": "Phys. Rev. A 98, 062506 (2018)",
+      "verifiedURLs": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.98.062506",
+        "https://arxiv.org/abs/1805.02712",
+        "https://arxiv.org/pdf/1805.02712"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/1805.02712",
+      "localPaths": [],
+      "localArtifacts": [],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary 174Yb even-parity singlet S and coupled D-series spectroscopy/MQDT",
+      "evidenceNotes": [
+        "Replace abbreviated title. Published 2018-12-06; arXiv v2 revised 2018-05-25. Distinguish 174Yb ionization limit from 171Yb limits."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-11",
+        "referenceNumber": 11,
+        "title": "Lehec et al.",
+        "detail": "Laser and Microwave Spectroscopy of Even-Parity Rydberg States of Yb and MQDT Analysis",
+        "publication": "Phys. Rev. A 98, 062506 (2018)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-12",
+      "exactTitle": "Three-step laser spectroscopy and multichannel quantum defect analysis of odd-parity Rydberg states of neutral ytterbium",
+      "authors": [
+        "M. Aymar",
+        "R. J. Champeau",
+        "C. Delsart",
+        "O. Robaux"
+      ],
+      "year": 1984,
+      "doi": "10.1088/0022-3700/17/18/006",
+      "arxivVersion": null,
+      "publication": "J. Phys. B: Atom. Mol. Phys. 17, 3645 (1984)",
+      "verifiedURLs": [
+        "https://doi.org/10.1088/0022-3700/17/18/006"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "localArtifacts": [],
+      "identityStatus": "verified-primary-search-metadata",
+      "referenceRole": "primary odd-parity Rydberg spectroscopy/MQDT",
+      "evidenceNotes": [
+        "IOP indexed primary metadata confirms exact title, all authors, DOI, and page. Direct IOP page blocked by robots, no legal open PDF verified. This is odd-parity, not the older 1980 even-parity article."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-12",
+        "referenceNumber": 12,
+        "title": "Aymar et al.",
+        "detail": "Three-Step Laser Spectroscopy and MQDT Analysis of Yb Rydberg States",
+        "publication": "J. Phys. B 17, 3645 (1984)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-13",
+      "exactTitle": null,
+      "authors": [],
+      "year": 1997,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": null,
+      "verifiedURLs": [
+        "https://ieeexplore.ieee.org/document/585119"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "localArtifacts": [],
+      "identityStatus": "unresolved-citation-possible-mismatch",
+      "referenceRole": "unresolved original ion-core clock/hyperfine citation",
+      "evidenceNotes": [
+        "Original IEEE Trans. Instrum. Meas. 46, 457 (1997) could not be validated against a primary record. Do not fabricate a DOI or keep the paraphrase as an exact title.",
+        "A similar candidate exists: Accurate measurement of the 12.6 GHz clock transition in trapped 171Yb+ ions, P. T. H. Fisk / M. J. Sellars / M. A. Lawn / G. Coles, IEEE Trans. Ultrason. Ferroelectr. Freq. Control 44(2),344–354 (1997), candidate DOI10.1109/58.585119. IEEE blocked metadata with robot verification; not accepted as the resolved identity.",
+        "The primary URL was reached but exposed only a robot-verification page, not bibliographic verification. Manual original-PDF review is required."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-13",
+        "referenceNumber": 13,
+        "title": "Fisk et al.",
+        "detail": "¹⁷¹Yb⁺ 12.6 GHz Hyperfine Clock Transition Precision Measurement",
+        "publication": "IEEE Trans. Instrum. Meas. 46, 457 (1997)",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-14",
+      "exactTitle": "NIST Atomic Spectra Database (version 5.12)",
+      "authors": [
+        "A. Kramida",
+        "Yu. Ralchenko",
+        "J. Reader",
+        "NIST ASD Team"
+      ],
+      "year": 2024,
+      "doi": "10.18434/T4W30F",
+      "arxivVersion": null,
+      "publication": "NIST Standard Reference Database 78, version 5.12 (2024), accessed 2026-10-29",
+      "verifiedURLs": [
+        "https://physics.nist.gov/asd",
+        "https://www.nist.gov/pml/atomic-spectra-database",
+        "https://physics.nist.gov/PhysRefData/ASD/Html/verhist.shtml"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "localArtifacts": [],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "evaluated database; individual Yb I records still require original-reference linkage",
+      "evidenceNotes": [
+        "NIST version-history primary page gives version 5.12 / 2024 and DOI; asd short URL currently redirects to NIST landing page. No per-line/per-level export was captured by this bibliography audit. Do not call a generic database URL a verified isotope-specific field source."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-14",
+        "referenceNumber": 14,
+        "title": "NIST Atomic Spectra Database",
+        "detail": "Yb I Energy Levels and Transition Probabilities",
+        "publication": "https://physics.nist.gov/asd",
+        "url": "https://physics.nist.gov/asd",
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-15",
+      "exactTitle": "Analyzing the Rydberg-based optical-metastable-ground architecture for ¹⁷¹Yb nuclear spins",
+      "authors": [
+        "Neville Chen",
+        "Lintao Li",
+        "William Huie",
+        "Mingkun Zhao",
+        "Ian Vetter",
+        "Chris H. Greene",
+        "Jacob P. Covey"
+      ],
+      "year": 2022,
+      "doi": "10.1103/PhysRevA.105.052438",
+      "arxivVersion": "2201.04083v3",
+      "publication": "Phys. Rev. A 105, 052438 (2022)",
+      "verifiedURLs": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.105.052438",
+        "https://arxiv.org/abs/2201.04083",
+        "https://arxiv.org/pdf/2201.04083v3"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/2201.04083v3",
+      "localPaths": [
+        "/Users/seven/Desktop/paper/lifetime/2022_Chen_171Yb_OMG-architecture_arXiv2201.04083v3.pdf"
+      ],
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/paper/lifetime/2022_Chen_171Yb_OMG-architecture_arXiv2201.04083v3.pdf",
+          "bytes": 6480680,
+          "sha256": "1c812aeb51e0009e93551b09fd1a182b6912aeeec03415f81df952f09d3d899f"
+        }
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "theory/model analysis; not all plotted parameters are direct measurements",
+      "evidenceNotes": [
+        "Journal title uses optical-metastable-ground while preprint title uses omg. Published 2022-05-25; arXiv v3 revised 2022-04-18. Exact state, approximation, and Fig.2 provenance must be retained with each extracted field."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-15",
+        "referenceNumber": 15,
+        "title": "Chen et al.",
+        "detail": "Analyzing the Rydberg-based optical-metastable-ground architecture for ¹⁷¹Yb nuclear spins",
+        "publication": "Phys. Rev. A 105, 052438 (2022) · Fig. 2 · 10.1103/PhysRevA.105.052438",
+        "url": "https://doi.org/10.1103/PhysRevA.105.052438",
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-16",
+      "exactTitle": "High-fidelity gates and mid-circuit erasure conversion in an atomic qubit",
+      "authors": [
+        "Shuo Ma",
+        "Genyue Liu",
+        "Pai Peng",
+        "Bichen Zhang",
+        "Sven Jandura",
+        "Jahan Claes",
+        "Alex P. Burgers",
+        "Guido Pupillo",
+        "Shruti Puri",
+        "Jeff D. Thompson"
+      ],
+      "year": 2023,
+      "doi": "10.1038/s41586-023-06438-1",
+      "arxivVersion": "2305.05493v1",
+      "publication": "Nature 622, 279–284 (2023)",
+      "verifiedURLs": [
+        "https://arxiv.org/abs/2305.05493",
+        "https://arxiv.org/pdf/2305.05493v1"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/2305.05493v1",
+      "localPaths": [
+        "/Users/seven/Desktop/paper/lifetime/2023_Ma_171Yb_Mid-circuit-erasure-gates_arXiv2305.05493v1.pdf",
+        "/Users/seven/Desktop/paper/lifetime/2023_Ma_171Yb_Mid-circuit-erasure-gates_published.pdf"
+      ],
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/paper/lifetime/2023_Ma_171Yb_Mid-circuit-erasure-gates_arXiv2305.05493v1.pdf",
+          "bytes": 5152170,
+          "sha256": "605afdb1ef7d3e76004024c409cf44c34037305556aabdae5d2644ca7116ee7a"
+        },
+        {
+          "path": "/Users/seven/Desktop/paper/lifetime/2023_Ma_171Yb_Mid-circuit-erasure-gates_published.pdf",
+          "bytes": 10893597,
+          "sha256": "9b477683f712c305c3ab2f5f45ab1b7538584a8dd39ef7a6785b24ebbbf376e7"
+        }
+      ],
+      "identityStatus": "verified-local-pdf-and-primary-arxiv",
+      "referenceRole": "primary metastable 171Yb qubit and 6s59s Rydberg gate experiment",
+      "evidenceNotes": [
+        "Local published first page confirms exact published title, DOI, and online publication 2023-10-11; the preprint has a different title. Nature direct fetch redirected to an inaccessible cookie/authorization endpoint; use existing local PDF or verified arXiv. Do not silently extrapolate 59s measurements to 65s."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "originalRecord": {
+        "id": "ref-16",
+        "referenceNumber": 16,
+        "title": "Ma et al.",
+        "detail": "High-fidelity gates and mid-circuit erasure conversion in an atomic qubit",
+        "publication": "Nature 622, 279–284 (2023) · 6s59s · 10.1038/s41586-023-06438-1",
+        "url": "https://doi.org/10.1038/s41586-023-06438-1",
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "ref-17",
+      "exactTitle": "³P₀ → 6s65s ³S₁ 电子态约化偶极矩阵元",
+      "authors": [],
+      "year": null,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": null,
+      "verifiedURLs": [],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "internal-not-literature",
+      "referenceRole": "internal calculation, calibration, or legacy software record",
+      "evidenceNotes": [
+        "³P₀ → 6s65s ³S₁ 电子态约化偶极矩阵元",
+        "No peer-reviewed bibliographic identity; keep internal provenance distinct from literature. Numerical values and original run identity require a separate artifact audit."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-established",
+      "originalRecord": {
+        "id": "ref-17",
+        "referenceNumber": 17,
+        "title": "This work",
+        "detail": "³P₀ → 6s65s ³S₁ 电子态约化偶极矩阵元",
+        "publication": "d = 0.0376 ea₀ · 本工作计算",
+        "url": null,
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "legacy-levels",
+      "exactTitle": "Existing level catalog at commit 2e2e9d5",
+      "authors": [],
+      "year": null,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": null,
+      "verifiedURLs": [],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "internal-not-literature",
+      "referenceRole": "internal calculation, calibration, or legacy software record",
+      "evidenceNotes": [
+        "Original root index.html CORE_LEVELS and RYDBERG_QC_DATA; no independent original-source reconciliation performed in this migration.",
+        "No peer-reviewed bibliographic identity; keep internal provenance distinct from literature. Numerical values and original run identity require a separate artifact audit."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-established",
+      "originalRecord": {
+        "id": "legacy-levels",
+        "title": "Existing level catalog at commit 2e2e9d5",
+        "detail": "Original root index.html CORE_LEVELS and RYDBERG_QC_DATA; no independent original-source reconciliation performed in this migration.",
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "legacy-hfs",
+      "exactTitle": "Existing hyperfine catalog at commit 2e2e9d5",
+      "authors": [],
+      "year": null,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": null,
+      "verifiedURLs": [],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "internal-not-literature",
+      "referenceRole": "internal calculation, calibration, or legacy software record",
+      "evidenceNotes": [
+        "Original HYPERFINE_DATA; literature A constants and scaled Rydberg estimates retain their existing values and unresolved source status.",
+        "No peer-reviewed bibliographic identity; keep internal provenance distinct from literature. Numerical values and original run identity require a separate artifact audit."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-established",
+      "originalRecord": {
+        "id": "legacy-hfs",
+        "title": "Existing hyperfine catalog at commit 2e2e9d5",
+        "detail": "Original HYPERFINE_DATA; literature A constants and scaled Rydberg estimates retain their existing values and unresolved source status.",
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "legacy-scaling",
+      "exactTitle": "Existing scaling estimates",
+      "authors": [],
+      "year": null,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": null,
+      "verifiedURLs": [],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "internal-not-literature",
+      "referenceRole": "internal calculation, calibration, or legacy software record",
+      "evidenceNotes": [
+        "Original calcRydberg and RYDBERG_QC_TRANSITIONS; approximate single-channel/scaling values, not independently validated state-specific predictions.",
+        "No peer-reviewed bibliographic identity; keep internal provenance distinct from literature. Numerical values and original run identity require a separate artifact audit."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-established",
+      "originalRecord": {
+        "id": "legacy-scaling",
+        "title": "Existing scaling estimates",
+        "detail": "Original calcRydberg and RYDBERG_QC_TRANSITIONS; approximate single-channel/scaling values, not independently validated state-specific predictions.",
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "internal-t2-calibration",
+      "exactTitle": "T2 internal calibration",
+      "authors": [],
+      "year": null,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": null,
+      "verifiedURLs": [],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "internal-not-literature",
+      "referenceRole": "internal calculation, calibration, or legacy software record",
+      "evidenceNotes": [
+        "Original record uses 0.543 ea0 and separately states literature 0.5398(6) ea0. This migration preserves the distinction; calibration rationale and source require independent review.",
+        "No peer-reviewed bibliographic identity; keep internal provenance distinct from literature. Numerical values and original run identity require a separate artifact audit.",
+        "0.543 ea0 and cited 0.5398(6) ea0 are different provenance classes; source/definition reconciliation is required before a single adopted number is claimed."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-established",
+      "originalRecord": {
+        "id": "internal-t2-calibration",
+        "title": "T2 internal calibration",
+        "detail": "Original record uses 0.543 ea0 and separately states literature 0.5398(6) ea0. This migration preserves the distinction; calibration rationale and source require independent review.",
+        "conflicts": [
+          {
+            "field": "dipole",
+            "adoptedValue": 0.543,
+            "reportedLiteratureText": "0.5398(6)",
+            "unit": "e*a0",
+            "resolution": "unresolved; current software baseline retained"
+          }
+        ],
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "internal-t3-20260908",
+      "exactTitle": "T3 internal supplement dated 2026-09-08",
+      "authors": [],
+      "year": null,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": null,
+      "verifiedURLs": [],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "internal-not-literature",
+      "referenceRole": "internal calculation, calibration, or legacy software record",
+      "evidenceNotes": [
+        "Original record specifies an effective F-reduced matrix element 9.19e-5 ea0; not a bare J=0 to J=0 E1 reduced element.",
+        "No peer-reviewed bibliographic identity; keep internal provenance distinct from literature. Numerical values and original run identity require a separate artifact audit.",
+        "Effective F-reduced hyperfine-enabled element must not be represented as a bare J=0 to J=0 E1 matrix element."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-established",
+      "originalRecord": {
+        "id": "internal-t3-20260908",
+        "title": "T3 internal supplement dated 2026-09-08",
+        "detail": "Original record specifies an effective F-reduced matrix element 9.19e-5 ea0; not a bare J=0 to J=0 E1 reduced element.",
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    },
+    {
+      "oldSourceId": "this-work-hyperfine-65s",
+      "exactTitle": "This work: saved 65S zero-field data",
+      "authors": [],
+      "year": null,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": null,
+      "verifiedURLs": [],
+      "oaPdfUrl": null,
+      "localPaths": [
+        "/Users/seven/Desktop/171YbDatabase/assets/05.21_yb171_65s_hyperfine.csv"
+      ],
+      "identityStatus": "internal-not-literature",
+      "referenceRole": "internal calculation, calibration, or legacy software record",
+      "evidenceNotes": [
+        "Existing assets/05.21_yb171_65s_hyperfine.csv and original data card; no new MQDT calculation or original-run audit performed.",
+        "No peer-reviewed bibliographic identity; keep internal provenance distinct from literature. Numerical values and original run identity require a separate artifact audit.",
+        "Saved CSV SHA256 a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec is an artifact checksum; it does not identify the generating notebook revision, inputs, branch, or physical validation."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-established",
+      "originalRecord": {
+        "id": "this-work-hyperfine-65s",
+        "title": "This work: saved 65S zero-field data",
+        "detail": "Existing assets/05.21_yb171_65s_hyperfine.csv and original data card; no new MQDT calculation or original-run audit performed.",
+        "artifactLocator": "05.21_yb171_65s_hyperfine.ipynb / R005 saved results; original page refers to R008 for three zero-field roots",
+        "artifactSha256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec",
+        "notebookRevision": null,
+        "runInputHash": null,
+        "physicalValidation": "not-established-in-this-migration",
+        "reviewStatus": "legacy-not-rechecked",
+        "reviewedAt": null,
+        "rightsStatus": "not-established"
+      }
+    }
+  ],
+  "supplementalOriginalReferences": [
+    {
+      "candidateId": "qiao-2023-rinp",
+      "oldSourceId": null,
+      "exactTitle": "Frequency measurement of 6s6p ³P₀,₂−6s7s ³S₁ transitions in ultracold ¹⁷¹Yb atoms referenced to local optical clock",
+      "authors": [
+        "H. Qiao",
+        "C.-Y. Sun",
+        "C.-Q. Peng",
+        "Q.-C. Qi",
+        "C.-C. Zhao",
+        "M. Zhou",
+        "X.-Y. Xu"
+      ],
+      "year": 2023,
+      "doi": "10.1016/j.rinp.2023.106439",
+      "arxivVersion": null,
+      "publication": "Results in Physics 48, 106439 (2023)",
+      "verifiedURLs": [
+        "https://www.sciencedirect.com/science/article/pii/S2211379723002322"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "verified-primary-search-metadata",
+      "referenceRole": "primary 171Yb 649/770-nm absolute frequencies and 3P2/3S1 hyperfine constants",
+      "evidenceNotes": [
+        "Kroeze reference [190]. ScienceDirect indexed primary page confirms exact title/volume/article/DOI and CC/open-access status. Direct page fetch then failed; direct PDF URL not verified. Do not treat this as inaccessible behind a paywall."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification"
+    },
+    {
+      "candidateId": "porsev-1999-pra",
+      "oldSourceId": null,
+      "exactTitle": "Electric-dipole amplitudes, lifetimes, and polarizabilities of the low-lying levels of atomic ytterbium",
+      "authors": [
+        "S. G. Porsev",
+        "Yu. G. Rakhlina",
+        "M. G. Kozlov"
+      ],
+      "year": 1999,
+      "doi": "10.1103/PhysRevA.60.2781",
+      "arxivVersion": "physics/9903004v1",
+      "publication": "Phys. Rev. A 60, 2781 (1999)",
+      "verifiedURLs": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.60.2781",
+        "https://arxiv.org/abs/physics/9903004",
+        "https://arxiv.org/pdf/physics/9903004v1"
+      ],
+      "oaPdfUrl": "https://arxiv.org/pdf/physics/9903004v1",
+      "localPaths": [
+        "/Users/seven/Desktop/171YbDatabase/references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf"
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary ab initio E1 amplitudes / branching-ratio inputs; theory, not measured lifetimes",
+      "evidenceNotes": [
+        "Kroeze [132]. Published title uses Electric-dipole while preprint uses E1. APS author is Yu. G. Rakhlina; compilation initial Y. G. should be normalized carefully.",
+        "Original full text now read; all numbered tables transcribed; critical table pages rendered and visually checked. Separate extraction report records scientific evidence boundaries."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/171YbDatabase/references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf",
+          "bytes": 132741,
+          "sha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3"
+        }
+      ],
+      "extractionData": "/Users/seven/Desktop/171YbDatabase/data/literature/low-state-originals/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.json"
+    },
+    {
+      "candidateId": "zhou-2020-pra",
+      "oldSourceId": null,
+      "exactTitle": "Characterization of ytterbium resonance lines at 649 nm with modulation-transfer spectroscopy",
+      "authors": [
+        "Min Zhou",
+        "Sheng Zhang",
+        "Limeng Luo",
+        "Xinye Xu"
+      ],
+      "year": 2020,
+      "doi": "10.1103/PhysRevA.101.062506",
+      "arxivVersion": null,
+      "publication": "Phys. Rev. A 101, 062506 (2020)",
+      "verifiedURLs": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.101.062506"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary 649-nm spectroscopy and 3S1 HFS",
+      "evidenceNotes": [
+        "Kroeze [198]. APS confirms full metadata; subscription display. Legal OA version not verified in this audit."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification"
+    },
+    {
+      "candidateId": "zhao-2024-pra",
+      "oldSourceId": null,
+      "exactTitle": "Absolute frequency measurements of the 6s6p ³P₀−5d6s ³D₁ transitions in ¹⁷⁰,¹⁷¹,¹⁷²,¹⁷³,¹⁷⁴,¹⁷⁶Yb by modulation transfer spectroscopy",
+      "authors": [
+        "Chengcheng Zhao",
+        "Qichao Qi",
+        "Changyue Sun",
+        "Chengquan Peng",
+        "Taoyun Jin",
+        "Tao Zhang",
+        "Shuai Lei",
+        "Yan Xia",
+        "Suzhen Feng",
+        "Xinye Xu"
+      ],
+      "year": 2024,
+      "doi": "10.1103/PhysRevA.110.042816",
+      "arxivVersion": null,
+      "publication": "Phys. Rev. A 110, 042816 (2024)",
+      "verifiedURLs": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.042816"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary 1389-nm isotope-resolved frequencies",
+      "evidenceNotes": [
+        "Kroeze [194]. APS metadata first nine authors plus et al.; full author list completed from Kroeze bibliography. Do not confuse with Kuroda 112,042817. Legal OA PDF not verified."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification"
+    },
+    {
+      "candidateId": "beloy-2012-pra",
+      "oldSourceId": null,
+      "exactTitle": "Determination of the 5d6s ³D₁ state lifetime and blackbody-radiation clock shift in Yb",
+      "authors": [
+        "K. Beloy",
+        "J. A. Sherman",
+        "N. D. Lemke",
+        "N. Hinkley",
+        "C. W. Oates",
+        "A. D. Ludlow"
+      ],
+      "year": 2012,
+      "doi": "10.1103/PhysRevA.86.051404",
+      "arxivVersion": "1208.0552v1",
+      "publication": "Phys. Rev. A 86, 051404(R) (2012)",
+      "verifiedURLs": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.86.051404",
+        "https://arxiv.org/abs/1208.0552v1"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [
+        "/Users/seven/Desktop/171YbDatabase/references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf"
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary 3D1 lifetime; BBR shift result contains derived modeling",
+      "evidenceNotes": [
+        "Original Kroeze [195], now fully available as project arXiv v1 PDF; lifetime experiment 171Yb, inferred dipoles separately labeled.",
+        "Original full text now read; all numbered tables transcribed; critical table pages rendered and visually checked. Separate extraction report records scientific evidence boundaries."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/171YbDatabase/references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf",
+          "bytes": 1094263,
+          "sha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e"
+        }
+      ],
+      "extractionData": "/Users/seven/Desktop/171YbDatabase/data/literature/low-state-originals/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.json"
+    },
+    {
+      "candidateId": "baumann-1985-jpb",
+      "oldSourceId": null,
+      "exactTitle": "Radiative lifetimes and gJ factors of low-lying even-parity levels in the Yb I spectrum",
+      "authors": [
+        "M. Baumann",
+        "M. Braun",
+        "A. Gaiser",
+        "H. Liening"
+      ],
+      "year": 1985,
+      "doi": "10.1088/0022-3700/18/17/001",
+      "arxivVersion": null,
+      "publication": "J. Phys. B: Atom. Mol. Phys. 18, L601 (1985)",
+      "verifiedURLs": [
+        "https://doi.org/10.1088/0022-3700/18/17/001"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "verified-primary-search-metadata",
+      "referenceRole": "primary even-parity low-state lifetimes / gJ; important 3S1 lifetime provenance",
+      "evidenceNotes": [
+        "Kroeze [196]. IOP indexed primary metadata confirms identity and time-resolved fluorescence method; direct IOP blocked by robots. No legal OA PDF verified."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification"
+    },
+    {
+      "candidateId": "bowers-1996-pra",
+      "oldSourceId": null,
+      "exactTitle": "Experimental investigation of excited-state lifetimes in atomic ytterbium",
+      "authors": [
+        "C. J. Bowers",
+        "D. Budker",
+        "E. D. Commins",
+        "D. DeMille",
+        "S. J. Freedman",
+        "A.-T. Nguyen",
+        "S.-Q. Shang",
+        "M. Zolotorev"
+      ],
+      "year": 1996,
+      "doi": "10.1103/PhysRevA.53.3103",
+      "arxivVersion": null,
+      "publication": "Phys. Rev. A 53, 3103 (1996)",
+      "verifiedURLs": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.53.3103"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [
+        "/Users/seven/Desktop/171YbDatabase/references/papers/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.pdf"
+      ],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary low-state lifetime experiment",
+      "evidenceNotes": [
+        "Kroeze [137]. APS exact metadata verified; no legal OA PDF verified in this audit. State/isotope applicability must be checked from full text.",
+        "Original full text now read; all numbered tables transcribed; critical table pages rendered and visually checked. Separate extraction report records scientific evidence boundaries."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/171YbDatabase/references/papers/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.pdf",
+          "bytes": 130856,
+          "sha256": "628816472904aabb4e88172b958f1b80b791a3b7f6d72b06cb2302aa70424e83"
+        }
+      ],
+      "extractionData": "/Users/seven/Desktop/171YbDatabase/data/literature/low-state-originals/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.json"
+    },
+    {
+      "candidateId": "rambow-1976-pra",
+      "oldSourceId": null,
+      "exactTitle": "Radiative lifetimes and alignment depolarization cross sections for YbI and II by the Hanle effect in a flowing helium system",
+      "authors": [
+        "F. H. K. Rambow",
+        "L. D. Schearer"
+      ],
+      "year": 1976,
+      "doi": "10.1103/PhysRevA.14.738",
+      "arxivVersion": null,
+      "publication": "Phys. Rev. A 14, 738 (1976)",
+      "verifiedURLs": [
+        "https://journals.aps.org/pra/issues/14/2"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "verified-primary-metadata",
+      "referenceRole": "primary Hanle-effect lifetime / collisional depolarization measurement",
+      "evidenceNotes": [
+        "Kroeze [139]. APS issue table title/authors/page verified; its article link explicitly resolves to DOI10.1103/PhysRevA.14.738 but fetch returns cache miss. No full text/OA PDF retrieved."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification"
+    },
+    {
+      "candidateId": "burshtein-1974-optspec",
+      "oldSourceId": null,
+      "exactTitle": "Lifetimes of the ³P₁ level of Yb I and the ²P₃/₂,₁/₂ level of Yb II",
+      "authors": [
+        "M. L. Burshtein",
+        "Y. F. Verolainen",
+        "V. A. Komarovskii",
+        "A. L. Osherovich",
+        "N. P. Penkin"
+      ],
+      "year": 1974,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": "Optics and Spectroscopy 37, 351 (1974)",
+      "verifiedURLs": [],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "compilation-index-only",
+      "referenceRole": "original 3P1 / YbII lifetime source candidate",
+      "evidenceNotes": [
+        "Kroeze [134]. Metadata currently taken only from the compilation bibliography. Primary article and exact transliterated author spelling/English title unverified; request original scan rather than invent DOI."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification"
+    },
+    {
+      "candidateId": "qiao-2023-apl",
+      "oldSourceId": null,
+      "exactTitle": "Investigation of the 6s6p ³P₂−6s7s ³S₁ transition of ytterbium atoms with modulation-transfer spectroscopy",
+      "authors": [
+        "H. Qiao",
+        "L. Liu",
+        "M. Zhou",
+        "L. Luo",
+        "X. Xu"
+      ],
+      "year": 2023,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": "Applied Physics Letters 122 (2023), article number unresolved",
+      "verifiedURLs": [],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "compilation-index-only",
+      "referenceRole": "primary 770-nm spectroscopy source candidate",
+      "evidenceNotes": [
+        "Kroeze [197] citation has 122, 3, which is not a usable article number. No AIP primary record found; do not manufacture DOI, page, or PDF URL. Full original is needed."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification"
+    },
+    {
+      "candidateId": "mishra-2001-jqsrt",
+      "oldSourceId": null,
+      "exactTitle": "Radiative lifetimes of the first excited ³Pᵒ₂,₀ metastable levels in Kr I, Xe I, Yb I and Hg-like atoms",
+      "authors": [
+        "A. P. Mishra",
+        "T. Balasubramanian"
+      ],
+      "year": 2001,
+      "doi": null,
+      "arxivVersion": null,
+      "publication": "J. Quant. Spectrosc. Radiat. Transfer 69, 769 (2001)",
+      "verifiedURLs": [],
+      "oaPdfUrl": null,
+      "localPaths": [],
+      "identityStatus": "compilation-index-only",
+      "referenceRole": "theoretical radiative lifetime source for 171Yb 3P2",
+      "evidenceNotes": [
+        "Kroeze [129]; exact primary metadata/DOI not yet verified. Kroeze explicitly adopts theory for 3P2, not a measured vacuum lifetime."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification"
+    },
+    {
+      "candidateId": "porsev-2004-pra",
+      "oldSourceId": null,
+      "exactTitle": "Hyperfine quenching of the metastable ³P₀,₂ states in divalent atoms",
+      "authors": [
+        "S. G. Porsev",
+        "A. Derevianko"
+      ],
+      "year": 2004,
+      "doi": "10.1103/PhysRevA.69.042506",
+      "arxivVersion": "physics/0312006v1",
+      "publication": "Phys. Rev. A 69, 042506 (2004)",
+      "verifiedURLs": [
+        "https://arxiv.org/abs/physics/0312006v1",
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.69.042506"
+      ],
+      "oaPdfUrl": null,
+      "localPaths": [
+        "/Users/seven/Desktop/171YbDatabase/references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf"
+      ],
+      "identityStatus": "verified-primary-metadata-and-local-pdf",
+      "referenceRole": "theory of hyperfine quenching",
+      "evidenceNotes": [
+        "Now verified by primary arXiv and APS; preprint 2003, publication 2004. Tables are T=0 vacuum-fluctuation decay rates; 171Yb 3P2 E1 quenching is F-dependent.",
+        "Original full text now read; all numbered tables transcribed; critical table pages rendered and visually checked. Separate extraction report records scientific evidence boundaries."
+      ],
+      "checkedAt": "2026-10-29",
+      "numericalValidation": "not-implied-by-bibliographic-verification",
+      "localArtifacts": [
+        {
+          "path": "/Users/seven/Desktop/171YbDatabase/references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf",
+          "bytes": 152202,
+          "sha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f"
+        }
+      ],
+      "extractionData": "/Users/seven/Desktop/171YbDatabase/data/literature/low-state-originals/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.json"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "paperNumber": 5,
+  "sourceId": "zhou-2020-pra",
+  "doi": "10.1103/PhysRevA.101.062506",
+  "context": "Yb isotope649nm MTS in Ne hollow-cathode lamp; absolute common uncertainty3.2MHz; relative shifts separately measured; HCL22degC pressure-rate reference is not complete BBR temperature",
+  "tables": 4,
+  "pdf": "references/papers/5.pdf",
+  "sha256": "3aecb39c63b436ef56cd59bc1c38e6c09cc300c5e4d34ba7120f43e4ad1d12de",
+  "table": "TableII",
+  "pdfPage": 5,
+  "printedPage": "062506-5",
+  "columns": [
+    "frequency"
+  ],
+  "note": "All rows have common absolute uncertainty3.2MHz; not missing or zero uncertainty. Per-row values print no parentheses. Relative-shift uncertainties inTableIII cannot be reconstructed as independent3.2MHz errors.",
+  "rows": [
+    {
+      "label": "171Yb Fg1/2 Fe1/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461861338.1",
+          "unit": "MHz",
+          "value": "461861338.1",
+          "uncertainty": "3.2",
+          "uncertaintyScope": "common absolute uncertainty per table caption",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "173Yb Fg5/2 Fe7/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461863970.9",
+          "unit": "MHz",
+          "value": "461863970.9",
+          "uncertainty": "3.2",
+          "uncertaintyScope": "common absolute uncertainty per table caption",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "170Yb",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461867981.9",
+          "unit": "MHz",
+          "value": "461867981.9",
+          "uncertainty": "3.2",
+          "uncertaintyScope": "common absolute uncertainty per table caption",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "172Yb",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461868512.3",
+          "unit": "MHz",
+          "value": "461868512.3",
+          "uncertainty": "3.2",
+          "uncertaintyScope": "common absolute uncertainty per table caption",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "174Yb",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461868929.9",
+          "unit": "MHz",
+          "value": "461868929.9",
+          "uncertainty": "3.2",
+          "uncertaintyScope": "common absolute uncertainty per table caption",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "176Yb",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461869328.3",
+          "unit": "MHz",
+          "value": "461869328.3",
+          "uncertainty": "3.2",
+          "uncertaintyScope": "common absolute uncertainty per table caption",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "173Yb Fg5/2 Fe5/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461870590.3",
+          "unit": "MHz",
+          "value": "461870590.3",
+          "uncertainty": "3.2",
+          "uncertaintyScope": "common absolute uncertainty per table caption",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb Fg1/2 Fe3/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461871594.9",
+          "unit": "MHz",
+          "value": "461871594.9",
+          "uncertainty": "3.2",
+          "uncertaintyScope": "common absolute uncertainty per table caption",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "173Yb Fg5/2 Fe3/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461875319.7",
+          "unit": "MHz",
+          "value": "461875319.7",
+          "uncertainty": "3.2",
+          "uncertaintyScope": "common absolute uncertainty per table caption",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    }
+  ],
+  "rawPageText": "paper-5-page-5.txt",
+  "renderedVerified": "rendered/paper-5-p5.png"
+}

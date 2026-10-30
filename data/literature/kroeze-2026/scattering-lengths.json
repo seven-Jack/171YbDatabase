@@ -1,0 +1,610 @@
+[
+  {
+    "id": "table-04:168-168:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "168-168:scattering_length",
+    "sourcePrintedValue": "252.86(6)",
+    "valueDecimal": "252.86",
+    "uncertaintyDecimal": "0.06",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      168,
+      168
+    ]
+  },
+  {
+    "id": "table-04:168-170:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "168-170:scattering_length",
+    "sourcePrintedValue": "117.268(10)",
+    "valueDecimal": "117.268",
+    "uncertaintyDecimal": "0.010",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      168,
+      170
+    ]
+  },
+  {
+    "id": "table-04:168-171:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "168-171:scattering_length",
+    "sourcePrintedValue": "89.2(17)",
+    "valueDecimal": "89.2",
+    "uncertaintyDecimal": "1.7",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      168,
+      171
+    ]
+  },
+  {
+    "id": "table-04:168-172:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "168-172:scattering_length",
+    "sourcePrintedValue": "65.117(8)",
+    "valueDecimal": "65.117",
+    "uncertaintyDecimal": "0.008",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      168,
+      172
+    ]
+  },
+  {
+    "id": "table-04:168-173:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "168-173:scattering_length",
+    "sourcePrintedValue": "38.6(25)",
+    "valueDecimal": "38.6",
+    "uncertaintyDecimal": "2.5",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      168,
+      173
+    ]
+  },
+  {
+    "id": "table-04:168-174:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "168-174:scattering_length",
+    "sourcePrintedValue": "2.599(24)",
+    "valueDecimal": "2.599",
+    "uncertaintyDecimal": "0.024",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      168,
+      174
+    ]
+  },
+  {
+    "id": "table-04:168-176:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "168-176:scattering_length",
+    "sourcePrintedValue": "-357.1(6)",
+    "valueDecimal": "-357.1",
+    "uncertaintyDecimal": "0.6",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      168,
+      176
+    ]
+  },
+  {
+    "id": "table-04:170-170:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "170-170:scattering_length",
+    "sourcePrintedValue": "63.957(8)",
+    "valueDecimal": "63.957",
+    "uncertaintyDecimal": "0.008",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36,
+      37
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      170,
+      170
+    ]
+  },
+  {
+    "id": "table-04:170-171:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "170-171:scattering_length",
+    "sourcePrintedValue": "36.5(25)",
+    "valueDecimal": "36.5",
+    "uncertaintyDecimal": "2.5",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      170,
+      171
+    ]
+  },
+  {
+    "id": "table-04:170-172:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "170-172:scattering_length",
+    "sourcePrintedValue": "-1.916(27)",
+    "valueDecimal": "-1.916",
+    "uncertaintyDecimal": "0.027",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      170,
+      172
+    ]
+  },
+  {
+    "id": "table-04:170-173:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "170-173:scattering_length",
+    "sourcePrintedValue": "-81(7)",
+    "valueDecimal": "-81",
+    "uncertaintyDecimal": "7",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      170,
+      173
+    ]
+  },
+  {
+    "id": "table-04:170-174:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "170-174:scattering_length",
+    "sourcePrintedValue": "-512.7(11)",
+    "valueDecimal": "-512.7",
+    "uncertaintyDecimal": "1.1",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      170,
+      174
+    ]
+  },
+  {
+    "id": "table-04:170-176:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "170-176:scattering_length",
+    "sourcePrintedValue": "209.69(5)",
+    "valueDecimal": "209.69",
+    "uncertaintyDecimal": "0.05",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      170,
+      176
+    ]
+  },
+  {
+    "id": "table-04:171-171:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "171-171:scattering_length",
+    "sourcePrintedValue": "-3(4)",
+    "valueDecimal": "-3",
+    "uncertaintyDecimal": "4",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      171,
+      171
+    ]
+  },
+  {
+    "id": "table-04:171-172:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "171-172:scattering_length",
+    "sourcePrintedValue": "-84(7)",
+    "valueDecimal": "-84",
+    "uncertaintyDecimal": "7",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      171,
+      172
+    ]
+  },
+  {
+    "id": "table-04:171-173:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "171-173:scattering_length",
+    "sourcePrintedValue": "-580(60)",
+    "valueDecimal": "-580",
+    "uncertaintyDecimal": "60",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      171,
+      173
+    ]
+  },
+  {
+    "id": "table-04:171-174:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "171-174:scattering_length",
+    "sourcePrintedValue": "429(13)",
+    "valueDecimal": "429",
+    "uncertaintyDecimal": "13",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      171,
+      174
+    ]
+  },
+  {
+    "id": "table-04:171-176:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "171-176:scattering_length",
+    "sourcePrintedValue": "141.5(15)",
+    "valueDecimal": "141.5",
+    "uncertaintyDecimal": "1.5",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      171,
+      176
+    ]
+  },
+  {
+    "id": "table-04:172-172:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "172-172:scattering_length",
+    "sourcePrintedValue": "-592.3(14)",
+    "valueDecimal": "-592.3",
+    "uncertaintyDecimal": "1.4",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      172,
+      172
+    ]
+  },
+  {
+    "id": "table-04:172-173:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "172-173:scattering_length",
+    "sourcePrintedValue": "418(13)",
+    "valueDecimal": "418",
+    "uncertaintyDecimal": "13",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      172,
+      173
+    ]
+  },
+  {
+    "id": "table-04:172-174:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "172-174:scattering_length",
+    "sourcePrintedValue": "200.82(4)",
+    "valueDecimal": "200.82",
+    "uncertaintyDecimal": "0.04",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      172,
+      174
+    ]
+  },
+  {
+    "id": "table-04:172-176:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "172-176:scattering_length",
+    "sourcePrintedValue": "106.310(11)",
+    "valueDecimal": "106.310",
+    "uncertaintyDecimal": "0.011",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      172,
+      176
+    ]
+  },
+  {
+    "id": "table-04:173-173:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "173-173:scattering_length",
+    "sourcePrintedValue": "199(5)",
+    "valueDecimal": "199",
+    "uncertaintyDecimal": "5",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36,
+      38
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      173,
+      173
+    ],
+    "birgeRatio": 2.3
+  },
+  {
+    "id": "table-04:173-174:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "173-174:scattering_length",
+    "sourcePrintedValue": "138.7(15)",
+    "valueDecimal": "138.7",
+    "uncertaintyDecimal": "1.5",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      173,
+      174
+    ]
+  },
+  {
+    "id": "table-04:173-176:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "173-176:scattering_length",
+    "sourcePrintedValue": "79.7(19)",
+    "valueDecimal": "79.7",
+    "uncertaintyDecimal": "1.9",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      173,
+      176
+    ]
+  },
+  {
+    "id": "table-04:174-174:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "174-174:scattering_length",
+    "sourcePrintedValue": "105.037(11)",
+    "valueDecimal": "105.037",
+    "uncertaintyDecimal": "0.011",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36,
+      39,
+      40
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      174,
+      174
+    ]
+  },
+  {
+    "id": "table-04:174-176:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "174-176:scattering_length",
+    "sourcePrintedValue": "54.573(18)",
+    "valueDecimal": "54.573",
+    "uncertaintyDecimal": "0.018",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      174,
+      176
+    ]
+  },
+  {
+    "id": "table-04:176-176:scattering_length",
+    "table": 4,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "176-176:scattering_length",
+    "sourcePrintedValue": "-24.06(9)",
+    "valueDecimal": "-24.06",
+    "uncertaintyDecimal": "0.09",
+    "unit": "a0",
+    "sourceReferenceNumbers": [
+      35,
+      36
+    ],
+    "evidenceType": "calculation-with-measurement-input",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": [
+      176,
+      176
+    ]
+  }
+]

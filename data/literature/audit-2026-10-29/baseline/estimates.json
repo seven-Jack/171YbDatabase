@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "modelId": "legacy-rydberg-scaling-v1",
+  "evidenceKind": "scaling-estimate",
+  "reviewStatus": "legacy-not-rechecked",
+  "constants": {
+    "R_INF": 109737.3156816,
+    "E_I_CM": 50443.0676,
+    "E_I_EV": 6.2541433,
+    "A0_UM": 5.29177210903e-05
+  },
+  "ns_values": [
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    80
+  ],
+  "quantumDefects": [
+    {
+      "series": "6sns ¹S₀",
+      "term": "¹S₀",
+      "delta0": 4.2721,
+      "delta2": "—",
+      "range": "n = 70–90",
+      "note": "单重态 S 系列",
+      "source": "Halter 2023 / J. Phys. B 56, 055001"
+    },
+    {
+      "series": "6snp ¹P₁",
+      "term": "¹P₁",
+      "delta0": 3.9535,
+      "delta2": "—",
+      "range": "n = 70–90",
+      "note": "单重态 P 系列",
+      "source": "Halter 2023 / J. Phys. B 56, 055001"
+    },
+    {
+      "series": "6sns ³S₁",
+      "term": "³S₁",
+      "delta0": 2.523,
+      "delta2": "—",
+      "range": "高 n",
+      "note": "高 n 三重连通系列 MQDT 有效量子亏损附近值（n=57: ν=54.2839 → δ_eff≈2.72）",
+      "source": "高 n MQDT 有效值 (Peper 2025 / Phys. Rev. X 15, 011009)"
+    },
+    {
+      "series": "6snd ³D₁",
+      "term": "³D₁",
+      "delta0": 1.41,
+      "delta2": "—",
+      "range": "低 n (近似)",
+      "note": "三重态 D 系列；高 n 用 MQDT 6-channel",
+      "source": "Peper 2025 / Phys. Rev. X 15, 011009"
+    },
+    {
+      "series": "6snd ³D₂",
+      "term": "³D₂",
+      "delta0": 1.42,
+      "delta2": "—",
+      "range": "低 n (近似)",
+      "note": "6snd 为零场偶宇称 D 系列；p–f 混合属于奇宇称 6snp / 6snf，可影响 D 态 Stark 位移及相互作用计算，并非 D 态零场内禀 p–f 混合。δ₀=1.42 的原数值出处未独立核验。",
+      "source": "原记录引 Kuroda 2025 / Phys. Rev. A 112, 042817；仅用于混合机制背景，不是对该 ¹⁷¹Yb ³D₂ 数值的验证"
+    },
+    {
+      "series": "6snf ³F₂,₃,₄",
+      "term": "³F_J",
+      "delta0": 0.02,
+      "delta2": "—",
+      "range": "高 n",
+      "note": "近氢行为，量子亏损极小",
+      "source": "Kuroda 2025 / Phys. Rev. A 112, 042817"
+    }
+  ],
+  "ionization": {
+    "E_I0": 50442.795744,
+    "E_I1": 50443.217463,
+    "A_ion_GHz": 12.6428
+  },
+  "lifetimeReference": {
+    "tau_us": 0.0138,
+    "n": 7,
+    "delta": 2.523
+  },
+  "c6Reference": {
+    "n": 57,
+    "delta": 2.523,
+    "value_GHz_um6": 34,
+    "blockadeReferenceRabi_MHz": 1
+  },
+  "scope": "Legacy single-channel quantum-defect and power-law estimates; no MQDT, state tracking, or uncertainty propagation; not an experimental setting.",
+  "constantProvenance": {
+    "A0_UM": {
+      "sourceVersion": "CODATA 2018",
+      "sourceUrl": "https://physics.nist.gov/cuu/pdf/all_2018.pdf",
+      "sourceLocator": "p.1, Bohr radius row",
+      "conversion": "A0 in metres times 10^6; 2018 mantissa retained",
+      "reviewScope": "unit conversion only; not validation of the scaling model"
+    }
+  }
+}

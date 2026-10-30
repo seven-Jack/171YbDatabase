@@ -1,0 +1,12 @@
+sourceId,table,pdfPhysicalPage,printedPage,state,excitation_nm,this_work_tau_ns,Lange1970_tau_ns,CorlissBozman1962_tau_ns,Coulomb_tau_ns,origin
+baumann-1985-jpb,1,4,L603,6s6d1D2,453.0,35.2(10),—,34,11,this-work
+baumann-1985-jpb,1,4,L603,6s6d3D3,493.4,23.4(11),20.7(30),23,35,this-work
+baumann-1985-jpb,1,4,L603,6s6d3D2,457.6,24.2(12),20.5(30),16,24,Baumann1981-reproduced
+baumann-1985-jpb,1,4,L603,6s6d3D1,458.2,22.7(7),20.7(18),—,12,Baumann1981-reproduced
+baumann-1985-jpb,1,4,L603,6s7d1D2,379.2,49.8(20),—,—,38,this-work
+baumann-1985-jpb,1,4,L603,6s7d3D3,405.2,43.1(12),—,—,93,this-work
+baumann-1985-jpb,1,4,L603,6s7d3D2,379.8,66.5(36),—,—,63,this-work
+baumann-1985-jpb,1,4,L603,6s7d3D1,379.8,38.4(17),—,—,34,this-work
+baumann-1985-jpb,1,4,L603,6s7s3S1,679.9,15.9(19),12.5(15),15,21,this-work
+baumann-1985-jpb,1,4,L603,6s8s3S1,423.2,34.3(42),—,—,85,this-work
+baumann-1985-jpb,1,4,L603,6s8s1S0,417.5,37.9(42),—,—,143,this-work

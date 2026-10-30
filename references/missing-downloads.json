@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-30T14:24:12+08:00",
+  "meaning": "Not obtained in this audit; not a claim that no lawful OA version exists. No paywall or access-control bypass attempted.",
+  "items": [
+    {
+      "sourceId": "burshtein-1974-optspec",
+      "title": "Lifetimes of the ³P₁ level of Yb I and the ²P₃/₂,₁/₂ level of Yb II",
+      "publication": "Optics and Spectroscopy 37, 351 (1974)",
+      "doi": null,
+      "url": "https://archive.org/details/pub_optics-and-spectroscopy",
+      "reason": "no-validated-fulltext-in-this-audit",
+      "originalPriorityNumber": 9,
+      "neededFor": "T2：中性Yb3P1历史寿命、测量误差和方法；不能混用文中YbII2P数据。按英文卷37页351–352申请馆际扫描亦可。"
+    }
+  ]
+}

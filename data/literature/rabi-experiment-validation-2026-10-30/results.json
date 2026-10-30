@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "2026.10.30.1",
+  "formulaVersion": "1.0.1",
+  "sourceHashes": [
+    {
+      "sourceId": "peper-2025-nu54p28",
+      "localPath": "references/papers/2025_Peper_171Yb_Spectroscopy-modeling_published.pdf",
+      "expectedSha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a",
+      "status": "verified",
+      "verified": true,
+      "sha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a",
+      "unchanged": true
+    },
+    {
+      "sourceId": "pizzocaro-2017-clock-pi-operating-point",
+      "localPath": "references/papers/2017_Pizzocaro_171Yb_Absolute-frequency_arXiv1609.01610v2.pdf",
+      "expectedSha256": "1d20e391c49bd9e9af8adeebfeccf7580a12c71d636aff44616f139a4951bfbc",
+      "status": "verified",
+      "verified": true,
+      "sha256": "1d20e391c49bd9e9af8adeebfeccf7580a12c71d636aff44616f139a4951bfbc",
+      "unchanged": true
+    }
+  ],
+  "overallVerdict": "independent-experimental-validation-not-established",
+  "primaryCase": {
+    "id": "peper-2025-nu54p28",
+    "calculationStatus": "missing-data",
+    "computedRabi_Hz": null,
+    "measuredRabi_Hz": 2500000,
+    "residual_Hz": null,
+    "reason": "Missing independently established dipole for the same experimental state; no substitution of saved n=65 R2 and no dipole fitted to the target."
+  },
+  "auxiliaryCase": {
+    "id": "pizzocaro-2017-clock-pi-operating-point",
+    "frequencyEvidence": "Nominal Omega/(2*pi) derived as 1/(2*t_pi) from the stated experimental pi-pulse time; not a separately reported Rabi-oscillation fit.",
+    "nominalPiDerived_Hz": 8.333333333333334,
+    "dF_ea0": 0.0000919,
+    "dEff_ea0": 0.000037518017893629004,
+    "dipoleEvidence": {
+      "value": 0.0000919,
+      "unit": "e*a0",
+      "quantity": "d_num",
+      "sourceId": "internal-t3-20260908",
+      "sourceLocator": "internal supplement2026-09-08; no original notebook/run artifact located; NOT Table9",
+      "evidenceKind": "internal-calculation",
+      "reviewStatus": "definition-needs-review",
+      "uncertainty": null,
+      "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+      "conditions": {
+        "auditDate": "2026-10-29",
+        "auditDisposition": "unverified-internal-record",
+        "definition": "effective F-reduced171Yb F=1/2->F=1/2; not electronic J=0->J=0 E1 matrix element"
+      },
+      "convention": "F-reduced-effective"
+    },
+    "power_nW": 70,
+    "waist_um": 200,
+    "computedRabi_Hz": 13.908642710485921,
+    "predictedPiTime_ms": 35.94887081419116,
+    "differenceFromNominal_Hz": 5.575309377152587,
+    "relativeDifference_percent": 66.90371252583105,
+    "verdict": "nominal-operating-point-values-disagree-cause-not-established",
+    "isDirectMeasuredRabiBenchmark": false
+  },
+  "canonicalTransitionCount": 14
+}

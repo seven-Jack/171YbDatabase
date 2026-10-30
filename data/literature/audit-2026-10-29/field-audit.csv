@@ -1,0 +1,145 @@
+path,oldValue,newValue,unit,oldUncertainty,newUncertainty,status,sourceId,sourceLocator,reason
+transitions/T1/wavelength_vac_nm,398.9108,398.9108443,nm,,4e-07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, wavelength_vac",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T1/wavelength_air_nm,398.8021,398.80207,nm,,4e-06,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, wavelength_air",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T1/frequency_THz,751.52747,751.5274711,THz,,8e-07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, frequency_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T1/energy_eV,3.108068,3.1080678856,eV,,3.2e-09,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, transition_energy",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T1/Gamma_per_s_num,183000000,183000000.0,s^-1,,400000.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, total_decay_rate",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T1/lifetime_ns,5.464,5.464,ns,,0.011,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, upper_state_lifetime",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T1/oscillator_strength_f_num,1.3098,1.3098,dimensionless,,0.0027,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, oscillator_strength",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T1/d_num,4.147,4.147,e*a0,,0.004,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, dipole_reduced_J_Racah",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T1/linewidth_frequency_coefficient_Hz,29130000,29130000.0,Hz,,60000.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, linewidth_FWHM_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T2/wavelength_vac_nm,555.8007,555.80068663,nm,,1.3e-07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, wavelength_vac",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T2/wavelength_air_nm,555.6519,555.651877,nm,,6e-06,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, wavelength_air",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T2/frequency_THz,539.38843,539.38842684,THz,,1.2e-07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, frequency_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T2/energy_eV,2.230731,2.230731293,eV,,5e-10,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, transition_energy",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T2/Gamma_per_s_num,1146000,1146000.0,s^-1,,2500.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, total_decay_rate",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T2/lifetime_ns,872.6,872.6,ns,,1.9,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, upper_state_lifetime",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T2/oscillator_strength_f_num,0.015923,0.015923,dimensionless,,3.5e-05,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, oscillator_strength",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T2/d_num,0.543,0.5398,e*a0,,0.0006,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, dipole_reduced_J_Racah",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T2/linewidth_frequency_coefficient_Hz,182400,182400.0,Hz,,400.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, linewidth_FWHM_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T3/wavelength_vac_nm,578.4196,578.4195759161624,nm,,1.1e-13,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 9, PDF/printed p.24, wavelength_vac",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T3/wavelength_air_nm,578.2649,578.264935,nm,,6e-06,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 9, PDF/printed p.24, wavelength_air",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T3/frequency_THz,518.295837,518.2958365908636,THz,,1e-13,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 9, PDF/printed p.24, frequency_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T3/energy_eV,2.143499,2.1434993488389615,eV,,4e-16,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 9, PDF/printed p.24, transition_energy",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T3/Gamma_per_s_num,0.048,0.048,s^-1,,0.004,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 9, PDF/printed p.24, total_decay_rate",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T3/lifetime_ns,21000000000,21000000000.0,ns,,1800000000.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 9, PDF/printed p.24, upper_state_lifetime",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T3/oscillator_strength_f_num,1e-09,,dimensionless,,,unsupported-value-removed,ref-01,"arXiv:2509.04416v2 Table 9, p24; oscillator strength not listed",原引用表未提供f；移除无来源的约1e-9，缺失不当作零
+transitions/T3/d_num,9.19e-05,9.19e-05,e*a0,,,pending-internal-artifact,internal-t3-20260908,internal supplement2026-09-08; no original notebook/run artifact located; NOT Table9,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/T3/linewidth_frequency_coefficient_Hz,0.0076,0.0076,Hz,,0.0006,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 9, PDF/printed p.24, linewidth_FWHM_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T4/wavelength_vac_nm,507.3452,507.34517,nm,,4e-05,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 11, PDF/printed p.25, wavelength_vac",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T4/wavelength_air_nm,507.2088,507.20882,nm,,4e-05,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 11, PDF/printed p.25, wavelength_air",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T4/frequency_THz,590.90433,590.90433,THz,,4e-05,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 11, PDF/printed p.25, frequency_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T4/energy_eV,2.443784,2.44378393,eV,,1.7e-07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 11, PDF/printed p.25, transition_energy",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T4/Gamma_per_s_num,0.112,0.112,s^-1,,,theory-definition-pending,ref-01,"arXiv:2509.04416v2, Table 11, PDF/printed p.25, total_decay_rate",原文8.9s是理论采用量，原始Mishra全文缺失且F口径不明；不能宣称纯M2寿命
+transitions/T4/lifetime_ns,8900000000,8900000000.0,ns,,,theory-definition-pending,ref-01,"arXiv:2509.04416v2, Table 11, PDF/printed p.25, upper_state_lifetime",原文8.9s是理论采用量，原始Mishra全文缺失且F口径不明；不能宣称纯M2寿命
+transitions/T4/oscillator_strength_f_num,1e-09,,dimensionless,,,unsupported-value-removed,ref-01,"arXiv:2509.04416v2 Table 11, p25; oscillator strength not listed",原引用表未提供f；移除无来源的约1e-9，缺失不当作零
+transitions/T4/d_num,,,e*a0,,,quarantined-estimate-or-missing,ref-01,arXiv:2509.04416v2 Table11 p25 has no universal E1 matrix element; F-specific HFI treatment required,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/T4/linewidth_frequency_coefficient_Hz,0.0179,0.0179,Hz,,,theory-definition-pending,ref-01,"arXiv:2509.04416v2, Table 11, PDF/printed p.25, linewidth_FWHM_nu",原文8.9s是理论采用量，原始Mishra全文缺失且F口径不明；不能宣称纯M2寿命
+transitions/T5/wavelength_vac_nm,1388.7629,1388.7629464,nm,,6e-07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, wavelength_vac",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T5/wavelength_air_nm,1388.3969,1388.396915,nm,,1.4e-05,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, wavelength_air",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T5/frequency_THz,215.87014,215.87014457,THz,,9e-08,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, frequency_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T5/energy_eV,0.892767,0.8927671836,eV,,4e-10,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, transition_energy",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T5/Gamma_per_s_num,3010000,3010000.0,s^-1,,100000.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, total_decay_rate",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T5/lifetime_ns,332,332.0,ns,,11.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, upper_state_lifetime",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T5/oscillator_strength_f_num,,,dimensionless,,,quarantined-estimate-or-missing,ref-01,arXiv:2509.04416v2 Table12 p25; oscillator strength not listed,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/T5/d_num,2.76,2.76,e*a0,,0.07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, dipole_reduced_J_Racah",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T5/linewidth_frequency_coefficient_Hz,479000,479000.0,Hz,,16000.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 12, PDF/printed p.25, linewidth_FWHM_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T6/wavelength_vac_nm,649.0866,649.08662928,nm,,3.1e-07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, wavelength_vac",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T6/wavelength_air_nm,648.9137,648.913718,nm,,6e-06,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, wavelength_air",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T6/frequency_THz,461.86818,461.86817672,THz,,2.2e-07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, frequency_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T6/energy_eV,1.910133,1.9101332987,eV,,9e-10,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, transition_energy",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T6/Gamma_per_s_num,72000000,72000000.0,s^-1,,9000000.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, total_decay_rate",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T6/lifetime_ns,13.8,13.8,ns,,1.7,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, upper_state_lifetime",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T6/oscillator_strength_f_num,,,dimensionless,,,quarantined-estimate-or-missing,ref-01,arXiv:2509.04416v2 Table13 p26; oscillator strength not listed,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/T6/d_num,1.96,1.96,e*a0,,0.15,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, dipole_reduced_J_Racah",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T6/linewidth_frequency_coefficient_Hz,11500000,11500000.0,Hz,,1400000.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 13, PDF/printed p.26, linewidth_FWHM_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T7/wavelength_vac_nm,770.1603,770.16026840069,nm,,1.1871149320701517e-06,derived-source-conflict,ref-01,"arXiv:2509.04416v2, Table14 p26 frequency; lambda=c/nu; printed lambda fails same-row consistency",保留原表波长字面值，工作波长由同表频率及精确光速推导；不静默照搬不一致数值
+transitions/T7/wavelength_air_nm,769.9559,769.955919,nm,,8e-06,source-conflict-retained,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, wavelength_air",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T7/frequency_THz,389.25983,389.2598337,THz,,6e-07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, frequency_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T7/energy_eV,1.609849,1.6098493199,eV,,2.4e-09,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, transition_energy",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T7/Gamma_per_s_num,72000000,72000000.0,s^-1,,9000000.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, total_decay_rate",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T7/lifetime_ns,13.8,13.8,ns,,1.7,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, upper_state_lifetime",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T7/oscillator_strength_f_num,,,dimensionless,,,quarantined-estimate-or-missing,ref-01,arXiv:2509.04416v2 Table14 p26; oscillator strength not listed,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/T7/d_num,4.99,4.99,e*a0,,0.32,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, dipole_reduced_J_Racah",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/T7/linewidth_frequency_coefficient_Hz,11500000,11500000.0,Hz,,1400000.0,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 14, PDF/printed p.26, linewidth_FWHM_nu",原文表号、精度、误差与定义逐项订正；汇编值不冒充独立测量
+transitions/R2/wavelength_vac_nm,301.87,301.87,nm,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R2/frequency_THz,993.11,993.11,THz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R2/energy_cm,33126.52,33126.52,cm^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R2/d_num,0.0376,0.0376,e*a0,,,pending-internal-artifact,ref-17,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R2/Gamma_per_s_num,26660,26660,s^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R2/energy_eV,4.107165029259203,4.107165029259203,eV,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R2/lifetime_ns,37509.377344336084,37509.377344336084,ns,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R2/linewidth_frequency_coefficient_Hz,4240,4240,Hz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R1/wavelength_vac_nm,302.06,302.06,nm,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R1/frequency_THz,992.49,992.49,THz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R1/energy_cm,33105.94,33105.94,cm^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R1/d_num,0.0568,0.0568,e*a0,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R1/Gamma_per_s_num,60760,60760,s^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R1/linewidth_frequency_coefficient_Hz,9670,9670,Hz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R3/wavelength_vac_nm,301.78,301.78,nm,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R3/frequency_THz,993.4,993.4,THz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R3/energy_cm,33136.35,33136.35,cm^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R3/d_num,0.0272,0.0272,e*a0,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R3/Gamma_per_s_num,13980,13980,s^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R3/linewidth_frequency_coefficient_Hz,2230,2230,Hz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R4/wavelength_vac_nm,301.86,301.86,nm,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R4/frequency_THz,993.14,993.14,THz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R4/energy_cm,33127.49,33127.49,cm^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R4/d_num,0.0535,0.0535,e*a0,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R4/Gamma_per_s_num,36130,36130,s^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R4/linewidth_frequency_coefficient_Hz,5750,5750,Hz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R5/wavelength_vac_nm,301.86,301.86,nm,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R5/frequency_THz,993.14,993.14,THz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R5/energy_cm,33127.48,33127.48,cm^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R5/d_num,0,0,e*a0,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R5/Gamma_per_s_num,36140,36140,s^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R5/linewidth_frequency_coefficient_Hz,5750,5750,Hz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R6/wavelength_vac_nm,308.42,308.42,nm,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R6/frequency_THz,972.02,972.02,THz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R6/energy_cm,32422.95,32422.95,cm^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R6/d_num,0.0667,0.0667,e*a0,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R6/Gamma_per_s_num,26660,26660,s^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R6/linewidth_frequency_coefficient_Hz,4240,4240,Hz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R7/wavelength_vac_nm,325.68,325.68,nm,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R7/frequency_THz,920.5,920.5,THz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R7/energy_cm,30704.57,30704.57,cm^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R7/d_num,0.0957,0.0957,e*a0,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R7/Gamma_per_s_num,26660,26660,s^-1,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+transitions/R7/linewidth_frequency_coefficient_Hz,4240,4240,Hz,,,quarantined-estimate-or-missing,legacy-scaling,,已检查引用链；缺少该数值的原始记录或适用态证据，保留历史值与未验证标签
+levels/yb171-6s2-1s0/energy_cm,0,0,cm^-1,,0,reference-definition,ref-01,neutral171Yb ground-state energy reference definition,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s2-1s0/energy_eV,0,0,eV,,0,reference-definition,ref-01,neutral171Yb ground-state energy reference definition,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s6p-3p0/energy_cm,17288.439,17288.48817774007,cm^-1,,3e-12,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 9, PDF/printed p.24, wavenumber_vac",能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s6p-3p0/energy_eV,2.143499,2.1434993488389615,eV,,4e-16,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 9, PDF/printed p.24, transition_energy",能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s6p-3p1/energy_cm,17992.007,17992.061256,cm^-1,,4e-06,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, wavenumber_vac",能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s6p-3p1/energy_eV,2.230731,2.230731293,eV,,5e-10,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 10, PDF/printed p.24, transition_energy",能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s6p-3p2/energy_cm,19710.388,19710.4467,cm^-1,,0.0014,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 11, PDF/printed p.25, wavenumber_vac",能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s6p-3p2/energy_eV,2.443784,2.44378393,eV,,1.7e-07,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 11, PDF/printed p.25, transition_energy",能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s5d-3d1/energy_cm,24489.102,24489.14112304007,cm^-1,,2.900000000001552e-06,derived-compilation,ref-01,arXiv2509.04416v2 Table9 p24 + Table12 p25,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s5d-3d1/energy_eV,3.036266,3.0362665324389617,eV,,4.0000000000020004e-10,derived-compilation,ref-01,arXiv2509.04416v2 Table9 p24 + Table12 p25,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s6p-1p1/energy_cm,25068.222,25068.258091,cm^-1,,2.6e-05,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, wavenumber_vac",能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s6p-1p1/energy_eV,3.108063,3.1080678856,eV,,3.2e-09,adopted-compilation,ref-01,"arXiv:2509.04416v2, Table 8, PDF/printed p.23, transition_energy",能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s7s-3s1/energy_cm,32694.692,32694.75222474007,cm^-1,,7.000000000000643e-06,derived-source-conflict,ref-01,arXiv2509.04416v2 Table9 p24 + Table13 p26,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s7s-3s1/energy_eV,4.053632,4.0536326475389615,eV,,9.000000000000889e-10,derived-source-conflict,ref-01,arXiv2509.04416v2 Table9 p24 + Table13 p26,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s65s-3s1-triplet-connected/energy_cm,50414.958999999995,50414.958999999995,cm^-1,,,quarantined-estimate-or-missing,legacy-levels,,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s65s-3s1-triplet-connected/energy_eV,6.250658280928287,6.250658280928287,eV,,,quarantined-estimate-or-missing,legacy-levels,,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s50s-3s1/energy_cm,,,cm^-1,,,quarantined-estimate-or-missing,legacy-levels,,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s50s-3s1/energy_eV,,,eV,,,quarantined-estimate-or-missing,legacy-levels,,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s80s-3s1/energy_cm,,,cm^-1,,,quarantined-estimate-or-missing,legacy-levels,,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s80s-3s1/energy_eV,,,eV,,,quarantined-estimate-or-missing,legacy-levels,,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s65d-3d1/energy_cm,,,cm^-1,,,quarantined-estimate-or-missing,legacy-levels,,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s65d-3d1/energy_eV,,,eV,,,quarantined-estimate-or-missing,legacy-levels,,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s65d-3d2/energy_cm,,,cm^-1,,,quarantined-estimate-or-missing,legacy-levels,,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+levels/yb171-6s65d-3d2/energy_eV,,,eV,,,quarantined-estimate-or-missing,legacy-levels,,能级能量采用明确的171质心/路径；不同来源阈值或里德堡分支不强行拼接
+hyperfine/¹S₀,0,0,MHz,,,adopted-compilation,ref-01,"arXiv2509.04416v2 Table5 p21, 1S0:A_over_h",不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/³P₀,0,0,MHz,,,adopted-compilation,ref-01,"arXiv2509.04416v2 Table5 p21, 3P0:A_over_h",不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/³P₁,3957.85,3957.85,MHz,,0.05,adopted-compilation,ref-01,"arXiv2509.04416v2 Table5 p21, 3P1:A_over_h",不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/³P₂,2680.9,2680.9,MHz,,2.0,adopted-compilation,ref-01,"arXiv2509.04416v2 Table5 p21, 3P2:A_over_h",不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/³D₁,-2038.3,-2038.3,MHz,,0.11,adopted-compilation,ref-01,"arXiv2509.04416v2 Table5 p21, 3D1:A_over_h",不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/¹P₁,-214.06,-214.06,MHz,,0.17,adopted-compilation,ref-01,"arXiv2509.04416v2 Table5 p21, 1P1:A_over_h",不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/³S₁,6838.41,6838.41,MHz,,0.26,adopted-compilation,ref-01,"arXiv2509.04416v2 Table5 p21, 3S1:A_over_h",不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/50³S₁,5.734,5.734,MHz,,,quarantined-estimate,legacy-hfs,historical A/nstar^3 estimate; not a located171Yb state-resolved measurement,不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/80³S₁,1.32,1.32,MHz,,,quarantined-estimate,legacy-hfs,historical A/nstar^3 estimate; not a located171Yb state-resolved measurement,不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/65³D₁,-0.767,-0.767,MHz,,,quarantined-estimate,legacy-hfs,historical A/nstar^3 estimate; not a located171Yb state-resolved measurement,不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/65³D₂,-0.289,-0.289,MHz,,,quarantined-estimate,legacy-hfs,historical A/nstar^3 estimate; not a located171Yb state-resolved measurement,不更改已保存65S分支计算；低态A值补原表和不确定度，高n标度隔离
+hyperfine/saved65S,,,,,,pending-internal-artifact,this-work-hyperfine-65s,,原CSV和全部数值不变；文件存在不等于branch/model已验证
+estimates,,,,,,quarantined-model,,,保留全部旧标度参数供追溯，但撤回错误文献背书；停止把不合法锚点外推量作为可用寿命/C6/阻塞预测

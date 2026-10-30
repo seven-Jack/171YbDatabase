@@ -1,0 +1,66 @@
+{
+  "id": "kroeze-v2-table10-t2-rabi-power",
+  "evidenceKind": "published-theory-numerical-benchmark",
+  "verifiedOn": "2026-10-30",
+  "source": {
+    "title": "171Yb Reference Data",
+    "authors": ["Ronen M. Kroeze", "Sofus Laguna Kristensen", "Sebastian Pucher"],
+    "arxiv": "2509.04416v2",
+    "doi": "10.48550/arXiv.2509.04416",
+    "url": "https://arxiv.org/pdf/2509.04416v2#page=24",
+    "localPath": "references/papers/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+    "sha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+    "printedPage": 24,
+    "table": "Table 10",
+    "formulaLocation": "Section 6.3, printed pages 16-17, Eqs. (73), (78)-(81)",
+    "formatNote": "The official PDF and archived PDF use Table 10. The current HTML conversion numbers the corresponding T2 table as Table 11."
+  },
+  "originalData": {
+    "transitionId": "T2",
+    "isotope": "171Yb",
+    "lower": "6s2 1S0",
+    "upper": "6s6p 3P1",
+    "wavelengthVac_nm": 555.80068663,
+    "power_mW": 1,
+    "beamDiameter_mm": 1,
+    "diameterConvention": "Full 1/e^2 intensity diameter, D=2*w0, Eq. (79)",
+    "dJ_ea0": 0.5398,
+    "dJ_uncertainty_ea0": 0.0006,
+    "rabiOrdinary_MHz": 5.523,
+    "rabiOrdinary_uncertainty_MHz": 0.006,
+    "printedRabi": "Omega = 2*pi*5.523(6) MHz",
+    "channel": {"F": 0.5, "m": 0.5, "Fp": 1.5, "mp": 1.5}
+  },
+  "adoptedInputs": {
+    "J_lower": 0,
+    "J_upper": 1,
+    "F_lower": 0.5,
+    "F_upper": 1.5,
+    "pol": "sigmap",
+    "q": 1,
+    "power_mW": 1,
+    "waist_um": 500,
+    "powerConvention": "Power of the selected pure sigma+ component at the atom; no 2P display conversion",
+    "positionConvention": "Gaussian beam centre",
+    "angularFactorMagnitude": "1/sqrt(3)",
+    "sourceConflict": "Section 6.3 and the Table 10 symbol label q=0/pi, but the explicitly printed sublevels have Delta mF=+1. Use q=+1/sigma+ for absorption between the stated states. Literal pi for that same pair is forbidden."
+  },
+  "referenceCalculation": {
+    "datasetVersion": "2026.10.30.1",
+    "formulaVersion": "1.0.1",
+    "dEff_ea0": 0.3116536753085599,
+    "I0_W_m2": 2546.4790894703256,
+    "E0_V_m": 1385.161265789858,
+    "rabiOrdinary_MHz": 5.523674633289015,
+    "differenceFromPrinted_MHz": 0.000674633289015,
+    "relativeDifference_percent": 0.0122149789791,
+    "inversePowerForPrintedRabi_mW": 0.9997557451748423,
+    "inverseWaistForPrintedRabi_um": 500.0610748948955,
+    "acceptance": "Absolute frequency difference is below the paper's quoted 0.006 MHz uncertainty. This is reference compatibility, not an independent statistical significance test."
+  },
+  "scope": {
+    "validated": ["T2 selected-channel angular magnitude", "Gaussian peak-intensity power/radius convention", "mW and micrometre SI conversions", "Omega versus Omega/(2*pi)", "forward and inverse numerical implementation", "Browser channel selection and displayed result"],
+    "notEstablished": ["Independent experimental calibration", "Total physical model uncertainty", "All other transitions, especially unresolved T3 and R2 matrix elements", "Finite-field mixing, detuning, motion or decoherence corrections"],
+    "independenceNote": "The published Rabi number and adopted dipole belong to the same reference calculation. No dipole or beam parameter was fitted to the target Rabi number."
+  }
+}

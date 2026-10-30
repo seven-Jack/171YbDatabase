@@ -1,0 +1,1199 @@
+{
+  "schemaVersion": 1,
+  "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/3.pdf",
+  "sha256": "3bdd0ddd781d41583a0530446f9247d4d38f98e816651b14c39bcf4b42f12dc0",
+  "extractedAt": "2026-10-30",
+  "metadata": {
+    "number": 3,
+    "sourceId": "baumann-1985-jpb",
+    "doi": "10.1088/0022-3700/18/17/001",
+    "title": "Radiative lifetimes and gJ factors of low-lying even-parity levels in the Yb I spectrum",
+    "evidenceKind": "measurement-plus-compilation-comparison",
+    "temperature_K": null,
+    "BBR_temperature_K": null,
+    "isotopeScope": "174Yb for current two-step J0,1,2 measurements:556nm first step locked174Yb. Metastable J3 excitation and reproduced1981 rows not individually isotope-resolved here.",
+    "method": "Time-resolved fluorescence exponential decay least-squares fit; density varied by>=10 and extrapolated tozero for radiation trapping; quantum beats with fewmT for gJ. No precise branching ratios, therefore no oscillator strengths."
+  },
+  "nullMeaning": "missing/unreported/infinite model values are explicitly flagged, never numeric zero",
+  "tables": [
+    {
+      "table": "1",
+      "pdfPhysicalPage": 4,
+      "printedPage": "L603",
+      "columns": [
+        "state",
+        "excitation_nm",
+        "this_work_tau_ns",
+        "Lange1970_tau_ns",
+        "CorlissBozman1962_tau_ns",
+        "Coulomb_tau_ns",
+        "origin"
+      ],
+      "units": {
+        "excitation_nm": "nm",
+        "lifetimeColumns": "ns"
+      },
+      "notes": [
+        "Lange1970 comparisons are reproduced measured values; CorlissBozman1962 inferred from transition probabilities; Coulomb is theory. Do not conflate these columns as current measurements."
+      ],
+      "rows": [
+        {
+          "rowIndex": 1,
+          "state": "6s6d1D2",
+          "excitation_nm": "453.0",
+          "this_work_tau_ns": "35.2(10)",
+          "Lange1970_tau_ns": "—",
+          "CorlissBozman1962_tau_ns": "34",
+          "Coulomb_tau_ns": "11",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s6d1D2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "453.0",
+              "value": 453.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "35.2(10)",
+              "value": 35.2,
+              "uncertainty": 1.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "34",
+              "value": 34.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "11",
+              "value": 11.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "state": "6s6d3D3",
+          "excitation_nm": "493.4",
+          "this_work_tau_ns": "23.4(11)",
+          "Lange1970_tau_ns": "20.7(30)",
+          "CorlissBozman1962_tau_ns": "23",
+          "Coulomb_tau_ns": "35",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s6d3D3",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "493.4",
+              "value": 493.4,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "23.4(11)",
+              "value": 23.4,
+              "uncertainty": 1.1,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "20.7(30)",
+              "value": 20.7,
+              "uncertainty": 3.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "23",
+              "value": 23.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "35",
+              "value": 35.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 3,
+          "state": "6s6d3D2",
+          "excitation_nm": "457.6",
+          "this_work_tau_ns": "24.2(12)",
+          "Lange1970_tau_ns": "20.5(30)",
+          "CorlissBozman1962_tau_ns": "16",
+          "Coulomb_tau_ns": "24",
+          "origin": "Baumann1981-reproduced",
+          "parsedCells": {
+            "state": {
+              "raw": "6s6d3D2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "457.6",
+              "value": 457.6,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "24.2(12)",
+              "value": 24.2,
+              "uncertainty": 1.2,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "20.5(30)",
+              "value": 20.5,
+              "uncertainty": 3.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "16",
+              "value": 16.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "24",
+              "value": 24.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "Baumann1981-reproduced",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 4,
+          "state": "6s6d3D1",
+          "excitation_nm": "458.2",
+          "this_work_tau_ns": "22.7(7)",
+          "Lange1970_tau_ns": "20.7(18)",
+          "CorlissBozman1962_tau_ns": "—",
+          "Coulomb_tau_ns": "12",
+          "origin": "Baumann1981-reproduced",
+          "parsedCells": {
+            "state": {
+              "raw": "6s6d3D1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "458.2",
+              "value": 458.2,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "22.7(7)",
+              "value": 22.7,
+              "uncertainty": 0.7,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "20.7(18)",
+              "value": 20.7,
+              "uncertainty": 1.8,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "12",
+              "value": 12.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "Baumann1981-reproduced",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 5,
+          "state": "6s7d1D2",
+          "excitation_nm": "379.2",
+          "this_work_tau_ns": "49.8(20)",
+          "Lange1970_tau_ns": "—",
+          "CorlissBozman1962_tau_ns": "—",
+          "Coulomb_tau_ns": "38",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s7d1D2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "379.2",
+              "value": 379.2,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "49.8(20)",
+              "value": 49.8,
+              "uncertainty": 2.0,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "38",
+              "value": 38.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 6,
+          "state": "6s7d3D3",
+          "excitation_nm": "405.2",
+          "this_work_tau_ns": "43.1(12)",
+          "Lange1970_tau_ns": "—",
+          "CorlissBozman1962_tau_ns": "—",
+          "Coulomb_tau_ns": "93",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s7d3D3",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "405.2",
+              "value": 405.2,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "43.1(12)",
+              "value": 43.1,
+              "uncertainty": 1.2,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "93",
+              "value": 93.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 7,
+          "state": "6s7d3D2",
+          "excitation_nm": "379.8",
+          "this_work_tau_ns": "66.5(36)",
+          "Lange1970_tau_ns": "—",
+          "CorlissBozman1962_tau_ns": "—",
+          "Coulomb_tau_ns": "63",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s7d3D2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "379.8",
+              "value": 379.8,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "66.5(36)",
+              "value": 66.5,
+              "uncertainty": 3.6,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "63",
+              "value": 63.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 8,
+          "state": "6s7d3D1",
+          "excitation_nm": "379.8",
+          "this_work_tau_ns": "38.4(17)",
+          "Lange1970_tau_ns": "—",
+          "CorlissBozman1962_tau_ns": "—",
+          "Coulomb_tau_ns": "34",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s7d3D1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "379.8",
+              "value": 379.8,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "38.4(17)",
+              "value": 38.4,
+              "uncertainty": 1.7,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "34",
+              "value": 34.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 9,
+          "state": "6s7s3S1",
+          "excitation_nm": "679.9",
+          "this_work_tau_ns": "15.9(19)",
+          "Lange1970_tau_ns": "12.5(15)",
+          "CorlissBozman1962_tau_ns": "15",
+          "Coulomb_tau_ns": "21",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s7s3S1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "679.9",
+              "value": 679.9,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "15.9(19)",
+              "value": 15.9,
+              "uncertainty": 1.9,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "12.5(15)",
+              "value": 12.5,
+              "uncertainty": 1.5,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "15",
+              "value": 15.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "21",
+              "value": 21.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 10,
+          "state": "6s8s3S1",
+          "excitation_nm": "423.2",
+          "this_work_tau_ns": "34.3(42)",
+          "Lange1970_tau_ns": "—",
+          "CorlissBozman1962_tau_ns": "—",
+          "Coulomb_tau_ns": "85",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s8s3S1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "423.2",
+              "value": 423.2,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "34.3(42)",
+              "value": 34.3,
+              "uncertainty": 4.2,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "85",
+              "value": 85.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 11,
+          "state": "6s8s1S0",
+          "excitation_nm": "417.5",
+          "this_work_tau_ns": "37.9(42)",
+          "Lange1970_tau_ns": "—",
+          "CorlissBozman1962_tau_ns": "—",
+          "Coulomb_tau_ns": "143",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s8s1S0",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "excitation_nm": {
+              "raw": "417.5",
+              "value": 417.5,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "this_work_tau_ns": {
+              "raw": "37.9(42)",
+              "value": 37.9,
+              "uncertainty": 4.2,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "Lange1970_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "CorlissBozman1962_tau_ns": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "Coulomb_tau_ns": {
+              "raw": "143",
+              "value": 143.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": "2",
+      "pdfPhysicalPage": 4,
+      "printedPage": "L603",
+      "columns": [
+        "state",
+        "this_work_gJ",
+        "MeggersTech1978_gJ",
+        "WyartCamus1979_exp_gJ",
+        "WyartCamus1979_calc_gJ",
+        "LS_gJ",
+        "origin"
+      ],
+      "units": {
+        "gJ": "dimensionless"
+      },
+      "notes": [
+        "SOURCE_INTERNAL_CONFLICT:Table2 prints6s7d3D2 gJ1.079(36), abstractpL601 prints1.079(7). Both retained, neither silently corrected."
+      ],
+      "rows": [
+        {
+          "rowIndex": 1,
+          "state": "6s6d1D2",
+          "this_work_gJ": "1.020(7)",
+          "MeggersTech1978_gJ": "1.03",
+          "WyartCamus1979_exp_gJ": "1.03",
+          "WyartCamus1979_calc_gJ": "1.016",
+          "LS_gJ": "1.0",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s6d1D2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "this_work_gJ": {
+              "raw": "1.020(7)",
+              "value": 1.02,
+              "uncertainty": 0.007,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "MeggersTech1978_gJ": {
+              "raw": "1.03",
+              "value": 1.03,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_exp_gJ": {
+              "raw": "1.03",
+              "value": 1.03,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_calc_gJ": {
+              "raw": "1.016",
+              "value": 1.016,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "LS_gJ": {
+              "raw": "1.0",
+              "value": 1.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 2,
+          "state": "6s6d3D3",
+          "this_work_gJ": "1.354(15)",
+          "MeggersTech1978_gJ": "1.33",
+          "WyartCamus1979_exp_gJ": "1.33",
+          "WyartCamus1979_calc_gJ": "1.333",
+          "LS_gJ": "1.334",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s6d3D3",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "this_work_gJ": {
+              "raw": "1.354(15)",
+              "value": 1.354,
+              "uncertainty": 0.015,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "MeggersTech1978_gJ": {
+              "raw": "1.33",
+              "value": 1.33,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_exp_gJ": {
+              "raw": "1.33",
+              "value": 1.33,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_calc_gJ": {
+              "raw": "1.333",
+              "value": 1.333,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "LS_gJ": {
+              "raw": "1.334",
+              "value": 1.334,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 3,
+          "state": "6s6d3D2",
+          "this_work_gJ": "1.163(7)",
+          "MeggersTech1978_gJ": "1.16",
+          "WyartCamus1979_exp_gJ": "1.16",
+          "WyartCamus1979_calc_gJ": "1.151",
+          "LS_gJ": "1.167",
+          "origin": "Baumann1981-reproduced",
+          "parsedCells": {
+            "state": {
+              "raw": "6s6d3D2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "this_work_gJ": {
+              "raw": "1.163(7)",
+              "value": 1.163,
+              "uncertainty": 0.007,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "MeggersTech1978_gJ": {
+              "raw": "1.16",
+              "value": 1.16,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_exp_gJ": {
+              "raw": "1.16",
+              "value": 1.16,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_calc_gJ": {
+              "raw": "1.151",
+              "value": 1.151,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "LS_gJ": {
+              "raw": "1.167",
+              "value": 1.167,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "Baumann1981-reproduced",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 4,
+          "state": "6s6d3D1",
+          "this_work_gJ": "0.500(4)",
+          "MeggersTech1978_gJ": "0.5",
+          "WyartCamus1979_exp_gJ": "0.50",
+          "WyartCamus1979_calc_gJ": "0.5",
+          "LS_gJ": "0.499",
+          "origin": "Baumann1981-reproduced",
+          "parsedCells": {
+            "state": {
+              "raw": "6s6d3D1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "this_work_gJ": {
+              "raw": "0.500(4)",
+              "value": 0.5,
+              "uncertainty": 0.004,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "MeggersTech1978_gJ": {
+              "raw": "0.5",
+              "value": 0.5,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_exp_gJ": {
+              "raw": "0.50",
+              "value": 0.5,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_calc_gJ": {
+              "raw": "0.5",
+              "value": 0.5,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "LS_gJ": {
+              "raw": "0.499",
+              "value": 0.499,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "Baumann1981-reproduced",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 5,
+          "state": "6s7d1D2",
+          "this_work_gJ": "1.111(12)",
+          "MeggersTech1978_gJ": "1.10",
+          "WyartCamus1979_exp_gJ": "1.08",
+          "WyartCamus1979_calc_gJ": "1.080",
+          "LS_gJ": "1.0",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s7d1D2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "this_work_gJ": {
+              "raw": "1.111(12)",
+              "value": 1.111,
+              "uncertainty": 0.012,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "MeggersTech1978_gJ": {
+              "raw": "1.10",
+              "value": 1.1,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_exp_gJ": {
+              "raw": "1.08",
+              "value": 1.08,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_calc_gJ": {
+              "raw": "1.080",
+              "value": 1.08,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "LS_gJ": {
+              "raw": "1.0",
+              "value": 1.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 6,
+          "state": "6s7d3D3",
+          "this_work_gJ": "1.338(7)",
+          "MeggersTech1978_gJ": "1.32",
+          "WyartCamus1979_exp_gJ": "1.32",
+          "WyartCamus1979_calc_gJ": "1.333",
+          "LS_gJ": "1.334",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s7d3D3",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "this_work_gJ": {
+              "raw": "1.338(7)",
+              "value": 1.338,
+              "uncertainty": 0.007,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "MeggersTech1978_gJ": {
+              "raw": "1.32",
+              "value": 1.32,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_exp_gJ": {
+              "raw": "1.32",
+              "value": 1.32,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_calc_gJ": {
+              "raw": "1.333",
+              "value": 1.333,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "LS_gJ": {
+              "raw": "1.334",
+              "value": 1.334,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 7,
+          "state": "6s7d3D2",
+          "this_work_gJ": "1.079(36)",
+          "MeggersTech1978_gJ": "—",
+          "WyartCamus1979_exp_gJ": "1.10",
+          "WyartCamus1979_calc_gJ": "1.131",
+          "LS_gJ": "1.167",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s7d3D2",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "this_work_gJ": {
+              "raw": "1.079(36)",
+              "value": 1.079,
+              "uncertainty": 0.036,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "MeggersTech1978_gJ": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "WyartCamus1979_exp_gJ": {
+              "raw": "1.10",
+              "value": 1.1,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_calc_gJ": {
+              "raw": "1.131",
+              "value": 1.131,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "LS_gJ": {
+              "raw": "1.167",
+              "value": 1.167,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 8,
+          "state": "6s7d3D1",
+          "this_work_gJ": "0.508(5)",
+          "MeggersTech1978_gJ": "—",
+          "WyartCamus1979_exp_gJ": "0.56",
+          "WyartCamus1979_calc_gJ": "0.5",
+          "LS_gJ": "0.499",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s7d3D1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "this_work_gJ": {
+              "raw": "0.508(5)",
+              "value": 0.508,
+              "uncertainty": 0.005,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "MeggersTech1978_gJ": {
+              "raw": "—",
+              "value": null,
+              "uncertainty": null,
+              "missingReason": "not-applicable-or-unreported"
+            },
+            "WyartCamus1979_exp_gJ": {
+              "raw": "0.56",
+              "value": 0.56,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_calc_gJ": {
+              "raw": "0.5",
+              "value": 0.5,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "LS_gJ": {
+              "raw": "0.499",
+              "value": 0.499,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 9,
+          "state": "6s7s3S1",
+          "this_work_gJ": "2.01(1)",
+          "MeggersTech1978_gJ": "2.01",
+          "WyartCamus1979_exp_gJ": "2.00",
+          "WyartCamus1979_calc_gJ": "2.0",
+          "LS_gJ": "2.0",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s7s3S1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "this_work_gJ": {
+              "raw": "2.01(1)",
+              "value": 2.01,
+              "uncertainty": 0.01,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "MeggersTech1978_gJ": {
+              "raw": "2.01",
+              "value": 2.01,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_exp_gJ": {
+              "raw": "2.00",
+              "value": 2.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_calc_gJ": {
+              "raw": "2.0",
+              "value": 2.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "LS_gJ": {
+              "raw": "2.0",
+              "value": 2.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        },
+        {
+          "rowIndex": 10,
+          "state": "6s8s3S1",
+          "this_work_gJ": "2.01(1)",
+          "MeggersTech1978_gJ": "2.02",
+          "WyartCamus1979_exp_gJ": "2.02",
+          "WyartCamus1979_calc_gJ": "2.0",
+          "LS_gJ": "2.0",
+          "origin": "this-work",
+          "parsedCells": {
+            "state": {
+              "raw": "6s8s3S1",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            },
+            "this_work_gJ": {
+              "raw": "2.01(1)",
+              "value": 2.01,
+              "uncertainty": 0.01,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "MeggersTech1978_gJ": {
+              "raw": "2.02",
+              "value": 2.02,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_exp_gJ": {
+              "raw": "2.02",
+              "value": 2.02,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "WyartCamus1979_calc_gJ": {
+              "raw": "2.0",
+              "value": 2.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "LS_gJ": {
+              "raw": "2.0",
+              "value": 2.0,
+              "uncertainty": null,
+              "uncertaintyConvention": "as printed; confidence not inferred"
+            },
+            "origin": {
+              "raw": "this-work",
+              "value": null,
+              "uncertainty": null,
+              "status": "symbolic-expression"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

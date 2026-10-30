@@ -1,0 +1,125 @@
+{
+  "paperNumber": 1,
+  "sourceId": "qiao-2023-rinp",
+  "doi": "10.1016/j.rinp.2023.106439",
+  "context": "171Yb ultracold optical lattice; comb referenced to local578nm clock; reported shifts corrected; no cross-line covariance matrix supplied",
+  "tables": 3,
+  "pdf": "references/papers/1.pdf",
+  "sha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+  "table": "Table2",
+  "pdfPage": 5,
+  "printedPage": "5",
+  "columns": [
+    "frequency"
+  ],
+  "note": "",
+  "rows": [
+    {
+      "label": "171Yb 649 Fg1/2 Fe1/2",
+      "referenceInPaper": "[34]",
+      "evidenceKind": "comparison-quoted-from-reference",
+      "cells": {
+        "frequency": {
+          "printed": "461861338.1(3.2)",
+          "unit": "MHz",
+          "value": "461861338.1",
+          "uncertainty": "3.2",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "[34]"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649 Fg1/2 Fe3/2",
+      "referenceInPaper": "[34]",
+      "evidenceKind": "comparison-quoted-from-reference",
+      "cells": {
+        "frequency": {
+          "printed": "461871594.9(3.2)",
+          "unit": "MHz",
+          "value": "461871594.9",
+          "uncertainty": "3.2",
+          "evidenceKind": "comparison-quoted-from-reference",
+          "referenceInPaper": "[34]"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649 Fg1/2 Fe1/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461861338.03(0.21)",
+          "unit": "MHz",
+          "value": "461861338.03",
+          "uncertainty": "0.21",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 649 Fg1/2 Fe3/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "461871596.07(0.31)",
+          "unit": "MHz",
+          "value": "461871596.07",
+          "uncertainty": "0.31",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770 Fg3/2 Fe1/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "389257019.71(0.65)",
+          "unit": "MHz",
+          "value": "389257019.71",
+          "uncertainty": "0.65",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770 Fg3/2 Fe3/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "389267277.10(0.37)",
+          "unit": "MHz",
+          "value": "389267277.10",
+          "uncertainty": "0.37",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    },
+    {
+      "label": "171Yb 770 Fg5/2 Fe3/2",
+      "referenceInPaper": "This work",
+      "evidenceKind": "this-paper-reported",
+      "cells": {
+        "frequency": {
+          "printed": "389260569.95(0.89)",
+          "unit": "MHz",
+          "value": "389260569.95",
+          "uncertainty": "0.89",
+          "evidenceKind": "this-paper-reported",
+          "referenceInPaper": "This work"
+        }
+      }
+    }
+  ],
+  "rawPageText": "paper-1-page-5.txt",
+  "renderedVerified": "rendered/paper-1-p5.png"
+}

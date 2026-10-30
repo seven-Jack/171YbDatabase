@@ -1,0 +1,10 @@
+paperNumber,sourceId,table,pdfPage,printedPage,label,referenceInPaper,column,printed,value,uncertainty,unit,bound,uncertaintyBound
+6,zhao-2024-pra,TableIII,5,042816-5,173Yb Fg5/2 Fe3/2,This work,relative_shift,-1668.5(16),-1668.5,1.6,MHz,,
+6,zhao-2024-pra,TableIII,5,042816-5,171Yb Fg1/2 Fe3/2,This work,relative_shift,-791.8(8),-791.8,0.8,MHz,,
+6,zhao-2024-pra,TableIII,5,042816-5,173Yb Fg5/2 Fe5/2,This work,relative_shift,-764.9(8),-764.9,0.8,MHz,,
+6,zhao-2024-pra,TableIII,5,042816-5,176Yb,This work,relative_shift,-114.6(6),-114.6,0.6,MHz,,
+6,zhao-2024-pra,TableIII,5,042816-5,174Yb,This work,relative_shift,0,0,,MHz,,
+6,zhao-2024-pra,TableIII,5,042816-5,172Yb,This work,relative_shift,121.5(7),121.5,0.7,MHz,,
+6,zhao-2024-pra,TableIII,5,042816-5,170Yb,This work,relative_shift,284.5(20),284.5,2.0,MHz,,
+6,zhao-2024-pra,TableIII,5,042816-5,173Yb Fg5/2 Fe7/2,This work,relative_shift,1561.2(11),1561.2,1.1,MHz,,
+6,zhao-2024-pra,TableIII,5,042816-5,171Yb Fg1/2 Fe1/2,This work,relative_shift,2267.4(8),2267.4,0.8,MHz,,

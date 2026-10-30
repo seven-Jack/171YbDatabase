@@ -1,0 +1,1394 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "totalTableRecords": 1645,
+  "tableRecordMeaning": "Transcription rows/parameters, not957 independent measurements; duplicates across theory/compilation/original retained with provenance",
+  "localOnly": true,
+  "runtimeCanonicalFiles": [
+    "data/levels.json",
+    "data/transitions.json",
+    "data/hyperfine.json",
+    "data/sources.json",
+    "data/estimates.json"
+  ],
+  "components": [
+    {
+      "id": "kroeze-2026",
+      "path": "data/literature/kroeze-2026",
+      "records": 333,
+      "tableCount": 14,
+      "source": "ref-01",
+      "meaning": "all14 compiled tables;318numeric plus15categorical/missing entries; raw decimals retained",
+      "files": [
+        {
+          "path": "data/literature/kroeze-2026/all-quantities.csv",
+          "bytes": 96889,
+          "sha256": "3c9ea9365f34b07dca491b251706fb7fc8c5471fdb9dbe10abd71838b0a67256"
+        },
+        {
+          "path": "data/literature/kroeze-2026/all-tables.json",
+          "bytes": 262238,
+          "sha256": "f6d8a7a241eda28ff5403f0e78741fdab9cc01d4b45c0ea584ba74e825129a52"
+        },
+        {
+          "path": "data/literature/kroeze-2026/arithmetic-checks.json",
+          "bytes": 3153,
+          "sha256": "c480ecc6176eb330ce8131b83d2e45754aa30a6b4f53c7f1251e2ec444776222"
+        },
+        {
+          "path": "data/literature/kroeze-2026/constants-isotopes.csv",
+          "bytes": 9232,
+          "sha256": "6fabdeba55fbf3500075629a27b434489e30dcbe83c8ac6993f2255fffb0e1d1"
+        },
+        {
+          "path": "data/literature/kroeze-2026/constants-isotopes.json",
+          "bytes": 28156,
+          "sha256": "91121f9cfa31c690086499b526ba457eade5a520b24b928f7d99d8845a30216b"
+        },
+        {
+          "path": "data/literature/kroeze-2026/correction-proposals.json",
+          "bytes": 120807,
+          "sha256": "b6be55618ffa08696a3fdf041ed6360693fcf17370da796ae9353eaa37871672"
+        },
+        {
+          "path": "data/literature/kroeze-2026/hyperfine-zeeman.csv",
+          "bytes": 5088,
+          "sha256": "e32c51719221b721200ec9254f28bb5afc9082c4c7ac2ca6c2ba2839fae58c28"
+        },
+        {
+          "path": "data/literature/kroeze-2026/hyperfine-zeeman.json",
+          "bytes": 15614,
+          "sha256": "3c7ca3641ca859d8ffbbc0f6a206e507e3877e4f9cbc2b9bd8d290db4fd45211"
+        },
+        {
+          "path": "data/literature/kroeze-2026/isotope-shifts.csv",
+          "bytes": 10218,
+          "sha256": "e043ac08fc1d62276bd74ee878a38f10aef3b4f5b62cd261d338cf1748ea592a"
+        },
+        {
+          "path": "data/literature/kroeze-2026/isotope-shifts.json",
+          "bytes": 26999,
+          "sha256": "44dc248bdf6c16b75cb3f63aac1240fce2cbe29ec66e6270f60cc801ce96b830"
+        },
+        {
+          "path": "data/literature/kroeze-2026/magic-tuneout.csv",
+          "bytes": 10076,
+          "sha256": "436ccc90f19996d52b4e26d14cc30554a0f7257216e18bec16f853d325caea16"
+        },
+        {
+          "path": "data/literature/kroeze-2026/magic-tuneout.json",
+          "bytes": 31350,
+          "sha256": "c1d33592953f1ba05337c5582cbc2085d8fce9f8e1a1cf1324a261a76ff164e6"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-02.txt",
+          "bytes": 5133,
+          "sha256": "9dfeb0c1cc6d1077d9f1207c84d8f9b8a1fb331d96ffc48dbe42171621cdcfcb"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-03.txt",
+          "bytes": 6236,
+          "sha256": "b05a38c5626ab83e0ce72fe5e99c4ab76f077973e29cdfaf8b4f20c3115543e3"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-09.txt",
+          "bytes": 5212,
+          "sha256": "09b9f2331ef9924e27c6880771b1e7cd5143244eb7d12a457ba6aa9b03cc9e83"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-10.txt",
+          "bytes": 5208,
+          "sha256": "2afb788232a38f62c55470847fc54108810875df0a0859df3630d37cc604e9bb"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-11.txt",
+          "bytes": 4646,
+          "sha256": "4f4025c3435df40d787f8032d3355d4e162d8dea91572184f411f8a989e723cf"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-12.txt",
+          "bytes": 6253,
+          "sha256": "5177a7565d107eadaa2171d6b67989f00c00b9ab06c07099c2391dcf55f70cba"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-15.txt",
+          "bytes": 4684,
+          "sha256": "f878292b514d5069fa656721f3152b36d773a7e21cb121161d2ff2a1222f42b6"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-16.txt",
+          "bytes": 5658,
+          "sha256": "b575c7795f3d4d89f92b307f6199ae86bee51a3e057f1d4bd63d20ba6014fd8c"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-17.txt",
+          "bytes": 5365,
+          "sha256": "958b98a08a87a6e0dd4716eecc57a2515eb9e2f06a14cfcb7f8a3eb45a76c3a2"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-20.txt",
+          "bytes": 4804,
+          "sha256": "721813b1a9d3f415966b871430f1b57ce71daa0d75f87b4d309f7569f1ade747"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-21.txt",
+          "bytes": 6224,
+          "sha256": "47ae424437677ab1ae10576b5f442ae3580bfc44c13b50c43db45f6f39e9a04c"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-22.txt",
+          "bytes": 5319,
+          "sha256": "814f1686609df33234eb547cc1f5a633cee8029e792ddc00ef84a1496675dc4e"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-23.txt",
+          "bytes": 5890,
+          "sha256": "48e16d350ee0ff5d2b74f33eb61e3c7e0f66962e1e05c71dafea41e9ec452450"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-24.txt",
+          "bytes": 4197,
+          "sha256": "731631f0c757bddfa4e4d413ff01055cb506409e867163e5f10bf2747664b069"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-25.txt",
+          "bytes": 3457,
+          "sha256": "d262544fa3b6e0c9390a850ae01d2fc57e51305a6839269c3190cdf8c7c4e6d6"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/page-26.txt",
+          "bytes": 4653,
+          "sha256": "880cd7ed49eaf6cc20608ddf50e66371dec2b89dcbe23c869af702c52031085d"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-01.txt",
+          "bytes": 1462,
+          "sha256": "0bcdfdf40f962b565b1612e00a3e18ab6a1e9343d8d5411f30581de9b33fa7c7"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-02.txt",
+          "bytes": 3111,
+          "sha256": "a656315a6a9751927e8c3de4b1a913cb83e3711a2da8f46095dffda01e40a128"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-03.txt",
+          "bytes": 1391,
+          "sha256": "2c3ce28cbd1d1b41ab7cb73ee9763fb34b0d92f3514b4d891964f029fbfa76f9"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-04.txt",
+          "bytes": 1836,
+          "sha256": "bd3abba3f41cb6fcc77524e84d9c80f54c27ab7b791f8306fcb3d3f0ecfb478d"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-05.txt",
+          "bytes": 2834,
+          "sha256": "0f2996a80c8f8c9fd45c9ae7388435db1af7468e42f5b30a93e53982e5bad3b6"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-06.txt",
+          "bytes": 5162,
+          "sha256": "22e3b24c7dcb0c566ecd7befa45ac0d67b81619ac93f34a2fb177e810e410951"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-07.txt",
+          "bytes": 3110,
+          "sha256": "58ea593bc9887a1ea634ba96936dd75c5ef0564295c962686546101354c76024"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-08.txt",
+          "bytes": 2602,
+          "sha256": "32b5738f07933e9de082872805da9edef936f281ee6fd14dea51c1876147546f"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-09.txt",
+          "bytes": 1599,
+          "sha256": "898e7a4a91d71a7efce2e9e6b1324dac01262a06f6fb579d485a042044504046"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-10.txt",
+          "bytes": 2373,
+          "sha256": "8a6292c668bbdb5e2aa43cbf85bbd103e0cc9036ce5db39547aab9e683091a38"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-11.txt",
+          "bytes": 1212,
+          "sha256": "821901499944949b27b3f602b7c0a0a3382f1acbc3465741f1029ad2f9eebb3b"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-12.txt",
+          "bytes": 2093,
+          "sha256": "13cef610f5fafc18d22ab9d4a18e80f38fbb54efceebba7872ea1dbc82bf0ed3"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-13.txt",
+          "bytes": 2260,
+          "sha256": "ea2ef46a07944ede882d8e0a282085f9ad23dd84c0853c239588f1cb8c6ab5ac"
+        },
+        {
+          "path": "data/literature/kroeze-2026/raw/table-14.txt",
+          "bytes": 2254,
+          "sha256": "72087a33d74e25a32cfc0da3dcc922e668ed2c91c5821e082b98087c50e4218e"
+        },
+        {
+          "path": "data/literature/kroeze-2026/reference-map.json",
+          "bytes": 109182,
+          "sha256": "c2aa6d7262bb1c82164e9e9653173adfba076ab52725fb7763b67fcfa630649d"
+        },
+        {
+          "path": "data/literature/kroeze-2026/report.json",
+          "bytes": 11238,
+          "sha256": "c0c17c703e4dff2ce5cd423dd26caa2f38b72bd08d986d136189476741858ba0"
+        },
+        {
+          "path": "data/literature/kroeze-2026/scattering-lengths.csv",
+          "bytes": 5064,
+          "sha256": "520a25e67c6eada6e7e3f70c9c0fbd2d660a0b60548a42ea4a88878ba0ebac0b"
+        },
+        {
+          "path": "data/literature/kroeze-2026/scattering-lengths.json",
+          "bytes": 13904,
+          "sha256": "910aa23c658ee753d08ff808db25f345ef4ba3a84125937c939a7087b48f3286"
+        },
+        {
+          "path": "data/literature/kroeze-2026/transition-properties.csv",
+          "bytes": 54914,
+          "sha256": "f983401da1ab996c46e47101c7b49afd0beacdb9d9037e7a42431ede3d4c9f94"
+        },
+        {
+          "path": "data/literature/kroeze-2026/transition-properties.json",
+          "bytes": 122271,
+          "sha256": "887a49a52f5d354682ca9398a48aae5562bf5e53fd932407593687ba0747d8eb"
+        }
+      ]
+    },
+    {
+      "id": "low-state-originals",
+      "path": "data/literature/low-state-originals",
+      "records": 181,
+      "tableCount": 14,
+      "sourceIds": [
+        "porsev-1999-pra",
+        "porsev-2004-pra",
+        "beloy-2012-pra",
+        "bowers-1996-pra"
+      ],
+      "meaning": "all numbered tables in four obtained original-source PDFs; theory and isotope-specific measurement separate",
+      "files": [
+        {
+          "path": "data/literature/low-state-originals/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1-Table-I.csv",
+          "bytes": 1919,
+          "sha256": "1a0ab1174e4373a0cefdcf7976261d282421533cbb3a9e1a3d8ec74f023267eb"
+        },
+        {
+          "path": "data/literature/low-state-originals/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1-Table-II.csv",
+          "bytes": 856,
+          "sha256": "4cdee8ee79e0a844ea99e973a619db49d5286ed1eece7ea4d180033746bb5ab3"
+        },
+        {
+          "path": "data/literature/low-state-originals/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1-Table-III.csv",
+          "bytes": 720,
+          "sha256": "741b9232a0bae66382121767ea32d05f36e36ad474ca6e90cb7ce81de3edd211"
+        },
+        {
+          "path": "data/literature/low-state-originals/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.json",
+          "bytes": 19944,
+          "sha256": "d3acdc6f290f41eb007d0e4f69b1579b93b57e85b7c01dfec59d07a14344753d"
+        },
+        {
+          "path": "data/literature/low-state-originals/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.txt",
+          "bytes": 32338,
+          "sha256": "f2bf1138fa71201b3d04669fdc13415de200c81ce8ad1ea7592b7ed8e74b036c"
+        },
+        {
+          "path": "data/literature/low-state-originals/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1-Table-I.csv",
+          "bytes": 112,
+          "sha256": "e31a9e633e798e4092743bc1d3c2a0e7038f04a4fc88777009c0ef333c700e01"
+        },
+        {
+          "path": "data/literature/low-state-originals/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1-Table-II.csv",
+          "bytes": 492,
+          "sha256": "e62a8fa9c995de7718163317d2f2d253b7e5aa6b6c8a7f28361f16bd6d2a34ee"
+        },
+        {
+          "path": "data/literature/low-state-originals/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1-Table-III.csv",
+          "bytes": 92,
+          "sha256": "d895452533f8fe9b0724178cf357124dad11bb241b8a0d415b2aea8ed6809dd7"
+        },
+        {
+          "path": "data/literature/low-state-originals/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1-Table-IV.csv",
+          "bytes": 595,
+          "sha256": "1d95cd89fd7d32826f92891d6ec965acf3d3f4dc3b01ab9d429815be7cfc38c6"
+        },
+        {
+          "path": "data/literature/low-state-originals/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1-Table-V.csv",
+          "bytes": 169,
+          "sha256": "268c46fff6947ebe707cf52bbcf6430b657498f347c305db66ad52813c13037d"
+        },
+        {
+          "path": "data/literature/low-state-originals/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.json",
+          "bytes": 11122,
+          "sha256": "d5e96e4b470a445123a91d2e9df93846bac1bf63926a2b3816422845472bc2c5"
+        },
+        {
+          "path": "data/literature/low-state-originals/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.txt",
+          "bytes": 33040,
+          "sha256": "41e02b97afadef259acc29cafd7ca6db63b27556105c2e171fb693bef6771043"
+        },
+        {
+          "path": "data/literature/low-state-originals/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper-Table-I.csv",
+          "bytes": 1257,
+          "sha256": "a9258665985214b90cbc883852cfc685801407ba7a536ab8f98a63d881ffd46c"
+        },
+        {
+          "path": "data/literature/low-state-originals/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.json",
+          "bytes": 8929,
+          "sha256": "7d561072c69a7930a180e7c966ebd61d7740d29f0e6e8d27461c8c45ecb5bb1c"
+        },
+        {
+          "path": "data/literature/low-state-originals/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.txt",
+          "bytes": 52352,
+          "sha256": "24a6998a1372612f7484335f4684fe1a745c1a24d401642c3f07f36a149d2235"
+        },
+        {
+          "path": "data/literature/low-state-originals/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1-Table-I.csv",
+          "bytes": 291,
+          "sha256": "b37ddbaec5b8b0e8aa85c51f4aedfd15e2cb42ba086aacc5f4c62b3b1c89d14d"
+        },
+        {
+          "path": "data/literature/low-state-originals/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1-Table-II.csv",
+          "bytes": 248,
+          "sha256": "465b5b89f7b3f338774476ed3b7471dee2e463c1107d714adba15e39fe88a89c"
+        },
+        {
+          "path": "data/literature/low-state-originals/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1-Table-III.csv",
+          "bytes": 405,
+          "sha256": "5ed4126e359896620419c6055350a075a4d9aa209a646ecb52660756a8781433"
+        },
+        {
+          "path": "data/literature/low-state-originals/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1-Table-IV.csv",
+          "bytes": 1659,
+          "sha256": "e3969cc3dd109249a9de704b13f0032ba59168a10ecfdfc25d03d05c5dd5e5f1"
+        },
+        {
+          "path": "data/literature/low-state-originals/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1-Table-V.csv",
+          "bytes": 559,
+          "sha256": "8c9a92b3e306e3bb6c4832630b8afd7878530c07a9c9168c71dc7b290003a225"
+        },
+        {
+          "path": "data/literature/low-state-originals/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.json",
+          "bytes": 16937,
+          "sha256": "71091a63a2ba324d3dea526ec2f4d991ef380870facc240822292104070a76d3"
+        },
+        {
+          "path": "data/literature/low-state-originals/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.txt",
+          "bytes": 64618,
+          "sha256": "69466b56b4cb6005ab22f13bea51acb7a68f47147e4a7d8274d1cd96695a3b1e"
+        },
+        {
+          "path": "data/literature/low-state-originals/manifest.json",
+          "bytes": 2391,
+          "sha256": "74df52e3fce6e05437b82c746106e3c4fdfd0a47ce22709d22d059f6e15b0ccb"
+        }
+      ]
+    },
+    {
+      "id": "rydberg-audit",
+      "path": "data/literature/rydberg-audit",
+      "records": 443,
+      "tableCount": 7,
+      "sourceIds": [
+        "ref-02",
+        "ref-06",
+        "ref-10",
+        "ref-11",
+        "fang-2001"
+      ],
+      "meaning": "selected complete Rydberg tables, including comparison isotopes; not all tables of all PDFs",
+      "files": [
+        {
+          "path": "data/literature/rydberg-audit/additional-source-excerpts.json",
+          "bytes": 143475,
+          "sha256": "2c42bdb3f1e251ea4c4ce8eaf7036d68167a6c8d8fa9f81fe5fbaf0652742659"
+        },
+        {
+          "path": "data/literature/rydberg-audit/additional-source-facts.json",
+          "bytes": 2346,
+          "sha256": "df61db0d018c70af42a34b965a0abd40695aeca87ba6d1dfc42469ec015f24f9"
+        },
+        {
+          "path": "data/literature/rydberg-audit/audit-summary.json",
+          "bytes": 1188,
+          "sha256": "358aa81eb1142106f5d5a4e7de4791b1a097d03b0a77e2a56bf7d3ebd1efbd02"
+        },
+        {
+          "path": "data/literature/rydberg-audit/burgers-2021-arxiv-v1.txt",
+          "bytes": 63171,
+          "sha256": "af9f3cbc8ba0ef1a24bf1610ff90bb5b1ace839502b15c1193ec87c10addf3ed"
+        },
+        {
+          "path": "data/literature/rydberg-audit/chen-2022-page-09.txt",
+          "bytes": 7065,
+          "sha256": "9f15f114f03b39f8cfdf725154bdd96ce37157990259c6420d46077f83cdbf71"
+        },
+        {
+          "path": "data/literature/rydberg-audit/chen-2022.txt",
+          "bytes": 159372,
+          "sha256": "c8ba270c601f801620e2c541c76e983a76ebee2e3be10f0d94ffb1b091349022"
+        },
+        {
+          "path": "data/literature/rydberg-audit/extracted-facts.json",
+          "bytes": 9170,
+          "sha256": "99f4fdbf8beb2b5af34abdef5bcb3f2c8c5192dc1d8f21eaf7f3535c20da9925"
+        },
+        {
+          "path": "data/literature/rydberg-audit/fang-2001.txt",
+          "bytes": 15686,
+          "sha256": "6f09161215359d9b6a2e505094659be2671945e20bdf82fa4bb85cecd12b271d"
+        },
+        {
+          "path": "data/literature/rydberg-audit/fang-table1-lifetimes.json",
+          "bytes": 16556,
+          "sha256": "6a70227f121698840110c4fba73ec8f89aef7378f034166cdef80f2391839ca9"
+        },
+        {
+          "path": "data/literature/rydberg-audit/field-coverage.csv",
+          "bytes": 89033,
+          "sha256": "b2e5f824a89748eab0bf8687eb3ca1b65fb12494b3b21fca6af4677b358b01fe"
+        },
+        {
+          "path": "data/literature/rydberg-audit/field-coverage.json",
+          "bytes": 133395,
+          "sha256": "0272ba428c7eb8d7d1006380656044623434532885a4159046c6c7a72f66cfad"
+        },
+        {
+          "path": "data/literature/rydberg-audit/halter-2023-arxiv-v2.txt",
+          "bytes": 36706,
+          "sha256": "d7f1d2912a3e166a73b47a0eba44f0f96b3d171cf24688668ca6568dea4e18bc"
+        },
+        {
+          "path": "data/literature/rydberg-audit/halter-table1-174yb.csv",
+          "bytes": 2159,
+          "sha256": "afb05b57aaf7a60ea1410676a913d72d1ac665e1ec6ebe8d2ceaca924fdddfeb"
+        },
+        {
+          "path": "data/literature/rydberg-audit/halter-table1-174yb.json",
+          "bytes": 49003,
+          "sha256": "7bff045961db65421e81a1d8667d4a39e5471c70ecbbfa035f38cff21c3306d8"
+        },
+        {
+          "path": "data/literature/rydberg-audit/internal-evidence/05.21_yb171_65s_hyperfine.csv",
+          "bytes": 611,
+          "sha256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec"
+        },
+        {
+          "path": "data/literature/rydberg-audit/internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+          "bytes": 106825,
+          "sha256": "b177d7ebc6fc422839d3f1025915bcb67b2fcebf367ce5557bb6cc96b4689d16"
+        },
+        {
+          "path": "data/literature/rydberg-audit/internal-evidence/r006-metadata.json",
+          "bytes": 2462,
+          "sha256": "81e96de56303e61462269dfb649cfa3ba6b634da1705691290d904baaedebe97"
+        },
+        {
+          "path": "data/literature/rydberg-audit/internal-evidence/r006-reduced_tdm.csv",
+          "bytes": 140,
+          "sha256": "001ddb9e2dac36fa4f4520c40cf6eb5dfdd0b6eb9cfbc16344c197d4664627d5"
+        },
+        {
+          "path": "data/literature/rydberg-audit/internal-evidence/r006-states.csv",
+          "bytes": 217,
+          "sha256": "93b5c7f1f84b00ebe00561afe9e15a0f7e12843e14e48b44b67af3478bbab28b"
+        },
+        {
+          "path": "data/literature/rydberg-audit/internal-evidence-manifest.json",
+          "bytes": 2634,
+          "sha256": "baa5d3e0884dc8eca687dd44c17d0e68df6d4e0137ee12976e8cce27adec1b0f"
+        },
+        {
+          "path": "data/literature/rydberg-audit/kuroda-2025-arxiv-v1.txt",
+          "bytes": 222812,
+          "sha256": "1f88103aa548096840b2bdd253061b44f947e53bfa8d07dff9c971280469e2ad"
+        },
+        {
+          "path": "data/literature/rydberg-audit/kuroda-2025-page-03.txt",
+          "bytes": 5584,
+          "sha256": "7acef95d3c543a3ee6903ed1b6cdaa30b63499cc022e3d4cc0c2bcf3da73ee68"
+        },
+        {
+          "path": "data/literature/rydberg-audit/kuroda-2025-page-04.txt",
+          "bytes": 5020,
+          "sha256": "767718c20cc9c1e8ae332d4ae0abaf78daf12a3062e837728d1473aa5c774c60"
+        },
+        {
+          "path": "data/literature/rydberg-audit/kuroda-2025.txt",
+          "bytes": 76830,
+          "sha256": "0e620c28c2a332a277b72632b7ff33ead41e3d1e4a22e959cf8d33f5f018a4da"
+        },
+        {
+          "path": "data/literature/rydberg-audit/lehec-2018-arxiv-v2.txt",
+          "bytes": 123741,
+          "sha256": "4cbe08ee2c24777d8d2c2357202134ca0f27c9c35fa17af1c3f38bdf7f4276a6"
+        },
+        {
+          "path": "data/literature/rydberg-audit/lehec-table6-ritz-174yb.json",
+          "bytes": 6737,
+          "sha256": "fad5e9d1e548b80c761eddbe8c6bca3d9bf535140977e311c2b8df6742a0dc5a"
+        },
+        {
+          "path": "data/literature/rydberg-audit/muniz-2025.txt",
+          "bytes": 119099,
+          "sha256": "bfcc0c154c5f72f41ea758136a816e229e0704e274afcb218b2a6d9685f7f397"
+        },
+        {
+          "path": "data/literature/rydberg-audit/okuno-2022-arxiv-v1.txt",
+          "bytes": 58155,
+          "sha256": "f0981c23d971edd1101665c9c4e6297a52ea10e72a6bdf6ceebaf3c0f688c65f"
+        },
+        {
+          "path": "data/literature/rydberg-audit/okuno-table1-174yb.csv",
+          "bytes": 4191,
+          "sha256": "c0a160331ab3b33a2d8695f85d27c89d545e071e54602a4700314b6972b16e3a"
+        },
+        {
+          "path": "data/literature/rydberg-audit/okuno-table1-174yb.json",
+          "bytes": 114586,
+          "sha256": "199bee1b67199ea953fe6ea5b007e88a6096aab1a811e78ed6ef22122cd4133a"
+        },
+        {
+          "path": "data/literature/rydberg-audit/peper-2025.txt",
+          "bytes": 175346,
+          "sha256": "8435aa8e98b6c0500c1a977d5ab2dfb41f02d81de6fb1ce2807fd70e1a460e87"
+        },
+        {
+          "path": "data/literature/rydberg-audit/peper-s-f12-tables-s25-s27.json",
+          "bytes": 208371,
+          "sha256": "2ca0c2e4a0eed5daf47cf4af98a7eed8d1491f2ccb2d816e0b7994d8d7a80d4e"
+        },
+        {
+          "path": "data/literature/rydberg-audit/peper-supplement-page-01.txt",
+          "bytes": 3616,
+          "sha256": "270c660adc1a1d5ef83086d5cf5c0b6ba29356e634c71b781f53825ac0d14b1e"
+        },
+        {
+          "path": "data/literature/rydberg-audit/peper-supplement-page-02.txt",
+          "bytes": 6439,
+          "sha256": "0d8740df8d0e00b94f6c08880ac17ae3918182ba87a5894cc5b918e755169e1f"
+        },
+        {
+          "path": "data/literature/rydberg-audit/peper-supplement-page-03.txt",
+          "bytes": 1506,
+          "sha256": "fb9a8201ddf7cef01a34188c1e0ca5d419e4773c7cdd4baf77d1de6fa1ab04c4"
+        },
+        {
+          "path": "data/literature/rydberg-audit/peper-supplement-page-04.txt",
+          "bytes": 42,
+          "sha256": "02df6679236508a3195bbf88afffe2d9634004fa1c29a7d4c2f5dbc3f5929b3c"
+        },
+        {
+          "path": "data/literature/rydberg-audit/peper-supplement-page-05.txt",
+          "bytes": 3375,
+          "sha256": "39037cb7b02ad8663aa2011d471034a5e37b2927d71788852893e2f98dd135bd"
+        },
+        {
+          "path": "data/literature/rydberg-audit/peper-supplement-page-08.txt",
+          "bytes": 3179,
+          "sha256": "d3c3de288fd11de052e91affa03143a9a33d73f3659013d66bd1af0a33b0daac"
+        },
+        {
+          "path": "data/literature/rydberg-audit/peper-supplement-page-09.txt",
+          "bytes": 3264,
+          "sha256": "3293905e95997aad9bf3f5b49f1587f9545ee7e195b57f073ea406094b3ea6cf"
+        },
+        {
+          "path": "data/literature/rydberg-audit/peper-supplement.txt",
+          "bytes": 239007,
+          "sha256": "35f55f368f38310a801f4230cd9f56a10982049d4e65193bfda370357e5b14f2"
+        },
+        {
+          "path": "data/literature/rydberg-audit/post-integration-review.json",
+          "bytes": 3338,
+          "sha256": "9c76e2e315083d576abcac529c7cf568e27da9a4c52c2a654a33837714aa58ad"
+        },
+        {
+          "path": "data/literature/rydberg-audit/source-manifest.json",
+          "bytes": 21948,
+          "sha256": "322b752d08f31b3fae33a745e56e83347d1e1f0b1302d92ce35fe3f6ff366ddc"
+        },
+        {
+          "path": "data/literature/rydberg-audit/wilson-2022.txt",
+          "bytes": 33216,
+          "sha256": "f22722da831f3b589783c80554164e4fdaa13a9d1b71c54a08e06375736c08e0"
+        }
+      ]
+    },
+    {
+      "id": "audit-2026-10-29",
+      "path": "data/literature/audit-2026-10-29",
+      "auditRecords": 144,
+      "meaning": "immutable baseline, exact old/new field audit and coverage; not new scientific computation",
+      "files": [
+        {
+          "path": "data/literature/audit-2026-10-29/baseline/dataset.json",
+          "bytes": 1306,
+          "sha256": "fb5d3fae0134e59aa342537b61b911ff7a90febd1c969d2146ef803a04b29822"
+        },
+        {
+          "path": "data/literature/audit-2026-10-29/baseline/estimates.json",
+          "bytes": 3043,
+          "sha256": "f3976a7f8732b267678eef0b08415b06372313d13d2e5e0d5945be0428c57ddd"
+        },
+        {
+          "path": "data/literature/audit-2026-10-29/baseline/hyperfine.json",
+          "bytes": 8227,
+          "sha256": "9918be31886446b9ee2b3c534ff8647e2eecb22a415632dcbfe4cd7802e31176"
+        },
+        {
+          "path": "data/literature/audit-2026-10-29/baseline/levels.json",
+          "bytes": 18818,
+          "sha256": "ecf1a74540eb19ff13d13feafb2b4c939f8b7e0e422cde9968cdaf6b7b34060b"
+        },
+        {
+          "path": "data/literature/audit-2026-10-29/baseline/manifest.json",
+          "bytes": 1528,
+          "sha256": "fd862f85b493084bc46da96cbfa89aed410ecff57af8606651a20c3387a0883c"
+        },
+        {
+          "path": "data/literature/audit-2026-10-29/baseline/sources.json",
+          "bytes": 9573,
+          "sha256": "2a3414a7ca145f913f821b5fbb58797851d09f2ef5b546108cfea8f5224691cb"
+        },
+        {
+          "path": "data/literature/audit-2026-10-29/baseline/transitions.json",
+          "bytes": 76469,
+          "sha256": "faaf7a1d01c9891a27d942a64193188a3f83aecd202e147b91241f8b8cae947b"
+        },
+        {
+          "path": "data/literature/audit-2026-10-29/coverage.json",
+          "bytes": 753,
+          "sha256": "9ef696f4a7c2748d6b3742712a6cc6d3110fdb60e4d2c584f0fad65a7153477b"
+        },
+        {
+          "path": "data/literature/audit-2026-10-29/field-audit.csv",
+          "bytes": 32955,
+          "sha256": "bb577abfda8bfd80f06f64ffe19d36718b9ed918781f3b702d19c6bd13d953c2"
+        },
+        {
+          "path": "data/literature/audit-2026-10-29/field-audit.json",
+          "bytes": 295036,
+          "sha256": "74bbd70fbfdb12c60ba93241264e730e5fb2180b3c45e667b4ff66505dc738d3"
+        }
+      ]
+    },
+    {
+      "id": "source-followup-2026-10-30",
+      "path": "data/literature/source-followup-2026-10-30",
+      "records": 688,
+      "tableCount": 36,
+      "auditRecords": 48,
+      "meaning": "nine newly supplied original PDFs, full36numberedtables, source definitions and explicit Ritz arithmetic",
+      "files": [
+        {
+          "path": "data/literature/source-followup-2026-10-30/baseline/dataset.json",
+          "bytes": 1487,
+          "sha256": "311c40a2ed13db1ecfce0541fb6bfc1db61384b116d01e4b2d30dc855b1a17bf"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/baseline/estimates.json",
+          "bytes": 6304,
+          "sha256": "18273398a2e912bdcf665097c79c52b5e3ad2d60bb32ea223a56f507f9c30695"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/baseline/hyperfine.json",
+          "bytes": 13427,
+          "sha256": "72be1be7d2ed48973d49db47d61a74f96460464f8c2e9a3cf91e3a3d76445a1b"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/baseline/levels.json",
+          "bytes": 33526,
+          "sha256": "63e1dbdb9b14acce47ef457edd51fe9ec29fc43c74b6b5417de92a45be95c36f"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/baseline/sources.json",
+          "bytes": 39557,
+          "sha256": "c4858b2d86ecc4902c1b38c4bdc889f053893c8604480f940546b87996860f66"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/baseline/transitions.json",
+          "bytes": 160727,
+          "sha256": "79141b85c70822b0722aaebd089a76666b4091a8b3410b3ec4505ff8232218b3"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/field-audit.csv",
+          "bytes": 8319,
+          "sha256": "daa358cad35154d5741f60b4fbff0e52d59a5189a6801ddf6e7bfecf7aa4d1c7"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/field-audit.json",
+          "bytes": 184197,
+          "sha256": "46ea6c89ca5d19d041471fec7456317a9a5010e80a3e8babc6f5cb5dc06227b2"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/all-tables.json",
+          "bytes": 118353,
+          "sha256": "6ce41eee9b9e7510430112ad8eb93dbac372fa4ea4f1728f494cc346e38e58d8"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/arithmetic-and-recommendations.json",
+          "bytes": 6090,
+          "sha256": "26b3903ddb0f7d0180942706eeade36b1d2e666befbebf619cfd02a56536366c"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/manifest.json",
+          "bytes": 2075,
+          "sha256": "ab8bbc785f6851127a35c0324e1992f2353352782395ddd57057f88f63e018f2"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-1-Table1.csv",
+          "bytes": 3920,
+          "sha256": "93084e159a1359fdb803b9b4caa03e21f2ef54cca925bfd5fcd1852c3a6221c3"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-1-Table1.json",
+          "bytes": 14111,
+          "sha256": "39260ed32acc7331b203a8fac28910aca789c52c286902cd7092401828ddb9a2"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-1-Table2.csv",
+          "bytes": 912,
+          "sha256": "932a043131896bc6e1603ed92cfd265e6e5b20ff0851ea0d712f13d00aface69"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-1-Table2.json",
+          "bytes": 3570,
+          "sha256": "541bc6046d4c02506b07850c08baceb71cd97099e9b65bbad89c40df15c3b7e8"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-1-Table3.csv",
+          "bytes": 943,
+          "sha256": "54d337351dc6751ae4df0956f3016d26331e1a7a676ea93acb65e64db2911b8a"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-1-Table3.json",
+          "bytes": 4653,
+          "sha256": "5546556850066ef1e17e7d98ee9fc00136197eda478759a97e83427e9e428e49"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-1-page-4.txt",
+          "bytes": 3873,
+          "sha256": "22c3c69968275d22d09ad75e8e2e86a33fc0e34ec5443986e2298de52e1742d0"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-1-page-5.txt",
+          "bytes": 8095,
+          "sha256": "69369b22c354706661bd90463fbde4156f50d03c43093b9029f6e7ae9e56c60b"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableI.csv",
+          "bytes": 1110,
+          "sha256": "9510ca88614bc8c0e6bd7fcddba2ad7fa7baaa94e81eb60fbb7d1eb512eb9f12"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableI.json",
+          "bytes": 4447,
+          "sha256": "47e825f5193aac6822e349f2fab1f37e2ecb02b29d67ecf624223ab3bd66897a"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableII.csv",
+          "bytes": 1764,
+          "sha256": "886e37f3f92a692f1c40e931e526d539de0d44c2994c6be1fc94109cb2040e8e"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableII.json",
+          "bytes": 6749,
+          "sha256": "f128bd173047133b8b0c653ccf20c0ceeeb079851b7e4c5840925ac2737b4a01"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableIII.csv",
+          "bytes": 1444,
+          "sha256": "5ab5b6884224ce64366cc4cf14eece140953807b341af7a17c166d95f6508287"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableIII.json",
+          "bytes": 4568,
+          "sha256": "a21494a5f113c91d51c4988c103eeea75d65d59efd28ab6d52392fefb4a183fd"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableIV.csv",
+          "bytes": 1670,
+          "sha256": "35f39d9b7ba9d737c9e29cce1430a9c09d190badf6c7892413b731631fee9cac"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableIV.json",
+          "bytes": 6737,
+          "sha256": "463a12bcb28cd9ec03de5f1fe324be57e9cf6144d6f38729e43b98c65b6244e7"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableV.csv",
+          "bytes": 1025,
+          "sha256": "024f257b062ba9c3ff28b71f87f5302186a8e95bd32b213e0a462908953714bd"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableV.json",
+          "bytes": 3479,
+          "sha256": "3595e30a8bdfec6fc2c5c1537843aebbf55cc53f2ee678cf198761893ddb910f"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableVI.csv",
+          "bytes": 1767,
+          "sha256": "345a258d46c29c3928bd97a464ce85c6c81a8a3ede5c884b028abad0c937563a"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableVI.json",
+          "bytes": 6897,
+          "sha256": "4ef156dd96036b37a004d4f8ecdf3cf59500456b86ca4c43926f6e2c33ef3e93"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableVII.csv",
+          "bytes": 792,
+          "sha256": "96ed0f0d32a138e921457e284a38fef84506423793f917f0c8f72c2e0742bc9a"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-TableVII.json",
+          "bytes": 3180,
+          "sha256": "8a5b525c96b238c0deefc678b73e4ddb751be6375b3e16bd8ce8d1c8a00bb042"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-page-4.txt",
+          "bytes": 5110,
+          "sha256": "3912b51e5dff984c5793f16208e9c73935a3fb7c3483aa1ddbfd9a84c39b9c50"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-page-5.txt",
+          "bytes": 10451,
+          "sha256": "1e0cabbe9837c89891b9cf8509dcb8c319fdf478f92a0e42427831e01a3a2f54"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-4-page-6.txt",
+          "bytes": 4785,
+          "sha256": "e67ab7f81f787b9acd560c05ba8bd20f0db8c58d72ef10525cca82f839c7e1c5"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-5-TableI.csv",
+          "bytes": 1098,
+          "sha256": "6e2c7fcf7c4a5e8648bed80019abc73b7b6e2397c9dd6af9e44cab998984303b"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-5-TableI.json",
+          "bytes": 4382,
+          "sha256": "5a623af71b74e40fe7198977a2d5e34c933047a88e173a4f9b01cbd42eb9b3fd"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-5-TableII.csv",
+          "bytes": 1056,
+          "sha256": "b6db0be3461ebea50e1c31410e6e67ae793abfd9c18f2b9ccefe49523803bae9"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-5-TableII.json",
+          "bytes": 5202,
+          "sha256": "4ac2151bc9d285104d6636f5f0d9924d83875149781761ead32ac45857ccb756"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-5-TableIII.csv",
+          "bytes": 2122,
+          "sha256": "373de58ef8814634af6982af501fb2b856dbb35b5d8512a6b100c0a5bab8e82c"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-5-TableIII.json",
+          "bytes": 6942,
+          "sha256": "12281907c8047293471708fc151b8f8ac03a594f678e02e75df538aee041084f"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-5-TableIV.csv",
+          "bytes": 1527,
+          "sha256": "5c65ab70db326b9917cc4611edf01fa2e01dc8b702183e5c149dae8b3726f5a1"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-5-TableIV.json",
+          "bytes": 6048,
+          "sha256": "b5a68ac2fd187143bff3973699ddc70d58376e4f5de5c0e9d587491e76562309"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-5-page-4.txt",
+          "bytes": 8460,
+          "sha256": "3c6cb93c2e3852186c981a88ff9c602af8fd1b8bf4f86a25b94b9224b2be7b50"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-5-page-5.txt",
+          "bytes": 8583,
+          "sha256": "07bb2b45bbda0e94bdbc27513720d01012e9540cff4c72ffaf920b291b244f5f"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-6-TableI.csv",
+          "bytes": 1282,
+          "sha256": "e4a41cb5d13f4347fc8d5ad6d5ff8c9e56a63078ff78c028dc559926e61224f7"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-6-TableI.json",
+          "bytes": 5013,
+          "sha256": "4bfe263eb19dded72f3cd340a0e854c16ee9f8708ca9ad04995e3cb04f4d580c"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-6-TableII.csv",
+          "bytes": 2204,
+          "sha256": "444358ae3cb7ca098a6841c2674257bffe22dad9467d17960e90922fab058847"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-6-TableII.json",
+          "bytes": 7362,
+          "sha256": "610244c9734d6cd5e2df90f8e920334b73c660c0b782df1fddb2b8d1304de7b2"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-6-TableIII.csv",
+          "bytes": 1032,
+          "sha256": "625d64a0f0848f40636ea23429377d22bebd658e2f0cfb5d6434a88550c29c9d"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-6-TableIII.json",
+          "bytes": 4336,
+          "sha256": "74c95de72fc7a818f07f661d5284a006bce5d50c3d8611c11f84a1d54cf97351"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-6-TableIV.csv",
+          "bytes": 1584,
+          "sha256": "7a6e146759a1c0707fde476c23b1145524c7c06da4874fc2b5edb3f94f13f121"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-6-TableIV.json",
+          "bytes": 6251,
+          "sha256": "8e17b89fdfe66f8791686d157f18dac7afa364b992cd97f980f2c39db38e72a1"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-6-page-5.txt",
+          "bytes": 9681,
+          "sha256": "a8b4ca258670599bb058af4ea9681abba1e49945d27352a1fdad0114921ceea4"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/frequency/paper-6-page-6.txt",
+          "bytes": 7084,
+          "sha256": "985ae42ab0e79281e65a3228595769897a94345aa28e6eb826c3b927faa4dcad"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/integrity.json",
+          "bytes": 9735,
+          "sha256": "a3dc85082b2c47bca8e340c87d845cfa9f3c1fa11de187a06b035c84fe1b3c77"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/baumann-1985-table-1-raw-page.txt",
+          "bytes": 3988,
+          "sha256": "1a8154327c11f836c98a1f3e5ab04bde9f476e144ead864582fa193cb6f66fa0"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/baumann-1985-table-1.csv",
+          "bytes": 968,
+          "sha256": "f7c9a06a0c3ad715c0348b22d149cf80c30a3c5f31132199194c45f4b931b956"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/baumann-1985-table-2-raw-page.txt",
+          "bytes": 3988,
+          "sha256": "1a8154327c11f836c98a1f3e5ab04bde9f476e144ead864582fa193cb6f66fa0"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/baumann-1985-table-2.csv",
+          "bytes": 908,
+          "sha256": "3ec5cdbb6b7abeba1f69e8fd4ddd669cfa8a37527153621ab6d561adfaf06391"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/baumann-1985.json",
+          "bytes": 40012,
+          "sha256": "ea9dcdae59727a2ae8ab5d025c022ca874f1b586d32156b5d685b1f61ecb0856"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/key-facts.json",
+          "bytes": 4160,
+          "sha256": "1a8c4164e8afd061656f87316fc4e2299b407cb0056edee2c771f305137b1cd1"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/manifest.json",
+          "bytes": 1459,
+          "sha256": "f529766c8d563bf96de9b406270a5f2a31c24193924d3042fe3b22e8d87ebf96"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-1-raw-page.txt",
+          "bytes": 4220,
+          "sha256": "2d9cf7aadb1b259dea641285bcece825aa3c4a5944debc04f8c1a5398a2a9c90"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-1.csv",
+          "bytes": 337,
+          "sha256": "75b7a06016060951beae5d8c8a30fefb78fa03dc6dcb2cbf5e6f4445103154bc"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-2-raw-page.txt",
+          "bytes": 4020,
+          "sha256": "c3d3b643cea3afbe67c8440bb8c473d56faaf963ccc569beeb765c24fabef150"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-2.csv",
+          "bytes": 429,
+          "sha256": "b42535638fa612435e0f10172171e862bf59be052665676efeedb847c05254a9"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-3-raw-page.txt",
+          "bytes": 4877,
+          "sha256": "6f75507a99e593bc5b02da00e9264647bd8da34d8c9b692002d376e6d8b9c84f"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-3.csv",
+          "bytes": 1121,
+          "sha256": "1222917357421583235ca1892f23a3538876fc75419654dea100cef07ce585c4"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-4-raw-page.txt",
+          "bytes": 4577,
+          "sha256": "58789b16d0316fcbc1a79acf3326c81a00695926267bbfa9c57711bc11e8cb26"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-4.csv",
+          "bytes": 1173,
+          "sha256": "7f1767c5b0c1cc0799004281a5e2c165827f6ee28f7f621105a23c938bb1a275"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-5-raw-page.txt",
+          "bytes": 4577,
+          "sha256": "58789b16d0316fcbc1a79acf3326c81a00695926267bbfa9c57711bc11e8cb26"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-5.csv",
+          "bytes": 1172,
+          "sha256": "c2117e18f0f58fa071c0131f1079476f21f9169d144d2c2e408e587b2102aa8e"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-6-raw-page.txt",
+          "bytes": 4221,
+          "sha256": "9fd2e865aaff0a8379948cfebf247ec7fb90a43940d39eb26b289b998ae648cf"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-6.csv",
+          "bytes": 390,
+          "sha256": "d0738e9ed55405a9c9f4863fcfa3441e72d1db695126a217f3138d0f1a64b91c"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-7-raw-page.txt",
+          "bytes": 2389,
+          "sha256": "6410a1865379c5d0b71a5644c13204fb749cc6f682f1aa3bd51ca49d72b2bda3"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001-table-7.csv",
+          "bytes": 423,
+          "sha256": "a97a14cb9af01b328be9265ce69128b3a17ebcfa2b7c23ee212d02ab9f8346f1"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001.json",
+          "bytes": 92434,
+          "sha256": "b4703898626614beb91981b6264a640aadb2722885240f0a90666d75c21626e6"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/rambow-1976-table-I-raw-page.txt",
+          "bytes": 5240,
+          "sha256": "afc5563fe8f2a43984463c93bdd7ce2d426096f1815884ea9dbf396fa1bb11aa"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/rambow-1976-table-I.csv",
+          "bytes": 871,
+          "sha256": "3855f156c04a97d64b61dff8b38842ddc21ad59e352e464d9d2688feaaaaed0f"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/lifetimes/rambow-1976.json",
+          "bytes": 17823,
+          "sha256": "98ded4e4b4c7a6c291632fd90a7f7067ab92e0e7fb6076c918015310d9d6642f"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/manifest.json",
+          "bytes": 829,
+          "sha256": "d2c452ded49698425d6f7f419c4e72f8fe380d91c673bed8bd97cdfe165fcdca"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/paper-1.txt",
+          "bytes": 42643,
+          "sha256": "59abd5b36186a2fdaa2ae2def1f50b110105cb4a7ff3aac4c0c9e659f8a9946d"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/paper-10.txt",
+          "bytes": 78243,
+          "sha256": "164cf9c5ca44e0ea35a42a9874232a96505f5532d9027600ebd4043a6ff36f1c"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/paper-2.txt",
+          "bytes": 42552,
+          "sha256": "3c4c40d76e291c0391d44e4e1283f33c0e0b6920f936005b86c42105146b48f4"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/paper-3.txt",
+          "bytes": 14854,
+          "sha256": "ced89a35dae05c8e40b5363ac43472b45efc0be09b95ad824b98c88e2eeebc89"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/paper-4.txt",
+          "bytes": 48525,
+          "sha256": "2aaefed4bc77b6ed83d24f7ec39db1aca272d8a818f91f4d8aea87db343ae646"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/paper-5.txt",
+          "bytes": 54059,
+          "sha256": "e3c6e103191f4cc145a1434d44082d00ff6d888921e84ad85c22cf945191c3c4"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/paper-6.txt",
+          "bytes": 51596,
+          "sha256": "496ae2e7b7ce964d5e758116dee5ab4ed9888b370c0086c44db812004720beb1"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/paper-7.txt",
+          "bytes": 53352,
+          "sha256": "9569debacc6fe1ebe1780e15cdcf4635c8247dbbf5ca8942cd1f5a59a7f071b0"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/paper-8.txt",
+          "bytes": 34221,
+          "sha256": "26437d49182b0fb80a9e858581ead5dfb2408f51d6373a1617096002729d22d2"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/protected-hashes.json",
+          "bytes": 616,
+          "sha256": "cd8fdeac618d5aabd629a94ad939ca94e9528ccd9bd9eaa7df7f9a7a48504e8a"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/aymar-table1-coverage.csv",
+          "bytes": 8345,
+          "sha256": "47929c06ceeb7b5f64b7f8556fb20fcaab00d826e3d88ab3e53736553a2399c4"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/aymar-table1-coverage.json",
+          "bytes": 15881,
+          "sha256": "33462fe183d710c55a2bda2981ea9cb47f6d562b3ae9ed5dcd448738730829dc"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/aymar-table2-starting-energies.csv",
+          "bytes": 4764,
+          "sha256": "2a9d0dd00045d62861e9919a007a351b6f94bab5542a2a897287258e83a87a56"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/aymar-table2-starting-energies.json",
+          "bytes": 10065,
+          "sha256": "6d5be28a67376c29aace577690449a1387090002fdf9e8c22573ec4cbfcbd472"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/aymar-table3-levels-174yb.csv",
+          "bytes": 167191,
+          "sha256": "4324c8ee1b0e0313adef1c9662478c78fc0bc96c93affdce1de4c0dec9232903"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/aymar-table3-levels-174yb.json",
+          "bytes": 299788,
+          "sha256": "8878f534c46dcbb9a4f02ac9ef98f33b451a8207823d7a886c6f1a23dc97f4e6"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/aymar-table4-mixing.csv",
+          "bytes": 3810,
+          "sha256": "582923a67183c47ae923bacadfc2999dbcf50294e0facfa7042eb5482c5dbf06"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/aymar-table4-mixing.json",
+          "bytes": 8322,
+          "sha256": "c787643067d4233992f390609296bad897ba384cde956d7128fed0d9346d7f2f"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/canonical-proposals.json",
+          "bytes": 5457,
+          "sha256": "008ea5bdd02f39cf97a72e1254e27a1f6c57dc1c6fcad881bbf2f0a66ece5f43"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/fisk-all-tables.csv",
+          "bytes": 27482,
+          "sha256": "7be54521420a6c16a4fabb8e6206ceb0f0366558eba5df18ad792d73a900e8bd"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/fisk-all-tables.json",
+          "bytes": 53861,
+          "sha256": "e397ea985204ebc56afb5ee8f134c127ee4d83beed2dd17176eef0bb8825335b"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/fisk-tablei.csv",
+          "bytes": 5246,
+          "sha256": "79523df1e9f8f59ba1343b5ad9a05a0ba588e7f890118aa1c7f4dc964582b633"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/fisk-tablei.json",
+          "bytes": 10541,
+          "sha256": "f38bc2c0d4b5c34f52e5918d7395627a877ea13242b422610ccbb962d195da09"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/fisk-tableii.csv",
+          "bytes": 9796,
+          "sha256": "757ae02c1d508df0afdfdcebd2de50142ffe93395364ddd944d20d96e00bd0f2"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/fisk-tableii.json",
+          "bytes": 18187,
+          "sha256": "4556936f77c74b0f9430e7ef30013a851d95427372f4b9460327470b22ddadf1"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/fisk-tableiii.csv",
+          "bytes": 4728,
+          "sha256": "e2852e92f56460cdf4d6f52a6932124e133d9664f39201a1294dd1d45a1022f5"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/fisk-tableiii.json",
+          "bytes": 9277,
+          "sha256": "521d7575b7ecfa2916a60739ace5cb381d896e84ac2673e9aca75f5a9329b54d"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/fisk-tableiv.csv",
+          "bytes": 8232,
+          "sha256": "ef2e1cbfe1342c14899f84fa36fbd1f1b29467152c27150af3018d260d56711c"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/fisk-tableiv.json",
+          "bytes": 15865,
+          "sha256": "93be7c9057f9355eb6b7b3f76f9fe8c78781add9100c8531769507c70eb9f346"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/manifest.json",
+          "bytes": 799,
+          "sha256": "6277082791b437aa1ee2c2dd1918c76108cccec60f2882f68a26da575693ee51"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-10-p01.txt",
+          "bytes": 7137,
+          "sha256": "2ec743b82c49316687959a05378b7fa8e4e685a0dea13bb455fac8a87c8d7e9d"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-10-p03.txt",
+          "bytes": 6028,
+          "sha256": "8e7036040dcb08c06f4868dd914d4957a5bf033ebe7d27fa219689a33211d0fd"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-10-p04.txt",
+          "bytes": 8453,
+          "sha256": "fdd71a1a2b0f59d64509357e877762487f655e1e7dd919b51f3a73c06f53e15d"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-10-p05.txt",
+          "bytes": 7628,
+          "sha256": "81ff1c6c3154a06bb2bce19437bbcf3a9d22368a559746d272e63e39e940330c"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-10-p06.txt",
+          "bytes": 7054,
+          "sha256": "e4197b1919c948df022795676314bb631e3acf9fac345bb90f5b86ed26c3cda2"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-10-p07.txt",
+          "bytes": 6551,
+          "sha256": "f2e8ef921f1fcf58332bc9da7890ee4167ad80837e92b27e03aedc9840c5af02"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-10-p08.txt",
+          "bytes": 7086,
+          "sha256": "a9f50a0052cb0d0c79bad62eeeb07991964df9350417002505bed26ac4c77eab"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-10-p09.txt",
+          "bytes": 7727,
+          "sha256": "421ebe4226fb91f94b002d5483a83ea05428a4464480a336365797b4f43a9b60"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-10-p11.txt",
+          "bytes": 9344,
+          "sha256": "41522ca86b38baf913d9ee38e2f0ff8733db08723487a575a5509e3d9f31ada0"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-7-p03.txt",
+          "bytes": 3653,
+          "sha256": "f0eb794d14e013d6b05d0f4d6487875c9631959f88148a7ff89248acd041f488"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-7-p05.txt",
+          "bytes": 3870,
+          "sha256": "f6f8475f5f4056ff62461737d91f0df9ad3ba555861db6945e2a5f9410109da1"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-7-p06.txt",
+          "bytes": 3396,
+          "sha256": "6badc45e71a00e1ee5d56b09563015850d66d335e854a82f05ee4d159fa2a5d0"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-7-p07.txt",
+          "bytes": 5021,
+          "sha256": "e5ff40db775c222bc5025e3f8d6c56126141b853922a033df60f3b01a6025310"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-7-p08.txt",
+          "bytes": 3498,
+          "sha256": "35b2599a4ea2b2aea71c360f0b41c5cbe5a6e5663d4cc587fe5f52c5bb1dfc42"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-7-p09.txt",
+          "bytes": 3179,
+          "sha256": "91eaf66760d05d68a01ede2ca24cd294197c828a5eabf87ee0cb00cb98795b53"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-7-p10.txt",
+          "bytes": 3709,
+          "sha256": "0dda70bc6d97da5a1333441d30a7d590eba4b05fea4efcdca053a2179a24e379"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-7-p15.txt",
+          "bytes": 3548,
+          "sha256": "a007f85e49bf543e07fd7d979427ae21c435bd1de6bb71e8adcfb57da14592c9"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/raw/paper-7-p16.txt",
+          "bytes": 3532,
+          "sha256": "71a0ef36c03ee03f49ff4e010fa8384ffa92c383c523082291a87614f349181e"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/rydberg-core/source-facts.json",
+          "bytes": 4503,
+          "sha256": "9179dc750c9ddb750062c7ce99dba9b1db48475eed06ff89fcf6356293f6991a"
+        },
+        {
+          "path": "data/literature/source-followup-2026-10-30/verification.json",
+          "bytes": 1177,
+          "sha256": "e38f871ee382d09b9cac7d6ba6813810166df254ec1e6acbf9b3edfbbe723361"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "date": "2026-10-29",
+    "transitionQuantityCount": 107,
+    "levelQuantityCount": 24,
+    "allCanonicalQuantityPathsCovered": true,
+    "hyperfineStateRecords": 11,
+    "saved65SRecordCovered": true,
+    "estimateModelCovered": true,
+    "auditRecordCount": 144,
+    "statusCounts": {
+      "adopted-compilation": 66,
+      "unsupported-value-removed": 2,
+      "pending-internal-artifact": 3,
+      "theory-definition-pending": 3,
+      "quarantined-estimate-or-missing": 57,
+      "derived-source-conflict": 3,
+      "source-conflict-retained": 1,
+      "reference-definition": 2,
+      "derived-compilation": 2,
+      "quarantined-estimate": 4,
+      "quarantined-model": 1
+    },
+    "meaning": "Coverage measures audit disposition, not number of physically validated measurements."
+  },
+  "referencesIndex": "references/index.json",
+  "downloadList": "references/missing-downloads.md",
+  "originalSourceQueue": "references/primary-source-queue.json",
+  "latestAuditDate": "2026-10-30",
+  "latestDatasetVersion": "2026.10.30.1",
+  "totalTableCount": 71,
+  "auditChain": [
+    "data/literature/audit-2026-10-29/field-audit.json",
+    "data/literature/source-followup-2026-10-30/field-audit.json"
+  ]
+}

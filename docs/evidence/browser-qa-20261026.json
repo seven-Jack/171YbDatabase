@@ -1,0 +1,90 @@
+{
+  "mainPaths": [
+    {
+      "id": "T2",
+      "context": "T2 · ¹S₀ → ³P₁\n555.8007 nm\nF=1/2 → F′=1/2 · π · 默认选当前 F 对与偏振内最强允许通道\nJ 级约化量 · d_eff=0.181 ea₀\n使用默认最强允许通道",
+      "rabi": "Ω/2π · 普通频率\n32.08 MHz\nP=1 mW · w₀=50 µm · d_eff=0.181 ea₀ · 当前偏振及 F 对的最强允许通道",
+      "rows": 10,
+      "waveColor": "#61ff00"
+    },
+    {
+      "id": "T3",
+      "context": "T3 · ¹S₀ → ³P₀\n578.4196 nm\nF=1/2 → F′=1/2 · π · 默认选当前 F 对与偏振内最强允许通道\n有效 F 级约化量 · d_eff=0.000037518018 ea₀\n使用默认最强允许通道",
+      "rabi": "Ω/2π · 普通频率\n6.6496 kHz\nP=1 mW · w₀=50 µm · d_eff=0.000037518 ea₀ · 当前偏振及 F 对的最强允许通道",
+      "rows": 4,
+      "waveColor": "#ffbe00"
+    },
+    {
+      "id": "R2",
+      "context": "R2 · ³P₀ → 65³S₁\n301.87 nm\nF=1/2 → F′=1/2 · π · 默认选当前 F 对与偏振内最强允许通道\nJ 级约化量 · d_eff=0.012533333 ea₀\n使用默认最强允许通道",
+      "rabi": "Ω/2π · 普通频率\n2.22138 MHz\nP=1 mW · w₀=50 µm · d_eff=0.0125333 ea₀ · 当前偏振及 F 对的最强允许通道",
+      "rows": 10,
+      "waveColor": "#b8c4da"
+    }
+  ],
+  "viewports": [
+    {
+      "viewport": 1440,
+      "arrowCount": 8,
+      "widthCheck": {
+        "scrollWidth": 1440,
+        "width": 1440
+      },
+      "pInverse": 4,
+      "wInverse": 25,
+      "clockBaseline": "6.6496 kHz",
+      "invalidInput": "passed",
+      "unsupportedM2": "passed"
+    },
+    {
+      "viewport": 1024,
+      "arrowCount": 8,
+      "widthCheck": {
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      "pInverse": 4,
+      "wInverse": 25,
+      "clockBaseline": "6.6496 kHz",
+      "invalidInput": "passed",
+      "unsupportedM2": "passed"
+    },
+    {
+      "viewport": 390,
+      "arrowCount": 8,
+      "widthCheck": {
+        "scrollWidth": 390,
+        "width": 390
+      },
+      "pInverse": 4,
+      "wInverse": 25,
+      "clockBaseline": "6.6496 kHz",
+      "invalidInput": "passed",
+      "unsupportedM2": "passed"
+    }
+  ],
+  "interactions": [
+    {
+      "viewport": 1440,
+      "keyboardChannel": "passed",
+      "fullCG": 4,
+      "fullDataColumns": 14,
+      "formulaEscapeAndFocus": "passed"
+    },
+    {
+      "viewport": 1024,
+      "keyboardChannel": "passed",
+      "fullCG": 4,
+      "fullDataColumns": 14,
+      "formulaEscapeAndFocus": "passed"
+    },
+    {
+      "viewport": 390,
+      "keyboardChannel": "passed",
+      "fullCG": 4,
+      "fullDataColumns": 14,
+      "formulaEscapeAndFocus": "passed"
+    }
+  ],
+  "configurationRestore": "T3 export → T2 selection → T3 restore passed"
+}

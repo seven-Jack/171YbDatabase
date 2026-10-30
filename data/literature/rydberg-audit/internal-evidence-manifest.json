@@ -1,0 +1,50 @@
+[
+  {
+    "originalPath": "/Users/seven/Desktop/171YbDatabase/assets/05.21_yb171_65s_hyperfine.csv",
+    "copyPath": "internal-evidence/05.21_yb171_65s_hyperfine.csv",
+    "sha256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec",
+    "copySha256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec",
+    "bytes": 611,
+    "status": "saved-internal-evidence-only; no new model/expt validation"
+  },
+  {
+    "originalPath": "/Users/seven/Desktop/MQDT/runs/R005_yb171-single-state-c6/outcome/05.21_yb171_65s_hyperfine_validation.json",
+    "copyPath": "internal-evidence/05.21_yb171_65s_hyperfine_validation.json",
+    "sha256": "b177d7ebc6fc422839d3f1025915bcb67b2fcebf367ce5557bb6cc96b4689d16",
+    "copySha256": "b177d7ebc6fc422839d3f1025915bcb67b2fcebf367ce5557bb6cc96b4689d16",
+    "bytes": 106825,
+    "status": "saved-internal-evidence-only; no new model/expt validation"
+  },
+  {
+    "originalPath": "/Users/seven/Desktop/MQDT/runs/R006_yb171-clock-65s-tdm/metadata.json",
+    "copyPath": "internal-evidence/r006-metadata.json",
+    "sha256": "81e96de56303e61462269dfb649cfa3ba6b634da1705691290d904baaedebe97",
+    "copySha256": "81e96de56303e61462269dfb649cfa3ba6b634da1705691290d904baaedebe97",
+    "bytes": 2462,
+    "status": "saved-internal-evidence-only; no new model/expt validation"
+  },
+  {
+    "originalPath": "/Users/seven/Desktop/MQDT/runs/R006_yb171-clock-65s-tdm/states.csv",
+    "copyPath": "internal-evidence/r006-states.csv",
+    "sha256": "93b5c7f1f84b00ebe00561afe9e15a0f7e12843e14e48b44b67af3478bbab28b",
+    "copySha256": "93b5c7f1f84b00ebe00561afe9e15a0f7e12843e14e48b44b67af3478bbab28b",
+    "bytes": 217,
+    "status": "saved-internal-evidence-only; no new model/expt validation"
+  },
+  {
+    "originalPath": "/Users/seven/Desktop/MQDT/runs/R006_yb171-clock-65s-tdm/reduced_tdm.csv",
+    "copyPath": "internal-evidence/r006-reduced_tdm.csv",
+    "sha256": "001ddb9e2dac36fa4f4520c40cf6eb5dfdd0b6eb9cfbc16344c197d4664627d5",
+    "copySha256": "001ddb9e2dac36fa4f4520c40cf6eb5dfdd0b6eb9cfbc16344c197d4664627d5",
+    "bytes": 140,
+    "status": "saved-internal-evidence-only; no new model/expt validation"
+  },
+  {
+    "originalPath": "/Users/seven/Desktop/MQDT/notebooks/rydberg/05.21_yb171_65s_hyperfine.ipynb",
+    "copyPath": "internal-evidence/05.21_yb171_65s_hyperfine.ipynb",
+    "sha256": "ab624645b2003083565484ad405f8024f09d992ac80300384ff9e52e2df14791",
+    "copySha256": "ab624645b2003083565484ad405f8024f09d992ac80300384ff9e52e2df14791",
+    "bytes": 33370,
+    "status": "saved notebook read only; code not executed; source+saved output identity only"
+  }
+]

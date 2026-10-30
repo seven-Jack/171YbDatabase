@@ -1,0 +1,288 @@
+{
+  "checkedAt": "2026-10-30T14:24:12+08:00",
+  "files": [
+    {
+      "path": "/Users/seven/Desktop/paper/2019_Saskin_174Yb_Narrow-line-cooling-and-imaging_published-print.pdf",
+      "beforeSha256": "7a3330aaf5c798266b04b2fdb4c461acb2b10ab4c9fefc9b15f12cf686d97716",
+      "afterSha256": "7a3330aaf5c798266b04b2fdb4c461acb2b10ab4c9fefc9b15f12cf686d97716",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Quantum Gates/Multi Qubit/2025_Kotru_Error-corrected-neutral-atom-qubits_CLEO-AA107_1.pdf",
+      "beforeSha256": "8ac96139ef86aac5ed13fc95e3518643b8a7f686d7021afa4664817d197ee69d",
+      "afterSha256": "8ac96139ef86aac5ed13fc95e3518643b8a7f686d7021afa4664817d197ee69d",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Quantum Gates/Multi Qubit/2610.20591v1.pdf",
+      "beforeSha256": "d50a5cbc910b4f1fe1a16aeab1f7233d7188e9c53039281138c7e8f7a82f0f19",
+      "afterSha256": "d50a5cbc910b4f1fe1a16aeab1f7233d7188e9c53039281138c7e8f7a82f0f19",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Quantum Gates/Two Qubit/2603.17656v2.pdf",
+      "beforeSha256": "5baf3afc5edcdeef4f4d03bd0ddf85706388f89ef62341c91a8b6168d6367567",
+      "afterSha256": "5baf3afc5edcdeef4f4d03bd0ddf85706388f89ef62341c91a8b6168d6367567",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Quantum Gates/Two Qubit/2610.21936v1.pdf",
+      "beforeSha256": "1f32ad72778adeefb515fecb56d767f95cd9d0f883838aedaec66764475162dd",
+      "afterSha256": "1f32ad72778adeefb515fecb56d767f95cd9d0f883838aedaec66764475162dd",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Quantum Gates/Two Qubit/2610.26471v1.pdf",
+      "beforeSha256": "2fc7066c5a9aee214cc89458dbc663275bc522445d0bbefc1f226de86330613d",
+      "afterSha256": "2fc7066c5a9aee214cc89458dbc663275bc522445d0bbefc1f226de86330613d",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Quantum Gates/Two Qubit/science.aei1312.pdf",
+      "beforeSha256": "47e31ebc65d5a0703cbc8abf361ecd5277fbe142a7016c7cede045481627fdd0",
+      "afterSha256": "47e31ebc65d5a0703cbc8abf361ecd5277fbe142a7016c7cede045481627fdd0",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Rydberg interaction/171Yb_Rydberg_Electric_Magnetic_Research_Report_2026-10-09.pdf",
+      "beforeSha256": "0671d30a4aa9f12a18c66d959894a9578c815fe9060fc4928f9f665a210875e5",
+      "afterSha256": "0671d30a4aa9f12a18c66d959894a9578c815fe9060fc4928f9f665a210875e5",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Rydberg interaction/2014_ravets_natphys_10_914.pdf",
+      "beforeSha256": "bf95112ca490e606ea1ae88729f95629d9629346618290be687c9b9aaf22707e",
+      "afterSha256": "bf95112ca490e606ea1ae88729f95629d9629346618290be687c9b9aaf22707e",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Rydberg interaction/2603.07958.pdf",
+      "beforeSha256": "ff55c7d737acacfabfd4c2110f8fe7131e6dc8aee143a8551ae3aac3bb821362",
+      "afterSha256": "ff55c7d737acacfabfd4c2110f8fe7131e6dc8aee143a8551ae3aac3bb821362",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Rydberg interaction/2610.12406.pdf",
+      "beforeSha256": "64da15afa37a6ba1299c35b1f11f7fd36314b8429f9d31feb7ee23bf891c6ce3",
+      "afterSha256": "64da15afa37a6ba1299c35b1f11f7fd36314b8429f9d31feb7ee23bf891c6ce3",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Rydberg interaction/2610.22574v1.pdf",
+      "beforeSha256": "42c1682c8f95e1e97a607caa1781842f1cc7fdd85e1631694f41e5ef9662a857",
+      "afterSha256": "42c1682c8f95e1e97a607caa1781842f1cc7fdd85e1631694f41e5ef9662a857",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Rydberg interaction/Expanding the neutral-atom gate set Native iSWAP and exchange gates from dipolar Rydberg interactions.pdf",
+      "beforeSha256": "f12325938a42adf98a46c3ae1939cf0cea5a7a65b68dd955d579b7369148867f",
+      "afterSha256": "f12325938a42adf98a46c3ae1939cf0cea5a7a65b68dd955d579b7369148867f",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Rydberg interaction/Kunimi和Tomita - 2026 - Magnetic-field control of interactions in alkaline-earth Rydberg atoms and applications to XXZi.pdf",
+      "beforeSha256": "9591fe8f65c8674343945df246e029d91dea85893fb3e5a42f60c279773c2c9b",
+      "afterSha256": "9591fe8f65c8674343945df246e029d91dea85893fb3e5a42f60c279773c2c9b",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Rydberg interaction/Trapping-Alkaline-Earth-Rydberg-Atoms-Optical-Tweezer-Arrays.pdf",
+      "beforeSha256": "cafb618ffa6f60aa23a134b3ad73bdaa07679c02c234fdb7f83b8306d850d787",
+      "afterSha256": "cafb618ffa6f60aa23a134b3ad73bdaa07679c02c234fdb7f83b8306d850d787",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Rydberg interaction/YtterbiumSpectroscopy_PRX_resubmission_supp.pdf",
+      "beforeSha256": "7bab7cf336bcc82be834b31ee364e11c1362c996ddf1c2187ec340040b1a36eb",
+      "afterSha256": "7bab7cf336bcc82be834b31ee364e11c1362c996ddf1c2187ec340040b1a36eb",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/Rydberg interaction/e2015-50337-x.pdf",
+      "beforeSha256": "775bcde1b524b45bc86f024df47cc2257f91f70fdcd5d774cb21f1f8db675ca0",
+      "afterSha256": "775bcde1b524b45bc86f024df47cc2257f91f70fdcd5d774cb21f1f8db675ca0",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2008_Barber_174Yb_Optical-lattice-light-shifts_published-print.pdf",
+      "beforeSha256": "d9795566e324c3e6f13e03f9c0c797e32b69597aa3dd5535c4df510ea41d623b",
+      "afterSha256": "d9795566e324c3e6f13e03f9c0c797e32b69597aa3dd5535c4df510ea41d623b",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2009_Lemke_171Yb_Spin-1-2-optical-lattice-clock_published-print.pdf",
+      "beforeSha256": "0ec840d046eaeace7178a6a9d594d2634a25ac12d60eb5ace9c9a52cdcbb04a4",
+      "afterSha256": "0ec840d046eaeace7178a6a9d594d2634a25ac12d60eb5ace9c9a52cdcbb04a4",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2010_Dzuba_Yb_Clock-state-dynamic-polarizabilities_published-print.pdf",
+      "beforeSha256": "f655436b3df353ee32793a604838a51954508f114491ad784d653966732da446",
+      "afterSha256": "f655436b3df353ee32793a604838a51954508f114491ad784d653966732da446",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2010_Guo_Sr-Yb_Dipole-polarizabilities-magic-wavelengths_published-print.pdf",
+      "beforeSha256": "99c925db9a53a85085b3f7bf772ec0da3c5ecacb8e59c3d722f36cc032ac4d04",
+      "afterSha256": "99c925db9a53a85085b3f7bf772ec0da3c5ecacb8e59c3d722f36cc032ac4d04",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2016_Zhang_Alkaline-earth_Kondo-effect-confinement-induced-resonances_published-print.pdf",
+      "beforeSha256": "19467fd3fe912db437961b535454ca3cf891cc4ff6a1146949d8c3b635e77759",
+      "afterSha256": "19467fd3fe912db437961b535454ca3cf891cc4ff6a1146949d8c3b635e77759",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2018_Riegger_173Yb_Localized-moments-tunable-spin-exchange_published-print.pdf",
+      "beforeSha256": "d598e2d2c5d3d09523a2f55c729f6279f690f691e91757f4fb18c020ecbe679c",
+      "afterSha256": "d598e2d2c5d3d09523a2f55c729f6279f690f691e91757f4fb18c020ecbe679c",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2022_Ma_171Yb_Universal-nuclear-spin-gates_published-print.pdf",
+      "beforeSha256": "28842cae29d58fc635b93c777d597a6ccea9d41ca022a833007cad27896fa2a5",
+      "afterSha256": "28842cae29d58fc635b93c777d597a6ccea9d41ca022a833007cad27896fa2a5",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2023_Hoehn_174Yb_State-dependent-clock-potentials_published-print.pdf",
+      "beforeSha256": "2d3506ddc728033a280f178f5b3edcd2f65dbd2eff1ebe0651bb554ab30d7e88",
+      "afterSha256": "2d3506ddc728033a280f178f5b3edcd2f65dbd2eff1ebe0651bb554ab30d7e88",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2023_Lis_171Yb_Midcircuit-operations-omg_published-print.pdf",
+      "beforeSha256": "c3fac029f557045425c354de7e9470c892fb776784dda4f2d8be7153026ed0c9",
+      "afterSha256": "c3fac029f557045425c354de7e9470c892fb776784dda4f2d8be7153026ed0c9",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2026_Hoehn_174Yb_3P0-tune-out-triple-magic-lattice_published-print.pdf",
+      "beforeSha256": "c69774806f073eb9fe8de0558de40196a38e29a6537401fd1ec1704a39cdb413",
+      "afterSha256": "c69774806f073eb9fe8de0558de40196a38e29a6537401fd1ec1704a39cdb413",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+      "beforeSha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "afterSha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/atomic data/2026_Liu_171Yb_Dual-metastable-state-encoding_arXiv2606.08453v1.pdf",
+      "beforeSha256": "b63c4dddf79cb7f23450845d72a92a12a71bd4f0c9cea86e4a5ab697707ede6a",
+      "afterSha256": "b63c4dddf79cb7f23450845d72a92a12a71bd4f0c9cea86e4a5ab697707ede6a",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2001_Fang_Yb_Radiative-lifetimes-Rydberg-states_published.pdf",
+      "beforeSha256": "b4ac15f7330220bd5888f884421b28ffd11dd02c74b48a95091f1c15ca8ef177",
+      "afterSha256": "b4ac15f7330220bd5888f884421b28ffd11dd02c74b48a95091f1c15ca8ef177",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2022_Chen_171Yb_OMG-architecture_arXiv2201.04083v3.pdf",
+      "beforeSha256": "1c812aeb51e0009e93551b09fd1a182b6912aeeec03415f81df952f09d3d899f",
+      "afterSha256": "1c812aeb51e0009e93551b09fd1a182b6912aeeec03415f81df952f09d3d899f",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2023_Ma_171Yb_Mid-circuit-erasure-gates_arXiv2305.05493v1.pdf",
+      "beforeSha256": "605afdb1ef7d3e76004024c409cf44c34037305556aabdae5d2644ca7116ee7a",
+      "afterSha256": "605afdb1ef7d3e76004024c409cf44c34037305556aabdae5d2644ca7116ee7a",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2023_Ma_171Yb_Mid-circuit-erasure-gates_published.pdf",
+      "beforeSha256": "9b477683f712c305c3ab2f5f45ab1b7538584a8dd39ef7a6785b24ebbbf376e7",
+      "afterSha256": "9b477683f712c305c3ab2f5f45ab1b7538584a8dd39ef7a6785b24ebbbf376e7",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2024_Muniz_171Yb_Universal-gates_arXiv2411.11708v2.pdf",
+      "beforeSha256": "867b41ec2620c1e9ee393438ae95cb03cb8e67ab5c66dfd9b15ac07d2dcb7061",
+      "afterSha256": "867b41ec2620c1e9ee393438ae95cb03cb8e67ab5c66dfd9b15ac07d2dcb7061",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_arXiv2507.11487v1.pdf",
+      "beforeSha256": "66abd4d74c1d7ce3f0b5bd5ebc51c1cc1743b3da98680229967eec5b86c08606",
+      "afterSha256": "66abd4d74c1d7ce3f0b5bd5ebc51c1cc1743b3da98680229967eec5b86c08606",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_published.pdf",
+      "beforeSha256": "30823c38c870ec150528e375d58a63d5272a52da171c6f0d02ee7b8a8f49a5f6",
+      "afterSha256": "30823c38c870ec150528e375d58a63d5272a52da171c6f0d02ee7b8a8f49a5f6",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2025_Muniz_171Yb_Universal-gates_published.pdf",
+      "beforeSha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e",
+      "afterSha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2025_Senoo_171Yb_Entanglement-and-multi-qubit-mapping_arXiv2506.13632v2.pdf",
+      "beforeSha256": "b54e284c6e2850f70a9f374feadd0a36a8423eb2e4b7fb5da5b7066edd8506bc",
+      "afterSha256": "b54e284c6e2850f70a9f374feadd0a36a8423eb2e4b7fb5da5b7066edd8506bc",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2026_Senoo_171Yb_Entanglement-and-multi-qubit-mapping_published.pdf",
+      "beforeSha256": "75911f332df5b221e47b9162041c4f441ddea50a3f8688579d3bafaf72fe20d6",
+      "afterSha256": "75911f332df5b221e47b9162041c4f441ddea50a3f8688579d3bafaf72fe20d6",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/2026_Senoo_171Yb_Entanglement-mapping_peer-review-file_publisher.pdf",
+      "beforeSha256": "ae0a53dc1524c112ce70c0955a5d472f804a693eadfed02d381cf23fd8877dc1",
+      "afterSha256": "ae0a53dc1524c112ce70c0955a5d472f804a693eadfed02d381cf23fd8877dc1",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/41467_2022_32094_MOESM1_ESM.pdf",
+      "beforeSha256": "e9de9bbdbd23df15d4badee5fa5a3fd7b4fbfa0eff7f7cb3ad270605d8986b4f",
+      "afterSha256": "e9de9bbdbd23df15d4badee5fa5a3fd7b4fbfa0eff7f7cb3ad270605d8986b4f",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/Peper 等 - 2025 - Spectroscopy and Modeling of Yb 171 Rydberg States for High-Fidelity Two-Qubit Gates.pdf",
+      "beforeSha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a",
+      "afterSha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/Senoo 等 - 2026 - High-fidelity entanglement and coherent multi-qubit mapping in an atom array.pdf",
+      "beforeSha256": "e51547c854ed88dcccfa4c682be17d7eb247c5f3619a36128f4a1c5462106645",
+      "afterSha256": "e51547c854ed88dcccfa4c682be17d7eb247c5f3619a36128f4a1c5462106645",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/Wu 等 - 2022 - Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays.pdf",
+      "beforeSha256": "24fd5d8bfd00fc6e6aa4d539975e7ea9c1cea76f253ad296a991b39eccd785dc",
+      "afterSha256": "24fd5d8bfd00fc6e6aa4d539975e7ea9c1cea76f253ad296a991b39eccd785dc",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/lifetime/YtterbiumSpectroscopy_PRX_resubmission_supp.pdf",
+      "beforeSha256": "7bab7cf336bcc82be834b31ee364e11c1362c996ddf1c2187ec340040b1a36eb",
+      "afterSha256": "7bab7cf336bcc82be834b31ee364e11c1362c996ddf1c2187ec340040b1a36eb",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/pairinteraction/PairInteraction v2.pdf",
+      "beforeSha256": "03e20bfc85e727046d011a9d50a9a13527775a671c16a8033ebdc6aa75ec3417",
+      "afterSha256": "03e20bfc85e727046d011a9d50a9a13527775a671c16a8033ebdc6aa75ec3417",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/seven/Desktop/paper/robustness/floquet.pdf",
+      "beforeSha256": "4ebe5a3ea268650a76674cee707651f17ca9449738a54f39c0e68263fb464816",
+      "afterSha256": "4ebe5a3ea268650a76674cee707651f17ca9449738a54f39c0e68263fb464816",
+      "unchanged": true
+    }
+  ],
+  "allUnchanged": true
+}

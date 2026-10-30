@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-30",
+  "scope": "Five low-state E1 transitions; numerical reference reproduction and original-source strength cross-checks. No new complete independent P/waist/measured-Rabi benchmark established.",
+  "conventions": {
+    "isotope": 171,
+    "power_mW": 1,
+    "beamDiameter_mm": 1,
+    "waist_um": 500,
+    "beamDefinition": "Full 1/e^2 intensity diameter D=2*w0; w0 is radius.",
+    "position": "Gaussian beam centre",
+    "powerDefinition": "Power of the selected pure spherical polarization component at the atom, not a 2P display axis.",
+    "frequency": "Ordinary Rabi frequency Omega/(2*pi), MHz",
+    "fieldBoundary": "Unmixed zero-field angular-momentum states; no finite-field mixing, detuning, motion or decoherence corrections.",
+    "uncertaintyBoundary": "Printed uncertainties are reference-compatibility bounds. Shared compilation inputs and unknown covariance prevent an independent significance claim."
+  },
+  "sources": [
+    {
+      "id": "kroeze-2026",
+      "title": "171Yb Reference Data",
+      "authors": [
+        "Ronen M. Kroeze",
+        "Sofus Laguna Kristensen",
+        "Sebastian Pucher"
+      ],
+      "arxiv": "2509.04416v2",
+      "doi": "10.48550/arXiv.2509.04416",
+      "url": "https://arxiv.org/pdf/2509.04416v2",
+      "localPath": "references/papers/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+      "sha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "locations": "PDF/printed pp.23-26 Tables 8,10,12-14; pp.16-17 Sec.6.3 Eqs.(73),(78)-(81)",
+      "evidenceKind": "compilation-derived-theory-benchmark"
+    },
+    {
+      "id": "beloy-2012",
+      "title": "Determination of the 5d6s 3D1 state lifetime and blackbody-radiation clock shift in Yb",
+      "authors": [
+        "K. Beloy",
+        "J. A. Sherman",
+        "N. D. Lemke",
+        "N. Hinkley",
+        "C. W. Oates",
+        "A. D. Ludlow"
+      ],
+      "journal": "Phys. Rev. A 86, 051404(R) (2012)",
+      "doi": "10.1103/PhysRevA.86.051404",
+      "url": "https://arxiv.org/pdf/1208.0552",
+      "localPath": "references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf",
+      "sha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e",
+      "locations": "PDF p.2 Method II and Eq.(8), p.4 Table III and lifetime results",
+      "isotope": 171,
+      "evidenceKind": "experimental-lifetime-with-model-dependent-dipole-inference",
+      "reported": {
+        "tau3D1_ns": 329.3,
+        "tau3D1_uncertainty_ns": 7.1,
+        "tau3P1_ns": 866.1,
+        "tau3P1_uncertainty_ns": 7.4,
+        "branch3D1to3P0": 0.64,
+        "branch3D1to3P0_uncertainty": 0.01,
+        "branchingEvidence": "Theoretical LS-coupling branching estimate, not directly measured branching."
+      },
+      "independenceBoundary": "A source used by the Kroeze compilation. No held-out independence or direct power/waist/Rabi measurement is claimed."
+    },
+    {
+      "id": "porsev-1999",
+      "title": "Electric-dipole amplitudes, lifetimes, and polarizabilities of the low-lying levels of atomic ytterbium",
+      "arxivTitle": "E1 amplitudes, lifetimes, and polarizabilities of the low-lying levels of atomic ytterbium",
+      "authors": [
+        "S. G. Porsev",
+        "Yu. G. Rakhlina",
+        "M. G. Kozlov"
+      ],
+      "journal": "Phys. Rev. A 60, 2781 (1999)",
+      "doi": "10.1103/PhysRevA.60.2781",
+      "url": "https://arxiv.org/pdf/physics/9903004",
+      "localPath": "references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf",
+      "sha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3",
+      "locations": "Table I, arXiv PDF p.10",
+      "evidenceKind": "CI+MBPT-electronic-J-reduced-theory",
+      "isotopeBoundary": "Electronic theory, not an isotope-resolved experimental Rabi measurement.",
+      "independenceBoundary": "Related theoretical source inputs also enter the compilation branching ratios; no fully independent experimental validation is claimed."
+    }
+  ],
+  "cases": [
+    {
+      "transitionId": "T1",
+      "lower": "1S0",
+      "upper": "1P1",
+      "table": 8,
+      "printedPage": 23,
+      "J_lower": 0,
+      "J_upper": 1,
+      "channel": {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": 1
+      },
+      "pol": "sigmap",
+      "angularFactorMagnitude": "1/sqrt(3)",
+      "angularFactorSquared": 0.3333333333333333,
+      "wavelengthVac_nm": 398.9108443,
+      "dJ_ea0": 4.147,
+      "dJ_uncertainty_ea0": 0.004,
+      "rabiOrdinary_MHz": 42.44,
+      "rabiOrdinary_uncertainty_MHz": 0.04,
+      "printedRabi": "Omega=2*pi*42.44(4) MHz",
+      "lifetime_ns": 5.464,
+      "lifetime_uncertainty_ns": 0.011,
+      "branching": 0.99999994,
+      "branching_uncertainty": 4e-8,
+      "saturationIntensity_W_m2": 599.7,
+      "saturationIntensity_uncertainty_W_m2": 1.2
+    },
+    {
+      "transitionId": "T2",
+      "lower": "1S0",
+      "upper": "3P1",
+      "table": 10,
+      "printedPage": 24,
+      "J_lower": 0,
+      "J_upper": 1,
+      "channel": {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": 1
+      },
+      "pol": "sigmap",
+      "angularFactorMagnitude": "1/sqrt(3)",
+      "angularFactorSquared": 0.3333333333333333,
+      "wavelengthVac_nm": 555.80068663,
+      "dJ_ea0": 0.5398,
+      "dJ_uncertainty_ea0": 0.0006,
+      "rabiOrdinary_MHz": 5.523,
+      "rabiOrdinary_uncertainty_MHz": 0.006,
+      "printedRabi": "Omega=2*pi*5.523(6) MHz",
+      "lifetime_ns": 872.6,
+      "lifetime_uncertainty_ns": 1.9,
+      "branching": 1,
+      "branching_uncertainty": null,
+      "branchingNote": "Effectively unity for this electronic transition at the accuracy of this check.",
+      "saturationIntensity_W_m2": 1.3885,
+      "saturationIntensity_uncertainty_W_m2": 0.003
+    },
+    {
+      "transitionId": "T5",
+      "lower": "3P0",
+      "upper": "3D1",
+      "table": 12,
+      "printedPage": 25,
+      "J_lower": 0,
+      "J_upper": 1,
+      "channel": {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": 1
+      },
+      "pol": "sigmap",
+      "angularFactorMagnitude": "1/sqrt(3)",
+      "angularFactorSquared": 0.3333333333333333,
+      "wavelengthVac_nm": 1388.7629464,
+      "dJ_ea0": 2.76,
+      "dJ_uncertainty_ea0": 0.07,
+      "rabiOrdinary_MHz": 28.3,
+      "rabiOrdinary_uncertainty_MHz": 0.8,
+      "printedRabi": "Omega=2*pi*28.3(8) MHz",
+      "lifetime_ns": 332,
+      "lifetime_uncertainty_ns": 11,
+      "branching": 0.638,
+      "branching_uncertainty": 0.027
+    },
+    {
+      "transitionId": "T6",
+      "lower": "3P0",
+      "upper": "3S1",
+      "table": 13,
+      "printedPage": 26,
+      "J_lower": 0,
+      "J_upper": 1,
+      "channel": {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": 1
+      },
+      "pol": "sigmap",
+      "angularFactorMagnitude": "1/sqrt(3)",
+      "angularFactorSquared": 0.3333333333333333,
+      "wavelengthVac_nm": 649.08662928,
+      "dJ_ea0": 1.96,
+      "dJ_uncertainty_ea0": 0.15,
+      "rabiOrdinary_MHz": 20,
+      "rabiOrdinary_uncertainty_MHz": 1.6,
+      "printedRabi": "Omega=2*pi*20.0(16) MHz",
+      "lifetime_ns": 13.8,
+      "lifetime_uncertainty_ns": 1.7,
+      "branching": 0.13,
+      "branching_uncertainty": 0.013
+    },
+    {
+      "transitionId": "T7",
+      "lower": "3P2",
+      "upper": "3S1",
+      "table": 14,
+      "printedPage": 26,
+      "J_lower": 2,
+      "J_upper": 1,
+      "channel": {
+        "F": 2.5,
+        "m": 2.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": -1
+      },
+      "pol": "sigmam",
+      "angularFactorMagnitude": "1/sqrt(5)",
+      "angularFactorSquared": 0.2,
+      "wavelengthVac_nm": 770.160284,
+      "dJ_ea0": 4.99,
+      "dJ_uncertainty_ea0": 0.32,
+      "rabiOrdinary_MHz": 39.5,
+      "rabiOrdinary_uncertainty_MHz": 2.6,
+      "printedRabi": "Omega=2*pi*39.5(26) MHz",
+      "lifetime_ns": 13.8,
+      "lifetime_uncertainty_ns": 1.7,
+      "branching": 0.508,
+      "branching_uncertainty": 0.026,
+      "wavelengthNote": "Source-table value retained for the source lifetime reconstruction. Canonical wavelength 770.16026840069 nm follows the separately audited frequency; no canonical value is changed by this check."
+    }
+  ],
+  "sourceConflicts": [
+    {
+      "id": "SOURCE_RABI_CHANNEL_POLARIZATION_CONFLICT",
+      "appliesTo": [
+        "T1",
+        "T2",
+        "T5",
+        "T6",
+        "T7"
+      ],
+      "sourceClaim": "Sec.6.3 prose and table Omega_0 label claim pi/q=0.",
+      "resolution": "Use the explicitly printed sublevels: q=mp-m=+1 for T1,T2,T5,T6 and -1 for T7. Literal q=0 gives zero for each of those same pairs. This is an explicit conflict resolution, not a fitted polarization."
+    },
+    {
+      "id": "SOURCE_LINEWIDTH_2PI_NOTATION_CONFLICT",
+      "resolution": "Use total Gamma=1/tau in s^-1 and ordinary linewidth Gamma/(2*pi) in Hz; do not interpret the extra 2pi printed in the compilation FWHM rows as a physical multiplicative factor."
+    }
+  ],
+  "strengthCrossChecks": [
+    {
+      "transitionId": "T2",
+      "sourceId": "beloy-2012",
+      "locator": "Table III, Experiment",
+      "dJ_ea0": 0.542,
+      "dJ_uncertainty_ea0": 0.002,
+      "evidenceKind": "dipole-inferred-from-171Yb-experimental-lifetime",
+      "isDirectMeasuredRabiBenchmark": false
+    },
+    {
+      "transitionId": "T5",
+      "sourceId": "beloy-2012",
+      "locator": "Table III, Experiment / Method II",
+      "dJ_ea0": 2.77,
+      "dJ_uncertainty_ea0": 0.04,
+      "evidenceKind": "dipole-inferred-from-171Yb-experimental-lifetime-and-theoretical-branching",
+      "isDirectMeasuredRabiBenchmark": false
+    },
+    {
+      "transitionId": "T5",
+      "sourceId": "porsev-1999",
+      "locator": "Table I, 5d6s 3D1 / 6s6p 3P0",
+      "dJ_ea0": 2.61,
+      "dJ_uncertainty_ea0": 0.1,
+      "evidenceKind": "CI+MBPT-theory",
+      "isDirectMeasuredRabiBenchmark": false
+    },
+    {
+      "transitionId": "T6",
+      "sourceId": "porsev-1999",
+      "locator": "Table I, 6s7s 3S1 / 6s6p 3P0",
+      "dJ_ea0": 1.98,
+      "dJ_uncertainty_ea0": 0.1,
+      "evidenceKind": "CI+MBPT-theory",
+      "isDirectMeasuredRabiBenchmark": false
+    },
+    {
+      "transitionId": "T7",
+      "sourceId": "porsev-1999",
+      "locator": "Table I, 6s7s 3S1 / 6s6p 3P2",
+      "dJ_ea0": 5.05,
+      "dJ_uncertainty_ea0": 0.2,
+      "evidenceKind": "CI+MBPT-theory",
+      "isDirectMeasuredRabiBenchmark": false
+    }
+  ],
+  "excludedExperimentalBenchmarks": [
+    {
+      "source": "McFerran 2016, JOSA B 33, 1278; DOI 10.1364/JOSAB.33.001278",
+      "transitionId": "T2",
+      "reported": "Pump Rabi approximately 1.2 MHz in saturated absorption.",
+      "missing": "Matching pump power and both elliptical waist radii, plus direct time-domain Rabi-fit evidence. MOT beam parameters belong to a different experiment."
+    },
+    {
+      "source": "Qiao 2023, Results in Physics 48, 106439; references/papers/1.pdf",
+      "transitionIds": [
+        "T6",
+        "T7"
+      ],
+      "reason": "5 ms is probe duration, not a measured pi pulse; 50 um waist is for lattice light, not the repumper. No matched direct Rabi benchmark."
+    },
+    {
+      "source": "Zhou 2020, Phys. Rev. A 101, 062506; references/papers/5.pdf",
+      "transitionId": "T6",
+      "reason": "Hollow-cathode-lamp pressure/power broadened MTS width is not a cold-atom coherent Rabi frequency."
+    },
+    {
+      "source": "Zhao 2024, Phys. Rev. A 110, 042816; references/papers/6.pdf",
+      "transitionId": "T5",
+      "reason": "Hollow-cathode-lamp MTS; incoming laser-source power is not a matched atom-plane power/waist/Rabi measurement."
+    },
+    {
+      "source": "Li 2025, arXiv:2502.17406v2",
+      "transitionId": "T5",
+      "reported": "About 2.5 mW and about 30 MHz.",
+      "missing": "Numerical 1389 nm waist; only a qualitative multiple of the 35 um clock waist is reported. Do not infer or fit it."
+    },
+    {
+      "source": "Takasu 2004, Phys. Rev. Lett. 93, 123202; DOI 10.1103/PhysRevLett.93.123202",
+      "transitionId": "T1",
+      "reason": "Lifetime measurement on 174Yb, useful as electronic-strength input but not a direct 171Yb experimental Rabi benchmark."
+    },
+    {
+      "source": "Beloy 2012, Phys. Rev. A 86, 051404(R), PDF p.4",
+      "transitionId": "T5",
+      "reported": "Up to 1 mW, a 30 um spot, I approximately 7e5 W/m^2, and Omega exceeding 1 GHz.",
+      "reason": "An apparatus scale estimate without a fitted same-mF-channel Rabi datum. Omega is not automatically Omega/(2*pi); total linear polarization power also needs component/channel specification. Not an exact matched experimental pass/fail test."
+    }
+  ],
+  "boundaries": [
+    {
+      "transitionId": "T4",
+      "wavelength_nm": 507,
+      "expectedCalculatorStatus": "unsupported",
+      "reason": "Main transition is M2 excitation with hyperfine-induced E1 decay contributions. No generic applicable E1 dipole is established; the total lifetime cannot determine one universal E1 coupling."
+    },
+    {
+      "transitionId": "T3",
+      "wavelength_nm": 578,
+      "status": "separate-unresolved-operating-point-comparison",
+      "auditPath": "references/audits/rabi-experiment-validation-20261030.md",
+      "reason": "Prior 70 nW/200 um/60 ms nominal pi-time comparison disagrees with the current internal dF. No new dipole fitted here."
+    }
+  ]
+}

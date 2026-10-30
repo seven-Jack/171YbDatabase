@@ -1,0 +1,1507 @@
+{
+  "schemaVersion": 1,
+  "extractionStatus": "all 21 s rows and 21 p rows transcribed from PDF p7; visual table check performed",
+  "records": [
+    {
+      "isotope": 174,
+      "n": 70,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s70s 1S0",
+      "J": 0,
+      "energy_cm": 50417.693,
+      "alpha0_relative_printed": 1.0,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 70,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s70p 1P1",
+      "J": 1,
+      "energy_cm": 50417.915,
+      "alpha_a_relative_printed": 0.85,
+      "alpha_b_relative_printed": 0.38,
+      "alpha0_relative_printed": 0.54,
+      "alpha2_relative_printed": -0.16,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 71,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s71s 1S0",
+      "J": 0,
+      "energy_cm": 50418.42,
+      "alpha0_relative_printed": 0.88,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 71,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s71p 1P1",
+      "J": 1,
+      "energy_cm": 50418.661,
+      "alpha_a_relative_printed": 1.0,
+      "alpha_b_relative_printed": 0.37,
+      "alpha0_relative_printed": 0.58,
+      "alpha2_relative_printed": -0.21,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 72,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s72s 1S0",
+      "J": 0,
+      "energy_cm": 50419.142,
+      "alpha0_relative_printed": 1.02,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 72,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s72p 1P1",
+      "J": 1,
+      "energy_cm": 50419.372,
+      "alpha_a_relative_printed": 1.0,
+      "alpha_b_relative_printed": 0.43,
+      "alpha0_relative_printed": 0.62,
+      "alpha2_relative_printed": -0.19,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 73,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s73s 1S0",
+      "J": 0,
+      "energy_cm": 50419.835,
+      "alpha0_relative_printed": 1.18,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 73,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s73p 1P1",
+      "J": 1,
+      "energy_cm": 50420.051,
+      "alpha_a_relative_printed": 1.59,
+      "alpha_b_relative_printed": 0.56,
+      "alpha0_relative_printed": 0.9,
+      "alpha2_relative_printed": -0.34,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 74,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s74s 1S0",
+      "J": 0,
+      "energy_cm": 50420.497,
+      "alpha0_relative_printed": 1.37,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 74,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s74p 1P1",
+      "J": 1,
+      "energy_cm": 50420.705,
+      "alpha_a_relative_printed": 1.2,
+      "alpha_b_relative_printed": 0.54,
+      "alpha0_relative_printed": 0.76,
+      "alpha2_relative_printed": -0.22,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 75,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s75s 1S0",
+      "J": 0,
+      "energy_cm": 50421.136,
+      "alpha0_relative_printed": 1.8,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 75,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s75p 1P1",
+      "J": 1,
+      "energy_cm": 50421.328,
+      "alpha_a_relative_printed": 1.27,
+      "alpha_b_relative_printed": 0.42,
+      "alpha0_relative_printed": 0.7,
+      "alpha2_relative_printed": -0.28,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 76,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s76s 1S0",
+      "J": 0,
+      "energy_cm": 50421.737,
+      "alpha0_relative_printed": 1.77,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 76,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s76p 1P1",
+      "J": 1,
+      "energy_cm": 50421.928,
+      "alpha_a_relative_printed": 1.59,
+      "alpha_b_relative_printed": 0.56,
+      "alpha0_relative_printed": 0.9,
+      "alpha2_relative_printed": -0.34,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 77,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s77s 1S0",
+      "J": 0,
+      "energy_cm": 50422.326,
+      "alpha0_relative_printed": 1.55,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 77,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s77p 1P1",
+      "J": 1,
+      "energy_cm": 50422.505,
+      "alpha_a_relative_printed": 1.6,
+      "alpha_b_relative_printed": 0.65,
+      "alpha0_relative_printed": 0.97,
+      "alpha2_relative_printed": -0.32,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 78,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s78s 1S0",
+      "J": 0,
+      "energy_cm": 50422.881,
+      "alpha0_relative_printed": 1.53,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 78,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s78p 1P1",
+      "J": 1,
+      "energy_cm": 50423.058,
+      "alpha_a_relative_printed": 1.78,
+      "alpha_b_relative_printed": 0.63,
+      "alpha0_relative_printed": 1.01,
+      "alpha2_relative_printed": -0.38,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 79,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s79s 1S0",
+      "J": 0,
+      "energy_cm": 50423.422,
+      "alpha0_relative_printed": 2.09,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 79,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s79p 1P1",
+      "J": 1,
+      "energy_cm": 50423.588,
+      "alpha_a_relative_printed": 2.1,
+      "alpha_b_relative_printed": 0.72,
+      "alpha0_relative_printed": 1.64,
+      "alpha2_relative_printed": -0.46,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": {
+        "kind": "source-internal-inconsistency",
+        "field": "alpha0_relative_printed",
+        "explanation": "Printed alpha0 does not agree with source Eq.(4) and printed alpha_a/alpha_b within rounding. Preserve printed value; requires published-version/author resolution.",
+        "notAnErratum": true
+      }
+    },
+    {
+      "isotope": 174,
+      "n": 80,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s80s 1S0",
+      "J": 0,
+      "energy_cm": 50423.935,
+      "alpha0_relative_printed": 2.83,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 80,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s80p 1P1",
+      "J": 1,
+      "energy_cm": 50424.095,
+      "alpha_a_relative_printed": 2.19,
+      "alpha_b_relative_printed": 0.76,
+      "alpha0_relative_printed": 1.24,
+      "alpha2_relative_printed": -0.48,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 81,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s81s 1S0",
+      "J": 0,
+      "energy_cm": 50424.432,
+      "alpha0_relative_printed": 2.45,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 81,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s81p 1P1",
+      "J": 1,
+      "energy_cm": 50424.585,
+      "alpha_a_relative_printed": 2.65,
+      "alpha_b_relative_printed": 0.79,
+      "alpha0_relative_printed": 1.41,
+      "alpha2_relative_printed": -0.62,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 82,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s82s 1S0",
+      "J": 0,
+      "energy_cm": 50424.907,
+      "alpha0_relative_printed": 2.64,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 82,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s82p 1P1",
+      "J": 1,
+      "energy_cm": 50425.053,
+      "alpha_a_relative_printed": 3.05,
+      "alpha_b_relative_printed": 1.01,
+      "alpha0_relative_printed": 1.69,
+      "alpha2_relative_printed": -0.68,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 83,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s83s 1S0",
+      "J": 0,
+      "energy_cm": 50425.365,
+      "alpha0_relative_printed": 2.84,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 83,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s83p 1P1",
+      "J": 1,
+      "energy_cm": 50425.51,
+      "alpha_a_relative_printed": 3.13,
+      "alpha_b_relative_printed": 1.03,
+      "alpha0_relative_printed": 1.73,
+      "alpha2_relative_printed": -0.7,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 84,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s84s 1S0",
+      "J": 0,
+      "energy_cm": 50425.805,
+      "alpha0_relative_printed": 3.54,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 84,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s84p 1P1",
+      "J": 1,
+      "energy_cm": 50425.945,
+      "alpha_a_relative_printed": 3.22,
+      "alpha_b_relative_printed": 1.02,
+      "alpha0_relative_printed": 1.75,
+      "alpha2_relative_printed": -0.73,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 85,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s85s 1S0",
+      "J": 0,
+      "energy_cm": 50426.228,
+      "alpha0_relative_printed": 3.17,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 85,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s85p 1P1",
+      "J": 1,
+      "energy_cm": 50426.364,
+      "alpha_a_relative_printed": 3.69,
+      "alpha_b_relative_printed": 1.45,
+      "alpha0_relative_printed": 2.2,
+      "alpha2_relative_printed": -0.75,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 86,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s86s 1S0",
+      "J": 0,
+      "energy_cm": 50426.638,
+      "alpha0_relative_printed": 3.7,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 86,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s86p 1P1",
+      "J": 1,
+      "energy_cm": 50426.765,
+      "alpha_a_relative_printed": 3.78,
+      "alpha_b_relative_printed": 1.51,
+      "alpha0_relative_printed": 2.02,
+      "alpha2_relative_printed": -0.76,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": {
+        "kind": "source-internal-inconsistency",
+        "field": "alpha0_relative_printed",
+        "explanation": "Printed alpha0 does not agree with source Eq.(4) and printed alpha_a/alpha_b within rounding. Preserve printed value; requires published-version/author resolution.",
+        "notAnErratum": true
+      }
+    },
+    {
+      "isotope": 174,
+      "n": 87,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s87s 1S0",
+      "J": 0,
+      "energy_cm": 50427.031,
+      "alpha0_relative_printed": 3.92,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 87,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s87p 1P1",
+      "J": 1,
+      "energy_cm": 50427.16,
+      "alpha_a_relative_printed": 4.41,
+      "alpha_b_relative_printed": 1.45,
+      "alpha0_relative_printed": 2.43,
+      "alpha2_relative_printed": -0.99,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 88,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s88s 1S0",
+      "J": 0,
+      "energy_cm": 50427.413,
+      "alpha0_relative_printed": 4.92,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 88,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s88p 1P1",
+      "J": 1,
+      "energy_cm": 50427.532,
+      "alpha_a_relative_printed": 4.41,
+      "alpha_b_relative_printed": 1.57,
+      "alpha0_relative_printed": 2.52,
+      "alpha2_relative_printed": -0.95,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 89,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s89s 1S0",
+      "J": 0,
+      "energy_cm": 50427.781,
+      "alpha0_relative_printed": 4.69,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 89,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s89p 1P1",
+      "J": 1,
+      "energy_cm": 50427.898,
+      "alpha_a_relative_printed": 4.67,
+      "alpha_b_relative_printed": 1.56,
+      "alpha0_relative_printed": 2.6,
+      "alpha2_relative_printed": -1.04,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 90,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s90s 1S0",
+      "J": 0,
+      "energy_cm": 50428.137,
+      "alpha0_relative_printed": 5.6,
+      "evidenceKind": "experiment; relative scalar polarizability",
+      "sourceInternalIssue": null
+    },
+    {
+      "isotope": 174,
+      "n": 90,
+      "sourceId": "halter-2023-arxiv-v2",
+      "pdfPage": 7,
+      "table": "1",
+      "energyReference": "174Yb neutral 6s2 1S0 ground state",
+      "energyUnit": "cm^-1",
+      "energyAccuracy": {
+        "value": 0.005,
+        "unit": "cm^-1",
+        "equivalentApprox_MHz": 150,
+        "kind": "estimated accuracy; not standard uncertainty established"
+      },
+      "polarizabilityUnit": "relative to measured 6s70s 1S0 scalar polarizability",
+      "polarizabilityUncertainty": {
+        "relativePercent": 10,
+        "kind": "estimated statistical error"
+      },
+      "F": null,
+      "mF": null,
+      "B_G": null,
+      "atomTemperature_K": null,
+      "BBRTemperature_K": null,
+      "use": "174Yb comparison only; never substitute for 171Yb",
+      "state": "6s90p 1P1",
+      "J": 1,
+      "energy_cm": 50428.244,
+      "alpha_a_relative_printed": 3.8,
+      "alpha_b_relative_printed": 1.07,
+      "alpha0_relative_printed": 1.98,
+      "alpha2_relative_printed": -0.91,
+      "evidenceKind": {
+        "energy": "zero-field extrapolation from measured Stark map",
+        "alpha_a_alpha_b": "experiment",
+        "alpha0_alpha2": "derived by paper Eq.(4)"
+      },
+      "sourceInternalIssue": null
+    }
+  ]
+}

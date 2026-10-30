@@ -1,0 +1,53 @@
+id,table,pdfPhysicalPage,printedPage,isotope,state,transitionId,lowerState,upperState,parameter,sourcePrintedValue,valueDecimal,uncertaintyDecimal,unit,sourceReferenceNumbers,evidenceType,approximate,status,birgeRatio,convention,conditions,reviewFlags,inferredApplicableTo171Yb,specialType
+table-07:row01:polarization_angle,7,23,23,174,1S0-1P1 F=3/2 m=+/-3/2,,,,row01:polarization_angle,0,0,,deg,[204],measurement-conditions,False,numeric,,,,,True,magic
+table-07:row01:wavelength_vac,7,23,23,174,1S0-1P1 F=3/2 m=+/-3/2,,,,row01:wavelength_vac,~532,532,,nm,[204],compilation-of-measurements,True,numeric,,,,,True,magic
+table-07:row01:frequency,7,23,23,174,1S0-1P1 F=3/2 m=+/-3/2,,,,row01:frequency,~564,564,,THz,[204],compilation-of-measurements,True,numeric,,,,,True,magic
+table-07:row01:alpha_1S0,7,23,23,174,1S0-1P1 F=3/2 m=+/-3/2,,,,row01:alpha_1S0,258,258,,a.u.,[204],semi-empirical-model,False,numeric,,,,,True,magic
+table-07:row02:polarization_angle,7,23,23,171,1S0-3P0,,,,row02:polarization_angle,any-angle,,,deg,[205],measurement-conditions,False,categorical,,,,,False,magic
+table-07:row02:wavelength_vac,7,23,23,171,1S0-3P0,,,,row02:wavelength_vac,~397.634,397.634,,nm,[205],compilation-of-measurements,True,numeric,,,,,False,magic
+table-07:row02:frequency,7,23,23,171,1S0-3P0,,,,row02:frequency,~753.941,753.941,,THz,[205],compilation-of-measurements,True,numeric,,,,,False,magic
+table-07:row02:alpha_1S0,7,23,23,171,1S0-3P0,,,,row02:alpha_1S0,-15495,-15495,,a.u.,[205],semi-empirical-model,False,numeric,,,,,False,magic
+table-07:row03:polarization_angle,7,23,23,171,1S0-3P0,,,,row03:polarization_angle,any-angle,,,deg,"[156, 206]",measurement-conditions,False,categorical,,,,,False,magic
+table-07:row03:wavelength_vac,7,23,23,171,1S0-3P0,,,,row03:wavelength_vac,459.5960(5),459.5960,0.0005,nm,"[156, 206]",compilation-of-measurements,False,numeric,,,,,False,magic
+table-07:row03:frequency,7,23,23,171,1S0-3P0,,,,row03:frequency,652.2956(7),652.2956,0.0007,THz,"[156, 206]",compilation-of-measurements,False,numeric,,,,,False,magic
+table-07:row03:alpha_1S0,7,23,23,171,1S0-3P0,,,,row03:alpha_1S0,469,469,,a.u.,"[156, 206]",semi-empirical-model,False,numeric,,,,,False,magic
+table-07:row04:polarization_angle,7,23,23,174,1S0-3P0,,,,row04:polarization_angle,any-angle,,,deg,[156],measurement-conditions,False,categorical,,,,,True,magic
+table-07:row04:wavelength_vac,7,23,23,174,1S0-3P0,,,,row04:wavelength_vac,552.61074(19),552.61074,0.00019,nm,[156],compilation-of-measurements,False,numeric,,,,,True,magic
+table-07:row04:frequency,7,23,23,174,1S0-3P0,,,,row04:frequency,542.50205(19),542.50205,0.00019,THz,[156],compilation-of-measurements,False,numeric,,,,,True,magic
+table-07:row04:alpha_1S0,7,23,23,174,1S0-3P0,,,,row04:alpha_1S0,57,57,,a.u.,[156],semi-empirical-model,False,numeric,,,,,True,magic
+table-07:row05:polarization_angle,7,23,23,171,1S0-3P0-3P1 F=3/2 m=-1/2,,,,row05:polarization_angle,~17,17,,deg,"[84, 88, 90, 91, 94, 111, 112, 113, 115, 116, 117, 119, 164, 165, 166, 167, 168, 207]",measurement-conditions,True,numeric,,,~17deg only for triple-magic including3P1; 1S0-3P0 magic is angle independent; source average mixes operational and E1 magic measurements.,,False,triple-magic
+table-07:row05:wavelength_vac,7,23,23,171,1S0-3P0-3P1 F=3/2 m=-1/2,,,,row05:wavelength_vac,759.3560633(31),759.3560633,0.0000031,nm,"[84, 88, 90, 91, 94, 111, 112, 113, 115, 116, 117, 119, 164, 165, 166, 167, 168, 207]",compilation-of-measurements,False,numeric,4.3,,~17deg only for triple-magic including3P1; 1S0-3P0 magic is angle independent; source average mixes operational and E1 magic measurements.,,False,triple-magic
+table-07:row05:frequency,7,23,23,171,1S0-3P0-3P1 F=3/2 m=-1/2,,,,row05:frequency,394.7982672(16),394.7982672,0.0000016,THz,"[84, 88, 90, 91, 94, 111, 112, 113, 115, 116, 117, 119, 164, 165, 166, 167, 168, 207]",compilation-of-measurements,False,numeric,4.3,,~17deg only for triple-magic including3P1; 1S0-3P0 magic is angle independent; source average mixes operational and E1 magic measurements.,,False,triple-magic
+table-07:row05:alpha_1S0,7,23,23,171,1S0-3P0-3P1 F=3/2 m=-1/2,,,,row05:alpha_1S0,188,188,,a.u.,"[84, 88, 90, 91, 94, 111, 112, 113, 115, 116, 117, 119, 164, 165, 166, 167, 168, 207]",semi-empirical-model,False,numeric,,,~17deg only for triple-magic including3P1; 1S0-3P0 magic is angle independent; source average mixes operational and E1 magic measurements.,,False,triple-magic
+table-07:row06:polarization_angle,7,23,23,171,1S0-3P1 F=3/2 m=+/-1/2,,,,row06:polarization_angle,?,,,deg,[62],measurement-conditions,False,not-reported,,,,,False,magic
+table-07:row06:wavelength_vac,7,23,23,171,1S0-3P1 F=3/2 m=+/-1/2,,,,row06:wavelength_vac,486.78(1),486.78,0.01,nm,[62],compilation-of-measurements,False,numeric,,,,,False,magic
+table-07:row06:frequency,7,23,23,171,1S0-3P1 F=3/2 m=+/-1/2,,,,row06:frequency,615.868(13),615.868,0.013,THz,[62],compilation-of-measurements,False,numeric,,,,,False,magic
+table-07:row06:alpha_1S0,7,23,23,171,1S0-3P1 F=3/2 m=+/-1/2,,,,row06:alpha_1S0,370,370,,a.u.,[62],semi-empirical-model,False,numeric,,,,,False,magic
+table-07:row07:polarization_angle,7,23,23,171,1S0-3P1 F=3/2 m=+/-1/2,,,,row07:polarization_angle,?,,,deg,[169],measurement-conditions,False,not-reported,,,"Operational magic wavelength; angle unretrieved, sensitive to residual broadband laser content per source p16.",,False,magic
+table-07:row07:wavelength_vac,7,23,23,171,1S0-3P1 F=3/2 m=+/-1/2,,,,row07:wavelength_vac,1036.13(1),1036.13,0.01,nm,[169],compilation-of-measurements,False,numeric,,,"Operational magic wavelength; angle unretrieved, sensitive to residual broadband laser content per source p16.",,False,magic
+table-07:row07:frequency,7,23,23,171,1S0-3P1 F=3/2 m=+/-1/2,,,,row07:frequency,289.3387(28),289.3387,0.0028,THz,[169],compilation-of-measurements,False,numeric,,,"Operational magic wavelength; angle unretrieved, sensitive to residual broadband laser content per source p16.",,False,magic
+table-07:row07:alpha_1S0,7,23,23,171,1S0-3P1 F=3/2 m=+/-1/2,,,,row07:alpha_1S0,162,162,,a.u.,[169],semi-empirical-model,False,numeric,,,"Operational magic wavelength; angle unretrieved, sensitive to residual broadband laser content per source p16.",,False,magic
+table-07:row08:polarization_angle,7,23,23,171,1S0-3P1 F=3/2 m=+3/2,,,,row08:polarization_angle,90,90,,deg,[206],measurement-conditions,False,numeric,,,,,False,magic
+table-07:row08:wavelength_vac,7,23,23,171,1S0-3P1 F=3/2 m=+3/2,,,,row08:wavelength_vac,~483,483,,nm,[206],compilation-of-measurements,True,numeric,,,,,False,magic
+table-07:row08:frequency,7,23,23,171,1S0-3P1 F=3/2 m=+3/2,,,,row08:frequency,~621,621,,THz,[206],compilation-of-measurements,True,numeric,,,,,False,magic
+table-07:row08:alpha_1S0,7,23,23,171,1S0-3P1 F=3/2 m=+3/2,,,,row08:alpha_1S0,~359,359,,a.u.,[206],semi-empirical-model,True,numeric,,,,,False,magic
+table-07:row09:polarization_angle,7,23,23,171,1S0-3P1 F=3/2 m=+3/2,,,,row09:polarization_angle,90,90,,deg,[208],measurement-conditions,False,numeric,,,,,False,magic
+table-07:row09:wavelength_vac,7,23,23,171,1S0-3P1 F=3/2 m=+3/2,,,,row09:wavelength_vac,~783.8,783.8,,nm,[208],compilation-of-measurements,True,numeric,,,,,False,magic
+table-07:row09:frequency,7,23,23,171,1S0-3P1 F=3/2 m=+3/2,,,,row09:frequency,~382.5,382.5,,THz,[208],compilation-of-measurements,True,numeric,,,,,False,magic
+table-07:row09:alpha_1S0,7,23,23,171,1S0-3P1 F=3/2 m=+3/2,,,,row09:alpha_1S0,~184,184,,a.u.,[208],semi-empirical-model,True,numeric,,,,,False,magic
+table-07:row10:polarization_angle,7,23,23,174,1S0-3P1 F=3/2 m=+3/2,,,,row10:polarization_angle,0,0,,deg,[209],measurement-conditions,False,numeric,,,,,True,magic
+table-07:row10:wavelength_vac,7,23,23,174,1S0-3P1 F=3/2 m=+3/2,,,,row10:wavelength_vac,1036.12(3),1036.12,0.03,nm,[209],compilation-of-measurements,False,numeric,,,,,True,magic
+table-07:row10:frequency,7,23,23,174,1S0-3P1 F=3/2 m=+3/2,,,,row10:frequency,289.341(8),289.341,0.008,THz,[209],compilation-of-measurements,False,numeric,,,,,True,magic
+table-07:row10:alpha_1S0,7,23,23,174,1S0-3P1 F=3/2 m=+3/2,,,,row10:alpha_1S0,162,162,,a.u.,[209],semi-empirical-model,False,numeric,,,,,True,magic
+table-07:row11:polarization_angle,7,23,23,174,1S0-3P1 F=3/2 m=+3/2,,,,row11:polarization_angle,90,90,,deg,[209],measurement-conditions,False,numeric,,,,,True,magic
+table-07:row11:wavelength_vac,7,23,23,174,1S0-3P1 F=3/2 m=+3/2,,,,row11:wavelength_vac,1035.83(3),1035.83,0.03,nm,[209],compilation-of-measurements,False,numeric,,,,,True,magic
+table-07:row11:frequency,7,23,23,174,1S0-3P1 F=3/2 m=+3/2,,,,row11:frequency,289.422(8),289.422,0.008,THz,[209],compilation-of-measurements,False,numeric,,,,,True,magic
+table-07:row11:alpha_1S0,7,23,23,174,1S0-3P1 F=3/2 m=+3/2,,,,row11:alpha_1S0,162,162,,a.u.,[209],semi-empirical-model,False,numeric,,,,,True,magic
+table-07:row12:polarization_angle,7,23,23,174,1S0,,,,row12:polarization_angle,any-angle,,,deg,[156],measurement-conditions,False,categorical,,,,,True,tune-out
+table-07:row12:wavelength_vac,7,23,23,174,1S0,,,,row12:wavelength_vac,553.2936(5),553.2936,0.0005,nm,[156],compilation-of-measurements,False,numeric,,,,,True,tune-out
+table-07:row12:frequency,7,23,23,174,1S0,,,,row12:frequency,541.8325(5),541.8325,0.0005,THz,[156],compilation-of-measurements,False,numeric,,,,,True,tune-out
+table-07:row12:alpha_1S0,7,23,23,174,1S0,,,,row12:alpha_1S0,0,0,,a.u.,[156],semi-empirical-model,False,numeric,,,,,True,tune-out
+table-07:row13:polarization_angle,7,23,23,174,3P0,,,,row13:polarization_angle,any-angle,,,deg,[162],measurement-conditions,False,categorical,,,,,True,tune-out
+table-07:row13:wavelength_vac,7,23,23,174,3P0,,,,row13:wavelength_vac,576.613(10),576.613,0.010,nm,[162],compilation-of-measurements,False,numeric,,,,,True,tune-out
+table-07:row13:frequency,7,23,23,174,3P0,,,,row13:frequency,519.920(9),519.920,0.009,THz,[162],compilation-of-measurements,False,numeric,,,,,True,tune-out
+table-07:row13:alpha_1S0,7,23,23,174,3P0,,,,row13:alpha_1S0,277,277,,a.u.,[162],semi-empirical-model,False,numeric,,,,,True,tune-out

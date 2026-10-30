@@ -1,0 +1,1310 @@
+{
+  "1": {
+    "referenceNumber": 1,
+    "pdfPhysicalPage": 33,
+    "raw": "[1] D. A. Steck, Sodium D Line Data, Available online at http://steck.us/alkalidata (2024), revision 2.3.3, original\n      revision posted 27 May 2000.",
+    "text": "[1] D. A. Steck, Sodium D Line Data, Available online at http://steck.us/alkalidata (2024), revision 2.3.3, original revision posted 27 May 2000."
+  },
+  "2": {
+    "referenceNumber": 2,
+    "pdfPhysicalPage": 33,
+    "raw": "[2] D. A. Steck, Rubidium 85 D Line Data, Available online at http://steck.us/alkalidata (2024), revision 2.3.3, original\n      revision posted 30 April 2008.",
+    "text": "[2] D. A. Steck, Rubidium 85 D Line Data, Available online at http://steck.us/alkalidata (2024), revision 2.3.3, original revision posted 30 April 2008."
+  },
+  "3": {
+    "referenceNumber": 3,
+    "pdfPhysicalPage": 33,
+    "raw": "[3] D. A. Steck, Rubidium 87 D Line Data, Available online at http://steck.us/alkalidata (2024), revision 2.3.3, original\n      revision posted 25 September 2001.",
+    "text": "[3] D. A. Steck, Rubidium 87 D Line Data, Available online at http://steck.us/alkalidata (2024), revision 2.3.3, original revision posted 25 September 2001."
+  },
+  "4": {
+    "referenceNumber": 4,
+    "pdfPhysicalPage": 33,
+    "raw": "[4] D. A. Steck, Cesium D Line Data, Available online at http://steck.us/alkalidata (2024), revision 2.3.3, original\n      revision posted 23 January 1998.",
+    "text": "[4] D. A. Steck, Cesium D Line Data, Available online at http://steck.us/alkalidata (2024), revision 2.3.3, original revision posted 23 January 1998."
+  },
+  "5": {
+    "referenceNumber": 5,
+    "pdfPhysicalPage": 33,
+    "raw": "[5] S. Pucher, S. L. Kristensen, and R. M. Kroeze, 88 Sr Reference Data (2025), arXiv:2507.10487.",
+    "text": "[5] S. Pucher, S. L. Kristensen, and R. M. Kroeze, 88 Sr Reference Data (2025), arXiv:2507.10487."
+  },
+  "6": {
+    "referenceNumber": 6,
+    "pdfPhysicalPage": 33,
+    "raw": "[6] S. J. Masson, J. P. Covey, S. Will, and A. Asenjo-Garcia, Dicke Superradiance in Ordered Arrays of Multilevel Atoms,\n      PRX Quantum 5, 010344 (2024).",
+    "text": "[6] S. J. Masson, J. P. Covey, S. Will, and A. Asenjo-Garcia, Dicke Superradiance in Ordered Arrays of Multilevel Atoms, PRX Quantum 5, 010344 (2024)."
+  },
+  "7": {
+    "referenceNumber": 7,
+    "pdfPhysicalPage": 33,
+    "raw": "[7] M. S. Safronova, S. G. Porsev, C. Sanner, and J. Ye, Two Clock Transitions in Neutral Yb for the Highest Sensitivity\n      to Variations of the Fine-Structure Constant, Phys. Rev. Lett. 120, 173001 (2018).",
+    "text": "[7] M. S. Safronova, S. G. Porsev, C. Sanner, and J. Ye, Two Clock Transitions in Neutral Yb for the Highest Sensitivity to Variations of the Fine-Structure Constant, Phys. Rev. Lett. 120, 173001 (2018)."
+  },
+  "8": {
+    "referenceNumber": 8,
+    "pdfPhysicalPage": 33,
+    "raw": "[8] V. A. Dzuba, V. V. Flambaum, and S. Schiller, Testing physics beyond the standard model through additional clock\n      transitions in neutral ytterbium, Phys. Rev. A 98, 022501 (2018).",
+    "text": "[8] V. A. Dzuba, V. V. Flambaum, and S. Schiller, Testing physics beyond the standard model through additional clock transitions in neutral ytterbium, Phys. Rev. A 98, 022501 (2018)."
+  },
+  "9": {
+    "referenceNumber": 9,
+    "pdfPhysicalPage": 33,
+    "raw": "[9] T. Ishiyama, K. Ono, T. Takano, A. Sunaga, and Y. Takahashi, Observation of an Inner-Shell Orbital Clock Transition\n      in Neutral Ytterbium Atoms, Phys. Rev. Lett. 130, 153402 (2023).",
+    "text": "[9] T. Ishiyama, K. Ono, T. Takano, A. Sunaga, and Y. Takahashi, Observation of an Inner-Shell Orbital Clock Transition in Neutral Ytterbium Atoms, Phys. Rev. Lett. 130, 153402 (2023)."
+  },
+  "10": {
+    "referenceNumber": 10,
+    "pdfPhysicalPage": 33,
+    "raw": "[10] R. T. Birge, The Calculation of Errors by the Method of Least Squares, Phys. Rev. 40, 207 (1932).",
+    "text": "[10] R. T. Birge, The Calculation of Errors by the Method of Least Squares, Phys. Rev. 40, 207 (1932)."
+  },
+  "11": {
+    "referenceNumber": 11,
+    "pdfPhysicalPage": 33,
+    "raw": "[11] M. Trassinelli and M. Maxton, A minimalistic and general weighted averaging method for inconsistent data (2024),\n      arXiv:2406.08293.",
+    "text": "[11] M. Trassinelli and M. Maxton, A minimalistic and general weighted averaging method for inconsistent data (2024), arXiv:2406.08293."
+  },
+  "12": {
+    "referenceNumber": 12,
+    "pdfPhysicalPage": 33,
+    "raw": "[12] W. M. Haynes, CRC Handbook of Chemistry and Physics (CRC Press, Boca Raton, Florida, 2016).",
+    "text": "[12] W. M. Haynes, CRC Handbook of Chemistry and Physics (CRC Press, Boca Raton, Florida, 2016)."
+  },
+  "13": {
+    "referenceNumber": 13,
+    "pdfPhysicalPage": 33,
+    "raw": "[13] C. Fry and M. Thoennessen, Discovery of dysprosium, holmium, erbium, thulium, and ytterbium isotopes, Data Nucl.\n      Data Tables 99, 520 (2013).",
+    "text": "[13] C. Fry and M. Thoennessen, Discovery of dysprosium, holmium, erbium, thulium, and ytterbium isotopes, Data Nucl. Data Tables 99, 520 (2013)."
+  },
+  "14": {
+    "referenceNumber": 14,
+    "pdfPhysicalPage": 33,
+    "raw": "[14] F. Kondev, M. Wang, W. Huang, S. Naimi, and G. Audi, The NUBASE2020 evaluation of nuclear physics properties,\n      Chin. Phys. C 45, 030001 (2021).",
+    "text": "[14] F. Kondev, M. Wang, W. Huang, S. Naimi, and G. Audi, The NUBASE2020 evaluation of nuclear physics properties, Chin. Phys. C 45, 030001 (2021)."
+  },
+  "15": {
+    "referenceNumber": 15,
+    "pdfPhysicalPage": 33,
+    "raw": "[15] P. J. Mohr, D. B. Newell, B. N. Taylor, and E. Tiesinga, CODATA recommended values of the fundamental physical\n      constants: 2022, Rev. Mod. Phys. 97, 025002 (2025).",
+    "text": "[15] P. J. Mohr, D. B. Newell, B. N. Taylor, and E. Tiesinga, CODATA recommended values of the fundamental physical constants: 2022, Rev. Mod. Phys. 97, 025002 (2025)."
+  },
+  "16": {
+    "referenceNumber": 16,
+    "pdfPhysicalPage": 33,
+    "raw": "[16] M. Wang, W. Huang, F. Kondev, G. Audi, and S. Naimi, The AME 2020 atomic mass evaluation (II). Tables, graphs\n      and references, Chin. Phys. C 45, 030003 (2021).",
+    "text": "[16] M. Wang, W. Huang, F. Kondev, G. Audi, and S. Naimi, The AME 2020 atomic mass evaluation (II). Tables, graphs and references, Chin. Phys. C 45, 030003 (2021)."
+  },
+  "17": {
+    "referenceNumber": 17,
+    "pdfPhysicalPage": 33,
+    "raw": "[17] J. Wang, T. Ren, H. Lu, T. Zhou, and Y. Zhou, The absolute isotopic composition and atomic weight of ytterbium using\n      multi-collector inductively coupled plasma mass spectrometry and development of an SI-traceable ytterbium isotopic\n      certified reference material, J. Anal. Spectrom. 30, 1377 (2015).\n\f34                                     R. M. Kroeze, S. L. Kristensen, S. Pucher                           REFERENCES",
+    "text": "[17] J. Wang, T. Ren, H. Lu, T. Zhou, and Y. Zhou, The absolute isotopic composition and atomic weight of ytterbium using multi-collector inductively coupled plasma mass spectrometry and development of an SI-traceable ytterbium isotopic certified reference material, J. Anal. Spectrom. 30, 1377 (2015). 34 R. M. Kroeze, S. L. Kristensen, S. Pucher REFERENCES"
+  },
+  "18": {
+    "referenceNumber": 18,
+    "pdfPhysicalPage": 34,
+    "raw": "[18] T. Prohaska, J. Irrgeher, J. Benefield, J. K. Böhlke, L. A. Chesson, T. B. Coplen, T. Ding, P. J. H. Dunn, M. Gröning,\n     N. E. Holden, H. A. J. Meijer, H. Moossen, A. Possolo, Y. Takahashi, J. Vogl, T. Walczyk, J. Wang, M. E. Wieser,\n     S. Yoneda, X.-K. Zhu, and J. Meija, Standard atomic weights of the elements 2021 (IUPAC Technical Report), Pure\n     Appl. Chem. 94, 573 (2022).",
+    "text": "[18] T. Prohaska, J. Irrgeher, J. Benefield, J. K. Böhlke, L. A. Chesson, T. B. Coplen, T. Ding, P. J. H. Dunn, M. Gröning, N. E. Holden, H. A. J. Meijer, H. Moossen, A. Possolo, Y. Takahashi, J. Vogl, T. Walczyk, J. Wang, M. E. Wieser, S. Yoneda, X.-K. Zhu, and J. Meija, Standard atomic weights of the elements 2021 (IUPAC Technical Report), Pure Appl. Chem. 94, 573 (2022)."
+  },
+  "19": {
+    "referenceNumber": 19,
+    "pdfPhysicalPage": 34,
+    "raw": "[19] J. W. Arblaster, Selected Values of the Crystallographic Properties of the Elements (ASM International, Materials Park,\n     Ohio, 2018).",
+    "text": "[19] J. W. Arblaster, Selected Values of the Crystallographic Properties of the Elements (ASM International, Materials Park, Ohio, 2018)."
+  },
+  "20": {
+    "referenceNumber": 20,
+    "pdfPhysicalPage": 34,
+    "raw": "[20] C. B. Alcock, V. P. Itkin, and M. K. Horrigan, Vapour Pressure Equations for the Metallic Elements: 298-2500 K,\n     Can. Met. Q. 23, 309 (1984).",
+    "text": "[20] C. B. Alcock, V. P. Itkin, and M. K. Horrigan, Vapour Pressure Equations for the Metallic Elements: 298-2500 K, Can. Met. Q. 23, 309 (1984)."
+  },
+  "21": {
+    "referenceNumber": 21,
+    "pdfPhysicalPage": 34,
+    "raw": "[21] M. Kaja, D. Studer, R. Heinke, T. Kieck, and K. Wendt, Characterization of the field ionization extension for the laser\n     ion source and trap: Measurement of the ionization potential of ytterbium, Nucl. Instruments Methods Phys. Res. Sect.\n     B Beam Interact. with Mater. Atoms 547, 165213 (2024).",
+    "text": "[21] M. Kaja, D. Studer, R. Heinke, T. Kieck, and K. Wendt, Characterization of the field ionization extension for the laser ion source and trap: Measurement of the ionization potential of ytterbium, Nucl. Instruments Methods Phys. Res. Sect. B Beam Interact. with Mater. Atoms 547, 165213 (2024)."
+  },
+  "22": {
+    "referenceNumber": 22,
+    "pdfPhysicalPage": 34,
+    "raw": "[22] H. Lehec, A. Zuliani, W. Maineult, E. Luc-Koenig, P. Pillet, P. Cheinet, F. Niyaz, and T. F. Gallagher, Laser and\n     microwave spectroscopy of even-parity Rydberg states of neutral ytterbium and multichannel-quantum-defect-theory\n     analysis, Phys. Rev. A 98, 062506 (2018).",
+    "text": "[22] H. Lehec, A. Zuliani, W. Maineult, E. Luc-Koenig, P. Pillet, P. Cheinet, F. Niyaz, and T. F. Gallagher, Laser and microwave spectroscopy of even-parity Rydberg states of neutral ytterbium and multichannel-quantum-defect-theory analysis, Phys. Rev. A 98, 062506 (2018)."
+  },
+  "23": {
+    "referenceNumber": 23,
+    "pdfPhysicalPage": 34,
+    "raw": "[23] P. Chhetri, C. Moodley, S. Raeder, M. Block, F. Giacoppo, S. Götz, F. Heßberger, M. Eibach, O. Kaleja, M. Laatiaoui,\n     A. Mistry, T. Murböck, and T. Walther, Investigation of the First Ionization Potential of Ytterbium in Argon Buffer\n     Gas, Acta Phys. Pol. B 49, 599 (2018).",
+    "text": "[23] P. Chhetri, C. Moodley, S. Raeder, M. Block, F. Giacoppo, S. Götz, F. Heßberger, M. Eibach, O. Kaleja, M. Laatiaoui, A. Mistry, T. Murböck, and T. Walther, Investigation of the First Ionization Potential of Ytterbium in Argon Buffer Gas, Acta Phys. Pol. B 49, 599 (2018)."
+  },
+  "24": {
+    "referenceNumber": 24,
+    "pdfPhysicalPage": 34,
+    "raw": "[24] M. Aymar, R. J. Champeau, C. Delsart, and O. Robaux, Three-step laser spectroscopy and multichannel quantum\n     defect analysis of odd-parity Rydberg states of neutral ytterbium, J. Phys. B Mol. Phys. 17, 3645 (1984).",
+    "text": "[24] M. Aymar, R. J. Champeau, C. Delsart, and O. Robaux, Three-step laser spectroscopy and multichannel quantum defect analysis of odd-parity Rydberg states of neutral ytterbium, J. Phys. B Mol. Phys. 17, 3645 (1984)."
+  },
+  "25": {
+    "referenceNumber": 25,
+    "pdfPhysicalPage": 34,
+    "raw": "[25] P. Camus, A. Debarre, and C. Morillon, Highly excited levels of neutral ytterbium. I. Two-photon and two-step\n     spectroscopy of even spectra, J. Phys. B Mol. Phys. 13, 1073 (1980).",
+    "text": "[25] P. Camus, A. Debarre, and C. Morillon, Highly excited levels of neutral ytterbium. I. Two-photon and two-step spectroscopy of even spectra, J. Phys. B Mol. Phys. 13, 1073 (1980)."
+  },
+  "26": {
+    "referenceNumber": 26,
+    "pdfPhysicalPage": 34,
+    "raw": "[26] P. Camus and F. S. Tomkins, Spectre d’absorption de Yb I, J. Phys. 30, 545 (1969).",
+    "text": "[26] P. Camus and F. S. Tomkins, Spectre d’absorption de Yb I, J. Phys. 30, 545 (1969)."
+  },
+  "27": {
+    "referenceNumber": 27,
+    "pdfPhysicalPage": 34,
+    "raw": "[27] G. R. Hertel, Surface Ionization. III. The First Ionization Potentials of the Lanthanides, J. Chem. Phys. 48, 2053\n     (1968).",
+    "text": "[27] G. R. Hertel, Surface Ionization. III. The First Ionization Potentials of the Lanthanides, J. Chem. Phys. 48, 2053 (1968)."
+  },
+  "28": {
+    "referenceNumber": 28,
+    "pdfPhysicalPage": 34,
+    "raw": "[28] K. F. Zmbov and J. L. Margrave, The First Ionization Potentials of Samarium, Europium, Gadolinium, Dysprosium,\n     Holmium, Erbium, Thulium, and Ytterbium by the Electron-Impact Method, J. Phys. Chem. 70, 3014 (1966).",
+    "text": "[28] K. F. Zmbov and J. L. Margrave, The First Ionization Potentials of Samarium, Europium, Gadolinium, Dysprosium, Holmium, Erbium, Thulium, and Ytterbium by the Electron-Impact Method, J. Phys. Chem. 70, 3014 (1966)."
+  },
+  "29": {
+    "referenceNumber": 29,
+    "pdfPhysicalPage": 34,
+    "raw": "[29] M. J. Dresser and D. E. Hudson, Surface Ionization of Some Rare Earths on Tungsten, Phys. Rev. 137, A673 (1965).",
+    "text": "[29] M. J. Dresser and D. E. Hudson, Surface Ionization of Some Rare Earths on Tungsten, Phys. Rev. 137, A673 (1965)."
+  },
+  "30": {
+    "referenceNumber": 30,
+    "pdfPhysicalPage": 34,
+    "raw": "[30] N. Ueda, Ionization Energy Difference between Isotopes and its Effect on Isotope Abundance Measurement by Surface\n     Ionization Method, J. Mass Spectrom. Soc. Jpn. 17, 643 (1969).",
+    "text": "[30] N. Ueda, Ionization Energy Difference between Isotopes and its Effect on Isotope Abundance Measurement by Surface Ionization Method, J. Mass Spectrom. Soc. Jpn. 17, 643 (1969)."
+  },
+  "31": {
+    "referenceNumber": 31,
+    "pdfPhysicalPage": 34,
+    "raw": "[31] E. Braaten and H. W. Hammer, Universality in few-body systems with large scattering length, Phys. Rep. 428, 259\n     (2006).",
+    "text": "[31] E. Braaten and H. W. Hammer, Universality in few-body systems with large scattering length, Phys. Rep. 428, 259 (2006)."
+  },
+  "32": {
+    "referenceNumber": 32,
+    "pdfPhysicalPage": 34,
+    "raw": "[32] C. Chin, R. Grimm, P. Julienne, and E. Tiesinga, Feshbach resonances in ultracold gases, Rev. Mod. Phys. 82, 1225\n     (2010).",
+    "text": "[32] C. Chin, R. Grimm, P. Julienne, and E. Tiesinga, Feshbach resonances in ultracold gases, Rev. Mod. Phys. 82, 1225 (2010)."
+  },
+  "33": {
+    "referenceNumber": 33,
+    "pdfPhysicalPage": 34,
+    "raw": "[33] G. F. Gribakin and V. V. Flambaum, Calculation of the scattering length in atomic collisions using the semiclassical\n     approximation, Phys. Rev. A 48, 546 (1993).",
+    "text": "[33] G. F. Gribakin and V. V. Flambaum, Calculation of the scattering length in atomic collisions using the semiclassical approximation, Phys. Rev. A 48, 546 (1993)."
+  },
+  "34": {
+    "referenceNumber": 34,
+    "pdfPhysicalPage": 34,
+    "raw": "[34] B. J. Verhaar, E. G. M. van Kempen, and S. J. J. M. F. Kokkelmans, Predicting scattering properties of ultracold\n     atoms: Adiabatic accumulated phase method and mass scaling, Phys. Rev. A 79, 032711 (2009).",
+    "text": "[34] B. J. Verhaar, E. G. M. van Kempen, and S. J. J. M. F. Kokkelmans, Predicting scattering properties of ultracold atoms: Adiabatic accumulated phase method and mass scaling, Phys. Rev. A 79, 032711 (2009)."
+  },
+  "35": {
+    "referenceNumber": 35,
+    "pdfPhysicalPage": 34,
+    "raw": "[35] M. Borkowski, A. A. Buchachenko, R. Ciurylo, P. S. Julienne, H. Yamada, Y. Kikuchi, K. Takahashi, Y. Takasu,\n     and Y. Takahashi, Beyond-Born-Oppenheimer effects in sub-kHz-precision photoassociation spectroscopy of ytterbium\n     atoms, Phys. Rev. A 96, 063405 (2017).",
+    "text": "[35] M. Borkowski, A. A. Buchachenko, R. Ciurylo, P. S. Julienne, H. Yamada, Y. Kikuchi, K. Takahashi, Y. Takasu, and Y. Takahashi, Beyond-Born-Oppenheimer effects in sub-kHz-precision photoassociation spectroscopy of ytterbium atoms, Phys. Rev. A 96, 063405 (2017)."
+  },
+  "36": {
+    "referenceNumber": 36,
+    "pdfPhysicalPage": 34,
+    "raw": "[36] M. Kitagawa, K. Enomoto, K. Kasa, Y. Takahashi, R. Ciurylo, P. Naidon, and P. S. Julienne, Two-color photoassoci-\n     ation spectroscopy of ytterbium atoms and the precise determinations of s-wave scattering lengths, Phys. Rev. A 77,\n     012719 (2008).",
+    "text": "[36] M. Kitagawa, K. Enomoto, K. Kasa, Y. Takahashi, R. Ciurylo, P. Naidon, and P. S. Julienne, Two-color photoassoci- ation spectroscopy of ytterbium atoms and the precise determinations of s-wave scattering lengths, Phys. Rev. A 77, 012719 (2008)."
+  },
+  "37": {
+    "referenceNumber": 37,
+    "pdfPhysicalPage": 34,
+    "raw": "[37] T. Fukuhara, S. Sugawa, and Y. Takahashi, Bose-Einstein condensation of an ytterbium isotope, Phys. Rev. A 76,\n     051604 (2007).",
+    "text": "[37] T. Fukuhara, S. Sugawa, and Y. Takahashi, Bose-Einstein condensation of an ytterbium isotope, Phys. Rev. A 76, 051604 (2007)."
+  },
+  "38": {
+    "referenceNumber": 38,
+    "pdfPhysicalPage": 34,
+    "raw": "[38] T. Fukuhara, Y. Takasu, M. Kumakura, and Y. Takahashi, Degenerate Fermi Gases of Ytterbium, Phys. Rev. Lett.\n     98, 030401 (2007).",
+    "text": "[38] T. Fukuhara, Y. Takasu, M. Kumakura, and Y. Takahashi, Degenerate Fermi Gases of Ytterbium, Phys. Rev. Lett. 98, 030401 (2007)."
+  },
+  "39": {
+    "referenceNumber": 39,
+    "pdfPhysicalPage": 34,
+    "raw": "[39] Y. Takasu, K. Maki, K. Komori, T. Takano, K. Honda, M. Kumakura, T. Yabuzaki, and Y. Takahashi, Spin-Singlet\n     Bose-Einstein Condensation of Two-Electron Atoms, Phys. Rev. Lett. 91, 040404 (2003).",
+    "text": "[39] Y. Takasu, K. Maki, K. Komori, T. Takano, K. Honda, M. Kumakura, T. Yabuzaki, and Y. Takahashi, Spin-Singlet Bose-Einstein Condensation of Two-Electron Atoms, Phys. Rev. Lett. 91, 040404 (2003)."
+  },
+  "40": {
+    "referenceNumber": 40,
+    "pdfPhysicalPage": 34,
+    "raw": "[40] K. Enomoto, M. Kitagawa, K. Kasa, S. Tojo, and Y. Takahashi, Determination of the s-Wave Scattering Length and\n     the C6 van der Waals Coefficient of 174 Yb via Photoassociation Spectroscopy, Phys. Rev. Lett. 98, 203201 (2007).",
+    "text": "[40] K. Enomoto, M. Kitagawa, K. Kasa, S. Tojo, and Y. Takahashi, Determination of the s-Wave Scattering Length and the C6 van der Waals Coefficient of 174 Yb via Photoassociation Spectroscopy, Phys. Rev. Lett. 98, 203201 (2007)."
+  },
+  "41": {
+    "referenceNumber": 41,
+    "pdfPhysicalPage": 34,
+    "raw": "[41] T. Fukuhara, Y. Takasu, S. Sugawa, and Y. Takahashi, Quantum Degenerate Fermi Gases of Ytterbium Atoms, J. Low\n     Temp. Phys. 148, 441 (2007).",
+    "text": "[41] T. Fukuhara, Y. Takasu, S. Sugawa, and Y. Takahashi, Quantum Degenerate Fermi Gases of Ytterbium Atoms, J. Low Temp. Phys. 148, 441 (2007)."
+  },
+  "42": {
+    "referenceNumber": 42,
+    "pdfPhysicalPage": 34,
+    "raw": "[42] T. Fukuhara, S. Sugawa, Y. Takasu, and Y. Takahashi, All-optical formation of quantum degenerate mixtures, Phys.\n     Rev. A 79, 021601 (2009).",
+    "text": "[42] T. Fukuhara, S. Sugawa, Y. Takasu, and Y. Takahashi, All-optical formation of quantum degenerate mixtures, Phys. Rev. A 79, 021601 (2009)."
+  },
+  "43": {
+    "referenceNumber": 43,
+    "pdfPhysicalPage": 34,
+    "raw": "[43] S. Taie, Y. Takasu, S. Sugawa, R. Yamazaki, T. Tsujimoto, R. Murakami, and Y. Takahashi, Realization of a SU(2) ×\n     SU(6) System of Fermions in a Cold Atomic Gas, Phys. Rev. Lett. 105, 190401 (2010).",
+    "text": "[43] S. Taie, Y. Takasu, S. Sugawa, R. Yamazaki, T. Tsujimoto, R. Murakami, and Y. Takahashi, Realization of a SU(2) × SU(6) System of Fermions in a Cold Atomic Gas, Phys. Rev. Lett. 105, 190401 (2010)."
+  },
+  "44": {
+    "referenceNumber": 44,
+    "pdfPhysicalPage": 34,
+    "raw": "[44] S. Sugawa, Y. Takasu, K. Enomoto, and Y. Takahashi, ULTRACOLD YTTERBIUM: GENERATION, MANY-BODY\n     PHYSICS, AND MOLECULES, in Annu. Rev. Cold Atoms Mol., Vol. 1, edited by K. W. Madison, Y. Wang, A. M.\n     Rey, and K. Bongs (WORLD SCIENTIFIC, 2013) pp. 3–51.",
+    "text": "[44] S. Sugawa, Y. Takasu, K. Enomoto, and Y. Takahashi, ULTRACOLD YTTERBIUM: GENERATION, MANY-BODY PHYSICS, AND MOLECULES, in Annu. Rev. Cold Atoms Mol., Vol. 1, edited by K. W. Madison, Y. Wang, A. M. Rey, and K. Bongs (WORLD SCIENTIFIC, 2013) pp. 3–51."
+  },
+  "45": {
+    "referenceNumber": 45,
+    "pdfPhysicalPage": 34,
+    "raw": "[45] T. Tomita, S. Nakajima, Y. Takasu, and Y. Takahashi, Dissipative Bose-Hubbard system with intrinsic two-body loss,\n     Phys. Rev. A 99, 031601 (2019).",
+    "text": "[45] T. Tomita, S. Nakajima, Y. Takasu, and Y. Takahashi, Dissipative Bose-Hubbard system with intrinsic two-body loss, Phys. Rev. A 99, 031601 (2019)."
+  },
+  "46": {
+    "referenceNumber": 46,
+    "pdfPhysicalPage": 34,
+    "raw": "[46] L. Franchi, L. F. Livi, G. Cappellini, G. Binella, M. Inguscio, J. Catani, and L. Fallani, State-dependent interactions\n     in ultracold 174 Yb probed by optical clock spectroscopy, New J. Phys. 19, 103037 (2017).\n\f35                                     R. M. Kroeze, S. L. Kristensen, S. Pucher                           REFERENCES",
+    "text": "[46] L. Franchi, L. F. Livi, G. Cappellini, G. Binella, M. Inguscio, J. Catani, and L. Fallani, State-dependent interactions in ultracold 174 Yb probed by optical clock spectroscopy, New J. Phys. 19, 103037 (2017). 35 R. M. Kroeze, S. L. Kristensen, S. Pucher REFERENCES"
+  },
+  "47": {
+    "referenceNumber": 47,
+    "pdfPhysicalPage": 35,
+    "raw": "[47] R. Bouganne, M. B. Aguilera, A. Dareau, E. Soave, J. Beugnon, and F. Gerbier, Clock spectroscopy of interacting\n     bosons in deep optical lattices, New J. Phys. 19, 113006 (2017).",
+    "text": "[47] R. Bouganne, M. B. Aguilera, A. Dareau, E. Soave, J. Beugnon, and F. Gerbier, Clock spectroscopy of interacting bosons in deep optical lattices, New J. Phys. 19, 113006 (2017)."
+  },
+  "48": {
+    "referenceNumber": 48,
+    "pdfPhysicalPage": 35,
+    "raw": "[48] R. Zhang, Y. Cheng, P. Zhang, and H. Zhai, Controlling the interaction of ultracold alkaline-earth atoms, Nat. Rev.\n     Phys. 2, 213 (2020).",
+    "text": "[48] R. Zhang, Y. Cheng, P. Zhang, and H. Zhai, Controlling the interaction of ultracold alkaline-earth atoms, Nat. Rev. Phys. 2, 213 (2020)."
+  },
+  "49": {
+    "referenceNumber": 49,
+    "pdfPhysicalPage": 35,
+    "raw": "[49] O. Bettermann, N. Darkwah Oppong, G. Pasqualetti, L. Riegger, I. Bloch, and S. Fölling, Clock-line photoassociation\n     of strongly bound dimers in a magic-wavelength lattice, Phys. Rev. A 108, L041302 (2023).",
+    "text": "[49] O. Bettermann, N. Darkwah Oppong, G. Pasqualetti, L. Riegger, I. Bloch, and S. Fölling, Clock-line photoassociation of strongly bound dimers in a magic-wavelength lattice, Phys. Rev. A 108, L041302 (2023)."
+  },
+  "50": {
+    "referenceNumber": 50,
+    "pdfPhysicalPage": 35,
+    "raw": "[50] K. Ono, J. Kobayashi, Y. Amano, K. Sato, and Y. Takahashi, Antiferromagnetic interorbital spin-exchange interaction\n     of 171 Yb, Phys. Rev. A 99, 032707 (2019).",
+    "text": "[50] K. Ono, J. Kobayashi, Y. Amano, K. Sato, and Y. Takahashi, Antiferromagnetic interorbital spin-exchange interaction of 171 Yb, Phys. Rev. A 99, 032707 (2019)."
+  },
+  "51": {
+    "referenceNumber": 51,
+    "pdfPhysicalPage": 35,
+    "raw": "[51] Y. Takasu, Y. Fukushima, Y. Nakamura, and Y. Takahashi, Magnetoassociation of a Feshbach molecule and spin-orbit\n     interaction between the ground and electronically excited states, Phys. Rev. A 96, 023602 (2017).",
+    "text": "[51] Y. Takasu, Y. Fukushima, Y. Nakamura, and Y. Takahashi, Magnetoassociation of a Feshbach molecule and spin-orbit interaction between the ground and electronically excited states, Phys. Rev. A 96, 023602 (2017)."
+  },
+  "52": {
+    "referenceNumber": 52,
+    "pdfPhysicalPage": 35,
+    "raw": "[52] F. Scazza, C. Hofrichter, M. Höfer, P. C. De Groot, I. Bloch, and S. Fölling, Observation of two-orbital spin-exchange\n     interactions with ultracold SU(N)-symmetric fermions, Nat. Phys. 10, 779 (2014).",
+    "text": "[52] F. Scazza, C. Hofrichter, M. Höfer, P. C. De Groot, I. Bloch, and S. Fölling, Observation of two-orbital spin-exchange interactions with ultracold SU(N)-symmetric fermions, Nat. Phys. 10, 779 (2014)."
+  },
+  "53": {
+    "referenceNumber": 53,
+    "pdfPhysicalPage": 35,
+    "raw": "[53] S. Kato, S. Sugawa, K. Shibata, R. Yamamoto, and Y. Takahashi, Control of Resonant Interaction between Electronic\n     Ground and Excited States, Phys. Rev. Lett. 110, 173201 (2013).",
+    "text": "[53] S. Kato, S. Sugawa, K. Shibata, R. Yamamoto, and Y. Takahashi, Control of Resonant Interaction between Electronic Ground and Excited States, Phys. Rev. Lett. 110, 173201 (2013)."
+  },
+  "54": {
+    "referenceNumber": 54,
+    "pdfPhysicalPage": 35,
+    "raw": "[54] A. Yamaguchi, S. Uetake, S. Kato, H. Ito, and Y. Takahashi, High-resolution laser spectroscopy of a Bose-Einstein\n     condensate using the ultranarrow magnetic quadrupole transition, New J. Phys. 12, 103001 (2010).",
+    "text": "[54] A. Yamaguchi, S. Uetake, S. Kato, H. Ito, and Y. Takahashi, High-resolution laser spectroscopy of a Bose-Einstein condensate using the ultranarrow magnetic quadrupole transition, New J. Phys. 12, 103001 (2010)."
+  },
+  "55": {
+    "referenceNumber": 55,
+    "pdfPhysicalPage": 35,
+    "raw": "[55] A. Khramov, A. Hansen, W. Dowd, R. J. Roy, C. Makrides, A. Petrov, S. Kotochigova, and S. Gupta, Ultracold\n     Heteronuclear Mixture of Ground and Excited State Atoms, Phys. Rev. Lett. 112, 033201 (2014).",
+    "text": "[55] A. Khramov, A. Hansen, W. Dowd, R. J. Roy, C. Makrides, A. Petrov, S. Kotochigova, and S. Gupta, Ultracold Heteronuclear Mixture of Ground and Excited State Atoms, Phys. Rev. Lett. 112, 033201 (2014)."
+  },
+  "56": {
+    "referenceNumber": 56,
+    "pdfPhysicalPage": 35,
+    "raw": "[56] S. Uetake, R. Murakami, J. M. Doyle, and Y. Takahashi, Spin-dependent collision of ultracold metastable atoms, Phys.\n     Rev. A 86, 032712 (2012).",
+    "text": "[56] S. Uetake, R. Murakami, J. M. Doyle, and Y. Takahashi, Spin-dependent collision of ultracold metastable atoms, Phys. Rev. A 86, 032712 (2012)."
+  },
+  "57": {
+    "referenceNumber": 57,
+    "pdfPhysicalPage": 35,
+    "raw": "[57] A. D. Ludlow, N. D. Lemke, J. A. Sherman, C. W. Oates, G. Quéméner, J. von Stecher, and A. M. Rey, Cold-collision-\n     shift cancellation and inelastic scattering in a Yb optical lattice clock, Phys. Rev. A 84, 052724 (2011).",
+    "text": "[57] A. D. Ludlow, N. D. Lemke, J. A. Sherman, C. W. Oates, G. Quéméner, J. von Stecher, and A. M. Rey, Cold-collision- shift cancellation and inelastic scattering in a Yb optical lattice clock, Phys. Rev. A 84, 052724 (2011)."
+  },
+  "58": {
+    "referenceNumber": 58,
+    "pdfPhysicalPage": 35,
+    "raw": "[58] A. Yamaguchi, S. Uetake, D. Hashimoto, J. M. Doyle, and Y. Takahashi, Inelastic Collisions in Optically Trapped\n     Ultracold Metastable Ytterbium, Phys. Rev. Lett. 101, 233002 (2008).",
+    "text": "[58] A. Yamaguchi, S. Uetake, D. Hashimoto, J. M. Doyle, and Y. Takahashi, Inelastic Collisions in Optically Trapped Ultracold Metastable Ytterbium, Phys. Rev. Lett. 101, 233002 (2008)."
+  },
+  "59": {
+    "referenceNumber": 59,
+    "pdfPhysicalPage": 35,
+    "raw": "[59] H. N. Russell and F. A. Saunders, New Regularities in the Spectra of the Alkaline Earths, Astrophys. J. 61, 38 (1925).",
+    "text": "[59] H. N. Russell and F. A. Saunders, New Regularities in the Spectra of the Alkaline Earths, Astrophys. J. 61, 38 (1925)."
+  },
+  "60": {
+    "referenceNumber": 60,
+    "pdfPhysicalPage": 35,
+    "raw": "[60] A. Kramida, Yu. Ralchenko, J. Reader, and and NIST ASD Team, NIST Atomic Spectra Database (ver. 5.12), [On-\n     line]. Available: https://physics.nist.gov/asd [2025, August 19]. National Institute of Standards and Technology,\n     Gaithersburg, MD. (2024).",
+    "text": "[60] A. Kramida, Yu. Ralchenko, J. Reader, and and NIST ASD Team, NIST Atomic Spectra Database (ver. 5.12), [On- line]. Available: https://physics.nist.gov/asd [2025, August 19]. National Institute of Standards and Technology, Gaithersburg, MD. (2024)."
+  },
+  "61": {
+    "referenceNumber": 61,
+    "pdfPhysicalPage": 35,
+    "raw": "[61] A. Jenkins, J. W. Lis, A. Senoo, W. F. McGrew, and A. M. Kaufman, Ytterbium Nuclear-Spin Qubits in an Optical\n     Tweezer Array, Phys. Rev. X 12, 21027 (2022).",
+    "text": "[61] A. Jenkins, J. W. Lis, A. Senoo, W. F. McGrew, and A. M. Kaufman, Ytterbium Nuclear-Spin Qubits in an Optical Tweezer Array, Phys. Rev. X 12, 21027 (2022)."
+  },
+  "62": {
+    "referenceNumber": 62,
+    "pdfPhysicalPage": 35,
+    "raw": "[62] S. Ma, A. P. Burgers, G. Liu, J. Wilson, B. Zhang, and J. D. Thompson, Universal Gate Operations on Nuclear Spin\n     Qubits in an Optical Tweezer Array of 171 Yb Atoms, Phys. Rev. X 12, 021028 (2022).",
+    "text": "[62] S. Ma, A. P. Burgers, G. Liu, J. Wilson, B. Zhang, and J. D. Thompson, Universal Gate Operations on Nuclear Spin Qubits in an Optical Tweezer Array of 171 Yb Atoms, Phys. Rev. X 12, 021028 (2022)."
+  },
+  "63": {
+    "referenceNumber": 63,
+    "pdfPhysicalPage": 35,
+    "raw": "[63] M. Peper, Y. Li, D. Y. Knapp, M. Bileska, S. Ma, G. Liu, P. Peng, B. Zhang, S. P. Horvath, A. P. Burgers, and J. D.\n     Thompson, Spectroscopy and Modeling of 171 Yb Rydberg States for High-Fidelity Two-Qubit Gates, Phys. Rev. X 15,\n     011009 (2025).",
+    "text": "[63] M. Peper, Y. Li, D. Y. Knapp, M. Bileska, S. Ma, G. Liu, P. Peng, B. Zhang, S. P. Horvath, A. P. Burgers, and J. D. Thompson, Spectroscopy and Modeling of 171 Yb Rydberg States for High-Fidelity Two-Qubit Gates, Phys. Rev. X 15, 011009 (2025)."
+  },
+  "64": {
+    "referenceNumber": 64,
+    "pdfPhysicalPage": 35,
+    "raw": "[64] C. J. Foot, Atomic Physics (Oxford University Press, Oxford, United Kingdom, 2004).",
+    "text": "[64] C. J. Foot, Atomic Physics (Oxford University Press, Oxford, United Kingdom, 2004)."
+  },
+  "65": {
+    "referenceNumber": 65,
+    "pdfPhysicalPage": 35,
+    "raw": "[65] D. Das, S. Barthwal, A. Banerjee, and V. Natarajan, Absolute frequency measurements in Yb with 0.08 ppb uncertainty:\n     Isotope shifts and hyperfine structure in the 399-nm 1 S0 →1 P1 line, Phys. Rev. A 72, 032506 (2005).",
+    "text": "[65] D. Das, S. Barthwal, A. Banerjee, and V. Natarajan, Absolute frequency measurements in Yb with 0.08 ppb uncertainty: Isotope shifts and hyperfine structure in the 399-nm 1 S0 →1 P1 line, Phys. Rev. A 72, 032506 (2005)."
+  },
+  "66": {
+    "referenceNumber": 66,
+    "pdfPhysicalPage": 35,
+    "raw": "[66] M. Kleinert, M. E. Gold Dahl, and S. Bergeson, Measurement of the Yb I 1 S0 -1 P1 transition frequency at 399 nm using\n     an optical frequency comb, Phys. Rev. A 94, 052511 (2016).",
+    "text": "[66] M. Kleinert, M. E. Gold Dahl, and S. Bergeson, Measurement of the Yb I 1 S0 -1 P1 transition frequency at 399 nm using an optical frequency comb, Phys. Rev. A 94, 052511 (2016)."
+  },
+  "67": {
+    "referenceNumber": 67,
+    "pdfPhysicalPage": 35,
+    "raw": "[67] Y. Chaiko, Isotope shifts of resonance lines in the spectrum of ytterbium, Opt. Spectrosc. 20, 424 (1966).",
+    "text": "[67] Y. Chaiko, Isotope shifts of resonance lines in the spectrum of ytterbium, Opt. Spectrosc. 20, 424 (1966)."
+  },
+  "68": {
+    "referenceNumber": 68,
+    "pdfPhysicalPage": 35,
+    "raw": "[68] O. Töpper, G. H. Guthöhrlein, and P. Hillerman, unpublished.",
+    "text": "[68] O. Töpper, G. H. Guthöhrlein, and P. Hillerman, unpublished."
+  },
+  "69": {
+    "referenceNumber": 69,
+    "pdfPhysicalPage": 35,
+    "raw": "[69] C. J. Bowers, D. Budker, S. J. Freedman, G. Gwinner, J. E. Stalnaker, and D. DeMille, Experimental investigation of\n     the 6s2 1 S0 →5d6s 3 D1,2 forbidden transitions in atomic ytterbium, Phys. Rev. A 59, 3513 (1999).",
+    "text": "[69] C. J. Bowers, D. Budker, S. J. Freedman, G. Gwinner, J. E. Stalnaker, and D. DeMille, Experimental investigation of the 6s2 1 S0 →5d6s 3 D1,2 forbidden transitions in atomic ytterbium, Phys. Rev. A 59, 3513 (1999)."
+  },
+  "70": {
+    "referenceNumber": 70,
+    "pdfPhysicalPage": 35,
+    "raw": "[70] M. Saffman, Quantum computing with atomic qubits and Rydberg interactions: progress and challenges, J. Phys. B\n     Mol. Opt. Phys. 49, 202001 (2016).",
+    "text": "[70] M. Saffman, Quantum computing with atomic qubits and Rydberg interactions: progress and challenges, J. Phys. B Mol. Opt. Phys. 49, 202001 (2016)."
+  },
+  "71": {
+    "referenceNumber": 71,
+    "pdfPhysicalPage": 35,
+    "raw": "[71] R. Blatt, H. Schnatz, and G. Werth, Precise Determination of the 171 Yb+ Ground State Hyperfine Separation, Zeitschrift\n     für Phys. A Atoms Nucl. 312, 143 (1983).",
+    "text": "[71] R. Blatt, H. Schnatz, and G. Werth, Precise Determination of the 171 Yb+ Ground State Hyperfine Separation, Zeitschrift für Phys. A Atoms Nucl. 312, 143 (1983)."
+  },
+  "72": {
+    "referenceNumber": 72,
+    "pdfPhysicalPage": 35,
+    "raw": "[72] H. A. Bethe and E. E. Salpeter, Quantum Mechanics of One- and Two-Electron Atoms (Springer-Verlag Berlin, Hei-\n     delberg, 1957).",
+    "text": "[72] H. A. Bethe and E. E. Salpeter, Quantum Mechanics of One- and Two-Electron Atoms (Springer-Verlag Berlin, Hei- delberg, 1957)."
+  },
+  "73": {
+    "referenceNumber": 73,
+    "pdfPhysicalPage": 35,
+    "raw": "[73] N. Stone, Table of Recommended Nuclear Magnetic Dipole Moments: Part I - Long-lived States, Tech. Rep. (Interna-\n     tional Atomic Energy Agency, Vienna, Austria, 2019).",
+    "text": "[73] N. Stone, Table of Recommended Nuclear Magnetic Dipole Moments: Part I - Long-lived States, Tech. Rep. (Interna- tional Atomic Energy Agency, Vienna, Austria, 2019)."
+  },
+  "74": {
+    "referenceNumber": 74,
+    "pdfPhysicalPage": 35,
+    "raw": "[74] L. Olschewski, Messung der magnetischen Kerndipolmomente an freien 43 Ca-, 87 Sr-, 135 Ba-, 137 Ba-, 171 Yb- und 173 Yb-\n     Atomen mit optischem Pumpen, Zeitschrift für Phys. 249, 205 (1972).",
+    "text": "[74] L. Olschewski, Messung der magnetischen Kerndipolmomente an freien 43 Ca-, 87 Sr-, 135 Ba-, 137 Ba-, 171 Yb- und 173 Yb- Atomen mit optischem Pumpen, Zeitschrift für Phys. 249, 205 (1972)."
+  },
+  "75": {
+    "referenceNumber": 75,
+    "pdfPhysicalPage": 35,
+    "raw": "[75] L. Olschewski and E. W. Otten, Bestimmung der Kerndipolmomente von 171 Yb und 173 Yb durch optisches Pumpen,\n     Zeitschrift für Phys. 200, 224 (1967).",
+    "text": "[75] L. Olschewski and E. W. Otten, Bestimmung der Kerndipolmomente von 171 Yb und 173 Yb durch optisches Pumpen, Zeitschrift für Phys. 200, 224 (1967)."
+  },
+  "76": {
+    "referenceNumber": 76,
+    "pdfPhysicalPage": 35,
+    "raw": "[76] A. C. Gossard, V. Jaccarino, and J. H. Wernick, Ytterbium NMR: Yb171 Nuclear Moment and Yb Metal Knight Shift,\n     Phys. Rev. 133, A881 (1964).",
+    "text": "[76] A. C. Gossard, V. Jaccarino, and J. H. Wernick, Ytterbium NMR: Yb171 Nuclear Moment and Yb Metal Knight Shift, Phys. Rev. 133, A881 (1964)."
+  },
+  "77": {
+    "referenceNumber": 77,
+    "pdfPhysicalPage": 35,
+    "raw": "[77] G. H. Fuller, Nuclear Spins and Moments, J. Phys. Chem. Ref. Data 5, 835 (1976).",
+    "text": "[77] G. H. Fuller, Nuclear Spins and Moments, J. Phys. Chem. Ref. Data 5, 835 (1976)."
+  },
+  "78": {
+    "referenceNumber": 78,
+    "pdfPhysicalPage": 35,
+    "raw": "[78] P. Raghavan, Table of nuclear moments, Data Nucl. Data Tables 42, 189 (1989).",
+    "text": "[78] P. Raghavan, Table of nuclear moments, Data Nucl. Data Tables 42, 189 (1989)."
+  },
+  "79": {
+    "referenceNumber": 79,
+    "pdfPhysicalPage": 35,
+    "raw": "[79] N. Stone, Table of nuclear magnetic dipole and electric quadrupole moments, Data Nucl. Data Tables 90, 75 (2005).",
+    "text": "[79] N. Stone, Table of nuclear magnetic dipole and electric quadrupole moments, Data Nucl. Data Tables 90, 75 (2005)."
+  },
+  "80": {
+    "referenceNumber": 80,
+    "pdfPhysicalPage": 35,
+    "raw": "[80] M. M. Boyd, T. Zelevinsky, A. D. Ludlow, S. Blatt, T. Zanon-Willette, S. M. Foreman, and J. Ye, Nuclear spin effects\n     in optical lattice clocks, Phys. Rev. A 76, 022510 (2007).",
+    "text": "[80] M. M. Boyd, T. Zelevinsky, A. D. Ludlow, S. Blatt, T. Zanon-Willette, S. M. Foreman, and J. Ye, Nuclear spin effects in optical lattice clocks, Phys. Rev. A 76, 022510 (2007)."
+  },
+  "81": {
+    "referenceNumber": 81,
+    "pdfPhysicalPage": 35,
+    "raw": "[81] B. R. Judd and I. Lindgren, Theory of Zeeman Effect in the Ground Multiplets of Rare-Earth Atoms, Phys. Rev. 122,\n\f36                                       R. M. Kroeze, S. L. Kristensen, S. Pucher                            REFERENCES\n\n      1802 (1961).",
+    "text": "[81] B. R. Judd and I. Lindgren, Theory of Zeeman Effect in the Ground Multiplets of Rare-Earth Atoms, Phys. Rev. 122, 36 R. M. Kroeze, S. L. Kristensen, S. Pucher REFERENCES 1802 (1961)."
+  },
+  "82": {
+    "referenceNumber": 82,
+    "pdfPhysicalPage": 36,
+    "raw": "[82] L. Labzowsky, I. Goidenko, and P. Pyykkö, Estimates of the bound-state QED contributions to the g-factor of valence\n      ns electrons in alkali metal atoms, Phys. Lett. A 258, 31 (1999).",
+    "text": "[82] L. Labzowsky, I. Goidenko, and P. Pyykkö, Estimates of the bound-state QED contributions to the g-factor of valence ns electrons in alkali metal atoms, Phys. Lett. A 258, 31 (1999)."
+  },
+  "83": {
+    "referenceNumber": 83,
+    "pdfPhysicalPage": 36,
+    "raw": "[83] A. Zhang, C. Tian, Q. Zhu, B. Wang, D. Xiong, Z. Xiong, L. He, and B. Lyu, Precise measurement of 171 Yb magnetic\n      constants for 1 S0 -3 P0 clock transition, Chin. Phys. B 32, 020601 (2023).",
+    "text": "[83] A. Zhang, C. Tian, Q. Zhu, B. Wang, D. Xiong, Z. Xiong, L. He, and B. Lyu, Precise measurement of 171 Yb magnetic constants for 1 S0 -3 P0 clock transition, Chin. Phys. B 32, 020601 (2023)."
+  },
+  "84": {
+    "referenceNumber": 84,
+    "pdfPhysicalPage": 36,
+    "raw": "[84] W. F. McGrew, X. Zhang, R. J. Fasano, S. A. Schäffer, K. Beloy, D. Nicolodi, R. C. Brown, N. Hinkley, G. Milani,\n      M. Schioppo, T. H. Yoon, and A. D. Ludlow, Atomic clock performance enabling geodesy below the centimetre level,\n      Nature 564, 87 (2018).",
+    "text": "[84] W. F. McGrew, X. Zhang, R. J. Fasano, S. A. Schäffer, K. Beloy, D. Nicolodi, R. C. Brown, N. Hinkley, G. Milani, M. Schioppo, T. H. Yoon, and A. D. Ludlow, Atomic clock performance enabling geodesy below the centimetre level, Nature 564, 87 (2018)."
+  },
+  "85": {
+    "referenceNumber": 85,
+    "pdfPhysicalPage": 36,
+    "raw": "[85] D. Ai, T. Jin, T. Zhang, L. Luo, L. Liu, M. Zhou, and X. Xu, Absolute frequency measurement of the 6s6p 3 P0 →\n      5d6s 3 D1 transition based on ultracold ytterbium atoms, Phys. Rev. A 107, 063107 (2023).",
+    "text": "[85] D. Ai, T. Jin, T. Zhang, L. Luo, L. Liu, M. Zhou, and X. Xu, Absolute frequency measurement of the 6s6p 3 P0 → 5d6s 3 D1 transition based on ultracold ytterbium atoms, Phys. Rev. A 107, 063107 (2023)."
+  },
+  "86": {
+    "referenceNumber": 86,
+    "pdfPhysicalPage": 36,
+    "raw": "[86] D. Ai, T. Jin, T. Zhang, L. Luo, L. Liu, M. Zhou, and X. Xu, Erratum: Absolute frequency measurement of the 6s6p\n      3\n        P0 → 5d6s 3 D1 transition based on ultracold ytterbium atoms [Phys. Rev. A 107, 063107 (2023)], Phys. Rev. A 109,\n      039902 (2024).",
+    "text": "[86] D. Ai, T. Jin, T. Zhang, L. Luo, L. Liu, M. Zhou, and X. Xu, Erratum: Absolute frequency measurement of the 6s6p 3 P0 → 5d6s 3 D1 transition based on ultracold ytterbium atoms [Phys. Rev. A 107, 063107 (2023)], Phys. Rev. A 109, 039902 (2024)."
+  },
+  "87": {
+    "referenceNumber": 87,
+    "pdfPhysicalPage": 36,
+    "raw": "[87] K. Ono, Y. Saito, T. Ishiyama, T. Higomoto, T. Takano, Y. Takasu, Y. Yamamoto, M. Tanaka, and Y. Takahashi,\n      Observation of Nonlinearity of Generalized King Plot in the Search for New Boson, Phys. Rev. X 12, 021033 (2022).",
+    "text": "[87] K. Ono, Y. Saito, T. Ishiyama, T. Higomoto, T. Takano, Y. Takasu, Y. Yamamoto, M. Tanaka, and Y. Takahashi, Observation of Nonlinearity of Generalized King Plot in the Search for New Boson, Phys. Rev. X 12, 021033 (2022)."
+  },
+  "88": {
+    "referenceNumber": 88,
+    "pdfPhysicalPage": 36,
+    "raw": "[88] L. Luo, H. Qiao, D. Ai, M. Zhou, S. Zhang, S. Zhang, C. Sun, Q. Qi, C. Peng, T. Jin, W. Fang, Z. Yang, T. Li,\n      K. Liang, and X. Xu, Absolute frequency measurement of an Yb optical clock at the 10−16 level using International\n      Atomic Time, Metrologia 57, 065017 (2020).",
+    "text": "[88] L. Luo, H. Qiao, D. Ai, M. Zhou, S. Zhang, S. Zhang, C. Sun, Q. Qi, C. Peng, T. Jin, W. Fang, Z. Yang, T. Li, K. Liang, and X. Xu, Absolute frequency measurement of an Yb optical clock at the 10−16 level using International Atomic Time, Metrologia 57, 065017 (2020)."
+  },
+  "89": {
+    "referenceNumber": 89,
+    "pdfPhysicalPage": 36,
+    "raw": "[89] L. Riegger, Interorbital spin exchange in a state-dependent optical lattice, Ph.D. thesis, Ludwig-Maximilians-Universität\n      München (2019).",
+    "text": "[89] L. Riegger, Interorbital spin exchange in a state-dependent optical lattice, Ph.D. thesis, Ludwig-Maximilians-Universität München (2019)."
+  },
+  "90": {
+    "referenceNumber": 90,
+    "pdfPhysicalPage": 36,
+    "raw": "[90] Q. Gao, M. Zhou, C. Han, S. Li, S. Zhang, Y. Yao, B. Li, H. Qiao, D. Ai, G. Lou, M. Zhang, Y. Jiang, Z. Bi, L. Ma,\n      and X. Xu, Systematic evaluation of a 171 Yb optical clock by synchronous comparison between two lattice systems,\n      Sci. Rep. 8, 8022 (2018).",
+    "text": "[90] Q. Gao, M. Zhou, C. Han, S. Li, S. Zhang, Y. Yao, B. Li, H. Qiao, D. Ai, G. Lou, M. Zhang, Y. Jiang, Z. Bi, L. Ma, and X. Xu, Systematic evaluation of a 171 Yb optical clock by synchronous comparison between two lattice systems, Sci. Rep. 8, 8022 (2018)."
+  },
+  "91": {
+    "referenceNumber": 91,
+    "pdfPhysicalPage": 36,
+    "raw": "[91] N. Lemke, A. Ludlow, Z. Barber, T. Fortier, S. Diddams, Y. Jiang, S. Jefferts, T. Heavner, T. Parker, and C. Oates,\n      Spin-1/2 Optical Lattice Clock, Phys. Rev. Lett. 103, 063001 (2009).",
+    "text": "[91] N. Lemke, A. Ludlow, Z. Barber, T. Fortier, S. Diddams, Y. Jiang, S. Jefferts, T. Heavner, T. Parker, and C. Oates, Spin-1/2 Optical Lattice Clock, Phys. Rev. Lett. 103, 063001 (2009)."
+  },
+  "92": {
+    "referenceNumber": 92,
+    "pdfPhysicalPage": 36,
+    "raw": "[92] N. Poli, Z. W. Barber, N. D. Lemke, C. W. Oates, L. S. Ma, J. E. Stalnaker, T. M. Fortier, S. A. Diddams, L. Hollberg,\n      J. C. Bergquist, A. Brusch, S. Jefferts, T. Heavner, and T. Parker, Frequency evaluation of the doubly forbidden\n      1\n        S0 →3 P0 transition in bosonic 174 Yb, Phys. Rev. A 77, 050501 (2008).",
+    "text": "[92] N. Poli, Z. W. Barber, N. D. Lemke, C. W. Oates, L. S. Ma, J. E. Stalnaker, T. M. Fortier, S. A. Diddams, L. Hollberg, J. C. Bergquist, A. Brusch, S. Jefferts, T. Heavner, and T. Parker, Frequency evaluation of the doubly forbidden 1 S0 →3 P0 transition in bosonic 174 Yb, Phys. Rev. A 77, 050501 (2008)."
+  },
+  "93": {
+    "referenceNumber": 93,
+    "pdfPhysicalPage": 36,
+    "raw": "[93] Z. Barber, C. Hoyt, C. Oates, L. Hollberg, A. Taichenachev, and V. Yudin, Direct Excitation of the Forbidden Clock\n      Transition in Neutral 174 Yb Atoms Confined to an Optical Lattice, Phys. Rev. Lett. 96, 083002 (2006).",
+    "text": "[93] Z. Barber, C. Hoyt, C. Oates, L. Hollberg, A. Taichenachev, and V. Yudin, Direct Excitation of the Forbidden Clock Transition in Neutral 174 Yb Atoms Confined to an Optical Lattice, Phys. Rev. Lett. 96, 083002 (2006)."
+  },
+  "94": {
+    "referenceNumber": 94,
+    "pdfPhysicalPage": 36,
+    "raw": "[94] T. Bothwell, B. D. Hunt, J. L. Siegel, Y. S. Hassan, T. Grogan, T. Kobayashi, K. Gibble, S. G. Porsev, M. S. Safronova,\n      R. C. Brown, K. Beloy, and A. D. Ludlow, Lattice Light Shift Evaluations in a Dual-Ensemble Yb Optical Lattice Clock,\n      Phys. Rev. Lett. 134, 033201 (2025).",
+    "text": "[94] T. Bothwell, B. D. Hunt, J. L. Siegel, Y. S. Hassan, T. Grogan, T. Kobayashi, K. Gibble, S. G. Porsev, M. S. Safronova, R. C. Brown, K. Beloy, and A. D. Ludlow, Lattice Light Shift Evaluations in a Dual-Ensemble Yb Optical Lattice Clock, Phys. Rev. Lett. 134, 033201 (2025)."
+  },
+  "95": {
+    "referenceNumber": 95,
+    "pdfPhysicalPage": 36,
+    "raw": "[95] G. Breit and L. A. Wills, Hyperfine Structure in Intermediate Coupling, Phys. Rev. 44, 470 (1933).",
+    "text": "[95] G. Breit and L. A. Wills, Hyperfine Structure in Intermediate Coupling, Phys. Rev. 44, 470 (1933)."
+  },
+  "96": {
+    "referenceNumber": 96,
+    "pdfPhysicalPage": 36,
+    "raw": "[96] A. Lurio, M. Mandel, and R. Novick, Second-Order Hyperfine and Zeeman Corrections for an (sl) Configuration, Phys.\n      Rev. 126, 1758 (1962).",
+    "text": "[96] A. Lurio, M. Mandel, and R. Novick, Second-Order Hyperfine and Zeeman Corrections for an (sl) Configuration, Phys. Rev. 126, 1758 (1962)."
+  },
+  "97": {
+    "referenceNumber": 97,
+    "pdfPhysicalPage": 36,
+    "raw": "[97] A. Taichenachev, V. Yudin, C. Oates, C. Hoyt, Z. Barber, and L. Hollberg, Magnetic Field-Induced Spectroscopy of\n      Forbidden Optical Transitions with Application to Lattice-Based Optical Atomic Clocks, Phys. Rev. Lett. 96, 083001\n      (2006).",
+    "text": "[97] A. Taichenachev, V. Yudin, C. Oates, C. Hoyt, Z. Barber, and L. Hollberg, Magnetic Field-Induced Spectroscopy of Forbidden Optical Transitions with Application to Lattice-Based Optical Atomic Clocks, Phys. Rev. Lett. 96, 083001 (2006)."
+  },
+  "98": {
+    "referenceNumber": 98,
+    "pdfPhysicalPage": 36,
+    "raw": "[98] L. Nenadović and J. J. McFerran, Clock and inter-combination line frequency separation in 171 Yb, J. Phys. B Mol.\n      Opt. Phys. 49, 065004 (2016).",
+    "text": "[98] L. Nenadović and J. J. McFerran, Clock and inter-combination line frequency separation in 171 Yb, J. Phys. B Mol. Opt. Phys. 49, 065004 (2016)."
+  },
+  "99": {
+    "referenceNumber": 99,
+    "pdfPhysicalPage": 36,
+    "raw": "[99] B. Edlén, The Refractive Index of Air, Metrologia 2, 71 (1966).",
+    "text": "[99] B. Edlén, The Refractive Index of Air, Metrologia 2, 71 (1966)."
+  },
+  "100": {
+    "referenceNumber": 100,
+    "pdfPhysicalPage": 36,
+    "raw": "[100] E. R. Peck and K. Reeder, Dispersion of Air, J. Opt. Soc. Am. 62, 958 (1972).",
+    "text": "[100] E. R. Peck and K. Reeder, Dispersion of Air, J. Opt. Soc. Am. 62, 958 (1972)."
+  },
+  "101": {
+    "referenceNumber": 101,
+    "pdfPhysicalPage": 36,
+    "raw": "[101] A. L. Buck, New Equations for Computing Vapor Pressure and Enhancement Factor, J. Appl. Meteorol. 20, 1527\n      (1981).",
+    "text": "[101] A. L. Buck, New Equations for Computing Vapor Pressure and Enhancement Factor, J. Appl. Meteorol. 20, 1527 (1981)."
+  },
+  "102": {
+    "referenceNumber": 102,
+    "pdfPhysicalPage": 36,
+    "raw": "[102] Buck Research Instruments, LLC, CR-1A Hygrometer with Autofill: Operating Manual , Buck Research Instruments,\n      LLC, Boulder, CO, USA (2012).",
+    "text": "[102] Buck Research Instruments, LLC, CR-1A Hygrometer with Autofill: Operating Manual , Buck Research Instruments, LLC, Boulder, CO, USA (2012)."
+  },
+  "103": {
+    "referenceNumber": 103,
+    "pdfPhysicalPage": 36,
+    "raw": "[103] K. Enomoto, N. Hizawa, T. Suzuki, K. Kobayashi, and Y. Moriwaki, Comparison of resonance frequencies of major\n      atomic lines in 398-423 nm, Appl. Phys. B 122, 126 (2016).",
+    "text": "[103] K. Enomoto, N. Hizawa, T. Suzuki, K. Kobayashi, and Y. Moriwaki, Comparison of resonance frequencies of major atomic lines in 398-423 nm, Appl. Phys. B 122, 126 (2016)."
+  },
+  "104": {
+    "referenceNumber": 104,
+    "pdfPhysicalPage": 36,
+    "raw": "[104] T. Lauprêtre, L. Groult, B. Achi, M. Petersen, Y. Kersalé, M. Delehaye, and C. Lacroûte, Absolute frequency mea-\n      surements of the 1 S0 →1 P1 transition in ytterbium, OSA Contin. 3, 50 (2020).",
+    "text": "[104] T. Lauprêtre, L. Groult, B. Achi, M. Petersen, Y. Kersalé, M. Delehaye, and C. Lacroûte, Absolute frequency mea- surements of the 1 S0 →1 P1 transition in ytterbium, OSA Contin. 3, 50 (2020)."
+  },
+  "105": {
+    "referenceNumber": 105,
+    "pdfPhysicalPage": 36,
+    "raw": "[105] T. Tanabe, D. Akamatsu, H. Inaba, S. Okubo, T. Kobayashi, M. Yasuda, K. Hosaka, and F.-L. Hong, A frequency-\n      stabilized light source at 399 nm using an Yb hollow-cathode lamp, Jpn. J. Appl. Phys. 57, 062501 (2018).",
+    "text": "[105] T. Tanabe, D. Akamatsu, H. Inaba, S. Okubo, T. Kobayashi, M. Yasuda, K. Hosaka, and F.-L. Hong, A frequency- stabilized light source at 399 nm using an Yb hollow-cathode lamp, Jpn. J. Appl. Phys. 57, 062501 (2018)."
+  },
+  "106": {
+    "referenceNumber": 106,
+    "pdfPhysicalPage": 36,
+    "raw": "[106] A. H. Nizamani, J. J. McLoughlin, and W. K. Hensinger, Doppler-free Yb spectroscopy with the fluorescence spot\n      technique, Phys. Rev. A 82, 043408 (2010).",
+    "text": "[106] A. H. Nizamani, J. J. McLoughlin, and W. K. Hensinger, Doppler-free Yb spectroscopy with the fluorescence spot technique, Phys. Rev. A 82, 043408 (2010)."
+  },
+  "107": {
+    "referenceNumber": 107,
+    "pdfPhysicalPage": 36,
+    "raw": "[107] T. Kobayashi, A. Nishiyama, K. Hosaka, D. Akamatsu, A. Kawasaki, M. Wada, H. Inaba, T. Tanabe, and M. Yasuda,\n      Improved absolute frequency measurement of 171 Yb at NMIJ with uncertainty below 2 × 10−16 , Metrologia 62, 025006\n      (2025).",
+    "text": "[107] T. Kobayashi, A. Nishiyama, K. Hosaka, D. Akamatsu, A. Kawasaki, M. Wada, H. Inaba, T. Tanabe, and M. Yasuda, Improved absolute frequency measurement of 171 Yb at NMIJ with uncertainty below 2 × 10−16 , Metrologia 62, 025006 (2025)."
+  },
+  "108": {
+    "referenceNumber": 108,
+    "pdfPhysicalPage": 36,
+    "raw": "[108] I. Goti, S. Condio, C. Clivati, M. Risaro, M. Gozzelino, G. A. Costanzo, F. Levi, D. Calonico, and M. Pizzocaro,\n      Absolute frequency measurement of a Yb optical clock at the limit of the Cs fountain, Metrologia 60, 10.1088/1681-\n      7575/accbc5 (2023).",
+    "text": "[108] I. Goti, S. Condio, C. Clivati, M. Risaro, M. Gozzelino, G. A. Costanzo, F. Levi, D. Calonico, and M. Pizzocaro, Absolute frequency measurement of a Yb optical clock at the limit of the Cs fountain, Metrologia 60, 10.1088/1681- 7575/accbc5 (2023)."
+  },
+  "109": {
+    "referenceNumber": 109,
+    "pdfPhysicalPage": 36,
+    "raw": "[109] T. Kobayashi, A. Takamizawa, D. Akamatsu, A. Kawasaki, A. Nishiyama, K. Hosaka, Y. Hisai, M. Wada, H. Inaba,\n      T. Tanabe, and M. Yasuda, Search for Ultralight Dark Matter from Long-Term Frequency Comparisons of Optical and\n      Microwave Atomic Clocks, Phys. Rev. Lett. 129, 241301 (2022).\n\f37                                       R. M. Kroeze, S. L. Kristensen, S. Pucher                           REFERENCES",
+    "text": "[109] T. Kobayashi, A. Takamizawa, D. Akamatsu, A. Kawasaki, A. Nishiyama, K. Hosaka, Y. Hisai, M. Wada, H. Inaba, T. Tanabe, and M. Yasuda, Search for Ultralight Dark Matter from Long-Term Frequency Comparisons of Optical and Microwave Atomic Clocks, Phys. Rev. Lett. 129, 241301 (2022). 37 R. M. Kroeze, S. L. Kristensen, S. Pucher REFERENCES"
+  },
+  "110": {
+    "referenceNumber": 110,
+    "pdfPhysicalPage": 37,
+    "raw": "[110] C. Clivati, M. Pizzocaro, E. Bertacco, S. Condio, G. Costanzo, S. Donadello, I. Goti, M. Gozzelino, F. Levi, A. Mura,\n      M. Risaro, D. Calonico, M. Tønnes, B. Pointard, M. Mazouth-Laurol, R. Le Targat, M. Abgrall, M. Lours, H. Le Goff,\n      L. Lorini, P.-E. Pottie, E. Cantin, O. Lopez, C. Chardonnet, and A. Amy-Klein, Coherent Optical-Fiber Link Across\n      Italy and France, Phys. Rev. Appl. 18, 054009 (2022).",
+    "text": "[110] C. Clivati, M. Pizzocaro, E. Bertacco, S. Condio, G. Costanzo, S. Donadello, I. Goti, M. Gozzelino, F. Levi, A. Mura, M. Risaro, D. Calonico, M. Tønnes, B. Pointard, M. Mazouth-Laurol, R. Le Targat, M. Abgrall, M. Lours, H. Le Goff, L. Lorini, P.-E. Pottie, E. Cantin, O. Lopez, C. Chardonnet, and A. Amy-Klein, Coherent Optical-Fiber Link Across Italy and France, Phys. Rev. Appl. 18, 054009 (2022)."
+  },
+  "111": {
+    "referenceNumber": 111,
+    "pdfPhysicalPage": 37,
+    "raw": "[111] H. Kim, M. S. Heo, C. Y. Park, D. H. Yu, and W. K. Lee, Absolute frequency measurement of the 171 Yb optical lattice\n      clock at KRISS using TAI for over a year, Metrologia 58, 10.1088/1681-7575/ac1950 (2021).",
+    "text": "[111] H. Kim, M. S. Heo, C. Y. Park, D. H. Yu, and W. K. Lee, Absolute frequency measurement of the 171 Yb optical lattice clock at KRISS using TAI for over a year, Metrologia 58, 10.1088/1681-7575/ac1950 (2021)."
+  },
+  "112": {
+    "referenceNumber": 112,
+    "pdfPhysicalPage": 37,
+    "raw": "[112] M. Pizzocaro, F. Bregolin, P. Barbieri, B. Rauf, F. Levi, and D. Calonico, Absolute frequency measurement of the\n      1\n        S0 -3 P0 transition of 171 Yb with a link to international atomic time, Metrologia 57, 10.1088/1681-7575/ab50e8 (2020).",
+    "text": "[112] M. Pizzocaro, F. Bregolin, P. Barbieri, B. Rauf, F. Levi, and D. Calonico, Absolute frequency measurement of the 1 S0 -3 P0 transition of 171 Yb with a link to international atomic time, Metrologia 57, 10.1088/1681-7575/ab50e8 (2020)."
+  },
+  "113": {
+    "referenceNumber": 113,
+    "pdfPhysicalPage": 37,
+    "raw": "[113] T. Kobayashi, D. Akamatsu, K. Hosaka, Y. Hisai, M. Wada, H. Inaba, T. Suzuyama, F.-L. Hong, and M. Yasuda,\n      Demonstration of the nearly continuous operation of an 171 Yb optical lattice clock for half a year, Metrologia 57,\n      065021 (2020).",
+    "text": "[113] T. Kobayashi, D. Akamatsu, K. Hosaka, Y. Hisai, M. Wada, H. Inaba, T. Suzuyama, F.-L. Hong, and M. Yasuda, Demonstration of the nearly continuous operation of an 171 Yb optical lattice clock for half a year, Metrologia 57, 065021 (2020)."
+  },
+  "114": {
+    "referenceNumber": 114,
+    "pdfPhysicalPage": 37,
+    "raw": "[114] W. F. McGrew, X. Zhang, H. Leopardi, R. J. Fasano, D. Nicolodi, K. Beloy, J. Yao, J. A. Sherman, S. A. Schäffer,\n      J. Savory, R. C. Brown, S. Römisch, C. W. Oates, T. E. Parker, T. M. Fortier, and A. D. Ludlow, Towards the optical\n      second: verifying optical clocks at the SI limit, Optica 6, 448 (2019).",
+    "text": "[114] W. F. McGrew, X. Zhang, H. Leopardi, R. J. Fasano, D. Nicolodi, K. Beloy, J. Yao, J. A. Sherman, S. A. Schäffer, J. Savory, R. C. Brown, S. Römisch, C. W. Oates, T. E. Parker, T. M. Fortier, and A. D. Ludlow, Towards the optical second: verifying optical clocks at the SI limit, Optica 6, 448 (2019)."
+  },
+  "115": {
+    "referenceNumber": 115,
+    "pdfPhysicalPage": 37,
+    "raw": "[115] H. Kim, M.-S. Heo, W.-K. Lee, C. Y. Park, H.-G. Hong, S.-W. Hwang, and D.-H. Yu, Improved absolute frequency\n      measurement of the 171 Yb optical lattice clock at KRISS relative to the SI second, Jpn. J. Appl. Phys. 56, 050302\n      (2017).",
+    "text": "[115] H. Kim, M.-S. Heo, W.-K. Lee, C. Y. Park, H.-G. Hong, S.-W. Hwang, and D.-H. Yu, Improved absolute frequency measurement of the 171 Yb optical lattice clock at KRISS relative to the SI second, Jpn. J. Appl. Phys. 56, 050302 (2017)."
+  },
+  "116": {
+    "referenceNumber": 116,
+    "pdfPhysicalPage": 37,
+    "raw": "[116] M. Pizzocaro, P. Thoumany, B. Rauf, F. Bregolin, G. Milani, C. Clivati, G. A. Costanzo, F. Levi, and D. Calonico,\n      Absolute frequency measurement of the 1 S0 - 3 P0 transition of 171 Yb, Metrologia 54, 102 (2017).",
+    "text": "[116] M. Pizzocaro, P. Thoumany, B. Rauf, F. Bregolin, G. Milani, C. Clivati, G. A. Costanzo, F. Levi, and D. Calonico, Absolute frequency measurement of the 1 S0 - 3 P0 transition of 171 Yb, Metrologia 54, 102 (2017)."
+  },
+  "117": {
+    "referenceNumber": 117,
+    "pdfPhysicalPage": 37,
+    "raw": "[117] C. Y. Park, D.-H. Yu, W.-K. Lee, S. E. Park, E. B. Kim, S. K. Lee, J. W. Cho, T. H. Yoon, J. Mun, S. J. Park, T. Y.\n      Kwon, and S.-B. Lee, Absolute frequency measurement of 1 S0 (F = 1/2)-3 P0 (F = 1/2) transition of 171 Yb atoms in a\n      one-dimensional optical lattice at KRISS, Metrologia 50, 119 (2013).",
+    "text": "[117] C. Y. Park, D.-H. Yu, W.-K. Lee, S. E. Park, E. B. Kim, S. K. Lee, J. W. Cho, T. H. Yoon, J. Mun, S. J. Park, T. Y. Kwon, and S.-B. Lee, Absolute frequency measurement of 1 S0 (F = 1/2)-3 P0 (F = 1/2) transition of 171 Yb atoms in a one-dimensional optical lattice at KRISS, Metrologia 50, 119 (2013)."
+  },
+  "118": {
+    "referenceNumber": 118,
+    "pdfPhysicalPage": 37,
+    "raw": "[118] M. Yasuda, H. Inaba, T. Kohno, T. Tanabe, Y. Nakajima, K. Hosaka, D. Akamatsu, A. Onae, T. Suzuyama,\n      M. Amemiya, and F.-L. Hong, Improved Absolute Frequency Measurement of the 171 Yb Optical Lattice Clock to-\n      wards a Candidate for the Redefinition of the Second, Appl. Phys. Express 5, 102401 (2012).",
+    "text": "[118] M. Yasuda, H. Inaba, T. Kohno, T. Tanabe, Y. Nakajima, K. Hosaka, D. Akamatsu, A. Onae, T. Suzuyama, M. Amemiya, and F.-L. Hong, Improved Absolute Frequency Measurement of the 171 Yb Optical Lattice Clock to- wards a Candidate for the Redefinition of the Second, Appl. Phys. Express 5, 102401 (2012)."
+  },
+  "119": {
+    "referenceNumber": 119,
+    "pdfPhysicalPage": 37,
+    "raw": "[119] T. Kohno, M. Yasuda, K. Hosaka, H. Inaba, Y. Nakajima, and F.-L. Hong, One-Dimensional Optical Lattice Clock\n      with a Fermionic 171 Yb Isotope, Appl. Phys. Express 2, 072501 (2009).",
+    "text": "[119] T. Kohno, M. Yasuda, K. Hosaka, H. Inaba, Y. Nakajima, and F.-L. Hong, One-Dimensional Optical Lattice Clock with a Fermionic 171 Yb Isotope, Appl. Phys. Express 2, 072501 (2009)."
+  },
+  "120": {
+    "referenceNumber": 120,
+    "pdfPhysicalPage": 37,
+    "raw": "[120] C. Hoyt, Z. Barber, C. Oates, T. Fortier, S. Diddams, and L. Hollberg, Observation and Absolute Frequency Measure-\n      ments of the 1 S0 -3 P0 Optical Clock Transition in Neutral Ytterbium, Phys. Rev. Lett. 95, 083003 (2005).",
+    "text": "[120] C. Hoyt, Z. Barber, C. Oates, T. Fortier, S. Diddams, and L. Hollberg, Observation and Absolute Frequency Measure- ments of the 1 S0 -3 P0 Optical Clock Transition in Neutral Ytterbium, Phys. Rev. Lett. 95, 083003 (2005)."
+  },
+  "121": {
+    "referenceNumber": 121,
+    "pdfPhysicalPage": 37,
+    "raw": "[121] H. S. Margolis, G. Panfilo, G. Petit, C. Oates, T. Ido, and S. Bize, The CIPM list ’Recommended values of standard\n      frequencies’: 2021 update, Metrologia 61, 035005 (2024).",
+    "text": "[121] H. S. Margolis, G. Panfilo, G. Petit, C. Oates, T. Ido, and S. Bize, The CIPM list ’Recommended values of standard frequencies’: 2021 update, Metrologia 61, 035005 (2024)."
+  },
+  "122": {
+    "referenceNumber": 122,
+    "pdfPhysicalPage": 37,
+    "raw": "[122] Consultative Committee for Time and Frequency (CCTF), Recommendation PSFS-2 (2021), 22nd meeting (session II\n      – online).",
+    "text": "[122] Consultative Committee for Time and Frequency (CCTF), Recommendation PSFS-2 (2021), 22nd meeting (session II – online)."
+  },
+  "123": {
+    "referenceNumber": 123,
+    "pdfPhysicalPage": 37,
+    "raw": "[123] A. Yamaguchi, Metastable State of Ultracold and Quantum Degenerate Ytterbium Atoms: High-Resolution Spectroscopy\n      and Cold Collisions, Ph.D. thesis, Kyoto University (2008).",
+    "text": "[123] A. Yamaguchi, Metastable State of Ultracold and Quantum Degenerate Ytterbium Atoms: High-Resolution Spectroscopy and Cold Collisions, Ph.D. thesis, Kyoto University (2008)."
+  },
+  "124": {
+    "referenceNumber": 124,
+    "pdfPhysicalPage": 37,
+    "raw": "[124] C. Frugiuele, E. Fuchs, G. Perez, and M. Schlaffer, Constraining new physics models with isotope shift spectroscopy,\n      Phys. Rev. D 96, 015011 (2017).",
+    "text": "[124] C. Frugiuele, E. Fuchs, G. Perez, and M. Schlaffer, Constraining new physics models with isotope shift spectroscopy, Phys. Rev. D 96, 015011 (2017)."
+  },
+  "125": {
+    "referenceNumber": 125,
+    "pdfPhysicalPage": 37,
+    "raw": "[125] J. C. Berengut, D. Budker, C. Delaunay, V. V. Flambaum, C. Frugiuele, E. Fuchs, C. Grojean, R. Harnik, R. Ozeri,\n      G. Perez, and Y. Soreq, Probing New Long-Range Interactions by Isotope Shift Spectroscopy, Phys. Rev. Lett. 120,\n      091801 (2018).",
+    "text": "[125] J. C. Berengut, D. Budker, C. Delaunay, V. V. Flambaum, C. Frugiuele, E. Fuchs, C. Grojean, R. Harnik, R. Ozeri, G. Perez, and Y. Soreq, Probing New Long-Range Interactions by Isotope Shift Spectroscopy, Phys. Rev. Lett. 120, 091801 (2018)."
+  },
+  "126": {
+    "referenceNumber": 126,
+    "pdfPhysicalPage": 37,
+    "raw": "[126] N. L. Figueroa, J. C. Berengut, V. A. Dzuba, V. V. Flambaum, D. Budker, and D. Antypas, Precision Determination\n      of Isotope Shifts in Ytterbium and Implications for New Physics, Phys. Rev. Lett. 128, 073001 (2022).",
+    "text": "[126] N. L. Figueroa, J. C. Berengut, V. A. Dzuba, V. V. Flambaum, D. Budker, and D. Antypas, Precision Determination of Isotope Shifts in Ytterbium and Implications for New Physics, Phys. Rev. Lett. 128, 073001 (2022)."
+  },
+  "127": {
+    "referenceNumber": 127,
+    "pdfPhysicalPage": 37,
+    "raw": "[127] W. A. van Wijngaarden and J. Li, Measurement of isotope shifts and hyperfine splittings of ytterbium by means of\n      acousto-optic modulation, J. Opt. Soc. Am. B 11, 2163 (1994).",
+    "text": "[127] W. A. van Wijngaarden and J. Li, Measurement of isotope shifts and hyperfine splittings of ytterbium by means of acousto-optic modulation, J. Opt. Soc. Am. B 11, 2163 (1994)."
+  },
+  "128": {
+    "referenceNumber": 128,
+    "pdfPhysicalPage": 37,
+    "raw": "[128] D. L. Clark, M. E. Cage, D. A. Lewis, and G. W. Greenlees, Optical isotopic shifts and hyperfine splittings for Yb,\n      Phys. Rev. A 20, 239 (1979).",
+    "text": "[128] D. L. Clark, M. E. Cage, D. A. Lewis, and G. W. Greenlees, Optical isotopic shifts and hyperfine splittings for Yb, Phys. Rev. A 20, 239 (1979)."
+  },
+  "129": {
+    "referenceNumber": 129,
+    "pdfPhysicalPage": 37,
+    "raw": "[129] A. P. Mishra and T. Balasubramanian, Radiative lifetimes of the first excited 3 Po2,0 metastable levels in Kr I, Xe I, Yb\n      I and Hg-like atoms, J. Quant. Spectrosc. Radiat. Transf. 69, 769 (2001).",
+    "text": "[129] A. P. Mishra and T. Balasubramanian, Radiative lifetimes of the first excited 3 Po2,0 metastable levels in Kr I, Xe I, Yb I and Hg-like atoms, J. Quant. Spectrosc. Radiat. Transf. 69, 769 (2001)."
+  },
+  "130": {
+    "referenceNumber": 130,
+    "pdfPhysicalPage": 37,
+    "raw": "[130] S. G. Porsev and A. Derevianko, Hyperfine quenching of the metastable 3 P0,2 states in divalent atoms, Phys. Rev. A\n      69, 042506 (2004).",
+    "text": "[130] S. G. Porsev and A. Derevianko, Hyperfine quenching of the metastable 3 P0,2 states in divalent atoms, Phys. Rev. A 69, 042506 (2004)."
+  },
+  "131": {
+    "referenceNumber": 131,
+    "pdfPhysicalPage": 37,
+    "raw": "[131] K. Honda, Y. Takahashi, T. Kuwamoto, M. Fujimoto, K. Toyoda, K. Ishikawa, and T. Yabuzaki, Magneto-optical\n      trapping of Yb atoms and a limit on the branching ratio of the 1 P1 state, Phys. Rev. A 59, R934 (1999).",
+    "text": "[131] K. Honda, Y. Takahashi, T. Kuwamoto, M. Fujimoto, K. Toyoda, K. Ishikawa, and T. Yabuzaki, Magneto-optical trapping of Yb atoms and a limit on the branching ratio of the 1 P1 state, Phys. Rev. A 59, R934 (1999)."
+  },
+  "132": {
+    "referenceNumber": 132,
+    "pdfPhysicalPage": 37,
+    "raw": "[132] S. G. Porsev, Y. G. Rakhlina, and M. G. Kozlov, Electric-dipole amplitudes, lifetimes, and polarizabilities of the\n      low-lying levels of atomic ytterbium, Phys. Rev. A 60, 2781 (1999).",
+    "text": "[132] S. G. Porsev, Y. G. Rakhlina, and M. G. Kozlov, Electric-dipole amplitudes, lifetimes, and polarizabilities of the low-lying levels of atomic ytterbium, Phys. Rev. A 60, 2781 (1999)."
+  },
+  "133": {
+    "referenceNumber": 133,
+    "pdfPhysicalPage": 37,
+    "raw": "[133] K. B. Blagoev, V. A. Komarovskii, and N. P. Penkin, Opt. Spectrosc. 45, 832 (1978).",
+    "text": "[133] K. B. Blagoev, V. A. Komarovskii, and N. P. Penkin, Opt. Spectrosc. 45, 832 (1978)."
+  },
+  "134": {
+    "referenceNumber": 134,
+    "pdfPhysicalPage": 37,
+    "raw": "[134] M. L. Burshtein, Y. F. Verolainen, V. A. Komarovskii, A. L. Osherovich, and N. P. Penkin, Lifetimes of the 3 P1 level\n      of Yb I and the 2 P3/2,1/2 level of Yb II, Opt. Spectrosc. 37, 351 (1974).",
+    "text": "[134] M. L. Burshtein, Y. F. Verolainen, V. A. Komarovskii, A. L. Osherovich, and N. P. Penkin, Lifetimes of the 3 P1 level of Yb I and the 2 P3/2,1/2 level of Yb II, Opt. Spectrosc. 37, 351 (1974)."
+  },
+  "135": {
+    "referenceNumber": 135,
+    "pdfPhysicalPage": 37,
+    "raw": "[135] W. Lange, J. Luther, and A. Stendel, in Proceedings, 2nd Conference of European Group for Atomic Spectroscopy\n      (Hanover, 1970) p. 31.",
+    "text": "[135] W. Lange, J. Luther, and A. Stendel, in Proceedings, 2nd Conference of European Group for Atomic Spectroscopy (Hanover, 1970) p. 31."
+  },
+  "136": {
+    "referenceNumber": 136,
+    "pdfPhysicalPage": 37,
+    "raw": "[136] V. A. Komarovskii and N. P. Penkin, Oscillator Strengths of the Spectral Lines of Tm I and Yb I, Opt. Spectrosc. 26,\n      483 (1969).",
+    "text": "[136] V. A. Komarovskii and N. P. Penkin, Oscillator Strengths of the Spectral Lines of Tm I and Yb I, Opt. Spectrosc. 26, 483 (1969)."
+  },
+  "137": {
+    "referenceNumber": 137,
+    "pdfPhysicalPage": 37,
+    "raw": "[137] C. J. Bowers, D. Budker, E. D. Commins, D. DeMille, S. J. Freedman, A.-T. Nguyen, S.-Q. Shang, and M. Zolotorev,\n      Experimental investigation of excited-state lifetimes in atomic ytterbium, Phys. Rev. A 53, 3103 (1996).",
+    "text": "[137] C. J. Bowers, D. Budker, E. D. Commins, D. DeMille, S. J. Freedman, A.-T. Nguyen, S.-Q. Shang, and M. Zolotorev, Experimental investigation of excited-state lifetimes in atomic ytterbium, Phys. Rev. A 53, 3103 (1996)."
+  },
+  "138": {
+    "referenceNumber": 138,
+    "pdfPhysicalPage": 37,
+    "raw": "[138] K. Blagoev and V. Komarovskii, Lifetimes of Levels of Neutral and Singly Ionized Lanthanide Atoms, Data Nucl. Data\n\f38                                      R. M. Kroeze, S. L. Kristensen, S. Pucher                          REFERENCES\n\n      Tables 56, 1 (1994).",
+    "text": "[138] K. Blagoev and V. Komarovskii, Lifetimes of Levels of Neutral and Singly Ionized Lanthanide Atoms, Data Nucl. Data 38 R. M. Kroeze, S. L. Kristensen, S. Pucher REFERENCES Tables 56, 1 (1994)."
+  },
+  "139": {
+    "referenceNumber": 139,
+    "pdfPhysicalPage": 38,
+    "raw": "[139] F. H. K. Rambow and L. D. Schearer, Radiative lifetimes and alignment depolarization cross sections for YbI and II\n      by the Hanle effect in a flowing helium system, Phys. Rev. A 14, 738 (1976).",
+    "text": "[139] F. H. K. Rambow and L. D. Schearer, Radiative lifetimes and alignment depolarization cross sections for YbI and II by the Hanle effect in a flowing helium system, Phys. Rev. A 14, 738 (1976)."
+  },
+  "140": {
+    "referenceNumber": 140,
+    "pdfPhysicalPage": 38,
+    "raw": "[140] A. Corney, Atomic and Laser Spectroscopy (Clarendon Press, Oxford University Press, Oxford, United Kingdom, 1977).",
+    "text": "[140] A. Corney, Atomic and Laser Spectroscopy (Clarendon Press, Oxford University Press, Oxford, United Kingdom, 1977)."
+  },
+  "141": {
+    "referenceNumber": 141,
+    "pdfPhysicalPage": 38,
+    "raw": "[141] W. Demtröder, Laser Spectroscopy (Springer-Verlag Berlin, Heidelberg, Germany, 2008).",
+    "text": "[141] W. Demtröder, Laser Spectroscopy (Springer-Verlag Berlin, Heidelberg, Germany, 2008)."
+  },
+  "142": {
+    "referenceNumber": 142,
+    "pdfPhysicalPage": 38,
+    "raw": "[142] D. M. Brink and G. R. Satchler, Angular Momentum, Oxford Library of the Physical Sciences (Clarendon Press, Oxford,\n      1968).",
+    "text": "[142] D. M. Brink and G. R. Satchler, Angular Momentum, Oxford Library of the Physical Sciences (Clarendon Press, Oxford, 1968)."
+  },
+  "143": {
+    "referenceNumber": 143,
+    "pdfPhysicalPage": 38,
+    "raw": "[143] D. A. Steck, Quantum and Atom Optics, Available online at http://steck.us/teaching (2007), revision 0.16.4, 7 May\n      2025.",
+    "text": "[143] D. A. Steck, Quantum and Atom Optics, Available online at http://steck.us/teaching (2007), revision 0.16.4, 7 May 2025."
+  },
+  "144": {
+    "referenceNumber": 144,
+    "pdfPhysicalPage": 38,
+    "raw": "[144] P. Barakhshan, A. Marrs, A. Bhosale, B. Arora, R. Eigenmann, and M. S. Safronova, Portal for High-Precision Atomic\n      Data and Computation (version 2.0), University of Delaware, Newark, DE, USA. https://www.udel.edu/atom (2022),\n      accessed May 25, 2025. Original data source cited where available.",
+    "text": "[144] P. Barakhshan, A. Marrs, A. Bhosale, B. Arora, R. Eigenmann, and M. S. Safronova, Portal for High-Precision Atomic Data and Computation (version 2.0), University of Delaware, Newark, DE, USA. https://www.udel.edu/atom (2022), accessed May 25, 2025. Original data source cited where available."
+  },
+  "145": {
+    "referenceNumber": 145,
+    "pdfPhysicalPage": 38,
+    "raw": "[145] P. D. Lett, R. N. Watts, C. I. Westbrook, W. D. Phillips, P. L. Gould, and H. J. Metcalf, Observation of Atoms Laser\n      Cooled below the Doppler Limit, Phys. Rev. Lett. 61, 169 (1988).",
+    "text": "[145] P. D. Lett, R. N. Watts, C. I. Westbrook, W. D. Phillips, P. L. Gould, and H. J. Metcalf, Observation of Atoms Laser Cooled below the Doppler Limit, Phys. Rev. Lett. 61, 169 (1988)."
+  },
+  "146": {
+    "referenceNumber": 146,
+    "pdfPhysicalPage": 38,
+    "raw": "[146] C. Y. Park and T. H. Yoon, Efficient magneto-optical trapping of Yb atoms with a violet laser diode, Phys. Rev. A\n      68, 055401 (2003).",
+    "text": "[146] C. Y. Park and T. H. Yoon, Efficient magneto-optical trapping of Yb atoms with a violet laser diode, Phys. Rev. A 68, 055401 (2003)."
+  },
+  "147": {
+    "referenceNumber": 147,
+    "pdfPhysicalPage": 38,
+    "raw": "[147] T. Kuwamoto, K. Honda, Y. Takahashi, and T. Yabuzaki, Magneto-optical trapping of Yb atoms using an intercom-\n      bination transition, Phys. Rev. A 60, R745 (1999).",
+    "text": "[147] T. Kuwamoto, K. Honda, Y. Takahashi, and T. Yabuzaki, Magneto-optical trapping of Yb atoms using an intercom- bination transition, Phys. Rev. A 60, R745 (1999)."
+  },
+  "148": {
+    "referenceNumber": 148,
+    "pdfPhysicalPage": 38,
+    "raw": "[148] S. Dörscher, A. Thobe, B. Hundt, A. Kochanke, R. Le Targat, P. Windpassinger, C. Becker, and K. Sengstock, Creation\n      of quantum-degenerate gases of ytterbium in a compact 2D-/3D-magneto-optical trap setup, Rev. Sci. Instrum. 84,\n      10.1063/1.4802682 (2013).",
+    "text": "[148] S. Dörscher, A. Thobe, B. Hundt, A. Kochanke, R. Le Targat, P. Windpassinger, C. Becker, and K. Sengstock, Creation of quantum-degenerate gases of ytterbium in a compact 2D-/3D-magneto-optical trap setup, Rev. Sci. Instrum. 84, 10.1063/1.4802682 (2013)."
+  },
+  "149": {
+    "referenceNumber": 149,
+    "pdfPhysicalPage": 38,
+    "raw": "[149] A. Guttridge, S. A. Hopkins, S. L. Kemp, D. Boddy, R. Freytag, M. P. A. Jones, M. R. Tarbutt, E. A. Hinds, and\n      S. L. Cornish, Direct loading of a large Yb MOT on the 1 S0 → 3 P1 transition, J. Phys. B Mol. Opt. Phys. 49, 145006\n      (2016).",
+    "text": "[149] A. Guttridge, S. A. Hopkins, S. L. Kemp, D. Boddy, R. Freytag, M. P. A. Jones, M. R. Tarbutt, E. A. Hinds, and S. L. Cornish, Direct loading of a large Yb MOT on the 1 S0 → 3 P1 transition, J. Phys. B Mol. Opt. Phys. 49, 145006 (2016)."
+  },
+  "150": {
+    "referenceNumber": 150,
+    "pdfPhysicalPage": 38,
+    "raw": "[150] J. Lee, J. H. Lee, J. Noh, and J. Mun, Core-shell magneto-optical trap for alkaline-earth-metal-like atoms, Phys. Rev.\n      A 91, 053405 (2015).",
+    "text": "[150] J. Lee, J. H. Lee, J. Noh, and J. Mun, Core-shell magneto-optical trap for alkaline-earth-metal-like atoms, Phys. Rev. A 91, 053405 (2015)."
+  },
+  "151": {
+    "referenceNumber": 151,
+    "pdfPhysicalPage": 38,
+    "raw": "[151] H. Letellier, Á. Mitchell Galvão de Melo, A. Dorne, and R. Kaiser, Loading of a large Yb MOT on the 1 S0 → 1 P1\n      transition, Rev. Sci. Instrum. 94, 0 (2023).",
+    "text": "[151] H. Letellier, Á. Mitchell Galvão de Melo, A. Dorne, and R. Kaiser, Loading of a large Yb MOT on the 1 S0 → 1 P1 transition, Rev. Sci. Instrum. 94, 0 (2023)."
+  },
+  "152": {
+    "referenceNumber": 152,
+    "pdfPhysicalPage": 38,
+    "raw": "[152] R. Grimm, M. Weidemüller, and Y. B. Ovchinnikov, Optical Dipole Traps for Neutral Atoms, in Advances in Atomic,\n      Molecular, and Optical Physics, Vol. 42 (Academic Press, 2000) pp. 95–170.",
+    "text": "[152] R. Grimm, M. Weidemüller, and Y. B. Ovchinnikov, Optical Dipole Traps for Neutral Atoms, in Advances in Atomic, Molecular, and Optical Physics, Vol. 42 (Academic Press, 2000) pp. 95–170."
+  },
+  "153": {
+    "referenceNumber": 153,
+    "pdfPhysicalPage": 38,
+    "raw": "[153] F. Le Kien, P. Schneeweiss, and A. Rauschenbeutel, Dynamical polarizability of atoms in arbitrary light fields: general\n      theory and application to cesium, Eur. Phys. J. D 67, 92 (2013).",
+    "text": "[153] F. Le Kien, P. Schneeweiss, and A. Rauschenbeutel, Dynamical polarizability of atoms in arbitrary light fields: general theory and application to cesium, Eur. Phys. J. D 67, 92 (2013)."
+  },
+  "154": {
+    "referenceNumber": 154,
+    "pdfPhysicalPage": 38,
+    "raw": "[154] V. V. Tsyganok, D. A. Pershin, E. T. Davletov, V. A. Khlebnikov, and A. V. Akimov, Scalar, tensor, and vector\n      polarizability of Tm atoms in a 532-nm dipole trap, Phys. Rev. A 100, 042502 (2019).",
+    "text": "[154] V. V. Tsyganok, D. A. Pershin, E. T. Davletov, V. A. Khlebnikov, and A. V. Akimov, Scalar, tensor, and vector polarizability of Tm atoms in a 532-nm dipole trap, Phys. Rev. A 100, 042502 (2019)."
+  },
+  "155": {
+    "referenceNumber": 155,
+    "pdfPhysicalPage": 38,
+    "raw": "[155] A. T. Muzi Falconi, Trapping, loading and imaging fermionic ytterbium atom arrays, Ph.D. thesis, University of Trieste\n      (2025).",
+    "text": "[155] A. T. Muzi Falconi, Trapping, loading and imaging fermionic ytterbium atom arrays, Ph.D. thesis, University of Trieste (2025)."
+  },
+  "156": {
+    "referenceNumber": 156,
+    "pdfPhysicalPage": 38,
+    "raw": "[156] T. O. Höhn, E. Staub, G. Brochier, N. Darkwah Oppong, and M. Aidelsburger, State-dependent potentials for the 1 S0\n      and 3 P0 clock states of neutral ytterbium atoms, Phys. Rev. A 108, 053325 (2023).",
+    "text": "[156] T. O. Höhn, E. Staub, G. Brochier, N. Darkwah Oppong, and M. Aidelsburger, State-dependent potentials for the 1 S0 and 3 P0 clock states of neutral ytterbium atoms, Phys. Rev. A 108, 053325 (2023)."
+  },
+  "157": {
+    "referenceNumber": 157,
+    "pdfPhysicalPage": 38,
+    "raw": "[157] T. O. Höhn, State-dependent potentials and clock ground-state cooling in an ytterbium quantum simulator, Ph.D. thesis,\n      Ludwig-Maximilians-Universität München (2024).",
+    "text": "[157] T. O. Höhn, State-dependent potentials and clock ground-state cooling in an ytterbium quantum simulator, Ph.D. thesis, Ludwig-Maximilians-Universität München (2024)."
+  },
+  "158": {
+    "referenceNumber": 158,
+    "pdfPhysicalPage": 38,
+    "raw": "[158] Z.-M. Tang, Y.-M. Yu, J. Jiang, and C.-Z. Dong, Magic wavelengths for the 6s2 1 S0 -6s6p 3 Po1 transition in ytterbium\n      atom, J. Phys. B Mol. Opt. Phys. 51, 125002 (2018).",
+    "text": "[158] Z.-M. Tang, Y.-M. Yu, J. Jiang, and C.-Z. Dong, Magic wavelengths for the 6s2 1 S0 -6s6p 3 Po1 transition in ytterbium atom, J. Phys. B Mol. Opt. Phys. 51, 125002 (2018)."
+  },
+  "159": {
+    "referenceNumber": 159,
+    "pdfPhysicalPage": 38,
+    "raw": "[159] V. A. Dzuba and A. Derevianko, Dynamic polarizabilities and related properties of clock states of the ytterbium atom,\n      J. Phys. B Mol. Opt. Phys. 43, 074011 (2010).",
+    "text": "[159] V. A. Dzuba and A. Derevianko, Dynamic polarizabilities and related properties of clock states of the ytterbium atom, J. Phys. B Mol. Opt. Phys. 43, 074011 (2010)."
+  },
+  "160": {
+    "referenceNumber": 160,
+    "pdfPhysicalPage": 38,
+    "raw": "[160] S. Saskin, J. T. Wilson, B. Grinkemeyer, and J. D. Thompson, Narrow-Line Cooling and Imaging of Ytterbium Atoms\n      in an Optical Tweezer Array, Phys. Rev. Lett. 122, 143002 (2019).",
+    "text": "[160] S. Saskin, J. T. Wilson, B. Grinkemeyer, and J. D. Thompson, Narrow-Line Cooling and Imaging of Ytterbium Atoms in an Optical Tweezer Array, Phys. Rev. Lett. 122, 143002 (2019)."
+  },
+  "161": {
+    "referenceNumber": 161,
+    "pdfPhysicalPage": 38,
+    "raw": "[161] R. Yamamoto, J. Kobayashi, T. Kuno, K. Kato, and Y. Takahashi, An ytterbium quantum gas microscope with\n      narrow-line laser cooling, New J. Phys. 18, 023016 (2016).",
+    "text": "[161] R. Yamamoto, J. Kobayashi, T. Kuno, K. Kato, and Y. Takahashi, An ytterbium quantum gas microscope with narrow-line laser cooling, New J. Phys. 18, 023016 (2016)."
+  },
+  "162": {
+    "referenceNumber": 162,
+    "pdfPhysicalPage": 38,
+    "raw": "[162] T. O. Höhn, R. A. Villela, E. Zu, L. Bezzo, R. M. Kroeze, and M. Aidelsburger, Determining the 3 P0 Excited-State\n      Tune-Out Wavelength of 174 Yb in a Triple-Magic Lattice, PRX Quantum 7, 010303 (2026).",
+    "text": "[162] T. O. Höhn, R. A. Villela, E. Zu, L. Bezzo, R. M. Kroeze, and M. Aidelsburger, Determining the 3 P0 Excited-State Tune-Out Wavelength of 174 Yb in a Triple-Magic Lattice, PRX Quantum 7, 010303 (2026)."
+  },
+  "163": {
+    "referenceNumber": 163,
+    "pdfPhysicalPage": 38,
+    "raw": "[163] T. Ishiyama, K. Ono, R. Asano, H. Kawase, T. Takano, A. Sunaga, Y. Yamamoto, M. Tanaka, and Y. Takahashi,\n      Excluding Hypothetical Light Boson Interpretation of Yb King Plot Nonlinearity with the 1 S0 ↔ 3 P2 Isotope Shift\n      Measurement (2026), arXiv:2601.08487.",
+    "text": "[163] T. Ishiyama, K. Ono, R. Asano, H. Kawase, T. Takano, A. Sunaga, Y. Yamamoto, M. Tanaka, and Y. Takahashi, Excluding Hypothetical Light Boson Interpretation of Yb King Plot Nonlinearity with the 1 S0 ↔ 3 P2 Isotope Shift Measurement (2026), arXiv:2601.08487."
+  },
+  "164": {
+    "referenceNumber": 164,
+    "pdfPhysicalPage": 38,
+    "raw": "[164] A. Aeppli, W. J. Arthur-Dworschack, K. Beloy, C. M. Berry, T. Bothwell, A. Folz, T. M. Fortier, T. Grogan, Y. S.\n      Hassan, Z. Z. Hu, D. B. Hume, B. D. Hunt, K. Kim, A. Koepke, D. Lee, D. R. Leibrandt, B. Lewis, A. D. Ludlow,\n      M. C. Marshall, N. V. Nardelli, H. Ranganath, D. A. R. Castillo, J. A. Sherman, J. L. Siegel, S. Thornton, W. Warfield,\n      and J. Ye, Atomic clock frequency ratios with fractional uncertainty ≤ 3.2 × 10−18 (2025), arXiv:2512.21428.",
+    "text": "[164] A. Aeppli, W. J. Arthur-Dworschack, K. Beloy, C. M. Berry, T. Bothwell, A. Folz, T. M. Fortier, T. Grogan, Y. S. Hassan, Z. Z. Hu, D. B. Hume, B. D. Hunt, K. Kim, A. Koepke, D. Lee, D. R. Leibrandt, B. Lewis, A. D. Ludlow, M. C. Marshall, N. V. Nardelli, H. Ranganath, D. A. R. Castillo, J. A. Sherman, J. L. Siegel, S. Thornton, W. Warfield, and J. Ye, Atomic clock frequency ratios with fractional uncertainty ≤ 3.2 × 10−18 (2025), arXiv:2512.21428."
+  },
+  "165": {
+    "referenceNumber": 165,
+    "pdfPhysicalPage": 38,
+    "raw": "[165] N. Nemitz, A. A. Jørgensen, R. Yanagimoto, F. Bregolin, and H. Katori, Modeling light shifts in optical lattice clocks,\n      Phys. Rev. A 99, 033424 (2019).",
+    "text": "[165] N. Nemitz, A. A. Jørgensen, R. Yanagimoto, F. Bregolin, and H. Katori, Modeling light shifts in optical lattice clocks, Phys. Rev. A 99, 033424 (2019)."
+  },
+  "166": {
+    "referenceNumber": 166,
+    "pdfPhysicalPage": 38,
+    "raw": "[166] T. Kobayashi, D. Akamatsu, Y. Hisai, T. Tanabe, H. Inaba, T. Suzuyama, F.-L. Hong, K. Hosaka, and M. Yasuda,\n      Uncertainty Evaluation of an 171 Yb Optical Lattice Clock at NMIJ, IEEE Trans. Ultrason. Ferroelectr. Freq. Control\n      65, 2449 (2018).",
+    "text": "[166] T. Kobayashi, D. Akamatsu, Y. Hisai, T. Tanabe, H. Inaba, T. Suzuyama, F.-L. Hong, K. Hosaka, and M. Yasuda, Uncertainty Evaluation of an 171 Yb Optical Lattice Clock at NMIJ, IEEE Trans. Ultrason. Ferroelectr. Freq. Control 65, 2449 (2018)."
+  },
+  "167": {
+    "referenceNumber": 167,
+    "pdfPhysicalPage": 38,
+    "raw": "[167] R. C. Brown, N. B. Phillips, K. Beloy, W. F. McGrew, M. Schioppo, R. J. Fasano, G. Milani, X. Zhang, N. Hinkley,\n      H. Leopardi, T. H. Yoon, D. Nicolodi, T. M. Fortier, and A. D. Ludlow, Hyperpolarizability and Operational Magic\n\f39                                        R. M. Kroeze, S. L. Kristensen, S. Pucher                             REFERENCES\n\n      Wavelength in an Optical Lattice Clock, Phys. Rev. Lett. 119, 253001 (2017).",
+    "text": "[167] R. C. Brown, N. B. Phillips, K. Beloy, W. F. McGrew, M. Schioppo, R. J. Fasano, G. Milani, X. Zhang, N. Hinkley, H. Leopardi, T. H. Yoon, D. Nicolodi, T. M. Fortier, and A. D. Ludlow, Hyperpolarizability and Operational Magic 39 R. M. Kroeze, S. L. Kristensen, S. Pucher REFERENCES Wavelength in an Optical Lattice Clock, Phys. Rev. Lett. 119, 253001 (2017)."
+  },
+  "168": {
+    "referenceNumber": 168,
+    "pdfPhysicalPage": 39,
+    "raw": "[168] N. Nemitz, T. Ohkubo, M. Takamoto, I. Ushijima, M. Das, N. Ohmae, and H. Katori, Frequency ratio of Yb and Sr\n      clocks with 5 × 10−17 uncertainty at 150 seconds averaging time, Nat. Photonics 10, 258 (2016).",
+    "text": "[168] N. Nemitz, T. Ohkubo, M. Takamoto, I. Ushijima, M. Das, N. Ohmae, and H. Katori, Frequency ratio of Yb and Sr clocks with 5 × 10−17 uncertainty at 150 seconds averaging time, Nat. Photonics 10, 258 (2016)."
+  },
+  "169": {
+    "referenceNumber": 169,
+    "pdfPhysicalPage": 39,
+    "raw": "[169] Y. Li, Y. Bao, M. Peper, C. Li, and J. D. Thompson, Fast, continuous and coherent atom replacement in a neutral\n      atom qubit array (2025), arXiv:2506.15633.",
+    "text": "[169] Y. Li, Y. Bao, M. Peper, C. Li, and J. D. Thompson, Fast, continuous and coherent atom replacement in a neutral atom qubit array (2025), arXiv:2506.15633."
+  },
+  "170": {
+    "referenceNumber": 170,
+    "pdfPhysicalPage": 39,
+    "raw": "[170] I. Angeli and K. P. Marinova, Table of experimental nuclear ground state charge radii: An update, Data Nucl. Data\n      Tables 99, 69 (2013).",
+    "text": "[170] I. Angeli and K. P. Marinova, Table of experimental nuclear ground state charge radii: An update, Data Nucl. Data Tables 99, 69 (2013)."
+  },
+  "171": {
+    "referenceNumber": 171,
+    "pdfPhysicalPage": 39,
+    "raw": "[171] M. Baumann and G. Wandel, gJ Factors of the 6s6p 3 P1 and 6s6p 1 P1 states of ytterbium, Phys. Lett. A 28, 200\n      (1968).",
+    "text": "[171] M. Baumann and G. Wandel, gJ Factors of the 6s6p 3 P1 and 6s6p 1 P1 states of ytterbium, Phys. Lett. A 28, 200 (1968)."
+  },
+  "172": {
+    "referenceNumber": 172,
+    "pdfPhysicalPage": 39,
+    "raw": "[172] W.-L. Wang and X.-Y. Xu, A novel method to measure the isotope shifts and hyperfine splittings of all ytterbium\n      isotopes for a 399-nm transition, Chin. Phys. B 19, 123202 (2010).",
+    "text": "[172] W.-L. Wang and X.-Y. Xu, A novel method to measure the isotope shifts and hyperfine splittings of all ytterbium isotopes for a 399-nm transition, Chin. Phys. B 19, 123202 (2010)."
+  },
+  "173": {
+    "referenceNumber": 173,
+    "pdfPhysicalPage": 39,
+    "raw": "[173] A. Banerjee, U. D. Rapol, D. Das, A. Krishna, and V. Natarajan, Precise measurements of UV atomic lines: Hyperfine\n      structure and isotope shifts in the 398.8 nm line of Yb, Eur. Lett. 63, 340 (2003).",
+    "text": "[173] A. Banerjee, U. D. Rapol, D. Das, A. Krishna, and V. Natarajan, Precise measurements of UV atomic lines: Hyperfine structure and isotope shifts in the 398.8 nm line of Yb, Eur. Lett. 63, 340 (2003)."
+  },
+  "174": {
+    "referenceNumber": 174,
+    "pdfPhysicalPage": 39,
+    "raw": "[174] R. Zinkstok, E. J. van Duijn, S. Witte, and W. Hogervorst, Hyperfine structure and isotope shift of transitions in Yb\n      I using UV and deep-UV cw laser light and the angular distribution of fluorescence radiation, J. Phys. B Mol. Opt.\n      Phys. 35, 305 (2002).",
+    "text": "[174] R. Zinkstok, E. J. van Duijn, S. Witte, and W. Hogervorst, Hyperfine structure and isotope shift of transitions in Yb I using UV and deep-UV cw laser light and the angular distribution of fluorescence radiation, J. Phys. B Mol. Opt. Phys. 35, 305 (2002)."
+  },
+  "175": {
+    "referenceNumber": 175,
+    "pdfPhysicalPage": 39,
+    "raw": "[175] T. Loftus, J. R. Bochinski, and T. W. Mossberg, Optical double-resonance cooled-atom spectroscopy, Phys. Rev. A\n      63, 023402 (2001).",
+    "text": "[175] T. Loftus, J. R. Bochinski, and T. W. Mossberg, Optical double-resonance cooled-atom spectroscopy, Phys. Rev. A 63, 023402 (2001)."
+  },
+  "176": {
+    "referenceNumber": 176,
+    "pdfPhysicalPage": 39,
+    "raw": "[176] K. Deilamian, J. D. Gillaspy, and D. E. Kelleher, Isotope shifts and hyperfine splittings of the 398.8-nm Yb I line, J.\n      Opt. Soc. Am. B 10, 789 (1993).",
+    "text": "[176] K. Deilamian, J. D. Gillaspy, and D. E. Kelleher, Isotope shifts and hyperfine splittings of the 398.8-nm Yb I line, J. Opt. Soc. Am. B 10, 789 (1993)."
+  },
+  "177": {
+    "referenceNumber": 177,
+    "pdfPhysicalPage": 39,
+    "raw": "[177] R. W. Berends and L. Maleki, Hyperfine structure and isotope shifts of transitions in neutral and singly ionized\n      ytterbium, J. Opt. Soc. Am. B 9, 332 (1992).",
+    "text": "[177] R. W. Berends and L. Maleki, Hyperfine structure and isotope shifts of transitions in neutral and singly ionized ytterbium, J. Opt. Soc. Am. B 9, 332 (1992)."
+  },
+  "178": {
+    "referenceNumber": 178,
+    "pdfPhysicalPage": 39,
+    "raw": "[178] H. Liening, Level-crossing-spectroscopy with additional optical pumping in the ground state, Zeitschrift für Phys. A\n      Atoms Nucl. 320, 363 (1985).",
+    "text": "[178] H. Liening, Level-crossing-spectroscopy with additional optical pumping in the ground state, Zeitschrift für Phys. A Atoms Nucl. 320, 363 (1985)."
+  },
+  "179": {
+    "referenceNumber": 179,
+    "pdfPhysicalPage": 39,
+    "raw": "[179] P. Grundevik, M. Gustavsson, A. Rosén, and S. Rydberg, Analysis of the isotope shifts and hyperfine structure in the\n      3 988 Å (6s6p 1 P1 ↔ 6s2 1 S0 ) YbI line, Zeitschrift für Phys. A Atoms Nucl. 292, 307 (1979).",
+    "text": "[179] P. Grundevik, M. Gustavsson, A. Rosén, and S. Rydberg, Analysis of the isotope shifts and hyperfine structure in the 3 988 Å (6s6p 1 P1 ↔ 6s2 1 S0 ) YbI line, Zeitschrift für Phys. A Atoms Nucl. 292, 307 (1979)."
+  },
+  "180": {
+    "referenceNumber": 180,
+    "pdfPhysicalPage": 39,
+    "raw": "[180] B. Budick and J. Snir, gJ values of excited states of the ytterbium atom, Phys. Lett. A 24, 689 (1967).",
+    "text": "[180] B. Budick and J. Snir, gJ values of excited states of the ytterbium atom, Phys. Lett. A 24, 689 (1967)."
+  },
+  "181": {
+    "referenceNumber": 181,
+    "pdfPhysicalPage": 39,
+    "raw": "[181] D. M. Jones, F. van Kann, and J. J. McFerran, Intercombination line frequencies in 171 Yb validated with the clock\n      transition, Appl. Opt. 62, 3932 (2023).",
+    "text": "[181] D. M. Jones, F. van Kann, and J. J. McFerran, Intercombination line frequencies in 171 Yb validated with the clock transition, Appl. Opt. 62, 3932 (2023)."
+  },
+  "182": {
+    "referenceNumber": 182,
+    "pdfPhysicalPage": 39,
+    "raw": "[182] P. E. Atkinson, J. S. Schelfhout, and J. J. McFerran, Hyperfine constants and line separations for the 1 S0 -3 P1 inter-\n      combination line in neutral ytterbium with sub-Doppler resolution, Phys. Rev. A 100, 042505 (2019).",
+    "text": "[182] P. E. Atkinson, J. S. Schelfhout, and J. J. McFerran, Hyperfine constants and line separations for the 1 S0 -3 P1 inter- combination line in neutral ytterbium with sub-Doppler resolution, Phys. Rev. A 100, 042505 (2019)."
+  },
+  "183": {
+    "referenceNumber": 183,
+    "pdfPhysicalPage": 39,
+    "raw": "[183] J. J. McFerran, An inverted crossover resonance aiding laser cooling of 171 Yb, J. Opt. Soc. Am. B 33, 1278 (2016).",
+    "text": "[183] J. J. McFerran, An inverted crossover resonance aiding laser cooling of 171 Yb, J. Opt. Soc. Am. B 33, 1278 (2016)."
+  },
+  "184": {
+    "referenceNumber": 184,
+    "pdfPhysicalPage": 39,
+    "raw": "[184] K. Pandey, A. K. Singh, P. V. K. Kumar, M. V. Suryanarayana, and V. Natarajan, Isotope shifts and hyperfine\n      structure in the 555.8-nm 1 S0 →3 P1 line of Yb, Phys. Rev. A 80, 022518 (2009).",
+    "text": "[184] K. Pandey, A. K. Singh, P. V. K. Kumar, M. V. Suryanarayana, and V. Natarajan, Isotope shifts and hyperfine structure in the 555.8-nm 1 S0 →3 P1 line of Yb, Phys. Rev. A 80, 022518 (2009)."
+  },
+  "185": {
+    "referenceNumber": 185,
+    "pdfPhysicalPage": 39,
+    "raw": "[185] W.-G. Jin, T. Horiguchi, M. Wakasugi, T. Hasegawa, and W. Yang, Systematic Study of Isotope Shiftsand Hyperfine\n      Structures in Yb I by Atomic-Beam Laser Spectroscopy, J. Phys. Soc. Jpn. 60, 2896 (1991).",
+    "text": "[185] W.-G. Jin, T. Horiguchi, M. Wakasugi, T. Hasegawa, and W. Yang, Systematic Study of Isotope Shiftsand Hyperfine Structures in Yb I by Atomic-Beam Laser Spectroscopy, J. Phys. Soc. Jpn. 60, 2896 (1991)."
+  },
+  "186": {
+    "referenceNumber": 186,
+    "pdfPhysicalPage": 39,
+    "raw": "[186] F. Buchinger, A. Mueller, B. Schinzler, K. Wendt, C. Ekström, W. Klempt, and R. Neugart, Fast-beam laser spec-\n      troscopy on metastable atoms applied to neutron-deficient ytterbium isotopes, Nucl. Instruments Methods Phys. Res.\n      202, 159 (1982).",
+    "text": "[186] F. Buchinger, A. Mueller, B. Schinzler, K. Wendt, C. Ekström, W. Klempt, and R. Neugart, Fast-beam laser spec- troscopy on metastable atoms applied to neutron-deficient ytterbium isotopes, Nucl. Instruments Methods Phys. Res. 202, 159 (1982)."
+  },
+  "187": {
+    "referenceNumber": 187,
+    "pdfPhysicalPage": 39,
+    "raw": "[187] J. H. Broadhurst, M. E. Cage, D. L. Clark, G. W. Greenlees, J. A. R. Griffith, and G. R. Isaak, High resolution\n      measurements of isotope shifts and hyperfine splittings for ytterbium using a CW tunable laser, J. Phys. B Mol. Phys.\n      7, L513 (1974).",
+    "text": "[187] J. H. Broadhurst, M. E. Cage, D. L. Clark, G. W. Greenlees, J. A. R. Griffith, and G. R. Isaak, High resolution measurements of isotope shifts and hyperfine splittings for ytterbium using a CW tunable laser, J. Phys. B Mol. Phys. 7, L513 (1974)."
+  },
+  "188": {
+    "referenceNumber": 188,
+    "pdfPhysicalPage": 39,
+    "raw": "[188] G. Wandel, Doppelresonanzexperimente zur Untersuchung der Hyperfeinstruktur des 6s6p 3 P1 -Zustandes von 171 Yb\n      und 173 Yb, Zeitschrift für Phys. A Hadron. Nucl. 231, 434 (1970).",
+    "text": "[188] G. Wandel, Doppelresonanzexperimente zur Untersuchung der Hyperfeinstruktur des 6s6p 3 P1 -Zustandes von 171 Yb und 173 Yb, Zeitschrift für Phys. A Hadron. Nucl. 231, 434 (1970)."
+  },
+  "189": {
+    "referenceNumber": 189,
+    "pdfPhysicalPage": 39,
+    "raw": "[189] M. Baumann, H. Liening, and G. Wandel, Die Hyperfeinstruktur des 6s6p 3 P1 -Zustandes von 171 Yb und 173 Yb,\n      Zeitschrift für Phys. A Hadron. Nucl. 221, 245 (1969).",
+    "text": "[189] M. Baumann, H. Liening, and G. Wandel, Die Hyperfeinstruktur des 6s6p 3 P1 -Zustandes von 171 Yb und 173 Yb, Zeitschrift für Phys. A Hadron. Nucl. 221, 245 (1969)."
+  },
+  "190": {
+    "referenceNumber": 190,
+    "pdfPhysicalPage": 39,
+    "raw": "[190] H. Qiao, C.-Y. Sun, C.-Q. Peng, Q.-C. Qi, C.-C. Zhao, M. Zhou, and X.-Y. Xu, Frequency measurement of 6s6p\n      3\n        P0,2 -6s7s 3 S1 transitions in ultracold 171 Yb atoms referenced to local optical clock, Results Phys. 48, 106439 (2023).",
+    "text": "[190] H. Qiao, C.-Y. Sun, C.-Q. Peng, Q.-C. Qi, C.-C. Zhao, M. Zhou, and X.-Y. Xu, Frequency measurement of 6s6p 3 P0,2 -6s7s 3 S1 transitions in ultracold 171 Yb atoms referenced to local optical clock, Results Phys. 48, 106439 (2023)."
+  },
+  "191": {
+    "referenceNumber": 191,
+    "pdfPhysicalPage": 39,
+    "raw": "[191] A. K. Singh, Hyperfine Structure-Measurement in Alkali-metal Atoms and Ytterbium Atom, Ph.D. thesis, Indian Insti-\n      tute of Science, Bengaluru (2014).",
+    "text": "[191] A. K. Singh, Hyperfine Structure-Measurement in Alkali-metal Atoms and Ytterbium Atom, Ph.D. thesis, Indian Insti- tute of Science, Bengaluru (2014)."
+  },
+  "192": {
+    "referenceNumber": 192,
+    "pdfPhysicalPage": 39,
+    "raw": "[192] T. Wakui, W.-G. Jin, K. Hasegawa, H. Uematsu, T. Minowa, and H. Katsuragawa, High-Resolution Diode-Laser\n      Spectroscopy of the Rare-Earth Elements, J. Phys. Soc. Jpn. 72, 2219 (2003).",
+    "text": "[192] T. Wakui, W.-G. Jin, K. Hasegawa, H. Uematsu, T. Minowa, and H. Katsuragawa, High-Resolution Diode-Laser Spectroscopy of the Rare-Earth Elements, J. Phys. Soc. Jpn. 72, 2219 (2003)."
+  },
+  "193": {
+    "referenceNumber": 193,
+    "pdfPhysicalPage": 39,
+    "raw": "[193] J. Maier, C. S. Kischkel, and M. Baumann, Hyperfine structure and isotope shift of some even parity levels in the YbI\n      spectrum, Zeitschrift für Phys. D Atoms Mol. Clust. 21, 145 (1991).",
+    "text": "[193] J. Maier, C. S. Kischkel, and M. Baumann, Hyperfine structure and isotope shift of some even parity levels in the YbI spectrum, Zeitschrift für Phys. D Atoms Mol. Clust. 21, 145 (1991)."
+  },
+  "194": {
+    "referenceNumber": 194,
+    "pdfPhysicalPage": 39,
+    "raw": "[194] C. Zhao, Q. Qi, C. Sun, C. Peng, T. Jin, T. Zhang, S. Lei, Y. Xia, S. Feng, and X. Xu, Absolute frequency measurements\n      of the 6s6p 3 P0 -5d6s 3 D1 transitions in 170,171,172,173,174,176 Yb by modulation transfer spectroscopy, Phys. Rev. A 110,\n      042816 (2024).",
+    "text": "[194] C. Zhao, Q. Qi, C. Sun, C. Peng, T. Jin, T. Zhang, S. Lei, Y. Xia, S. Feng, and X. Xu, Absolute frequency measurements of the 6s6p 3 P0 -5d6s 3 D1 transitions in 170,171,172,173,174,176 Yb by modulation transfer spectroscopy, Phys. Rev. A 110, 042816 (2024)."
+  },
+  "195": {
+    "referenceNumber": 195,
+    "pdfPhysicalPage": 39,
+    "raw": "[195] K. Beloy, J. A. Sherman, N. D. Lemke, N. Hinkley, C. W. Oates, and A. D. Ludlow, Determination of the 5d6s 3 D1\n      state lifetime and blackbody-radiation clock shift in Yb, Phys. Rev. A 86, 051404 (2012).",
+    "text": "[195] K. Beloy, J. A. Sherman, N. D. Lemke, N. Hinkley, C. W. Oates, and A. D. Ludlow, Determination of the 5d6s 3 D1 state lifetime and blackbody-radiation clock shift in Yb, Phys. Rev. A 86, 051404 (2012)."
+  },
+  "196": {
+    "referenceNumber": 196,
+    "pdfPhysicalPage": 39,
+    "raw": "[196] M. Baumann, M. Braun, A. Gaiser, and H. Liening, Radiative lifetimes and gJ factors of low-lying even-parity levels\n      in the Yb I spectrum, J. Phys. B Mol. Phys. 18, L601 (1985).",
+    "text": "[196] M. Baumann, M. Braun, A. Gaiser, and H. Liening, Radiative lifetimes and gJ factors of low-lying even-parity levels in the Yb I spectrum, J. Phys. B Mol. Phys. 18, L601 (1985)."
+  },
+  "197": {
+    "referenceNumber": 197,
+    "pdfPhysicalPage": 39,
+    "raw": "[197] H. Qiao, L. Liu, M. Zhou, L. Luo, and X. Xu, Investigation of the 6s6p 3 P2 -6s7s s S1 transition of ytterbium atoms\n      with modulation-transfer spectroscopy, Appl. Phys. Lett. 122, 3 (2023).",
+    "text": "[197] H. Qiao, L. Liu, M. Zhou, L. Luo, and X. Xu, Investigation of the 6s6p 3 P2 -6s7s s S1 transition of ytterbium atoms with modulation-transfer spectroscopy, Appl. Phys. Lett. 122, 3 (2023)."
+  },
+  "198": {
+    "referenceNumber": 198,
+    "pdfPhysicalPage": 39,
+    "raw": "[198] M. Zhou, S. Zhang, L. Luo, and X. Xu, Characterization of ytterbium resonance lines at 649 nm with modulation-\n\f40                                      R. M. Kroeze, S. L. Kristensen, S. Pucher                          REFERENCES\n\n      transfer spectroscopy, Phys. Rev. A 101, 062506 (2020).",
+    "text": "[198] M. Zhou, S. Zhang, L. Luo, and X. Xu, Characterization of ytterbium resonance lines at 649 nm with modulation- 40 R. M. Kroeze, S. L. Kristensen, S. Pucher REFERENCES transfer spectroscopy, Phys. Rev. A 101, 062506 (2020)."
+  },
+  "199": {
+    "referenceNumber": 199,
+    "pdfPhysicalPage": 40,
+    "raw": "[199] C. Schulz, E. Arnold, W. Borchers, W. Neu, R. Neugart, M. Neuroth, E. W. Otten, M. Scherf, K. Wendt, P. Lievens,\n      Y. A. Kudryavtsev, V. S. Letokhov, V. I. Mishin, and V. V. Petrunin, Resonance ionization spectroscopy on a fast\n      atomic ytterbium beam, J. Phys. B Mol. Opt. Phys. 24, 4831 (1991).",
+    "text": "[199] C. Schulz, E. Arnold, W. Borchers, W. Neu, R. Neugart, M. Neuroth, E. W. Otten, M. Scherf, K. Wendt, P. Lievens, Y. A. Kudryavtsev, V. S. Letokhov, V. I. Mishin, and V. V. Petrunin, Resonance ionization spectroscopy on a fast atomic ytterbium beam, J. Phys. B Mol. Opt. Phys. 24, 4831 (1991)."
+  },
+  "200": {
+    "referenceNumber": 200,
+    "pdfPhysicalPage": 40,
+    "raw": "[200] S. Utreja, P. Roy, H. Rathore, S. Choudhury, M. Das, and S. Panja, Cross Beam Saturated Absorption Spectroscopy:\n      A novel technique for optimization of power broadening, Opt. Commun. 585, 131870 (2025).",
+    "text": "[200] S. Utreja, P. Roy, H. Rathore, S. Choudhury, M. Das, and S. Panja, Cross Beam Saturated Absorption Spectroscopy: A novel technique for optimization of power broadening, Opt. Commun. 585, 131870 (2025)."
+  },
+  "201": {
+    "referenceNumber": 201,
+    "pdfPhysicalPage": 40,
+    "raw": "[201] M. Johanning, A. Braun, D. Eiteneuer, C. Paape, C. Balzer, W. Neuhauser, and C. Wunderlich, Resonance enhanced\n      isotope-selective photoionization of YbI for ion trap loading (2010), arXiv:0712.0969.",
+    "text": "[201] M. Johanning, A. Braun, D. Eiteneuer, C. Paape, C. Balzer, W. Neuhauser, and C. Wunderlich, Resonance enhanced isotope-selective photoionization of YbI for ion trap loading (2010), arXiv:0712.0969."
+  },
+  "202": {
+    "referenceNumber": 202,
+    "pdfPhysicalPage": 40,
+    "raw": "[202] J. S. Ross, Isotope Shift in λ5556 Å of Ytterbium I, J. Opt. Soc. Am. 53, 299 (1963).",
+    "text": "[202] J. S. Ross, Isotope Shift in λ5556 Å of Ytterbium I, J. Opt. Soc. Am. 53, 299 (1963)."
+  },
+  "203": {
+    "referenceNumber": 203,
+    "pdfPhysicalPage": 40,
+    "raw": "[203] C. Clivati, G. Cappellini, L. F. Livi, F. Poggiali, M. S. de Cumis, M. Mancini, G. Pagano, M. Frittelli, A. Mura, G. A.\n      Costanzo, F. Levi, D. Calonico, L. Fallani, J. Catani, and M. Inguscio, Measuring absolute frequencies beyond the GPS\n      limit via long-haul optical frequency dissemination, Opt. Express 24, 11865 (2016).",
+    "text": "[203] C. Clivati, G. Cappellini, L. F. Livi, F. Poggiali, M. S. de Cumis, M. Mancini, G. Pagano, M. Frittelli, A. Mura, G. A. Costanzo, F. Levi, D. Calonico, L. Fallani, J. Catani, and M. Inguscio, Measuring absolute frequencies beyond the GPS limit via long-haul optical frequency dissemination, Opt. Express 24, 11865 (2016)."
+  },
+  "204": {
+    "referenceNumber": 204,
+    "pdfPhysicalPage": 40,
+    "raw": "[204] A. Muzi Falconi, R. Panza, S. Sbernardori, R. Forti, R. Klemt, O. Abdel Karim, M. Marinelli, and F. Scazza,\n      Microsecond-Scale High-Survival and Number-Resolved Detection of Ytterbium Atom Arrays, Phys. Rev. Lett. 135,\n      203402 (2025).",
+    "text": "[204] A. Muzi Falconi, R. Panza, S. Sbernardori, R. Forti, R. Klemt, O. Abdel Karim, M. Marinelli, and F. Scazza, Microsecond-Scale High-Survival and Number-Resolved Detection of Ytterbium Atom Arrays, Phys. Rev. Lett. 135, 203402 (2025)."
+  },
+  "205": {
+    "referenceNumber": 205,
+    "pdfPhysicalPage": 40,
+    "raw": "[205] W. F. McGrew, An Ytterbium Optical Lattice Clock with Eighteen Digits of Uncertainty, Instability, and Reproducibility,\n      Ph.D. thesis, University of Colorado (2020).",
+    "text": "[205] W. F. McGrew, An Ytterbium Optical Lattice Clock with Eighteen Digits of Uncertainty, Instability, and Reproducibility, Ph.D. thesis, University of Colorado (2020)."
+  },
+  "206": {
+    "referenceNumber": 206,
+    "pdfPhysicalPage": 40,
+    "raw": "[206] M. A. Norcia, W. B. Cairncross, K. Barnes, P. Battaglino, A. Brown, M. O. Brown, K. Cassella, C.-A. Chen, R. Coxe,\n      D. Crow, J. Epstein, C. Griger, A. M. W. Jones, H. Kim, J. M. Kindem, J. King, S. S. Kondov, K. Kotru, J. Lauigan,\n      M. Li, M. Lu, E. Megidish, J. Marjanovic, M. McDonald, T. Mittiga, J. A. Muniz, S. Narayanaswami, C. Nishiguchi,\n      R. Notermans, T. Paule, K. A. Pawlak, L. S. Peng, A. Ryou, A. Smull, D. Stack, M. Stone, A. Sucich, M. Urbanek,\n      R. J. M. van de Veerdonk, Z. Vendeiro, T. Wilkason, T.-Y. Wu, X. Xie, X. Zhang, and B. J. Bloom, Midcircuit Qubit\n      Measurement and Rearrangement in a 171 Yb Atomic Array, Phys. Rev. X 13, 041034 (2023).",
+    "text": "[206] M. A. Norcia, W. B. Cairncross, K. Barnes, P. Battaglino, A. Brown, M. O. Brown, K. Cassella, C.-A. Chen, R. Coxe, D. Crow, J. Epstein, C. Griger, A. M. W. Jones, H. Kim, J. M. Kindem, J. King, S. S. Kondov, K. Kotru, J. Lauigan, M. Li, M. Lu, E. Megidish, J. Marjanovic, M. McDonald, T. Mittiga, J. A. Muniz, S. Narayanaswami, C. Nishiguchi, R. Notermans, T. Paule, K. A. Pawlak, L. S. Peng, A. Ryou, A. Smull, D. Stack, M. Stone, A. Sucich, M. Urbanek, R. J. M. van de Veerdonk, Z. Vendeiro, T. Wilkason, T.-Y. Wu, X. Xie, X. Zhang, and B. J. Bloom, Midcircuit Qubit Measurement and Rearrangement in a 171 Yb Atomic Array, Phys. Rev. X 13, 041034 (2023)."
+  },
+  "207": {
+    "referenceNumber": 207,
+    "pdfPhysicalPage": 40,
+    "raw": "[207] J. W. Lis, A. Senoo, W. F. McGrew, F. Rönchen, A. Jenkins, and A. M. Kaufman, Midcircuit Operations Using the\n      omg Architecture in Neutral Atom Arrays, Phys. Rev. X 13, 041035 (2023).",
+    "text": "[207] J. W. Lis, A. Senoo, W. F. McGrew, F. Rönchen, A. Jenkins, and A. M. Kaufman, Midcircuit Operations Using the omg Architecture in Neutral Atom Arrays, Phys. Rev. X 13, 041035 (2023)."
+  },
+  "208": {
+    "referenceNumber": 208,
+    "pdfPhysicalPage": 40,
+    "raw": "[208] M. A. Norcia, H. Kim, W. B. Cairncross, M. Stone, A. Ryou, M. Jaffe, M. O. Brown, K. Barnes, P. Battaglino,\n      T. C. Bohdanowicz, A. Brown, K. Cassella, C.-A. Chen, R. Coxe, D. Crow, J. Epstein, C. Griger, E. Halperin,\n      F. Hummel, A. M. W. Jones, J. M. Kindem, J. King, K. Kotru, J. Lauigan, M. Li, M. Lu, E. Megidish, J. Marjanovic,\n      M. McDonald, T. Mittiga, J. A. Muniz, S. Narayanaswami, C. Nishiguchi, T. Paule, K. A. Pawlak, L. S. Peng, K. L.\n      Pudenz, D. Rodrı́guez Pérez, A. Smull, D. Stack, M. Urbanek, R. J. M. van de Veerdonk, Z. Vendeiro, L. Wadleigh,\n      T. Wilkason, T.-Y. Wu, X. Xie, E. Zalys-Geller, X. Zhang, and B. J. Bloom, Iterative Assembly of 171 Yb Atom Arrays\n      with Cavity-Enhanced Optical Lattices, PRX Quantum 5, 030316 (2024).",
+    "text": "[208] M. A. Norcia, H. Kim, W. B. Cairncross, M. Stone, A. Ryou, M. Jaffe, M. O. Brown, K. Barnes, P. Battaglino, T. C. Bohdanowicz, A. Brown, K. Cassella, C.-A. Chen, R. Coxe, D. Crow, J. Epstein, C. Griger, E. Halperin, F. Hummel, A. M. W. Jones, J. M. Kindem, J. King, K. Kotru, J. Lauigan, M. Li, M. Lu, E. Megidish, J. Marjanovic, M. McDonald, T. Mittiga, J. A. Muniz, S. Narayanaswami, C. Nishiguchi, T. Paule, K. A. Pawlak, L. S. Peng, K. L. Pudenz, D. Rodrı́guez Pérez, A. Smull, D. Stack, M. Urbanek, R. J. M. van de Veerdonk, Z. Vendeiro, L. Wadleigh, T. Wilkason, T.-Y. Wu, X. Xie, E. Zalys-Geller, X. Zhang, and B. J. Bloom, Iterative Assembly of 171 Yb Atom Arrays with Cavity-Enhanced Optical Lattices, PRX Quantum 5, 030316 (2024)."
+  },
+  "209": {
+    "referenceNumber": 209,
+    "pdfPhysicalPage": 40,
+    "raw": "[209] T. A. Zheng, Y. A. Yang, M. S. Safronova, U. I. Safronova, Z. X. Xiong, T. Xia, and Z. T. Lu, Magic wavelengths of\n      the Yb (6s2 1 S0 -6s6p 3 P1 ) intercombination transition, Phys. Rev. A 102, 4 (2020).",
+    "text": "[209] T. A. Zheng, Y. A. Yang, M. S. Safronova, U. I. Safronova, Z. X. Xiong, T. Xia, and Z. T. Lu, Magic wavelengths of the Yb (6s2 1 S0 -6s6p 3 P1 ) intercombination transition, Phys. Rev. A 102, 4 (2020)."
+  },
+  "210": {
+    "referenceNumber": 210,
+    "pdfPhysicalPage": 40,
+    "raw": "[210] Y. Takasu, K. Komori, K. Honda, M. Kumakura, T. Yabuzaki, and Y. Takahashi, Photoassociation Spectroscopy of\n      Laser-Cooled Ytterbium Atoms, Phys. Rev. Lett. 93, 123202 (2004).",
+    "text": "[210] Y. Takasu, K. Komori, K. Honda, M. Kumakura, T. Yabuzaki, and Y. Takahashi, Photoassociation Spectroscopy of Laser-Cooled Ytterbium Atoms, Phys. Rev. Lett. 93, 123202 (2004)."
+  },
+  "211": {
+    "referenceNumber": 211,
+    "pdfPhysicalPage": 40,
+    "raw": "[211] T. Andersen, O. Poulsen, P. S. Ramanujam, and A. P. Petkov, Lifetimes of some excited states in the rare earths: La\n      ii, Ce ii, Pr ii, Nd ii, Sm ii, Yb i, Yb ii, and Lu ii, Sol. Phys. 44, 257 (1975).",
+    "text": "[211] T. Andersen, O. Poulsen, P. S. Ramanujam, and A. P. Petkov, Lifetimes of some excited states in the rare earths: La ii, Ce ii, Pr ii, Nd ii, Sm ii, Yb i, Yb ii, and Lu ii, Sol. Phys. 44, 257 (1975)."
+  },
+  "212": {
+    "referenceNumber": 212,
+    "pdfPhysicalPage": 40,
+    "raw": "[212] M. Baumann and G. Wandel, Lifetimes of the excited states (6s6p) 1 P1 and (6s6p) 3 P1 of ytterbium, Phys. Lett. 22,\n      283 (1966).",
+    "text": "[212] M. Baumann and G. Wandel, Lifetimes of the excited states (6s6p) 1 P1 and (6s6p) 3 P1 of ytterbium, Phys. Lett. 22, 283 (1966)."
+  },
+  "213": {
+    "referenceNumber": 213,
+    "pdfPhysicalPage": 40,
+    "raw": "[213] J. L. Siegel, W. F. McGrew, Y. S. Hassan, C.-C. Chen, K. Beloy, T. Grogan, X. Zhang, and A. D. Ludlow, Excited-Band\n      Coherent Delocalization for Improved Optical Lattice Clock Performance, Phys. Rev. Lett. 132, 133201 (2024).",
+    "text": "[213] J. L. Siegel, W. F. McGrew, Y. S. Hassan, C.-C. Chen, K. Beloy, T. Grogan, X. Zhang, and A. D. Ludlow, Excited-Band Coherent Delocalization for Improved Optical Lattice Clock Performance, Phys. Rev. Lett. 132, 133201 (2024)."
+  },
+  "214": {
+    "referenceNumber": 214,
+    "pdfPhysicalPage": 40,
+    "raw": "[214] C.-Y. Xu, J. Singh, J. C. Zappala, K. G. Bailey, M. R. Dietrich, J. P. Greene, W. Jiang, N. D. Lemke, Z.-T. Lu,\n      P. Mueller, and T. P. O’Connor, Measurement of the Hyperfine Quenching Rate of the Clock Transition in 171 Yb,\n      Phys. Rev. Lett. 113, 033003 (2014).",
+    "text": "[214] C.-Y. Xu, J. Singh, J. C. Zappala, K. G. Bailey, M. R. Dietrich, J. P. Greene, W. Jiang, N. D. Lemke, Z.-T. Lu, P. Mueller, and T. P. O’Connor, Measurement of the Hyperfine Quenching Rate of the Clock Transition in 171 Yb, Phys. Rev. Lett. 113, 033003 (2014)."
+  },
+  "215": {
+    "referenceNumber": 215,
+    "pdfPhysicalPage": 40,
+    "raw": "[215] J. E. Golub, Y. S. Bai, and T. W. Mossberg, Radiative and dynamical properties of homogeneously prepared atomic\n      samples, Phys. Rev. A 37, 119 (1988).",
+    "text": "[215] J. E. Golub, Y. S. Bai, and T. W. Mossberg, Radiative and dynamical properties of homogeneously prepared atomic samples, Phys. Rev. A 37, 119 (1988)."
+  },
+  "216": {
+    "referenceNumber": 216,
+    "pdfPhysicalPage": 40,
+    "raw": "[216] M. Gustavsson, H. Lundberg, L. Nilsson, and S. Svanberg, Lifetime measurements for excited states of rare-earth atoms\n      using pulse modulation of a cw dye-laser beam, J. Opt. Soc. Am. 69, 984 (1979).",
+    "text": "[216] M. Gustavsson, H. Lundberg, L. Nilsson, and S. Svanberg, Lifetime measurements for excited states of rare-earth atoms using pulse modulation of a cw dye-laser beam, J. Opt. Soc. Am. 69, 984 (1979)."
+  },
+  "217": {
+    "referenceNumber": 217,
+    "pdfPhysicalPage": 40,
+    "raw": "[217] W. Gornik, D. Kaiser, W. Lange, J. Luther, and H.-H. Schulz, Quantum beats under pulsed dye laser excitation, Opt.\n      Commun. 6, 327 (1972).",
+    "text": "[217] W. Gornik, D. Kaiser, W. Lange, J. Luther, and H.-H. Schulz, Quantum beats under pulsed dye laser excitation, Opt. Commun. 6, 327 (1972)."
+  },
+  "218": {
+    "referenceNumber": 218,
+    "pdfPhysicalPage": 40,
+    "raw": "[218] B. Budick and J. Snir, Hyperfine-Structure Anomalies of Stable Ytterbium Isotopes, Phys. Rev. A 1, 545 (1970).",
+    "text": "[218] B. Budick and J. Snir, Hyperfine-Structure Anomalies of Stable Ytterbium Isotopes, Phys. Rev. A 1, 545 (1970)."
+  }
+}

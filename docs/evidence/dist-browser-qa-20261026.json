@@ -1,0 +1,77 @@
+[
+  {
+    "viewport": 1440,
+    "geometry": {
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    "paths": [
+      {
+        "id": "T2",
+        "rows": 10,
+        "result": "Ω/2π · T2 ¹S₀ → ³P₁\n32.08 MHz\nP=1 mW · w₀=50 µm · d_eff=0.181 ea₀ · 当前偏振及 F 对的最强允许通道"
+      },
+      {
+        "id": "T3",
+        "rows": 4,
+        "result": "Ω/2π · T3 ¹S₀ → ³P₀\n6.6496 kHz\nP=1 mW · w₀=50 µm · d_eff=0.000037518 ea₀ · 当前偏振及 F 对的最强允许通道"
+      },
+      {
+        "id": "R2",
+        "rows": 10,
+        "result": "Ω/2π · R2 ³P₀ → 65³S₁\n2.22138 MHz\nP=1 mW · w₀=50 µm · d_eff=0.0125333 ea₀ · 当前偏振及 F 对的最强允许通道"
+      }
+    ],
+    "transitions": 8
+  },
+  {
+    "viewport": 1024,
+    "geometry": {
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    "paths": [
+      {
+        "id": "T2",
+        "rows": 10,
+        "result": "Ω/2π · T2 ¹S₀ → ³P₁\n32.08 MHz\nP=1 mW · w₀=50 µm · d_eff=0.181 ea₀ · 当前偏振及 F 对的最强允许通道"
+      },
+      {
+        "id": "T3",
+        "rows": 4,
+        "result": "Ω/2π · T3 ¹S₀ → ³P₀\n6.6496 kHz\nP=1 mW · w₀=50 µm · d_eff=0.000037518 ea₀ · 当前偏振及 F 对的最强允许通道"
+      },
+      {
+        "id": "R2",
+        "rows": 10,
+        "result": "Ω/2π · R2 ³P₀ → 65³S₁\n2.22138 MHz\nP=1 mW · w₀=50 µm · d_eff=0.0125333 ea₀ · 当前偏振及 F 对的最强允许通道"
+      }
+    ],
+    "transitions": 8
+  },
+  {
+    "viewport": 390,
+    "geometry": {
+      "scrollWidth": 390,
+      "width": 390
+    },
+    "paths": [
+      {
+        "id": "T2",
+        "rows": 10,
+        "result": "Ω/2π · T2 ¹S₀ → ³P₁\n32.08 MHz\nP=1 mW · w₀=50 µm · d_eff=0.181 ea₀ · 当前偏振及 F 对的最强允许通道"
+      },
+      {
+        "id": "T3",
+        "rows": 4,
+        "result": "Ω/2π · T3 ¹S₀ → ³P₀\n6.6496 kHz\nP=1 mW · w₀=50 µm · d_eff=0.000037518 ea₀ · 当前偏振及 F 对的最强允许通道"
+      },
+      {
+        "id": "R2",
+        "rows": 10,
+        "result": "Ω/2π · R2 ³P₀ → 65³S₁\n2.22138 MHz\nP=1 mW · w₀=50 µm · d_eff=0.0125333 ea₀ · 当前偏振及 F 对的最强允许通道"
+      }
+    ],
+    "transitions": 8
+  }
+]

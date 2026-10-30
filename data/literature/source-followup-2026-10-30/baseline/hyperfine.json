@@ -1,0 +1,442 @@
+{
+  "schemaVersion": 1,
+  "isotope": 171,
+  "states": {
+    "¹S₀": {
+      "levelId": "yb171-6s2-1s0",
+      "legacy": {
+        "A": 0,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": 0
+          }
+        ]
+      },
+      "sourceId": "ref-01",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "original-source-located",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "J=0 diagonal first-order magnetic-dipole hyperfine A set0 by definition; not absence of off-diagonal HFI",
+      "sourceLocator": "arXiv2509.04416v2 Table5 p21, 1S0:A_over_h",
+      "conditions": {
+        "isotope": 171,
+        "fieldRegime": "zero-field hyperfine / weak-field F basis",
+        "auditDate": "2026-10-29",
+        "sourceRecord": "table-05:1S0:A_over_h",
+        "sourceReferenceNumbers": [],
+        "birgeRatio": null
+      },
+      "convention": "A/h in MHz; E_F/h=A/2*[F(F+1)-I(I+1)-J(J+1)], I=1/2; shifts derived from A"
+    },
+    "³P₀": {
+      "levelId": "yb171-6s6p-3p0",
+      "legacy": {
+        "A": 0,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": 0
+          }
+        ]
+      },
+      "sourceId": "ref-01",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "original-source-located",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "J=0 diagonal first-order magnetic-dipole hyperfine A set0 by definition; not absence of off-diagonal HFI",
+      "sourceLocator": "arXiv2509.04416v2 Table5 p21, 3P0:A_over_h",
+      "conditions": {
+        "isotope": 171,
+        "fieldRegime": "zero-field hyperfine / weak-field F basis",
+        "auditDate": "2026-10-29",
+        "sourceRecord": "table-05:3P0:A_over_h",
+        "sourceReferenceNumbers": [],
+        "birgeRatio": null
+      },
+      "convention": "A/h in MHz; E_F/h=A/2*[F(F+1)-I(I+1)-J(J+1)], I=1/2; shifts derived from A"
+    },
+    "³P₁": {
+      "levelId": "yb171-6s6p-3p1",
+      "legacy": {
+        "A": 3957.85,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": -3957.85
+          },
+          {
+            "F": 1.5,
+            "shift": 1978.925
+          }
+        ]
+      },
+      "sourceId": "ref-01",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "original-source-located",
+      "unit": "MHz",
+      "uncertainty": 0.05,
+      "uncertaintyNote": "printed compilation uncertainty; Birge ratio and primary measurement spread retained in extraction",
+      "sourceLocator": "arXiv2509.04416v2 Table5 p21, 3P1:A_over_h",
+      "conditions": {
+        "isotope": 171,
+        "fieldRegime": "zero-field hyperfine / weak-field F basis",
+        "auditDate": "2026-10-29",
+        "sourceRecord": "table-05:3P1:A_over_h",
+        "sourceReferenceNumbers": [
+          127,
+          128,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189
+        ],
+        "birgeRatio": 2.6
+      },
+      "convention": "A/h in MHz; E_F/h=A/2*[F(F+1)-I(I+1)-J(J+1)], I=1/2; shifts derived from A"
+    },
+    "³P₂": {
+      "levelId": "yb171-6s6p-3p2",
+      "legacy": {
+        "A": 2680.9,
+        "levels": [
+          {
+            "F": 1.5,
+            "shift": -4021.35
+          },
+          {
+            "F": 2.5,
+            "shift": 2680.9
+          }
+        ]
+      },
+      "sourceId": "ref-01",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "original-source-located",
+      "unit": "MHz",
+      "uncertainty": 2.0,
+      "uncertaintyNote": "printed compilation uncertainty; Birge ratio and primary measurement spread retained in extraction",
+      "sourceLocator": "arXiv2509.04416v2 Table5 p21, 3P2:A_over_h",
+      "conditions": {
+        "isotope": 171,
+        "fieldRegime": "zero-field hyperfine / weak-field F basis",
+        "auditDate": "2026-10-29",
+        "sourceRecord": "table-05:3P2:A_over_h",
+        "sourceReferenceNumbers": [
+          190,
+          191,
+          192,
+          193
+        ],
+        "birgeRatio": 6.3
+      },
+      "convention": "A/h in MHz; E_F/h=A/2*[F(F+1)-I(I+1)-J(J+1)], I=1/2; shifts derived from A"
+    },
+    "³D₁": {
+      "levelId": "yb171-6s5d-3d1",
+      "legacy": {
+        "A": -2038.3,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": 2038.3
+          },
+          {
+            "F": 1.5,
+            "shift": -1019.15
+          }
+        ]
+      },
+      "sourceId": "ref-01",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "original-source-located",
+      "unit": "MHz",
+      "uncertainty": 0.11,
+      "uncertaintyNote": "printed compilation uncertainty; Birge ratio and primary measurement spread retained in extraction",
+      "sourceLocator": "arXiv2509.04416v2 Table5 p21, 3D1:A_over_h",
+      "conditions": {
+        "isotope": 171,
+        "fieldRegime": "zero-field hyperfine / weak-field F basis",
+        "auditDate": "2026-10-29",
+        "sourceRecord": "table-05:3D1:A_over_h",
+        "sourceReferenceNumbers": [
+          69,
+          85,
+          86,
+          194,
+          195
+        ],
+        "birgeRatio": 1.0
+      },
+      "convention": "A/h in MHz; E_F/h=A/2*[F(F+1)-I(I+1)-J(J+1)], I=1/2; shifts derived from A"
+    },
+    "¹P₁": {
+      "levelId": "yb171-6s6p-1p1",
+      "legacy": {
+        "A": -214.06,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": 214.06
+          },
+          {
+            "F": 1.5,
+            "shift": -107.03
+          }
+        ]
+      },
+      "sourceId": "ref-01",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "original-source-located",
+      "unit": "MHz",
+      "uncertainty": 0.17,
+      "uncertaintyNote": "printed compilation uncertainty; Birge ratio and primary measurement spread retained in extraction",
+      "sourceLocator": "arXiv2509.04416v2 Table5 p21, 1P1:A_over_h",
+      "conditions": {
+        "isotope": 171,
+        "fieldRegime": "zero-field hyperfine / weak-field F basis",
+        "auditDate": "2026-10-29",
+        "sourceRecord": "table-05:1P1:A_over_h",
+        "sourceReferenceNumbers": [
+          65,
+          66,
+          67,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179
+        ],
+        "birgeRatio": 3.3
+      },
+      "convention": "A/h in MHz; E_F/h=A/2*[F(F+1)-I(I+1)-J(J+1)], I=1/2; shifts derived from A"
+    },
+    "³S₁": {
+      "levelId": "yb171-6s7s-3s1",
+      "legacy": {
+        "A": 6838.41,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": -6838.41
+          },
+          {
+            "F": 1.5,
+            "shift": 3419.205
+          }
+        ]
+      },
+      "sourceId": "ref-01",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "original-source-located",
+      "unit": "MHz",
+      "uncertainty": 0.26,
+      "uncertaintyNote": "printed compilation uncertainty; Birge ratio and primary measurement spread retained in extraction",
+      "sourceLocator": "arXiv2509.04416v2 Table5 p21, 3S1:A_over_h",
+      "conditions": {
+        "isotope": 171,
+        "fieldRegime": "zero-field hyperfine / weak-field F basis",
+        "auditDate": "2026-10-29",
+        "sourceRecord": "table-05:3S1:A_over_h",
+        "sourceReferenceNumbers": [
+          177,
+          190,
+          192,
+          197,
+          198,
+          199
+        ],
+        "birgeRatio": 3.1,
+        "evidenceType": "weighted compilation, not Qiao single measurement"
+      },
+      "convention": "A/h in MHz; E_F/h=A/2*[F(F+1)-I(I+1)-J(J+1)], I=1/2; shifts derived from A"
+    },
+    "50³S₁": {
+      "levelId": "yb171-6s50s-3s1",
+      "legacy": {
+        "A": 5.734,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": -5.734
+          },
+          {
+            "F": 1.5,
+            "shift": 2.867
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "scaling-estimate",
+      "reviewStatus": "definition-needs-review",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration",
+      "sourceLocator": "historical A/nstar^3 estimate; not a located171Yb state-resolved measurement",
+      "conditions": {
+        "auditDate": "2026-10-29",
+        "excludedFromValidatedPrediction": true
+      }
+    },
+    "80³S₁": {
+      "levelId": "yb171-6s80s-3s1",
+      "legacy": {
+        "A": 1.32,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": -1.32
+          },
+          {
+            "F": 1.5,
+            "shift": 0.66
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "scaling-estimate",
+      "reviewStatus": "definition-needs-review",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration",
+      "sourceLocator": "historical A/nstar^3 estimate; not a located171Yb state-resolved measurement",
+      "conditions": {
+        "auditDate": "2026-10-29",
+        "excludedFromValidatedPrediction": true
+      }
+    },
+    "65³D₁": {
+      "levelId": "yb171-6s65d-3d1",
+      "legacy": {
+        "A": -0.767,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": 0.767
+          },
+          {
+            "F": 1.5,
+            "shift": -0.383
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "scaling-estimate",
+      "reviewStatus": "definition-needs-review",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration",
+      "sourceLocator": "historical A/nstar^3 estimate; not a located171Yb state-resolved measurement",
+      "conditions": {
+        "auditDate": "2026-10-29",
+        "excludedFromValidatedPrediction": true
+      }
+    },
+    "65³D₂": {
+      "levelId": "yb171-6s65d-3d2",
+      "legacy": {
+        "A": -0.289,
+        "levels": [
+          {
+            "F": 1.5,
+            "shift": 0.434
+          },
+          {
+            "F": 2.5,
+            "shift": -0.289
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "scaling-estimate",
+      "reviewStatus": "definition-needs-review",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration",
+      "sourceLocator": "historical A/nstar^3 estimate; not a located171Yb state-resolved measurement",
+      "conditions": {
+        "auditDate": "2026-10-29",
+        "excludedFromValidatedPrediction": true
+      }
+    }
+  },
+  "saved65S": {
+    "levelId": "yb171-6s65s-3s1-triplet-connected",
+    "sourceId": "this-work-hyperfine-65s",
+    "evidenceKind": "internal-calculation",
+    "reviewStatus": "definition-needs-review",
+    "conditions": {
+      "magneticField_G": 0,
+      "electricField_V_cm": 0
+    },
+    "conditionsNote": "Original R005 validation2026-10-08 and saved notebook were read without execution: B=0,E=0,171Yb,n65,L0; original artifact identity checked, not a new MQDT calculation or independent model validation.",
+    "energyReference": "ionic-hyperfine-centroid",
+    "effectiveAConvention": "frequency-defined A_eff=(2/3)*splitting; selected zero-field branches only",
+    "physicalValidation": "saved CSV,notebook and validation identity/configuration checked; original code revision and independent branch/model uncertainty remain unestablished",
+    "csv": {
+      "columns": [
+        "isotope",
+        "n_label",
+        "term",
+        "F",
+        "B_G",
+        "nu_upper",
+        "energy_over_h_Hz_relative_ionic_hfs_centroid",
+        "selected_pair_centroid_over_h_Hz",
+        "shift_over_h_MHz",
+        "splitting_F32_minus_F12_MHz",
+        "A_eff_over_h_MHz",
+        "triplet_channel_weight_diagnostic",
+        "P_S1_in_retained_6sns",
+        "g_F"
+      ],
+      "rows": [
+        {
+          "isotope": "171",
+          "n_label": "65",
+          "term": "3S1 triplet-connected",
+          "F": "0.5",
+          "B_G": "0.0",
+          "nu_upper": "60.1761270465",
+          "energy_over_h_Hz_relative_ionic_hfs_centroid": "-905339807668.5577",
+          "selected_pair_centroid_over_h_Hz": "-897664643289.6215",
+          "shift_over_h_MHz": "-7675.16437893628",
+          "splitting_F32_minus_F12_MHz": "11512.746568404542",
+          "A_eff_over_h_MHz": "7675.164378936361",
+          "triplet_channel_weight_diagnostic": "0.9082363430484395",
+          "P_S1_in_retained_6sns": "0.8594064354527566",
+          "g_F": "2.2944137538533558"
+        },
+        {
+          "isotope": "171",
+          "n_label": "65",
+          "term": "3S1 triplet-connected",
+          "F": "1.5",
+          "B_G": "0.0",
+          "nu_upper": "60.561073029",
+          "energy_over_h_Hz_relative_ionic_hfs_centroid": "-893827061100.1532",
+          "selected_pair_centroid_over_h_Hz": "-897664643289.6215",
+          "shift_over_h_MHz": "3837.5821894682617",
+          "splitting_F32_minus_F12_MHz": "11512.746568404542",
+          "A_eff_over_h_MHz": "7675.164378936361",
+          "triplet_channel_weight_diagnostic": "1.0",
+          "P_S1_in_retained_6sns": "1.0",
+          "g_F": "1.3347899158789458"
+        }
+      ],
+      "lineEnding": "CRLF",
+      "finalNewline": true,
+      "compatibilityPath": "assets/05.21_yb171_65s_hyperfine.csv"
+    }
+  }
+}

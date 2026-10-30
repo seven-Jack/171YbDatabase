@@ -1,0 +1,199 @@
+[
+  {
+    "id": "peper-2025",
+    "originalPath": "/Users/seven/Desktop/paper/lifetime/Peper 等 - 2025 - Spectroscopy and Modeling of Yb 171 Rydberg States for High-Fidelity Two-Qubit Gates.pdf",
+    "sha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a",
+    "bytes": 3414281,
+    "pages": 30,
+    "rawText": "peper-2025.txt",
+    "header": "                                       PHYSICAL REVIEW X 15, 011009 (2025)\n\n\n\n      Spectroscopy and Modeling of 171Yb Rydberg States for High-Fidelity Two-Qubit Gates\n   Michael Peper ,1 Yiyi Li ,1 Daniel Y. Knapp ,1,2,* Mila Bileska ,1,2 Shuo Ma ,1,2 Genyue Liu ,1 Pai Peng ,1\n              Bichen Zhang ,1 Sebastian P. Horvath ,1 Alex P. Burgers ,1,† and Jeff D. Thompson 1,‡\n                            1\n                             Department of Electrical and Computer Engineering, Princeton University,\n                                                Princeton, New Jersey 08544, USA\n                         2\n                           Department of Physics, Princeton University, Princeton, New Jersey 08544, USA\n\n                            (Received 8 June 2024; accepted 6 December 2024; published 17 January 2025)\n\n                 Highly excited Rydberg states and their interactions play an important role in quantum computing\n              and simulation. These properties can be predicted accurately for alkali atoms with simple Rydberg level\n              structures. However, an extension of these methods to more complex atoms such as alkaline-earth atoms has\n              not ",
+    "doi": "10.1103/PhysRevX.15.011009",
+    "url": "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.15.011009",
+    "version": "published 2025-01-17",
+    "isotopes": [
+      171,
+      174
+    ]
+  },
+  {
+    "id": "peper-supplement",
+    "originalPath": "/Users/seven/Desktop/paper/lifetime/YtterbiumSpectroscopy_PRX_resubmission_supp.pdf",
+    "sha256": "7bab7cf336bcc82be834b31ee364e11c1362c996ddf1c2187ec340040b1a36eb",
+    "bytes": 391437,
+    "pages": 56,
+    "rawText": "peper-supplement.txt",
+    "header": " Supplementary: Spectroscopy and modeling of 171 Yb Rydberg states for high-fidelity\n                                 two-qubit gates\n             Michael Peper,1 Yiyi Li,1 Daniel Y. Knapp,1, 2, ∗ Mila Bileska,1, 2 Shuo Ma,1, 2 Genyue Liu,1 Pai\n              Peng,1 Bichen Zhang,1 Sebastian P. Horvath,1 Alex P. Burgers,1, † and Jeff D. Thompson1, ‡\n                                     1\n                                     Department of Electrical and Computer Engineering,\n                                      Princeton University, Princeton, NJ 08544, USA\n                          2\n                            Department of Physics, Princeton University, Princeton, NJ 08544, USA\n                                                  (Dated: December 5, 2024)\n\n\n\n\n                                          SI.   MQDT MODEL PARAMETERS\n\n                                                                  174\n                                                           A.           Yb\n\n\n\nTable S1.    Six-channel MQDT model parameters for the 6sns 1 S0 series of 174 Yb obtained from fit to spectroscopic data\npresented in Tabs. S11 to S13 and S16 to S20. The electronic configuration of the perturbin",
+    "doi": "10.1103/PhysRevX.15.011009",
+    "url": "https://journals.aps.org/prx/supplemental/10.1103/PhysRevX.15.011009",
+    "version": "local supplement dated 2024-12-05; preserved original filename",
+    "isotopes": [
+      171,
+      174
+    ]
+  },
+  {
+    "id": "kuroda-2025",
+    "originalPath": "/Users/seven/Desktop/paper/lifetime/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_published.pdf",
+    "sha256": "30823c38c870ec150528e375d58a63d5272a52da171c6f0d02ee7b8a8f49a5f6",
+    "bytes": 2650131,
+    "pages": 14,
+    "rawText": "kuroda-2025.txt",
+    "header": "                                       PHYSICAL REVIEW A 112, 042817 (2025)\n\n\n\n             Microwave spectroscopy and multichannel quantum defect analysis of ytterbium\n                                 6snp, 6sn f , and 6sng Rydberg states\n\n       Rin Kuroda ,1,2,* Vernon M. Hughes ,1,2,* Martin Poitrinal ,1 Michael Peper ,1,† and Jeff D. Thompson                      1,‡\n              1\n                  Department of Electrical and Computer Engineering, Princeton University, Princeton, New Jersey 08544, USA\n                              2\n                                Department of Physics, Princeton University, Princeton, New Jersey 08544, USA\n\n                                 (Received 20 July 2025; accepted 16 September 2025; published 28 October 2025)\n\n                 The complex Rydberg structure of ytterbium atoms is shaped by multiple low-lying ion-core-excited states\n              and strong channel interactions, which presents both opportunities and challenges for quantum information\n              processing and precision metrology. In this work, we extend high-resolution microwave spectroscopy and\n              multichannel quantum defect theory (MQDT) modeling of si",
+    "doi": "10.1103/mzsv-rckx",
+    "url": "https://journals.aps.org/pra/abstract/10.1103/mzsv-rckx",
+    "version": "Phys Rev A 112 042817; published 2025-10-28",
+    "isotopes": [
+      171,
+      174
+    ]
+  },
+  {
+    "id": "fang-2001",
+    "originalPath": "/Users/seven/Desktop/paper/lifetime/2001_Fang_Yb_Radiative-lifetimes-Rydberg-states_published.pdf",
+    "sha256": "b4ac15f7330220bd5888f884421b28ffd11dd02c74b48a95091f1c15ca8ef177",
+    "bytes": 124384,
+    "pages": 5,
+    "rawText": "fang-2001.txt",
+    "header": "                                      Journal of Quantitative Spectroscopy &\n                                       Radiative Transfer 69 (2001) 469}473\n\n\n\n\n            Radiative lifetimes of Rydberg state of ytterbium\n           Da-wei Fang \u0001 *, Wei-jun Xie\u0002, Yi Zhang , Xiao Hu , Yu-yan Liu\u0001\n         Department of Metrological Measurement Engineering, China Institute of Metrology, Hangzhou 310034,\n                                              People's Republic of China\n      \u0001State Key Laboratory of Magnetic Resonance and Atomic and Molecular Physics, Wuhan Institute of Physics\n                    and Mathematics, Academia Sinica, Wuhan 430071, People's Republic of China\n             \u0002Department of Physics, Jiujiang Normal College, Jiujiang 332000, People's Republic of China\n                                  Received 10 August 1999; accepted 1 May 2000\n\n\nAbstract\n\n  Lifetimes of highly excited Rydberg states of ytterbium for 6sns \u0010S and 6snd \u0010D (n\"21}27) have been\n                                                                     \u000f           \u0011\nmeasured using delayed electric-\"eld ionization (DEFI). The experimental data are compared with the\ncalculated results derived from numer",
+    "doi": "10.1016/S0022-4073(00)00096-0",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0022407300000960",
+    "version": "published JQSRT69 469-473",
+    "isotopes": null,
+    "isotopeNote": "No isotope-resolved assignment stated in the examined original; do not label as 171 or 174."
+  },
+  {
+    "id": "chen-2022",
+    "originalPath": "/Users/seven/Desktop/paper/lifetime/2022_Chen_171Yb_OMG-architecture_arXiv2201.04083v3.pdf",
+    "sha256": "1c812aeb51e0009e93551b09fd1a182b6912aeeec03415f81df952f09d3d899f",
+    "bytes": 6480680,
+    "pages": 22,
+    "rawText": "chen-2022.txt",
+    "header": "                                                               Analyzing the Rydberg-based omg architecture for 171 Yb nuclear spins\n\n                                                                                 Neville Chen,1, ∗ Lintao Li,1, ∗ William Huie,1, ∗ Mingkun\n                                                                               Zhao,1 Ian Vetter,1 Chris H. Greene,2, 3 and Jacob P. Covey1, †\n                                                                 1\n                                                                  Department of Physics, The University of Illinois at Urbana-Champaign, Urbana, IL 61801, USA\n                                                                   2\n                                                                     Department of Physics and Astronomy, Purdue University, West Lafayette, IN 47907, USA\n                                                             3\n                                                               Purdue Quantum Science and Engineering Institute, Purdue University, West Lafayette, IN 47907, USA\n                                                                    Neutral alkaline earth(-like) atoms have",
+    "doi": "10.1103/PhysRevA.105.052438",
+    "url": "https://arxiv.org/abs/2201.04083v3",
+    "version": "local arXiv v3 2022-04-18; published title is optical-metastable-ground architecture",
+    "isotopes": [
+      171
+    ]
+  },
+  {
+    "id": "wilson-2022",
+    "originalPath": "/Users/seven/Desktop/paper/Rydberg interaction/Trapping-Alkaline-Earth-Rydberg-Atoms-Optical-Tweezer-Arrays.pdf",
+    "sha256": "cafb618ffa6f60aa23a134b3ad73bdaa07679c02c234fdb7f83b8306d850d787",
+    "bytes": 1088014,
+    "pages": 6,
+    "rawText": "wilson-2022.txt",
+    "header": "                               PHYSICAL REVIEW LETTERS 128, 033201 (2022)\n\n\n\n                    Trapping Alkaline Earth Rydberg Atoms Optical Tweezer Arrays\n          J. T. Wilson,1 S. Saskin,1,2 Y. Meng,3 S. Ma,1,2 R. Dilip ,2 A. P. Burgers,1 and J. D. Thompson                     1,*\n                1\n                 Department of Electrical Engineering, Princeton University, Princeton, New Jersey 08540, USA\n                        2\n                          Department of Physics, Princeton University, Princeton, New Jersey 08540, USA\n       3\n         Vienna Center for Quantum Science and Technology, TU Wien, Atominstitut, Stadionallee 2, 1020 Vienna, Austria\n\n          (Received 19 December 2019; revised 16 November 2021; accepted 3 January 2022; published 20 January 2022)\n\n                Neutral atom qubits with Rydberg-mediated interactions are a leading platform for developing large-\n             scale coherent quantum systems. In the majority of experiments to date, the Rydberg states are not trapped\n             by the same potential that confines ground state atoms, resulting in atom loss and constraints on the\n             achievable interaction time. In this Letter,",
+    "doi": "10.1103/PhysRevLett.128.033201",
+    "url": "https://link.aps.org/doi/10.1103/PhysRevLett.128.033201",
+    "version": "published 2022-01-20",
+    "isotopes": [
+      174
+    ]
+  },
+  {
+    "id": "kuroda-2025-arxiv-v1",
+    "originalPath": "/Users/seven/Desktop/paper/lifetime/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_arXiv2507.11487v1.pdf",
+    "sha256": "66abd4d74c1d7ce3f0b5bd5ebc51c1cc1743b3da98680229967eec5b86c08606",
+    "bytes": 11033346,
+    "pages": 53,
+    "rawText": "kuroda-2025-arxiv-v1.txt",
+    "header": "                                                      Microwave spectroscopy and multi-channel quantum defect analysis of ytterbium\n                                                                                    Rydberg states\n                                                        Rin Kuroda,1, 2, ∗ Vernon M. Hughes,1, 2, ∗ Martin Poitrinal,1 Michael Peper,1, † and Jeff D. Thompson1, ‡\n                                                                                        1\n                                                                                        Department of Electrical and Computer Engineering,\n                                                                                         Princeton University, Princeton, NJ 08544, USA\n                                                                             2\n                                                                               Department of Physics, Princeton University, Princeton, NJ 08544, USA\n                                                                                                    (Dated: September 24, 2025)\n                                                                    The complex Rydbe",
+    "doi": "10.1103/mzsv-rckx",
+    "url": "https://arxiv.org/abs/2507.11487v1",
+    "version": "arXiv v1; includes supplement; not presumed identical to published supplemental",
+    "isotopes": [
+      171,
+      174
+    ]
+  },
+  {
+    "id": "muniz-2025",
+    "originalPath": "/Users/seven/Desktop/paper/lifetime/2025_Muniz_171Yb_Universal-gates_published.pdf",
+    "sha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e",
+    "bytes": 1803757,
+    "pages": 18,
+    "rawText": "muniz-2025.txt",
+    "header": "                                                PRX QUANTUM 6, 020334 (2025)\n\n\n\n                 High-Fidelity Universal Gates in the 171 Yb Ground-State Nuclear-Spin Qubit\n                    J. A. Muniz ,1,* M. Stone,1,* D. T. Stack,1,* M. Jaﬀe ,1 J. M. Kindem,1 L. Wadleigh,1\n            E. Zalys-Geller,1 X. Zhang ,1 C.-A. Chen,1 M. A. Norcia ,1 J. Epstein,1 E. Halperin,1 F. Hummel ,1\n             T. Wilkason ,1 M. Li,1 K. Barnes ,1 P. Battaglino,1 T. C. Bohdanowicz,1 G. Booth,1 A. Brown ,1\n                  M. O. Brown,1 W. B. Cairncross ,1 K. Cassella ,1 R. Coxe ,1 D. Crow,1 M. Feldkamp ,1\n                  C. Griger ,1 A. Heinz ,1 A. M. W. Jones ,1 H. Kim ,1 J. King,1 K. Kotru,1 J. Lauigan,1\n            J. Marjanovic ,1 E. Megidish,1 M. Meredith,1 M. McDonald,1 R. Morshead,1 S. Narayanaswami ,1\n                C. Nishiguchi ,1 T. Paule,1 K. A. Pawlak,1 K. L. Pudenz ,1 D. Rodríguez Pérez ,1 A. Ryou,1\n             J. Simon ,1,2 A. Smull,1 M. Urbanek ,1 R. J. M. van de Veerdonk ,1 Z. Vendeiro ,1 T.-Y. Wu ,1\n                                               X. Xie ,1 and B. J. Bloom 1,†\n                                    1\n                                    Atom Computing, Inc., 25",
+    "doi": "10.1103/PRXQuantum.6.020334",
+    "url": "https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.6.020334",
+    "version": "published PRX Quantum6 020334; 17 pages",
+    "isotopes": [
+      171
+    ]
+  },
+  {
+    "id": "halter-2023-arxiv-v2",
+    "originalPath": "/Users/seven/Desktop/171YbDatabase/references/papers/2022_Halter_174Yb_Trap-loss-spectroscopy_arXiv2211.04748v2.pdf",
+    "sha256": "47c724a73142b37e882599ec16bed9a40be68d282232bf95e4111fbb7d2b581d",
+    "bytes": 665060,
+    "pages": 11,
+    "rawText": "halter-2023-arxiv-v2.txt",
+    "header": "                                                   Trap-loss spectroscopy of Rydberg states in\n                                                   ytterbium\n\n\n\n\narXiv:2211.04748v2 [physics.atom-ph] 21 Nov 2022\n                                                           C. Halter, A. Miethke, C. Sillus, A. Hegde and A. Görlitz\n                                                           Institut für Experimentalphysik, Heinrich-Heine-Universität, Düsseldorf, Deutschland\n                                                           E-mail: axel.goerlitz@hhu.de\n\n                                                           October 2022\n\n                                                           Abstract. We present an experimental study of the Rydberg 1 S0 - and 1 P1 - series\n                                                           of ytterbium for principal quantum numbers in the range of n = 70 to 90. The\n                                                           study is performed using trap loss spectroscopy in a magneto-optical trap operating\n                                                           on the 61 S0 → 61 P1 transition at 399 nm. Compared to the commonly used Rydberg\n   ",
+    "doi": "10.1088/1361-6455/acb74b",
+    "url": "https://arxiv.org/abs/2211.04748v2",
+    "version": "arXiv v2; published J Phys B56 055001",
+    "isotopes": [
+      174
+    ]
+  },
+  {
+    "id": "lehec-2018-arxiv-v2",
+    "originalPath": "/Users/seven/Desktop/171YbDatabase/references/papers/2018_Lehec_Yb_Even-parity-MQDT_arXiv1805.02712v2.pdf",
+    "sha256": "38057d7e2e2e7abd5d8d9ec9c2909eb685b625c6fb73cebe2eb8dfaac1f1ccf4",
+    "bytes": 498113,
+    "pages": 15,
+    "rawText": "lehec-2018-arxiv-v2.txt",
+    "header": "                                                   Laser and microwave spectroscopy of even-parity Rydberg states of neutral ytterbium\n                                                                   and Multichannel Quantum Defect Theory analysis\n                                                                          H. Lehec, A. Zuliani, W. Maineult, E. Luc-Koenig, P. Pillet and P. Cheinet∗\n                                                                                  Laboratoire Aimé Cotton, CNRS, Univ. Paris-Sud, ENS Cachan,\n                                                                                      Université Paris-Saclay, Bât. 505, 91405 Orsay, France\n\n                                                                                                  F. Niyaz and T. F. Gallagher†\n                                                                            Department of Physics, University of Virginia, Charlottesville, Virginia 22904\n                                                                                                       (Dated: May 28, 2018)\n\n\n\n\narXiv:1805.02712v2 [physics.atom-ph] 25 May 2018\n                                                    ",
+    "doi": "10.1103/PhysRevA.98.062506",
+    "url": "https://arxiv.org/abs/1805.02712v2",
+    "version": "arXiv v2 dated2018-05-25; not claimed identical to publishedPRA",
+    "isotopes": [
+      174
+    ]
+  },
+  {
+    "id": "okuno-2022-arxiv-v1",
+    "originalPath": "/Users/seven/Desktop/171YbDatabase/references/papers/2022_Okuno_Yb_Metastable-Rydberg-excitation_arXiv2204.07995v1.pdf",
+    "sha256": "dc91616b29454e06ee5a933c0cdd8b6a088766e1395a2fdbc8977634f4a8f9c8",
+    "bytes": 2695002,
+    "pages": 10,
+    "rawText": "okuno-2022-arxiv-v1.txt",
+    "header": "                                                   High-resolution spectroscopy and single-photon Rydberg excitation of reconfigurable\n                                                                ytterbium atom tweezer arrays utilizing a metastable state\n                                                                               Daichi Okuno,∗ Yuma Nakamura, Toshi Kusano, Yosuke Takasu,\n                                                                                  Nobuyuki Takei,† Hideki Konishi, and Yoshiro Takahashi\n                                                                  Department of Physics, Graduate School of Science, Kyoto University, Kyoto 606-8502, Japan\n                                                                                                   (Dated: April 19, 2022)\n                                                                    We present an experimental system for Rydberg tweezer arrays with ytterbium (Yb) atoms fea-\n                                                                 turing internal state manipulation between the ground 1 S0 and the metastable 3 P2 states, and\n                                                                 si",
+    "doi": "10.7566/JPSJ.91.084301",
+    "url": "https://arxiv.org/abs/2204.07995v1",
+    "version": "arXiv v1 dated2022-04-17",
+    "isotopes": [
+      174
+    ]
+  },
+  {
+    "id": "burgers-2021-arxiv-v1",
+    "originalPath": "/Users/seven/Desktop/171YbDatabase/references/papers/2021_Burgers_174Yb_Ion-core-control_arXiv2110.06902v1.pdf",
+    "sha256": "24b9d9c2d467b609b57dd8c10652fc70bd2cef7e906fd18caa309069bd65f284",
+    "bytes": 989806,
+    "pages": 10,
+    "rawText": "burgers-2021-arxiv-v1.txt",
+    "header": "                                               Controlling Rydberg excitations using ion core transitions in alkaline earth atom\n                                                                               tweezer arrays\n\n                                                                    Alex P. Burgers,1 Shuo Ma,1, 2 Sam Saskin,1, 2 Jack Wilson,1 Miguel\n                                                                       A. Alarcón,3, 4 Chris H. Greene,3, 4 and Jeff D. Thompson1, ∗\n                                                    1\n                                                     Princeton University, Department of Electrical and Computer Engineering, Princeton, New Jersey 08544\n                                                                  2\n                                                                    Princeton University, Department of Physics, Princeton, New Jersey 08544\n                                                           3\n                                                             Purdue University, Department of Physics and Astronomy, West Lafayette, Indiana 47907\n                                                     4\n                          ",
+    "doi": "10.1103/PRXQuantum.3.020326",
+    "url": "https://arxiv.org/abs/2110.06902v1",
+    "version": "arXiv v1; published2022 with correction2022-08-24, so version comparison remains necessary",
+    "isotopes": [
+      174
+    ]
+  },
+  {
+    "id": "kroeze-2026-v2",
+    "originalPath": "/Users/seven/Desktop/paper/atomic data/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+    "sha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+    "bytes": 1848415,
+    "pages": 40,
+    "rawText": "../kroeze-2026.fulltext.txt",
+    "version": "arXiv2509.04416v2; suppliedPDF dated2026-02-16",
+    "url": "https://arxiv.org/abs/2509.04416v2",
+    "isotopes": [
+      171
+    ],
+    "use": "review-compilation; original primary papers remain separately classified"
+  }
+]

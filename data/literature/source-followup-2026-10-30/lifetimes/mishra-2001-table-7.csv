@@ -1,0 +1,6 @@
+sourceId,table,pdfPhysicalPage,printedPage,atom,transition,wavenumber_cm,A21,k_over_N2
+mishra-2001-jqsrt,7,11,779,132Xe,3P0->3P1,8151.629,11.92,2.541e-21
+mishra-2001-jqsrt,7,11,779,84Kr,3P0->3P1,4274.853,2.04,2.407e-21
+mishra-2001-jqsrt,7,11,779,200Hg,3P2->3P1,4630.677,1.34,1.917e-21
+mishra-2001-jqsrt,7,11,779,112Cd,3P2->3P1,1170.866,0.02,1.434e-21
+mishra-2001-jqsrt,7,11,779,I,2P1/2->2P3/2,7603.150,7.90,2.036e-21

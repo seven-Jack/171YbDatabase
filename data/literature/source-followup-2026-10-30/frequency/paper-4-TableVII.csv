@@ -1,0 +1,9 @@
+paperNumber,sourceId,table,pdfPage,printedPage,label,referenceInPaper,column,printed,value,uncertainty,unit,bound,uncertaintyBound
+4,qiao-2023-apl,TableVII,6,224002-5,6s6p3P2,14,A_173,-742(5),-742,5,MHz,,
+4,qiao-2023-apl,TableVII,6,224002-5,6s6p3P2,14,B_173,1342(38),1342,38,MHz,,
+4,qiao-2023-apl,TableVII,6,224002-5,6s6p3P2,12,A_173,-742.71(29),-742.71,0.29,MHz,,
+4,qiao-2023-apl,TableVII,6,224002-5,6s6p3P2,12,B_173,1342.3(19),1342.3,1.9,MHz,,
+4,qiao-2023-apl,TableVII,6,224002-5,6s6p3P2,15,A_173,-742.11(2),-742.11,0.02,MHz,,
+4,qiao-2023-apl,TableVII,6,224002-5,6s6p3P2,15,B_173,1339.2(2),1339.2,0.2,MHz,,
+4,qiao-2023-apl,TableVII,6,224002-5,6s6p3P2,This work,A_173,-742.5(1),-742.5,0.1,MHz,,
+4,qiao-2023-apl,TableVII,6,224002-5,6s6p3P2,This work,B_173,1340.2(9),1340.2,0.9,MHz,,

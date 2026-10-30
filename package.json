@@ -1,11 +1,23 @@
 {
   "name": "yb171-transition-atlas",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
+    "preflight": "node scripts/write-version.cjs && node preflight.cjs",
+    "data:validate": "node scripts/validate-data.cjs",
+    "data:export": "node scripts/export-data.cjs",
     "build": "node build.cjs",
-    "test": "node preflight.cjs && node --test tests/rydberg.test.js",
+    "preview": "node scripts/preview.cjs",
+    "test:unit": "node --test tests/**/*.test.js",
+    "test": "npm run preflight && npm run test:unit",
+    "check:artifacts": "node scripts/check-artifacts.cjs",
+    "check": "npm run data:validate && npm test && npm run build && npm run check:artifacts",
+    "test:e2e": "playwright test",
+    "test:all": "npm run check && npm run test:e2e",
     "sync": "node sync.cjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
   }
 }

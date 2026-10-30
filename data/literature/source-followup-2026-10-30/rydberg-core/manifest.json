@@ -1,0 +1,30 @@
+{
+  "createdAt": "2026-10-30",
+  "sourceFiles": [
+    {
+      "path": "references/papers/7.pdf",
+      "sha256": "b058a900e9aaa292d3800087a823b57de74049434ee2ee663ac05aaa4c173bf0",
+      "pages": 18,
+      "unchanged": true
+    },
+    {
+      "path": "references/papers/10.pdf",
+      "sha256": "1bdc3d40c247b1e725d2541ffb03aae7d930abd653deb0df00f530539450873b",
+      "pages": 11,
+      "unchanged": true
+    }
+  ],
+  "tableCounts": {
+    "Aymar": 4,
+    "Fisk": 4
+  },
+  "tableRecordCounts": {
+    "AymarTable1": 24,
+    "AymarTable2": 15,
+    "AymarTable3": 289,
+    "AymarTable4": 12,
+    "FiskTablesI-IV": 68
+  },
+  "totalTableRecords": 408,
+  "policy": "no source file modified; no fit/MQDTmodel run; no forced transfer between isotopes; text/OCR corrected only where source image verified"
+}

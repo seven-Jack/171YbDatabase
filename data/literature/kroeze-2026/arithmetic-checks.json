@@ -1,0 +1,93 @@
+[
+  {
+    "table": 8,
+    "check": "lambda=c/nu",
+    "source_nm": "398.9108443",
+    "calculated_nm": "398.910844285170402734995910384359601089770463",
+    "difference_nm": "1.4829597265004089615640398910229537E-8",
+    "scope": "internal printed-table arithmetic only"
+  },
+  {
+    "table": 8,
+    "check": "Eq54 electronic J-reduced magnitude (Je=1)",
+    "source_ea0": "4.147",
+    "calculated_ea0": 4.1474934933178815,
+    "scope": "internal printed-table arithmetic only; not original-measurement validation"
+  },
+  {
+    "table": 9,
+    "check": "lambda=c/nu",
+    "source_nm": "578.41957591616250",
+    "calculated_nm": "578.419575916162501662690665717988823832172495",
+    "difference_nm": "-1.662690665717988823832172495E-15",
+    "scope": "internal printed-table arithmetic only"
+  },
+  {
+    "table": 10,
+    "check": "lambda=c/nu",
+    "source_nm": "555.80068663",
+    "calculated_nm": "555.800686633805196308761054321622975220897122",
+    "difference_nm": "-3.805196308761054321622975220897122E-9",
+    "scope": "internal printed-table arithmetic only"
+  },
+  {
+    "table": 10,
+    "check": "Eq54 electronic J-reduced magnitude (Je=1)",
+    "source_ea0": "0.5398",
+    "calculated_ea0": 0.539757047924911,
+    "scope": "internal printed-table arithmetic only; not original-measurement validation"
+  },
+  {
+    "table": 11,
+    "check": "lambda=c/nu",
+    "source_nm": "507.34517",
+    "calculated_nm": "507.345170410242212982260597074995202692117690",
+    "difference_nm": "-4.10242212982260597074995202692117690E-7",
+    "scope": "internal printed-table arithmetic only"
+  },
+  {
+    "table": 12,
+    "check": "lambda=c/nu",
+    "source_nm": "1388.7629464",
+    "calculated_nm": "1388.76294634057927244385316529461200425229326",
+    "difference_nm": "5.942072755614683470538799574770674E-8",
+    "scope": "internal printed-table arithmetic only"
+  },
+  {
+    "table": 12,
+    "check": "Eq54 electronic J-reduced magnitude (Je=1)",
+    "source_ea0": "2.76",
+    "calculated_ea0": 2.760646418500219,
+    "scope": "internal printed-table arithmetic only; not original-measurement validation"
+  },
+  {
+    "table": 13,
+    "check": "lambda=c/nu",
+    "source_nm": "649.08662928",
+    "calculated_nm": "649.086629282415913662474424657087467846879806",
+    "difference_nm": "-2.415913662474424657087467846879806E-9",
+    "scope": "internal printed-table arithmetic only"
+  },
+  {
+    "table": 13,
+    "check": "Eq54 electronic J-reduced magnitude (Je=1)",
+    "source_ea0": "1.96",
+    "calculated_ea0": 1.9530503306109994,
+    "scope": "internal printed-table arithmetic only; not original-measurement validation"
+  },
+  {
+    "table": 14,
+    "check": "lambda=c/nu",
+    "source_nm": "770.160284",
+    "calculated_nm": "770.160268400690117234667050622027740952610904",
+    "difference_nm": "0.000015599309882765332949377972259047389096",
+    "scope": "internal printed-table arithmetic only"
+  },
+  {
+    "table": 14,
+    "check": "Eq54 electronic J-reduced magnitude (Je=1)",
+    "source_ea0": "4.99",
+    "calculated_ea0": 4.989893608248759,
+    "scope": "internal printed-table arithmetic only; not original-measurement validation"
+  }
+]

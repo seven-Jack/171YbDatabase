@@ -1,0 +1,38 @@
+{
+  "coveredFields": 230,
+  "statusCounts": {
+    "conditional-pure-J-selection-rule": 1,
+    "configuration-can-be-completed": 1,
+    "constant-or-provenance-metadata": 6,
+    "derived-from-unverified-excitation": 2,
+    "derived-from-unverified-input": 1,
+    "historical-physical-constant": 1,
+    "honest-missing": 8,
+    "internal-number-without-generating-artifact": 1,
+    "invalid-anchor-mapping": 4,
+    "legacy-model-metadata": 5,
+    "rounded-literature-value": 1,
+    "source-misattribution": 7,
+    "unsupported-lifetime-extrapolation": 3,
+    "unsupported-lifetime-linewidth-estimate": 15,
+    "unsupported-scalar-defect": 21,
+    "unverified-legacy-hyperfine-scaling": 48,
+    "unverified-scaling-estimate": 26,
+    "user-interface-grid": 7,
+    "verified-model-channel-threshold": 2,
+    "verified-review-compilation-only": 2,
+    "verified-saved-internal-record": 54,
+    "verified-source-wrong-isotope-for171-use": 14
+  },
+  "extractedTables": {
+    "HalterTable1": 42,
+    "FangTable1": 15,
+    "S25": 171,
+    "S26": 69,
+    "S27": 42,
+    "LehecTableVI": 6,
+    "OkunoTableI": 98
+  },
+  "allSourceOriginalsHashUnchanged": true,
+  "noScientificComputationRun": true
+}

@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "title": "Hyperfine quenching of the metastable 3P0,2 states in divalent atoms",
+    "arxiv": "physics/0312006v1",
+    "preprintYear": 2003,
+    "publishedYear": 2004,
+    "publishedDOI": "10.1103/PhysRevA.69.042506",
+    "evidence": "relativistic many-body theory",
+    "temperatureK": 0,
+    "visualChecks": [
+      3,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "sourcePdf": "/Users/seven/Desktop/171YbDatabase/references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf",
+  "sha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f",
+  "extractedAt": "2026-10-29",
+  "nullMeaning": "blank/dash/unreported; never numeric zero",
+  "tables": [
+    {
+      "table": "Table I",
+      "pdfPage": 3,
+      "columns": [
+        "isotope",
+        "I",
+        "mu_muN"
+      ],
+      "unit": "nuclear magnetic moments in muN",
+      "rows": [
+        {
+          "isotope": "25Mg",
+          "I": "5/2",
+          "mu_muN": "-0.85546"
+        },
+        {
+          "isotope": "43Ca",
+          "I": "7/2",
+          "mu_muN": "-1.31727"
+        },
+        {
+          "isotope": "87Sr",
+          "I": "9/2",
+          "mu_muN": "-1.09283"
+        },
+        {
+          "isotope": "171Yb",
+          "I": "1/2",
+          "mu_muN": "0.4919"
+        },
+        {
+          "isotope": "173Yb",
+          "I": "5/2",
+          "mu_muN": "-0.6776"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "table": "Table II",
+      "pdfPage": 6,
+      "columns": [
+        "isotope",
+        "evidence",
+        "A_3P1_MHz",
+        "A_3P2_MHz",
+        "sourceFootnote"
+      ],
+      "unit": "MHz",
+      "rows": [
+        {
+          "isotope": "25Mg",
+          "evidence": "theory-this-work",
+          "A_3P1_MHz": "-146.1",
+          "A_3P2_MHz": "-129.7",
+          "sourceFootnote": ""
+        },
+        {
+          "isotope": "25Mg",
+          "evidence": "experiment",
+          "A_3P1_MHz": "-144.977(5)",
+          "A_3P2_MHz": "-128.445(5)",
+          "sourceFootnote": "a:[21]"
+        },
+        {
+          "isotope": "43Ca",
+          "evidence": "theory-this-work",
+          "A_3P1_MHz": "-199.2",
+          "A_3P2_MHz": "-173.1",
+          "sourceFootnote": ""
+        },
+        {
+          "isotope": "43Ca",
+          "evidence": "experiment",
+          "A_3P1_MHz": "-198.890(1)",
+          "A_3P2_MHz": "-171.962(2)",
+          "sourceFootnote": "b:[22];c:[23]"
+        },
+        {
+          "isotope": "87Sr",
+          "evidence": "theory-this-work",
+          "A_3P1_MHz": "-258.7",
+          "A_3P2_MHz": "-211.4",
+          "sourceFootnote": ""
+        },
+        {
+          "isotope": "87Sr",
+          "evidence": "experiment",
+          "A_3P1_MHz": "-260.083(5)",
+          "A_3P2_MHz": "-212.765(1)",
+          "sourceFootnote": "d:[24]"
+        },
+        {
+          "isotope": "171Yb",
+          "evidence": "theory-this-work",
+          "A_3P1_MHz": "3964",
+          "A_3P2_MHz": "2704",
+          "sourceFootnote": ""
+        },
+        {
+          "isotope": "171Yb",
+          "evidence": "experiment",
+          "A_3P1_MHz": "3957.97(47)",
+          "A_3P2_MHz": "2677.6",
+          "sourceFootnote": "e:[25];f:[26]"
+        },
+        {
+          "isotope": "173Yb",
+          "evidence": "theory-this-work",
+          "A_3P1_MHz": "-1092",
+          "A_3P2_MHz": "-745",
+          "sourceFootnote": ""
+        },
+        {
+          "isotope": "173Yb",
+          "evidence": "experiment",
+          "A_3P1_MHz": "-1094.20(60)",
+          "A_3P2_MHz": "-737.7",
+          "sourceFootnote": "e:[25];f:[26]"
+        }
+      ],
+      "notes": [
+        "Authors report theoretical agreement better than 1%; does not replace explicit experimental uncertainty."
+      ]
+    },
+    {
+      "table": "Table III",
+      "pdfPage": 7,
+      "columns": [
+        "atom",
+        "S0",
+        "S2"
+      ],
+      "unit": "a.u.; isotope-independent sums S_J",
+      "rows": [
+        {
+          "atom": "Mg",
+          "S0": "1.36e-5",
+          "S2": "2.30e-5"
+        },
+        {
+          "atom": "Ca",
+          "S0": "3.56e-5",
+          "S2": "5.13e-5"
+        },
+        {
+          "atom": "Sr",
+          "S0": "8.86e-5",
+          "S2": "1.27e-4"
+        },
+        {
+          "atom": "Yb",
+          "S0": "2.27e-4",
+          "S2": "3.83e-4"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "table": "Table IV",
+      "pdfPage": 8,
+      "columns": [
+        "isotope",
+        "upperState",
+        "lowerState",
+        "F",
+        "hyperfineE1Rate_s-1",
+        "otherTheoryRate_s-1",
+        "otherReference"
+      ],
+      "unit": "s^-1",
+      "rows": [
+        {
+          "isotope": "25Mg",
+          "upperState": "3P0",
+          "lowerState": "1S0",
+          "F": "5/2",
+          "hyperfineE1Rate_s-1": "4.44e-4",
+          "otherTheoryRate_s-1": "4.2e-4",
+          "otherReference": "a:[13]"
+        },
+        {
+          "isotope": "25Mg",
+          "upperState": "3P2",
+          "lowerState": "1S0",
+          "F": "3/2",
+          "hyperfineE1Rate_s-1": "2.31e-4",
+          "otherTheoryRate_s-1": "1.4e-4",
+          "otherReference": "a:[13]"
+        },
+        {
+          "isotope": "25Mg",
+          "upperState": "3P2",
+          "lowerState": "1S0",
+          "F": "5/2",
+          "hyperfineE1Rate_s-1": "4.69e-4",
+          "otherTheoryRate_s-1": "2.9e-4",
+          "otherReference": "a:[13]"
+        },
+        {
+          "isotope": "25Mg",
+          "upperState": "3P2",
+          "lowerState": "1S0",
+          "F": "7/2",
+          "hyperfineE1Rate_s-1": "4.95e-4",
+          "otherTheoryRate_s-1": "3.1e-4",
+          "otherReference": "a:[13]"
+        },
+        {
+          "isotope": "43Ca",
+          "upperState": "3P0",
+          "lowerState": "1S0",
+          "F": "7/2",
+          "hyperfineE1Rate_s-1": "2.22e-3",
+          "otherTheoryRate_s-1": null,
+          "otherReference": null
+        },
+        {
+          "isotope": "43Ca",
+          "upperState": "3P2",
+          "lowerState": "1S0",
+          "F": "5/2",
+          "hyperfineE1Rate_s-1": "1.02e-3",
+          "otherTheoryRate_s-1": null,
+          "otherReference": null
+        },
+        {
+          "isotope": "43Ca",
+          "upperState": "3P2",
+          "lowerState": "1S0",
+          "F": "7/2",
+          "hyperfineE1Rate_s-1": "1.81e-3",
+          "otherTheoryRate_s-1": null,
+          "otherReference": null
+        },
+        {
+          "isotope": "43Ca",
+          "upperState": "3P2",
+          "lowerState": "1S0",
+          "F": "9/2",
+          "hyperfineE1Rate_s-1": "1.74e-3",
+          "otherTheoryRate_s-1": null,
+          "otherReference": null
+        },
+        {
+          "isotope": "87Sr",
+          "upperState": "3P0",
+          "lowerState": "1S0",
+          "F": "9/2",
+          "hyperfineE1Rate_s-1": "7.58e-3",
+          "otherTheoryRate_s-1": "6.3e-3",
+          "otherReference": "b:[7]"
+        },
+        {
+          "isotope": "87Sr",
+          "upperState": "3P2",
+          "lowerState": "1S0",
+          "F": "7/2",
+          "hyperfineE1Rate_s-1": "4.13e-3",
+          "otherTheoryRate_s-1": null,
+          "otherReference": null
+        },
+        {
+          "isotope": "87Sr",
+          "upperState": "3P2",
+          "lowerState": "1S0",
+          "F": "9/2",
+          "hyperfineE1Rate_s-1": "6.86e-3",
+          "otherTheoryRate_s-1": null,
+          "otherReference": null
+        },
+        {
+          "isotope": "87Sr",
+          "upperState": "3P2",
+          "lowerState": "1S0",
+          "F": "11/2",
+          "hyperfineE1Rate_s-1": "6.27e-3",
+          "otherTheoryRate_s-1": null,
+          "otherReference": null
+        },
+        {
+          "isotope": "171Yb",
+          "upperState": "3P0",
+          "lowerState": "1S0",
+          "F": "1/2",
+          "hyperfineE1Rate_s-1": "4.35e-2",
+          "otherTheoryRate_s-1": "5.0e-2",
+          "otherReference": "c:[10]"
+        },
+        {
+          "isotope": "171Yb",
+          "upperState": "3P2",
+          "lowerState": "1S0",
+          "F": "3/2",
+          "hyperfineE1Rate_s-1": "9.18e-2",
+          "otherTheoryRate_s-1": null,
+          "otherReference": null
+        },
+        {
+          "isotope": "173Yb",
+          "upperState": "3P0",
+          "lowerState": "1S0",
+          "F": "5/2",
+          "hyperfineE1Rate_s-1": "3.85e-2",
+          "otherTheoryRate_s-1": "4.3e-2",
+          "otherReference": "c:[10]"
+        }
+      ],
+      "notes": [
+        "All this-work rates are theory, T=0 vacuum radiation. Parenthetical per-cell errors are not given. 3P0 rates expected within at least a few percent; 3P2 accuracy worse where nuclear quadrupole omitted.",
+        "171Yb I=1/2 has no higher nuclear moments; 173Yb 3P2 quadrupole corrections potentially significant, and 173Yb 3P2 is not tabulated. Original footnote mistakenly repeats b for Porsev; row superscript c preserved."
+      ]
+    },
+    {
+      "table": "Table V",
+      "pdfPage": 9,
+      "columns": [
+        "isotope",
+        "maxHyperfineE1Rate_s-1",
+        "nonE1Rate_s-1",
+        "nonE1Reference"
+      ],
+      "unit": "s^-1",
+      "rows": [
+        {
+          "isotope": "25Mg",
+          "maxHyperfineE1Rate_s-1": "4.95e-4",
+          "nonE1Rate_s-1": "4.42e-4",
+          "nonE1Reference": "[12]"
+        },
+        {
+          "isotope": "43Ca",
+          "maxHyperfineE1Rate_s-1": "18.1e-4",
+          "nonE1Rate_s-1": "1.41e-4",
+          "nonE1Reference": "[12]"
+        },
+        {
+          "isotope": "87Sr",
+          "maxHyperfineE1Rate_s-1": "68.6e-4",
+          "nonE1Rate_s-1": "9.55e-4",
+          "nonE1Reference": "[12]"
+        },
+        {
+          "isotope": "171Yb",
+          "maxHyperfineE1Rate_s-1": "9.18e-2",
+          "nonE1Rate_s-1": "6.7e-2",
+          "nonE1Reference": "[11]"
+        }
+      ],
+      "notes": [
+        "Non-E1 is an aggregate conventional multipole decay rate, not a measured pure-M2 channel. Maximum hyperfine rate is over allowed F in Table IV."
+      ]
+    }
+  ],
+  "criticalInterpretation": {
+    "171Yb_3P2": {
+      "allowedHyperfineE1F": [
+        "3/2"
+      ],
+      "F_5/2": "No E1 quenching to ground Fg=1/2 under stated selection rule |I-1| <= F <= I+1; omitted from Table IV, not a measured zero.",
+      "hyperfineE1_F3_2_rate_s-1": 0.0918,
+      "nonE1Total_rate_s-1": 0.067,
+      "noPureM2MatrixElement": "Cannot infer E1 d or isolate pure M2 d from aggregate lifetime.",
+      "simpleSameModelTotal_F3_2_rate_s-1": 0.1588,
+      "simpleSameModelTotal_F3_2_lifetime_s": 6.297229219143577,
+      "derivedNote": "Simple addition of two theory components is a derived value; do not replace an adopted compilation lifetime without model reconciliation."
+    },
+    "171Yb_3P0": {
+      "hyperfineE1_rate_s-1": 0.0435,
+      "inverseRate_s": 22.98850574712644,
+      "linewidthHz_rateDividedBy2pi": 0.006923240024497447,
+      "note": "Original abstract/conclusion calls 43.5 mHz a natural width while Table IV labels rate s^-1; preserve rate and distinguish Gamma from Gamma/2pi."
+    }
+  }
+}

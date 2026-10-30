@@ -1,0 +1,13 @@
+paperNumber,sourceId,table,pdfPage,printedPage,label,referenceInPaper,column,printed,value,uncertainty,unit,bound,uncertaintyBound
+5,zhou-2020-pra,TableI,4,062506-4,Pressure,This work,shift,-14.0,-14.0,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,Pressure,This work,uncertainty,3.2,3.2,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,Laser power,This work,shift,0.13,0.13,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,Laser power,This work,uncertainty,0.04,0.04,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,Lamp current,This work,shift,3.59,3.59,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,Lamp current,This work,uncertainty,0.09,0.09,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,RAM,This work,shift,-0.12,-0.12,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,RAM,This work,uncertainty,0.08,0.08,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,Locking offset,This work,shift,0,0,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,Locking offset,This work,uncertainty,0.08,0.08,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,Total,This work,shift,-10.4,-10.4,,MHz,,
+5,zhou-2020-pra,TableI,4,062506-4,Total,This work,uncertainty,3.2,3.2,,MHz,,

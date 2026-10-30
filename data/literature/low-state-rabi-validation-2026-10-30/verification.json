@@ -1,0 +1,30 @@
+{
+  "verifiedOn": "2026-10-30",
+  "unitCommand": "npm run check",
+  "unitTestsPassed": 206,
+  "dataValidation": "passed",
+  "build": "passed",
+  "artifactCheck": "passed",
+  "browserCommand": "npx playwright test tests/e2e/low-state-rabi.spec.js --config=/tmp/171yb-source-audit-playwright.config.mjs",
+  "browserChannel": "chrome",
+  "browserTestsPassed": 15,
+  "viewports": [
+    1440,
+    1024,
+    390
+  ],
+  "transitions": [
+    "T1",
+    "T2",
+    "T5",
+    "T6",
+    "T7"
+  ],
+  "directions": [
+    "rabi",
+    "power",
+    "waist"
+  ],
+  "scope": "Theory-reference compatibility; not independent experimental calibration",
+  "unchanged": "Production physics, canonical data, main diagram, saved65S CSV and all original PDFs"
+}

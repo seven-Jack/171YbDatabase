@@ -1,0 +1,18 @@
+name: 计算或交互缺陷
+description: 可复现的软件行为与预期。
+title: "[缺陷] "
+body:
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 软件/数据版本、浏览器、跃迁、通道、参数与单位、当前结果。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果与依据
+      description: 附可取得的数值基准、截图、报错或独立计算；区分软件实现与科学模型问题。
+    validations:
+      required: true

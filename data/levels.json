@@ -1,0 +1,959 @@
+{
+  "schemaVersion": 1,
+  "isotope": 171,
+  "records": [
+    {
+      "id": "yb171-6s2-1s0",
+      "isotope": 171,
+      "attributes": {
+        "term": "¹S₀",
+        "config": "6s²",
+        "parity": "even",
+        "J": 0,
+        "S": 0,
+        "type": "singlet",
+        "lifetime": "stable",
+        "role": "基态 / |0⟩"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 0,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "neutral171Yb ground-state energy reference definition",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 0,
+          "uncertaintyNote": "exact reference zero by definition, not measured zero uncertainty",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-29"
+          },
+          "convention": "neutral171Yb ground-state reference",
+          "derivedFrom": [
+            "chosen ground-state zero"
+          ]
+        },
+        "energy_eV": {
+          "value": 0,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "neutral171Yb ground-state energy reference definition",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 0,
+          "uncertaintyNote": "exact reference zero by definition, not measured zero uncertainty",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-29"
+          },
+          "convention": "neutral171Yb ground-state reference",
+          "derivedFrom": [
+            "chosen ground-state zero"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yb171-6s6p-3p0",
+      "isotope": 171,
+      "attributes": {
+        "term": "³P₀",
+        "config": "6s6p",
+        "parity": "odd",
+        "J": 0,
+        "S": 1,
+        "type": "triplet",
+        "lifetime": "21.0 s",
+        "role": "亚稳态 / |1⟩"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 17288.48817774007,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, wavenumber_vac",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 3e-12,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-09:wavenumber_vac",
+            "sourceDecimal": "17288.488177740069",
+            "sourceUncertaintyDecimal": "3E-12",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              121
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              38
+            ],
+            "sourceDependencyRecordIds": [
+              "table-09:frequency_nu",
+              "table-01:c"
+            ]
+          },
+          "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+          "legacyText": "17288.488177740069(3)"
+        },
+        "energy_eV": {
+          "value": 2.1434993488389615,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv:2509.04416v2, Table 9, PDF/printed p.24, transition_energy",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 4e-16,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-09:transition_energy",
+            "sourceDecimal": "2.1434993488389615",
+            "sourceUncertaintyDecimal": "4E-16",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              121
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              35,
+              36
+            ],
+            "sourceDependencyRecordIds": [
+              "table-09:frequency_nu",
+              "table-01:h",
+              "table-01:e"
+            ]
+          },
+          "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+          "legacyText": "2.1434993488389615(4)"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s6p-3p1",
+      "isotope": 171,
+      "attributes": {
+        "term": "³P₁",
+        "config": "6s6p",
+        "parity": "odd",
+        "J": 1,
+        "S": 1,
+        "type": "triplet",
+        "lifetime": "872.6 ns",
+        "role": "窄线冷却上能级"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 17992.061256,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, wavenumber_vac",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 4e-06,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-10:wavenumber_vac",
+            "sourceDecimal": "17992.061256",
+            "sourceUncertaintyDecimal": "0.000004",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              181,
+              182,
+              184
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              38
+            ],
+            "sourceDependencyRecordIds": [
+              "table-10:frequency_nu",
+              "table-01:c"
+            ]
+          },
+          "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+          "legacyText": "17992.061256(4)"
+        },
+        "energy_eV": {
+          "value": 2.230731293,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv:2509.04416v2, Table 10, PDF/printed p.24, transition_energy",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 5e-10,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-10:transition_energy",
+            "sourceDecimal": "2.2307312930",
+            "sourceUncertaintyDecimal": "5E-10",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              181,
+              182,
+              184
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              35,
+              36
+            ],
+            "sourceDependencyRecordIds": [
+              "table-10:frequency_nu",
+              "table-01:h",
+              "table-01:e"
+            ]
+          },
+          "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+          "legacyText": "2.2307312930(5)"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s6p-3p2",
+      "isotope": 171,
+      "attributes": {
+        "term": "³P₂",
+        "config": "6s6p",
+        "parity": "odd",
+        "J": 2,
+        "S": 1,
+        "type": "triplet",
+        "lifetime": "约8.9 s（理论统计平均率；非F分辨）",
+        "role": "亚稳态 / 四极钟"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 19710.44180284872,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "qiao-2023-rinp",
+          "sourceLocator": "Qiao2023RINP Table2 PDFp5, five corrected hyperfine component frequencies + clock ref01 Table9 p24",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
+          "uncertainty": null,
+          "uncertaintyNote": "actual propagated1sigma unavailable without covariance; conservative standard-deviation bound retained separately",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-30",
+            "sourceEvidenceType": "derived-five-component-F-centroid-Ritz",
+            "sourceRecord": "frequency/arithmetic-and-recommendations.json",
+            "originalPDF": "references/papers/1.pdf",
+            "originalPDFSha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+            "formulaMHz": "clock+(nu649low+2nu649high)/3-(5nu770a+nu770b+9nu770c)/15",
+            "rawComponentsMHz": [
+              "461861338.03(21)",
+              "461871596.07(31)",
+              "389257019.71(65)",
+              "389267277.10(37)",
+              "389260569.95(89)"
+            ],
+            "derivedFrequencyDecimalTHz": "590.9041796341969633333333333333333333333",
+            "conservativeStdUpperBoundMHz": 1.0520001,
+            "uncertaintyBoundary": "Cross-transition covariances not supplied. Sum|weight|u bounds the propagated standard deviation given reported marginal uncertainties, including0.1Hz clock. It is not an actual reconstructed1sigma or a hard confidence interval; unreported systematics/second-order HFS are not bounded.",
+            "centroidDefinition": "first-order171YbF-degeneracy endpoint centroids; no intensity weighting or new fit",
+            "legacySourceCauseEstablished": false,
+            "sourceDecimal": "19710.44180284872154233224017040926804547"
+          },
+          "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+          "legacyText": "19710.4467(14)",
+          "derivedFrom": [
+            "T4.frequency_THz",
+            "exact SI c,h,e where applicable"
+          ]
+        },
+        "energy_eV": {
+          "value": 2.4437833276904413,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "qiao-2023-rinp",
+          "sourceLocator": "Qiao2023RINP Table2 PDFp5, five corrected hyperfine component frequencies + clock ref01 Table9 p24",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
+          "uncertainty": null,
+          "uncertaintyNote": "actual propagated1sigma unavailable without covariance; conservative standard-deviation bound retained separately",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-30",
+            "sourceEvidenceType": "derived-five-component-F-centroid-Ritz",
+            "sourceRecord": "frequency/arithmetic-and-recommendations.json",
+            "originalPDF": "references/papers/1.pdf",
+            "originalPDFSha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
+            "formulaMHz": "clock+(nu649low+2nu649high)/3-(5nu770a+nu770b+9nu770c)/15",
+            "rawComponentsMHz": [
+              "461861338.03(21)",
+              "461871596.07(31)",
+              "389257019.71(65)",
+              "389267277.10(37)",
+              "389260569.95(89)"
+            ],
+            "derivedFrequencyDecimalTHz": "590.9041796341969633333333333333333333333",
+            "conservativeStdUpperBoundMHz": 1.0520001,
+            "uncertaintyBoundary": "Cross-transition covariances not supplied. Sum|weight|u bounds the propagated standard deviation given reported marginal uncertainties, including0.1Hz clock. It is not an actual reconstructed1sigma or a hard confidence interval; unreported systematics/second-order HFS are not bounded.",
+            "centroidDefinition": "first-order171YbF-degeneracy endpoint centroids; no intensity weighting or new fit",
+            "legacySourceCauseEstablished": false,
+            "sourceDecimal": "2.443783327690441413567416000650525028191"
+          },
+          "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+          "legacyText": "2.44378393(17)",
+          "derivedFrom": [
+            "T4.frequency_THz",
+            "exact SI c,h,e where applicable"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yb171-6s5d-3d1",
+      "isotope": 171,
+      "attributes": {
+        "term": "³D₁",
+        "config": "6s5d",
+        "parity": "even",
+        "J": 1,
+        "S": 1,
+        "type": "triplet",
+        "lifetime": "332 ns",
+        "role": "repumper 上能级"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 24489.14112304007,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv2509.04416v2 Table9 p24 + Table12 p25",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 2.900000000001552e-06,
+          "uncertaintyNote": "formal propagation of printed uncertainties, covariance unavailable; source calibration systematics not independently resolved",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-29",
+            "referencePath": "1S0->3P0->³D₁",
+            "sourceRecordIds": [
+              "table-09:wavenumber_vac",
+              "table-12:wavenumber_vac"
+            ]
+          },
+          "convention": "171Yb hyperfine-center-of-gravity; ground plus transition path",
+          "derivedFrom": [
+            "T3.frequency_THz",
+            "T5.frequency_THz"
+          ]
+        },
+        "energy_eV": {
+          "value": 3.0362665324389617,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv2509.04416v2 Table9 p24 + Table12 p25",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 4.0000000000020004e-10,
+          "uncertaintyNote": "formal propagation of printed uncertainties, covariance unavailable; source calibration systematics not independently resolved",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-29",
+            "referencePath": "1S0->3P0->³D₁",
+            "sourceRecordIds": [
+              "table-09:transition_energy",
+              "table-12:transition_energy"
+            ]
+          },
+          "convention": "171Yb hyperfine-center-of-gravity; ground plus transition path",
+          "derivedFrom": [
+            "T3.frequency_THz",
+            "T5.frequency_THz"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yb171-6s6p-1p1",
+      "isotope": 171,
+      "attributes": {
+        "term": "¹P₁",
+        "config": "6s6p",
+        "parity": "odd",
+        "J": 1,
+        "S": 0,
+        "type": "singlet",
+        "lifetime": "5.46 ns",
+        "role": "宽线冷却 / 成像"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 25068.258091,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, wavenumber_vac",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 2.6e-05,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-08:wavenumber_vac",
+            "sourceDecimal": "25068.258091",
+            "sourceUncertaintyDecimal": "0.000026",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              66,
+              104,
+              105,
+              106
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              38
+            ],
+            "sourceDependencyRecordIds": [
+              "table-08:frequency_nu",
+              "table-01:c"
+            ]
+          },
+          "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+          "legacyText": "25068.258091(26)"
+        },
+        "energy_eV": {
+          "value": 3.1080678856,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv:2509.04416v2, Table 8, PDF/printed p.23, transition_energy",
+          "evidenceKind": "literature-reported",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 3.2e-09,
+          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "conditions": {
+            "isotope": 171,
+            "sourceEvidenceType": "compilation-derived",
+            "sourceRecord": "table-08:transition_energy",
+            "sourceDecimal": "3.1080678856",
+            "sourceUncertaintyDecimal": "3.2E-9",
+            "sourceReferenceNumbers": [],
+            "dependencyReferenceNumbers": [
+              15,
+              66,
+              104,
+              105,
+              106
+            ],
+            "auditDate": "2026-10-29",
+            "primaryOriginalsAllRead": false,
+            "sourceDependencyBoundary": "Numeric dependency chain follows the printed equations; method citations are separate. No unreported input covariance, independence, or primary-input reanalysis is established by this extraction.",
+            "methodReferenceNumbers": [],
+            "sourceEquations": [
+              35,
+              36
+            ],
+            "sourceDependencyRecordIds": [
+              "table-08:frequency_nu",
+              "table-01:h",
+              "table-01:e"
+            ]
+          },
+          "convention": "171Yb hyperfine center-of-gravity relative to1S0",
+          "legacyText": "3.1080678856(32)"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s7s-3s1",
+      "isotope": 171,
+      "attributes": {
+        "term": "³S₁",
+        "config": "6s7s",
+        "parity": "even",
+        "J": 1,
+        "S": 1,
+        "type": "triplet",
+        "lifetime": "13.8 ns",
+        "role": "repumper / Rydberg 首成员"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 32694.75222474007,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv2509.04416v2 Table9 p24 + Table13 p26",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 7.000000000000643e-06,
+          "uncertaintyNote": "formal propagation of printed uncertainties, covariance unavailable; source calibration systematics not independently resolved",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-29",
+            "referencePath": "1S0->3P0->³S₁",
+            "sourceRecordIds": [
+              "table-09:wavenumber_vac",
+              "table-13:wavenumber_vac"
+            ],
+            "historicalSourceConflict": "T3+T6 and T4+T7 paths disagree by about150.389MHz (frequency) /146.816MHz (printed rounded wavenumbers); use documented3P0 path, no claim of global Ritz fit",
+            "workingNetworkClosureMHz": 0.023333333333333334,
+            "closureBoundary": "old150MHz discrepancy no longer present in working Ritz network; remaining23.3kHz is within component/rounding uncertainty; old independent-source discrepancy not explained"
+          },
+          "convention": "171Yb hyperfine-center-of-gravity; ground plus transition path",
+          "derivedFrom": [
+            "T3.frequency_THz",
+            "T6.frequency_THz"
+          ]
+        },
+        "energy_eV": {
+          "value": 4.0536326475389615,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "ref-01",
+          "sourceLocator": "arXiv2509.04416v2 Table9 p24 + Table13 p26",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
+          "uncertainty": 9.000000000000889e-10,
+          "uncertaintyNote": "formal propagation of printed uncertainties, covariance unavailable; source calibration systematics not independently resolved",
+          "conditions": {
+            "isotope": 171,
+            "auditDate": "2026-10-29",
+            "referencePath": "1S0->3P0->³S₁",
+            "sourceRecordIds": [
+              "table-09:transition_energy",
+              "table-13:transition_energy"
+            ],
+            "historicalSourceConflict": "T3+T6 and T4+T7 paths disagree by about150.389MHz (frequency) /146.816MHz (printed rounded wavenumbers); use documented3P0 path, no claim of global Ritz fit",
+            "workingNetworkClosureMHz": 0.023333333333333334,
+            "closureBoundary": "old150MHz discrepancy no longer present in working Ritz network; remaining23.3kHz is within component/rounding uncertainty; old independent-source discrepancy not explained"
+          },
+          "convention": "171Yb hyperfine-center-of-gravity; ground plus transition path",
+          "derivedFrom": [
+            "T3.frequency_THz",
+            "T6.frequency_THz"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yb171-6s65s-3s1-triplet-connected",
+      "isotope": 171,
+      "attributes": {
+        "term": "65³S₁",
+        "config": "6s65s",
+        "J": 1,
+        "S": 1,
+        "parity": "even",
+        "type": "triplet",
+        "lifetime": "历史标度估算；非逐态实测",
+        "role": "65S 里德堡态"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": 50414.958999999995,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "Rydberg branch/threshold reference not established"
+          },
+          "convention": null,
+          "derivedFrom": [
+            "yb171-6s6p-3p0.energy_cm",
+            "R2.energy_cm"
+          ],
+          "modelId": "legacy-rydberg-scaling-v1"
+        },
+        "energy_eV": {
+          "value": 6.250658280928287,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "scaling-estimate",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "Rydberg branch/threshold reference not established"
+          },
+          "convention": null,
+          "derivedFrom": [
+            "yb171-6s65s-3s1-triplet-connected.energy_cm"
+          ],
+          "modelId": "legacy-rydberg-scaling-v1"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s50s-3s1",
+      "isotope": 171,
+      "attributes": {
+        "term": "50³S₁",
+        "config": "6s50s",
+        "J": 1,
+        "parity": "even",
+        "type": "triplet"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": null,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "Rydberg branch/threshold reference not established"
+          },
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        },
+        "energy_eV": {
+          "value": null,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "Rydberg branch/threshold reference not established"
+          },
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s80s-3s1",
+      "isotope": 171,
+      "attributes": {
+        "term": "80³S₁",
+        "config": "6s80s",
+        "J": 1,
+        "parity": "even",
+        "type": "triplet"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": null,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "Rydberg branch/threshold reference not established"
+          },
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        },
+        "energy_eV": {
+          "value": null,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "Rydberg branch/threshold reference not established"
+          },
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s65d-3d1",
+      "isotope": 171,
+      "attributes": {
+        "term": "65³D₁",
+        "config": "6s65d",
+        "J": 1,
+        "parity": "even",
+        "type": "triplet"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": null,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "Rydberg branch/threshold reference not established"
+          },
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        },
+        "energy_eV": {
+          "value": null,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "Rydberg branch/threshold reference not established"
+          },
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        }
+      }
+    },
+    {
+      "id": "yb171-6s65d-3d2",
+      "isotope": 171,
+      "attributes": {
+        "term": "65³D₂",
+        "config": "6s65d",
+        "J": 2,
+        "parity": "even",
+        "type": "triplet"
+      },
+      "energyReference": "neutral-atom-ground-state",
+      "quantities": {
+        "energy_cm": {
+          "value": null,
+          "unit": "cm^-1",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "Rydberg branch/threshold reference not established"
+          },
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        },
+        "energy_eV": {
+          "value": null,
+          "unit": "eV",
+          "quantity": "level_energy",
+          "sourceId": "legacy-levels",
+          "sourceLocator": null,
+          "evidenceKind": "legacy-unclassified",
+          "reviewStatus": "definition-needs-review",
+          "uncertainty": null,
+          "uncertaintyNote": "not-established-in-this-migration",
+          "conditions": {
+            "auditDate": "2026-10-29",
+            "excludedFromValidatedPrediction": true,
+            "stateBoundary": "Rydberg branch/threshold reference not established"
+          },
+          "convention": null,
+          "missingReason": "not-published-in-original-level-record"
+        }
+      }
+    }
+  ],
+  "coreLevelIds": [
+    "yb171-6s2-1s0",
+    "yb171-6s6p-3p0",
+    "yb171-6s6p-3p1",
+    "yb171-6s6p-3p2",
+    "yb171-6s5d-3d1",
+    "yb171-6s6p-1p1",
+    "yb171-6s7s-3s1",
+    "yb171-6s65s-3s1-triplet-connected"
+  ],
+  "lowStateRoles": [
+    {
+      "levelId": "yb171-6s2-1s0",
+      "role": "|0⟩ 基态"
+    },
+    {
+      "levelId": "yb171-6s6p-3p0",
+      "role": "|1⟩ 亚稳态"
+    },
+    {
+      "levelId": "yb171-6s6p-3p1",
+      "role": "双光子中间态"
+    },
+    {
+      "levelId": "yb171-6s6p-3p2",
+      "role": "辅助亚稳态"
+    }
+  ],
+  "rydbergGroups": [
+    {
+      "n": 50,
+      "series": "³S₁",
+      "label": "50³S₁",
+      "color": "#c7a98c",
+      "ref": "历史标度示意；指定171Yb分支未验证",
+      "transitions": [
+        {
+          "from": "³P₀",
+          "color": "#c7a98c",
+          "note": "R1 · 302.1 nm"
+        }
+      ],
+      "levelId": "yb171-6s50s-3s1",
+      "quantumDefectId": "6sns ³S₁"
+    },
+    {
+      "n": 65,
+      "series": "³S₁",
+      "label": "65³S₁",
+      "color": "#b08f76",
+      "ref": "历史标度示意；指定171Yb分支未验证",
+      "transitions": [
+        {
+          "from": "³P₀",
+          "color": "#b08f76",
+          "note": "R2 · 301.9 nm · CZ 门"
+        },
+        {
+          "from": "³P₁",
+          "color": "#a8c9b8",
+          "note": "R6 · 308.4 nm"
+        },
+        {
+          "from": "³P₂",
+          "color": "#8fb5c4",
+          "note": "R7 · 325.7 nm"
+        }
+      ],
+      "levelId": "yb171-6s65s-3s1-triplet-connected",
+      "quantumDefectId": "6sns ³S₁"
+    },
+    {
+      "n": 80,
+      "series": "³S₁",
+      "label": "80³S₁",
+      "color": "#d9c3a8",
+      "ref": "历史标度示意；指定171Yb分支未验证",
+      "transitions": [
+        {
+          "from": "³P₀",
+          "color": "#d9c3a8",
+          "note": "R3 · 301.8 nm"
+        }
+      ],
+      "levelId": "yb171-6s80s-3s1",
+      "quantumDefectId": "6sns ³S₁"
+    },
+    {
+      "n": 65,
+      "series": "³D₁",
+      "label": "65³D₁",
+      "color": "#9e92b0",
+      "ref": "历史标度示意；指定171Yb分支未验证",
+      "transitions": [
+        {
+          "from": "³P₀",
+          "color": "#9e92b0",
+          "note": "R4 · 301.9 nm"
+        }
+      ],
+      "levelId": "yb171-6s65d-3d1",
+      "quantumDefectId": "6snd ³D₁"
+    },
+    {
+      "n": 65,
+      "series": "³D₂",
+      "label": "65³D₂",
+      "color": "#b8adc7",
+      "ref": "历史标度示意；指定171Yb分支未验证",
+      "transitions": [
+        {
+          "from": "³P₀",
+          "color": "#b8adc7",
+          "note": "R5 · 301.9 nm · ΔJ=2（弱）"
+        }
+      ],
+      "levelId": "yb171-6s65d-3d2",
+      "quantumDefectId": "6snd ³D₂"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+  :root {
+    color-scheme: dark;
+    --page: #05080e;
+    --surface: #0c1421;
+    --surface-muted: #121f31;
+    --surface-hover: #182940;
+    --bg-0: var(--page);
+    --bg-1: #0c1421;
+    --bg-2: var(--surface-muted);
+    --bg-3: #1c2d45;
+    --line: #25354c;
+    --border: var(--line);
+    --text-0: #eef4fc;
+    --text-1: #c2d0e3;
+    --text-2: #9aacc4;
+    --text-3: #91a3bc;
+    --accent: #8db8ff;
+    --accent-strong: #c5daff;
+    --accent-tint: #14263e;
+    --accent-border: #3b5e8b;
+    --focus-halo: rgba(98,157,255,.2);
+    --accent-2: #beb4f4;
+    --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+    --font-ui: var(--font-body);
+    --font-number: var(--font-body);
+    --mono: "SFMono-Regular", Menlo, monospace;
+    --serif: var(--font-body);
+    --sans: var(--font-body);
+    --chart-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", sans-serif;
+    --chart-axis-size: 12px;
+    --chart-text: var(--text-2);
+    --chart-grid: rgba(161,190,233,0.1);
+    --chart-axis: rgba(161,190,233,0.4);
+    --chart-background: #0c1421;
+    --chart-series-1: var(--accent);
+    --chart-series-2: #7ed9b1;
+    --chart-series-3: #e2be78;
+    --chart-series-4: #beb4f4;
+    --chart-series-5: #f49da7;
+    --chart-series-6: #7bb7e4;
+    --chart-callout-bg: #0c1421;
+    --chart-callout-text: var(--accent);
+    --chart-callout-border: var(--accent-border);
+    --gold: #e2be78;
+    --gold-tint: rgba(226,190,120,.09);
+    --focus: var(--accent);
+    --selected: var(--accent-tint);
+    --invalid: #f2a0ab;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+
+    /* Rydberg colors */
+    --rydbg: rgba(120, 68, 186, 0.05);
+    --rydborder: rgba(120, 68, 186, 0.2);
+    --rydtext: #beb4f4;
+
+    /* Strength colors */
+    --strong: #7ed9b1;
+    --weak: #e2be78;
+    --forbidden: #f2a0ab;
+
+    /* Multipole colors */
+    --e1: #8db8ff;
+    --m2: #e2be78;
+    --two: #beb4f4;
+  }

@@ -1,0 +1,37 @@
+id,referenceNumber,title,doi,publication,documents,identityStatus
+ref-01,1,"Kroeze, Kristensen, Pucher",10.48550/arXiv.2509.04416,arXiv:2509.04416v2; revised 2026-02-13; PDF dated 2026-02-16,references/papers/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf,verified-primary-metadata
+ref-02,2,Peper et al.,10.1103/PhysRevX.15.011009,"Phys. Rev. X 15, 011009 (2025)",references/papers/2025_Peper_171Yb_Spectroscopy-modeling_published.pdf; references/papers/2024_Peper_171Yb_Spectroscopy-modeling_local-supplement.pdf,verified-primary-metadata
+ref-03,3,"Kuroda, Hughes, Poitrinal, Peper, Thompson",10.1103/mzsv-rckx,"Phys. Rev. A 112, 042817 (2025)",references/papers/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_arXiv2507.11487v1.pdf; references/papers/2025_Kuroda_171Yb-174Yb_Microwave-MQDT_published.pdf,verified-primary-metadata
+ref-04,4,Muniz et al.,10.1103/PRXQuantum.6.020334,"PRX Quantum 6, 020334 (2025)",references/papers/2024_Muniz_171Yb_Universal-gates_arXiv2411.11708v2.pdf; references/papers/2025_Muniz_171Yb_Universal-gates_published.pdf,verified-primary-metadata
+ref-05,5,Ma et al.,10.1103/PhysRevX.12.021028,"Phys. Rev. X 12, 021028 (2022)",references/papers/2022_Ma_171Yb_Universal-nuclear-spin-gates_published-print.pdf,verified-primary-metadata
+ref-06,6,Okuno et al.,10.7566/JPSJ.91.084301,"J. Phys. Soc. Jpn. 91, 084301 (2022)",references/papers/2022_Okuno_Yb_Metastable-Rydberg-excitation_arXiv2204.07995v1.pdf,verified-primary-metadata
+ref-07,7,Wilson et al.,10.1103/PhysRevLett.128.033201,"Phys. Rev. Lett. 128, 033201 (2022)",references/papers/2022_Wilson_174Yb_Trapping-Rydberg-atoms_published.pdf,verified-primary-metadata
+ref-08,8,Saskin et al.,10.1103/PhysRevLett.122.143002,"Phys. Rev. Lett. 122, 143002 (2019)",references/papers/2019_Saskin_174Yb_Narrow-line-cooling-and-imaging_published-print.pdf,verified-primary-metadata
+ref-09,9,Burgers et al.,10.1103/PRXQuantum.3.020326,"PRX Quantum 3, 020326 (2022)",references/papers/2021_Burgers_174Yb_Ion-core-control_arXiv2110.06902v1.pdf,verified-primary-metadata
+ref-10,10,Halter et al.,10.1088/1361-6455/acb74b,"J. Phys. B: At. Mol. Opt. Phys. 56, 055001 (2023)",references/papers/2022_Halter_174Yb_Trap-loss-spectroscopy_arXiv2211.04748v2.pdf,verified-primary-metadata
+ref-11,11,Lehec et al.,10.1103/PhysRevA.98.062506,"Phys. Rev. A 98, 062506 (2018)",references/papers/2018_Lehec_Yb_Even-parity-MQDT_arXiv1805.02712v2.pdf,verified-primary-metadata
+ref-12,12,Aymar et al.,10.1088/0022-3700/17/18/006,"J. Phys. B: Atom. Mol. Phys. 17, 3645 (1984)",references/papers/7.pdf,verified-local-publisher-PDF
+ref-13,13,"Fisk, Sellars, Lawn, Coles",10.1109/58.585119,"IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control44(2),344–354(1997)",references/papers/10.pdf,verified-local-publisher-PDF
+ref-14,14,NIST Atomic Spectra Database,10.18434/T4W30F,"NIST Standard Reference Database 78, version 5.12 (2024), accessed 2026-10-29",,verified-primary-metadata
+ref-15,15,Chen et al.,10.1103/PhysRevA.105.052438,"Phys. Rev. A 105, 052438 (2022)",references/papers/2022_Chen_171Yb_OMG-architecture_arXiv2201.04083v3.pdf,verified-primary-metadata
+ref-16,16,Ma et al.,10.1038/s41586-023-06438-1,"Nature 622, 279–284 (2023)",references/papers/2023_Ma_171Yb_Mid-circuit-erasure-gates_arXiv2305.05493v1.pdf; references/papers/2023_Ma_171Yb_Mid-circuit-erasure-gates_published.pdf,verified-local-pdf-and-primary-arxiv
+ref-17,17,This work,,d = 0.0376 ea₀ · 本工作计算,,internal-not-literature
+qiao-2023-rinp,18,"H. Qiao, C.-Y. Sun, C.-Q. Peng",10.1016/j.rinp.2023.106439,"Results in Physics 48, 106439 (2023)",references/papers/1.pdf,verified-local-publisher-PDF
+porsev-1999-pra,19,"S. G. Porsev, Yu. G. Rakhlina, M. G. Kozlov",10.1103/PhysRevA.60.2781,"Phys. Rev. A 60, 2781 (1999)",references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf,verified-primary-metadata
+zhou-2020-pra,20,"Min Zhou, Sheng Zhang, Limeng Luo",10.1103/PhysRevA.101.062506,"Phys. Rev. A 101, 062506 (2020)",references/papers/5.pdf,verified-local-publisher-PDF
+zhao-2024-pra,21,"Chengcheng Zhao, Qichao Qi, Changyue Sun",10.1103/PhysRevA.110.042816,"Phys. Rev. A 110, 042816 (2024)",references/papers/6.pdf,verified-local-publisher-PDF
+beloy-2012-pra,22,"K. Beloy, J. A. Sherman, N. D. Lemke",10.1103/PhysRevA.86.051404,"Phys. Rev. A 86, 051404(R) (2012)",references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf,verified-primary-metadata
+baumann-1985-jpb,23,"M. Baumann, M. Braun, A. Gaiser",10.1088/0022-3700/18/17/001,"J. Phys. B: Atom. Mol. Phys. 18, L601 (1985)",references/papers/3.pdf,verified-local-publisher-PDF
+bowers-1996-pra,24,"C. J. Bowers, D. Budker, E. D. Commins",10.1103/PhysRevA.53.3103,"Phys. Rev. A 53, 3103 (1996)",references/papers/2011_Bowers_Yb_Excited-state-lifetimes_SLAC-archive-of-1996-paper.pdf,verified-primary-metadata
+rambow-1976-pra,25,"F. H. K. Rambow, L. D. Schearer",10.1103/PhysRevA.14.738,"Physical Review A14(2),738–743(1976)",references/papers/8.pdf,verified-local-publisher-PDF
+burshtein-1974-optspec,26,"M. L. Burshtein, Y. F. Verolainen, V. A. Komarovskii",,"Optics and Spectroscopy 37, 351 (1974)",,compilation-index-only
+qiao-2023-apl,27,"H. Qiao, L. Liu, M. Zhou",10.1063/5.0155776,"Applied Physics Letters122(22),224002(2023)",references/papers/4.pdf,verified-local-publisher-PDF
+mishra-2001-jqsrt,28,"A. P. Mishra, T. Balasubramanian",10.1016/S0022-4073(00)00117-5,"Journal of Quantitative Spectroscopy and Radiative Transfer69(6),769–780(2001)",references/papers/2.pdf,verified-local-publisher-PDF
+porsev-2004-pra,29,"S. G. Porsev, A. Derevianko",10.1103/PhysRevA.69.042506,"Phys. Rev. A 69, 042506 (2004)",references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf,verified-primary-metadata-and-local-pdf
+legacy-levels,,Existing level catalog at commit 2e2e9d5,,,,internal-not-literature
+legacy-hfs,,Existing hyperfine catalog at commit 2e2e9d5,,,,internal-not-literature
+legacy-scaling,,Existing scaling estimates,,,,internal-not-literature
+internal-t2-calibration,,T2 internal calibration,,,,internal-not-literature
+internal-t3-20260908,,T3 internal supplement dated 2026-09-08,,,,internal-not-literature
+this-work-hyperfine-65s,,This work: saved 65S zero-field data,,,,internal-not-literature
+fang-2001,,D.-W. Fang et al.,10.1016/S0022-4073(00)00096-0,"JQSRT69,469-473(2001)",references/papers/2001_Fang_Yb_Radiative-lifetimes-Rydberg-states_published.pdf,local-original-pdf-located

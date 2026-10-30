@@ -1,0 +1,8 @@
+{
+  "src/ui/energy-diagram.js": "684dfbce178dc78dde9cf4991c14122a6d0cc2978cabc91e368e7e4ce9d49394",
+  "src/ui/diagram-geometry.js": "4a2c855802766d936e2bdc994adbe6d4b9003c81b32c7e2f0ec6cb8763385177",
+  "src/ui/diagram-presentation.js": "f315eab1ed3c8c74efca3951791454f720b21bcc1cfca81e6b817815efd4ab49",
+  "src/styles/original-diagram.css": "5e2252c836949cfd13c0bc5ecb268a795f2d094f0caf6e497b375ffd6a4dcb6c",
+  "src/styles/quantum.css": "c9907e9ce75fd3fca4282a1f1d835a9fad8cdbf0c9781e7f20ea059474ab73a9",
+  "assets/05.21_yb171_65s_hyperfine.csv": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec"
+}

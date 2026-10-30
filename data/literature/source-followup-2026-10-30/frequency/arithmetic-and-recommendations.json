@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "policy": "source readings retained; all following arithmetic is labelled derived, not measured or newly fitted",
+  "qiaoRINP": {
+    "T6cog_MHz": "461868176.7233333333333333333",
+    "T6formula": "(nu649_F1/2+2nu649_F3/2)/3",
+    "S1splitting649_MHz": "10258.04",
+    "S1splitting770_MHz": "10257.39",
+    "differenceSplittings_MHz": "-0.65",
+    "differenceSplittingsCombinedStd_ifIndependent_MHz": 0.8364209466530593,
+    "P2splitting_MHz": "6707.15",
+    "A_S1_from649_MHz": "6838.693333333333333333333333",
+    "A_P2_from770_MHz": "2682.86",
+    "derivedGroundP2cog": {
+      "value_THz": "590.90417985086363",
+      "formula_MHz": "nu_clock+nu649(Fg1/2->Fe3/2)-0.4nu770(Fg3/2->Fe3/2)-0.6nu770(Fg5/2->Fe3/2)",
+      "sourceRows": "1.pdf Table2 PDFp5; clock adopted KroezeTable9",
+      "uncertainty": null,
+      "stdIfIndependent_MHz": 0.634948816834869,
+      "conservativeStdUpperBound_MHz": 0.992,
+      "uncertaintyBoundary": "No cross-transition covariance supplied. Triangle inequality bounds propagated standard deviation for any correlations given stated marginal standard uncertainties. This is not an actual reconstructed1sigma and not a deterministic probability interval. Additional unreported systematics and second-order HFS not independently resolved.",
+      "valueMeaning": "first-order F-degeneracy-weighted171YbP2 Ritz centroid via common-upperF3/2; no new fit",
+      "legacyDifference_MHz": "150.14913637",
+      "sourceCauseEstablished": false
+    },
+    "T7cog_MHz": "389259833.68",
+    "T7formula": "(5nu770(Fg3/2->Fe1/2)+nu770(Fg3/2->Fe3/2)+9nu770(Fg5/2->Fe3/2))/15",
+    "T7cog_std_ifIndependent_MHz": 0.576809230932454,
+    "T7cog_std_upper_bound_MHz": 0.7753333333333334,
+    "alternativeAllFiveCentroids": {
+      "value_THz": "590.9041796341969633333333333",
+      "value_MHz": "590904179.6341969633333333333",
+      "formula": "nuclock+(nu649low+2nu649high)/3-(5nu770a+nu770b+9nu770c)/15",
+      "uncertainty": null,
+      "stdIfIndependent_MHz": 0.6167008999506973,
+      "conservativeStdUpperBound_MHz": 1.0520001,
+      "clockStandardUncertainty_MHz": 1e-07,
+      "chosenForCanonicalWorkingValue": true,
+      "correlationBoundary": "No supplied covariance matrix; bound is not reconstructed exact1sigma. FirstorderF-centroid definition only.",
+      "differenceVersusCommonUpperOnly_MHz": "-0.2166666666666666667",
+      "usePolicy": "Prefer if reconciling the existing T6/T7 centroid working network; common-upper-only is an explicitly different statistically correlated linear estimator. Do not average these as independent observations."
+    },
+    "sourceArithmeticNote": "The649 and770 upper-splitting estimates differ0.65MHz, below independentcombined0.8364MHz. No deterministic inconsistency follows from these noisy measuredcentralvalues."
+  },
+  "sourceConflicts": [
+    {
+      "paper": 4,
+      "id": "APL_LOCKING_OFFSET_FACTOR10",
+      "locations": [
+        "PDFp4 TableI",
+        "PDFp5 text"
+      ],
+      "tableShift_MHz": "-0.088",
+      "textShift_MHz": "-0.880",
+      "uncertainty_MHz": "0.003",
+      "action": "preserve both; cannot silently correct source; systematic correction reconstruction remains pending"
+    },
+    {
+      "paper": 4,
+      "id": "APL_171_P2_SPLITTING_FROM_BORROWED_S1A",
+      "locations": [
+        "PDFp5 TableII",
+        "PDFp6 TableVI"
+      ],
+      "description": "Only171Fg3/2 lower component observed inAPLTableII. ItsTableVI A171 uses upper splitting10257.7MHz fromtwo same-lower lines; it supplies no new171P2splitting. Do not claim independent171A(3P2) fromAPL."
+    },
+    {
+      "id": "BRANCH_PARTIAL_WIDTH_AS_NATURAL_WIDTH",
+      "papers": [
+        1,
+        4,
+        5
+      ],
+      "locations": [
+        "1.pdf abstract andPDFp2/3",
+        "4.pdf PDFp2 introduction",
+        "5.pdf PDFp1/2 introduction"
+      ],
+      "printed649_MHz": "1.5",
+      "printed770_MHz": "5.9",
+      "boundary": "These quoted branchspecific natural-widthlabels must not replace the totalupperstateGamma/(2pi) FWHM near11.5MHz derived fromtotal3S1lifetime. They approximately match beta*Gamma/(2pi); fullcoherence-linewidthdefinition not established in these papers."
+    }
+  ],
+  "recommendations": [
+    {
+      "target": "T6.frequency_THz",
+      "action": "confirm-existing-compilation-value",
+      "reason": "same-paper cold171 centroid461.868176723333THz agrees withKroeze461.86817672; preserve compilation precision/uncertainty rather than overwrite with unfitted rawderive"
+    },
+    {
+      "target": "T7.frequency_THz and wavelength",
+      "action": "retain-existing-frequency and frequency-derivedlambda; originalprintedlambda remainsconflict",
+      "reason": "cold171components support~389.2598337THz. No originalpaper supportsKroeze printed770.160284nm; cannot claim authorerratum."
+    },
+    {
+      "target": "T4.frequency_THz and3P2levelenergy",
+      "action": "derive-explicit-common-upper-Ritz-workvalue if a coherent working network is desired",
+      "reason": "samearticleTable2 yields590.90417985086363THz via commonFe3/2; u unknown unless explicitly label correlation upper bound. Keep legacy590.90433(4)THz asconflicting independent-source value; source cause notclosed."
+    },
+    {
+      "target": "A3S1,A3P2,A3D1",
+      "action": "retain weightedcompilation default and store each original separately",
+      "reason": "originals have distinctconditions/uncertainties, including thiswork versus historicalcomparison; no new statisticalcombination requested"
+    },
+    {
+      "chosen": "all-five-centroid-network",
+      "target": "T4.coherent-working-centroid",
+      "action": "choose and label one source-linked linear-estimator convention",
+      "allFiveCentroids_THz": "590.9041796341969633333333333",
+      "commonUpperOnly_THz": "590.90417985086363",
+      "choiceBoundary": "Both use samecold171source and differ0.2167MHz withinmeasurementerror; allfivecentroidscheme closesT6/T7compilednetworknaturally. Preserve bothasderivedcandidates and legacyYamaguchiconflict; not a newly measuredgroundP2frequency."
+    }
+  ]
+}

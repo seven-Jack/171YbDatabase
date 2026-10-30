@@ -1,0 +1,10 @@
+paperNumber,sourceId,table,pdfPage,printedPage,label,referenceInPaper,column,printed,value,uncertainty,unit,bound,uncertaintyBound
+4,qiao-2023-apl,TableV,6,224002-5,176Yb-174Yb,comparison,reference11_shift,437(33),437,33,MHz,,
+4,qiao-2023-apl,TableV,6,224002-5,176Yb-174Yb,comparison,reference12_shift,425.7(3),425.7,0.3,MHz,,
+4,qiao-2023-apl,TableV,6,224002-5,176Yb-174Yb,comparison,this_work_shift,424.1(4),424.1,0.4,MHz,,
+4,qiao-2023-apl,TableV,6,224002-5,174Yb-172Yb,comparison,reference11_shift,439(34),439,34,MHz,,
+4,qiao-2023-apl,TableV,6,224002-5,174Yb-172Yb,comparison,reference12_shift,425.3(3),425.3,0.3,MHz,,
+4,qiao-2023-apl,TableV,6,224002-5,174Yb-172Yb,comparison,this_work_shift,421.6(3),421.6,0.3,MHz,,
+4,qiao-2023-apl,TableV,6,224002-5,172Yb-170Yb,comparison,reference11_shift,531(41),531,41,MHz,,
+4,qiao-2023-apl,TableV,6,224002-5,172Yb-170Yb,comparison,reference12_shift,543.0(15),543.0,1.5,MHz,,
+4,qiao-2023-apl,TableV,6,224002-5,172Yb-170Yb,comparison,this_work_shift,550.2(13),550.2,1.3,MHz,,

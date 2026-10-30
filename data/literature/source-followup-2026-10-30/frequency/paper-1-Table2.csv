@@ -1,0 +1,8 @@
+paperNumber,sourceId,table,pdfPage,printedPage,label,referenceInPaper,column,printed,value,uncertainty,unit,bound,uncertaintyBound
+1,qiao-2023-rinp,Table2,5,5,171Yb 649 Fg1/2 Fe1/2,[34],frequency,461861338.1(3.2),461861338.1,3.2,MHz,,
+1,qiao-2023-rinp,Table2,5,5,171Yb 649 Fg1/2 Fe3/2,[34],frequency,461871594.9(3.2),461871594.9,3.2,MHz,,
+1,qiao-2023-rinp,Table2,5,5,171Yb 649 Fg1/2 Fe1/2,This work,frequency,461861338.03(0.21),461861338.03,0.21,MHz,,
+1,qiao-2023-rinp,Table2,5,5,171Yb 649 Fg1/2 Fe3/2,This work,frequency,461871596.07(0.31),461871596.07,0.31,MHz,,
+1,qiao-2023-rinp,Table2,5,5,171Yb 770 Fg3/2 Fe1/2,This work,frequency,389257019.71(0.65),389257019.71,0.65,MHz,,
+1,qiao-2023-rinp,Table2,5,5,171Yb 770 Fg3/2 Fe3/2,This work,frequency,389267277.10(0.37),389267277.10,0.37,MHz,,
+1,qiao-2023-rinp,Table2,5,5,171Yb 770 Fg5/2 Fe3/2,This work,frequency,389260569.95(0.89),389260569.95,0.89,MHz,,

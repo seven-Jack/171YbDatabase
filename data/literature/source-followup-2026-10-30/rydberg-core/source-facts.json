@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "facts": [
+    {
+      "sourceId": "ref-12",
+      "sourcePdf": "references/papers/7.pdf",
+      "sourceSha256": "b058a900e9aaa292d3800087a823b57de74049434ee2ee663ac05aaa4c173bf0",
+      "table": "Section2",
+      "pdfPhysicalPage": 3,
+      "printedPage": 3646,
+      "isotope": 174,
+      "species": "YbI",
+      "transcription": "Poppler text cross-checked against rendered original table",
+      "parameter": "isotope-selection",
+      "value": 174,
+      "conditions": "thermal beam naturalYb, first laser locked174Yb fluorescence; excitation selection174Yb",
+      "evidenceKind": "experimentalmethod"
+    },
+    {
+      "sourceId": "ref-12",
+      "sourcePdf": "references/papers/7.pdf",
+      "sourceSha256": "b058a900e9aaa292d3800087a823b57de74049434ee2ee663ac05aaa4c173bf0",
+      "table": "Section3.2.2",
+      "pdfPhysicalPage": 10,
+      "printedPage": 3653,
+      "isotope": 174,
+      "species": "YbI",
+      "transcription": "Poppler text cross-checked against rendered original table",
+      "parameter": "ionization-limit",
+      "valueDecimal": "50443.08",
+      "uncertaintyDecimal": "0.05",
+      "unit": "cm^-1",
+      "evidenceKind": "MQDT fit under chosen intermediate references",
+      "boundary": "174Yb; not171Yb centroid or ioniccoreFthreshold"
+    },
+    {
+      "sourceId": "ref-12",
+      "sourcePdf": "references/papers/7.pdf",
+      "sourceSha256": "b058a900e9aaa292d3800087a823b57de74049434ee2ee663ac05aaa4c173bf0",
+      "table": "Section3.1/3.2.3",
+      "pdfPhysicalPage": 9,
+      "printedPage": 3652,
+      "isotope": 174,
+      "species": "YbI",
+      "transcription": "Poppler text cross-checked against rendered original table",
+      "parameter": "LS-character",
+      "value": null,
+      "boundary": "energy-only MQDT invariant under channelrotation; no unique singlet-triplet mixing determination; gJ/HFS needed"
+    },
+    {
+      "sourceId": "ref-13",
+      "sourcePdf": "references/papers/10.pdf",
+      "sourceSha256": "1bdc3d40c247b1e725d2541ffb03aae7d930abd653deb0df00f530539450873b",
+      "table": "V.B/VI",
+      "pdfPhysicalPage": 9,
+      "printedPage": 352,
+      "isotope": 171,
+      "species": "YbII",
+      "transcription": "Poppler text cross-checked against rendered original table",
+      "parameter": "zero-field-hyperfine-frequency",
+      "valueDecimal": "12642812118.466",
+      "uncertaintyDecimal": "0.002",
+      "unit": "Hz",
+      "convention": "ordinary frequency,isolated171Yb+ 2S1/2 F=0,MF=0 to F=1,MF=0; zero temperature,velocity,E,B extrapolation,referencedTAI",
+      "uncertaintyComponents_Hz": {
+        "statistical": "0.0014",
+        "modelSystematic": "0.0015"
+      },
+      "measurementConditions": "buffer-gas cooled clouds in linearPaultraps; original finiteB/temp/He conditions inTablesI-II, correctionsTableIV",
+      "evidenceKind": "corrected primary measurement"
+    },
+    {
+      "sourceId": "ref-13",
+      "sourcePdf": "references/papers/10.pdf",
+      "sourceSha256": "1bdc3d40c247b1e725d2541ffb03aae7d930abd653deb0df00f530539450873b",
+      "table": "V.B",
+      "pdfPhysicalPage": 9,
+      "printedPage": 352,
+      "isotope": 171,
+      "species": "YbII",
+      "transcription": "Poppler text cross-checked against rendered original table",
+      "parameter": "retained-dataset-mean-frequency",
+      "valueDecimal": "12642812118.4662",
+      "uncertaintyDecimal": "0.00054",
+      "unit": "Hz",
+      "uncertaintyScope": "standard deviation after discardingMJD49826,not final total uncertainty"
+    }
+  ],
+  "arithmeticChecks": [
+    {
+      "id": "TableIV-total-IT-1",
+      "calculatedFromPrintedRows": "12642812118.4654",
+      "printed": "12642812118.4654",
+      "exactAtPrintedPrecision": true,
+      "unit": "Hz"
+    },
+    {
+      "id": "TableIV-total-IT-2",
+      "calculatedFromPrintedRows": "12642812118.4657",
+      "printed": "12642812118.4657",
+      "exactAtPrintedPrecision": true,
+      "unit": "Hz"
+    },
+    {
+      "id": "Fisk-vs-Kroeze-Blatt1983",
+      "Fisk_Hz": "12642812118.466",
+      "reviewOld_Hz": "12642812124.2",
+      "difference_Hz": "5.734",
+      "interpretation": "different originalmeasurements; not unexplained isotopeshift; no averaging performed"
+    },
+    {
+      "id": "Peper-threshold-printed-difference",
+      "value_GHz": "12.6428175595302",
+      "Fisk_GHz": "12.642812118466",
+      "interpretation": "thresholds printed to1e-6cm^-1; do not demand millihertz precision or alterMQDTlimits from this arithmetic"
+    }
+  ]
+}

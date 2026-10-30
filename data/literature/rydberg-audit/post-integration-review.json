@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-29",
+  "scope": "read-only integration review; no src/canonical changes; no model computation",
+  "reviewedFilesSha256": {
+    "data/estimates.json": "18273398a2e912bdcf665097c79c52b5e3ad2d60bb32ea223a56f507f9c30695",
+    "data/transitions.json": "d66545fb087f4cd720e3829a471c120665a96bd0e9872fa702bcfe22e594759a",
+    "data/levels.json": "87a76c15269831e4b7a16e0b44c22426592be4435ea6115f6961e0306473ccd7",
+    "data/hyperfine.json": "72be1be7d2ed48973d49db47d61a74f96460464f8c2e9a3cf91e3a3d76445a1b",
+    "data/sources.json": "15211d8cf3642de71b60ced969e6568e075bb1f3363690935935429b84214a2a",
+    "src/physics/estimates.js": "283dedfcae453c76414e0cc9bdf20071985d0e5769162f7fb67e61110fbafd49",
+    "src/main.js": "3ce35038a382bddc8c49fa770123d650386e959cec7d2f158177abc015ab5ce1",
+    "src/ui/source-panel.js": "4d097f030e8c3a29a0f1f56ef190de3a331e7f6ba43d237935e29e1679cb09c8",
+    "src/ui/data-table.js": "40294ec926453f578743901171d27557b2d0f10e68ce3f31cd22a1686839d8b1",
+    "src/ui/diagram-details.js": "28c533c277e2d643febb644bee85d0f39307a5df56a85b6fa529eba6821cd245",
+    "index.html": "5cdf637010db5e51dd0db1197b397e9a1a5e0142aebdf2b6dff59842f76bd847"
+  },
+  "staticConfirmed": [
+    "main passes catalog.ESTIMATE_CONFIG to generateRydbergStates",
+    "configuredpublicOutputPolicy sets legacy lifetime_us/C6_ghz_um6/blockade_um to null on generated state rows",
+    "states table independently renders those3fields as emdash",
+    "index explicitly identifies Rbn57 anchor error and condition-bound171PeperC6 point",
+    "R2 d and legacy65S energy have definition-needs-review and excludedFromValidatedPrediction flags",
+    "Rabi result states model conversion, not independent validation and no total uncertainty",
+    "sourcepanel reviewLabel does not turn original-source-located into scientificallyvalidated"
+  ],
+  "remainingIssues": [
+    {
+      "id": "saved65S-provenance-stale",
+      "files": [
+        "data/hyperfine.json",
+        "data/sources.json"
+      ],
+      "finding": "Statements original configuration not reopened/no originalrun audit performed are stale after this read-only originalNotebook+validation audit. No modelrerun/physicalvalidation occurred. Exact paths/hashes in internal-evidence-manifest.json.",
+      "recommendation": "updatehistory,indexedartifacts,E=0fromsavedconfig while keeping unknownrevision/inputpackagehash/physicaluncertainty unknown"
+    },
+    {
+      "id": "R5-pure-J-boundary",
+      "files": [
+        "data/transitions.json"
+      ],
+      "finding": "Unqualified E1forbiddenandd=0 language needs idealpureJ qualifier; actual171hyperfine/channelmixed states require separateF-state audit.",
+      "recommendation": "qualifylabelandforbidden_reason; preservehistoricalnumericzeroandmodel"
+    },
+    {
+      "id": "R2-legacy-rate-public-visibility",
+      "files": [
+        "src/ui/data-table.js",
+        "src/ui/source-panel.js"
+      ],
+      "finding": "R2 historicallifetime/rate/linewidth still visible in corefullfields and sourcepanel, although states-table outputs suppressed. Existingmetadata marks definition-needs-review.",
+      "recommendation": "do not claim all-site lifetimeoutputs removed; keep visiblelegacyscope or separatelysuppressR2ratefields if that is desired policy"
+    }
+  ],
+  "noIndependentPhysicalValidation": true
+}

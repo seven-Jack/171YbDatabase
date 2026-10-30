@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-30",
+  "sources": [
+    {
+      "sourceId": "mishra-2001-jqsrt",
+      "numberedPdf": "references/papers/2.pdf",
+      "sha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
+      "output": "data/literature/source-followup-2026-10-30/lifetimes/mishra-2001.json",
+      "tables": 7,
+      "rows": 90,
+      "visuallyCheckedPhysicalPages": [
+        5,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "originalUnchanged": true
+    },
+    {
+      "sourceId": "baumann-1985-jpb",
+      "numberedPdf": "references/papers/3.pdf",
+      "sha256": "3bdd0ddd781d41583a0530446f9247d4d38f98e816651b14c39bcf4b42f12dc0",
+      "output": "data/literature/source-followup-2026-10-30/lifetimes/baumann-1985.json",
+      "tables": 2,
+      "rows": 21,
+      "visuallyCheckedPhysicalPages": [
+        4
+      ],
+      "originalUnchanged": true
+    },
+    {
+      "sourceId": "rambow-1976-pra",
+      "numberedPdf": "references/papers/8.pdf",
+      "sha256": "14034e18a46ceb8b68c854d74f663ccce0a487ff40ff39d46e81f01dac14895b",
+      "output": "data/literature/source-followup-2026-10-30/lifetimes/rambow-1976.json",
+      "tables": 1,
+      "rows": 7,
+      "visuallyCheckedPhysicalPages": [
+        4
+      ],
+      "originalUnchanged": true
+    }
+  ],
+  "tableCount": 10,
+  "tableRowCount": 118,
+  "scientificComputation": "none; only original-table transcription and explicitly labelled scalar arithmetic"
+}

@@ -1,0 +1,13 @@
+paperNumber,sourceId,table,pdfPage,printedPage,label,referenceInPaper,column,printed,value,uncertainty,unit,bound,uncertaintyBound
+4,qiao-2023-apl,TableI,4,224002-3,Pressure,This work,shift,-14.0,-14.0,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,Pressure,This work,uncertainty,3.2,3.2,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,Probe power,This work,shift,-5.26,-5.26,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,Probe power,This work,uncertainty,0.2,0.2,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,Lamp current,This work,shift,5.46,5.46,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,Lamp current,This work,uncertainty,0.05,0.05,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,RAM,This work,shift,-1.33,-1.33,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,RAM,This work,uncertainty,0.09,0.09,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,Locking offset,This work,shift,-0.088,-0.088,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,Locking offset,This work,uncertainty,0.003,0.003,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,Total,This work,shift,-15.2,-15.2,,MHz,,
+4,qiao-2023-apl,TableI,4,224002-3,Total,This work,uncertainty,3.2,3.2,,MHz,,

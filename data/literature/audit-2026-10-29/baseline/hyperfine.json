@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "isotope": 171,
+  "states": {
+    "¹S₀": {
+      "levelId": "yb171-6s2-1s0",
+      "legacy": {
+        "A": 0,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": 0
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    },
+    "³P₀": {
+      "levelId": "yb171-6s6p-3p0",
+      "legacy": {
+        "A": 0,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": 0
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    },
+    "³P₁": {
+      "levelId": "yb171-6s6p-3p1",
+      "legacy": {
+        "A": 3957.85,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": -3957.85
+          },
+          {
+            "F": 1.5,
+            "shift": 1978.925
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    },
+    "³P₂": {
+      "levelId": "yb171-6s6p-3p2",
+      "legacy": {
+        "A": 2680.9,
+        "levels": [
+          {
+            "F": 1.5,
+            "shift": -4021.35
+          },
+          {
+            "F": 2.5,
+            "shift": 2680.9
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    },
+    "³D₁": {
+      "levelId": "yb171-6s5d-3d1",
+      "legacy": {
+        "A": -2038.3,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": 2038.3
+          },
+          {
+            "F": 1.5,
+            "shift": -1019.15
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    },
+    "¹P₁": {
+      "levelId": "yb171-6s6p-1p1",
+      "legacy": {
+        "A": -214.06,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": 214.06
+          },
+          {
+            "F": 1.5,
+            "shift": -107.03
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    },
+    "³S₁": {
+      "levelId": "yb171-6s7s-3s1",
+      "legacy": {
+        "A": 6838.41,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": -6838.41
+          },
+          {
+            "F": 1.5,
+            "shift": 3419.205
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "literature-reported",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    },
+    "50³S₁": {
+      "levelId": "yb171-6s50s-3s1",
+      "legacy": {
+        "A": 5.734,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": -5.734
+          },
+          {
+            "F": 1.5,
+            "shift": 2.867
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "scaling-estimate",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    },
+    "80³S₁": {
+      "levelId": "yb171-6s80s-3s1",
+      "legacy": {
+        "A": 1.32,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": -1.32
+          },
+          {
+            "F": 1.5,
+            "shift": 0.66
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "scaling-estimate",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    },
+    "65³D₁": {
+      "levelId": "yb171-6s65d-3d1",
+      "legacy": {
+        "A": -0.767,
+        "levels": [
+          {
+            "F": 0.5,
+            "shift": 0.767
+          },
+          {
+            "F": 1.5,
+            "shift": -0.383
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "scaling-estimate",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    },
+    "65³D₂": {
+      "levelId": "yb171-6s65d-3d2",
+      "legacy": {
+        "A": -0.289,
+        "levels": [
+          {
+            "F": 1.5,
+            "shift": 0.434
+          },
+          {
+            "F": 2.5,
+            "shift": -0.289
+          }
+        ]
+      },
+      "sourceId": "legacy-hfs",
+      "evidenceKind": "scaling-estimate",
+      "reviewStatus": "legacy-not-rechecked",
+      "unit": "MHz",
+      "uncertainty": null,
+      "uncertaintyNote": "not-established-in-this-migration"
+    }
+  },
+  "saved65S": {
+    "levelId": "yb171-6s65s-3s1-triplet-connected",
+    "sourceId": "this-work-hyperfine-65s",
+    "evidenceKind": "internal-calculation",
+    "reviewStatus": "legacy-not-rechecked",
+    "conditions": {
+      "magneticField_G": 0,
+      "electricField_V_cm": null
+    },
+    "conditionsNote": "The CSV records B=0; the old page states no external electric field, but the original run configuration has not been reopened in this migration.",
+    "energyReference": "ionic-hyperfine-centroid",
+    "effectiveAConvention": "frequency-defined A_eff=(2/3)*splitting; selected zero-field branches only",
+    "physicalValidation": "independent-experimental-validation-and-total-model-uncertainty-not-established",
+    "csv": {
+      "columns": [
+        "isotope",
+        "n_label",
+        "term",
+        "F",
+        "B_G",
+        "nu_upper",
+        "energy_over_h_Hz_relative_ionic_hfs_centroid",
+        "selected_pair_centroid_over_h_Hz",
+        "shift_over_h_MHz",
+        "splitting_F32_minus_F12_MHz",
+        "A_eff_over_h_MHz",
+        "triplet_channel_weight_diagnostic",
+        "P_S1_in_retained_6sns",
+        "g_F"
+      ],
+      "rows": [
+        {
+          "isotope": "171",
+          "n_label": "65",
+          "term": "3S1 triplet-connected",
+          "F": "0.5",
+          "B_G": "0.0",
+          "nu_upper": "60.1761270465",
+          "energy_over_h_Hz_relative_ionic_hfs_centroid": "-905339807668.5577",
+          "selected_pair_centroid_over_h_Hz": "-897664643289.6215",
+          "shift_over_h_MHz": "-7675.16437893628",
+          "splitting_F32_minus_F12_MHz": "11512.746568404542",
+          "A_eff_over_h_MHz": "7675.164378936361",
+          "triplet_channel_weight_diagnostic": "0.9082363430484395",
+          "P_S1_in_retained_6sns": "0.8594064354527566",
+          "g_F": "2.2944137538533558"
+        },
+        {
+          "isotope": "171",
+          "n_label": "65",
+          "term": "3S1 triplet-connected",
+          "F": "1.5",
+          "B_G": "0.0",
+          "nu_upper": "60.561073029",
+          "energy_over_h_Hz_relative_ionic_hfs_centroid": "-893827061100.1532",
+          "selected_pair_centroid_over_h_Hz": "-897664643289.6215",
+          "shift_over_h_MHz": "3837.5821894682617",
+          "splitting_F32_minus_F12_MHz": "11512.746568404542",
+          "A_eff_over_h_MHz": "7675.164378936361",
+          "triplet_channel_weight_diagnostic": "1.0",
+          "P_S1_in_retained_6sns": "1.0",
+          "g_F": "1.3347899158789458"
+        }
+      ],
+      "lineEnding": "CRLF",
+      "finalNewline": true,
+      "compatibilityPath": "assets/05.21_yb171_65s_hyperfine.csv"
+    }
+  }
+}

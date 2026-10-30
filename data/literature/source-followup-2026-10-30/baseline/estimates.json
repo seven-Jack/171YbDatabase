@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "modelId": "legacy-rydberg-scaling-v1",
+  "evidenceKind": "scaling-estimate",
+  "reviewStatus": "conflict-unresolved",
+  "constants": {
+    "R_INF": 109737.3156816,
+    "E_I_CM": 50443.0676,
+    "E_I_EV": 6.2541433,
+    "A0_UM": 5.29177210903e-05
+  },
+  "ns_values": [
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    80
+  ],
+  "quantumDefects": [
+    {
+      "series": "6sns ¹S₀",
+      "term": "¹S₀",
+      "delta0": 4.2721,
+      "delta2": "—",
+      "range": "n = 70–90",
+      "note": "174Yb原文参数；不能移植为171Yb逐态量子亏损。单重态 S 系列",
+      "source": "Halter arXiv2211.04748v2; 174Yb comparator, not171Yb default",
+      "reviewStatus": "original-source-located",
+      "excludedFromValidatedPrediction": true,
+      "auditDate": "2026-10-29",
+      "isotope": 174
+    },
+    {
+      "series": "6snp ¹P₁",
+      "term": "¹P₁",
+      "delta0": 3.9535,
+      "delta2": "—",
+      "range": "n = 70–90",
+      "note": "174Yb原文参数；不能移植为171Yb逐态量子亏损。单重态 P 系列",
+      "source": "Halter arXiv2211.04748v2; 174Yb comparator, not171Yb default",
+      "reviewStatus": "original-source-located",
+      "excludedFromValidatedPrediction": true,
+      "auditDate": "2026-10-29",
+      "isotope": 174
+    },
+    {
+      "series": "6sns ³S₁",
+      "term": "³S₁",
+      "delta0": 2.523,
+      "delta2": "—",
+      "range": "高 n",
+      "note": "旧delta=2.523没有指定171Yb triplet-connected分支证据；不以Peper比较Rb的n57背书。",
+      "source": "历史近似参数；未找到该数值的指定171Yb态原始证据",
+      "reviewStatus": "definition-needs-review",
+      "excludedFromValidatedPrediction": true,
+      "auditDate": "2026-10-29"
+    },
+    {
+      "series": "6snd ³D₁",
+      "term": "³D₁",
+      "delta0": 1.41,
+      "delta2": "—",
+      "range": "低 n (近似)",
+      "note": "三重态 D 系列；高 n 用 MQDT 6-channel",
+      "source": "历史近似参数；未找到该数值的指定171Yb态原始证据",
+      "reviewStatus": "definition-needs-review",
+      "excludedFromValidatedPrediction": true,
+      "auditDate": "2026-10-29"
+    },
+    {
+      "series": "6snd ³D₂",
+      "term": "³D₂",
+      "delta0": 1.42,
+      "delta2": "—",
+      "range": "低 n (近似)",
+      "note": "6snd 为零场偶宇称 D 系列；p–f 混合属于奇宇称 6snp / 6snf，可影响 D 态 Stark 位移及相互作用计算，并非 D 态零场内禀 p–f 混合。δ₀=1.42 的原数值出处未独立核验。",
+      "source": "历史近似参数；未找到该数值的指定171Yb态原始证据",
+      "reviewStatus": "definition-needs-review",
+      "excludedFromValidatedPrediction": true,
+      "auditDate": "2026-10-29"
+    },
+    {
+      "series": "6snf ³F₂,₃,₄",
+      "term": "³F_J",
+      "delta0": 0.02,
+      "delta2": "—",
+      "range": "高 n",
+      "note": "Kuroda的约0.026对应g态；f态需多通道/版本/同位素说明，旧0.02仅归档示意。",
+      "source": "历史参数0.02未获支持；Kuroda不能支持该171Yb f态单一量子亏损",
+      "reviewStatus": "definition-needs-review",
+      "excludedFromValidatedPrediction": true,
+      "auditDate": "2026-10-29"
+    }
+  ],
+  "ionization": {
+    "E_I0": 50442.795744,
+    "E_I1": 50443.217463,
+    "A_ion_GHz": 12.6428
+  },
+  "lifetimeReference": {
+    "tau_us": 0.0138,
+    "n": 7,
+    "delta": 2.523,
+    "excludeFromValidated": true,
+    "note": "6s7s low-state lifetime is not a verified high-n Rydberg lifetime scaling anchor; temperature/BBR/branch not established"
+  },
+  "c6Reference": {
+    "n": 57,
+    "delta": 2.523,
+    "value_GHz_um6": 34,
+    "blockadeReferenceRabi_MHz": 1,
+    "anchorMapping": "invalid: n57 in Peper Fig6 refers to comparison Rb, not the171Yb state",
+    "excludeFromValidated": true,
+    "trueLiteratureState": "171Yb triplet-connected nu=54.28,L=0,F=1/2,mF=-1/2,B=4.88(6)G,theta=pi/2",
+    "sourceId": "ref-02",
+    "sourceLocator": "published PDF p8 Fig6"
+  },
+  "scope": "Historical single-channel illustration only. Unsupported quantum defects, lifetime anchors and invalid C6 n57 mapping are quarantined; no state-resolved MQDT prediction, no validated blockade radius.",
+  "constantProvenance": {
+    "A0_UM": {
+      "sourceVersion": "CODATA 2018",
+      "sourceUrl": "https://physics.nist.gov/cuu/pdf/all_2018.pdf",
+      "sourceLocator": "p.1, Bohr radius row",
+      "conversion": "A0 in metres times 10^6; 2018 mantissa retained",
+      "reviewScope": "unit conversion only; not validation of the scaling model"
+    },
+    "E_I_CM": {
+      "sourceId": "ref-01",
+      "sourceLocator": "Kroeze v2 Table2 p20,171Yb compiled centroid; RB=4.7",
+      "uncertainty": 0.0012,
+      "evidenceType": "compilation with mass-scaled174Yb input; not one direct171Yb measurement",
+      "thresholdConflict": "Peper Fcore-weighted centroid differs; reference/calibration reconciliation pending"
+    },
+    "E_I_EV": {
+      "sourceId": "ref-01",
+      "sourceLocator": "Kroeze v2 Table2 p20,171Yb compiled centroid; RB=4.7",
+      "uncertainty": 1.5e-07,
+      "evidenceType": "compilation with mass-scaled174Yb input; not one direct171Yb measurement",
+      "thresholdConflict": "Peper Fcore-weighted centroid differs; reference/calibration reconciliation pending"
+    },
+    "R_INF": {
+      "sourceVersion": "CODATA2018",
+      "sourceUrl": "https://physics.nist.gov/cuu/pdf/all_2018.pdf",
+      "sourceLocator": "p1 Rydberg constant10973731.568160(21)m^-1; divide100 forcm^-1",
+      "uncertainty": 2.1e-07,
+      "modelBoundary": "legacy scaling still usesRinf; not mass-corrected171MQDT"
+    }
+  },
+  "auditDate": "2026-10-29",
+  "publicOutputPolicy": {
+    "lifetime_us": "suppressed-invalid-anchor",
+    "C6_ghz_um6": "suppressed-invalid-anchor",
+    "blockade_um": "suppressed-invalid-anchor"
+  },
+  "ionizationProvenance": {
+    "sourceId": "ref-02",
+    "locator": "published supplement pp5-9; fitted171Yb Fcore0/1 thresholds",
+    "thresholdUncertainties": "not supplied for these last digits in extracted parameter tables",
+    "centroid_cm": 50443.11203325,
+    "sourceConflict": "does not equal Kroeze Table2 compilation centroid50443.0676(12); do not splice references"
+  }
+}

@@ -1,0 +1,1147 @@
+[
+  {
+    "id": "table-01:c",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "c",
+    "sourcePrintedValue": "2.99792458e8",
+    "valueDecimal": "299792458.00000000",
+    "uncertaintyDecimal": null,
+    "unit": "m/s",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": true
+  },
+  {
+    "id": "table-01:mu0",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "mu0",
+    "sourcePrintedValue": "1.25663706127(20)e-6",
+    "valueDecimal": "0.00000125663706127",
+    "uncertaintyDecimal": "2.0E-16",
+    "unit": "N/A^2",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": false
+  },
+  {
+    "id": "table-01:epsilon0",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "epsilon0",
+    "sourcePrintedValue": "8.8541878188(14)e-12",
+    "valueDecimal": "8.8541878188E-12",
+    "uncertaintyDecimal": "1.4E-21",
+    "unit": "F/m",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": false
+  },
+  {
+    "id": "table-01:h",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "h",
+    "sourcePrintedValue": "6.62607015e-34",
+    "valueDecimal": "6.62607015E-34",
+    "uncertaintyDecimal": null,
+    "unit": "J s",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": true
+  },
+  {
+    "id": "table-01:hbar",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "hbar",
+    "sourcePrintedValue": "~1.054571817e-34",
+    "valueDecimal": "1.054571817E-34",
+    "uncertaintyDecimal": null,
+    "unit": "J s",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": true,
+    "status": "numeric",
+    "isotope": null,
+    "exact": false
+  },
+  {
+    "id": "table-01:e",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "e",
+    "sourcePrintedValue": "1.602176634e-19",
+    "valueDecimal": "1.602176634E-19",
+    "uncertaintyDecimal": null,
+    "unit": "C",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": true
+  },
+  {
+    "id": "table-01:muB",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "muB",
+    "sourcePrintedValue": "9.2740100657(29)e-24",
+    "valueDecimal": "9.2740100657E-24",
+    "uncertaintyDecimal": "2.9E-33",
+    "unit": "J/T",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": false
+  },
+  {
+    "id": "table-01:muN",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "muN",
+    "sourcePrintedValue": "5.0507837393(16)e-27",
+    "valueDecimal": "5.0507837393E-27",
+    "uncertaintyDecimal": "1.6E-36",
+    "unit": "J/T",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": false
+  },
+  {
+    "id": "table-01:atomic_mass_unit",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "atomic_mass_unit",
+    "sourcePrintedValue": "1.66053906892(52)e-27",
+    "valueDecimal": "1.66053906892E-27",
+    "uncertaintyDecimal": "5.2E-37",
+    "unit": "kg",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": false
+  },
+  {
+    "id": "table-01:electron_mass",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "electron_mass",
+    "sourcePrintedValue": "9.1093837139(28)e-31",
+    "valueDecimal": "9.1093837139E-31",
+    "uncertaintyDecimal": "2.8E-40",
+    "unit": "kg",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": false
+  },
+  {
+    "id": "table-01:a0",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "a0",
+    "sourcePrintedValue": "5.29177210544(82)e-11",
+    "valueDecimal": "5.29177210544E-11",
+    "uncertaintyDecimal": "8.2E-21",
+    "unit": "m",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": false
+  },
+  {
+    "id": "table-01:kB",
+    "table": 1,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "kB",
+    "sourcePrintedValue": "1.380649e-23",
+    "valueDecimal": "1.380649E-23",
+    "uncertaintyDecimal": null,
+    "unit": "J/K",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "CODATA-recommendation-reproduced",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": null,
+    "exact": true
+  },
+  {
+    "id": "table-02:atomic_number",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "atomic_number",
+    "sourcePrintedValue": "70",
+    "valueDecimal": "70",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:nucleons",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "nucleons",
+    "sourcePrintedValue": "171",
+    "valueDecimal": "171",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:nuclear_spin",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "nuclear_spin",
+    "sourcePrintedValue": "0.5",
+    "valueDecimal": "0.5",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:statistics",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "statistics",
+    "sourcePrintedValue": "fermionic",
+    "valueDecimal": null,
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "categorical",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:natural_abundance",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "natural_abundance",
+    "sourcePrintedValue": "14.239(5)",
+    "valueDecimal": "14.239",
+    "uncertaintyDecimal": "0.005",
+    "unit": "%",
+    "sourceReferenceNumbers": [
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:nuclear_lifetime",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "nuclear_lifetime",
+    "sourcePrintedValue": "stable",
+    "valueDecimal": null,
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "categorical",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:mass_u",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "mass_u",
+    "sourcePrintedValue": "170.936331515(14)",
+    "valueDecimal": "170.936331515",
+    "uncertaintyDecimal": "1.4E-8",
+    "unit": "u",
+    "sourceReferenceNumbers": [
+      16
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:mass_kg",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "mass_kg",
+    "sourcePrintedValue": "2.8384645678(9)e-25",
+    "valueDecimal": "2.8384645678E-25",
+    "uncertaintyDecimal": "9E-35",
+    "unit": "kg",
+    "sourceReferenceNumbers": [
+      16
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:rms_nuclear_charge_radius",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "rms_nuclear_charge_radius",
+    "sourcePrintedValue": "5.2906(57)",
+    "valueDecimal": "5.2906",
+    "uncertaintyDecimal": "0.0057",
+    "unit": "fm",
+    "sourceReferenceNumbers": [
+      170
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:electron_spin_g",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "electron_spin_g",
+    "sourcePrintedValue": "2.00231930436092(36)",
+    "valueDecimal": "2.00231930436092",
+    "uncertaintyDecimal": "3.6E-13",
+    "unit": "",
+    "sourceReferenceNumbers": [
+      15
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:electron_orbital_g",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "electron_orbital_g",
+    "sourcePrintedValue": "~0.99999679",
+    "valueDecimal": "0.99999679",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [],
+    "evidenceType": "compilation-reported",
+    "approximate": true,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:nuclear_magnetic_moment",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "nuclear_magnetic_moment",
+    "sourcePrintedValue": "0.4923(4)",
+    "valueDecimal": "0.4923",
+    "uncertaintyDecimal": "0.0004",
+    "unit": "muN",
+    "sourceReferenceNumbers": [
+      73
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:nuclear_spin_g",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "nuclear_spin_g",
+    "sourcePrintedValue": "-0.0005362(4)",
+    "valueDecimal": "-0.0005362",
+    "uncertaintyDecimal": "4E-7",
+    "unit": "",
+    "sourceReferenceNumbers": [],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:density_20C",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "density_20C",
+    "sourcePrintedValue": "6904(2)",
+    "valueDecimal": "6904",
+    "uncertaintyDecimal": "2",
+    "unit": "kg/m^3",
+    "sourceReferenceNumbers": [
+      19
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:molar_volume_20C",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "molar_volume_20C",
+    "sourcePrintedValue": "25.066(7)",
+    "valueDecimal": "25.066",
+    "uncertaintyDecimal": "0.007",
+    "unit": "cm^3/mol",
+    "sourceReferenceNumbers": [
+      19
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:melting_K",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "melting_K",
+    "sourcePrintedValue": "1097",
+    "valueDecimal": "1097",
+    "uncertaintyDecimal": null,
+    "unit": "K",
+    "sourceReferenceNumbers": [
+      12
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:melting_C",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "melting_C",
+    "sourcePrintedValue": "824",
+    "valueDecimal": "824",
+    "uncertaintyDecimal": null,
+    "unit": "degC",
+    "sourceReferenceNumbers": [
+      12
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:boiling_K",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "boiling_K",
+    "sourcePrintedValue": "1496",
+    "valueDecimal": "1496",
+    "uncertaintyDecimal": null,
+    "unit": "K",
+    "sourceReferenceNumbers": [
+      12
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171,
+    "reviewFlags": [
+      "SOURCE_BOILING_TEMPERATURE_UNIT_PAIR_INCONSISTENT"
+    ]
+  },
+  {
+    "id": "table-02:boiling_C",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "boiling_C",
+    "sourcePrintedValue": "1196",
+    "valueDecimal": "1196",
+    "uncertaintyDecimal": null,
+    "unit": "degC",
+    "sourceReferenceNumbers": [
+      12
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171,
+    "reviewFlags": [
+      "SOURCE_BOILING_TEMPERATURE_UNIT_PAIR_INCONSISTENT"
+    ]
+  },
+  {
+    "id": "table-02:specific_heat",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "specific_heat",
+    "sourcePrintedValue": "0.155",
+    "valueDecimal": "0.155",
+    "uncertaintyDecimal": null,
+    "unit": "J/(g K)",
+    "sourceReferenceNumbers": [
+      12
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:molar_heat",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "molar_heat",
+    "sourcePrintedValue": "26.74",
+    "valueDecimal": "26.74",
+    "uncertaintyDecimal": null,
+    "unit": "J/(mol K)",
+    "sourceReferenceNumbers": [
+      12
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:vapor_pressure_25C_Pa",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "vapor_pressure_25C_Pa",
+    "sourcePrintedValue": "1.69(8)e-16",
+    "valueDecimal": "1.69E-16",
+    "uncertaintyDecimal": "8E-18",
+    "unit": "Pa",
+    "sourceReferenceNumbers": [
+      20
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:vapor_pressure_25C_Torr",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "vapor_pressure_25C_Torr",
+    "sourcePrintedValue": "1.27(6)e-18",
+    "valueDecimal": "1.27E-18",
+    "uncertaintyDecimal": "6E-20",
+    "unit": "Torr",
+    "sourceReferenceNumbers": [
+      20
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-02:ionization_centroid_cm",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "ionization_centroid_cm",
+    "sourcePrintedValue": "50443.0676(12)",
+    "valueDecimal": "50443.0676",
+    "uncertaintyDecimal": "0.0012",
+    "unit": "cm^-1",
+    "sourceReferenceNumbers": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171,
+    "birgeRatio": 4.7,
+    "convention": "hyperfine-center-of-gravity",
+    "reviewFlags": [
+      "IONIZATION_THRESHOLD_CENTROID_CONFLICT"
+    ],
+    "sourceDependencyBoundary": "Empirical compilation centroid and adopted/model Fc0/Fc1 thresholds are distinct source/reference conventions; their weighted centroids disagree; no covariance or reconciliation inferred."
+  },
+  {
+    "id": "table-02:ionization_centroid_eV",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "ionization_centroid_eV",
+    "sourcePrintedValue": "6.25414330(15)",
+    "valueDecimal": "6.25414330",
+    "uncertaintyDecimal": "1.5E-7",
+    "unit": "eV",
+    "sourceReferenceNumbers": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171,
+    "birgeRatio": 4.7,
+    "convention": "hyperfine-center-of-gravity",
+    "reviewFlags": [
+      "IONIZATION_THRESHOLD_CENTROID_CONFLICT"
+    ],
+    "sourceDependencyBoundary": "Empirical compilation centroid and adopted/model Fc0/Fc1 thresholds are distinct source/reference conventions; their weighted centroids disagree; no covariance or reconciliation inferred."
+  },
+  {
+    "id": "table-02:ionization_Fc0_cm",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "ionization_Fc0_cm",
+    "sourcePrintedValue": "50442.795744",
+    "valueDecimal": "50442.795744",
+    "uncertaintyDecimal": null,
+    "unit": "cm^-1",
+    "sourceReferenceNumbers": [
+      63
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171,
+    "reviewFlags": [
+      "IONIZATION_THRESHOLD_CENTROID_CONFLICT"
+    ],
+    "sourceDependencyBoundary": "Empirical compilation centroid and adopted/model Fc0/Fc1 thresholds are distinct source/reference conventions; their weighted centroids disagree; no covariance or reconciliation inferred."
+  },
+  {
+    "id": "table-02:ionization_Fc1_cm",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "ionization_Fc1_cm",
+    "sourcePrintedValue": "50443.217463",
+    "valueDecimal": "50443.217463",
+    "uncertaintyDecimal": null,
+    "unit": "cm^-1",
+    "sourceReferenceNumbers": [
+      63
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171,
+    "reviewFlags": [
+      "IONIZATION_THRESHOLD_CENTROID_CONFLICT"
+    ],
+    "sourceDependencyBoundary": "Empirical compilation centroid and adopted/model Fc0/Fc1 thresholds are distinct source/reference conventions; their weighted centroids disagree; no covariance or reconciliation inferred."
+  },
+  {
+    "id": "table-02:ionic_A_over_h",
+    "table": 2,
+    "pdfPhysicalPage": 20,
+    "printedPage": 20,
+    "parameter": "ionic_A_over_h",
+    "sourcePrintedValue": "12.6428121242(12)",
+    "valueDecimal": "12.6428121242",
+    "uncertaintyDecimal": "1.2E-9",
+    "unit": "GHz",
+    "sourceReferenceNumbers": [
+      71
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-03:168:abundance",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "168:abundance",
+    "sourcePrintedValue": "0.12648(22)",
+    "valueDecimal": "0.12648",
+    "uncertaintyDecimal": "0.00022",
+    "unit": "%",
+    "sourceReferenceNumbers": [
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 168
+  },
+  {
+    "id": "table-03:168:mass",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "168:mass",
+    "sourcePrintedValue": "167.93389130(10)",
+    "valueDecimal": "167.93389130",
+    "uncertaintyDecimal": "1.0E-7",
+    "unit": "u",
+    "sourceReferenceNumbers": [
+      16
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 168
+  },
+  {
+    "id": "table-03:168:I",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "168:I",
+    "sourcePrintedValue": "0",
+    "valueDecimal": "0",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [
+      16,
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 168
+  },
+  {
+    "id": "table-03:170:abundance",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "170:abundance",
+    "sourcePrintedValue": "3.0280(19)",
+    "valueDecimal": "3.0280",
+    "uncertaintyDecimal": "0.0019",
+    "unit": "%",
+    "sourceReferenceNumbers": [
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 170
+  },
+  {
+    "id": "table-03:170:mass",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "170:mass",
+    "sourcePrintedValue": "169.934767243(11)",
+    "valueDecimal": "169.934767243",
+    "uncertaintyDecimal": "1.1E-8",
+    "unit": "u",
+    "sourceReferenceNumbers": [
+      16
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 170
+  },
+  {
+    "id": "table-03:170:I",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "170:I",
+    "sourcePrintedValue": "0",
+    "valueDecimal": "0",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [
+      16,
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 170
+  },
+  {
+    "id": "table-03:171:abundance",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "171:abundance",
+    "sourcePrintedValue": "14.239(5)",
+    "valueDecimal": "14.239",
+    "uncertaintyDecimal": "0.005",
+    "unit": "%",
+    "sourceReferenceNumbers": [
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-03:171:mass",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "171:mass",
+    "sourcePrintedValue": "170.936331515(14)",
+    "valueDecimal": "170.936331515",
+    "uncertaintyDecimal": "1.4E-8",
+    "unit": "u",
+    "sourceReferenceNumbers": [
+      16
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-03:171:I",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "171:I",
+    "sourcePrintedValue": "0.5",
+    "valueDecimal": "0.5",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [
+      16,
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 171
+  },
+  {
+    "id": "table-03:172:abundance",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "172:abundance",
+    "sourcePrintedValue": "21.789(5)",
+    "valueDecimal": "21.789",
+    "uncertaintyDecimal": "0.005",
+    "unit": "%",
+    "sourceReferenceNumbers": [
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 172
+  },
+  {
+    "id": "table-03:172:mass",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "172:mass",
+    "sourcePrintedValue": "171.936386654(15)",
+    "valueDecimal": "171.936386654",
+    "uncertaintyDecimal": "1.5E-8",
+    "unit": "u",
+    "sourceReferenceNumbers": [
+      16
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 172
+  },
+  {
+    "id": "table-03:172:I",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "172:I",
+    "sourcePrintedValue": "0",
+    "valueDecimal": "0",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [
+      16,
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 172
+  },
+  {
+    "id": "table-03:173:abundance",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "173:abundance",
+    "sourcePrintedValue": "16.119(3)",
+    "valueDecimal": "16.119",
+    "uncertaintyDecimal": "0.003",
+    "unit": "%",
+    "sourceReferenceNumbers": [
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 173
+  },
+  {
+    "id": "table-03:173:mass",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "173:mass",
+    "sourcePrintedValue": "172.938216212(12)",
+    "valueDecimal": "172.938216212",
+    "uncertaintyDecimal": "1.2E-8",
+    "unit": "u",
+    "sourceReferenceNumbers": [
+      16
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 173
+  },
+  {
+    "id": "table-03:173:I",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "173:I",
+    "sourcePrintedValue": "2.5",
+    "valueDecimal": "2.5",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [
+      16,
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 173
+  },
+  {
+    "id": "table-03:174:abundance",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "174:abundance",
+    "sourcePrintedValue": "31.881(8)",
+    "valueDecimal": "31.881",
+    "uncertaintyDecimal": "0.008",
+    "unit": "%",
+    "sourceReferenceNumbers": [
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 174
+  },
+  {
+    "id": "table-03:174:mass",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "174:mass",
+    "sourcePrintedValue": "173.938867546(12)",
+    "valueDecimal": "173.938867546",
+    "uncertaintyDecimal": "1.2E-8",
+    "unit": "u",
+    "sourceReferenceNumbers": [
+      16
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 174
+  },
+  {
+    "id": "table-03:174:I",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "174:I",
+    "sourcePrintedValue": "0",
+    "valueDecimal": "0",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [
+      16,
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 174
+  },
+  {
+    "id": "table-03:176:abundance",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "176:abundance",
+    "sourcePrintedValue": "12.817(12)",
+    "valueDecimal": "12.817",
+    "uncertaintyDecimal": "0.012",
+    "unit": "%",
+    "sourceReferenceNumbers": [
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 176
+  },
+  {
+    "id": "table-03:176:mass",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "176:mass",
+    "sourcePrintedValue": "175.942574706(16)",
+    "valueDecimal": "175.942574706",
+    "uncertaintyDecimal": "1.6E-8",
+    "unit": "u",
+    "sourceReferenceNumbers": [
+      16
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 176
+  },
+  {
+    "id": "table-03:176:I",
+    "table": 3,
+    "pdfPhysicalPage": 21,
+    "printedPage": 21,
+    "parameter": "176:I",
+    "sourcePrintedValue": "0",
+    "valueDecimal": "0",
+    "uncertaintyDecimal": null,
+    "unit": "",
+    "sourceReferenceNumbers": [
+      16,
+      17
+    ],
+    "evidenceType": "compilation-reported",
+    "approximate": false,
+    "status": "numeric",
+    "isotope": 176
+  }
+]
