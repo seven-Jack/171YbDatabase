@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const { writeVersion } = require('./write-version.cjs');
+const { exportEvidence } = require('./evidence-data.cjs');
 
 function filesBelow(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name)).flatMap(entry => {
@@ -14,6 +15,7 @@ function build(directory, options = {}) {
   const root = fs.realpathSync(directory);
   const output = path.join(root, 'dist');
   if (!fs.existsSync(path.join(root, 'index.html'))) throw new Error('Missing source index.html');
+  if (fs.existsSync(path.join(root, 'data/evidence.json'))) exportEvidence({root,check:true});
   const version = writeVersion(root);
   if (fs.existsSync(output) && fs.lstatSync(output).isSymbolicLink()) throw new Error('dist must be a project-owned directory, not a symlink');
   fs.rmSync(output, { recursive: true, force: true });

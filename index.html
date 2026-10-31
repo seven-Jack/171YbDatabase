@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-ui-revision="quantum-axis-clarity-20261029.1">
+<html lang="zh-CN" data-ui-revision="workspace-review-20261031.1">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="src/styles/workspace-tooltips.css?v=quantum-direct-lines-20261029.1">
   <link rel="stylesheet" href="src/styles/selection-context.css?v=quantum-selection-emphasis-20261029.1">
   <link rel="stylesheet" href="src/styles/chart-axis-controls.css?v=quantum-axis-clarity-20261029.1">
+  <link rel="stylesheet" href="src/styles/evidence.css?v=clock-evidence-status-20261031.1">
+  <link rel="stylesheet" href="src/styles/chart-readout.css?v=chart-readout-20261031.1">
 </head>
 <body>
 <div class="container">
@@ -306,7 +308,7 @@
     <div class="coupling-inputs"><div class="workspace-panel-head"><div><span class="workspace-eyebrow">INPUT PARAMETERS</span><h3>光场参数</h3></div><span class="workspace-chip">高斯光束</span></div><p class="workspace-help">输入两个参数，金色字段为计算结果。</p>
     <div class="rp-calc-mini" id="rpCalcMini" aria-label="光场与计算参数">
               <div class="rp-calc-field" data-field="power">
-                <label for="rpCalcP"><span>功率</span> P</label>
+                <label for="rpCalcP"><span id="rpPowerTitle">原子处分量功率</span> P</label>
                 <input type="number" id="rpCalcP" step="any" placeholder="—">
                 <select class="rp-calc-unit" data-field="power" aria-label="功率输入单位">
                   <option value="W">W</option>
@@ -326,7 +328,7 @@
                 </select>
               </div>
               <div class="rp-calc-field" data-field="waist">
-                <label for="rpCalcW"><span>束腰半径</span> w₀</label>
+                <label for="rpCalcW"><span id="rpWaistTitle">束腰半径</span> <span id="rpWaistSymbol">w₀</span></label>
                 <input type="number" id="rpCalcW" step="any" placeholder="—">
                 <select class="rp-calc-unit" data-field="waist" aria-label="束腰单位">
                   <option value="mm">mm</option>
@@ -335,6 +337,20 @@
                 </select>
               </div>
             </div>
+    <details id="beamDefinitionSettings" class="beam-definition-settings">
+      <summary>输入定义 <span>功率位置 · 偏振分量 · 半径 / 直径</span></summary>
+      <div class="beam-definition-grid">
+        <label class="beam-definition-field" for="beamPowerPlane"><span>功率测量位置</span><select id="beamPowerPlane"><option value="atoms">原子处</option><option value="upstream">上游位置</option></select></label>
+        <label class="beam-definition-field" for="beamPowerBasis"><span>功率含义</span><select id="beamPowerBasis"><option value="component">当前偏振分量功率</option><option value="linear-total">线偏振总功率</option></select></label>
+        <label class="beam-definition-field" id="beamTransmissionField" for="beamTransmission" hidden><span>传输效率 η（%）</span><input id="beamTransmission" type="number" inputmode="decimal" min="0" max="100" step="any" placeholder="填写实测或假设值" aria-describedby="beamDefinitionBoundary"></label>
+        <label class="beam-definition-field" id="beamOrientationField" for="beamLinearOrientation" hidden><span>线偏振相对于量子化轴 B</span><select id="beamLinearOrientation"><option value="">请选择分量分配</option><option value="parallel">平行 B：π 占 100%</option><option value="perpendicular">垂直 B：σ⁺ / σ⁻ 各占 50%</option><option value="manual">手动指定当前分量占比</option></select></label>
+        <label class="beam-definition-field" id="beamFractionField" for="beamManualFraction" hidden><span>当前分量占总功率（%）</span><input id="beamManualFraction" type="number" inputmode="decimal" min="0" max="100" step="any" placeholder="填写已知分量占比" aria-describedby="beamDefinitionBoundary"></label>
+        <label class="beam-definition-field" for="beamSizeKind"><span>1/e² 强度尺寸定义</span><select id="beamSizeKind"><option value="radius">半径 w₀</option><option value="diameter">直径 D = 2w₀</option></select></label>
+      </div>
+      <p id="beamDefinitionBoundary" class="beam-definition-boundary">η 和分量占比由用户给出；不自动视为实验标定。线偏振手动占比：π 为 0–100%，单个 σ 分量为 0–50%。矩阵元已含 CG 因子，无需再次乘入。</p>
+    </details>
+    <p id="beamDefinitionNotice" class="beam-definition-notice" role="status" hidden></p>
+    <output id="beamNormalizedSummary" class="beam-normalized-summary" aria-live="polite"></output>
     </div>
     <div id="rabiResult" class="rabi-result" aria-live="polite"></div>
     </div>
@@ -383,6 +399,11 @@
       </div>
     </dialog>
 
+    <div class="chart-readout-tools" aria-label="图表读数与工作点">
+      <button type="button" id="rpFocusWorkpoint" disabled>聚焦当前工作点</button>
+      <button type="button" id="rpRestoreView" disabled>恢复原视图</button>
+      <span id="rpReadoutNotice" class="chart-readout-notice" role="status">靠近可见曲线自动吸附，点击固定读数。</span>
+    </div>
     <div class="rabi-viz-grid" data-chart-layout="matched">
       <!-- Rabi vs Power multi-curve chart -->
       <div class="rabi-chart-card">
@@ -396,16 +417,20 @@
         </div>
         <div class="chart-frame">
           <div class="rabi-canvas-wrap" id="rpCurveWrap">
-            <canvas id="rpCurveCanvas"></canvas>
+            <canvas id="rpCurveCanvas" tabindex="0" aria-label="功率与耦合强度曲线；靠近曲线显示读数，点击或回车固定悬浮点，Esc清除"></canvas>
             <div class="chart-axis-layer" data-chart-axis-controls>
               <input class="chart-axis-max chart-axis-max-x" type="number" id="rpCurveXMax" step="any" placeholder="自动" aria-label="曲线功率轴最大值，单位见横轴括号；清空恢复自动" title="点击编辑最大值；清空恢复自动">
               <input class="chart-axis-max chart-axis-max-y" type="number" id="rpCurveYMax" step="any" placeholder="自动" aria-label="曲线 Rabi 频率轴最大值，单位见纵轴括号；清空恢复自动" title="点击编辑最大值；清空恢复自动">
               <label class="chart-axis-title chart-axis-title-x" data-axis-title="x"><span>功率 <span data-power-axis-label>P</span></span><span>(</span><select id="rpCurveXUnit" aria-label="曲线及热图横轴功率单位" title="点击切换功率单位"><option value="µW">µW</option><option value="mW" selected>mW</option><option value="W">W</option></select><span>)</span></label>
-              <label class="chart-axis-title chart-axis-title-y" data-axis-title="y"><span>Ω/2π</span><span>(</span><select id="rpCurveYUnit" aria-label="曲线纵轴 Rabi 频率单位" title="点击切换频率单位"><option value="GHz">GHz</option><option value="Hz">Hz</option><option value="kHz">kHz</option><option value="MHz" selected>MHz</option></select><span>)</span></label>
+              <label class="chart-axis-title chart-axis-title-y" data-axis-title="y"><span>Ω/2π</span><span>(</span><select id="rpCurveYUnit" aria-label="曲线及热图色标 Rabi 频率单位" title="点击切换曲线与热图色标的频率单位"><option value="GHz">GHz</option><option value="Hz">Hz</option><option value="kHz">kHz</option><option value="MHz" selected>MHz</option></select><span>)</span></label>
             </div>
             <div class="chart-tooltip" id="rpCurveTip"></div>
           </div>
           <div class="chart-axis-feedback" aria-live="polite"></div>
+        </div>
+        <div class="chart-readout-bar">
+          <output id="rpCurveReadout" class="chart-readout" data-testid="curve-readout" data-mode="empty" aria-live="off">靠近曲线读数，点击固定。</output>
+          <button type="button" id="rpCurveReadoutClear" class="chart-readout-clear" aria-label="清除曲线固定读数" disabled>清除</button>
         </div>
         <div class="chart-legend" id="rpLegend"></div>
       </div>
@@ -418,7 +443,7 @@
         </div>
         <div class="chart-frame">
           <div class="rabi-canvas-wrap" id="rpHeatWrap">
-            <canvas id="rpHeatCanvas"></canvas>
+            <canvas id="rpHeatCanvas" tabindex="0" aria-label="功率与束腰参数图；悬浮显示模型值，点击或回车固定悬浮点，Esc清除"></canvas>
             <div class="chart-axis-layer" data-chart-axis-controls>
               <input class="chart-axis-max chart-axis-max-x" type="number" id="rpHeatXMax" step="any" placeholder="自动" aria-label="热图功率轴最大值，单位见横轴括号；清空跟随曲线范围" title="点击编辑最大值；清空恢复自动">
               <input class="chart-axis-max chart-axis-max-y" type="number" id="rpHeatYMax" step="any" placeholder="自动" aria-label="热图束腰轴最大值，单位见纵轴括号；清空恢复自动" title="点击编辑最大值；清空恢复自动">
@@ -428,6 +453,10 @@
             <div class="chart-tooltip" id="rpHeatTip"></div>
           </div>
           <div class="chart-axis-feedback" aria-live="polite"></div>
+        </div>
+        <div class="chart-readout-bar">
+          <output id="rpHeatReadout" class="chart-readout" data-testid="heat-readout" data-mode="empty" aria-live="off">悬浮查看模型值，点击固定。</output>
+          <button type="button" id="rpHeatReadoutClear" class="chart-readout-clear" aria-label="清除热图固定读数" disabled>清除</button>
         </div>
       </div>
     </div>
@@ -660,15 +689,15 @@
     <section class="footer-version-panel" aria-labelledby="footerVersionTitle">
       <div class="footer-panel-head"><div><span class="footer-eyebrow">VERSION RECORD</span><h2 id="footerVersionTitle">版本信息</h2></div><span class="version-state" id="versionState"></span></div>
       <dl id="versionInfo" class="version-info" aria-label="版本信息"></dl>
-      <p class="review-preview-note"><strong>本地修订（未提交 / 未发布）</strong>：R2 文献条件、误差边界与待执行验证方法补充；原计算工件仍待定位，a₀ 单位修正已保留。以下代码提交为修订基线。</p>
+      <p class="review-preview-note"><strong>核查边界</strong>：578 nm 的绝对实验标定仍未闭合；图表读数为当前模型计算。代码、数据与公式版本分别记录于上方。</p>
     </section>
 
     <details class="recent-changes">
       <summary><span class="updates-heading"><span class="footer-eyebrow">RECENT CHANGES</span><span class="updates-title">近期更新</span></span><span class="updates-count">3 项</span><span class="updates-indicator" aria-hidden="true"></span></summary>
       <ul>
-        <li><span class="update-category">能级图谱</span><p>完整能级图保留；跃迁线按波长配色，UV / IR 单独标注。</p></li>
-        <li><span class="update-category">计算工作流</span><p>明确当前通道、计算方向、输入状态和各物理量来源。</p></li>
-        <li><span class="update-category">配置记录</span><p>支持带数据与公式版本的计算配置导出与恢复。</p></li>
+        <li><span class="update-category">输入定义</span><p>区分功率位置、偏振分量与光束尺寸；支持三向求解和旧配置恢复。</p></li>
+        <li><span class="update-category">证据状态</span><p>578 nm 分层展示 Xu／Offer 核查，保留来源缺口与条件边界。</p></li>
+        <li><span class="update-category">图表读数</span><p>支持曲线吸附、固定读数、束腰显示，以及工作点聚焦与视图恢复。</p></li>
       </ul>
     </details>
 

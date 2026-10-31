@@ -2,8 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { CORE_TRANSITIONS, CORE_LEVELS, DATASET_VERSION, DATASET_MANIFEST } from '../../src/data/catalog.js';
 import { computeCGChannels, computeDEff } from '../../src/physics/angular.js';
-import { rabiHz } from '../../src/physics/rabi.js';
-import { exportCalculationConfig, parseCalculationConfig, validateCalculationConfig, ConfigurationError } from '../../src/state/config.js';
+import { rabiHz, waistFromRabiHz } from '../../src/physics/rabi.js';
+import { exportCalculationConfig, parseCalculationConfig, validateCalculationConfig, ConfigurationError, CONFIG_SCHEMA_VERSION } from '../../src/state/config.js';
 
 const versions = { softwareVersion: '0.2.0', appCommit: '2e2e9d5', datasetVersion: DATASET_VERSION, datasetHash: DATASET_MANIFEST.contentHash, formulaVersion: '1.0.0' };
 function stateFor(id = 'T2', pol = 'pi') {
@@ -18,7 +18,7 @@ test('T2/T3/R2 configuration JSON round trips selection, SI values and current-m
     const state = stateFor(id, 'sigmam');
     state.selectedChannel = computeCGChannels(state).find(ch => ch.F === state.F_lower && ch.Fp === state.F_upper && ch.q === -1);
     const config = exportCalculationConfig(state, versions);
-    assert.equal(config.schemaVersion, 1);
+    assert.equal(config.schemaVersion, CONFIG_SCHEMA_VERSION);
     close(config.parameters.power_W, .001);
     close(config.parameters.waist_m, 50e-6);
     assert.deepEqual(Object.keys(config.selection.channel).sort(), ['F', 'Fp', 'm', 'mp', 'q']);
@@ -55,7 +55,7 @@ test('version/hash mismatches return visible warnings while recomputing the curr
 
 test('rejects malformed, out-of-domain, unknown and inconsistent imported selections', () => {
   const edits = [
-    c => { c.schemaVersion = 2; }, c => { c.transitionId = 'UNKNOWN'; },
+    c => { c.schemaVersion = 3; }, c => { c.transitionId = 'UNKNOWN'; },
     c => { c.parameters.power_W = -1; }, c => { c.parameters.waist_m = 0; },
     c => { c.parameters.power_W = NaN; }, c => { c.parameters.targetRabi_Hz = Infinity; },
     c => { c.parameters.power_W = '0.001'; }, c => { c.selection.F_upper = 99; },
@@ -112,21 +112,25 @@ test('all three solve directions and calculator display units survive JSON round
   }
 });
 
-test('waist solve direction keeps the actual SI work point instead of inverse-power reconstruction', () => {
+test('waist solve direction recomputes its output from the current model and independent power/frequency inputs', () => {
   const config = exportCalculationConfig({ ...stateFor('T3', 'sigmam'), solveFor: 'waist' }, versions);
   config.parameters.power_W = 0.003;
+  config.enteredParameters.power_W = 0.003;
   config.parameters.targetRabi_Hz = 123;
   const parsed = parseCalculationConfig(config, versions);
   assert.equal(parsed.state.solveFor, 'waist');
   assert.equal(parsed.state.calcMode, 'power');
   close(parsed.state.P_mW, 3);
-  close(parsed.state.w_um, 50);
-  close(parsed.result.fR, rabiHz(parsed.state.dEff, 3, 50));
+  close(parsed.state.w_um, waistFromRabiHz(parsed.state.dEff, 123, 3));
+  close(parsed.result.fR, 123);
 });
 
 test('older version-1 files without the new UI fields retain the original calcMode mapping', () => {
   for (const calcMode of ['power', 'rabi']) {
     const config = exportCalculationConfig({ ...stateFor(), calcMode }, versions);
+    config.schemaVersion = 1;
+    delete config.inputDefinition;
+    delete config.enteredParameters;
     delete config.display.solveFor;
     delete config.display.units;
     config.display.powerUnit = 'W'; config.display.rabiUnit = 'GHz';

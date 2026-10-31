@@ -1,6 +1,8 @@
 import {getTransitionRecord,getQuantity,getSourceRecord,DATASET_VERSION} from '../data/catalog.js';
 import {formatLifetime} from './format.js';
 import {R2_PROVENANCE,R2_EVIDENCE_EXTENSION} from './r2-provenance.js';
+import {buildEvidenceView} from './evidence-model.js';
+import {renderEvidencePanelHTML} from './evidence-panel.js';
 
 const EVIDENCE_LABELS = Object.freeze({
   'literature-reported':'文献记录','internal-calibration':'内部校准','internal-calculation':'本工作计算',
@@ -166,9 +168,24 @@ export function initSourcePanel(calculator,decoratedCoreTransitions=[]) {
   if (!panel||!context) return Object.freeze({destroy(){}});
   if (activePanels.has(panel)) return activePanels.get(panel);
   const details=document.getElementById('selectedSource');
+  const evidence=document.createElement('section');
+  evidence.id='evidenceReview';
+  evidence.dataset.testid='evidence-review';
+  evidence.tabIndex=-1;
+  evidence.setAttribute('aria-labelledby','evidenceReviewTitle');
+  panel.before(evidence);
   let lastTransitionId=Symbol('uninitialized');
+  let lastEvidenceKey;
   const render=state=>{
     const view=buildSourceView(state);
+    const review=buildEvidenceView(state);
+    if(lastEvidenceKey!==review.contextKey){
+      const openSections=new Set([...evidence.querySelectorAll('details[open][data-evidence-section]')].map(node=>node.dataset.evidenceSection));
+      evidence.innerHTML=renderEvidencePanelHTML(review);
+      evidence.dataset.calculationStatus=review.calculationStatus;
+      for(const section of evidence.querySelectorAll('details[data-evidence-section]'))section.open=openSections.has(section.dataset.evidenceSection);
+      lastEvidenceKey=review.contextKey;
+    }
     if (!view.transition) context.innerHTML='<span>当前计算对象</span><strong>请先选择跃迁</strong>';
     else {
       const transition=decoratedCoreTransitions.find(row=>row.id===view.transition.id)||view.transition;
@@ -184,7 +201,19 @@ export function initSourcePanel(calculator,decoratedCoreTransitions=[]) {
     context.dataset.datasetVersion=DATASET_VERSION;
   };
   const unsubscribe=calculator.onChange(render);
-  const api=Object.freeze({destroy(){unsubscribe?.();activePanels.delete(panel);}});
+  const openEvidence=()=>{
+    if(details)details.open=true;
+    evidence.focus({preventScroll:true});
+    evidence.scrollIntoView({block:'start',behavior:'auto'});
+  };
+  const onEvidenceLink=event=>{
+    const link=event.target.closest?.('a[data-evidence-open]');
+    if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+    event.preventDefault();
+    openEvidence();
+  };
+  document.addEventListener('click',onEvidenceLink);
+  const api=Object.freeze({openEvidence,destroy(){unsubscribe?.();document.removeEventListener('click',onEvidenceLink);evidence.remove();activePanels.delete(panel);}});
   activePanels.set(panel,api);
   return api;
 }

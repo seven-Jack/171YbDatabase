@@ -3,24 +3,28 @@ import { convert } from '../physics/units.js';
 import { parseAxisMaximum, hasFiniteRange, bindAxisMaximumInput } from './chart-ranges.js';
 import { getTransitionRecord } from '../data/catalog.js';
 import { createFieldView } from './source-panel.js';
+import { DEFAULT_BEAM_DEFINITION, validateBeamDefinition, getBeamFactors, getSizeFactor, normalizeBeamInput, denormalizeSolvedInput } from '../physics/beam-conventions.js';
+import {buildFocusRanges} from './chart-readout.js';
+import {initChartProbes} from './chart-probes.js';
 
-// Curve probes read cursor coordinates; only heatmap probes evaluate the model.
-// The citation belongs to the saved matrix-element input, never a cursor value.
+// A supplied waist identifies a model point on a curve; legacy coordinate-only
+// consumers remain explicitly labelled. Citations always belong to the input d.
 export function buildRabiProbeTooltip({state,kind,powerText,waistText,rabiText}) {
   const transition=state?.transition;
   const quantity=transition&&getTransitionRecord(transition.id)?.quantities.d_num;
   const field=transition&&createFieldView(transition.id,'d_num');
   const rows=[{label:'P（图轴）',value:powerText}];
-  if(kind==='heat') rows.push({label:'束腰 w₀',value:waistText});
-  rows.push({label:kind==='heat'?'Ω/2π':'Ω/2π（坐标）',value:rabiText});
+  const modelPoint=kind==='heat'||!!waistText;
+  if(modelPoint) rows.push({label:'束腰 w₀',value:waistText});
+  rows.push({label:modelPoint?'Ω/2π':'Ω/2π（坐标）',value:rabiText});
   if(field&&quantity?.value!==null) rows.push({
     label:kind==='heat'?'模型输入 d':'曲线依据 d',
     value:field.valueText,
     sourceIds:[quantity.sourceId],
     note:[field.convention,field.kind].filter(Boolean).join(' · ')
   });
-  return {id:transition?.id||'RABI',title:kind==='heat'?'参数图读数':'曲线坐标',rows,
-    footnote:kind==='heat'?'模型换算 · 未独立验证':'图轴坐标 · 非曲线上取值'};
+  return {id:transition?.id||'RABI',title:kind==='heat'?'参数图读数':modelPoint?'曲线吸附读数':'曲线坐标',rows,
+    footnote:modelPoint?'模型换算 · 未独立验证':'图轴坐标 · 非曲线上取值'};
 }
 
 export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHide,hideTooltip}={}) {
@@ -91,6 +95,27 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
 
   // 上次绘制的曲线图几何（供悬停读数反算 x/y 用）
   var curveGeom = null;
+  var heatGeom = null;
+  var chartProbes = null;
+  var focusedView = null;
+  var focusedPointKey = null;
+  var focusBaseScale = null;
+  function leaveFocusedView(){
+    if(focusBaseScale)curveScale=focusBaseScale;
+    focusedView=null;focusedPointKey=null;focusBaseScale=null;
+    document.getElementById('rpScaleLin').classList.toggle('active',curveScale==='lin');
+    document.getElementById('rpScaleLog').classList.toggle('active',curveScale==='log');
+  }
+  function workingPointKey(state){return JSON.stringify([state.transition?.id,state.F_lower,state.F_upper,state.pol,
+    state.dEff,state.selectedChannel,state.beamDefinition,state.P_mW,state.w_um,state.fR_MHz,state.inputStatus]);}
+  function focusRangeFor(state,scale=curveScale){
+    const range=state.inputStatus==='valid'&&buildFocusRanges({power:state.P_mW,rabi:state.fR_MHz,waist:state.w_um,scale});
+    if(!range)return null;
+    const pf=getPFactor()*pwrFactor(curveAxis.x.unit),rf=rabiFactor(curveAxis.y.unit),wf=waistFactor(heatAxis.yUnit);
+    if(!hasFiniteRange(range.powerMin*pf,range.powerMax*pf)||scale==='log'&&!(range.powerMin*pf>0)
+      ||!hasFiniteRange(0,range.rabiMax*rf)||!(range.waistMin*wf>0)||!hasFiniteRange(range.waistMin*wf,range.waistMax*wf))return null;
+    return range;
+  }
 
   // Axis display state: unit + optional user-set max (null => auto)
   var curveAxis = {
@@ -119,6 +144,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
   }
   function getCurvePowerRange() {
     const pf = getPFactor() * pwrFactor(curveAxis.x.unit);
+    if(focusedView)return {minimum:focusedView.powerMin*pf,maximum:focusedView.powerMax*pf};
     const minimum = (curveScale === 'log' ? 0.1 : 0) * pf;
     const maximum = curveAxis.x.max ?? (curveScale === 'log' ? 5000 : 1000) * pf;
     return safeAxisRange('curveX', minimum, maximum, pf);
@@ -127,6 +153,12 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     var pUnit = curveAxis.x.unit;
     var pf = getPFactor() * pwrFactor(pUnit);
     var isSigma = getPFactor() === 2;
+    if(focusedView){
+      const wf=waistFactor(heatAxis.yUnit);
+      return {pUnit,wUnit:heatAxis.yUnit,pf,wf,isSigma,
+        Pmin:focusedView.powerMin*pf,Pmax:focusedView.heatPowerMax*pf,
+        Wmin:focusedView.waistMin*wf,Wmax:focusedView.waistMax*wf};
+    }
     var defaultPmax_mW = curveScale === 'lin' ? 1000 : 5000;
     var Pmin_mW = curveScale === 'log' ? 0.1 : 0;
     var Pmax, Pmin;
@@ -187,6 +219,11 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
   function pwrFactor(unit) { return convert(1,'power','mW',unit); }
   function rabiFactor(unit) { return convert(1,'frequency','MHz',unit); }
   function waistFactor(unit) { return convert(1,'length','µm',unit); }
+  function formatPlotTick(value){
+    if(!Number.isFinite(value))return '—';
+    const scale=Math.abs(value)>=1e6?1e6:Math.abs(value)>=1e3?1e3:1;
+    return Number((value/scale).toPrecision(3)).toString()+(scale===1e6?'M':scale===1e3?'k':'');
+  }
   function niceCeil(x) {
     if (x <= 0 || !isFinite(x)) return 1;
     var p = Math.pow(10, Math.floor(Math.log10(x)));
@@ -223,6 +260,12 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     return { w: rect.width, h: rect.height };
   }
 
+  function publishGeometry(canvas,g,kind){
+    Object.assign(canvas.dataset,{plotLeft:g.left,plotTop:g.top,plotWidth:g.plotW,plotHeight:g.plotH,
+      xMin:g.Pmin,xMax:g.Pmax,xFactor:g.pf,scale:g.scale,
+      yMin:kind==='curve'?0:g.Wmin,yMax:kind==='curve'?g.yMax:g.Wmax,yFactor:kind==='curve'?g.rf:g.wf});
+  }
+
   function drawCurveChart(d_ea0, curP_mW, curW_um) {
     var dim = resizeCanvas(curveCanvas);
     var W = dim.w, H = dim.h;
@@ -252,7 +295,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     });
     if (maxRabi <= 0) maxRabi = 1;
     var yMax = safeAxisRange('curveY', 0,
-      curveAxis.y.max ?? niceCeil(maxRabi), rf).maximum;
+      focusedView?focusedView.rabiMax*rf:curveAxis.y.max ?? niceCeil(maxRabi), rf).maximum;
     drawnLimits.curveX = Pmax;
     drawnLimits.curveY = yMax;
     updatePowerAxisLabels(isSigma);
@@ -293,22 +336,18 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     function fmtPwr(p) {
-      if (Math.abs(p) >= 1e6) return (p/1e6).toFixed(0) + 'M';
-      if (Math.abs(p) >= 1e3) return (p/1e3).toFixed(p < 1e4 ? 1 : 0) + 'k';
-      if (Math.abs(p) >= 1) return p.toFixed(0);
-      return p.toFixed(p < 0.1 ? 2 : 1);
+      return formatPlotTick(p);
     }
     function fmtRabi(v) {
-      if (Math.abs(v) >= 1e6) return (v/1e6).toFixed(0) + 'M';
-      if (Math.abs(v) >= 1e3) return (v/1e3).toFixed(v < 1e4 ? 1 : 0) + 'k';
-      if (Math.abs(v) >= 1) return v.toFixed(0);
-      return v.toFixed(v < 0.1 ? 2 : 1);
+      return formatPlotTick(v);
     }
     var xTicks;
     if (curveScale === 'log') {
-      xTicks = [0.1, 0.3, 1, 3, 10, 30, 100, 300, 1000, 3000].map(function(t) { return t * pf; });
-      // trim ticks beyond current max
-      xTicks = xTicks.filter(function(t) { return t <= Pmax * 1.001; });
+      xTicks=[];
+      const firstExponent=Math.floor(Math.log10(Pmin)-Math.log10(pf)),lastExponent=Math.ceil(Math.log10(Pmax)-Math.log10(pf));
+      for(let exponent=firstExponent;Number.isFinite(exponent)&&exponent<=lastExponent;exponent++){
+        for(const mantissa of [1,3]){const tick=mantissa*10**exponent*pf;if(tick>=Pmin&&tick<=Pmax)xTicks.push(tick);}
+      }
     } else {
       xTicks = [];
       var nTicks = Math.max(1,Math.min(5,Math.floor(plotW/60)));
@@ -338,6 +377,8 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
 
     // Draw curves
     var nPts = 200;
+    var probeCurves=waistSeries.map((waist_um,id)=>({id,waist_um,visible:curveVisible[id],points:[]}));
+    ctx.save();ctx.beginPath();ctx.rect(pad.left,pad.top,plotW,plotH);ctx.clip();
     waistSeries.forEach(function(w, idx) {
       if (!curveVisible[idx]) return; // 隐藏的曲线不绘制
       ctx.beginPath();
@@ -349,12 +390,13 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
         if (curveScale === 'log') {
           P = Math.pow(10, Math.log10(Pmin) + i / nPts * (Math.log10(Pmax) - Math.log10(Pmin)));
         } else {
-          P = Pmin + i / nPts * (Pmax - Pmin);
+          P = Pmin + (i / nPts)**2 * (Pmax - Pmin);
         }
         var P_mW = P / pf;
         var fR = rabiHz(d_ea0, P_mW, w) / 1e6 * rf;
         var x = xScale(P);
         var y = yScale(fR);
+        probeCurves[idx].points.push({x,y});
         if (i === 0) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
@@ -372,7 +414,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
         if (curveScale === 'log') {
           P2 = Math.pow(10, Math.log10(Pmin) + j / nPts * (Math.log10(Pmax) - Math.log10(Pmin)));
         } else {
-          P2 = Pmin + j / nPts * (Pmax - Pmin);
+          P2 = Pmin + (j / nPts)**2 * (Pmax - Pmin);
         }
         var P2_mW = P2 / pf;
         var fR2 = rabiHz(d_ea0, P2_mW, curW_um) / 1e6 * rf;
@@ -403,6 +445,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
       ctx.fill();
     }
 
+    ctx.restore();
     // Axis border
     ctx.strokeStyle = chartTheme.axis;
     ctx.lineWidth = 1;
@@ -414,8 +457,9 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
       pf: pf, rf: rf, scale: curveScale,
       plotW: plotW, plotH: plotH,
       pUnit: pUnit, rUnit: rUnit,
-      d_ea0: d_ea0
+      d_ea0: d_ea0,left:pad.left,top:pad.top,curves:probeCurves,unitPowerFactor:pwrFactor(pUnit)
     };
+    publishGeometry(curveCanvas,curveGeom,'curve');
   }
   // Build legend（束腰数值可编辑 + 点击 µm 切换曲线显隐）
   function buildLegend() {
@@ -537,6 +581,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
   }
 
   function autoAdjustAxes() {
+    if(focusedView)return;
     var visWaists = [];
     waistSeries.forEach(function(w, idx) {
       if (curveVisible[idx]) visWaists.push(w);
@@ -607,46 +652,22 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     updateAxisUI();
   }
 
-  // 曲线图悬停读数：显示鼠标位置对应的 Power(x) 与 Ω/2π(y)
-  curveCanvas.addEventListener('mousemove', function(e) {
-    if (!curveGeom || curveGeom.d_ea0 <= 0) { curveTip.classList.remove('show');hideTooltip?.();return; }
-    var rect = curveCanvas.getBoundingClientRect();
-    var mx = e.clientX - rect.left;
-    var my = e.clientY - rect.top;
-    var g = curveGeom;
-    if (mx < pad.left || mx > pad.left + g.plotW || my < pad.top || my > pad.top + g.plotH) {
-      curveTip.classList.remove('show');scheduleTooltipHide?.();return;
-    }
-    // 反算 x → Power（显示单位）
-    var P_disp;
-    if (g.scale === 'log') {
-      var t = (mx - pad.left) / g.plotW;
-      P_disp = Math.pow(10, Math.log10(g.Pmin) + t * (Math.log10(g.Pmax) - Math.log10(g.Pmin)));
-    } else {
-      P_disp = g.Pmin + (mx - pad.left) / g.plotW * (g.Pmax - g.Pmin);
-    }
-    // 反算 y → Ω/2π（显示单位）
-    var fR_disp = (pad.top + g.plotH - my) / g.plotH * g.yMax;
-    if (P_disp <= 0 || fR_disp < 0) { curveTip.classList.remove('show');scheduleTooltipHide?.();return; }
-    curveTip.classList.remove('show');
-    showCompactTooltip?.(e,buildRabiProbeTooltip({state:calculator?.getState(),kind:'curve',
-      powerText:P_disp.toPrecision(3)+' '+g.pUnit,rabiText:fR_disp.toPrecision(3)+' '+g.rUnit}),
-      {target:curveCanvas,plot:curveCanvas});
-  });
-  curveCanvas.addEventListener('mouseleave', function() { curveTip.classList.remove('show');scheduleTooltipHide?.(); });
+  // Pointer and touch reading are handled together by the read-only probe controller.
   document.getElementById('rpScaleLin').addEventListener('click', function() {
     curveScale = 'lin';
+    if(focusedView){const range=focusRangeFor(calculator.getState());if(range)focusedView={...range,heatPowerMax:range.powerMax};else leaveFocusedView();}
     document.getElementById('rpScaleLin').classList.add('active');
     document.getElementById('rpScaleLog').classList.remove('active');
     redrawAll();
   });
   document.getElementById('rpScaleLog').addEventListener('click', function() {
-    const minimum = 0.1 * getPFactor() * pwrFactor(curveAxis.x.unit);
+    const minimum = focusedView?0:0.1 * getPFactor() * pwrFactor(curveAxis.x.unit);
     if (curveAxis.x.max !== null && !hasFiniteRange(minimum, curveAxis.x.max)) {
       setAxisFeedback(rpCurveXMax, '对数功率轴上限必须大于 ' + minimum + ' ' + curveAxis.x.unit + '；已保留原范围。', true, 'range');
       return;
     }
     curveScale = 'log';
+    if(focusedView){const range=focusRangeFor(calculator.getState());if(range)focusedView={...range,heatPowerMax:range.powerMax};else leaveFocusedView();}
     document.getElementById('rpScaleLog').classList.add('active');
     document.getElementById('rpScaleLin').classList.remove('active');
     redrawAll();
@@ -716,10 +737,14 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     if (rpCurveXUnit) rpCurveXUnit.value = curveAxis.x.unit;
     if (rpCurveYUnit) rpCurveYUnit.value = curveAxis.y.unit;
     if (rpHeatXUnit) rpHeatXUnit.value = curveAxis.x.unit;
-    updateAxisNumber(rpCurveXMax, drawnLimits.curveX ?? curveAxis.x.max, autoAxis.x);
-    updateAxisNumber(rpCurveYMax, drawnLimits.curveY ?? curveAxis.y.max, autoAxis.y);
+    updateAxisNumber(rpCurveXMax, drawnLimits.curveX ?? curveAxis.x.max, !focusedView&&autoAxis.x);
+    updateAxisNumber(rpCurveYMax, drawnLimits.curveY ?? curveAxis.y.max, !focusedView&&autoAxis.y);
   }
   function rangeMinimum(key) {
+    if(focusedView){
+      if(key==='curveX'||key==='heatX')return focusedView.powerMin*getPFactor()*pwrFactor(curveAxis.x.unit);
+      if(key==='heatY')return focusedView.waistMin*waistFactor(heatAxis.yUnit);
+    }
     if (key === 'curveX' || key === 'heatX') return (curveScale === 'log' ? 0.1 : 0) * getPFactor() * pwrFactor(curveAxis.x.unit);
     if (key === 'curveY') return 0;
     const visible = waistSeries.filter((_, index) => curveVisible[index]);
@@ -728,7 +753,13 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
   function acceptMaximum(input, key, apply) {
     try {
       const value = parseAxisMaximum(input.value, { minimum: rangeMinimum(key) });
-      apply(value);
+      if(focusedView&&value!==null){
+        const property={curveX:'powerMax',curveY:'rabiMax',heatX:'heatPowerMax',heatY:'waistMax'}[key];
+        const factor=key==='curveY'?rabiFactor(curveAxis.y.unit):key==='heatY'?waistFactor(heatAxis.yUnit):getPFactor()*pwrFactor(curveAxis.x.unit);
+        focusedView[property]=value/factor;
+      }else{
+        leaveFocusedView();apply(value);
+      }
       setAxisFeedback(input, value === null ? '自动范围；清空输入即恢复自动。' : '', false);
       redrawAll();
     } catch (error) {
@@ -767,8 +798,8 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     const range=getHeatRange();
     rpHeatXUnit.value=curveAxis.x.unit;
     rpHeatYUnit.value=heatAxis.yUnit;
-    updateAxisNumber(axisInputs.heatX, range.Pmax, heatAxis.xMax === null);
-    updateAxisNumber(axisInputs.heatY, range.Wmax, heatAxis.yMax === null);
+    updateAxisNumber(axisInputs.heatX, range.Pmax, !focusedView&&heatAxis.xMax === null);
+    updateAxisNumber(axisInputs.heatY, range.Wmax, !focusedView&&heatAxis.yMax === null);
   }
   for (const [inputKey, stateKey] of [['heatX', 'xMax'], ['heatY', 'yMax']]) {
     const input = axisInputs[inputKey];
@@ -838,8 +869,8 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     var wUnit = hr.wUnit;
     var pf = hr.pf;
     var wf = hr.wf;
-    var rf = rabiDispFactor(); // colorbar uses global Rabi unit
-    var rUnit = getRabiUnitLabel();
+    var rUnit = curveAxis.y.unit;
+    var rf = rabiFactor(rUnit); // The curve, colorbar and readouts share a display unit.
     var isSigma = hr.isSigma;
 
     document.getElementById('heatColorQuantity').textContent = '颜色 = Ω/2π (' + rUnit + ')';
@@ -850,6 +881,8 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     var Wmin = hr.Wmin;
     drawnLimits.heatX=Pmax;
     drawnLimits.heatY=Wmax;
+    heatGeom={Pmin,Pmax,Wmin,Wmax,pf,wf,rf,pUnit,wUnit,rUnit,d_ea0,left:pad.left,top:pad.top,plotW,plotH,scale:'lin',unitPowerFactor:pwrFactor(pUnit)};
+    publishGeometry(heatCanvas,heatGeom,'heat');
 
     function xScale(P) { return pad.left + (P - Pmin) / (Pmax - Pmin) * plotW; }
     function yScale(w) { return pad.top + plotH - (w - Wmin) / (Wmax - Wmin) * plotH; }
@@ -927,7 +960,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     ctx.drawImage(offCanvas, pad.left, pad.top, plotW, plotH);
 
     var curW_disp = curW_um * wf;
-    if (curP_mW > 0 && curW_um > 0 && (curP_mW * pf) <= Pmax && curW_disp >= Wmin && curW_disp <= Wmax) {
+    if (curP_mW > 0 && curW_um > 0 && (curP_mW * pf) >= Pmin && (curP_mW * pf) <= Pmax && curW_disp >= Wmin && curW_disp <= Wmax) {
       var px = xScale(curP_mW * pf);
       var py = yScale(curW_disp);
       ctx.beginPath();
@@ -1039,56 +1072,16 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
   }
 
   function fmtAxisNum(v) {
-    if (Math.abs(v) >= 1e6) return (v/1e6).toFixed(0) + 'M';
-    if (Math.abs(v) >= 1e3) return (v/1e3).toFixed(v < 1e4 ? 1 : 0) + 'k';
-    if (Math.abs(v) >= 1) return v.toFixed(0);
-    return v.toFixed(v < 0.1 ? 2 : 1);
+    return formatPlotTick(v);
   }
-  // Heatmap hover
-  var heatWrap = document.getElementById('rpHeatWrap');
-  heatCanvas.addEventListener('mousemove', function(e) {
-    var pad = heatPad;
-    var state = calculator ? calculator.getState() : null;
-    if (!state || !(state.dEff > 0)) { heatTip.classList.remove('show');hideTooltip?.();return; }
-    var rect = heatCanvas.getBoundingClientRect();
-    var mx = e.clientX - rect.left;
-    var my = e.clientY - rect.top;
-    var plotW = rect.width - pad.left - pad.right;
-    var plotH = rect.height - pad.top - pad.bottom;
-    if (mx < pad.left || mx > pad.left + plotW || my < pad.top || my > pad.top + plotH) {
-      heatTip.classList.remove('show');scheduleTooltipHide?.();return;
-    }
-    var hr = getHeatRange();
-    var pUnit = hr.pUnit;
-    var wUnit = hr.wUnit;
-    var pf = hr.pf;
-    var wf = hr.wf;
-    var rf = rabiDispFactor();
-    var rUnit = getRabiUnitLabel();
-    var Pmax = hr.Pmax;
-    var Pmin = hr.Pmin;
-    var Wmax = hr.Wmax;
-    var Wmin = hr.Wmin;
-    var P_disp = Pmin + (mx - pad.left) / plotW * (Pmax - Pmin);
-    var w_disp = Wmin + (plotH - (my - pad.top)) / plotH * (Wmax - Wmin);
-    var w = w_disp / wf;
-    if (P_disp <= 0 || w <= 0) { heatTip.classList.remove('show');scheduleTooltipHide?.();return; }
-    var P_mW = P_disp / pf;
-    var d = (state.selectedChannel && Math.abs(state.selectedChannel.matEl) > 0)
-      ? Math.abs(state.selectedChannel.matEl)
-      : (state.dEff > 0 ? state.dEff : 0);
-    var fR_disp = rabiHz(d, P_mW, w) / 1e6 * rf;
-    heatTip.classList.remove('show');
-    showCompactTooltip?.(e,buildRabiProbeTooltip({state,kind:'heat',powerText:P_disp.toPrecision(3)+' '+pUnit,
-      waistText:w_disp.toPrecision(3)+' '+wUnit,rabiText:fR_disp.toPrecision(3)+' '+rUnit}),
-      {target:heatCanvas,plot:heatCanvas});
-  });
-  heatCanvas.addEventListener('mouseleave', function() { heatTip.classList.remove('show');scheduleTooltipHide?.(); });
+  // Heatmap and curve probes share the same pinning and context lifecycle.
 
   // ===== Redraw =====
   function redrawAll() {
     var state = calculator ? calculator.getState() : null;
     if (!state) return;
+    if(focusedView&&focusedPointKey!==workingPointKey(state))leaveFocusedView();
+    updatePowerConvention();
     var d = 0;
     if (state.selectedChannel && Math.abs(state.selectedChannel.matEl) > 0) {
       d = Math.abs(state.selectedChannel.matEl);
@@ -1097,9 +1090,9 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     }
     if (!(d > 0)) {
       document.querySelectorAll('[data-chart-axis-controls]').forEach(controls=>{controls.hidden=true;});
-      curveGeom=null;curveTip.classList.remove('show');heatTip.classList.remove('show');
+      curveGeom=null;heatGeom=null;curveTip.classList.remove('show');heatTip.classList.remove('show');
       [curveCanvas,heatCanvas].forEach(canvas=>{const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.fillStyle=chartTheme.text;ctx.font=chartTheme.font;ctx.fillText('当前通道无适用的 E1 计算结果',20,36);ctx.restore();});
-      updateTopLegends();return;
+      updateTopLegends();chartProbes?.sync();return;
     }
     document.querySelectorAll('[data-chart-axis-controls]').forEach(controls=>{controls.hidden=false;});
     autoAdjustAxes();
@@ -1108,6 +1101,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     updateTopLegends();
     updateAxisUI();
     updateHeatAxisUI();
+    chartProbes?.sync();
   }
 
   window.addEventListener('resize', () => requestAnimationFrame(redrawAll));
@@ -1126,19 +1120,92 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
   const calcUnits={power:'mW',rabi:'MHz',waist:'µm'};
   const direction=document.getElementById('calcSolveFor');
   const errorElement=document.getElementById('inputError');
+  const definitionControls={
+    powerPlane:document.getElementById('beamPowerPlane'),
+    powerBasis:document.getElementById('beamPowerBasis'),
+    transmission:document.getElementById('beamTransmission'),
+    linearOrientation:document.getElementById('beamLinearOrientation'),
+    manualFraction:document.getElementById('beamManualFraction'),
+    sizeKind:document.getElementById('beamSizeKind')
+  };
+  const normalizedSummary=document.getElementById('beamNormalizedSummary');
+  const definitionNotice=document.getElementById('beamDefinitionNotice');
+  let displayedSizeKind='radius';
+  let lastPolarization=calculator.getState().pol;
   let refreshing=false;
   function getDEffForViz(){return calculator.getState().dEff || 0;}
   function numberString(value){return value===0?'0':String(Number(value.toPrecision(6)));}
+  function inputString(value){return value===0?'0':String(Number(value.toPrecision(12)));}
+  function reuseRecord(previous,next){
+    return previous&&Object.keys(previous).length===Object.keys(next).length&&Object.keys(next).every(key=>Object.is(previous[key],next[key]))?previous:next;
+  }
   function asBase(key,value){return convert(value,kinds[key],calcUnits[key],bases[key]);}
   function asDisplay(key,value){return convert(value,kinds[key],bases[key],calcUnits[key]);}
   function bestUnit(key,value){
     const options=key==='power'?['W','mW','µW','nW']:key==='rabi'?['GHz','MHz','kHz','Hz']:['mm','µm','nm'];
     return options.find(unit=>{const n=Math.abs(convert(value,kinds[key],bases[key],unit));return n>=1&&n<1000;})||bases[key];
   }
+  function percentage(input){return input.value.trim()===''?null:Number(input.value)/100;}
+  function readDefinition(){
+    const powerPlane=definitionControls.powerPlane.value,powerBasis=definitionControls.powerBasis.value;
+    const linearOrientation=powerBasis==='linear-total'?(definitionControls.linearOrientation.value||null):null;
+    return validateBeamDefinition({powerPlane,powerBasis,
+      transmission:powerPlane==='upstream'?percentage(definitionControls.transmission):null,
+      linearOrientation,
+      manualFraction:linearOrientation==='manual'?percentage(definitionControls.manualFraction):null,
+      sizeKind:definitionControls.sizeKind.value});
+  }
+  function updateDefinitionUI(){
+    const upstream=definitionControls.powerPlane.value==='upstream';
+    const total=definitionControls.powerBasis.value==='linear-total';
+    document.getElementById('beamTransmissionField').hidden=!upstream;
+    document.getElementById('beamOrientationField').hidden=!total;
+    document.getElementById('beamFractionField').hidden=!(total&&definitionControls.linearOrientation.value==='manual');
+    const sigma=calculator.getState().pol!=='pi';
+    definitionControls.manualFraction.max=sigma?'50':'100';
+    document.querySelector('#beamFractionField > span').textContent=`当前分量占总功率（0–${sigma?'50':'100'}%）`;
+    document.getElementById('rpPowerTitle').textContent=(upstream?'上游':'原子处')+(total?'总功率':'分量功率');
+    const diameter=definitionControls.sizeKind.value==='diameter';
+    document.getElementById('rpWaistTitle').textContent=diameter?'光束直径':'束腰半径';
+    document.getElementById('rpWaistSymbol').textContent=diameter?'D':'w₀';
+  }
+  function setDefinitionControls(definition){
+    const def=validateBeamDefinition(definition);
+    for(const key of ['powerPlane','powerBasis','sizeKind'])definitionControls[key].value=def[key];
+    definitionControls.linearOrientation.value=def.linearOrientation||'';
+    for(const key of ['transmission','manualFraction'])definitionControls[key].value=def[key]===null?'':inputString(def[key]*100);
+    displayedSizeKind=def.sizeKind;
+    updateDefinitionUI();
+    return def;
+  }
+  function updatePowerConvention(){
+    document.getElementById('powerConvention').textContent=getPFactor()===2
+      ?'图横轴显示等强 σ± 的参考总功率 2Pq；内部计算仍用原子处分量功率 Pq，不重复换算。'
+      :'图横轴为原子处所选偏振分量功率 Pq；录入值按输入定义换算。w₀ 为 1/e² 强度半径，计算位置为光束中心。';
+  }
+  function showDefinitionNotice(text){definitionNotice.textContent=text;definitionNotice.hidden=!text;}
+  function showNormalizedSummary(raw,normalized,definition,factors,pol){
+    const label=({pi:'π',sigmap:'σ⁺',sigmam:'σ⁻'})[pol];
+    normalizedSummary.dataset.status='valid';
+    normalizedSummary.dataset.powerMw=String(normalized.P_mW);
+    normalizedSummary.dataset.waistUm=String(normalized.w_um);
+    normalizedSummary.dataset.powerFactor=String(factors.powerFactor);
+    const main=document.createElement('span');
+    main.textContent=`进入计算：Pq = ${numberString(normalized.P_mW)} mW · w₀ = ${numberString(normalized.w_um)} µm`;
+    const detail=document.createElement('span');detail.className='beam-summary-detail';
+    const power=definition.powerPlane==='upstream'
+      ?`上游 ${numberString(raw.power)} mW × η ${numberString(factors.transmission*100)}%`
+      :`原子处 ${numberString(raw.power)} mW`;
+    const fraction=definition.powerBasis==='linear-total'?` × ${label} 分量 ${numberString(factors.componentFraction*100)}%`:` · 已为 ${label} 分量`;
+    const size=definition.sizeKind==='diameter'?`；直径 ${numberString(raw.waist)} µm ÷ 2`:'；输入为 1/e² 强度半径';
+    detail.textContent=power+fraction+size+(factors.componentFraction===0?'；当前所选分量无驱动':'');
+    normalizedSummary.replaceChildren(main,detail);
+  }
   function reflectDirection(){
     for(const [key,input] of Object.entries(calcFields)){
       input.readOnly=key===direction.value;
-      input.setAttribute('aria-label',({power:'功率 P',rabi:'Rabi 普通频率 Ω/2π',waist:'束腰 w₀'})[key]+(input.readOnly?'（计算结果）':'（输入）'));
+      const label={power:document.getElementById('rpPowerTitle').textContent+' P',rabi:'Rabi 普通频率 Ω/2π',waist:definitionControls.sizeKind.value==='diameter'?'1/e² 强度直径 D':'1/e² 强度半径 w₀'}[key];
+      input.setAttribute('aria-label',label+(input.readOnly?'（计算结果）':'（输入）'));
       input.parentElement.classList.toggle('auto',input.readOnly);
     }
   }
@@ -1146,11 +1213,16 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     if(refreshing)return;
     refreshing=true;
     const target=direction.value;
+    let definition;
     try{
+      updateDefinitionUI();
       reflectDirection();
       const s=calculator.getState(),d=getDEffForViz();
       if(!s.transition)throw Error('请先选择跃迁。');
       if(!(d>0))throw Error(s.transition.multipole?.startsWith('M2')?'该跃迁为 M2，当前单光子 E1 计算不适用。':'当前选择没有可用的 E1 矩阵元或允许通道。');
+      Object.values(definitionControls).forEach(input=>input.removeAttribute('aria-invalid'));
+      definition=readDefinition();
+      const factors=getBeamFactors(definition,s.pol);
       const values={};
       for(const [key,input] of Object.entries(calcFields)){
         input.removeAttribute('aria-invalid');
@@ -1158,14 +1230,25 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
         const raw=input.value.trim(),n=Number(raw);
         if(raw===''||!Number.isFinite(n)||n<0||(key==='waist'&&n===0)){
           input.setAttribute('aria-invalid','true');
-          throw Error(({power:'功率 P 必须为不小于零的有限数值。',rabi:'Ω/2π 必须为不小于零的有限数值。',waist:'束腰 w₀ 必须为大于零的有限数值。'})[key]);
+          throw Error(({power:'录入功率 P 必须为不小于零的有限数值。',rabi:'Ω/2π 必须为不小于零的有限数值。',waist:'光束尺寸必须为大于零的有限数值。'})[key]);
         }
         values[key]=asBase(key,n);
       }
+      const normalized=normalizeBeamInput({
+        ...(target!=='power'?{power_mW:values.power}:{}),
+        ...(target!=='waist'?{size_um:values.waist}:{})
+      },definition,s.pol);
       let result;
-      if(target==='rabi')result=rabiHz(d,values.power,values.waist)/1e6;
-      if(target==='power')result=powerFromRabiHz(d,values.rabi*1e6,values.waist);
-      if(target==='waist')result=waistFromRabiHz(d,values.rabi*1e6,values.power);
+      if(target==='rabi'){
+        result=rabiHz(d,normalized.P_mW,normalized.w_um)/1e6;
+      }else if(target==='power'){
+        normalized.P_mW=powerFromRabiHz(d,values.rabi*1e6,normalized.w_um);
+        result=denormalizeSolvedInput({P_mW:normalized.P_mW},definition,s.pol).power_mW;
+      }else if(target==='waist'){
+        if(!(factors.powerFactor>0))throw Error('当前所选偏振分量占比为 0，无法反求有限且唯一的光束尺寸。');
+        normalized.w_um=waistFromRabiHz(d,values.rabi*1e6,normalized.P_mW);
+        result=denormalizeSolvedInput({w_um:normalized.w_um},definition,s.pol).size_um;
+      }
       if(!Number.isFinite(result)||result<0)throw Error('这组输入无法得到有限的结果，请检查计算方向和参数。');
       values[target]=result;
       const unit=bestUnit(target,result);
@@ -1174,17 +1257,27 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
       errorElement.hidden=true;errorElement.textContent='';
       const savedUnits=calculator.getState().calculatorUnits;
       const units= savedUnits&&Object.keys(calcUnits).every(k=>savedUnits[k]===calcUnits[k]) ? savedUnits : {...calcUnits};
-      calculator.patchInputs({P_mW:values.power,w_um:values.waist,fR_MHz:values.rabi,inputStatus:'valid',inputError:null,solveFor:target,calcMode:target==='power'?'rabi':'power',calculatorUnits:units});
-      if(target!=='waist'&&values.waist>0&&!waistSeries.some(w=>Math.abs(w-values.waist)<.01)){
-        waistSeries.push(values.waist);curveVisible.push(true);waistIsDefault.push(false);rebuildLegend();
+      showNormalizedSummary(values,normalized,definition,factors,s.pol);
+      calculator.patchInputs({P_mW:normalized.P_mW,w_um:normalized.w_um,fR_MHz:values.rabi,
+        beamDefinition:reuseRecord(s.beamDefinition,definition),beamInput:reuseRecord(s.beamInput,{power_mW:values.power,size_um:values.waist}),
+        inputStatus:'valid',inputError:null,solveFor:target,calcMode:target==='power'?'rabi':'power',calculatorUnits:units});
+      if(normalized.w_um>0&&!waistSeries.some(w=>Math.abs(w-normalized.w_um)<.01)){
+        waistSeries.push(normalized.w_um);curveVisible.push(true);waistIsDefault.push(false);rebuildLegend();
       }
       redrawAll();
     }catch(error){
       calcFields[target].value='';
       errorElement.textContent=error.message;
       errorElement.hidden=false;
+      const control=definitionControls[error.field];
+      if(control)control.setAttribute('aria-invalid','true');
+      normalizedSummary.dataset.status='invalid';
+      for(const key of ['powerMw','waistUm','powerFactor'])delete normalizedSummary.dataset[key];
+      normalizedSummary.textContent='当前输入未形成有效计算：'+error.message;
       const current=calculator.getState();
-      calculator.patchInputs({P_mW:null,w_um:null,fR_MHz:null,inputStatus:current.dEff>0?'invalid':'unsupported',inputError:error.message,solveFor:target});
+      calculator.patchInputs({P_mW:null,w_um:null,fR_MHz:null,
+        ...(definition?{beamDefinition:reuseRecord(current.beamDefinition,definition)}:{}),beamInput:null,
+        inputStatus:current.dEff>0?'invalid':'unsupported',inputError:error.message,solveFor:target});
       // Keep the physical curves available, but remove the invalid work point.
       redrawAll();
     }finally{refreshing=false;}
@@ -1197,27 +1290,77 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     calcUnitSels[key].addEventListener('change',()=>{
       const old=calcUnits[key],unit=calcUnitSels[key].value;
       const value=Number(input.value);
-      if(input.value.trim()!==''&&Number.isFinite(value))input.value=numberString(convert(value,kinds[key],old,unit));
+      if(input.value.trim()!==''&&Number.isFinite(value))input.value=inputString(convert(value,kinds[key],old,unit));
       calcUnits[key]=unit;
       calculate();
     });
   }
+  for(const [key,control] of Object.entries(definitionControls)){
+    control.addEventListener(control.tagName==='INPUT'?'input':'change',()=>{
+      if(key==='sizeKind'){
+        const value=Number(calcW.value);
+        if(calcW.value.trim()!==''&&Number.isFinite(value)){
+          const oldFactor=getSizeFactor({sizeKind:displayedSizeKind});
+          const nextFactor=getSizeFactor({sizeKind:control.value});
+          calcW.value=inputString(value*oldFactor/nextFactor);
+        }
+        displayedSizeKind=control.value;
+        showDefinitionNotice('尺寸显示已换算，1/e² 强度半径保持不变。');
+      }else{
+        showDefinitionNotice('功率定义已更新：录入数值保持不变，按下方定义重新换算。');
+      }
+      calculate();
+    });
+  }
   direction.addEventListener('change',calculate);
-  document.getElementById('powerAxisConvention').addEventListener('change',()=>{redrawAll();document.getElementById('powerConvention').textContent=getPFactor()===2?'σ± 图横轴显示 2P；计算输入仍为偏振分量功率 P。这是换算视图，不是实验标定。':'图横轴与计算输入均为偏振分量功率 P；w₀ 为 1/e² 强度半径。';});
+  document.getElementById('powerAxisConvention').addEventListener('change',redrawAll);
+  chartProbes=initChartProbes({calculator,getGeometry:kind=>kind==='curve'?curveGeom:heatGeom,
+    buildTooltip:buildRabiProbeTooltip,showCompactTooltip,scheduleTooltipHide,hideTooltip,
+    canFocusWorkpoint:()=>!!focusRangeFor(calculator.getState()),
+    isFocused:()=>!!focusedView,
+    focusWorkpoint(){
+      const state=calculator.getState();
+      const range=focusRangeFor(state);
+      if(!range)return;
+      if(!focusedView)focusBaseScale=curveScale;
+      focusedView={...range,heatPowerMax:range.powerMax};focusedPointKey=workingPointKey(state);
+      for(const input of Object.values(axisInputs))setAxisFeedback(input,'',false);
+      redrawAll();
+    },
+    restoreView(){leaveFocusedView();redrawAll();}
+  });
+  setDefinitionControls(DEFAULT_BEAM_DEFINITION);
   calcP.value='1';calcW.value='50';
   direction.value='rabi';
-  calculator.onChange(()=>{if(!refreshing)calculate();});
+  calculator.onChange(state=>{
+    if(refreshing)return;
+    if(state.pol!==lastPolarization&&definitionControls.powerBasis.value==='linear-total'&&definitionControls.linearOrientation.value==='manual'){
+      definitionControls.manualFraction.value='';
+      showDefinitionNotice('偏振分量已改变，请重新填写当前分量的功率占比。');
+    }
+    lastPolarization=state.pol;
+    calculate();
+  });
   return Object.freeze({
     redraw:redrawAll,
     getConfiguration:()=>({solveFor:direction.value,units:{...calcUnits}}),
     applyConfiguration(snapshot,ui={}){
-      const values={power:snapshot.P_mW,rabi:snapshot.fR_MHz,waist:snapshot.w_um};
-      direction.value=['power','rabi','waist'].includes(ui.solveFor)?ui.solveFor:'rabi';
-      for(const key of Object.keys(calcFields)){
-        const unit=ui.units?.[key];
-        if(unit&&Array.from(calcUnitSels[key].options).some(o=>o.value===unit)){calcUnits[key]=unit;calcUnitSels[key].value=unit;}
-        calcFields[key].value=Number.isFinite(values[key])?numberString(asDisplay(key,values[key])):'';
-      }
+      const definition=validateBeamDefinition(snapshot.beamDefinition||DEFAULT_BEAM_DEFINITION);
+      const raw=snapshot.beamInput||denormalizeSolvedInput({P_mW:snapshot.P_mW,w_um:snapshot.w_um},definition,snapshot.pol);
+      const values={power:raw.power_mW,rabi:snapshot.fR_MHz,waist:raw.size_um};
+      refreshing=true;
+      try{
+        setDefinitionControls(definition);
+        lastPolarization=snapshot.pol;
+        direction.value=['power','rabi','waist'].includes(ui.solveFor)?ui.solveFor:'rabi';
+        for(const key of Object.keys(calcFields)){
+          const unit=ui.units?.[key];
+          if(unit&&Array.from(calcUnitSels[key].options).some(o=>o.value===unit)){calcUnits[key]=unit;calcUnitSels[key].value=unit;}
+          calcFields[key].value=Number.isFinite(values[key])?inputString(asDisplay(key,values[key])):'';
+        }
+        calculator.restore(snapshot);
+        showDefinitionNotice('已恢复输入定义，并使用当前原子数据重新计算。');
+      }finally{refreshing=false;}
       calculate();
     }
   });

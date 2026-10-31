@@ -7,6 +7,7 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const { build } = require('../../scripts/build.cjs');
 const { checkArtifacts } = require('../../scripts/check-artifacts.cjs');
+const { exportEvidence } = require('../../scripts/evidence-data.cjs');
 
 function fixture(t) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'yb171-build-'));
@@ -68,4 +69,20 @@ test('local literature originals and audit evidence never enter the website arti
   assert.equal(fs.existsSync(path.join(root,'dist/references')),false);
   assert.equal(fs.existsSync(path.join(root,'dist/data/dataset.json')),true);
   assert.ok(manifest.files.every(file=>!file.path.includes('literature/')&&!file.path.includes('references/')));
+});
+
+test('build packages validated public evidence and rejects stale or unsafe evidence before rebuilding',t=>{
+  const root=fixture(t);
+  const evidence=JSON.parse(fs.readFileSync(new URL('../../data/evidence.json',import.meta.url),'utf8'));
+  fs.writeFileSync(path.join(root,'data/evidence.json'),JSON.stringify(evidence));
+  exportEvidence({root});
+  const manifest=build(root,{quiet:true});
+  assert.ok(manifest.files.some(file=>file.path==='data/evidence.json'));
+  assert.ok(manifest.files.some(file=>file.path==='src/data/generated-evidence.js'));
+  evidence.evidenceVersion='2026.10.31.2';
+  fs.writeFileSync(path.join(root,'data/evidence.json'),JSON.stringify(evidence));
+  assert.throws(()=>build(root,{quiet:true}),/stale/);
+  evidence.rawPDF='/Users/seven/private-paper.pdf';
+  fs.writeFileSync(path.join(root,'data/evidence.json'),JSON.stringify(evidence));
+  assert.throws(()=>build(root,{quiet:true}),/Invalid public evidence/);
 });

@@ -4,6 +4,7 @@ import { spRabi } from '../physics/rabi.js';
 import { rabiToDisplay as displayRabi } from '../physics/units.js';
 import { createCalculatorStore } from '../state/store.js';
 import { getTransitionRecord } from '../data/catalog.js';
+import { DEFAULT_BEAM_DEFINITION } from '../physics/beam-conventions.js';
 
 // The displayed result is a channel calculation; references identify its
 // retained input matrix element rather than asserting a measured Rabi result.
@@ -58,6 +59,8 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     P_mW: 1,
     fR_MHz: 55.3,
     w_um: 50,
+    beamDefinition: { ...DEFAULT_BEAM_DEFINITION },
+    beamInput: { power_mW: 1, size_um: 50 },
     delta_MHz: 180,
     selectedChannel: null // {F, m, Fp, mp, q, cgVal, matEl}
   }, error => { console.error(error); document.getElementById("appError").hidden=false; });
@@ -854,7 +857,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       const t=CORE_TRANSITIONS.find(t=>t.id===snapshot.transition.id)||RYDBERG_QC_TRANSITIONS.find(t=>t.id===snapshot.transition.id);
       if(!t)throw Error('当前数据中不存在待恢复的跃迁');
       loadTransition(t);
-      for(const key of ['F_lower','F_upper','diagF_lower','diagF_upper','pol','P_mW','w_um','fR_MHz','selectedChannel','calcMode','powerUnit','rabiUnit','solveFor','calculatorUnits'])if(key in snapshot)state[key]=snapshot[key];
+      for(const key of ['F_lower','F_upper','diagF_lower','diagF_upper','pol','P_mW','w_um','fR_MHz','selectedChannel','calcMode','powerUnit','rabiUnit','solveFor','calculatorUnits','beamDefinition','beamInput'])if(key in snapshot)state[key]=snapshot[key];
       if(elDiagFLower)elDiagFLower.value=state.diagF_lower;
       if(elDiagFUpper)elDiagFUpper.value=state.diagF_upper;
       recalc();
