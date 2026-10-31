@@ -1,0 +1,112 @@
+/* Plot reading controls only. Keep the main diagram and canvas geometry intact. */
+#secRabi .chart-readout-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 0 0 18px;
+}
+#secRabi .chart-readout-tools button,
+#secRabi .chart-readout-clear {
+  box-sizing: border-box;
+  min-height: 36px;
+  margin: 0;
+  padding: 7px 11px;
+  border: 1px solid #30445f;
+  border-radius: 6px;
+  background: #101d2e;
+  color: #bdcfe8;
+  font: 400 12px/1.5 var(--font-ui);
+  white-space: nowrap;
+  cursor: pointer;
+}
+#secRabi #rpFocusWorkpoint {
+  border-color: #6b5a3b;
+  background: #302a2080;
+  color: #e4c993;
+}
+#secRabi .chart-readout-tools button:not(:disabled):hover,
+#secRabi .chart-readout-clear:not(:disabled):hover {
+  border-color: #7699c7;
+  background: #1a2e48;
+  color: #e3edfc;
+}
+#secRabi #rpFocusWorkpoint:not(:disabled):hover {
+  border-color: #b69a64;
+  background: #3c3323;
+  color: #f4dfb4;
+}
+#secRabi .chart-readout-tools button:disabled,
+#secRabi .chart-readout-clear:disabled {
+  opacity: .45;
+  cursor: default;
+}
+#secRabi .chart-readout-notice {
+  flex: 1 1 280px;
+  min-width: 0;
+  color: #9db0cb;
+  font: 400 11px/1.7 var(--font-ui);
+  overflow-wrap: anywhere;
+}
+#secRabi .chart-readout-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 68px;
+  box-sizing: border-box;
+  margin-top: 12px;
+  padding: 9px 10px;
+  border: 1px solid #293b54;
+  border-radius: 7px;
+  background: #101d2d;
+}
+#secRabi .chart-readout-bar:has(.chart-readout[data-mode="pinned"]) {
+  border-color: #6c5938;
+  background: #25251f80;
+}
+#secRabi .chart-readout {
+  display: block;
+  min-width: 0;
+  color: #bcd4f4;
+  font: 400 12px/1.8 var(--font-ui);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+#secRabi .chart-readout[data-mode="empty"] { color: #9aadc6; }
+#secRabi .chart-readout[data-mode="pinned"] { color: #e4cb9c; }
+#secRabi .chart-readout strong { color: #e0eaf8; font-weight: 500; }
+#secRabi .chart-readout .chart-readout-state { margin-right: 7px; font-size: 11px; color: #9aadc6; }
+#secRabi .chart-readout[data-mode="pinned"] .chart-readout-state { color: #e0bf80; }
+#secRabi :is(.chart-readout-tools button, .chart-readout-clear):focus-visible {
+  outline: 2px solid #9dc4fa;
+  outline-offset: 3px;
+}
+#secRabi :is(#rpCurveCanvas, #rpHeatCanvas) { cursor: crosshair; touch-action: pan-y; }
+#secRabi .rabi-canvas-wrap > .chart-probe-overlay { pointer-events: none; background: transparent; z-index: 1; }
+#secRabi :is(#rpCurveCanvas, #rpHeatCanvas):focus-visible {
+  outline: 2px solid #9dc4fa;
+  outline-offset: -2px;
+}
+/* Direct card children: heading / unchanged frame / readout / optional legend. */
+#secRabi .rabi-viz-grid[data-chart-layout="matched"] {
+  grid-template-rows: auto auto auto auto;
+}
+#secRabi .rabi-viz-grid[data-chart-layout="matched"] > .rabi-chart-card {
+  grid-row: span 4;
+}
+@media (max-width: 1080px) {
+  #secRabi .rabi-viz-grid[data-chart-layout="matched"] { grid-template-rows: none; }
+  #secRabi .rabi-viz-grid[data-chart-layout="matched"] > .rabi-chart-card {
+    grid-row: auto;
+    grid-template-rows: auto auto auto minmax(0, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  #secRabi .chart-readout-tools { align-items: stretch; }
+  #secRabi .chart-readout-tools button { min-height: 40px; }
+  #secRabi .chart-readout-notice { flex-basis: 100%; }
+  #secRabi .chart-readout-bar { min-height: 88px; gap: 8px; padding: 9px; }
+  #secRabi .chart-readout-clear { min-height: 40px; padding-inline: 8px; font-size: 11px; }
+}

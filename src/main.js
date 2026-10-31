@@ -17,6 +17,7 @@ import { initTransitionKnowledge } from './ui/transition-knowledge.js';
 import { initSelectionContext } from './ui/selection-context.js';
 import { createChannelNavigation } from './ui/channel-navigation.js';
 import { preventNumberInputWheelChanges } from './ui/number-input-wheel.js';
+import {buildEvidenceView} from './ui/evidence-model.js';
 
 export function start() {
   const CORE_TRANSITIONS=catalog.CORE_TRANSITIONS.map(decorateTransition);
@@ -73,7 +74,6 @@ export function start() {
       const file=configFile.files?.[0];if(!file)return;
       if(file.size>64*1024)throw Error('配置文件过大，限 64 KiB。');
       const restored=parseCalculationConfig(await file.text(),versions);
-      calculator.restore(restored.state);
       charts.applyConfiguration(restored.state,{solveFor:restored.state.solveFor,units:restored.state.calculatorUnits});
       configStatus.textContent='已恢复计算配置，并使用当前数据重新计算。'+restored.warnings.join('；');
     }catch(error){configStatus.textContent='导入失败：'+error.message;}
@@ -81,7 +81,6 @@ export function start() {
   });
   calculator.onChange(state=>{
     document.querySelectorAll('#levelDiagram .transition-line').forEach(g=>g.classList.toggle('selected-trans',g.dataset.id===state.transition?.id));
-    document.getElementById('powerConvention').textContent=document.getElementById('powerAxisConvention').value==='sigma-double'&&state.pol!=='pi'?'σ± 图横轴显示 2P；计算输入仍为偏振分量功率 P。这是换算视图，不是实验标定。':'P 为所选偏振分量功率；图横轴与计算输入一致；w₀ 为 1/e² 强度半径，计算位置为光束中心。';
     const result=document.getElementById('rabiResult');
     result.replaceChildren();
     const title=document.createElement('span');title.textContent='Ω/2π · '+(state.transition?state.transition.id+' '+state.transition.lower+' → '+state.transition.upper:'普通频率');
@@ -89,7 +88,7 @@ export function start() {
     value.textContent=state.inputStatus==='valid'&&Number.isFinite(state.fR_MHz)?formatFrequency(state.fR_MHz*1e6):'—';
     const context=document.createElement('small');
     context.textContent=state.inputStatus==='valid'
-      ?`P=${Number(state.P_mW.toPrecision(6))} mW · w₀=${Number(state.w_um.toPrecision(6))} µm · d_eff=${Number(state.dEff.toPrecision(6))} ea₀ · ${state.selectedChannel?'所选通道':'当前偏振及 F 对的最强允许通道'}`
+      ?`原子处 Pq=${Number(state.P_mW.toPrecision(6))} mW · w₀=${Number(state.w_um.toPrecision(6))} µm · d_eff=${Number(state.dEff.toPrecision(6))} ea₀ · ${state.selectedChannel?'所选通道':'当前偏振及 F 对的最强允许通道'}`
       :state.inputError||'请先选择适用跃迁与输入';
     result.append(title,value,context);
     if(state.transition){
@@ -97,7 +96,7 @@ export function start() {
       const lifetime=createFieldView(state.transition.id,'lifetime_ns');
       const evidence=document.createElement('div');evidence.className='result-evidence';
       const validation=document.createElement('p');validation.className='result-validation';
-      validation.textContent='模型换算 · 未独立验证 · 总不确定度未建立';
+      validation.textContent=buildEvidenceView(state).summary;
       const basis=document.createElement('p');basis.className='result-basis';
       basis.textContent=dipole?`矩阵元：${dipole.kind} · ${dipole.convention||'约定待核查'} · ${dipole.review}`:'矩阵元：当前记录缺失';
       evidence.append(validation,basis);
@@ -110,6 +109,7 @@ export function start() {
       if(lifetime){const life=document.createElement('p');life.textContent=`寿命依据：${lifetime.kind} · ${lifetime.review} · ${lifetime.uncertainty}；温度与包含过程未在当前结构化记录中明确，请查来源详情。`;detail.append(life);}
       evidence.append(detail);
       const sourceLink=document.createElement('a');sourceLink.href='#selectedSource';sourceLink.textContent='查看数值与原始来源';evidence.append(sourceLink);
+      const reviewLink=document.createElement('a');reviewLink.href='#evidenceReview';reviewLink.dataset.evidenceOpen='';reviewLink.textContent='查看核查详情';evidence.append(reviewLink);
       result.append(evidence);
     }
   });

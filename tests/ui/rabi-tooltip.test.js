@@ -5,6 +5,16 @@ import {buildRabiProbeTooltip} from '../../src/ui/rabi-chart.js';
 
 const state=id=>({transition:CORE_TRANSITIONS.find(row=>row.id===id),w_um:50});
 
+test('snapped curve reads its model value and waist while the citation belongs only to d',()=>{
+  const model=buildRabiProbeTooltip({state:state('T3'),kind:'curve',powerText:'1 mW',waistText:'50 µm',rabiText:'6.6496 kHz'});
+  assert.equal(model.title,'曲线吸附读数');
+  assert.deepEqual(model.rows.slice(0,3).map(row=>row.value),['1 mW','50 µm','6.6496 kHz']);
+  assert.ok(model.rows.slice(0,3).every(row=>!row.sourceIds));
+  assert.equal(model.rows[2].label,'Ω/2π');
+  assert.deepEqual(model.rows[3].sourceIds,[getTransitionRecord('T3').quantities.d_num.sourceId]);
+  assert.match(model.footnote,/模型换算.*未独立验证/);
+});
+
 test('curve probes preserve independent cursor coordinates without inventing a nearest waist',()=>{
   const model=buildRabiProbeTooltip({state:state('T2'),kind:'curve',powerText:'12.3 µW',rabiText:'456 kHz'});
   assert.equal(model.title,'曲线坐标');
