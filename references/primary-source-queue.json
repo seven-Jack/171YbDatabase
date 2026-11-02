@@ -1262,11 +1262,27 @@
         "T3.lifetime_ns",
         "T3.linewidth_frequency_coefficient_Hz"
       ],
-      "resolvedSourceId": null,
-      "doi": null,
-      "localDocuments": [],
-      "status": "primary-fulltext-or-identity-still-needed",
-      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+      "resolvedSourceId": "siegel-2024-prl",
+      "doi": "10.1103/PhysRevLett.132.133201",
+      "localDocuments": [
+        "references/papers/2024_Siegel_171Yb_Clock-natural-lifetime_arXiv2402.04968v2.pdf"
+      ],
+      "status": "original-local-PDF-read;clock-rate-definition-audited",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "localDocumentHashes": [
+        "d18cc23ba21e08a10c2115e0f3ae72df7a3ee8b34cf2747e2ed5daa8bf1ff477"
+      ],
+      "followupAudit": "references/audits/clock-rabi-578-audit-20261030.md",
+      "followupCheckedAt": "2026-10-30",
+      "resolvedCurrentCitation": "Phys. Rev. Lett. 132, 133201 (2024)",
+      "sourceLocator": "arXiv:2402.04968v2 pp.4-5, Fig.5 and lifetime analysis",
+      "applicabilityBoundary": "The 19(2) s natural lifetime is inferred after separating lattice-light-induced quenching and background trap losses. It is not the raw finite-depth population-survival lifetime and is not a direct power-waist-Rabi calibration.",
+      "auditedSourceFacts": {
+        "naturalLifetime_s": 19,
+        "naturalLifetime_uncertainty_s": 2,
+        "latticeQuenching_per_Er_s": 0.00057,
+        "latticeQuenching_uncertainty_per_Er_s": 7e-05
+      }
     },
     {
       "kroezeReferenceNumber": 214,
@@ -1277,11 +1293,25 @@
         "T3.lifetime_ns",
         "T3.linewidth_frequency_coefficient_Hz"
       ],
-      "resolvedSourceId": null,
-      "doi": null,
-      "localDocuments": [],
-      "status": "primary-fulltext-or-identity-still-needed",
-      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null"
+      "resolvedSourceId": "xu-2014-prl",
+      "doi": "10.1103/PhysRevLett.113.033003",
+      "localDocuments": [
+        "references/papers/2014_Xu_171Yb_Hyperfine-quenching-rate_arXiv1406.2340v1.pdf"
+      ],
+      "status": "original-local-PDF-read;clock-rate-definition-audited",
+      "identityBoundary": "Number mapping verified against supplied Kroeze reference list; unknown identifiers left null",
+      "localDocumentHashes": [
+        "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e"
+      ],
+      "followupAudit": "references/audits/clock-rabi-578-audit-20261030.md",
+      "followupCheckedAt": "2026-10-30",
+      "resolvedCurrentCitation": "Phys. Rev. Lett. 113, 033003 (2014)",
+      "sourceLocator": "arXiv:1406.2340v1 pp.1,4-5, free-atom HFI-rate result and medium corrections",
+      "applicabilityBoundary": "The (4.42 +/- 0.35)e-2 s^-1 rate is a free-171Yb hyperfine-quenching inference from solid-Ne fluorescence with medium and non-HFI corrections; do not use an uncorrected Ne or trap-survival decay rate. It supports a newly derived F-reduced dipole but does not establish the historical source of the old internal T3 record.",
+      "auditedSourceFacts": {
+        "freeAtomHFI_rate_s_inv": 0.0442,
+        "freeAtomHFI_rate_uncertainty_s_inv": 0.0035
+      }
     },
     {
       "kroezeReferenceNumber": 215,

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 2,
+  "originalAuditDate": "2026-10-30",
+  "archivedOn": "2026-10-31",
+  "baseCommit": "8203da5ceb9bd0117c091578fb3c070b4281ea03",
+  "scope": {
+    "includes": "All public package files except manifest.json itself, the linked audit report, and listed shared verification code/tests.",
+    "excludes": "Self hash; local original PDFs/full text/TeX/source archives/notebooks/paper page images. These have separate source fingerprints.",
+    "boundary": "File integrity and reproducibility only; not independent experimental validation."
+  },
+  "files": [
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/README.md",
+      "bytes": 1523,
+      "sha256": "a322c8a97d2a13530cbc4a2bd7477bc644949c48c810daaba1debec38f4ba41e"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/archive-metadata.json",
+      "bytes": 1977,
+      "sha256": "c01631209f6ca0c559637ec8b4ef861ed131f8226e8f4f417760237308c2f555"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/candidate-index.csv",
+      "bytes": 3941,
+      "sha256": "a2dcdf88bdddd0f88508c6033c3f910c8e8b830155f858afe97e82d4305b0834"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json",
+      "bytes": 18222,
+      "sha256": "f8bfcfd6aa1961514c60656f660b3f6e10e6739ee79b0a67e26549da7faccaa7"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/historical-manifest-20261030.json",
+      "bytes": 1089,
+      "sha256": "8690bf70d5958b016cebbad58fbde9aead7b7dea0f781f7ad2e4781180ea4187"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/verification.json",
+      "bytes": 5331,
+      "sha256": "cd8e118eb152a81d36a66f9a0e79f19d217a46e883fce51cd126e9713f4093f0"
+    },
+    {
+      "path": "references/audits/clock-rabi-independent-search-20261030.md",
+      "bytes": 8834,
+      "sha256": "823eeccdc9f34187183c9e02184224c38f04338d0b2b25be716798360ab62dad"
+    },
+    {
+      "path": "scripts/literature-audit.mjs",
+      "bytes": 19288,
+      "sha256": "06cf8b6c4990aa5439e9442fc5bd2dd5c0e230b77a7771ad304441094be85684"
+    },
+    {
+      "path": "scripts/local-evidence.mjs",
+      "bytes": 1061,
+      "sha256": "5ebbe7a46b98b40855375e2747e527e6b37b325a0b25512a22451ec9dbb88125"
+    }
+  ]
+}

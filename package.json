@@ -12,12 +12,15 @@
     "test:unit": "node --test tests/**/*.test.js",
     "test": "npm run preflight && npm run test:unit",
     "check:artifacts": "node scripts/check-artifacts.cjs",
-    "check": "npm run data:validate && npm run evidence:validate && npm test && npm run build && npm run check:artifacts",
+    "check": "npm run literature:check && npm run data:validate && npm run evidence:validate && npm test && npm run build && npm run check:artifacts",
     "test:e2e": "playwright test",
     "test:all": "npm run check && npm run test:e2e",
     "sync": "node sync.cjs",
     "evidence:validate": "node scripts/evidence-data.cjs --check",
-    "evidence:export": "node scripts/evidence-data.cjs"
+    "evidence:export": "node scripts/evidence-data.cjs",
+    "references:check": "python3 -B references/build-index.py --check",
+    "references:write": "python3 -B references/build-index.py --write",
+    "literature:check": "npm run references:check && node scripts/literature-audit.mjs --check"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1"

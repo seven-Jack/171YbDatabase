@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-31",
+  "baselineCommit": "8203da5ceb9bd0117c091578fb3c070b4281ea03",
+  "scope": "Unresolved evidence for the four supplemental 578 nm audit packages and their source-management dependencies; not an exhaustive backlog for every atomic record.",
+  "policy": "Engineering checks, file hashes, independent atomic-rate support, conditional comparisons and independent Rabi measurements are separate evidence levels. No task is closed by numerical agreement alone.",
+  "categories": {
+    "download-original": "补充指定版本原文；已有预印本或模型推导不等于拿到该版本全文",
+    "author-parameters": "原文未披露的标定、模型输入或数据；需要公开附件、原始数据或用户取得的作者答复",
+    "internal-artifact": "内部数值的原始生成记录、版本和条件；文献相符不能代替历史来源",
+    "local-inventory": "先匹配已有本地文献，再形成真实下载清单",
+    "independent-benchmark": "同一操作点、独立获得的实验输入与Rabi测量"
+  },
+  "items": [
+    {
+      "id": "clock-pizzocaro-absolute-calibration",
+      "priority": "high",
+      "category": "author-parameters",
+      "status": "open",
+      "title": "Pizzocaro 2017 名义操作点与束心预测的差异",
+      "evidencePaths": ["references/audits/clock-rabi-578-audit-20261030.md", "data/literature/clock-rabi-audit-2026-10-30/pizzocaro-source-check.json"],
+      "nextAction": "查找同一操作点的绝对光束标定、人口曲线和动力学信息；不得为贴合名义π时间加入经验修正。",
+      "closureCriteria": ["原子处功率、束腰、偏振及其不确定度有可定位证据", "同一操作点的人口随时间数据、拟合模型及误差可用", "运动、对准及噪声的适用条件足以比较；若仍缺失则保留不确定结论"],
+      "closingEvidence": []
+    },
+    {
+      "id": "clock-offer-author-normalization",
+      "priority": "high",
+      "category": "author-parameters",
+      "status": "open",
+      "title": "Offer 拟合有效功率与峰值耦合的作者数值归一化",
+      "evidencePaths": ["references/audits/offer-saturation-cg-audit-20261030.md", "data/literature/offer-saturation-cg-2026-10-30/source-check.json"],
+      "nextAction": "定位作者使用的精确饱和强度、衰减率或矩阵元、偏振/通道权重、光束尺寸定义及拟合程序。不得将候选标量重建写为作者漏乘CG。",
+      "closureCriteria": ["精确模型输入和符号约定有作者来源", "每个相互作用区的功率和光束定义可追溯", "可用作者输入重建其拟合关系，并独立标明哪些量来自拟合"],
+      "closingEvidence": []
+    },
+    {
+      "id": "clock-t3-historical-generating-record",
+      "priority": "high",
+      "category": "internal-artifact",
+      "status": "open",
+      "title": "T3 旧内部矩阵元的实际历史生成工件",
+      "evidencePaths": ["references/audits/clock-rabi-578-audit-20261030.md", "data/literature/clock-rabi-audit-2026-10-30/cases.json"],
+      "nextAction": "按旧导入提交、Notebook和本地研究记录寻找原始计算输入与输出，不反向将Xu数值支持登记成旧记录的历史出处。",
+      "closureCriteria": ["定位原始工件及版本或明确记录无法恢复", "约化层级、通道、输入来源、单位和生成关系可复现", "历史出处与新文献数值支持分别登记"],
+      "closingEvidence": []
+    },
+    {
+      "id": "clock-independent-rabi-benchmark",
+      "priority": "high",
+      "category": "independent-benchmark",
+      "status": "open",
+      "title": "完整同操作点的¹⁷¹Yb 578 nm独立实验基准",
+      "evidencePaths": ["data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json", "references/audits/clock-rabi-independent-search-20261030.md"],
+      "nextAction": "沿现有候选的具体缺项查询补充材料或标定数据；不拼接不同波长、不同操作点、源输出功率和拟合参数。",
+      "closureCriteria": ["明确原子处功率、束腰定义与不确定度", "同操作点独立测得Rabi频率及误差，不能只有名义π时间", "同位素、态、通道、偏振及必要动力学条件明确", "预先声明比较与不确定度标准后再评价是否一致"],
+      "closingEvidence": []
+    },
+    {
+      "id": "source-burshtein-1974-paper9",
+      "priority": "medium",
+      "category": "download-original",
+      "status": "open",
+      "title": "Burshtein 1974：此前编号下载清单第9篇",
+      "sourceId": "burshtein-1974-optspec",
+      "doi": null,
+      "evidencePaths": ["references/missing-downloads.json", "references/missing-downloads-prioritized-20261030.json"],
+      "nextAction": "核对并取得Optics and Spectroscopy 37, 351–352 (1974)对应原文或馆际扫描；不编造DOI。",
+      "closureCriteria": ["题名、作者、卷页和版本身份核对完成", "保存原件路径与SHA-256", "区分中性Yb的³P₁寿命与同文Yb II数据，并逐字段核查适用性"],
+      "closingEvidence": []
+    },
+    {
+      "id": "source-foot-atomic-physics-chapter7",
+      "priority": "medium",
+      "category": "download-original",
+      "status": "open",
+      "title": "Foot《Atomic Physics》第7章原文",
+      "evidencePaths": ["data/literature/offer-saturation-cg-2026-10-30/source-check.json"],
+      "nextAction": "取得合法可访问的指定章节原文；当前饱和公式保留为独立推导，不标成已核对原书公式。",
+      "closureCriteria": ["记录书籍版本、章节页码和原件指纹", "核对饱和强度、线宽、矩阵元及偏振定义的原文位置"],
+      "closingEvidence": []
+    },
+    {
+      "id": "source-pizzocaro-published-version",
+      "priority": "low",
+      "category": "download-original",
+      "status": "open",
+      "title": "Pizzocaro 2017正式刊版的版本比对",
+      "evidencePaths": ["references/audits/clock-rabi-578-audit-20261030.md", "references/clock-rabi-sources-20261030.json"],
+      "nextAction": "在已有arXiv v2原件基础上补取得正式刊版；此前超时不表示永久无法获取。",
+      "closureCriteria": ["正式刊版保存并登记哈希", "核对关键操作段落和图注版本差异，保留不同版本原字面记录"],
+      "closingEvidence": []
+    },
+    {
+      "id": "source-rauf-thesis",
+      "priority": "low",
+      "category": "download-original",
+      "status": "open",
+      "title": "Rauf博士论文中的相关装置与标定信息",
+      "evidencePaths": ["references/audits/clock-rabi-578-audit-20261030.md"],
+      "nextAction": "核对机构库身份和可用版本；此前链接403，不绕过访问控制，不将摘要当全文。",
+      "closureCriteria": ["取得并核对身份或记录确切不可得边界", "若有相关标定，明确其是否属于同一装置和操作点"],
+      "closingEvidence": []
+    },
+    {
+      "id": "source-primary-queue-local-reconciliation",
+      "priority": "medium",
+      "category": "local-inventory",
+      "status": "open",
+      "title": "78条来源依赖队列与已有paper库逐项关联",
+      "evidencePaths": ["references/primary-source-queue.json", "references/README.md"],
+      "nextAction": "先按题名、作者、DOI和版本匹配本地原件，区分标准/常数/书籍/数据库与实验论文，再生成真正的下载任务；旧索引的来源级arXiv版本说明不能直接当作每份正式刊版PDF的实际版本。",
+      "closureCriteria": ["每项已有原件关联和身份判断可追溯", "逐份区分实际文档版本与保留的历史来源级版本说明", "未关联全文不被表述为整个paper库缺失", "文献获取、字段适用性核查和实验验证保留独立状态"],
+      "closingEvidence": []
+    }
+  ]
+}

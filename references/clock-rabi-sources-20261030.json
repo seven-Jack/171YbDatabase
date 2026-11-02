@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "purpose": "Supplemental primary sources for 578 nm clock Rabi-power, linewidth and motional-convention review; no canonical data changed.",
+  "historicalProvenanceBoundary": "Numerical support for an adopted value is distinct from finding the actual historical source or generating artifact of an internal record.",
+  "sources": [
+    {
+      "id": "pizzocaro-2017-metrologia",
+      "title": "Marco Pizzocaro et al.",
+      "detail": "Absolute frequency measurement of the 1S0-3P0 transition of 171Yb",
+      "authors": [
+        "Marco Pizzocaro",
+        "Pierre Thoumany",
+        "Benjamin Rauf",
+        "Filippo Bregolin",
+        "Gianmaria Milani",
+        "Cecilia Clivati",
+        "Giovanni A. Costanzo",
+        "Filippo Levi",
+        "Davide Calonico"
+      ],
+      "year": 2017,
+      "publication": "Metrologia 54, 102-112 (2017)",
+      "doi": "10.1088/1681-7575/aa4e62",
+      "arxivVersion": "1609.01610v2",
+      "referenceRole": "578 nm clock interrogation power, stated waist and nominal pi-pulse operating point; not a complete absolute Rabi calibration",
+      "evidenceNotes": [
+        "The same operating paragraph explicitly states 70 nW incident power, a 200 um 1/e^2 intensity waist radius and a 60 ms nominal pi pulse. The radius convention is established; absolute beam calibration and matched time-domain Rabi data remain incomplete.",
+        "These experimental operating parameters are not a separately fitted Rabi frequency and do not determine the historical source of the internal T3 matrix element."
+      ],
+      "url": "https://doi.org/10.1088/1681-7575/aa4e62",
+      "identityStatus": "verified-primary-metadata-and-local-pdf",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "source-support-only; not a complete independent Rabi calibration",
+      "supplementalIndex": "references/clock-rabi-sources-20261030.json",
+      "documents": [
+        "references/papers/2017_Pizzocaro_171Yb_Absolute-frequency_arXiv1609.01610v2.pdf"
+      ],
+      "documentHashes": [
+        "1d20e391c49bd9e9af8adeebfeccf7580a12c71d636aff44616f139a4951bfbc"
+      ]
+    },
+    {
+      "id": "xu-2014-prl",
+      "title": "C.-Y. Xu et al.",
+      "detail": "Measurement of the Hyperfine Quenching Rate of the Clock Transition in 171Yb",
+      "authors": [
+        "C.-Y. Xu",
+        "J. Singh",
+        "J. C. Zappala",
+        "K. G. Bailey",
+        "M. R. Dietrich",
+        "J. P. Greene",
+        "W. Jiang",
+        "N. D. Lemke",
+        "Z.-T. Lu",
+        "P. Mueller",
+        "T. P. O'Connor"
+      ],
+      "year": 2014,
+      "publication": "Phys. Rev. Lett. 113, 033003 (2014)",
+      "doi": "10.1103/PhysRevLett.113.033003",
+      "arxivVersion": "1406.2340v1",
+      "referenceRole": "Independent source for the free-atom hyperfine-quenching rate and a derived effective F-reduced clock dipole",
+      "evidenceNotes": [
+        "The reported free-171Yb rate is (4.42 +/- 0.35)e-2 s^-1, inferred from fluorescence in solid Ne with medium corrections; it is not an uncorrected trap-survival lifetime.",
+        "Numerical support for a clock dipole does not establish that this paper was the source of the old internal 5.30e-5 or 9.19e-5 records.",
+        "The local PDF identifier states arXiv:1406.2340v1 (9 June 2014), while its embedded draft date is 6 October 2018; retain the identifier, hash and 2014 journal identity separately."
+      ],
+      "url": "https://doi.org/10.1103/PhysRevLett.113.033003",
+      "identityStatus": "verified-primary-metadata-and-local-pdf",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "source-support-only; not a complete independent Rabi calibration",
+      "supplementalIndex": "references/clock-rabi-sources-20261030.json",
+      "documents": [
+        "references/papers/2014_Xu_171Yb_Hyperfine-quenching-rate_arXiv1406.2340v1.pdf"
+      ],
+      "documentHashes": [
+        "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e"
+      ]
+    },
+    {
+      "id": "siegel-2024-prl",
+      "title": "J. L. Siegel et al.",
+      "detail": "Excited-Band Coherent Delocalization for Improved Optical Lattice Clock Performance",
+      "authors": [
+        "J. L. Siegel",
+        "W. F. McGrew",
+        "Y. S. Hassan",
+        "C.-C. Chen",
+        "K. Beloy",
+        "T. Grogan",
+        "X. Zhang",
+        "A. D. Ludlow"
+      ],
+      "year": 2024,
+      "publication": "Phys. Rev. Lett. 132, 133201 (2024)",
+      "doi": "10.1103/PhysRevLett.132.133201",
+      "arxivVersion": "2402.04968v2",
+      "referenceRole": "171Yb 3P0 natural-lifetime determination and separation of trap-light-induced quenching",
+      "evidenceNotes": [
+        "The reported natural lifetime is 19(2) s; the separately reported trap-light quenching rate is 5.7(7)e-4 Er^-1 s^-1.",
+        "A natural-lifetime inference and trap-light quenching must not be replaced by one unspecified in-trap survival time or treated as a matched power-waist-Rabi measurement."
+      ],
+      "url": "https://doi.org/10.1103/PhysRevLett.132.133201",
+      "identityStatus": "verified-primary-metadata-and-local-pdf",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "source-support-only; not a complete independent Rabi calibration",
+      "supplementalIndex": "references/clock-rabi-sources-20261030.json",
+      "documents": [
+        "references/papers/2024_Siegel_171Yb_Clock-natural-lifetime_arXiv2402.04968v2.pdf"
+      ],
+      "documentHashes": [
+        "d18cc23ba21e08a10c2115e0f3ae72df7a3ee8b34cf2747e2ed5daa8bf1ff477"
+      ]
+    },
+    {
+      "id": "blatt-2009-pra",
+      "title": "S. Blatt et al.",
+      "detail": "Rabi Spectroscopy and Excitation Inhomogeneity in a 1D Optical Lattice Clock",
+      "authors": [
+        "S. Blatt",
+        "J. W. Thomsen",
+        "G. K. Campbell",
+        "A. D. Ludlow",
+        "M. D. Swallows",
+        "M. J. Martin",
+        "M. M. Boyd",
+        "J. Ye"
+      ],
+      "year": 2009,
+      "publication": "Phys. Rev. A 80, 052703 (2009)",
+      "doi": "10.1103/PhysRevA.80.052703",
+      "arxivVersion": "0906.1419v2",
+      "referenceRole": "Method source for motional-state-dependent carrier Rabi coupling and excitation inhomogeneity",
+      "evidenceNotes": [
+        "The experimental species is 87Sr; the mathematical treatment can inform a conditional 171Yb analysis, but the Sr numerical trap and temperature values are not 171Yb data.",
+        "Motional averaging can differ from the bare beam-centre dipole coupling; this source alone does not prove the cause or size of the Pizzocaro operating-point discrepancy."
+      ],
+      "url": "https://doi.org/10.1103/PhysRevA.80.052703",
+      "identityStatus": "verified-primary-metadata-and-local-pdf",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "source-support-only; not a complete independent Rabi calibration",
+      "supplementalIndex": "references/clock-rabi-sources-20261030.json",
+      "documents": [
+        "references/papers/2009_Blatt_Rabi-spectroscopy-inhomogeneity_arXiv0906.1419v2.pdf"
+      ],
+      "documentHashes": [
+        "16fe88d226fe10c7b713cd448c05a0bccb2e0ec1ade30087c0b092d260fd372e"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "sha256": "1d20e391c49bd9e9af8adeebfeccf7580a12c71d636aff44616f139a4951bfbc",
+      "path": "references/papers/2017_Pizzocaro_171Yb_Absolute-frequency_arXiv1609.01610v2.pdf",
+      "bytes": 1019102,
+      "pages": 13,
+      "sourceIds": [
+        "pizzocaro-2017-metrologia"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/abs/1609.01610v2",
+        "https://arxiv.org/pdf/1609.01610v2"
+      ],
+      "versionNote": "1609.01610v2",
+      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "sha256": "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e",
+      "path": "references/papers/2014_Xu_171Yb_Hyperfine-quenching-rate_arXiv1406.2340v1.pdf",
+      "bytes": 631461,
+      "pages": 5,
+      "sourceIds": [
+        "xu-2014-prl"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/abs/1406.2340v1",
+        "https://arxiv.org/pdf/1406.2340v1"
+      ],
+      "versionNote": "1406.2340v1",
+      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "sha256": "d18cc23ba21e08a10c2115e0f3ae72df7a3ee8b34cf2747e2ed5daa8bf1ff477",
+      "path": "references/papers/2024_Siegel_171Yb_Clock-natural-lifetime_arXiv2402.04968v2.pdf",
+      "bytes": 2123677,
+      "pages": 9,
+      "sourceIds": [
+        "siegel-2024-prl"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/abs/2402.04968v2",
+        "https://arxiv.org/pdf/2402.04968v2"
+      ],
+      "versionNote": "2402.04968v2",
+      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "sha256": "16fe88d226fe10c7b713cd448c05a0bccb2e0ec1ade30087c0b092d260fd372e",
+      "path": "references/papers/2009_Blatt_Rabi-spectroscopy-inhomogeneity_arXiv0906.1419v2.pdf",
+      "bytes": 655052,
+      "pages": 12,
+      "sourceIds": [
+        "blatt-2009-pra"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/abs/0906.1419v2",
+        "https://arxiv.org/pdf/0906.1419v2"
+      ],
+      "versionNote": "0906.1419v2",
+      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
+      "rights": "local research evidence only; no redistribution permission inferred"
+    }
+  ]
+}

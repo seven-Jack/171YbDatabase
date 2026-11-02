@@ -62,7 +62,13 @@
       "waist_um": 200,
       "waistConvention": "1/e^2 intensity radius",
       "pol": "pi",
-      "channel": {"F": 0.5, "m": 0.5, "Fp": 0.5, "mp": 0.5, "q": 0},
+      "channel": {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 0.5,
+        "mp": 0.5,
+        "q": 0
+      },
       "magneticField_mT": 0.14,
       "piPulseTime_ms": 60,
       "directlyReportedRabiOrdinary_Hz": null,
@@ -74,16 +80,44 @@
       "typicalLatticeDepth_Er": 200,
       "powerUncertainty_nW": null,
       "waistUncertainty_um": null,
-      "piTimeUncertainty_ms": null
+      "piTimeUncertainty_ms": null,
+      "temperatureAxis": "longitudinal-z, measured from sideband ratio; radial temperature unreported",
+      "probeRetroreflectorReflectivityLessThan": 0.01
     },
     "admissibility": "auxiliary-pi-time-derived-operating-point-only",
-    "notEstablished": ["A matched independent direct fitted Rabi frequency and uncertainty", "A complete motional and spatial averaging correction", "A calibrated absolute Rabi uncertainty budget", "A unique cause for disagreement with the beam-centre calculator"]
+    "notEstablished": [
+      "A matched independent direct fitted Rabi frequency and uncertainty",
+      "A complete motional and spatial averaging correction",
+      "A calibrated absolute Rabi uncertainty budget",
+      "A unique cause for disagreement with the beam-centre calculator"
+    ],
+    "followupAudit": {
+      "path": "references/audits/clock-rabi-578-audit-20261030.md",
+      "sourceParametersRechecked": true,
+      "independentDipoleSupport": "Xu2014 free-atom HFQ rate supports the same rounded dF; historical internal generating source not recovered",
+      "uniquePhysicalCauseEstablished": false
+    }
   },
   "screenedNearMatches": [
-    {"doi":"10.1103/PhysRevX.13.041035","reason":"Clock Rabi approximately110 kHz and waist approximately20 um are reported, but90 mW is source SHG output before delivery losses, not a closed atom-plane power for that measurement."},
-    {"doi":"10.1103/PRXQuantum.6.020334","reason":"Clock waists400x35 um and Rabi rates3-15 kHz are reported; a matching atom-plane clock power was not located."},
-    {"doi":"10.1088/1674-1056/ac5392","reason":"5 mW belongs to the separate detuned sideband-cooling beam; carrier Rabi310 Hz is measured with the probe path. Those inputs must not be combined."},
-    {"doi":"10.1038/s41567-026-03258-8","reason":"200 mW refers to generated UV source output;1 mW/40 um refers to the369.5 nm autoionization beam. Neither is a matched clock/Rydberg Rabi input."},
-    {"arxiv":"2502.17406v2","reason":"Telecom excitation2.5 mW and approximately30 MHz are reported; the1389 nm waist is only described as several times larger than the35 um clock waist."}
+    {
+      "doi": "10.1103/PhysRevX.13.041035",
+      "reason": "Clock Rabi approximately110 kHz and waist approximately20 um are reported, but90 mW is source SHG output before delivery losses, not a closed atom-plane power for that measurement."
+    },
+    {
+      "doi": "10.1103/PRXQuantum.6.020334",
+      "reason": "Clock waists400x35 um and Rabi rates3-15 kHz are reported; a matching atom-plane clock power was not located."
+    },
+    {
+      "doi": "10.1088/1674-1056/ac5392",
+      "reason": "5 mW belongs to the separate detuned sideband-cooling beam; carrier Rabi310 Hz is measured with the probe path. Those inputs must not be combined."
+    },
+    {
+      "doi": "10.1038/s41567-026-03258-8",
+      "reason": "200 mW refers to generated UV source output;1 mW/40 um refers to the369.5 nm autoionization beam. Neither is a matched clock/Rydberg Rabi input."
+    },
+    {
+      "arxiv": "2502.17406v2",
+      "reason": "Telecom excitation2.5 mW and approximately30 MHz are reported; the1389 nm waist is only described as several times larger than the35 um clock waist."
+    }
   ]
 }

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "purpose": "User-requested conditional Offer2026 P-w-Rabi comparison; not an independent experimental validation.",
+  "status": "conditional-calculation-only",
+  "transitionId": "T3",
+  "beam": {
+    "reportedDiameter_mm": 1,
+    "assumedDiameterDefinition": "1/e^2 intensity diameter, explicitly assumed by the user; not established by the article",
+    "assumedRadius_um": 500,
+    "evaluationPosition": "Gaussian beam centre",
+    "eachPowerCondition": "Treat each numerical power as the power of one incident Gaussian field at the interaction point, with no additional optical loss or spatial overlap correction. This mapping is assumed, not experimentally established.",
+    "fourBeamBoundary": "Do not divide power by four: the article describes folded successive interaction beams, not a measured equal four-way split. Do not add four field amplitudes coherently."
+  },
+  "channel": {
+    "F": 0.5,
+    "m": 0.5,
+    "Fp": 0.5,
+    "mp": 0.5,
+    "q": 0,
+    "polarization": "pi",
+    "condition": "Full incident power in linear pi polarization, parallel to the assumed quantization axis. Offer does not establish this axis mapping.",
+    "dipoleConvention": "effective F-reduced dF; selected pi-channel magnitude dF/sqrt(6)",
+    "linearTransverseAlternative": "For linear polarization perpendicular to B, each sigma component has P/2 and dSigma=dF/sqrt(3); each addressed branch has the same Rabi frequency as pi with full P. This is a channel comparison, not a fit to the full Ramsey-Borde ensemble."
+  },
+  "adoptedCurrentDF_ea0": 0.0000919,
+  "independentAtomicStrength": {
+    "sourceId": "xu-2014-prl",
+    "doi": "10.1103/PhysRevLett.113.033003",
+    "freeAtomHFIrate_s_inv": 0.0442,
+    "standardUncertainty_s_inv": 0.0035,
+    "sourceLocation": "PDF pp.3-4, Eq.(2), Table I; solid-Ne experiment corrected to free-atom rate",
+    "boundary": "Independent atomic-strength support, not a second power-waist-Rabi experimental point; its rate uncertainty alone is not a total Rabi calibration uncertainty."
+  },
+  "powerCases": [
+    {
+      "id": "stage-available-1070mW",
+      "power_mW": 1070,
+      "evidenceKind": "reported measured/available stage-input power",
+      "sourceLocation": "Offer Supplement PDF p.2, Section1.2, lines28-38",
+      "definition": "Power after stabilization, available for the Ramsey-Borde stage; not separately calibrated at each atom-light crossing."
+    },
+    {
+      "id": "model-effective-338mW",
+      "power_mW": 338,
+      "evidenceKind": "fitted effective model power",
+      "sourceLocation": "Offer Supplement PDF p.3, Section1.3, lines56-63",
+      "definition": "P0 set to match measured Doppler contrast at 95m/s; not an independent optical-power measurement."
+    }
+  ],
+  "comparison": {
+    "reportedRabi_Hz": 22000,
+    "definition": "Peak Omega/(2pi) corresponding to the article's contrast-fitted coupling/model power; not a separately measured time-domain frequency.",
+    "relativeDifferenceDefinition": "100*(calculated_Hz-22000)/22000",
+    "fitUncertainty_Hz": null,
+    "allowValidationPass": false
+  },
+  "sources": [
+    {
+      "id": "offer-2026-main",
+      "doi": "10.1364/OPTICA.584095",
+      "localPath": "references/papers/2026_Offer_171Yb_Portable-beam-clock_published.pdf",
+      "sha256": "7a3598bcc2fb6a6ed7d8280212d572a4f6bc5fa5dc49715b284ffc719473b472"
+    },
+    {
+      "id": "offer-2026-sm-v2",
+      "doi": "10.6084/m9.figshare.31537450.v2",
+      "localPath": "references/papers/2026_Offer_171Yb_Portable-beam-clock_supplement-v2.pdf",
+      "sha256": "3146ceef9a5c2bfd260406fd33030ea6d1995d44b1f9408e37ad62605ed38bfe"
+    },
+    {
+      "id": "xu-2014-prl",
+      "doi": "10.1103/PhysRevLett.113.033003",
+      "localPath": "references/papers/2014_Xu_171Yb_Hyperfine-quenching-rate_arXiv1406.2340v1.pdf",
+      "sha256": "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e"
+    }
+  ]
+}

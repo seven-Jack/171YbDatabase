@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "purpose": "Read-only source check of the Pizzocaro 2017 clock-laser operating point, with the published experimental geometry kept separate from bare beam-centre Rabi modelling.",
+  "source": {
+    "id": "pizzocaro-2017-arxiv-v2",
+    "title": "Absolute frequency measurement of the 1S0-3P0 transition of 171Yb",
+    "authors": [
+      "Marco Pizzocaro",
+      "Pierre Thoumany",
+      "Benjamin Rauf",
+      "Filippo Bregolin",
+      "Gianmaria Milani",
+      "Cecilia Clivati",
+      "Giovanni A. Costanzo",
+      "Filippo Levi",
+      "Davide Calonico"
+    ],
+    "journal": "Metrologia 54, 102-112 (2017)",
+    "doi": "10.1088/1681-7575/aa4e62",
+    "arxiv": "1609.01610v2",
+    "url": "https://arxiv.org/pdf/1609.01610v2",
+    "localPath": "references/papers/2017_Pizzocaro_171Yb_Absolute-frequency_arXiv1609.01610v2.pdf",
+    "sha256": "1d20e391c49bd9e9af8adeebfeccf7580a12c71d636aff44616f139a4951bfbc",
+    "articleVersion": "Author-created un-copyedited accepted/published manuscript, arXiv v2 dated 2017-01-20.",
+    "evidenceMethod": "Poppler page-specific text extraction; complete page 4 rendered and visually inspected. All source descriptions below are paraphrases.",
+    "visuallyInspectedPdfPages": [
+      4
+    ],
+    "textInspectedPdfPages": [
+      3,
+      4,
+      5,
+      7,
+      8
+    ],
+    "pageNumberConvention": "PDF page and printed arXiv page numbers coincide."
+  },
+  "parameterRecords": [
+    {
+      "field": "clock_wavelength",
+      "value": 578,
+      "unit": "nm",
+      "definition": "Clock spectroscopy probe wavelength, distinct from the 759 nm lattice and 399/556 nm detection/cooling beams.",
+      "page": 4,
+      "section": "II.E, Clock transition spectroscopy",
+      "evidenceKind": "reported"
+    },
+    {
+      "field": "probe_waist_radius",
+      "value": 200,
+      "unit": "um",
+      "definition": "Explicit 1/e^2 waist radius. Use as the Gaussian intensity-radius w0; do not divide by two or reinterpret it as full diameter.",
+      "page": 4,
+      "section": "II.E, first clock-probe operating paragraph",
+      "evidenceKind": "reported-explicit-radius"
+    },
+    {
+      "field": "probe_incident_power",
+      "value": 70,
+      "unit": "nW",
+      "definition": "Incident power of the 578 nm spectroscopy beam in the same paragraph as the 200 um waist. The paragraph does not provide an absolute power-calibration plane, loss budget or standard uncertainty.",
+      "page": 4,
+      "section": "II.E, first clock-probe operating paragraph",
+      "evidenceKind": "reported-operating-value",
+      "uncertainty": null
+    },
+    {
+      "field": "clock_source_output_power",
+      "value": 7,
+      "unit": "mW",
+      "definition": "Approximate total generated 578 nm sum-frequency source output, upstream of delivery. It is a different physical quantity from the 70 nW incident spectroscopy power.",
+      "page": 3,
+      "section": "II.E, source generation",
+      "evidenceKind": "reported-approximate",
+      "useAsAtomPlaneProbePower": false
+    },
+    {
+      "field": "nominal_pi_pulse_duration",
+      "value": 60,
+      "unit": "ms",
+      "definition": "The same operating description explicitly calls this a pi pulse and Rabi time. It is not a separately reported time-domain Rabi-oscillation fit with uncertainty.",
+      "page": 4,
+      "section": "II.E, clock interrogation paragraph",
+      "evidenceKind": "reported-nominal-pi-time",
+      "uncertainty": null
+    },
+    {
+      "field": "probe_polarization_geometry",
+      "value": "linear, parallel to the vertical bias magnetic field and the lattice polarization",
+      "unit": null,
+      "definition": "Prepared using the same Glan-Thompson polarizer as the lattice; this geometry selects pi, Delta mF=0 transitions.",
+      "page": 4,
+      "section": "II.E, probe polarization",
+      "evidenceKind": "reported"
+    },
+    {
+      "field": "selected_channel_q",
+      "value": 0,
+      "unit": "dimensionless",
+      "definition": "Pi absorption between F=1/2,mF=+/-1/2 and F'=1/2,mF'=the same +/-1/2. The reported linear-along-B geometry does not justify splitting the 70 nW into equal sigma+ and sigma- powers.",
+      "page": 4,
+      "section": "II.E and Figure 3",
+      "evidenceKind": "selection-rule-inference-from-reported-geometry"
+    },
+    {
+      "field": "nominal_pi_power_fraction",
+      "value": 1,
+      "unit": "dimensionless",
+      "definition": "Ideal selected-polarization model assignment for linear light parallel to B. This is not a measured polarization-purity calibration; its experimental uncertainty is not supplied.",
+      "page": 4,
+      "section": "II.E",
+      "evidenceKind": "explicit-model-assumption",
+      "experimentalPurityUncertainty": null
+    },
+    {
+      "field": "single_spin_state_purity",
+      "value": 98,
+      "unit": "percent",
+      "definition": "Reported preparation purity of each selected mF spin state. It is not the probe pi-polarization purity.",
+      "page": 4,
+      "section": "Figure 3 caption",
+      "evidenceKind": "reported"
+    },
+    {
+      "field": "probe_propagation_direction",
+      "value": "collinear with the optical lattice",
+      "unit": null,
+      "definition": "The 578 nm probe and 759 nm lattice share the lattice axis; distinguish this propagation axis from the vertical polarization/B axis.",
+      "page": 4,
+      "section": "II.E",
+      "evidenceKind": "reported"
+    },
+    {
+      "field": "lattice_propagation_tilt",
+      "value": 60,
+      "unit": "mrad",
+      "definition": "Lattice beam is tilted from the horizontal by 60 mrad; the clock probe is collinear with it.",
+      "page": 3,
+      "section": "II.C, Optical lattice at 759 nm",
+      "evidenceKind": "reported"
+    },
+    {
+      "field": "retroreflector_power_reflectivity_at_578nm",
+      "value": 0.01,
+      "unit": "dimensionless",
+      "bound": "strict-upper",
+      "definition": "The lattice retroreflector is anti-reflection coated at the clock wavelength. This excludes assuming a full ideal 578 nm standing wave; the returned mode, waist and phase at the atom plane are not quantified.",
+      "page": 4,
+      "section": "II.E, immediately after incident power and waist",
+      "evidenceKind": "reported-upper-bound"
+    },
+    {
+      "field": "bias_magnetic_field_text",
+      "value": 0.14,
+      "unit": "mT",
+      "definition": "Bias magnetic field during the nominal clock interrogation.",
+      "page": 4,
+      "section": "II.E, interrogation paragraph",
+      "evidenceKind": "reported"
+    },
+    {
+      "field": "bias_magnetic_field_arxiv_figure3",
+      "value": 0.13,
+      "unit": "mT",
+      "definition": "ArXiv v2 Figure 3 caption differs slightly from the 0.14 mT prose. Preserve the version-specific caption instead of silently replacing its text.",
+      "page": 4,
+      "section": "Figure 3 caption",
+      "evidenceKind": "reported-version-specific"
+    },
+    {
+      "field": "typical_clock_spectrum_fwhm",
+      "value": 20,
+      "unit": "Hz",
+      "definition": "Typical frequency-domain spectral linewidth, attributed to excessive clock-laser frequency noise. Not a measured Rabi oscillation frequency.",
+      "page": 4,
+      "section": "II.E, paragraph after readout description",
+      "evidenceKind": "reported-typical"
+    },
+    {
+      "field": "figure4_clock_spectrum_fwhm",
+      "value": 18,
+      "unit": "Hz",
+      "definition": "Lorentzian linewidth from one spin-polarized clock-spectrum scan. Not Omega/(2*pi).",
+      "page": 4,
+      "section": "Figure 4 caption",
+      "evidenceKind": "reported-fit-linewidth"
+    },
+    {
+      "field": "typical_lattice_depth",
+      "value": 200,
+      "unit": "E_r",
+      "definition": "Typical operating trap depth; E_r is the recoil energy of a 759 nm lattice photon.",
+      "page": 4,
+      "section": "II.E, final paragraph",
+      "evidenceKind": "reported-typical"
+    },
+    {
+      "field": "typical_longitudinal_temperature",
+      "value": 7,
+      "uncertainty": 3,
+      "unit": "uK",
+      "definition": "Longitudinal T_z determined using the red/blue motional-sideband ratio. Not an independently measured radial temperature or an isotropic 3D temperature.",
+      "page": 4,
+      "section": "II.E, final paragraph",
+      "evidenceKind": "reported-typical-longitudinal"
+    },
+    {
+      "field": "figure5_sideband_pulse_duration",
+      "value": 80,
+      "unit": "ms",
+      "definition": "Pulse used for the separate broadband carrier/sideband example. Do not mix it with the nominal 60 ms clock interrogation.",
+      "page": 5,
+      "section": "Figure 5 caption",
+      "evidenceKind": "reported-figure-specific"
+    },
+    {
+      "field": "figure5_longitudinal_trap_frequency",
+      "value": 68.6,
+      "uncertainty": 0.3,
+      "unit": "kHz",
+      "definition": "Fitted longitudinal trap frequency of the Figure 5 example.",
+      "page": 5,
+      "section": "Figure 5 caption",
+      "evidenceKind": "reported-fit"
+    },
+    {
+      "field": "figure5_lattice_depth",
+      "value": 284,
+      "uncertainty": 3,
+      "unit": "E_r",
+      "definition": "Trap depth corresponding to the separate Figure 5 sideband scan; it is not the stated typical 200 E_r point.",
+      "page": 5,
+      "section": "Figure 5 caption",
+      "evidenceKind": "reported-figure-specific"
+    },
+    {
+      "field": "figure5_longitudinal_temperature",
+      "value": 7,
+      "uncertainty": 1.4,
+      "unit": "uK",
+      "definition": "Longitudinal temperature deduced from the Figure 5 red/blue sideband ratio.",
+      "page": 5,
+      "section": "Figure 5 caption",
+      "evidenceKind": "reported-figure-specific-longitudinal"
+    },
+    {
+      "field": "described_trap_region_radius",
+      "value": 45,
+      "unit": "um",
+      "definition": "Author's trap-region radius set by the lattice waist. It is a geometry description, not a calibrated maximum radius or full radial atomic probability distribution.",
+      "page": 7,
+      "section": "III.B, Density shift, left column",
+      "evidenceKind": "reported-geometry-estimate"
+    },
+    {
+      "field": "described_trap_region_length",
+      "value": 0.5,
+      "unit": "mm",
+      "definition": "Trap-region length set by the second-stage MOT size; distinct from the clock-probe Rayleigh range.",
+      "page": 7,
+      "section": "III.B, Density shift, left column",
+      "evidenceKind": "reported-geometry-estimate"
+    }
+  ],
+  "operationMatching": {
+    "sameParagraphFields": [
+      "probe_waist_radius",
+      "probe_incident_power",
+      "probe_polarization_geometry",
+      "retroreflector_power_reflectivity_at_578nm",
+      "nominal_pi_pulse_duration"
+    ],
+    "conclusion": "The 70 nW, 200 um and 60 ms values belong to one continuous usual-operation description, not to unrelated figure panels.",
+    "limit": "The paper does not provide a joint per-shot power/waist/pi-time dataset, a direct Rabi-flopping fit, or a joint absolute calibration uncertainty budget."
+  },
+  "versionComparison": {
+    "arxivFigure3": {
+      "sourceId": "pizzocaro-2017-arxiv-v2",
+      "page": 4,
+      "field": "bias_magnetic_field",
+      "value": 0.13,
+      "unit": "mT"
+    },
+    "publishedFigure3": {
+      "sourceId": "pizzocaro-2017-inrim-published-index",
+      "printedPage": 105,
+      "field": "bias_magnetic_field",
+      "value": 0.14,
+      "unit": "mT"
+    },
+    "publishedOperatingValues": {
+      "probeIncidentPower_nW": 70,
+      "probeWaistRadius_um": 200,
+      "nominalPiPulse_ms": 60
+    },
+    "evidenceBoundary": "Published values were checked in the search-indexed text of the author institution's version-of-record PDF. Direct web PDF retrieval timed out; this source check did not obtain or hash that complete PDF.",
+    "publishedPrimaryUrl": "https://metrica.inrim.it/retrieve/dd2573c2-c39e-e71c-e053-d805fe0ad5dc/Pizzocaro2017.pdf",
+    "publishedDOI": "10.1088/1681-7575/aa4e62"
+  },
+  "notEstablished": [
+    "A directly fitted ordinary Rabi frequency and uncertainty for the same 70 nW/200 um operating point.",
+    "Absolute power-calibration plane, window/fibre loss budget and standard uncertainty for the incident 70 nW value.",
+    "Waist measurement method and uncertainty for the 200 um value.",
+    "Calibrated pi-polarization purity and exact probe/B angular misalignment.",
+    "Radial temperature, radial cloud distribution, probe centring and a complete motional/spatial Rabi average.",
+    "Returned 578 nm spatial mode, waist and optical phase at the atoms.",
+    "An applicable numerical matrix element or its J/F/mF normalization; the paper does not supply the project's 9.19e-5 ea0 value."
+  ],
+  "excludedInterpretations": [
+    {
+      "claim": "200 um is a diameter or must be halved.",
+      "disposition": "contradicted-by-explicit-source-radius"
+    },
+    {
+      "claim": "The 7 mW generated clock-source power is the atom-plane probe power.",
+      "disposition": "different-source-and-delivered-operating-quantities"
+    },
+    {
+      "claim": "The 70 nW must be divided by two into sigma components.",
+      "disposition": "not-justified-for-reported-linear-parallel-B-pi-geometry"
+    },
+    {
+      "claim": "The clock probe is a full ideal standing wave, so use a 2P or 4I correction.",
+      "disposition": "contradicted-by-578nm-AR-retroreflector-R-less-than-1-percent"
+    },
+    {
+      "claim": "18 or 20 Hz spectral FWHM equals the measured ordinary Rabi frequency.",
+      "disposition": "different-observables"
+    },
+    {
+      "claim": "The 7 uK longitudinal temperature is a measured isotropic or radial temperature.",
+      "disposition": "not-supported"
+    },
+    {
+      "claim": "Figure 5 supplies the same pulse and trap conditions as the nominal 60 ms/200 E_r point.",
+      "disposition": "figure5-is-80ms-284Er"
+    }
+  ],
+  "conditionalGeometryDiagnostics": [
+    {
+      "field": "gaussian_field_ratio_at_described_region_radius",
+      "value": 0.9506350918586984,
+      "unit": "dimensionless",
+      "formula": "exp[-(45 um / 200 um)^2]",
+      "inputs": [
+        "probe_waist_radius",
+        "described_trap_region_radius"
+      ],
+      "definition": "Illustrative field variation over the author's described trap radius, assuming a centred Gaussian probe at its waist.",
+      "boundary": "Not a fitted cloud average or a rigorous bound on all atomic positions."
+    },
+    {
+      "field": "clock_probe_rayleigh_range",
+      "value": 0.2174112563037919,
+      "unit": "m",
+      "formula": "pi*(200 um)^2/(578 nm)",
+      "inputs": [
+        "probe_waist_radius",
+        "clock_wavelength"
+      ],
+      "definition": "Gaussian Rayleigh range for the reported waist."
+    },
+    {
+      "field": "gaussian_on_axis_field_ratio_at_half_region_length",
+      "value": 0.9999993388720166,
+      "unit": "dimensionless",
+      "formula": "1/sqrt[1+(0.25 mm/z_R)^2]",
+      "inputs": [
+        "clock_probe_rayleigh_range",
+        "described_trap_region_length"
+      ],
+      "definition": "Illustrative axial beam-envelope variation assuming the cloud is centred on the probe waist.",
+      "boundary": "Does not model Lamb-Dicke motional-carrier matrix elements."
+    },
+    {
+      "field": "reflected_field_amplitude_ratio_under_equal_mode_assumption",
+      "value": 0.1,
+      "unit": "dimensionless",
+      "bound": "strict-upper",
+      "formula": "sqrt(R) with R<0.01",
+      "definition": "Only if the returned mode has the same local waist and spatial overlap as the incident mode does the mirror power-reflectivity bound imply a returned/local field ratio below 0.1.",
+      "boundary": "Not an unconditional local-field bound: the returned 578 nm mode/waist is not specified."
+    }
+  ],
+  "scientificDisposition": "Source beam definitions alone do not identify the cause of the previous Rabi mismatch. Preserve the original operating values and separately audit the adopted clock matrix element and any conditional dynamical corrections. Do not fit an input to the target pi time."
+}

@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "eligibleCaseCount": 0,
+  "candidateCount": 11,
+  "experimentValidation": "not-completed-no-eligible-matched-input",
+  "newRuntimeChanges": false,
+  "newCanonicalChanges": false,
+  "protectedFiles": [
+    {
+      "path": "src/ui/energy-diagram.js",
+      "sha256": "684dfbce178dc78dde9cf4991c14122a6d0cc2978cabc91e368e7e4ce9d49394",
+      "unchanged": true
+    },
+    {
+      "path": "src/ui/diagram-geometry.js",
+      "sha256": "4a2c855802766d936e2bdc994adbe6d4b9003c81b32c7e2f0ec6cb8763385177",
+      "unchanged": true
+    },
+    {
+      "path": "src/ui/diagram-presentation.js",
+      "sha256": "f315eab1ed3c8c74efca3951791454f720b21bcc1cfca81e6b817815efd4ab49",
+      "unchanged": true
+    },
+    {
+      "path": "src/styles/original-diagram.css",
+      "sha256": "5e2252c836949cfd13c0bc5ecb268a795f2d094f0caf6e497b375ffd6a4dcb6c",
+      "unchanged": true
+    },
+    {
+      "path": "src/styles/quantum.css",
+      "sha256": "c9907e9ce75fd3fca4282a1f1d835a9fad8cdbf0c9781e7f20ea059474ab73a9",
+      "unchanged": true
+    },
+    {
+      "path": "assets/05.21_yb171_65s_hyperfine.csv",
+      "sha256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec",
+      "unchanged": true
+    },
+    {
+      "path": "data/dataset.json",
+      "sha256": "eb30379ac24ebcf94a83a8b080783414ea78968027187ca2286c6845910def0d",
+      "unchanged": true
+    },
+    {
+      "path": "data/levels.json",
+      "sha256": "436e64e4b0f00ec67f7a90267ff85bc11c3600c0f360155c6f382975ec98ceaa",
+      "unchanged": true
+    },
+    {
+      "path": "data/transitions.json",
+      "sha256": "aa8fe6b42776e8e6045ad3cb17d487d1802f27329fa153f9139b153784fa59b0",
+      "unchanged": true
+    },
+    {
+      "path": "data/sources.json",
+      "sha256": "4d9a8c53bbf668efb02ab9b9c3dcbc68b3bbdebfbcfe39bcdcc00ca910884e62",
+      "unchanged": true
+    },
+    {
+      "path": "data/hyperfine.json",
+      "sha256": "2870fb871e3b578c09313c993d92ce1b40c85393acee309976eef96fad55889e",
+      "unchanged": true
+    },
+    {
+      "path": "data/estimates.json",
+      "sha256": "ffb73032f906ff73fe23b7674c05008ccb1296b292d493fd46f2b42b484c21a9",
+      "unchanged": true
+    },
+    {
+      "path": "src/physics/rabi.js",
+      "sha256": "75f2caf5f32cfea44f1e86d1bbdd2d78a0a24bf7dca27ae76d67ddb59524b425",
+      "unchanged": true
+    },
+    {
+      "path": "src/physics/angular.js",
+      "sha256": "2b95de7b9f15c254c2c8ff591be312bcd427e99cd673fedb48565d76b1f13dcb",
+      "unchanged": true
+    },
+    {
+      "path": "src/physics/constants.js",
+      "sha256": "ceb9602f0cc3cdf779f80cec2b706d18e88465a63a5236e7f95413fd9ce03102",
+      "unchanged": true
+    }
+  ],
+  "sourceDocuments": [
+    {
+      "path": "references/papers/2023_Lis_171Yb_Midcircuit-omg_PRX13-041035.pdf",
+      "sha256": "b33537c466775342db2c8f92ea275557013ab686078787a016838cc85633b809",
+      "pages": 22,
+      "status": "verified-present"
+    },
+    {
+      "path": "references/papers/2022_Zhang_171Yb_Subrecoil-clock-cooling_arXiv2206.09056v1.pdf",
+      "sha256": "2e976648051f4aa383fc9bdc073b50c7d78a5e3126d77f596fcf6ec8ed63f2bf",
+      "pages": 10,
+      "status": "verified-present"
+    },
+    {
+      "path": "references/papers/2025_Zaporski_171Yb_Quantum-amplified-global-phase_published.pdf",
+      "sha256": "5aba1612109652dc7eb80484c186c66a0edcae39f891329942ae0cfdc15a9f79",
+      "pages": 12,
+      "status": "verified-present"
+    },
+    {
+      "path": "references/papers/2022_Bettermann_171Yb_Interorbital-interactions_thesis.pdf",
+      "sha256": "57f72aa6f0ecb4cc68c8730e5232948937272ac1649ab77bb3baabc99e0f3b9d",
+      "pages": 124,
+      "status": "verified-present"
+    },
+    {
+      "path": "references/papers/2025_Muniz_171Yb_Universal-gates_published.pdf",
+      "sha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e",
+      "pages": 18,
+      "status": "verified-present"
+    },
+    {
+      "path": "references/papers/2023_Norcia_171Yb_Midcircuit-measurement_PRX13-041034.pdf",
+      "sha256": "3faacd25c310d3cde79e258d9f5e4a39325d42cb7fe45f50f48057ae1a9b213d",
+      "pages": 12,
+      "status": "verified-present"
+    },
+    {
+      "path": "references/papers/2026_Offer_171Yb_Portable-beam-clock_published.pdf",
+      "sha256": "7a3598bcc2fb6a6ed7d8280212d572a4f6bc5fa5dc49715b284ffc719473b472",
+      "pages": 9,
+      "status": "verified-present"
+    },
+    {
+      "path": "references/papers/2026_Offer_171Yb_Portable-beam-clock_supplement-v2.pdf",
+      "sha256": "3146ceef9a5c2bfd260406fd33030ea6d1995d44b1f9408e37ad62605ed38bfe",
+      "pages": 4,
+      "status": "verified-present"
+    },
+    {
+      "path": "references/papers/2023_Strathearn_Wavefront-curvature_arXiv2212.00308v2.pdf",
+      "sha256": "21c79f5126320fd8ba76ffb6347dec853bba87b96a4787e3862513b995934fef",
+      "pages": 13,
+      "status": "verified-present"
+    }
+  ],
+  "checksBoundary": "JSON/schema consistency, source bytes and unchanged production files are engineering/evidence checks, not independent experimental agreement.",
+  "existingClockAuditTests": {
+    "passed": 13,
+    "failed": 0,
+    "command": "node --test tests/physics/clock-rabi-audit.test.js tests/physics/clock-motion.test.js",
+    "boundary": "Existing convention/regression tests; no new experimental validation is implied."
+  }
+}

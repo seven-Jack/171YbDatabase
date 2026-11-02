@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "status": "conditional-calculation-only",
+  "independentExperimentalValidationPassed": false,
+  "files": [
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/inputs.json",
+      "bytes": 3949,
+      "sha256": "4e34864cc974ee0851be25fce92f97164a6f9a7676dbb68b2f0a246f04163407"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/results.json",
+      "bytes": 4688,
+      "sha256": "170daded952d74a958f247b72ee0f1d8ae7ee8f776e9c7ba1bc4d7cd9b7678a5"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/comparison.csv",
+      "bytes": 469,
+      "sha256": "fd4f65e301095a86a33d4cc669a703aacbc68edcae109b45c6abe4d751c096c0"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/reproduce.mjs",
+      "bytes": 5205,
+      "sha256": "08c157af2fb28ac7081aab3f6734882b03eb5d9c78800b3e180107ea744e6f1a"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/README.md",
+      "bytes": 1137,
+      "sha256": "dd2e926c31ed08c7af5788d51b39c2d3f99589968ee3c0b76883512a578ea2e5"
+    },
+    {
+      "path": "references/audits/offer-clock-conditional-20261030.md",
+      "bytes": 6423,
+      "sha256": "174b2143b3a00d3bf4cbd34e7a02ce9bad9084d0ccd4002d42e07432ad9cc719"
+    }
+  ]
+}

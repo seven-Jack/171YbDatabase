@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-11-02",
+  "archiveBatchDate": "2026-10-31",
+  "baselineCommit": "8203da5ceb9bd0117c091578fb3c070b4281ea03",
+  "codeAndDataCommit": "41a41c1438ad607d72a651d5622b8f93cbb8709c",
+  "branch": "codex/literature-audit-archive",
+  "scope": "Supplemental literature archival and engineering reproducibility; no independent absolute Rabi validation is claimed.",
+  "versions": {
+    "software": "0.3.3",
+    "dataset": "2026.10.30.1",
+    "formula": "1.0.1"
+  },
+  "initialPendingSnapshot": {
+    "files": 47,
+    "allBackupBytesMatch": true,
+    "localOnlyManifest": "references/local-only/literature-archive-20261031T230345+0800/snapshot.json"
+  },
+  "sourceCounts": {
+    "sourceRecords": 48,
+    "canonicalSourceRecords": 35,
+    "supplementalOnlySources": 13,
+    "pdfFiles": 44,
+    "historicalDownloadRecords": 8,
+    "registeredSupplementalPdfFiles": 13,
+    "userReceivedDownloads": 9
+  },
+  "localByteChecks": {
+    "papersPdfVerified": 44,
+    "externalOriginalLibraryVerified": 47,
+    "offerAttachmentsVerified": 3,
+    "allOriginalBytesUnchanged": true
+  },
+  "protectedRuntime": {
+    "files": 76,
+    "allUnchanged": true,
+    "fingerprints": [
+      {
+        "path": "assets/05.21_yb171_65s_hyperfine.csv",
+        "sha256": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec"
+      },
+      {
+        "path": "assets/quantum-field.svg",
+        "sha256": "207255eca970bf189be512828253a2896120789a43637d3335a633c3118cfaed"
+      },
+      {
+        "path": "assets/spectral/CIE_xyz_1931_2deg.csv",
+        "sha256": "fa663e3535a7e0763a745993a1f0a192eb0275ac46ad2d1befd7626841e713c1"
+      },
+      {
+        "path": "assets/spectral/CIE_xyz_1931_2deg.csv_metadata.json",
+        "sha256": "03abcaecf4e63d77045ef57c4514b52c8bb1a46dd18e1f93a50044a0f4f481c8"
+      },
+      {
+        "path": "assets/spectral/NOTICE.md",
+        "sha256": "14364140ec0094f8c972b3da461c826b4b0ad3954863010637badb1cb21c6f04"
+      },
+      {
+        "path": "data/dataset.json",
+        "sha256": "eb30379ac24ebcf94a83a8b080783414ea78968027187ca2286c6845910def0d"
+      },
+      {
+        "path": "data/estimates.json",
+        "sha256": "ffb73032f906ff73fe23b7674c05008ccb1296b292d493fd46f2b42b484c21a9"
+      },
+      {
+        "path": "data/evidence.json",
+        "sha256": "5906f73330bf4d5b0ee89c304afb4f449c9585c4ed302bf73abfd8b7e8ade933"
+      },
+      {
+        "path": "data/hyperfine.json",
+        "sha256": "2870fb871e3b578c09313c993d92ce1b40c85393acee309976eef96fad55889e"
+      },
+      {
+        "path": "data/levels.json",
+        "sha256": "436e64e4b0f00ec67f7a90267ff85bc11c3600c0f360155c6f382975ec98ceaa"
+      },
+      {
+        "path": "data/sources.json",
+        "sha256": "4d9a8c53bbf668efb02ab9b9c3dcbc68b3bbdebfbcfe39bcdcc00ca910884e62"
+      },
+      {
+        "path": "data/transitions.json",
+        "sha256": "aa8fe6b42776e8e6045ad3cb17d487d1802f27329fa153f9139b153784fa59b0"
+      },
+      {
+        "path": "index.html",
+        "sha256": "157337cfe7bbf6d68fe7017ddbfc50730e196752b12b90dcf901a960211628de"
+      },
+      {
+        "path": "src/bootstrap.js",
+        "sha256": "7608828a01790ecc1a4e1c8c9c4d1ff37a6e8c1d336f0fc6b457b030e502d59b"
+      },
+      {
+        "path": "src/data/catalog.js",
+        "sha256": "4a118c127ece8accd2f716335986db036a2a7d36ba1e6a4fb3995b16376106de"
+      },
+      {
+        "path": "src/data/evidence.js",
+        "sha256": "5cbc7b9f401aca080d9b29bde96c07f7827752c235fb6536f4842762ac9e2798"
+      },
+      {
+        "path": "src/data/generated-catalog.js",
+        "sha256": "153d548d14bd2e5aa80a84c0e23134302918a8f83304c2cda59cc6f45591e225"
+      },
+      {
+        "path": "src/data/generated-evidence.js",
+        "sha256": "fb722b7daba74d9909e148cda84fb992fbe1151df3f126459cde52342cbe8193"
+      },
+      {
+        "path": "src/main.js",
+        "sha256": "3f3e62a424031af65f616e6cba62ac43fcbc82f0934f72a7fdaad6b23f161b87"
+      },
+      {
+        "path": "src/physics/angular.js",
+        "sha256": "2b95de7b9f15c254c2c8ff591be312bcd427e99cd673fedb48565d76b1f13dcb"
+      },
+      {
+        "path": "src/physics/beam-conventions.js",
+        "sha256": "0a473e21a9cc7af953561f06fc263fcde7fa746b20b9949125dce7e031037a60"
+      },
+      {
+        "path": "src/physics/constants.js",
+        "sha256": "ceb9602f0cc3cdf779f80cec2b706d18e88465a63a5236e7f95413fd9ce03102"
+      },
+      {
+        "path": "src/physics/estimates.js",
+        "sha256": "283dedfcae453c76414e0cc9bdf20071985d0e5769162f7fb67e61110fbafd49"
+      },
+      {
+        "path": "src/physics/rabi.js",
+        "sha256": "75f2caf5f32cfea44f1e86d1bbdd2d78a0a24bf7dca27ae76d67ddb59524b425"
+      },
+      {
+        "path": "src/physics/units.js",
+        "sha256": "d63afb389b215e46e99853f91f72673fcf379018919b5f9b06e6b0068b2c7dd5"
+      },
+      {
+        "path": "src/state/config.js",
+        "sha256": "056330476c9e22666cfc5abc3022b4decd0bd62deac37d122ff740447285864b"
+      },
+      {
+        "path": "src/state/store.js",
+        "sha256": "327a12351faab6527870462b5e809a0446be7cb5cbea5c09897d1683a46f61c3"
+      },
+      {
+        "path": "src/styles/apple.css",
+        "sha256": "f425abb8c0e8e2aa1c436187a088c64f87465461c265ba4426dbd47b7c9d5586"
+      },
+      {
+        "path": "src/styles/chart-axis-controls.css",
+        "sha256": "1b736e7372567a931c3130282056009fe5b407a5bf220411c17cfc2580677dd5"
+      },
+      {
+        "path": "src/styles/chart-readout.css",
+        "sha256": "fdad05717d3ef628e17fd012c09151490f83e11945afbfcabdb74b4de692d815"
+      },
+      {
+        "path": "src/styles/components.css",
+        "sha256": "39541ed2459b2a962606faaf5ac6965ea1cda1c4dae2ba6fa5f775c0e42569f8"
+      },
+      {
+        "path": "src/styles/diagram-details.css",
+        "sha256": "9f16ea4febf1f23cd1c853e7ec1eee7b50c9de75c0ffbda7863963f1487c23c6"
+      },
+      {
+        "path": "src/styles/evidence.css",
+        "sha256": "916f531a1a4c164bf19339c4c6454c59c8aa36f65b45454a5ca4dd1364254580"
+      },
+      {
+        "path": "src/styles/layout.css",
+        "sha256": "ba6e822411b4256ca35f60e9cf6ac3c3b8a64e20ad3683234cfa30759bf4ae19"
+      },
+      {
+        "path": "src/styles/original-diagram.css",
+        "sha256": "5e2252c836949cfd13c0bc5ecb268a795f2d094f0caf6e497b375ffd6a4dcb6c"
+      },
+      {
+        "path": "src/styles/quantum.css",
+        "sha256": "c9907e9ce75fd3fca4282a1f1d835a9fad8cdbf0c9781e7f20ea059474ab73a9"
+      },
+      {
+        "path": "src/styles/research-footer.css",
+        "sha256": "e9bd0000f73ebeb4b4ebf659b5f9cd177f33ee46eb4d8a3a7a8701d8cd4d77d9"
+      },
+      {
+        "path": "src/styles/research-reference.css",
+        "sha256": "065aa3846fb37f90c03d523770acf29c5220429e93bf69a907a4ab536da4861c"
+      },
+      {
+        "path": "src/styles/research-workspace.css",
+        "sha256": "e18757d1d967fc6a9bcf9d56d8a029e1d232721b98ca15b345a13ae7abbe4d68"
+      },
+      {
+        "path": "src/styles/selection-context.css",
+        "sha256": "7e4d1e27b5d5878ee2e2610a44a533c11701f8cb5d4486ef93f2dfd88b413dcc"
+      },
+      {
+        "path": "src/styles/tokens.css",
+        "sha256": "91c157b8f55e3cb88d486beb018b3fa856e750a3eb88c47fa5cb8f2d2f2a1e38"
+      },
+      {
+        "path": "src/styles/transition-explorer.css",
+        "sha256": "4be5e83a6f9ccc96c62552789c05f20edf9269bfbdcb136aec6a1a4c204ad3a9"
+      },
+      {
+        "path": "src/styles/transition-knowledge.css",
+        "sha256": "e163f05bcb24a7555c1a5155b5c9361757bf59883b9ef17b0988d4b3385cb76f"
+      },
+      {
+        "path": "src/styles/ui-consistency.css",
+        "sha256": "953cd574c68bb4b81f5799f102811b50053ae73803074928b59d2b5e7158f1e6"
+      },
+      {
+        "path": "src/styles/workbench.css",
+        "sha256": "14e1ac97b7aa00d18a33c2a792d02b110ff094a15490572e4d366b03b45adbbb"
+      },
+      {
+        "path": "src/styles/workspace-tooltips.css",
+        "sha256": "2f69d01b493535ca34120c4d4863a8ce5bf5d9860e73285202eb60581bf4ae01"
+      },
+      {
+        "path": "src/ui/channel-navigation.js",
+        "sha256": "237406c08086dff8aa7f823d274546739451eba933781bd63ab03b83feef8811"
+      },
+      {
+        "path": "src/ui/chart-probes.js",
+        "sha256": "7a93068b79f0a30fc2e874d42a868e975afee287508df0d6f9a1a1d33d3556a9"
+      },
+      {
+        "path": "src/ui/chart-ranges.js",
+        "sha256": "9dbcfce4ca6f171ecf661b7223728855888a3251705c54437296af81c8796aaa"
+      },
+      {
+        "path": "src/ui/chart-readout.js",
+        "sha256": "d192a523ac9c1635a463c9f6d9cc34554043139a332f57f7160bc7e857b380f2"
+      },
+      {
+        "path": "src/ui/compact-tooltip.js",
+        "sha256": "ba2531299a3d6fa895b6db7c3ac716f59c6f472033d4a9c36fdda8a3a37df969"
+      },
+      {
+        "path": "src/ui/data-table.js",
+        "sha256": "72ce7da49394e5cbc11b1c8b27efeb0920f5e97dffcb00479405d2713a5341db"
+      },
+      {
+        "path": "src/ui/diagram-details.js",
+        "sha256": "37c385f256794cd91401354472d47b37863738db5365f6b23637044b1f78014c"
+      },
+      {
+        "path": "src/ui/diagram-geometry.js",
+        "sha256": "4a2c855802766d936e2bdc994adbe6d4b9003c81b32c7e2f0ec6cb8763385177"
+      },
+      {
+        "path": "src/ui/diagram-placement.js",
+        "sha256": "93230fcec43177057b4c72929ab519d7dcd2ae1fa48bd114e3cdbac2ee5cce4c"
+      },
+      {
+        "path": "src/ui/diagram-presentation.js",
+        "sha256": "f315eab1ed3c8c74efca3951791454f720b21bcc1cfca81e6b817815efd4ab49"
+      },
+      {
+        "path": "src/ui/diagram-references.js",
+        "sha256": "651f205ee06758ca224c68f201f747e2d3ff9b5fbbed59e4472cead1c228a599"
+      },
+      {
+        "path": "src/ui/energy-diagram.js",
+        "sha256": "684dfbce178dc78dde9cf4991c14122a6d0cc2978cabc91e368e7e4ce9d49394"
+      },
+      {
+        "path": "src/ui/evidence-model.js",
+        "sha256": "64f1bb33966fd17044ad481509cfb5e1eb70160506f5379609590456573ec671"
+      },
+      {
+        "path": "src/ui/evidence-panel.js",
+        "sha256": "ffd0e1bf20fdcd2128cc3f4498ed59d130c8b776040c6404f6a274f0bc4332ad"
+      },
+      {
+        "path": "src/ui/explorer-model.js",
+        "sha256": "dcc666339c02870455814f72b65a3efb88b12dc9983c0af3619763b97af210a5"
+      },
+      {
+        "path": "src/ui/format.js",
+        "sha256": "19dc18ba07e021bc984e30f4437d7429d3a7b4b8380c24d5adb6f317f6ea559a"
+      },
+      {
+        "path": "src/ui/hyperfine-diagram.js",
+        "sha256": "8257467cabd58a366c67bb1b559616400fa5108c26346ed01e2d2d557cfc609c"
+      },
+      {
+        "path": "src/ui/number-input-wheel.js",
+        "sha256": "f4b1a9d5d826e6d13379c3afea0843cf984777be690dbb90f061e9c9926de119"
+      },
+      {
+        "path": "src/ui/page-controls.js",
+        "sha256": "efce9498c28484af88332071b0e4a576cf96ff2ae020f339a19d38e31a33d1ae"
+      },
+      {
+        "path": "src/ui/r2-provenance.js",
+        "sha256": "6a06d8c5b4b4c97ed1b6ac7ee69611b75c0dc2da5ec068d064e03627ec27b04e"
+      },
+      {
+        "path": "src/ui/rabi-chart.js",
+        "sha256": "ea8e62fefd0ccbe4ebd664d0488427e06c059785131cc82be298c7664b757c0a"
+      },
+      {
+        "path": "src/ui/selection-context.js",
+        "sha256": "4ce65ec9e84d27a5a126376b57de59f16fa3d717ed1cdc74bf884b0b27967dfa"
+      },
+      {
+        "path": "src/ui/source-panel.js",
+        "sha256": "ac5af2b9c1e03e3e4de09e3e3119b0b076f0fd9b0c0aa9fd39d073309c706bff"
+      },
+      {
+        "path": "src/ui/spectral-color.js",
+        "sha256": "46b696eb153d7f7dd02a87b171d85cbf36228b669b71d23c9f9154e849ea6e86"
+      },
+      {
+        "path": "src/ui/spectrum-data.js",
+        "sha256": "fd01b0b512e52107787cf72f10418973373f11e9f9eee3b128e6add1d98f350c"
+      },
+      {
+        "path": "src/ui/tooltips.js",
+        "sha256": "af84db7b42ffe9d02e5de8202b2bb1534afeb667ef349fdc1d3780b549a9a273"
+      },
+      {
+        "path": "src/ui/transition-explorer.js",
+        "sha256": "43b112dd487d44fb44cebe9fd06e41893f8f53593d38d050e559c90ec700e20a"
+      },
+      {
+        "path": "src/ui/transition-knowledge.js",
+        "sha256": "666170eceb441a042355c8e2e4be08d6e2a6623e10772c31087a505885a208ce"
+      },
+      {
+        "path": "src/ui/transition-navigation.js",
+        "sha256": "720b3c1451c7a135bdf5c74a2fc16f4d714aae0dc6621013883ef189d8f9690a"
+      },
+      {
+        "path": "src/ui/workflow-navigation.js",
+        "sha256": "c1d82b3f1dba0f3971da5ab394daa958fcc2be0f05ff0651ec72c8719765f21a"
+      }
+    ]
+  },
+  "frozenScientificHistory": {
+    "files": 21,
+    "allUnchanged": true,
+    "fingerprints": [
+      {
+        "path": "data/literature/clock-rabi-audit-2026-10-30/browser-clock-operating-point.png",
+        "bytes": 323440,
+        "sha256": "479af483269d327b6c390bb06c8908173305e72198c2aa3820901d45e29875c3"
+      },
+      {
+        "path": "data/literature/clock-rabi-audit-2026-10-30/cases.json",
+        "bytes": 10714,
+        "sha256": "be27442f662b1d6d6506a8b55ecf0c094db52ef085b8d0a276047bcaba2411f7"
+      },
+      {
+        "path": "data/literature/clock-rabi-audit-2026-10-30/motional-diagnostics.mjs",
+        "bytes": 11633,
+        "sha256": "ace3e76b952cfa0071e486ad03e663f3014dca50a2c674abc36ab0eca3274d34"
+      },
+      {
+        "path": "data/literature/clock-rabi-audit-2026-10-30/pizzocaro-source-check.json",
+        "bytes": 16040,
+        "sha256": "6d1aaa4edc5f22ac736eb7ded39458f88d3cad8a469655b30c148471e789e778"
+      },
+      {
+        "path": "data/literature/clock-rabi-audit-2026-10-30/protected-hashes.json",
+        "bytes": 1456,
+        "sha256": "6b577fae17f45fda2725a5e66dfbe6e24c9d8d10e20452d86064adbce677e0d6"
+      },
+      {
+        "path": "data/literature/clock-rabi-audit-2026-10-30/results.json",
+        "bytes": 19812,
+        "sha256": "5227ae3b631901937a3d4f63ae006c52fe2e22f3e364f97a4db0563c5384bfbc"
+      },
+      {
+        "path": "data/literature/clock-rabi-audit-2026-10-30/strength-comparison.csv",
+        "bytes": 497,
+        "sha256": "f614ca4a8f7dae844849c90de2708286e7d15e16572d176e46b5dc8d645efa77"
+      },
+      {
+        "path": "data/literature/clock-rabi-audit-2026-10-30/verification.json",
+        "bytes": 582,
+        "sha256": "8b2863beab82e49c68b23558bcdc41594520d47b453b32e599c3006eed238a73"
+      },
+      {
+        "path": "data/literature/clock-rabi-audit-2026-10-30/historical-manifest-20261030.json",
+        "bytes": 1257,
+        "sha256": "87c78001695e933399fe2e57768aab255143521797d3cde3bdd8acf7ac3ccbdb"
+      },
+      {
+        "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/candidate-index.csv",
+        "bytes": 3941,
+        "sha256": "a2dcdf88bdddd0f88508c6033c3f910c8e8b830155f858afe97e82d4305b0834"
+      },
+      {
+        "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json",
+        "bytes": 18222,
+        "sha256": "f8bfcfd6aa1961514c60656f660b3f6e10e6739ee79b0a67e26549da7faccaa7"
+      },
+      {
+        "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/verification.json",
+        "bytes": 5331,
+        "sha256": "cd8e118eb152a81d36a66f9a0e79f19d217a46e883fce51cd126e9713f4093f0"
+      },
+      {
+        "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/historical-manifest-20261030.json",
+        "bytes": 1089,
+        "sha256": "8690bf70d5958b016cebbad58fbde9aead7b7dea0f781f7ad2e4781180ea4187"
+      },
+      {
+        "path": "data/literature/offer-clock-conditional-2026-10-30/comparison.csv",
+        "bytes": 469,
+        "sha256": "fd4f65e301095a86a33d4cc669a703aacbc68edcae109b45c6abe4d751c096c0"
+      },
+      {
+        "path": "data/literature/offer-clock-conditional-2026-10-30/inputs.json",
+        "bytes": 3949,
+        "sha256": "4e34864cc974ee0851be25fce92f97164a6f9a7676dbb68b2f0a246f04163407"
+      },
+      {
+        "path": "data/literature/offer-clock-conditional-2026-10-30/results.json",
+        "bytes": 4688,
+        "sha256": "170daded952d74a958f247b72ee0f1d8ae7ee8f776e9c7ba1bc4d7cd9b7678a5"
+      },
+      {
+        "path": "data/literature/offer-clock-conditional-2026-10-30/historical-manifest-20261030.json",
+        "bytes": 1343,
+        "sha256": "8917e6305f6c940391819fdef33e5325af920128be3bc1b0784494b37e65e15e"
+      },
+      {
+        "path": "data/literature/offer-saturation-cg-2026-10-30/comparison.csv",
+        "bytes": 1048,
+        "sha256": "333d0201423d8097c824e9a5bcc2f03febcafdf9bc36afaaf4507187bd0a4e77"
+      },
+      {
+        "path": "data/literature/offer-saturation-cg-2026-10-30/results.json",
+        "bytes": 9081,
+        "sha256": "71ef5661dca72b7b22d535c9657da2eda53a246a17ff720a3a1f162298936209"
+      },
+      {
+        "path": "data/literature/offer-saturation-cg-2026-10-30/source-check.json",
+        "bytes": 5892,
+        "sha256": "1ae0b6b7eab9561450914abda5366a62305f0a04da45ec0fde483f8ee1759583"
+      },
+      {
+        "path": "data/literature/offer-saturation-cg-2026-10-30/historical-manifest-20261030.json",
+        "bytes": 1412,
+        "sha256": "11b8c79f0fc324fec6aaf3b935f519eac0193e0735509d7711bcd2cc80c58061"
+      }
+    ]
+  },
+  "validation": {
+    "command": "npm run check",
+    "localEnvironment": {
+      "node": "24.22.1",
+      "python": "3.12.3",
+      "tests": 327,
+      "passed": 327,
+      "failed": 0,
+      "dataValidation": true,
+      "evidenceValidation": true,
+      "referenceExportsCurrent": true,
+      "queueItemsChecked": 78,
+      "auditPackagesChecked": 4,
+      "buildAndArtifactChecks": true,
+      "websiteArtifactFilesIncludingManifest": 79,
+      "localReferencesChecked": 114
+    },
+    "sourceOnlySnapshot": {
+      "publicSourceFilesCopied": 465,
+      "projectPdfsCopied": false,
+      "attachmentsCopied": false,
+      "tests": 327,
+      "passed": 327,
+      "failed": 0,
+      "projectPdfsUnavailable": 44,
+      "attachmentsUnavailable": 3,
+      "auditSourceReferencesUnavailable": 25,
+      "externalOriginalLibraryStillAccessibleOnHost": true,
+      "boundary": "No project-local original bytes were included. External paper-library originals remain accessible on this host; separate fixture tests simulate their absence as well."
+    },
+    "browserRegression": {
+      "run": false,
+      "reason": "No production runtime module, HTML, stylesheet, atomic parameter or formula changed; protected byte fingerprints are unchanged."
+    },
+    "logFingerprints": {
+      "localCheck": "dbb69c84c4b0869fe0e7a1e3043028f40f6f38fbc9b2b4c1e166d31a23e739b7",
+      "sourceOnlyCheck": "dfbcceb2fdc2c3cf20adf6100357540b44eb9a81e6f50de4e544987581520e00"
+    }
+  },
+  "review": {
+    "type": "self review and independent automated review",
+    "resolvedFindings": [
+      "Validate frozen/source/result/CSV/backlog evidence before writing manifests",
+      "Reject impossible audit dates and timezone minutes",
+      "Make contradictory-byte test independent of original availability",
+      "Exclude Finder metadata from website packaging"
+    ],
+    "humanExternalScientificReviewClaimed": false
+  },
+  "unresolvedEvidence": {
+    "backlog": "references/audits/literature-backlog-20261031.json",
+    "openItems": 9,
+    "independentExperimentalValidationPassed": false,
+    "canonicalAtomicDataChanged": false,
+    "productionPhysicsChanged": false,
+    "mainDiagramChanged": false,
+    "historicalDocumentVersionNotesNotReverified": true
+  },
+  "publication": {
+    "pushed": false,
+    "merged": false,
+    "pagesPublished": false,
+    "boundary": "This archival task creates local commits only; the existing public site remains the previously published version."
+  }
+}

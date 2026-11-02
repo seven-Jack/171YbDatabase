@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "originalAuditDate": "2026-10-30",
+  "archivedOn": "2026-10-31",
+  "baseCommit": "8203da5ceb9bd0117c091578fb3c070b4281ea03",
+  "softwareVersion": "0.3.3",
+  "classification": "supplemental evidence archive; engineering packaging only",
+  "historicalManifest": {
+    "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/historical-manifest-20261030.json",
+    "sha256": "8690bf70d5958b016cebbad58fbde9aead7b7dea0f781f7ad2e4781180ea4187",
+    "scope": "Original partial manifest retained byte-for-byte; not a complete-package integrity claim."
+  },
+  "frozenHistoricalFiles": [
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/candidate-index.csv",
+      "bytes": 3941,
+      "sha256": "a2dcdf88bdddd0f88508c6033c3f910c8e8b830155f858afe97e82d4305b0834"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json",
+      "bytes": 18222,
+      "sha256": "f8bfcfd6aa1961514c60656f660b3f6e10e6739ee79b0a67e26549da7faccaa7"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/verification.json",
+      "bytes": 5331,
+      "sha256": "cd8e118eb152a81d36a66f9a0e79f19d217a46e883fce51cd126e9713f4093f0"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/historical-manifest-20261030.json",
+      "bytes": 1089,
+      "sha256": "8690bf70d5958b016cebbad58fbde9aead7b7dea0f781f7ad2e4781180ea4187"
+    }
+  ],
+  "verificationBoundary": "Original verification files and screenshot are dated 2026-10-30 historical records, not current software acceptance or independent Rabi validation. Current source bytes are reported separately by --check.",
+  "currentOutputPolicy": "Explicit reproduce.mjs --write creates current-results.json/current-*.csv and refreshes manifest; historical snapshots are not overwritten.",
+  "canonicalAtomicDataChanged": false,
+  "productionPhysicsChanged": false,
+  "mainDiagramChanged": false
+}

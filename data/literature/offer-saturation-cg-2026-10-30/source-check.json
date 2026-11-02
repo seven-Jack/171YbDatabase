@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "purpose": "Trace Offer338mW-to22kHz saturation/dipole/polarization conventions without modifying production physics or diagram.",
+  "status": "conventions-derived; exact-author-numerical-normalization-unresolved",
+  "assumedRadius_um": 500,
+  "fitPower_mW": 338,
+  "stageAvailablePower_mW": 1070,
+  "targetRabi_Hz": 22000,
+  "sourceFacts": [
+    {
+      "source": "offer-main",
+      "location": "Printed p.678 Eq.(2); Fig.1(a); references33/34",
+      "fact": "PhiO=Gamma/vz*sqrt(P0/Isat)*exp[-(Delta-kvx)^2*tau^2/4]; Gamma is outside the square root. Fig.1 gives Gamma/(2pi)=10mHz. Reference33 is Strathearn2023;34 is Foot2004.",
+      "explicitNumericIsat": null,
+      "explicitAtomicDipole": null,
+      "explicitCG": null
+    },
+    {
+      "source": "offer-sm",
+      "location": "PDF p.2 Sec1.2 lines28-38; p.3 Sec1.3 lines56-63",
+      "fact": "1070mW available for RB stage; linear polarization addresses both mF initial states. P0=338mW is selected to fit Doppler contrast at95m/s, corresponding to peak2pi*22kHz.",
+      "fieldAxisAndQDecomposition": null
+    },
+    {
+      "source": "strathearn-model",
+      "location": "PDF pp.3-4 SecII.B and Eqs.(6),(8)",
+      "fact": "Hamiltonian off-diagonal is OmegaS, so physical OmegaR=2OmegaS; actual Bloch pulse area is2PhiS. Amplitude is normalized by target area A. No numerical Yb Isat/dipole/CG or physical laser power is supplied. Examples use40Ca657nm."
+    },
+    {
+      "source": "ludlow-rmp",
+      "location": "Printed p.665 / PDF p.29 Fig.9(a)",
+      "fact": "Yb clock transition is tabulated as578.4nm and10mHz; the inspected Yb material does not supply a7.6mHz or21s author input.20.6s elsewhere is27Al+, not Yb."
+    },
+    {
+      "source": "foot-book",
+      "location": "OfferRef34; official OUP book and Chapter7 metadata",
+      "fact": "C.J.Foot Atomic Physics, published25Nov2004; DOI10.1093/oso/9780198506959.001.0001. Official Chapter7 text was not retrieved in this environment. Saturation formulas in this audit are derived independently, not attributed to a verified original-book equation.",
+      "officialUrl": "https://academic.oup.com/book/52827",
+      "chapterUrl": "https://academic.oup.com/book/52827/chapter/421886725",
+      "originalFullTextStatus": "unavailable-official-chapter"
+    }
+  ],
+  "rateCases": [
+    {
+      "id": "current-canonical-dF",
+      "kind": "rate implied by unchanged adopted F-reduced dipole",
+      "dF_ea0": 9.19e-05
+    },
+    {
+      "id": "xu-free-atom-rate",
+      "kind": "independent atom-rate input",
+      "decayRate_s_inv": 0.0442
+    },
+    {
+      "id": "lifetime21s-hypothesis",
+      "kind": "numerical reconstruction only; not documented as Offer input",
+      "lifetime_s": 21
+    },
+    {
+      "id": "figure10mHz-as-exact",
+      "kind": "diagnostic treating rounded figure linewidth as exact",
+      "naturalLinewidth_Hz": 0.01
+    }
+  ],
+  "sources": [
+    {
+      "id": "offer-main",
+      "localPath": "references/papers/2026_Offer_171Yb_Portable-beam-clock_published.pdf",
+      "doi": "10.1364/OPTICA.584095",
+      "bytes": 4231019,
+      "sha256": "7a3598bcc2fb6a6ed7d8280212d572a4f6bc5fa5dc49715b284ffc719473b472"
+    },
+    {
+      "id": "offer-sm",
+      "localPath": "references/papers/2026_Offer_171Yb_Portable-beam-clock_supplement-v2.pdf",
+      "doi": "10.6084/m9.figshare.31537450.v2",
+      "bytes": 613877,
+      "sha256": "3146ceef9a5c2bfd260406fd33030ea6d1995d44b1f9408e37ad62605ed38bfe"
+    },
+    {
+      "id": "strathearn-model",
+      "localPath": "references/papers/2023_Strathearn_Wavefront-curvature_arXiv2212.00308v2.pdf",
+      "doi": "10.1103/PhysRevA.108.013105",
+      "bytes": 811487,
+      "sha256": "21c79f5126320fd8ba76ffb6347dec853bba87b96a4787e3862513b995934fef"
+    },
+    {
+      "id": "ludlow-rmp",
+      "localPath": "references/papers/2015_Ludlow_Optical-atomic-clocks_RMP87-637.pdf",
+      "doi": "10.1103/RevModPhys.87.637",
+      "bytes": 5714243,
+      "sha256": "adc7ac2dc7f74991a7317001fc698f574654e2b7a6d44f0f6749775e0b0ce9f0"
+    },
+    {
+      "id": "offer-arxiv-source-tar",
+      "localPath": "references/local-only/offer2026-source-arXiv2603.25261v1/source.tar",
+      "doi": "10.48550/arXiv.2603.25261",
+      "bytes": 14845787,
+      "sha256": "f72ee23d6a410fb590c1fc87d3b7f61e492ad692d5fa53379edca77539ee4d27"
+    },
+    {
+      "id": "offer-arxiv-source-tex",
+      "localPath": "references/local-only/offer2026-source-arXiv2603.25261v1/main2.tex",
+      "doi": "10.48550/arXiv.2603.25261",
+      "bytes": 45312,
+      "sha256": "95f6787dc76de0ac025e93a539217aba45dd9e7ec50c8e27b1a568cf94cba01f"
+    },
+    {
+      "id": "offer-arxiv-ancillary-sm",
+      "localPath": "references/local-only/offer2026-source-arXiv2603.25261v1/ancillary-supplement.pdf",
+      "doi": "10.48550/arXiv.2603.25261",
+      "bytes": 353336,
+      "sha256": "25951b94faa18c6a93bdc93e760b68d745043aa479cd310b937ca17b5ccb0664"
+    }
+  ],
+  "unresolved": [
+    "Numerical Isat actually used by Offer and whether it includes angular/polarization weights",
+    "Exact radiative rate / dipole used to convert fitted338mW to22kHz",
+    "Meaning of1mm at each interaction point and q components/quantization axis",
+    "Original fitting code or parameter list; underlying data are not publicly supplied"
+  ],
+  "conclusionsAllowed": [
+    "CG/polarization normalization gives exact factor3 in equivalent power for scalar vs pi-equivalent coupling at fixed total decay rate.",
+    "A scalar21s hypothesis can round to22kHz.",
+    "A fitted effective power can absorb angular weights; this does not by itself establish a paper error."
+  ],
+  "conclusionsNotEstablished": [
+    "Offer actually used21s or omittedCG",
+    "The22kHz model fit independently validates calculator absolute coupling",
+    "Any change to the production dipole or formula is warranted"
+  ]
+}
