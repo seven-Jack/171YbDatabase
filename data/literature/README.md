@@ -1,6 +1,16 @@
 # 文献提取数据与字段审计
 
-本目录保存原文提取与来源证据；网站运行时采用的canonical文件仍为`data/levels.json`、`transitions.json`、`hyperfine.json`、`sources.json`和`estimates.json`。完整文件索引、记录数量与哈希见[index.json](index.json)，本轮结论见[最新核对报告](../../references/audits/source-followup-20261030.md)。本地数据已订正，尚未发布。
+本目录保存原文提取与来源证据；网站运行时采用的canonical文件仍为`data/levels.json`、`transitions.json`、`hyperfine.json`、`sources.json`和`estimates.json`。历史逐表文件索引、记录数量与哈希见[index.json](index.json)，2026-10-30订正结论见[原文核对报告](../../references/audits/source-followup-20261030.md)。生产数据2026.10.30.1已发布；2026-10-31整理的是独立的补充审计归档，不改变生产数据和公式。
+
+新增：[578nm钟跃迁专门复核](clock-rabi-audit-2026-10-30/README.md)。逐字段核对束腰/功率/π时间，加入Xu2014独立HFI率推导和条件运动诊断；保留13.9086Hz与名义8.3333Hz的差异，不把反推参数当测量。此独立核查包不改变下方历史71表/1645记录的原统计口径。
+
+后续：[第二篇578nm独立实验基准检索](clock-rabi-crosscheck-search-2026-10-30/README.md)。保留候选原文、参数和严格缺口；本轮尚无完整同操作点P–w–Ω组合，不记作新增实验验证通过。
+
+条件核查：[Offer2026的1070/338mW对照](offer-clock-conditional-2026-10-30/README.md)。按用户指定1mm为1/e²强度直径，分别给出21.751/12.225kHz；实测可用功率与拟合有效功率分开，不标记实验验证通过。
+
+约定追溯：[Offer2026饱和强度与CG审计](offer-saturation-cg-2026-10-30/README.md)。核读引用模型、Ludlow综述及公开TeX；确认标量/π通道的功率因子3和半角记号转换。21s标量假设可重建约22kHz，作者实际数值归一化仍未披露。
+
+四组审计分别用自己的manifest及archive-metadata记录覆盖范围、归档基线与历史验收。历史结果、CSV、verification和网页截图保持原字节；它们不计入旧index.json的71表/1645记录口径。`npm run literature:check`只读检查，显式写出命令与当前结果输出另见各包README。[统一待办](../../references/audits/literature-backlog-20261031.md)记录未闭合证据和关闭条件。
 
 公开仓库保存结构化事实数据、索引、来源指纹、脚本和报告；原PDF、全文`.txt`、论文页图、整页文本JSON及Notebook原件仅保留本地，不随Git上传。文中指向这些本地原件的链接在新检出中可能不存在，下载入口和SHA-256仍可用。网页自身的核查截图可随报告保留。缺失PDF的字节检查明确返回`unavailable`，不会跳过数值核查或把缺失原件写成验证成功。
 
@@ -12,7 +22,6 @@
 | [low-state-originals](low-state-originals/manifest.json) | 四篇原始全文共14张表 | 181 | Porsev1999的E1/寿命/极化率、Porsev2003/2004的F分辨HFS诱导率、Beloy2012寿命/误差预算/d、Bowers1996全部21态寿命及比较 |
 | [rydberg-audit](rydberg-audit/README.md) | 7张主表/表组 | 443 | Halter42行、Fang15行、Peper S25–S27的171+69+42行、Lehec6行、Okuno98行；另存正文条件值和版本摘录 |
 | [audit-2026-10-29](audit-2026-10-29/coverage.json) | 全部canonical物理量与HFS/model处置 | 144条审计 | baseline、字段旧/新值、理由、证据和可复现订正脚本；与表格记录数分开计数 |
-
 | [source-followup-2026-10-30](source-followup-2026-10-30/README.md) | 新增9篇原件全部36张编号表 | 688 | 649/770/1389nm分量与误差/HFS、Mishra理论率、Baumann/Rambow寿命、Aymar174谱线、Fisk离子芯频率；另有48条工作数据/来源处置 |
 
 累计**71张表、1645条记录（333+181+443+688）**。计数单位因原表结构而异，含参数项、数据行、理论/实验比较、重复引用及显式缺项，不能解释成1645个独立测量。正文条件摘录另存，不为扩大记录数与主表混算。

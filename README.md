@@ -9,18 +9,23 @@
 
 已收到1–8及10号PDF，编号原件未改动，第9篇仍缺。新增36张完整表、688条记录，累计71表1645条；最新[审计报告](references/audits/source-followup-20261030.md)、[提取入口](data/literature/source-followup-2026-10-30/README.md)及[剩余缺文献](references/missing-downloads.md)。
 
-当前数据版本**2026.10.30.1**：3P2质心工作值改为原文五分量Ritz派生，协方差未知而不填造精确1σ；8.9s明确为统计平均率倒数；离子芯频率采用Fisk原始测量。主图布局和保存65SCSV未改，未重算MQDT，未发布。
+生产数据版本**2026.10.30.1**已发布：3P2质心工作值来自原文五分量Ritz派生，协方差未知而不填造精确1σ；8.9s明确为统计平均率倒数；离子芯频率采用Fisk原始测量。主图布局和保存65SCSV保持原样，未重算MQDT。
 
 [低能级Rabi–power核查](references/audits/low-state-rabi-validation-20261030.md)覆盖399、556、649、770和1389nm的指定mF/偏振通道、功率/束腰正反算及原文数据链。五条均与所列理论基准相容；这不代表独立实验标定，578nm的既有差异和507nm的M2边界继续保留。
 
+[578nm后续复核](references/audits/clock-rabi-578-audit-20261030.md)确认200µm是1/e²半径、π通道角因子正确；当前dF与Xu2014原始HFI率的独立推导相容。13.91Hz与文献60ms名义π时间对应8.33Hz的差异仍缺绝对光束标定和运动/噪声数据，未更改生产矩阵元或添加经验修正。
 
-## 文献与数据来源核查（2026-10-29 至 30，本地未发布）
+## 文献与数据来源归档（2026-10-31整理）
 
-- [文献入口](references/README.md)：22份PDF版本文件、完整书目索引与[待补全文清单](references/missing-downloads.md)。原paper库未修改。
-- [提取数据](data/literature/README.md)：35张表、957条带单位、误差、态/同位素条件和页码的记录；包含汇编、理论及比较数据，不等于957个独立测量。
-- [订正报告](references/audits/data-source-audit-2026-10-29.md)：131个能级/跃迁物理量全部有审计处置，另审查HFS、保存65S和历史模型。T2默认d采用0.5398(6)ea₀；源内冲突和不明内部值明确保留待核。
+- [文献入口](references/README.md)：48个来源条目、44份本地PDF版本的书目与指纹，另登记3项Offer本地附件；文件数不等于独立文章数。PDF和全文只留本地。
+- [提取数据](data/literature/README.md)：历史逐表累计71表、1645条记录；四组钟跃迁审计的参数、检索和诊断单独归档，不混入该统计，也不等于1645个独立测量。
+- [首轮订正报告](references/audits/data-source-audit-2026-10-29.md)及[后续原文核对](references/audits/source-followup-20261030.md)：保留当时的输入、结论和验收快照。生产数据已发布，与本轮补充文献归档分开追溯。
+- [未闭合证据与关闭条件](references/audits/literature-backlog-20261031.md)：区分需原文、需作者参数、需内部工件、先查本地库与独立实验基准。Offer条件比较和Xu原子率支持均不提升为独立Rabi实验验证。
+- [本次归档验收](references/audits/literature-archive-verification-20261102.md)：2026-11-02本地及无项目原件源码快照均通过327项测试；主图、原子数据、物理公式与原始文献保护结果单独记录。
 
-首轮数据版本为2026.10.29.1。states表和生产数组已停止输出无合法锚点的寿命、C₆和阻塞半径；R2历史字段仍带未验证标签。旧值和原文保留于审计快照；保存65S CSV字节不变，未运行MQDT。文献全文与内部工件仅在本地归档，不进入网页构建包。
+首轮数据版本为2026.10.29.1。states表和生产数组已停止输出无合法锚点的寿命、C₆和阻塞半径；R2历史字段仍带未验证标签。旧值与原始记录保留于审计快照；保存65S CSV字节不变。此轮归档不改变任何canonical原子值、生产物理公式或主跃迁图，工作分支尚未合并发布。
+
+`npm run literature:check`只读核对索引、JSON/CSV/BibTeX与队列一致性、审计清单、结果快照、证据边界和保护哈希。`npm run references:write`显式重建书目导出，采用登记的固定审计日期；缺原件时明确`unavailable`，不把元数据检查写成字节验证成功。完整命令和依赖见[文献维护流程](references/README.md)。
 
 ## 本地预览与检查
 
@@ -28,13 +33,13 @@ M1输入定义已接入计算区的“输入定义”折叠面板：默认沿用
 
 M2证据状态首批接入578 nm（T3）：结果卡的“查看核查详情”进入数值与来源区，分别显示原文定位、公式与通道核查、条件比较、独立实验验证。Xu原子率支持、Offer固定文献对照与待补证据默认可展开；1070 mW阶段可用功率、338 mW拟合有效功率和22 kHz模型拟合耦合分别标注，不将条件接近当成验证通过。原采用值的`internal-t3-20260908`出处保持不变，历史生成记录仍待补。当前F/mF/偏振、输入定义和有效性更新证据上下文；文献对照保持其固定假设，不随当前P/w变化。其他跃迁显示本轮尚无接入记录或模型不适用，不借用T3结论。
 
-公开证据摘要独立存于`data/evidence.json`，生成`src/data/generated-evidence.js`，拥有独立证据版本，不改变原子数据及公式版本。修改摘要后运行`npm run evidence:export`；`npm run evidence:validate`、`npm run check`及构建会校验字段、链接和生成文件一致性。原文与完整审计仍保留在本地`references/`和`data/literature/`，不进入网页产物。
+公开证据摘要独立存于`data/evidence.json`，生成`src/data/generated-evidence.js`，拥有独立证据版本，不改变原子数据及公式版本。修改摘要后运行`npm run evidence:export`；`npm run evidence:validate`、`npm run check`及构建会校验字段、链接和生成文件一致性。完整审计、结构化提取和指纹可在源码仓库查阅；PDF和全文只留本地。`references/`与`data/literature/`都不进入网页产物。
 
 M3图表读数已接入：曲线图在18 CSS像素内吸附最近的可见曲线，显示真实模型值与对应束腰；热图读取指向位置的模型值。点击或触屏可固定读数，离开后保留，点击另一点替换，清除按钮或Esc取消。曲线纵轴、热图色标和两图读数共用所选频率单位。固定读数保留原子处分量功率、1/e²强度半径及频率数值，单位/视图变化只重排显示；有效P/w变化可保留同模型对照，更换通道、矩阵元、输入定义或输入无效会清除旧读数，隐藏或修改被固定曲线也会清除该点。来源小标仍只归于矩阵元输入，不将图表读数冒充文献测量。
 
 “聚焦当前工作点”将曲线与热图的显示范围移到规范化后的当前Pq、w₀和Ω/2π附近；“恢复原视图”返回原范围和进入聚焦前的线性／对数模式，修改图轴最大值仍可用，清空上限恢复自动范围。更改工作点或输入上下文后退出聚焦视图。聚焦不回写参数、不改变曲线可见性、三向求解或M2证据结论；零功率/零耦合及无效输入不能聚焦。主跃迁图、原子参数及物理核未改动。
 
-需要 Node.js 22 或更新的受支持版本。开发依赖只用于检查，网站运行无需前端框架或服务器计算。
+需要 Node.js 22 或更新的受支持版本，文献检查另需Python 3.9+；若要检查本地PDF解析与页数，需Poppler的`pdfinfo`。开发依赖只用于检查，网站运行无需前端框架或服务器计算。
 
 ```sh
 npm ci
@@ -44,7 +49,7 @@ npm run preview
 
 打开 <http://localhost:8766/index.html> 预览实际 `dist/` 构建产物。预览服务仅监听本机，使用 HTTP/1.1 并禁用缓存；文献原件不在可访问范围内。修改源码后重新运行 `npm run check` 更新构建。端口被占用时先停止对应预览，或用 `PORT=8767 npm run preview` 指定其他端口。ES Modules / JSON 需通过 HTTP，不能双击 `file://`。浏览器回归检查见 `docs/testing.md`：先 `npx playwright install chromium`，再 `npm run test:e2e`，测试会在 Pages 仓库子路径访问实际 `dist/`。
 
-`npm run check` 执行数据校验、预检、Node 测试、干净构建及产物检查。构建仅清理本仓库 `dist/`，复制 `index.html`、`src/`、运行时 `data/` 和 `assets/`；排除本地 `data/literature/` 及 `references/`，生成版本与文件 hash 清单。GitHub Pages 仅发布 `dist/`。`wrangler.jsonc` 是旧 Cloudflare 配置，不参与当前发布。
+`npm run check` 执行只读文献检查、数据校验、预检、Node 测试、干净构建及产物检查。构建仅清理本仓库 `dist/`，复制 `index.html`、`src/`、运行时 `data/` 和 `assets/`；排除 `data/literature/` 及 `references/`，生成版本与文件 hash 清单。GitHub Pages 仅发布 `dist/`。`wrangler.jsonc` 是旧 Cloudflare 配置，不参与当前发布。
 
 Git公开跟踪结构化文献数据、来源索引、哈希、核查脚本和报告。原始PDF、全文文本、论文页截图及Notebook原件由`.gitignore`保留在本地。新检出缺少PDF时只将原件字节校验标为`unavailable`，其余数值和保护哈希检查照常运行；把PDF放到索引指定路径后会自动核对，原件被改动仍会失败。详见[文献归档约定](references/README.md)。
 
@@ -64,7 +69,7 @@ npm run sync -- push
 
 PR 和工作分支运行 `.github/workflows/check.yml`，覆盖实际构建产物及浏览器路径。main 的 Pages 工作流复用同一检查结果，再部署已经检查的文件；只有部署 job 获得 Pages 写权限。需要有效 GitHub 身份时可用 `gh auth login`；失效的 `GH_TOKEN` 覆盖应先处理。
 
-只有推送 main 且工作流成功才会更新公开站。本地保存、创建工作分支和生成 `dist/` 不会发布。当前本地工作版本为 0.3.3，是否已经发布以 Actions、线上 commit 和数据版本核对为准。
+只有推送 main 且工作流成功才会更新公开站。本地保存、创建工作分支和生成 `dist/` 不会发布。最近一次确认的公开发布是2026-10-31的0.3.3、提交`8203da5`，数据版本2026.10.30.1、公式版本1.0.1；[部署记录](https://github.com/seven-Jack/171YbDatabase/actions/runs/41205923678)。后续发布以对应Actions及线上commit为准，本轮文献归档不自动发布。
 
 ## 65S 文献核查（2026-10-08）
 
