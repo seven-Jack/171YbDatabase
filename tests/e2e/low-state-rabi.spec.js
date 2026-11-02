@@ -70,7 +70,7 @@ for(const item of cases)test(`${item.id}: low-state paper channel and forward/in
   await page.locator('#rpCalcW').fill('500');
   await expect(page.locator('#rpCalcR')).toHaveValue(item.forward);
   await expect(page.locator('#inputError')).toBeHidden();
-  await expect(page.locator('#rabiResult .result-validation')).toContainText('未独立验证');
+  await expect(page.locator('#rabiResult .result-validation')).toContainText('未独立实验验证');
   expect(errors).toEqual([]);
   await page.locator('#sectionNav a[href="#secRabi"]').click();
   await page.screenshot({path:testInfo.outputPath(`${item.id.toLowerCase()}-low-state-rabi.png`)});

@@ -1,4 +1,4 @@
-import {DATASET_MANIFEST, getQuantity, getTransitionRecord} from '../data/catalog.js';
+import {DATASET_MANIFEST, getQuantity, getTransitionRecord, getLevelRecord} from '../data/catalog.js';
 import {EVIDENCE_VERSION, getEvidenceRecord, getEvidenceSource, getEvidenceComparison} from '../data/evidence.js';
 import {FORMULA_VERSION} from '../physics/constants.js';
 import {channelKey, computeCGChannels, computeDEff, polarizationQ} from '../physics/angular.js';
@@ -50,24 +50,31 @@ export function buildEvidenceView(state = {}, versionsOverrides = {}) {
   const primarySourceId = quantity?.sourceId || null;
   const datasetMatch = !!review && versions.datasetHash === review.appliesTo.datasetHash;
   const formulaMatch = !!review && versions.formulaVersion === review.appliesTo.formulaVersion;
+  const sourceMatch = !!review && primarySourceId === review.primarySourceId;
+  const levelMatch = !!canonical && state.J_lower === getLevelRecord(canonical.lowerLevelId)?.attributes.J
+    && state.J_upper === getLevelRecord(canonical.upperLevelId)?.attributes.J;
   const conventionMatch = !!review && quantity?.convention === review.appliesTo.convention
-    && (state.convention === undefined || state.convention === review.appliesTo.convention || state.convention === 'F-reduced')
+    && (state.convention === undefined || state.convention === review.appliesTo.convention || (review.appliesTo.convention === 'F-reduced-effective' && state.convention === 'F-reduced'))
     && close(quantity?.value, review.appliesTo.dipole_ea0) && close(state.dReduced, review.appliesTo.dipole_ea0);
   const channelMatch = !!review && !!channel && !channelError
     && state.F_lower === review.appliesTo.F && state.F_upper === review.appliesTo.Fp
     && channel.F === review.appliesTo.F && channel.Fp === review.appliesTo.Fp && review.appliesTo.q.includes(q)
+    && (!review.appliesTo.channels || review.appliesTo.channels.some(item => channelKey(item) === channelKey(channel)))
     && (state.dEff === undefined || close(state.dEff, Math.abs(channel.matEl)));
   const reasons = [];
   if (review && !datasetMatch) reasons.push('数据版本已变化');
   if (review && !formulaMatch) reasons.push('公式版本已变化');
+  if (review && !levelMatch) reasons.push('电子角动量与采用能级不匹配');
+  if (review && !sourceMatch) reasons.push('原采用数值出处与核查记录不匹配');
   if (review && !conventionMatch) reasons.push('矩阵元数值或约定与核查记录不匹配');
   if (review && !channelMatch) reasons.push('当前 F、mF 或偏振通道与核查范围不匹配');
   if (!inputValid && transition && applicable) reasons.push('当前计算输入待补正');
   if (!applicable && transition) reasons.push('当前单光子 E1 核查不适用');
-  const applicability = {datasetMatch, formulaMatch, conventionMatch, channelMatch, inputValid, applicable, reasons};
-  const contextKey = JSON.stringify({transitionId, F:state.F_lower ?? null, Fp:state.F_upper ?? null,
+  const applicability = {datasetMatch, formulaMatch, sourceMatch, levelMatch, conventionMatch, channelMatch, inputValid, applicable, reasons};
+  const contextKey = JSON.stringify({transitionId, J:state.J_lower ?? null, Jp:state.J_upper ?? null,
+    F:state.F_lower ?? null, Fp:state.F_upper ?? null,
     channel:channel ? channelKey(channel) : null, requestedChannel:state.selectedChannel ? channelKey(state.selectedChannel) : null,
-    q, d:state.dReduced ?? null,
+    q, primarySourceId, d:state.dReduced ?? null,
     dEff:Number.isFinite(state.dEff) ? state.dEff : state.dEff === undefined ? 'unprovided' : String(state.dEff),
     convention:state.convention ?? quantity?.convention ?? null,
     multipole:transition?.multipole ?? null, applicable,
@@ -85,18 +92,22 @@ export function buildEvidenceView(state = {}, versionsOverrides = {}) {
       rows:Object.keys(labels).map(key => row(key, status, statusText, status === 'not-applicable' ? '当前缺少适用的单光子 E1 矩阵元或通道；不套用 578 nm 核查。' : '本轮面板尚未接入该跃迁的分层核查状态；保留原有数值出处与审计，不套用 578 nm 结论。')),
       atomicSupport:null, comparisons:[], sources:[], missing:[], applicability};
   }
-  const formulaChecked = datasetMatch && formulaMatch && conventionMatch && channelMatch;
-  const comparisonCurrent = datasetMatch && formulaMatch && conventionMatch && channelMatch;
+  const formulaChecked = datasetMatch && formulaMatch && sourceMatch && levelMatch && conventionMatch && channelMatch;
+  const comparisonCurrent = formulaChecked;
+  const comparisons = review.comparisonIds.map(getEvidenceComparison).filter(Boolean);
+  const theoryBenchmark = comparisons.some(item => item.kind === 'theory-benchmark');
+  const comparisonStatus = theoryBenchmark ? 'theory-compatible' : 'conditional';
   const rows = [
-    row('source', 'checked', review.sourceStatusText, review.sourceDetail),
+    row('source', sourceMatch ? 'checked' : 'needs-review', sourceMatch ? review.sourceStatusText : '采用值出处需重核', review.sourceDetail),
     row('formula', formulaChecked ? 'checked' : 'needs-review', formulaChecked ? '当前约定与通道已核' : '当前上下文需重核', `${review.formulaDetail}${formulaChecked ? '' : ` ${reasons.filter(reason => reason !== '当前计算输入待补正').join('；')}。`}`),
-    row('comparison', comparisonCurrent ? 'conditional' : 'needs-review', comparisonCurrent ? '仅条件比较' : '需按当前版本与通道重核', review.comparisonDetail),
+    {...row('comparison', comparisonCurrent ? comparisonStatus : 'needs-review', comparisonCurrent ? (theoryBenchmark ? '文献理论基准相容' : '仅条件比较') : '需按当前版本与通道重核', review.comparisonDetail), label:theoryBenchmark ? '文献基准比较' : labels.comparison},
     row('experiment', 'not-closed', '未闭合 · 未独立验证', review.experimentDetail),
   ];
   return {transitionId, contextKey, hasReview:true, primarySourceId,
-    summary:`${review.summary}${formulaChecked ? '' : ' · 当前上下文需重核'}`,
+    summary:theoryBenchmark && !formulaChecked ? '模型换算 · 未独立实验验证 · 当前上下文需重核'
+      : `${review.summary}${formulaChecked ? '' : ' · 当前上下文需重核'}`,
     contextText, calculationStatus, reviewVersion:review.reviewVersion, reviewedAt:review.reviewedAt,
     rows, atomicSupport:copy(review.atomicSupport),
-    comparisons:review.comparisonIds.map(getEvidenceComparison).filter(Boolean).map(item => ({...copy(item), status:comparisonCurrent ? 'conditional' : 'needs-review'})),
+    comparisons:comparisons.map(item => ({...copy(item), status:comparisonCurrent ? (item.kind === 'theory-benchmark' ? 'theory-compatible' : 'conditional') : 'needs-review'})),
     sources:review.sourceIds.map(getEvidenceSource).filter(Boolean).map(copy), missing:[...review.missing], applicability};
 }
