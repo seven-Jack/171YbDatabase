@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "status": "conditional-calculation-only",
+  "independentExperimentalValidationPassed": false,
+  "datasetVersion": "2026.10.30.1",
+  "formulaVersion": "1.0.1",
+  "radius_um": 500,
+  "wavelengthForRateConversion_nm": 578.4195759161624,
+  "currentDipole": {
+    "dF_ea0": 0.0000919,
+    "dPi_ea0": 0.000037518017893629004,
+    "dSigma_ea0": 0.00005305848973852661
+  },
+  "independentXuDipole": {
+    "rate_s_inv": 0.0442,
+    "dF_ea0": 0.00009188767997673872,
+    "dPi_ea0": 0.000037512988265194115
+  },
+  "targetRabi_Hz": 22000,
+  "powerCases": [
+    {
+      "id": "stage-available-1070mW",
+      "power_mW": 1070,
+      "powerEvidenceKind": "reported measured/available stage-input power",
+      "I0_W_m2": 2724732.6257332484,
+      "I0_W_cm2": 272.47326257332486,
+      "E0_V_m": 45309.80857939791,
+      "rabi_Hz": 21751.41984154124,
+      "rabi_kHz": 21.75141984154124,
+      "omega_rad_s": 136668.20155866645,
+      "piTime_us": 22.9870051538011,
+      "differenceFrom22000_Hz": -248.5801584587607,
+      "relativeDifference_percent": -1.129909811176185,
+      "xuRateDerived": {
+        "rabi_Hz": 21748.503867673844,
+        "rabiRateInputOnlyUncertainty_Hz": 861.083297928263,
+        "relativeDifference_percent": -1.1431642378461633
+      },
+      "experimentalAgreementStatus": "not-assessed; conditional beam/channel mapping; incomplete experimental uncertainty"
+    },
+    {
+      "id": "model-effective-338mW",
+      "power_mW": 338,
+      "powerEvidenceKind": "fitted effective model power",
+      "I0_W_m2": 860709.93224097,
+      "I0_W_cm2": 86.070993224097,
+      "E0_V_m": 25465.88002600071,
+      "rabi_Hz": 12225.14650683658,
+      "rabi_kHz": 12.22514650683658,
+      "omega_rad_s": 76812.86090987345,
+      "piTime_us": 40.89930535559542,
+      "differenceFrom22000_Hz": -9774.85349316342,
+      "relativeDifference_percent": -44.43115224165191,
+      "xuRateDerived": {
+        "rabi_Hz": 12223.50761576654,
+        "rabiRateInputOnlyUncertainty_Hz": 483.96240560161635,
+        "relativeDifference_percent": -44.43860174651572
+      },
+      "experimentalAgreementStatus": "not-assessed; conditional beam/channel mapping; incomplete experimental uncertainty"
+    }
+  ],
+  "diagnostics": {
+    "powerRequiredFor22000Hz_mW": 1094.596151954648,
+    "definition": "Inverse conditional pi calculation, not a measured power and not adopted as a correction",
+    "powerRatio": 3.165680473372781,
+    "rabiRatio": 1.7792359240339044,
+    "linearBranchChecks": [
+      {
+        "power_mW": 1070,
+        "piFullPowerRabi_Hz": 21751.41984154124,
+        "transverseLinearSigmaHalfPowerRabi_Hz": 21751.419841541247
+      },
+      {
+        "power_mW": 338,
+        "piFullPowerRabi_Hz": 12225.14650683658,
+        "transverseLinearSigmaHalfPowerRabi_Hz": 12225.146506836583
+      }
+    ]
+  },
+  "uncertaintyBoundary": "Xu uncertainties include only the HFI rate input. Beam power/waist/mode and 22kHz fit uncertainties are unknown; no significance, chi-square, or validation pass is inferred.",
+  "sourceBytes": [
+    {
+      "sourceId": "offer-2026-main",
+      "localPath": "references/papers/2026_Offer_171Yb_Portable-beam-clock_published.pdf",
+      "expectedSha256": "7a3598bcc2fb6a6ed7d8280212d572a4f6bc5fa5dc49715b284ffc719473b472",
+      "status": "verified",
+      "verified": true,
+      "sha256": "7a3598bcc2fb6a6ed7d8280212d572a4f6bc5fa5dc49715b284ffc719473b472",
+      "unchanged": true
+    },
+    {
+      "sourceId": "offer-2026-sm-v2",
+      "localPath": "references/papers/2026_Offer_171Yb_Portable-beam-clock_supplement-v2.pdf",
+      "expectedSha256": "3146ceef9a5c2bfd260406fd33030ea6d1995d44b1f9408e37ad62605ed38bfe",
+      "status": "verified",
+      "verified": true,
+      "sha256": "3146ceef9a5c2bfd260406fd33030ea6d1995d44b1f9408e37ad62605ed38bfe",
+      "unchanged": true
+    },
+    {
+      "sourceId": "xu-2014-prl",
+      "localPath": "references/papers/2014_Xu_171Yb_Hyperfine-quenching-rate_arXiv1406.2340v1.pdf",
+      "expectedSha256": "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e",
+      "status": "verified",
+      "verified": true,
+      "sha256": "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e",
+      "unchanged": true
+    }
+  ],
+  "engineeringChecks": {
+    "diameterToRadius": true,
+    "selectedPiMagnitude": true,
+    "linearPolarizationPowerPartition": true,
+    "sqrtPowerScaling": true,
+    "inverseTargetPower": true,
+    "independentPython1070mW": true,
+    "independentPython338mW": true
+  },
+  "protectedFileCount": 15,
+  "mainTransitionDiagramChanged": false,
+  "productionPhysicsChanged": false,
+  "canonicalDataChanged": false
+}

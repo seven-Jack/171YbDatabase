@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "datasetVersion": "2026.10.30.1",
+  "formulaVersion": "1.0.1",
+  "conclusion": {
+    "calculatorDefinitionErrorEstablished": false,
+    "sourceParameterTranscriptionErrorEstablished": false,
+    "uniquePhysicalCauseEstablished": false,
+    "uniquePhysicalCause": null,
+    "independentAbsoluteRabiValidationPassed": false,
+    "independentDipoleStrengthSupported": true,
+    "canonicalDipoleChanged": false,
+    "mainDiagramChanged": false,
+    "verdict": "definitions-and-dipole-cross-checks-pass-operating-point-residual-remains-underconstrained"
+  },
+  "sourceHashes": [
+    {
+      "sourceId": "pizzocaro-2017-arxiv-v2",
+      "localPath": "references/papers/2017_Pizzocaro_171Yb_Absolute-frequency_arXiv1609.01610v2.pdf",
+      "expectedSha256": "1d20e391c49bd9e9af8adeebfeccf7580a12c71d636aff44616f139a4951bfbc",
+      "status": "verified",
+      "verified": true,
+      "sha256": "1d20e391c49bd9e9af8adeebfeccf7580a12c71d636aff44616f139a4951bfbc",
+      "unchanged": true
+    },
+    {
+      "sourceId": "xu-2014-prl",
+      "localPath": "references/papers/2014_Xu_171Yb_Hyperfine-quenching-rate_arXiv1406.2340v1.pdf",
+      "expectedSha256": "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e",
+      "status": "verified",
+      "verified": true,
+      "sha256": "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e",
+      "unchanged": true
+    },
+    {
+      "sourceId": "porsev-2004-pra",
+      "localPath": "references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf",
+      "expectedSha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f",
+      "status": "verified",
+      "verified": true,
+      "sha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f",
+      "unchanged": true
+    },
+    {
+      "sourceId": "siegel-2024-prl",
+      "localPath": "references/papers/2024_Siegel_171Yb_Clock-natural-lifetime_arXiv2402.04968v2.pdf",
+      "expectedSha256": "d18cc23ba21e08a10c2115e0f3ae72df7a3ee8b34cf2747e2ed5daa8bf1ff477",
+      "status": "verified",
+      "verified": true,
+      "sha256": "d18cc23ba21e08a10c2115e0f3ae72df7a3ee8b34cf2747e2ed5daa8bf1ff477",
+      "unchanged": true
+    },
+    {
+      "sourceId": "ref-01",
+      "localPath": "references/papers/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+      "expectedSha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "status": "verified",
+      "verified": true,
+      "sha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "unchanged": true
+    },
+    {
+      "sourceId": "blatt-2009-pra",
+      "localPath": "references/papers/2009_Blatt_Rabi-spectroscopy-inhomogeneity_arXiv0906.1419v2.pdf",
+      "expectedSha256": "16fe88d226fe10c7b713cd448c05a0bccb2e0ec1ade30087c0b092d260fd372e",
+      "status": "verified",
+      "verified": true,
+      "sha256": "16fe88d226fe10c7b713cd448c05a0bccb2e0ec1ade30087c0b092d260fd372e",
+      "unchanged": true
+    }
+  ],
+  "current": {
+    "dF_ea0": 0.0000919,
+    "dPi_ea0": 0.000037518017893629004,
+    "dSigma_ea0": 0.00005305848973852661,
+    "power_nW": 70,
+    "waistRadius_um": 200,
+    "I0_W_m2": 1.1140846016432673,
+    "E0_V_m": 28.972726534742904,
+    "rabi_Hz": 13.908642710485921,
+    "piTime_ms": 35.94887081419116,
+    "impliedFreeAtomRate_s_inv": 0.04421185320020629,
+    "impliedFreeAtomLifetime_s": 22.61836877707117,
+    "dipoleProvenance": {
+      "value": 0.0000919,
+      "unit": "e*a0",
+      "quantity": "d_num",
+      "sourceId": "internal-t3-20260908",
+      "sourceLocator": "internal supplement2026-09-08; no original notebook/run artifact located; NOT Table9",
+      "evidenceKind": "internal-calculation",
+      "reviewStatus": "definition-needs-review",
+      "uncertainty": null,
+      "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+      "conditions": {
+        "auditDate": "2026-10-29",
+        "auditDisposition": "unverified-internal-record",
+        "definition": "effective F-reduced171Yb F=1/2->F=1/2; not electronic J=0->J=0 E1 matrix element"
+      },
+      "convention": "F-reduced-effective"
+    },
+    "fixedUpperSublevelDipoleSums_ea0_2": [
+      {
+        "upper": "0.5|0.5",
+        "value": 4.222805e-9
+      },
+      {
+        "upper": "0.5|-0.5",
+        "value": 4.222805e-9
+      }
+    ],
+    "expectedFixedUpperSublevelSum_ea0_2": 4.222805e-9,
+    "allChannelCount": 4
+  },
+  "experiment": {
+    "sourceId": "pizzocaro-2017-metrologia",
+    "piPulse_ms": 60,
+    "nominalPiDerivedRabi_Hz": 8.333333333333334,
+    "directlyFittedRabi_Hz": null,
+    "nominalOverBareAmplitudeRatio": 0.5991478469031861,
+    "difference_Hz": 5.575309377152587,
+    "relativeDifference_percent": 66.90371252583105,
+    "comparisonBoundary": "Power, waist and pi-time uncertainties/covariance and a matching flopping trace are not reported. Do not calculate a statistical experiment-versus-prediction significance from missing uncertainties."
+  },
+  "independentStrengthComparisons": [
+    {
+      "id": "xu2014",
+      "sourceId": "xu-2014-prl",
+      "evidenceKind": "experiment-in-solid-Ne-with-corrections-to-free-atom-HFQ-rate",
+      "reportedRate_s_inv": 0.0442,
+      "reportedLifetime_s": null,
+      "workingRate_s_inv": 0.0442,
+      "rateUncertainty_s_inv": 0.0035,
+      "lifetimeNormalizedDipole_ea0": 0.00006497440161905128,
+      "dF_ea0": 0.00009188767997673872,
+      "dPi_ea0": 0.00003751298826519412,
+      "dSigma_ea0": 0.00005305137676978029,
+      "dFUncertainty_ea0": 0.000003638086876907076,
+      "beamCentreRabi_Hz": 13.906778131577045,
+      "rabiDipoleOnlyUncertainty_Hz": 0.5506077314538422,
+      "currentDipoleRelativeDifference_percent": 0.013407698686473957,
+      "currentDipoleWithinRateDerivedUncertainty": true,
+      "uncertaintyBoundary": "First-order rate/lifetime-derived dipole uncertainty only. Power/waist/motion/noise uncertainties and input covariance remain unknown; not a total Rabi calibration uncertainty.",
+      "isIndependentMeasuredRabi": false
+    },
+    {
+      "id": "porsev2004",
+      "sourceId": "porsev-2004-pra",
+      "evidenceKind": "ab-initio-HFI-theory",
+      "reportedRate_s_inv": 0.0435,
+      "reportedLifetime_s": null,
+      "workingRate_s_inv": 0.0435,
+      "rateUncertainty_s_inv": null,
+      "lifetimeNormalizedDipole_ea0": 0.000064457845086686,
+      "dF_ea0": 0.00009115715872293532,
+      "dPi_ea0": 0.00003721475421218136,
+      "dSigma_ea0": 0.00005262961012724815,
+      "dFUncertainty_ea0": null,
+      "beamCentreRabi_Hz": 13.796217096630713,
+      "rabiDipoleOnlyUncertainty_Hz": null,
+      "currentDipoleRelativeDifference_percent": 0.8149017449331497,
+      "currentDipoleWithinRateDerivedUncertainty": null,
+      "uncertaintyBoundary": "First-order rate/lifetime-derived dipole uncertainty only. Power/waist/motion/noise uncertainties and input covariance remain unknown; not a total Rabi calibration uncertainty.",
+      "isIndependentMeasuredRabi": false
+    },
+    {
+      "id": "siegel2024",
+      "sourceId": "siegel-2024-prl",
+      "evidenceKind": "cold-atom-lifetime-after-lattice-quench-and-trap-loss-separation",
+      "reportedRate_s_inv": null,
+      "reportedLifetime_s": 19,
+      "workingRate_s_inv": 0.05263157894736842,
+      "rateUncertainty_s_inv": 0.00554016620498615,
+      "lifetimeNormalizedDipole_ea0": 0.0000709013253397246,
+      "dF_ea0": 0.00010026961588566573,
+      "dPi_ea0": 0.00004093489927079124,
+      "dSigma_ea0": 0.00005789068972312949,
+      "dFUncertainty_ea0": 0.000005277348204508723,
+      "beamCentreRabi_Hz": 15.175345615575496,
+      "rabiDipoleOnlyUncertainty_Hz": 0.7987024008197631,
+      "currentDipoleRelativeDifference_percent": -8.347110749092067,
+      "currentDipoleWithinRateDerivedUncertainty": false,
+      "uncertaintyBoundary": "First-order rate/lifetime-derived dipole uncertainty only. Power/waist/motion/noise uncertainties and input covariance remain unknown; not a total Rabi calibration uncertainty.",
+      "isIndependentMeasuredRabi": false
+    },
+    {
+      "id": "kroeze2026",
+      "sourceId": "ref-01",
+      "evidenceKind": "compilation-weighted-recommendation",
+      "reportedRate_s_inv": null,
+      "reportedLifetime_s": 21,
+      "workingRate_s_inv": 0.047619047619047616,
+      "rateUncertainty_s_inv": 0.004081632653061225,
+      "lifetimeNormalizedDipole_ea0": 0.00006744061259242055,
+      "dF_ea0": 0.00009537542898295089,
+      "dPi_ea0": 0.000038936855834547275,
+      "dSigma_ea0": 0.000055065029597382734,
+      "dFUncertainty_ea0": 0.00000408751838498361,
+      "beamCentreRabi_Hz": 14.434632917118472,
+      "rabiDipoleOnlyUncertainty_Hz": 0.6186271250193632,
+      "currentDipoleRelativeDifference_percent": -3.6439458464424312,
+      "currentDipoleWithinRateDerivedUncertainty": true,
+      "uncertaintyBoundary": "First-order rate/lifetime-derived dipole uncertainty only. Power/waist/motion/noise uncertainties and input covariance remain unknown; not a total Rabi calibration uncertainty.",
+      "isIndependentMeasuredRabi": false
+    }
+  ],
+  "requiredSingleParameterChanges": {
+    "adopted": false,
+    "classification": "counterfactual-sensitivity-not-measured-or-fitted-inputs",
+    "requiredPower_nW": 25.128469971410656,
+    "requiredWaistRadius_um": 333.8074250516621,
+    "requiredDF_ea0": 0.0000550616871304028,
+    "requiredFreeAtomRate_s_inv": 0.015871088936025717,
+    "requiredFreeAtomLifetime_s": 63.00764894147271,
+    "consequence": "These are changes that would algebraically close the nominal point if everything else were exact. They have no independent experimental support and do not replace the source values."
+  },
+  "conditionalMotion": {
+    "model": "conditional-harmonic-carrier-amplitude-and-Gaussian-envelope-diagnostics",
+    "scope": "A numerical scale check, not an ensemble experiment fit or a correction to the production calculator.",
+    "constants": {
+      "h_J_s": 6.62607015e-34,
+      "kB_J_K": 1.380649e-23
+    },
+    "parameters": {
+      "rabi_Hz": 13.908642710485921,
+      "waist_um": 200,
+      "latticeDepth_Er": 200,
+      "latticeWavelength_nm": 759,
+      "probeWavelength_nm": 578.4195759161624,
+      "mass_kg": 2.8384645678e-25,
+      "temperatures_uK": [
+        4,
+        7,
+        10
+      ],
+      "targetMeanAmplitudeRatio": 0.5991478469031861,
+      "reflectivityUpperBound": 0.01,
+      "radialExtent_um": 45,
+      "axialExtent_mm": 0.25,
+      "thermalSumMaxN": 256,
+      "latticeWaist_um": 45,
+      "misalignmentAxialTemperature_uK": 7,
+      "assumedRadialTemperatures_uK": [
+        4,
+        7,
+        10
+      ]
+    },
+    "axialOscillator": {
+      "latticeRecoil_J": 1.3425022865383696e-30,
+      "latticeRecoil_Hz": 2026.0912669908416,
+      "probeRecoil_J": 2.3115996520810075e-30,
+      "probeRecoil_Hz": 3488.6434941848715,
+      "frequency_Hz": 57306.51496768272,
+      "hNuOverKB_uK": 2.75027895017409,
+      "etaSquared": 0.0608769089544574,
+      "eta": 0.24673246433020807,
+      "nominalTrapDepthOverKB_uK": 19.447408958227175,
+      "firstHarmonicNAtOrAboveBarrier": 7,
+      "groundCarrierAmplitudeRatio": 0.9700201306261402
+    },
+    "thermalCases": [
+      {
+        "temperature_uK": 4,
+        "nbar": 1.0112489675854608,
+        "meanSignedCarrierAmplitudeRatio": 0.9121049983114857,
+        "bareCouplingTimesMeanCarrierFactor_Hz": 12.68614253596282,
+        "kBTOverTrapDepth": 0.20568292714941908,
+        "unboundedHarmonicProbabilityAtOrAboveNominalBarrier": 0.008123548906783861,
+        "finiteSum": {
+          "maxN": 256,
+          "meanSignedAmplitudeRatio": 0.9121049983114861,
+          "omittedThermalProbability": 1.810548090474704e-77
+        },
+        "analyticMinusFiniteSum": -3.3306690738754696e-16
+      },
+      {
+        "temperature_uK": 7,
+        "nbar": 2.077853857178986,
+        "meanSignedCarrierAmplitudeRatio": 0.8547623733662317,
+        "bareCouplingTimesMeanCarrierFactor_Hz": 11.888584453517884,
+        "kBTOverTrapDepth": 0.35994512251148336,
+        "unboundedHarmonicProbabilityAtOrAboveNominalBarrier": 0.06391003100567923,
+        "finiteSum": {
+          "maxN": 256,
+          "meanSignedAmplitudeRatio": 0.8547623733662318,
+          "omittedThermalProbability": 1.4038478363479987e-44
+        },
+        "analyticMinusFiniteSum": -1.1102230246251565e-16
+      },
+      {
+        "temperature_uK": 10,
+        "nbar": 3.158884963890985,
+        "meanSignedCarrierAmplitudeRatio": 0.8003216202264773,
+        "bareCouplingTimesMeanCarrierFactor_Hz": 11.131387469207276,
+        "kBTOverTrapDepth": 0.5142073178735477,
+        "unboundedHarmonicProbabilityAtOrAboveNominalBarrier": 0.14584727518961652,
+        "finiteSum": {
+          "maxN": 256,
+          "meanSignedAmplitudeRatio": 0.8003216202264776,
+          "omittedThermalProbability": 2.009666651598458e-31
+        },
+        "analyticMinusFiniteSum": -2.220446049250313e-16
+      }
+    ],
+    "requiredMeanAmplitudeCondition": {
+      "targetRatio": 0.5991478469031861,
+      "requiredNbar": 7.914469414485021,
+      "requiredTemperature_uK": 23.114874818447458,
+      "feasibleForNonnegativeTemperature": true,
+      "requiredKBTemperatureExceedsNominalTrapDepth": true,
+      "requiredMeanHarmonicEnergyOverTrapDepth": 1.1899856766138315,
+      "interpretation": "Temperature needed only for this harmonic thermal mean of signed amplitudes; it is not a measured or fitted temperature."
+    },
+    "reflection": {
+      "powerReflectivityUpperBound": 0.01,
+      "reflectedToIncidentFieldAmplitudeUpperBound": 0.1,
+      "localFieldAmplitudeRatioBounds": [
+        0.9,
+        1.1
+      ],
+      "localIntensityRatioBounds": [
+        0.81,
+        1.2100000000000002
+      ],
+      "requiredDestructiveReflectivityForTargetRatio": 0.1606824486423515,
+      "conditional": true,
+      "condition": "The returned field must have the same spatial mode/waist as the incident field at the atoms, with a local amplitude ratio bounded by sqrt(R). Power reflectivity alone does not establish this condition.",
+      "missingExperimentInputs": [
+        "Returned probe-beam waist and mode at the atoms",
+        "Relative optical phase"
+      ],
+      "boundary": "No unconditional experimental exclusion follows from the mirror power reflectivity alone."
+    },
+    "beamEnvelope": {
+      "rayleighLength_m": 0.21725354980344877,
+      "waistAtAxialExtent_um": 200.00013241772152,
+      "radialEdgeFieldFactor": 0.9506350918586984,
+      "onAxisAxialEdgeFieldFactor": 0.9999993379118307,
+      "radialAndAxialCornerFieldFactor": 0.9506345261815697,
+      "conditionalBoxFieldFactorBounds": [
+        0.9506345261815697,
+        1
+      ],
+      "centeredRadialOffsetForTargetRatio_um": 143.14285011074372,
+      "onAxisAxialOffsetForTargetRatio_m": 0.29031488098356883,
+      "conditional": true,
+      "condition": "Centered probe waist and all considered atoms inside the stated r/z box; this is only the Gaussian field envelope, with no inferred cloud distribution or radial temperature."
+    },
+    "missingParameterMisalignmentSensitivity": {
+      "classification": "missing-parameter-sensitivity-only",
+      "model": "Thermal signed carrier mean exp[-Az*cos(theta)^2-Ar*sin(theta)^2] for an axial and projected transverse harmonic mode.",
+      "latticeWaist_um": 45,
+      "radialFrequency_Hz": 217.55465972031772,
+      "radialHNuOverKB_uK": 0.010440976937412798,
+      "radialEtaSquared": 16.035710283888083,
+      "axialTemperature_uK": 7,
+      "axialExponentAz": 0.15693177456138196,
+      "targetMeanSignedAmplitudeRatio": 0.5991478469031861,
+      "cases": [
+        {
+          "assumedTr_uK": 4,
+          "TrAssumption": "assumed-not-reported",
+          "actualTr": null,
+          "actualMisalignment": null,
+          "radialNbar": 382.6061303077547,
+          "radialExponentAr": 6143.37891359663,
+          "requiredSinSquaredTheta": 0.00005783856011319053,
+          "isMathematicallyReachable": true,
+          "requiredAngle_mrad": 7.605239986171917,
+          "forwardMeanSignedCarrierAmplitudeRatio": 0.599147846903186,
+          "thetaZeroMeanSignedCarrierAmplitudeRatio": 0.8547623733662317
+        },
+        {
+          "assumedTr_uK": 7,
+          "TrAssumption": "assumed-not-reported",
+          "actualTr": null,
+          "actualMisalignment": null,
+          "radialNbar": 669.9354716753364,
+          "radialExponentAr": 10750.90898782755,
+          "requiredSinSquaredTheta": 0.000033050256580351174,
+          "isMathematicallyReachable": true,
+          "requiredAngle_mrad": 5.748966924000869,
+          "forwardMeanSignedCarrierAmplitudeRatio": 0.5991478469031861,
+          "thetaZeroMeanSignedCarrierAmplitudeRatio": 0.8547623733662317
+        },
+        {
+          "assumedTr_uK": 10,
+          "TrAssumption": "assumed-not-reported",
+          "actualTr": null,
+          "actualMisalignment": null,
+          "radialNbar": 957.264868976706,
+          "radialExponentAr": 15358.439958996487,
+          "requiredSinSquaredTheta": 0.00002313508048096963,
+          "isMathematicallyReachable": true,
+          "requiredAngle_mrad": 4.809912566130557,
+          "forwardMeanSignedCarrierAmplitudeRatio": 0.5991478469031862,
+          "thetaZeroMeanSignedCarrierAmplitudeRatio": 0.8547623733662317
+        }
+      ],
+      "actualTr": null,
+      "actualMisalignment": null,
+      "interpretation": "Each angle is the parameter scale needed for a conditional mathematical mean, not a measured angle or an established explanation of the experiment.",
+      "assumptions": [
+        "The lattice transverse confinement is harmonic and Gaussian, with the specified 1/e^2 intensity radius.",
+        "The radial temperatures are independent hypothetical examples; none is reported or inferred from Tz.",
+        "The projected transverse mode is thermal and separable from the axial mode. An isotropic two-axis transverse oscillator gives the same projected exponent.",
+        "This plane-wave motional matrix-element diagnostic does not fit the full Gaussian optical envelope, anharmonicity, sample distribution or laser noise."
+      ]
+    },
+    "boundaries": [
+      "The reported Tz is used only for the axial thermal harmonic mode. No radial temperature is inferred from Tz; the separate Tr examples are explicitly hypothetical.",
+      "Harmonic confinement, lattice depth and collinearity are assumptions; no anharmonic, sideband-selection or full spatial average is fitted.",
+      "The unbounded harmonic thermal distribution is an approximation. Its above-barrier weight is reported, not removed or refitted; a required kBT above the nominal trap depth is outside the deep-harmonic regime.",
+      "The mean signed carrier matrix element is not the frequency fitted to population flopping: sum_n p_n sin^2(Omega_n t/2) is not sin^2(<Omega_n> t/2).",
+      "The reported 20 Hz spectral linewidth is not a calibrated Markov laser-noise spectrum and is not used as a dephasing correction.",
+      "No counterfactual parameter is adopted as a measured or calibrated input, and no population-flopping data were fitted. Inverted temperatures and angles are conditional sensitivity values only."
+    ]
+  },
+  "preserved": {
+    "canonicalAtomicData": true,
+    "productionPhysics": true,
+    "mainDiagram": true,
+    "saved65S": true
+  },
+  "missingForClosure": [
+    "Atom-plane absolute power and uncertainty, including mode overlap/polarization fractions",
+    "Waist measurement and centring at the atoms with uncertainty",
+    "Same-operating-point Rabi population-versus-time data and fitted model",
+    "Radial temperature, axial/radial motional populations and residual probe angle",
+    "Returned probe mode/waist/phase and measured laser phase/frequency noise spectrum"
+  ]
+}

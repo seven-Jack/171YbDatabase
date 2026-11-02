@@ -1,0 +1,17 @@
+{
+  "src/ui/energy-diagram.js": "684dfbce178dc78dde9cf4991c14122a6d0cc2978cabc91e368e7e4ce9d49394",
+  "src/ui/diagram-geometry.js": "4a2c855802766d936e2bdc994adbe6d4b9003c81b32c7e2f0ec6cb8763385177",
+  "src/ui/diagram-presentation.js": "f315eab1ed3c8c74efca3951791454f720b21bcc1cfca81e6b817815efd4ab49",
+  "src/styles/original-diagram.css": "5e2252c836949cfd13c0bc5ecb268a795f2d094f0caf6e497b375ffd6a4dcb6c",
+  "src/styles/quantum.css": "c9907e9ce75fd3fca4282a1f1d835a9fad8cdbf0c9781e7f20ea059474ab73a9",
+  "assets/05.21_yb171_65s_hyperfine.csv": "a52e9100090c78da0914b748a309e798838a4c9c9744c64553cf761a6330d0ec",
+  "data/dataset.json": "eb30379ac24ebcf94a83a8b080783414ea78968027187ca2286c6845910def0d",
+  "data/levels.json": "436e64e4b0f00ec67f7a90267ff85bc11c3600c0f360155c6f382975ec98ceaa",
+  "data/transitions.json": "aa8fe6b42776e8e6045ad3cb17d487d1802f27329fa153f9139b153784fa59b0",
+  "data/sources.json": "4d9a8c53bbf668efb02ab9b9c3dcbc68b3bbdebfbcfe39bcdcc00ca910884e62",
+  "data/hyperfine.json": "2870fb871e3b578c09313c993d92ce1b40c85393acee309976eef96fad55889e",
+  "data/estimates.json": "ffb73032f906ff73fe23b7674c05008ccb1296b292d493fd46f2b42b484c21a9",
+  "src/physics/rabi.js": "75f2caf5f32cfea44f1e86d1bbdd2d78a0a24bf7dca27ae76d67ddb59524b425",
+  "src/physics/angular.js": "2b95de7b9f15c254c2c8ff591be312bcd427e99cd673fedb48565d76b1f13dcb",
+  "src/physics/constants.js": "ceb9602f0cc3cdf779f80cec2b706d18e88465a63a5236e7f95413fd9ce03102"
+}

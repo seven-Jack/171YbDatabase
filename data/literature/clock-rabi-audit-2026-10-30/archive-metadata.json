@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "originalAuditDate": "2026-10-30",
+  "archivedOn": "2026-10-31",
+  "baseCommit": "8203da5ceb9bd0117c091578fb3c070b4281ea03",
+  "softwareVersion": "0.3.3",
+  "classification": "supplemental evidence archive; engineering packaging only",
+  "historicalManifest": {
+    "path": "data/literature/clock-rabi-audit-2026-10-30/historical-manifest-20261030.json",
+    "sha256": "87c78001695e933399fe2e57768aab255143521797d3cde3bdd8acf7ac3ccbdb",
+    "scope": "Original partial manifest retained byte-for-byte; not a complete-package integrity claim."
+  },
+  "frozenHistoricalFiles": [
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/browser-clock-operating-point.png",
+      "bytes": 323440,
+      "sha256": "479af483269d327b6c390bb06c8908173305e72198c2aa3820901d45e29875c3"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/cases.json",
+      "bytes": 10714,
+      "sha256": "be27442f662b1d6d6506a8b55ecf0c094db52ef085b8d0a276047bcaba2411f7"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/motional-diagnostics.mjs",
+      "bytes": 11633,
+      "sha256": "ace3e76b952cfa0071e486ad03e663f3014dca50a2c674abc36ab0eca3274d34"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/pizzocaro-source-check.json",
+      "bytes": 16040,
+      "sha256": "6d1aaa4edc5f22ac736eb7ded39458f88d3cad8a469655b30c148471e789e778"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/protected-hashes.json",
+      "bytes": 1456,
+      "sha256": "6b577fae17f45fda2725a5e66dfbe6e24c9d8d10e20452d86064adbce677e0d6"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/results.json",
+      "bytes": 19812,
+      "sha256": "5227ae3b631901937a3d4f63ae006c52fe2e22f3e364f97a4db0563c5384bfbc"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/strength-comparison.csv",
+      "bytes": 497,
+      "sha256": "f614ca4a8f7dae844849c90de2708286e7d15e16572d176e46b5dc8d645efa77"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/verification.json",
+      "bytes": 582,
+      "sha256": "8b2863beab82e49c68b23558bcdc41594520d47b453b32e599c3006eed238a73"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/historical-manifest-20261030.json",
+      "bytes": 1257,
+      "sha256": "87c78001695e933399fe2e57768aab255143521797d3cde3bdd8acf7ac3ccbdb"
+    }
+  ],
+  "verificationBoundary": "Original verification files and screenshot are dated 2026-10-30 historical records, not current software acceptance or independent Rabi validation. Current source bytes are reported separately by --check.",
+  "currentOutputPolicy": "Explicit reproduce.mjs --write creates current-results.json/current-*.csv and refreshes manifest; historical snapshots are not overwritten.",
+  "canonicalAtomicDataChanged": false,
+  "productionPhysicsChanged": false,
+  "mainDiagramChanged": false
+}

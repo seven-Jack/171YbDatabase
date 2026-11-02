@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "purpose": "Audit the 578 nm clock Rabi-power discrepancy without fitting the atomic dipole or modifying the main diagram.",
+  "sourceIndex": "references/clock-rabi-sources-20261030.json",
+  "currentCalculator": {
+    "transitionId": "T3",
+    "dF_ea0": 0.0000919,
+    "convention": "effective-F-reduced",
+    "historicalSourceId": "internal-t3-20260908",
+    "historicalOriginEstablished": false,
+    "channel": {
+      "F": 0.5,
+      "m": 0.5,
+      "Fp": 0.5,
+      "mp": 0.5,
+      "q": 0
+    },
+    "pol": "pi",
+    "power_nW": 70,
+    "waistRadius_um": 200,
+    "position": "Gaussian beam centre",
+    "powerConvention": "Pure pi component; no split into sigma components",
+    "independentSourceSupport": "Compare separately with the rate-derived value from Xu2014. Agreement does not recover the old internal generating record."
+  },
+  "experiment": {
+    "sourceId": "pizzocaro-2017-metrologia",
+    "parameterEvidence": "pizzocaro-source-check.json",
+    "power_nW": 70,
+    "powerUncertainty_nW": null,
+    "powerDescription": "Incident probe power; no full absolute calibration/error budget in the article",
+    "waistRadius_um": 200,
+    "waistDefinition": "Explicit 1/e^2 intensity radius",
+    "waistUncertainty_um": null,
+    "piPulse_ms": 60,
+    "piPulseUncertainty_ms": null,
+    "directFittedRabi_Hz": null,
+    "nominalFrequencyDefinition": "1/(2*t_pi) only; not a reported time-domain Rabi-oscillation fit",
+    "polarization": "linear parallel to B, pi",
+    "probeRetroreflectorPowerReflectivityLessThan": 0.01,
+    "returnedProbeWaist_um": null,
+    "returnedProbePhase": null,
+    "lattice": {
+      "wavelength_nm": 759,
+      "waistRadius_um": 45,
+      "typicalDepth_Er": 200,
+      "axialTemperature_uK": 7,
+      "axialTemperatureUncertainty_uK": 3,
+      "radialTemperature_uK": null,
+      "probeMisalignment_mrad": null,
+      "trapRadius_um": 45,
+      "trapLength_mm": 0.5,
+      "geometryBoundary": "The quoted trap region is a geometric scale, not a measured full cloud distribution or absolute centring calibration."
+    },
+    "linewidth": {
+      "exampleFWHM_Hz": 18,
+      "typicalFWHM_Hz": 20,
+      "method": "Lorentzian spectral fit; paper attributes broadening to clock-laser frequency noise",
+      "calibratedLaserNoisePSD": null
+    },
+    "precisionBoundary": "Power, waist and pi-time uncertainties/covariance and a matching flopping trace are not reported. Do not calculate a statistical experiment-versus-prediction significance from missing uncertainties."
+  },
+  "constantsForMotion": {
+    "mass_kg": 2.8384645678e-25,
+    "source": "Kroeze v2 Table2 p20; adopted only for the isolated motional scale check"
+  },
+  "strengthSources": [
+    {
+      "id": "xu2014",
+      "sourceId": "xu-2014-prl",
+      "localPath": "references/papers/2014_Xu_171Yb_Hyperfine-quenching-rate_arXiv1406.2340v1.pdf",
+      "sha256": "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e",
+      "locator": "arXiv v1 pp.3-4, Eq.(2), TableI and free-atom result",
+      "rate_s_inv": 0.0442,
+      "rateUncertainty_s_inv": 0.0035,
+      "evidenceKind": "experiment-in-solid-Ne-with-corrections-to-free-atom-HFQ-rate",
+      "definition": "Hyperfine-induced E1 radiative clock decay of free 171Yb, F=1/2 to F=1/2",
+      "caveat": "Not an uncorrected cold-atom trap lifetime, and not direct Rabi spectroscopy."
+    },
+    {
+      "id": "porsev2004",
+      "sourceId": "porsev-2004-pra",
+      "localPath": "references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf",
+      "sha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f",
+      "locator": "arXiv PDF p.8 TableIV, 171Yb 3P0 to1S0, F1/2",
+      "rate_s_inv": 0.0435,
+      "rateUncertainty_s_inv": null,
+      "evidenceKind": "ab-initio-HFI-theory",
+      "definition": "Hyperfine-induced electronic clock-line radiative rate",
+      "caveat": "No numerical uncertainty assigned from the table."
+    },
+    {
+      "id": "siegel2024",
+      "sourceId": "siegel-2024-prl",
+      "localPath": "references/papers/2024_Siegel_171Yb_Clock-natural-lifetime_arXiv2402.04968v2.pdf",
+      "sha256": "d18cc23ba21e08a10c2115e0f3ae72df7a3ee8b34cf2747e2ed5daa8bf1ff477",
+      "locator": "arXiv v2 pp.4-5 Fig5 and zero-lattice intercept",
+      "lifetime_s": 19,
+      "lifetimeUncertainty_s": 2,
+      "evidenceKind": "cold-atom-lifetime-after-lattice-quench-and-trap-loss-separation",
+      "definition": "Natural clock-state lifetime from zero-lattice intercept Gamma0",
+      "latticeQuenching_s_inv_per_Er": 0.00057,
+      "latticeQuenchingUncertainty_s_inv_per_Er": 0.00007,
+      "BBR_300K": {
+        "E1_3P0to3D1_s_inv": 5.8e-9,
+        "M1_3P0to3P1_s_inv": 0.00067
+      },
+      "caveat": "Rate-to-dipole comparison treats Gamma0 as clock E1 dominated, with paper-described negligible BBR contribution. Finite-depth total decay and trap survival must not be substituted."
+    },
+    {
+      "id": "kroeze2026",
+      "sourceId": "ref-01",
+      "localPath": "references/papers/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+      "sha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+      "locator": "PDF p24 Table9; references213 Siegel and214 Xu",
+      "lifetime_s": 21,
+      "lifetimeUncertainty_s": 1.8,
+      "evidenceKind": "compilation-weighted-recommendation",
+      "definition": "Adopted total radiative lifetime; not an additional independent measurement",
+      "caveat": "Shares the above Xu/Siegel inputs; do not treat this recommendation as an independent third experiment."
+    }
+  ],
+  "xuTableI": {
+    "locator": "PDF p4 TableI",
+    "rows": [
+      {
+        "correction": "energy-difference",
+        "scaleFactor": 0.845,
+        "relativeUncertainty_percent": 6
+      },
+      {
+        "correction": "medium-quenching",
+        "scaleFactor": 0.771,
+        "relativeUncertainty_percent": 4.2
+      },
+      {
+        "correction": "index-of-refraction",
+        "scaleFactor": 0.838,
+        "relativeUncertainty_percent": 3
+      },
+      {
+        "correction": "frequency-cube",
+        "scaleFactor": 0.932,
+        "relativeUncertainty_percent": 0.5
+      },
+      {
+        "correction": "total-reported",
+        "scaleFactor": 0.508,
+        "relativeUncertainty_percent": 7.9
+      }
+    ],
+    "boundary": "These are reported correction factors, not new independent decay measurements. Adopt the reported final free-atom rate directly; do not apply the total correction again to a rate that has already had medium quenching removed."
+  },
+  "angularDefinitions": {
+    "nuclearSpin": 0.5,
+    "lowerF": 0.5,
+    "upperF": 0.5,
+    "dF": "<F'=1/2 || d || F=1/2>, Racah-Wigner convention",
+    "pi": "dF/sqrt(6)",
+    "sigma": "dF/sqrt(3)",
+    "fixedUpperSublevelSum": "sum_lower_m,q |d_q|^2 = dF^2/2",
+    "decayFormula": "A=omega^3*(dF*ea0)^2 / [3*pi*eps0*hbar*c^3*(2F'+1)]",
+    "dipoleFromDecayRateReturn": "sqrt(sum_lower_m,q |d_q|^2)=dF/sqrt(2), not dF and not fixed pi"
+  },
+  "historicalTrace": {
+    "oldestAvailableCommit": "ea024f9",
+    "oldRecord": "v5.7 applied 5.30e-5 ea0 to every channel; v5.8 reinterpreted it as the sigma anchor and set dF=sqrt(3)*d_sigma approximately9.19e-5.",
+    "evidence": "docs/historical-changelog.md and oldest imported index.html",
+    "originalGeneratingArtifactLocated": false,
+    "independentXuAgreementDoesNotProveHistoricalOrigin": true
+  },
+  "hypotheses": [
+    {
+      "id": "waist-radius-vs-diameter",
+      "disposition": "definition-resolved",
+      "finding": "The source explicitly says 1/e^2 waist radius200um. No permission to substitute a diameter or100um radius."
+    },
+    {
+      "id": "power-plane-or-source-output",
+      "disposition": "incomplete-absolute-calibration",
+      "finding": "70nW is incident probe power in the same operating paragraph, not the7mW generated source output. A hidden throughput loss is not established."
+    },
+    {
+      "id": "pi-power-component",
+      "disposition": "definition-resolved",
+      "finding": "Linear polarization is parallel to B and drives pi; no factor1/2 sigma power split is justified."
+    },
+    {
+      "id": "full-standing-wave",
+      "disposition": "not-supported-by-source",
+      "finding": "578nm reflectivity<1% excludes treating the reflected probe as a full equal-amplitude retro beam. A local +/-10% field bound is conditional on equal mode/waist; actual returned mode and phase are missing."
+    },
+    {
+      "id": "F-vs-J-vs-channel-dipole",
+      "disposition": "calculator-normalization-corroborated",
+      "finding": "dF/sqrt6 for pi and dF/sqrt3 for sigma satisfy the total-rate sum rule. Current dF is independently compatible with Xu2014; the old source origin remains unknown."
+    },
+    {
+      "id": "gaussian-peak-vs-area-average",
+      "disposition": "not-a-valid-correction",
+      "finding": "With the stated1/e^2 radius, Gaussian beam-centre intensity is2P/(pi*w^2). Dividing it by2 to force agreement is not justified by the small quoted trap region."
+    },
+    {
+      "id": "motional-carrier-coupling",
+      "disposition": "conditional-model-not-closed",
+      "finding": "Axial harmonic diagnostics quantify one effect, but radial temperature, actual misalignment, spatial distribution, anharmonicity and state-dependent populations are missing. Mean signed matrix element is not the fitted oscillation frequency."
+    },
+    {
+      "id": "laser-noise-or-spectral-width",
+      "disposition": "insufficient-noise-data",
+      "finding": "18-20Hz is a measured spectral linewidth including interrogation response and noise. No calibrated noise spectrum or time-domain Rabi trace is available to infer a unique coupling correction."
+    }
+  ],
+  "conclusion": {
+    "calculatorDefinitionErrorEstablished": false,
+    "sourceParameterTranscriptionErrorEstablished": false,
+    "uniquePhysicalCauseEstablished": false,
+    "uniquePhysicalCause": null,
+    "independentAbsoluteRabiValidationPassed": false,
+    "independentDipoleStrengthSupported": true,
+    "canonicalDipoleChanged": false,
+    "mainDiagramChanged": false,
+    "verdict": "definitions-and-dipole-cross-checks-pass-operating-point-residual-remains-underconstrained"
+  },
+  "missingForClosure": [
+    "Atom-plane absolute power and uncertainty, including mode overlap/polarization fractions",
+    "Waist measurement and centring at the atoms with uncertainty",
+    "Same-operating-point Rabi population-versus-time data and fitted model",
+    "Radial temperature, axial/radial motional populations and residual probe angle",
+    "Returned probe mode/waist/phase and measured laser phase/frequency noise spectrum"
+  ]
+}

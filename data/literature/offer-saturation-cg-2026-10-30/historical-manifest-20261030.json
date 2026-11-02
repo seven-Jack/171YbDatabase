@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "status": "conventions-derived; exact-author-numerical-normalization-unresolved",
+  "authorCGOmissionEstablished": false,
+  "independentExperimentalValidationPassed": false,
+  "files": [
+    {
+      "path": "data/literature/offer-saturation-cg-2026-10-30/source-check.json",
+      "bytes": 5892,
+      "sha256": "1ae0b6b7eab9561450914abda5366a62305f0a04da45ec0fde483f8ee1759583"
+    },
+    {
+      "path": "data/literature/offer-saturation-cg-2026-10-30/reproduce.mjs",
+      "bytes": 7763,
+      "sha256": "a4674bdc8e91667f388399b7d7a60e27c70832e7680de6821f4f3fb6980df4c0"
+    },
+    {
+      "path": "data/literature/offer-saturation-cg-2026-10-30/results.json",
+      "bytes": 9081,
+      "sha256": "71ef5661dca72b7b22d535c9657da2eda53a246a17ff720a3a1f162298936209"
+    },
+    {
+      "path": "data/literature/offer-saturation-cg-2026-10-30/comparison.csv",
+      "bytes": 1048,
+      "sha256": "333d0201423d8097c824e9a5bcc2f03febcafdf9bc36afaaf4507187bd0a4e77"
+    },
+    {
+      "path": "data/literature/offer-saturation-cg-2026-10-30/README.md",
+      "bytes": 1194,
+      "sha256": "50e12f6cd72ed5981a9e126b8c556fe0e7a0ef05c51ee7eda6624c26d5356480"
+    },
+    {
+      "path": "references/audits/offer-saturation-cg-audit-20261030.md",
+      "bytes": 9701,
+      "sha256": "cb1bfbf06ac7e50e9885961687559639e1075df98cbc477c2f56264bb5993484"
+    }
+  ]
+}

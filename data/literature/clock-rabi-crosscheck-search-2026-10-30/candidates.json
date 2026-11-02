@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "request": "Find another 171Yb 578 nm experimental article with power, explicitly defined waist and independently measured Rabi frequency for independent cross-validation.",
+  "status": "no-complete-matched-benchmark-located-in-reviewed-candidates",
+  "scopeBoundary": "A bounded search and source review; not a claim that no such paper exists worldwide.",
+  "acceptanceCriteria": [
+    "neutral 171Yb, direct 1S0-3P0 578 nm transition",
+    "measured incident power at the atoms for the same measurement",
+    "unambiguous beam radius/diameter and intensity definition",
+    "independently measured Rabi frequency, from time-domain data or an identified spectroscopic fit; not inferred merely from FWHM or a nominal pi time",
+    "same operating point, known addressed polarization/channel and relevant motional conditions"
+  ],
+  "acceptedCases": [],
+  "independentExperimentalValidation": "not-performed-because-no-eligible-operating-point",
+  "canonicalDataChanged": false,
+  "mainTransitionDiagramChanged": false,
+  "candidates": [
+    {
+      "id": "lis-2023",
+      "title": "Midcircuit Operations Using the omg Architecture in Neutral Atom Arrays",
+      "doi": "10.1103/PhysRevX.13.041035",
+      "primaryUrl": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=956158",
+      "documentType": "experimental-article",
+      "sourceLocations": [
+        "PDF pp.2-3 Fig.1",
+        "PDF p.11 Appendix B.1",
+        "PDF p.12 Appendix B.2"
+      ],
+      "observed": {
+        "isotope": "171Yb",
+        "wavelength_nm": 578,
+        "measuredRabi_Hz_approx": 110000,
+        "waistRadius_um_approx": 20,
+        "waistDefinition": "radius stated; intensity 1/e^2 convention not explicitly specified",
+        "doublerOutputPower_mW_approx": 90
+      },
+      "missingForMatchedBenchmark": [
+        "power at atoms for the plotted 0.11 MHz oscillation",
+        "explicit intensity-radius convention",
+        "matched channel/polarization and beam calibration uncertainties"
+      ],
+      "eligibility": "not-eligible-with-current-evidence",
+      "reason": "90 mW is upstream doubler output; it precedes AOMs and fiber delivery and is not a measured atom-plane operating power.",
+      "localDocument": {
+        "path": "references/papers/2023_Lis_171Yb_Midcircuit-omg_PRX13-041035.pdf",
+        "sha256": "b33537c466775342db2c8f92ea275557013ab686078787a016838cc85633b809",
+        "bytes": 2911579,
+        "rights": "local research copy; redistribution not assumed"
+      }
+    },
+    {
+      "id": "zhang-2022",
+      "title": "Sub-recoil clock-transition laser cooling enabling shallow optical lattice clocks",
+      "doi": "10.1103/PhysRevLett.129.113202",
+      "primaryUrl": "https://arxiv.org/pdf/2206.09056v1",
+      "documentType": "experimental-article",
+      "sourceLocations": [
+        "PDF p.2 apparatus",
+        "PDF p.6 Supplement: Extended Data Fig.5"
+      ],
+      "observed": {
+        "isotope": "171Yb",
+        "wavelength_nm": 578,
+        "clockPower_mW_approx": 5,
+        "clockWaist_um_asStated": 400,
+        "waistDefinition": null,
+        "reportedRabi_Hz": {
+          "relation": ">",
+          "value": 3000
+        },
+        "excitationFirstMaximum_ms_approx": 0.1,
+        "geometry": "counterpropagating orthogonally polarized pairs in each radial axis"
+      },
+      "missingForMatchedBenchmark": [
+        "radius/diameter and intensity convention for 400 um",
+        "numerical Rabi fit with uncertainty",
+        "per-beam vs beam-pair power and addressed mF/polarization components"
+      ],
+      "eligibility": "not-eligible-with-current-evidence",
+      "reason": "The reported >3 kHz is a bound. 1/e field radius 170 um belongs to the 759 nm lattice, not the clock beam; 0.1 ms maximum must not be silently converted to a measured fitted Rabi frequency.",
+      "localDocument": {
+        "path": "references/papers/2022_Zhang_171Yb_Subrecoil-clock-cooling_arXiv2206.09056v1.pdf",
+        "sha256": "2e976648051f4aa383fc9bdc073b50c7d78a5e3126d77f596fcf6ec8ed63f2bf",
+        "bytes": 776121,
+        "rights": "local research copy; redistribution not assumed"
+      }
+    },
+    {
+      "id": "zaporski-2025",
+      "title": "Quantum-amplified global-phase spectroscopy on an optical clock transition",
+      "doi": "10.1038/s41586-025-09578-8",
+      "primaryUrl": "https://eapg.mit.edu/wp-content/uploads/2026/01/Zaporski_et_al-2025-Nature.pdf",
+      "documentType": "experimental-article",
+      "sourceLocations": [
+        "Journal PDF p.5 main-text operating point",
+        "PDF p.7 Methods",
+        "PDF p.10 Extended Data Fig.2",
+        "arXiv 2504.01914v2 main text and SI"
+      ],
+      "observed": {
+        "isotope": "171Yb",
+        "wavelength_nm": 578,
+        "mainTextRabi_Hz": 4550,
+        "methodsRabi_Hz": 4200,
+        "directRabiOscillations": "Extended Data Fig.2"
+      },
+      "missingForMatchedBenchmark": [
+        "clock power at atoms",
+        "clock waist and its definition",
+        "power/waist linked to one of the separately reported Rabi operating points"
+      ],
+      "eligibility": "not-eligible-with-current-evidence",
+      "reason": "A measured clock oscillation is present, but the two reported Rabi operating points cannot be merged and neither has a numerical matched clock power/waist.",
+      "localDocument": {
+        "path": "references/papers/2025_Zaporski_171Yb_Quantum-amplified-global-phase_published.pdf",
+        "sha256": "5aba1612109652dc7eb80484c186c66a0edcae39f891329942ae0cfdc15a9f79",
+        "bytes": 6770047,
+        "rights": "local research copy; redistribution not assumed"
+      }
+    },
+    {
+      "id": "bettermann-2022",
+      "title": "Interorbital interactions in ytterbium-171",
+      "doi": "10.5282/edoc.32171",
+      "primaryUrl": "https://edoc.ub.uni-muenchen.de/32171/1/Bettermann_Oscar.pdf",
+      "documentType": "doctoral-thesis",
+      "sourceLocations": [
+        "Printed p.33 (PDF p.45)",
+        "Printed p.43 Fig.3.6 (PDF p.55)"
+      ],
+      "observed": {
+        "isotope": "171Yb",
+        "wavelength_nm": 578,
+        "maximumAvailablePowerAtAtoms_mW_approx": 100,
+        "waistRadius_um_approx": 200,
+        "waistDefinition": "Imax=2 Pmax/(pi w0^2), equivalent to 1/e^2 intensity radius",
+        "matchedMeasuredPower_mW": null,
+        "rabiTimeTrace": "Fig.3.6(b); angular-frequency convention in Eq.3.16"
+      },
+      "missingForMatchedBenchmark": [
+        "actual power for each measured Rabi curve",
+        "a published experimental article containing the matched full parameter set"
+      ],
+      "eligibility": "not-eligible-with-current-evidence",
+      "reason": "100 mW is an apparatus maximum, not a power supplied for the oscillation curves. The associated PRA108,L041302 article and supplement do not supply the missing matched power.",
+      "localDocument": {
+        "path": "references/papers/2022_Bettermann_171Yb_Interorbital-interactions_thesis.pdf",
+        "sha256": "57f72aa6f0ecb4cc68c8730e5232948937272ac1649ab77bb3baabc99e0f3b9d",
+        "bytes": 2701598,
+        "rights": "local research copy; redistribution not assumed"
+      }
+    },
+    {
+      "id": "muniz-2025",
+      "title": "High-Fidelity Universal Gates in the 171Yb Ground-State Nuclear-Spin Qubit",
+      "doi": "10.1103/PRXQuantum.6.020334",
+      "primaryUrl": "https://doi.org/10.1103/PRXQuantum.6.020334",
+      "documentType": "experimental-article",
+      "sourceLocations": [
+        "Journal PDF pp.9-10 Appendix C"
+      ],
+      "observed": {
+        "isotope": "171Yb",
+        "wavelength_nm": 578,
+        "ellipticalWaists_um": [
+          400,
+          35
+        ],
+        "clockRabi_Hz_range": [
+          3000,
+          15000
+        ]
+      },
+      "missingForMatchedBenchmark": [
+        "numerical delivered clock power",
+        "explicit intensity-waist convention",
+        "power, channel and measured Rabi paired at one operating point"
+      ],
+      "eligibility": "not-eligible-with-current-evidence",
+      "reason": "An operating range and elliptical waist are given, but there is no numerical matched clock power.",
+      "localDocument": {
+        "path": "references/papers/2025_Muniz_171Yb_Universal-gates_published.pdf",
+        "sha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e",
+        "bytes": 1803757,
+        "rights": "local research copy; redistribution not assumed"
+      }
+    },
+    {
+      "id": "hoyt-2005",
+      "title": "Observation and Absolute Frequency Measurements of the 1S0-3P0 Optical Clock Transition in Neutral Ytterbium",
+      "doi": "10.1103/PhysRevLett.95.083003",
+      "primaryUrl": "https://tf.nist.gov/general/pdf/2038.pdf",
+      "documentType": "experimental-article",
+      "sourceLocations": [
+        "PDF p.2, printed 083003-2"
+      ],
+      "observed": {
+        "isotopes": [
+          "171Yb",
+          "173Yb"
+        ],
+        "wavelength_nm": 578.4,
+        "power_mW": 20,
+        "intensity_1_e2_radius_um_approx": 1000,
+        "estimatedRabi_Hz_approx": 4000
+      },
+      "missingForMatchedBenchmark": [
+        "independently measured Rabi frequency for a specified isotope/channel"
+      ],
+      "eligibility": "not-eligible-with-current-evidence",
+      "reason": "The paper explicitly calls the Rabi rate estimated; trap-depletion spectroscopy is not an independent measurement of that numerical Rabi rate."
+    },
+    {
+      "id": "wang-2022",
+      "title": "Effective sideband cooling in an ytterbium optical lattice clock",
+      "doi": "10.1088/1674-1056/ac5392",
+      "primaryUrl": "https://cpb.iphy.ac.cn/en/article/doi/10.1088/1674-1056/ac5392",
+      "documentType": "experimental-article",
+      "sourceLocations": [
+        "Fig.5 carrier Rabi oscillations",
+        "Main-text cooling sequence",
+        "Publisher page: Supplements (0)"
+      ],
+      "observed": {
+        "isotope": "171Yb",
+        "wavelength_nm": 578,
+        "carrierRabi_Hz_beforeAfter": [
+          330,
+          310
+        ],
+        "sidebandCoolingPower_mW_approx": 5
+      },
+      "missingForMatchedBenchmark": [
+        "power for the carrier measurement",
+        "explicit waist definition and matched channel/geometry"
+      ],
+      "eligibility": "not-eligible-with-current-evidence",
+      "reason": "5 mW is assigned to the sideband cooling sequence, not the subsequently measured carrier Rabi operating point; these must not be spliced."
+    },
+    {
+      "id": "shu-2024",
+      "title": "Increased atom-cavity coupling through cooling-induced atomic reorganization",
+      "doi": "10.1103/PhysRevResearch.6.L032049",
+      "primaryUrl": "https://arxiv.org/html/2310.17090",
+      "documentType": "experimental-article",
+      "sourceLocations": [
+        "PDF p.2 clock geometry",
+        "PDF p.3 Fig.4(a)",
+        "Supplement, 2 pages"
+      ],
+      "observed": {
+        "isotope": "171Yb",
+        "wavelength_nm": 578,
+        "polarization": "pi",
+        "directRabiOscillations": "Fig.4(a)",
+        "piPulseFidelity": {
+          "value": 0.93,
+          "uncertainty": 0.03
+        }
+      },
+      "missingForMatchedBenchmark": [
+        "clock power",
+        "clock waist and definition",
+        "numerical matched Rabi fit"
+      ],
+      "eligibility": "not-eligible-with-current-evidence",
+      "reason": "27/130 um are lattice waists and 13.7 um is a 556 nm cavity mode; none is a 578 nm beam waist."
+    },
+    {
+      "id": "takata-2019",
+      "title": "Current-feedback-stabilized laser system for quantum simulation experiments using Yb clock transition at 578 nm",
+      "doi": "10.1063/1.5110037",
+      "primaryUrl": "https://arxiv.org/pdf/1905.05103",
+      "documentType": "experimental-article",
+      "sourceLocations": [
+        "PDF p.4 Fig.7"
+      ],
+      "observed": {
+        "isotope": "171Yb",
+        "wavelength_nm": 578,
+        "probeIntensity_mW_cm2": 0.3,
+        "spectralGaussianWidth_Hz": 324,
+        "sourceOutput_mW": 18
+      },
+      "missingForMatchedBenchmark": [
+        "atom-plane probe power",
+        "explicit probe waist",
+        "independently extracted Rabi frequency"
+      ],
+      "eligibility": "not-eligible-with-current-evidence",
+      "reason": "A spectral width and estimated power broadening are not a measured Rabi rate; 18 mW is source output."
+    },
+    {
+      "id": "norcia-2023",
+      "title": "Midcircuit Qubit Measurement and Rearrangement in a 171Yb Atomic Array",
+      "doi": "10.1103/PhysRevX.13.041034",
+      "primaryUrl": "https://journals.aps.org/prx/pdf/10.1103/PhysRevX.13.041034",
+      "documentType": "experimental-article",
+      "sourceLocations": [
+        "PDF p.11 Appendix F",
+        "PDF p.4 nuclear-spin Raman operations"
+      ],
+      "observed": {
+        "isotope": "171Yb",
+        "clockWavelength_nm": 578,
+        "nuclearSpinRaman_Hz": 1400
+      },
+      "missingForMatchedBenchmark": [
+        "clock power",
+        "clock waist and definition",
+        "measured optical-clock Rabi frequency"
+      ],
+      "eligibility": "not-eligible-with-current-evidence",
+      "reason": "The 1.4 kHz rate is a two-photon nuclear-spin Raman rate, not the direct 578 nm optical-clock Rabi rate.",
+      "localDocument": {
+        "path": "references/papers/2023_Norcia_171Yb_Midcircuit-measurement_PRX13-041034.pdf",
+        "sha256": "3faacd25c310d3cde79e258d9f5e4a39325d42cb7fe45f50f48057ae1a9b213d",
+        "bytes": 901266,
+        "rights": "local research copy; redistribution not assumed"
+      }
+    },
+    {
+      "id": "offer-2026",
+      "title": "Portable laser-cooled ytterbium beam clock based on an ultra-narrow optical transition",
+      "doi": "10.1364/OPTICA.584095",
+      "supplementDoi": "10.6084/m9.figshare.31537450.v2",
+      "primaryUrl": "https://strathprints.strath.ac.uk/96758/",
+      "documentType": "experimental-article-and-supplement",
+      "sourceLocations": [
+        "Main text printed p.678, Eq.(2) and diameter statement",
+        "Main text p.679 folded-beam geometry",
+        "Supplement PDF p.2 Section1.2 lines28-38",
+        "Supplement PDF p.3 Section1.3 lines56-63"
+      ],
+      "observed": {
+        "isotope": "171Yb",
+        "wavelength_nm": 578,
+        "powerAvailableForRBStage_mW": 1070,
+        "beamDiameter_mm_asStated": 1,
+        "fittedEffectivePower_mW": 338,
+        "modelFittedPeakRabi_Hz": 22000,
+        "powerModelStatement": "Effective fitted P0 is approximately 1/3 of measured laser power.",
+        "polarization": "linear, addresses both mF=+/-1/2 ground states",
+        "measurementMethod": "Doppler contrast vs longitudinal velocity; effective coupling fit, not direct time-domain flopping",
+        "interactionBeams": "single input routed into four interaction beams by folded optics; no equal four-way splitting assumed"
+      },
+      "missingForMatchedBenchmark": [
+        "1mm diameter explicitly mapped to Gaussian 1/e^2 intensity diameter at the interaction region",
+        "numerical power at each interaction location / optical transmission and mode overlap",
+        "addressed q components and dipole/saturation-intensity convention",
+        "independent power/waist and fitted-coupling uncertainties"
+      ],
+      "eligibility": "model-dependent-near-match; strict-independent-benchmark-not-closed",
+      "reason": "338mW is a fit parameter, not an independent measured input. A contrast-derived coupling can be eligible in principle, but 1070mW is stage-available power and the exact waist/channel/interaction-power mapping remains incomplete. Feeding 338mW back into the same scalar-coupling model is circular.",
+      "localDocuments": [
+        {
+          "path": "references/papers/2026_Offer_171Yb_Portable-beam-clock_published.pdf",
+          "sha256": "7a3598bcc2fb6a6ed7d8280212d572a4f6bc5fa5dc49715b284ffc719473b472",
+          "bytes": 4231019,
+          "url": "https://strathprints.strath.ac.uk/96758/",
+          "rights": "local research copy; redistribution not assumed"
+        },
+        {
+          "path": "references/papers/2026_Offer_171Yb_Portable-beam-clock_supplement-v2.pdf",
+          "sha256": "3146ceef9a5c2bfd260406fd33030ea6d1995d44b1f9408e37ad62605ed38bfe",
+          "bytes": 613877,
+          "url": "https://ndownloader.figshare.com/files/63390231",
+          "rights": "local research copy; redistribution not assumed"
+        }
+      ]
+    }
+  ],
+  "additionalExclusions": [
+    {
+      "source": "Darkwah Oppong thesis 2021, DOI10.5282/edoc.27832",
+      "reason": "Printed p.24 Fig.1.6(b) 7.21(1) kHz is explicitly 173Yb; maximum 100 mW is not matched curve power."
+    },
+    {
+      "source": "Peper PRX15,011009 (2025), DOI10.1103/PhysRevX.15.011009",
+      "reason": "20 mW, 1/e^2 radius12 um and 2.5 MHz refer to 302 nm Rydberg excitation, not 578 nm."
+    },
+    {
+      "source": "Barber PRL96,083002 (2006), DOI10.1103/PhysRevLett.96.083002",
+      "reason": "174Yb magnetically induced transition, not 171Yb."
+    },
+    {
+      "source": "Universal quantum operations and ancilla-based read-out for tweezer clocks, DOI10.1038/s41586-024-08005-8",
+      "reason": "88Sr, not 171Yb."
+    }
+  ],
+  "methodDocuments": [
+    {
+      "title": "Wave-front curvature in optical atomic beam clocks",
+      "doi": "10.1103/PhysRevA.108.013105",
+      "primaryUrl": "https://arxiv.org/pdf/2212.00308v2",
+      "sourceLocations": [
+        "PDF p.3 SectionII.B",
+        "PDF p.4 Eq.(6)"
+      ],
+      "role": "Offer2026 Eq.(2) method reference; not a matched additional experimental benchmark",
+      "waistDefinition": "field amplitude exp(-v^2*t^2/w(z)^2); model w is intensity 1/e^2 radius",
+      "boundary": "The model convention does not by itself identify the 2026 apparatus 1mm diameter with 2w0 at each interaction location.",
+      "localDocument": {
+        "path": "references/papers/2023_Strathearn_Wavefront-curvature_arXiv2212.00308v2.pdf",
+        "sha256": "21c79f5126320fd8ba76ffb6347dec853bba87b96a4787e3862513b995934fef",
+        "bytes": 811487,
+        "url": "https://arxiv.org/pdf/2212.00308v2",
+        "rights": "local research copy; redistribution not assumed"
+      }
+    }
+  ]
+}

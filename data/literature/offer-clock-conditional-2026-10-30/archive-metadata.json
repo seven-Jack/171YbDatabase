@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "originalAuditDate": "2026-10-30",
+  "archivedOn": "2026-10-31",
+  "baseCommit": "8203da5ceb9bd0117c091578fb3c070b4281ea03",
+  "softwareVersion": "0.3.3",
+  "classification": "supplemental evidence archive; engineering packaging only",
+  "historicalManifest": {
+    "path": "data/literature/offer-clock-conditional-2026-10-30/historical-manifest-20261030.json",
+    "sha256": "8917e6305f6c940391819fdef33e5325af920128be3bc1b0784494b37e65e15e",
+    "scope": "Original partial manifest retained byte-for-byte; not a complete-package integrity claim."
+  },
+  "frozenHistoricalFiles": [
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/comparison.csv",
+      "bytes": 469,
+      "sha256": "fd4f65e301095a86a33d4cc669a703aacbc68edcae109b45c6abe4d751c096c0"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/inputs.json",
+      "bytes": 3949,
+      "sha256": "4e34864cc974ee0851be25fce92f97164a6f9a7676dbb68b2f0a246f04163407"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/results.json",
+      "bytes": 4688,
+      "sha256": "170daded952d74a958f247b72ee0f1d8ae7ee8f776e9c7ba1bc4d7cd9b7678a5"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/historical-manifest-20261030.json",
+      "bytes": 1343,
+      "sha256": "8917e6305f6c940391819fdef33e5325af920128be3bc1b0784494b37e65e15e"
+    }
+  ],
+  "verificationBoundary": "Original verification files and screenshot are dated 2026-10-30 historical records, not current software acceptance or independent Rabi validation. Current source bytes are reported separately by --check.",
+  "currentOutputPolicy": "Explicit reproduce.mjs --write creates current-results.json/current-*.csv and refreshes manifest; historical snapshots are not overwritten.",
+  "canonicalAtomicDataChanged": false,
+  "productionPhysicsChanged": false,
+  "mainDiagramChanged": false
+}

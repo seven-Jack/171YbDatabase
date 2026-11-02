@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 2,
+  "originalAuditDate": "2026-10-30",
+  "archivedOn": "2026-10-31",
+  "baseCommit": "8203da5ceb9bd0117c091578fb3c070b4281ea03",
+  "scope": {
+    "includes": "All public package files except manifest.json itself, the linked audit report, and listed shared verification code/tests.",
+    "excludes": "Self hash; local original PDFs/full text/TeX/source archives/notebooks/paper page images. These have separate source fingerprints.",
+    "boundary": "File integrity and reproducibility only; not independent experimental validation."
+  },
+  "files": [
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/README.md",
+      "bytes": 1880,
+      "sha256": "6ad53e91f1f90786bded5ff6438b3dcbfa4cc6687347f673008c4e41ef8f3fae"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/archive-metadata.json",
+      "bytes": 1936,
+      "sha256": "b4aaf6ab590073ddc8ee84b9f153ca76cb11ee4bd015f9defa48bfba309ea09f"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/comparison.csv",
+      "bytes": 469,
+      "sha256": "fd4f65e301095a86a33d4cc669a703aacbc68edcae109b45c6abe4d751c096c0"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/historical-manifest-20261030.json",
+      "bytes": 1343,
+      "sha256": "8917e6305f6c940391819fdef33e5325af920128be3bc1b0784494b37e65e15e"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/inputs.json",
+      "bytes": 3949,
+      "sha256": "4e34864cc974ee0851be25fce92f97164a6f9a7676dbb68b2f0a246f04163407"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/reproduce.mjs",
+      "bytes": 5143,
+      "sha256": "0efa6e1a77f8176c859758c990c608f747754d733bc31aaa61616af0054457ca"
+    },
+    {
+      "path": "data/literature/offer-clock-conditional-2026-10-30/results.json",
+      "bytes": 4688,
+      "sha256": "170daded952d74a958f247b72ee0f1d8ae7ee8f776e9c7ba1bc4d7cd9b7678a5"
+    },
+    {
+      "path": "references/audits/offer-clock-conditional-20261030.md",
+      "bytes": 6925,
+      "sha256": "08c832772bb7384c794ca7aa9ea5549dca531958517b00158daed9098bff41d1"
+    },
+    {
+      "path": "scripts/literature-audit.mjs",
+      "bytes": 17354,
+      "sha256": "b2925c6687c5880ad26441d4edef7955c1b43dae3f3fb64ccf6f8494b9063c1f"
+    },
+    {
+      "path": "scripts/local-evidence.mjs",
+      "bytes": 1061,
+      "sha256": "5ebbe7a46b98b40855375e2747e527e6b37b325a0b25512a22451ec9dbb88125"
+    },
+    {
+      "path": "tests/physics/offer-audit.test.js",
+      "bytes": 12585,
+      "sha256": "170d5364e268be59735857fde87e9dcb46be0e3a008582317c6a0bea44da6e7b"
+    }
+  ]
+}

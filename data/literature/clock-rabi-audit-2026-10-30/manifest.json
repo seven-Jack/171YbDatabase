@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "originalAuditDate": "2026-10-30",
+  "archivedOn": "2026-10-31",
+  "baseCommit": "8203da5ceb9bd0117c091578fb3c070b4281ea03",
+  "scope": {
+    "includes": "All public package files except manifest.json itself, the linked audit report, and listed shared verification code/tests.",
+    "excludes": "Self hash; local original PDFs/full text/TeX/source archives/notebooks/paper page images. These have separate source fingerprints.",
+    "boundary": "File integrity and reproducibility only; not independent experimental validation."
+  },
+  "files": [
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/README.md",
+      "bytes": 2391,
+      "sha256": "2bc23e9a9dbbb219a8c955dd2054a23cf70cb1765ef1681830e32ce069c4d50f"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/archive-metadata.json",
+      "bytes": 2931,
+      "sha256": "d394296cfb5e47772c264a425d779cedf3f21f6b037723cbaf38d1063008a2e1"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/browser-clock-operating-point.png",
+      "bytes": 323440,
+      "sha256": "479af483269d327b6c390bb06c8908173305e72198c2aa3820901d45e29875c3"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/cases.json",
+      "bytes": 10714,
+      "sha256": "be27442f662b1d6d6506a8b55ecf0c094db52ef085b8d0a276047bcaba2411f7"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/historical-manifest-20261030.json",
+      "bytes": 1257,
+      "sha256": "87c78001695e933399fe2e57768aab255143521797d3cde3bdd8acf7ac3ccbdb"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/motional-diagnostics.mjs",
+      "bytes": 11633,
+      "sha256": "ace3e76b952cfa0071e486ad03e663f3014dca50a2c674abc36ab0eca3274d34"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/pizzocaro-source-check.json",
+      "bytes": 16040,
+      "sha256": "6d1aaa4edc5f22ac736eb7ded39458f88d3cad8a469655b30c148471e789e778"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/protected-hashes.json",
+      "bytes": 1456,
+      "sha256": "6b577fae17f45fda2725a5e66dfbe6e24c9d8d10e20452d86064adbce677e0d6"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/reproduce.mjs",
+      "bytes": 6273,
+      "sha256": "4e79c7ebb927a762511311ced00f0bef960c3f08f4884dbc16a9ddc28081aec6"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/results.json",
+      "bytes": 19812,
+      "sha256": "5227ae3b631901937a3d4f63ae006c52fe2e22f3e364f97a4db0563c5384bfbc"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/strength-comparison.csv",
+      "bytes": 497,
+      "sha256": "f614ca4a8f7dae844849c90de2708286e7d15e16572d176e46b5dc8d645efa77"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/verification.json",
+      "bytes": 582,
+      "sha256": "8b2863beab82e49c68b23558bcdc41594520d47b453b32e599c3006eed238a73"
+    },
+    {
+      "path": "references/audits/clock-rabi-578-audit-20261030.md",
+      "bytes": 13027,
+      "sha256": "9301c9c61c062f8ce29f4f07376c8195e786a6638d30032df8ce334992b1f8fb"
+    },
+    {
+      "path": "scripts/literature-audit.mjs",
+      "bytes": 17354,
+      "sha256": "b2925c6687c5880ad26441d4edef7955c1b43dae3f3fb64ccf6f8494b9063c1f"
+    },
+    {
+      "path": "scripts/local-evidence.mjs",
+      "bytes": 1061,
+      "sha256": "5ebbe7a46b98b40855375e2747e527e6b37b325a0b25512a22451ec9dbb88125"
+    },
+    {
+      "path": "tests/physics/clock-motion.test.js",
+      "bytes": 4889,
+      "sha256": "0e680fb8034c4045e95044467cf778e2824fb138189d41e0bb09272af966a60c"
+    },
+    {
+      "path": "tests/physics/clock-rabi-audit.test.js",
+      "bytes": 5846,
+      "sha256": "993279843fb201c09da355c2129f16c192bb6c10de242fb894bc7aa4a1e69977"
+    }
+  ]
+}

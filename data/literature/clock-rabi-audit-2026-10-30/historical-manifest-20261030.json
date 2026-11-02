@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "files": [
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/cases.json",
+      "bytes": 10714,
+      "sha256": "be27442f662b1d6d6506a8b55ecf0c094db52ef085b8d0a276047bcaba2411f7"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/pizzocaro-source-check.json",
+      "bytes": 16040,
+      "sha256": "6d1aaa4edc5f22ac736eb7ded39458f88d3cad8a469655b30c148471e789e778"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/reproduce.mjs",
+      "bytes": 7276,
+      "sha256": "b22ed28085487fb744a762e7cb8ac7cd53845926a1f4c3acc70affef1524fd6f"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/motional-diagnostics.mjs",
+      "bytes": 11633,
+      "sha256": "ace3e76b952cfa0071e486ad03e663f3014dca50a2c674abc36ab0eca3274d34"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/results.json",
+      "bytes": 19812,
+      "sha256": "5227ae3b631901937a3d4f63ae006c52fe2e22f3e364f97a4db0563c5384bfbc"
+    },
+    {
+      "path": "data/literature/clock-rabi-audit-2026-10-30/strength-comparison.csv",
+      "bytes": 497,
+      "sha256": "f614ca4a8f7dae844849c90de2708286e7d15e16572d176e46b5dc8d645efa77"
+    }
+  ]
+}

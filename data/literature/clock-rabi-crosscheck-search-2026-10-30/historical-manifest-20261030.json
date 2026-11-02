@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-30",
+  "files": [
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json",
+      "bytes": 18222,
+      "sha256": "f8bfcfd6aa1961514c60656f660b3f6e10e6739ee79b0a67e26549da7faccaa7"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/candidate-index.csv",
+      "bytes": 3941,
+      "sha256": "a2dcdf88bdddd0f88508c6033c3f910c8e8b830155f858afe97e82d4305b0834"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/README.md",
+      "bytes": 967,
+      "sha256": "c849ff15cc4ede5fdb9487fde67c0aea5df5593d58b91127601dc516ba3f819e"
+    },
+    {
+      "path": "data/literature/clock-rabi-crosscheck-search-2026-10-30/verification.json",
+      "bytes": 5331,
+      "sha256": "cd8e118eb152a81d36a66f9a0e79f19d217a46e883fce51cd126e9713f4093f0"
+    },
+    {
+      "path": "references/audits/clock-rabi-independent-search-20261030.md",
+      "bytes": 8327,
+      "sha256": "c7f0ba6a2dbfa9e157820e677ffcf862aa11ae4c8eab19b7dae286763b8a923c"
+    }
+  ]
+}
