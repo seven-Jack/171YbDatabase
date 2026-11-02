@@ -74,13 +74,49 @@ function scientificProjection(result) {
   return copy;
 }
 
+function snapshotDifference(actual, expected, at = '$', roundoff = []) {
+  if (isDeepStrictEqual(actual, expected)) return null;
+  // Node 22 and 24 can round this derived q**n probability one ULP apart.
+  // No absolute floor: tiny physical quantities, inputs and all other outputs
+  // remain exact, as do source identities, frozen bytes and manifest hashes.
+  const probabilityPath = /^\$\.conditionalMotion\.thermalCases\[\d+\]\.unboundedHarmonicProbabilityAtOrAboveNominalBarrier$/;
+  if (probabilityPath.test(at) && typeof actual === 'number' && typeof expected === 'number' &&
+      Number.isFinite(actual) && Number.isFinite(expected)) {
+    const tolerance = 8 * Number.EPSILON * Math.max(Math.abs(actual), Math.abs(expected));
+    if (Math.abs(actual - expected) <= tolerance) {
+      roundoff.push({path: at, actual, historical: expected, tolerance});
+      return null;
+    }
+  }
+  if (Array.isArray(actual) && Array.isArray(expected) && actual.length === expected.length &&
+      isDeepStrictEqual(Object.keys(actual), Object.keys(expected))) {
+    for (let index = 0; index < actual.length; index++) {
+      const difference = snapshotDifference(actual[index], expected[index], `${at}[${index}]`, roundoff);
+      if (difference) return difference;
+    }
+    return null;
+  }
+  if (actual && expected && typeof actual === 'object' && typeof expected === 'object' &&
+      !Array.isArray(actual) && !Array.isArray(expected) &&
+      isDeepStrictEqual(Object.keys(actual).sort(), Object.keys(expected).sort())) {
+    for (const key of Object.keys(actual)) {
+      const difference = snapshotDifference(actual[key], expected[key], `${at}.${key}`, roundoff);
+      if (difference) return difference;
+    }
+    return null;
+  }
+  return {path: at, actual, historical: expected};
+}
+
 export function compareReproductionSnapshot(current, historical) {
-  if (!isDeepStrictEqual(scientificProjection(current), scientificProjection(historical))) {
-    throw Error('Reproduction differs from the historical scientific result or source identity');
+  const roundoff = [], difference = snapshotDifference(scientificProjection(current), scientificProjection(historical), '$', roundoff);
+  if (difference) {
+    throw Error(`Reproduction differs from the historical scientific result or source identity: ${JSON.stringify(difference)}`);
   }
   const records = current.sourceHashes || current.sourceBytes || [];
   return {scientificSnapshotMatches: true, originalsVerified: records.filter(item => item.verified).length,
     originalsUnavailable: records.filter(item => !item.verified).length,
+    derivedProbabilityRoundoffMatches: roundoff,
     boundary: 'Historical source-byte availability is not a claim that originals are present in this checkout.'};
 }
 

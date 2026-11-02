@@ -63,6 +63,22 @@ test('scientific drift, source-identity drift and contradictory byte claims fail
   assert.throws(() => compareReproductionSnapshot(falseClaim, historical), /cannot retain/);
 });
 
+test('only the derived thermal-tail probability tolerates machine roundoff across Node versions', () => {
+  const historical = read('data/literature/clock-rabi-audit-2026-10-30/results.json');
+  const rounded = clockReproduction();
+  const key = 'unboundedHarmonicProbabilityAtOrAboveNominalBarrier';
+  rounded.conditionalMotion.thermalCases[2][key] = historical.conditionalMotion.thermalCases[2][key] * (1 + Number.EPSILON);
+  assert.equal(compareReproductionSnapshot(rounded, historical).scientificSnapshotMatches, true);
+  rounded.conditionalMotion.thermalCases[2][key] = historical.conditionalMotion.thermalCases[2][key] * (1 + 1e-10);
+  assert.throws(() => compareReproductionSnapshot(rounded, historical), /thermalCases\[2\].*unboundedHarmonicProbability/);
+  const changedInput = clockReproduction();
+  changedInput.current.power_nW *= 1 + Number.EPSILON;
+  assert.throws(() => compareReproductionSnapshot(changedInput, historical), /current\.power_nW/);
+  const otherOutput = clockReproduction();
+  otherOutput.current.rabi_Hz *= 1 + Number.EPSILON;
+  assert.throws(() => compareReproductionSnapshot(otherOutput, historical), /current\.rabi_Hz/);
+});
+
 test('all reproduction CLIs default to checks and preserve historical bytes', () => {
   for (const definition of auditPackages.filter(item => item.name !== 'clock-rabi-crosscheck-search-2026-10-30')) {
     const resultFile = new URL(`${definition.directory}/results.json`, root);
