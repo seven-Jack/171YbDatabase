@@ -1,13 +1,20 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {CORE_TRANSITIONS, getQuantity} from '../../src/data/catalog.js';
+import {CORE_TRANSITIONS, RYDBERG_QC_TRANSITIONS, getQuantity, getTransitionRecord, getLevelRecord} from '../../src/data/catalog.js';
 import {computeCGChannels, computeDEff} from '../../src/physics/angular.js';
+import {getEvidenceRecord} from '../../src/data/evidence.js';
 import {buildEvidenceView} from '../../src/ui/evidence-model.js';
 
 function stateFor(id = 'T3', patch = {}) {
-  const transition = CORE_TRANSITIONS.find(row => row.id === id);
-  const state = {transition, dReduced:transition?.d_num || 0, J_lower:0, J_upper:id === 'T2' ? 1 : 0,
-    F_lower:.5, F_upper:.5, pol:'pi', selectedChannel:null, P_mW:1, w_um:500, inputStatus:'valid', ...patch};
+  const transition = [...CORE_TRANSITIONS,...RYDBERG_QC_TRANSITIONS].find(row => row.id === id);
+  const canonical = getTransitionRecord(id), reviewed = getEvidenceRecord(id)?.appliesTo;
+  const q = reviewed?.channels?.[0]?.q ?? 0;
+  const state = {transition, dReduced:getQuantity(id,'d_num')?.value || 0,
+    J_lower:getLevelRecord(canonical?.lowerLevelId)?.attributes.J ?? 0,
+    J_upper:getLevelRecord(canonical?.upperLevelId)?.attributes.J ?? 0,
+    F_lower:reviewed?.F ?? .5, F_upper:reviewed?.Fp ?? .5,
+    pol:({[-1]:'sigmam',0:'pi',1:'sigmap'})[q], selectedChannel:reviewed?.channels?.[0] ?? null,
+    P_mW:1, w_um:500, inputStatus:'valid', ...patch};
   state.dEff = computeDEff(state).dEff;
   return state;
 }
@@ -105,11 +112,11 @@ test('context identity follows channel, definitions, validity and versions witho
 });
 
 test('unreviewed E1, unsupported multipole and no selection cannot borrow clock validation', () => {
-  const t2 = buildEvidenceView(stateFor('T2'));
-  assert.equal(t2.hasReview, false);
-  assert.ok(t2.rows.every(row => row.status === 'not-reviewed'));
-  assert.match(t2.rows[0].detail, /本轮面板尚未接入.*保留原有数值出处与审计/);
-  assert.equal(t2.atomicSupport, null); assert.deepEqual(t2.comparisons, []);
+  const r2 = buildEvidenceView(stateFor('R2'));
+  assert.equal(r2.hasReview, false);
+  assert.ok(r2.rows.every(row => row.status === 'not-reviewed'));
+  assert.match(r2.rows[0].detail, /本轮面板尚未接入.*保留原有数值出处与审计/);
+  assert.equal(r2.atomicSupport, null); assert.deepEqual(r2.comparisons, []);
   const t4 = buildEvidenceView(stateFor('T4'));
   assert.equal(t4.calculationStatus, 'unsupported');
   assert.ok(t4.rows.every(row => row.status === 'not-applicable'));
@@ -130,4 +137,66 @@ test('UI projections are detached from the immutable metadata and never mutate a
   assert.equal(fresh.sources[0].doi, '10.1103/PhysRevLett.113.033003');
   assert.equal(JSON.stringify(getQuantity('T3','d_num')), before);
   assert.doesNotMatch(JSON.stringify(fresh), /file:\/\/|\/Users\/|references\/papers|data\/literature/);
+});
+
+
+for (const id of ['T1','T2','T5','T6','T7']) {
+  test(`${id} accepts only its exact published channel and keeps the theory/experiment boundary`, () => {
+    const state = stateFor(id), before = JSON.stringify(state), view = buildEvidenceView(state);
+    assert.deepEqual(statuses(view), {source:'checked',formula:'checked',comparison:'theory-compatible',experiment:'not-closed'});
+    assert.equal(view.primarySourceId, 'ref-01');
+    assert.equal(view.applicability.sourceMatch, true);
+    assert.equal(view.applicability.channelMatch, true);
+    assert.equal(view.rows[2].label, '文献基准比较');
+    assert.equal(view.comparisons[0].kind, 'theory-benchmark');
+    assert.equal(view.calculationStatus, 'valid');
+    assert.ok(!view.sources.some(source => /offer|xu-2014/.test(source.id)));
+    assert.equal(JSON.stringify(state), before);
+    const changedP = buildEvidenceView({...state, P_mW:13, w_um:27});
+    assert.deepEqual(changedP.comparisons, view.comparisons);
+    const alternatives = computeCGChannels(state).filter(item => item.q === state.selectedChannel.q
+      && item.F === state.F_lower && item.Fp === state.F_upper && item.m !== state.selectedChannel.m);
+    assert.ok(alternatives.length > 0);
+    const mismatched = stateFor(id, {selectedChannel:alternatives[0]});
+    const unreviewedChannel = buildEvidenceView(mismatched);
+    assert.equal(unreviewedChannel.calculationStatus, 'valid');
+    assert.equal(unreviewedChannel.applicability.channelMatch, false);
+    assert.equal(unreviewedChannel.rows[1].status, 'needs-review');
+    assert.equal(unreviewedChannel.rows[2].status, 'needs-review');
+    assert.equal(unreviewedChannel.comparisons[0].status, 'needs-review');
+    assert.match(unreviewedChannel.summary, /当前上下文需重核/);
+    assert.doesNotMatch(unreviewedChannel.summary, /文献理论基准相容/);
+    assert.notEqual(unreviewedChannel.contextKey, view.contextKey);
+    assert.equal(unreviewedChannel.rows[3].status, 'not-closed');
+    for (const patch of [{convention:'F-reduced'}, {dReduced:state.dReduced * 1.01}, {pol:'pi',selectedChannel:null}, {J_upper:2}]) {
+      const changed = buildEvidenceView(stateFor(id, patch));
+      assert.equal(changed.rows[1].status, 'needs-review');
+      assert.equal(changed.rows[2].status, 'needs-review');
+      assert.equal(changed.rows[3].status, 'not-closed');
+      assert.doesNotMatch(changed.summary, /文献理论基准相容/);
+      assert.notEqual(changed.contextKey, view.contextKey);
+    }
+    for (const overrides of [{datasetHash:'0'.repeat(64)}, {formulaVersion:'9.9.9'}]) {
+      const changed = buildEvidenceView(state, overrides);
+      assert.equal(changed.rows[1].status, 'needs-review');
+      assert.equal(changed.rows[2].status, 'needs-review');
+      assert.equal(changed.rows[3].status, 'not-closed');
+    }
+    const invalid = buildEvidenceView({...state,inputStatus:'invalid'});
+    assert.equal(invalid.calculationStatus, 'invalid');
+    assert.equal(invalid.rows[2].status, 'theory-compatible');
+    assert.equal(invalid.rows[3].status, 'not-closed');
+  });
+}
+
+test('switching low-state and clock reviews never retains a prior source, comparison or primary identity', () => {
+  const clock = buildEvidenceView(stateFor('T3'));
+  const blue = buildEvidenceView(stateFor('T1'));
+  const clockAgain = buildEvidenceView(stateFor('T3'));
+  assert.equal(blue.primarySourceId, 'ref-01');
+  assert.equal(blue.comparisons[0].kind, 'theory-benchmark');
+  assert.equal(clock.primarySourceId, 'internal-t3-20260908');
+  assert.equal(clock.comparisons[0].kind, 'conditional-power');
+  assert.notEqual(blue.contextKey, clock.contextKey);
+  assert.deepEqual(clockAgain, clock);
 });

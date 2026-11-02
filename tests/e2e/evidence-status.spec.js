@@ -227,9 +227,10 @@ test('changing transition clears clock-only evidence and marks unsupported multi
   await openEvidence(page);
   await expect(page.getByTestId('evidence-xu')).toHaveCount(1);
   await selectTransition(page, 'T2');
+  await page.locator('#hfCGTableBody [data-channel-key="0.5|0.5|1.5|1.5|1"]').click();
   await openEvidence(page);
   await expectStatuses(page, {
-    source: 'not-reviewed', formula: 'not-reviewed', comparison: 'not-reviewed', experiment: 'not-reviewed',
+    source: 'checked', formula: 'checked', comparison: 'theory-compatible', experiment: 'not-closed',
   });
   await expect(page.getByTestId('evidence-xu')).toHaveCount(0);
   await expect(page.getByTestId('evidence-offer')).toHaveCount(0);

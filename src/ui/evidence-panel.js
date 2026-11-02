@@ -13,13 +13,16 @@ const ROWS = [
   {key:'comparison',label:'条件比较'},
   {key:'experiment',label:'独立实验验证'}
 ];
-const STATUS = new Set(['checked','conditional','not-closed','needs-review','not-reviewed','not-applicable']);
+const STATUS = new Set(['checked','conditional','theory-compatible','not-closed','needs-review','not-reviewed','not-applicable']);
 const INVALID_CALCULATION = new Set(['invalid','invalid-input','missing-data','unsupported','no-channel','unselected']);
 const EVIDENCE_KIND = {
   'medium-corrected-rate':'介质修正后的原子率',
   'reported-rate-uncertainty':'原文报告的率不确定度',
   'rate-derived-dipole':'由原子率推导',
-  'model-fitted-coupling':'模型拟合耦合'
+  'model-fitted-coupling':'模型拟合耦合',
+  'compiled-dipole':'汇编采用的约化矩阵元',
+  'lifetime-derived-dipole':'由寿命与分支数据推导',
+  'theory-dipole':'理论矩阵元'
 };
 const evidenceKindText = value => EVIDENCE_KIND[value] || '证据类型待核查';
 
@@ -64,11 +67,12 @@ function numberText(value, places = 4) {
   return value === null || value === undefined || value === '' ? '—' : String(value);
 }
 
-function renderAtomicSupport(support, sources) {
+function renderAtomicSupport(support, sources, transitionId) {
   if (!support || typeof support !== 'object') return '';
   const quantities = list(support.quantities);
-  return `<details class="evidence-detail" data-evidence-section="xu" data-testid="evidence-xu">
-    <summary><span>${text(support.title || 'Xu · 原子率支持')}</span><span class="evidence-detail-status">${text(support.statusText)}</span></summary>
+  const legacyXu = transitionId === 'T3' && list(support.sourceIds).includes('xu-2014-prl');
+  return `<details class="evidence-detail" data-evidence-section="${text(legacyXu ? 'xu' : `atomic-support-${transitionId}`)}" data-testid="${legacyXu ? 'evidence-xu' : 'evidence-atomic-support'}" data-evidence-kind="atomic-support" data-evidence-id="${text(transitionId)}">
+    <summary><span>${text(support.title || '原子参数与数据链')}</span><span class="evidence-detail-status">${text(support.statusText)}</span></summary>
     <div class="evidence-detail-body">
       <p>${text(support.summary)}</p>
       ${quantities.length ? `<dl class="evidence-quantities">${quantities.map(quantity => `<div><dt>${text(quantity.label)}</dt><dd><strong>${text(numberText(quantity.value,10))}${quantity.unit ? ` ${text(quantity.unit)}` : ''}</strong>${quantity.evidenceKind ? `<span>${text(evidenceKindText(quantity.evidenceKind))}</span>` : ''}</dd></div>`).join('')}</dl>` : ''}
@@ -78,20 +82,48 @@ function renderAtomicSupport(support, sources) {
   </details>`;
 }
 
-function renderComparison(comparison, sources) {
+function fractionText(value, signed = false) {
+  if (!Number.isFinite(value)) return '—';
+  const fraction = Number.isInteger(value) ? String(value) : `${value * 2}/2`;
+  return `${signed && value > 0 ? '+' : ''}${fraction}`;
+}
+
+function renderTheoryBenchmark(comparison) {
+  const channel = comparison.channel || {};
+  const polarization = {'-1':'σ⁻','0':'π','1':'σ⁺'}[channel.q] || '偏振待核';
+  return `<div class="evidence-benchmark-context">
+      <span>固定 P = ${text(numberText(comparison.power_mW))} mW</span><span>w₀ = ${text(numberText(comparison.waist_um))} μm（1/e² 强度半径）</span>
+      <span class="evidence-benchmark-channel">F=${text(fractionText(channel.F))}, mF=${text(fractionText(channel.m,true))} → F′=${text(fractionText(channel.Fp))}, mF′=${text(fractionText(channel.mp,true))} · ${text(polarization)}</span>
+    </div>
+    <dl class="evidence-benchmark-values" aria-label="固定参数下的文献理论基准">
+      <div><dt>计算 Ω/2π</dt><dd>${text(numberText(comparison.calculatedRabi_MHz,6))} <span>MHz</span></dd></div>
+      <div><dt>文献 Ω/2π</dt><dd>${text(numberText(comparison.publishedRabi_MHz,6))} ± ${text(numberText(comparison.publishedRabiUncertainty_MHz,6))} <span>MHz</span></dd></div>
+    </dl>
+    <p class="evidence-benchmark-boundary">文献理论复现；未独立实验验证。所列不确定度来自文献，不代表本次计算的完整误差预算。</p>`;
+}
+
+function renderComparison(comparison, sources, transitionId) {
   if (!comparison || typeof comparison !== 'object') return '';
+  // Schema-1 Offer records remain readable; unknown kinds cannot inherit a checked label.
+  const kind = comparison.kind || (comparison.id === 'offer-578-conditional' ? 'conditional-power' : null);
+  const theory = kind === 'theory-benchmark';
+  const conditional = kind === 'conditional-power';
   const reference = comparison.reference || {};
   const rows = list(comparison.rows);
-  const status = STATUS.has(comparison.status) ? comparison.status : 'not-reviewed';
-  const statusText = status === 'conditional' ? '条件比较' : status === 'needs-review' ? '需按当前版本与通道重核' : '尚未核查';
-  return `<details class="evidence-detail" data-evidence-section="offer" data-testid="evidence-offer" data-evidence-status="${text(status)}">
-    <summary><span>${text(comparison.title || 'Offer · 条件比较')}</span><span class="evidence-detail-status">${text(statusText)}</span></summary>
+  const allowedStatus = theory ? ['theory-compatible','needs-review'] : conditional ? ['conditional','needs-review'] : [];
+  const status = allowedStatus.includes(comparison.status) ? comparison.status : 'not-reviewed';
+  const statusText = status === 'conditional' ? '条件比较' : status === 'theory-compatible' ? '文献理论基准相容' : status === 'needs-review' ? '需按当前版本与通道重核' : '尚未核查';
+  const legacyOffer = transitionId === 'T3' && comparison.id === 'offer-578-conditional' && conditional;
+  return `<details class="evidence-detail" data-evidence-section="${text(legacyOffer ? 'offer' : `comparison-${comparison.id || 'unknown'}`)}" data-testid="${legacyOffer ? 'evidence-offer' : 'evidence-comparison'}" data-evidence-status="${text(status)}" data-evidence-kind="${text(kind || 'unknown')}" data-evidence-id="${text(comparison.id || 'unknown')}">
+    <summary><span>${text(comparison.title || (theory ? '文献理论基准' : '文献对照'))}</span><span class="evidence-detail-status">${text(statusText)}</span></summary>
     <div class="evidence-detail-body">
       <p class="evidence-fixed-context">固定文献对照，非当前输入</p>
       ${comparison.scopeText ? `<p>${text(comparison.scopeText)}</p>` : ''}
-      ${reference.label || reference.value !== undefined ? `<div class="evidence-reference-value"><span>${text(reference.label)}</span><strong>${text(numberText(reference.value))}${reference.unit ? ` ${text(reference.unit)}` : ''}</strong>${reference.evidenceKind ? `<span>${text(evidenceKindText(reference.evidenceKind))}</span>` : ''}</div>` : ''}
+      ${conditional && (reference.label || reference.value !== undefined) ? `<div class="evidence-reference-value"><span>${text(reference.label)}</span><strong>${text(numberText(reference.value))}${reference.unit ? ` ${text(reference.unit)}` : ''}</strong>${reference.evidenceKind ? `<span>${text(evidenceKindText(reference.evidenceKind))}</span>` : ''}</div>` : ''}
       ${renderItems(comparison.assumptions,'evidence-assumptions')}
-      ${rows.length ? `<div class="evidence-case-table-wrap"><table class="evidence-case-table"><caption>固定参数的条件计算</caption><thead><tr><th scope="col">文献功率与性质</th><th scope="col">条件计算 Ω/2π</th><th scope="col">相对文献值</th></tr></thead><tbody>${rows.map(row => `<tr><th scope="row"><strong>${text(numberText(row.power_mW))} mW</strong><span>${text(row.powerLabel || row.powerKind)}</span></th><td>${text(numberText(row.rabi_kHz))} kHz</td><td>${text(numberText(row.relativeDifferencePercent,2))}%</td></tr>`).join('')}</tbody></table></div>` : ''}
+      ${theory ? renderTheoryBenchmark(comparison) : ''}
+      ${conditional && rows.length ? `<div class="evidence-case-table-wrap"><table class="evidence-case-table"><caption>固定参数的条件计算</caption><thead><tr><th scope="col">文献功率与性质</th><th scope="col">条件计算 Ω/2π</th><th scope="col">相对文献值</th></tr></thead><tbody>${rows.map(row => `<tr><th scope="row"><strong>${text(numberText(row.power_mW))} mW</strong><span>${text(row.powerLabel || row.powerKind)}</span></th><td>${text(numberText(row.rabi_kHz))} kHz</td><td>${text(numberText(row.relativeDifferencePercent,2))}%</td></tr>`).join('')}</tbody></table></div>` : ''}
+      ${!theory && !conditional ? '<p class="evidence-boundary">证据类型待核查；不据此判断当前计算或独立实验验证通过。</p>' : ''}
       ${comparison.normalizationNote ? `<p class="evidence-normalization">${text(comparison.normalizationNote)}</p>` : ''}
       ${comparison.boundary ? `<p class="evidence-boundary">${text(comparison.boundary)}</p>` : ''}
       ${renderSources(comparison.sourceIds,sources)}
@@ -123,7 +155,7 @@ export function renderEvidencePanelHTML(view = {}) {
     ${reviewed && invalidInput ? '<p class="evidence-input-notice" role="note">当前输入未形成有效计算；以下为已保存的核查记录，不代表本次计算通过。</p>' : ''}
     <dl class="evidence-status-grid">${rows}</dl>
     ${reviewed && view.primarySourceId ? `<p class="evidence-primary-source" data-testid="evidence-primary-source">原采用数值出处 <code>${text(view.primarySourceId)}</code></p>` : ''}
-    ${reviewed ? renderAtomicSupport(view.atomicSupport,sources) + list(view.comparisons).map(comparison => renderComparison(comparison,sources)).join('') : ''}
+    ${reviewed ? renderAtomicSupport(view.atomicSupport,sources,view.transitionId) + list(view.comparisons).map(comparison => renderComparison(comparison,sources,view.transitionId)).join('') : ''}
     ${missing.length ? `<details class="evidence-detail" data-evidence-section="missing"><summary><span>待补证据（${missing.length} 项）</span><span class="evidence-detail-status">独立实验验证尚未闭合</span></summary><div class="evidence-detail-body">${renderItems(missing,'evidence-missing')}</div></details>` : ''}
     ${view.applicability?.applicable === false ? renderItems(view.applicability.reasons,'evidence-applicability') : ''}`;
 }

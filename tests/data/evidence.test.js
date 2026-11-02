@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {createRequire} from 'node:module';
-import {EVIDENCE, EVIDENCE_VERSION, getEvidenceRecord, getEvidenceSource} from '../../src/data/evidence.js';
+import {EVIDENCE, EVIDENCE_VERSION, getEvidenceRecord, getEvidenceSource, getEvidenceComparison} from '../../src/data/evidence.js';
 import {getQuantity} from '../../src/data/catalog.js';
 
 const require = createRequire(import.meta.url);
@@ -38,7 +38,7 @@ test('source metadata distinguishes independent rate support, fitted power and m
   assert.equal(comparison.rows[1].rabi_kHz, 12.22514650683658);
   assert.match(comparison.normalizationNote, /21 s.*21.975.*候选重建/);
   assert.ok(record.sourceIds.every(id => getEvidenceSource(id)?.url.startsWith('https://')));
-  assert.equal(getEvidenceRecord('T2'), null);
+  assert.equal(getEvidenceRecord('R2'), null);
 });
 
 test('strict public field whitelist rejects local files, originals and false validation metadata', () => {
@@ -93,4 +93,68 @@ test('evidence export changes only its generated module and check mode detects s
     assert.equal(fs.readFileSync(path.join(root, 'data/dataset.json'), 'utf8'), 'protected manifest');
     assert.equal(fs.readFileSync(path.join(root, 'src/data/generated-catalog.js'), 'utf8'), 'protected atomic data');
   } finally { fs.rmSync(root, {recursive:true,force:true}); }
+});
+
+
+const lowStateIds = ['T1','T2','T5','T6','T7'];
+const archived = JSON.parse(fs.readFileSync(new URL('../../data/literature/low-state-rabi-validation-2026-10-30/results.json', import.meta.url), 'utf8'));
+
+test('all five public theory benchmarks preserve archived values, exact channels and adopted source identity', () => {
+  assert.equal(input.schemaVersion, 2);
+  for (const id of lowStateIds) {
+    const record = getEvidenceRecord(id), previous = archived.cases.find(item => item.transitionId === id);
+    assert.ok(record, id);
+    assert.equal(record.primarySourceId, getQuantity(id, 'd_num').sourceId);
+    assert.equal(record.appliesTo.dipole_ea0, getQuantity(id, 'd_num').value);
+    assert.equal(record.appliesTo.convention, 'J-reduced');
+    assert.deepEqual(record.appliesTo.channels, [previous.channel]);
+    const comparison = getEvidenceComparison(record.comparisonIds[0]);
+    assert.equal(comparison.kind, 'theory-benchmark');
+    assert.equal(comparison.status, 'theory-compatible');
+    assert.deepEqual(comparison.channel, previous.channel);
+    for (const key of ['power_mW','waist_um','calculatedRabi_MHz','publishedRabi_MHz','publishedRabiUncertainty_MHz']) assert.equal(comparison[key], previous[key], `${id}.${key}`);
+    assert.match(record.experimentDetail, /未|缺|尚/);
+    assert.match(comparison.boundary, /不|未|非/);
+    assert.ok(comparison.sourceIds.every(sourceId => record.sourceIds.includes(sourceId)));
+  }
+});
+
+test('schema 1 clock-only evidence stays supported without inferred theory or experimental claims', () => {
+  const legacy = clone();
+  legacy.schemaVersion = 1;
+  legacy.records = legacy.records.filter(item => item.transitionId === 'T3');
+  const referencedIds = legacy.records[0].comparisonIds;
+  legacy.comparisons = legacy.comparisons.filter(item => referencedIds.includes(item.id));
+  delete legacy.comparisons[0].kind;
+  assert.deepEqual(validateEvidence(legacy), {valid:true, errors:[]});
+});
+
+test('theory schema rejects false claims, invalid quantum channels and an inapplicable benchmark', () => {
+  const mutations = [
+    (record, comparison) => { comparison.status = 'validated'; },
+    (record, comparison) => { comparison.kind = 'independent-experiment'; },
+    (record, comparison) => { comparison.power_mW = 0; },
+    (record, comparison) => { comparison.waist_um = -1; },
+    (record, comparison) => { comparison.publishedRabiUncertainty_MHz = NaN; },
+    (record, comparison) => { comparison.calculatedRabi_MHz = comparison.publishedRabi_MHz + 100; },
+    (record, comparison) => { comparison.channel.m = .25; },
+    (record, comparison) => { comparison.channel.mp = 2.5; },
+    (record, comparison) => { comparison.channel.q = 0; },
+    (record, comparison) => { comparison.channel.F = -.5; },
+    (record, comparison) => { comparison.channel.Fp = 1.25; },
+    (record, comparison) => { record.appliesTo.channels = []; },
+    (record, comparison) => { delete record.appliesTo.channels; },
+    (record, comparison) => { record.appliesTo.channels[0].m = -.5; },
+    (record, comparison) => { record.appliesTo.dipole_ea0 = 0; },
+    (record, comparison) => { record.appliesTo.q = [0]; },
+    (record, comparison) => { record.appliesTo.convention = 'unreduced'; },
+    (record, comparison) => { record.sourceIds = []; },
+  ];
+  for (const mutate of mutations) {
+    const data = clone(), record = data.records.find(item => item.transitionId === 'T1');
+    const comparison = data.comparisons.find(item => item.id === record.comparisonIds[0]);
+    mutate(record, comparison);
+    assert.equal(validateEvidence(data).valid, false, mutate.toString());
+    assert.throws(() => prepareEvidence(data), /Invalid public evidence/);
+  }
 });
