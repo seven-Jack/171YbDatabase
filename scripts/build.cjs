@@ -28,7 +28,8 @@ function build(directory, options = {}) {
     // Local evidence includes full copyrighted papers, source text and audit
     // snapshots. Only the canonical runtime data belongs in the web artifact.
     fs.cpSync(source, path.join(output, name), { recursive: true,
-      filter: candidate => name!=='data'||!candidate.startsWith(path.join(source,'literature')) });
+      filter: candidate => path.basename(candidate)!=='.DS_Store' && !path.basename(candidate).startsWith('._') &&
+        (name!=='data'||!candidate.startsWith(path.join(source,'literature'))) });
   }
   const datasetPath = path.join(root, 'data', 'dataset.json');
   const dataset = fs.existsSync(datasetPath) ? JSON.parse(fs.readFileSync(datasetPath, 'utf8')) : {};

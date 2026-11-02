@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-10-31",
+  "purpose": "Register nine already-local PDF files from bounded 578 nm benchmark searches and Offer convention audits; no canonical parameter, production formula or main diagram changes.",
+  "policy": "All sources are supplemental evidence. Paper identity, available original bytes, parameter applicability and independent experimental validation are separate states. No full-text content is redistributed in this registry.",
+  "historicalProvenanceBoundary": "New source support and canonical aliases do not rewrite historical audit source IDs, source snapshots or the generating provenance of internal atomic records.",
+  "counts": {
+    "supplementalSources": 8,
+    "papersPdfDocuments": 9,
+    "localOnlyAttachments": 3
+  },
+  "sourceAliases": {
+    "offer-main": "offer-2026",
+    "offer-sm": "offer-2026",
+    "offer-2026-main": "offer-2026",
+    "offer-2026-sm-v2": "offer-2026",
+    "strathearn-model": "strathearn-2023-pra",
+    "ludlow-rmp": "ludlow-2015-rmp"
+  },
+  "sources": [
+    {
+      "id": "lis-2023",
+      "title": "Joanna W. Lis et al.",
+      "detail": "Midcircuit Operations Using the omg Architecture in Neutral Atom Arrays",
+      "authors": [
+        "Joanna W. Lis",
+        "Aruku Senoo",
+        "William F. McGrew",
+        "Felix Rönchen",
+        "Alec Jenkins",
+        "Adam M. Kaufman"
+      ],
+      "year": 2023,
+      "publication": "Phys. Rev. X 13, 041035 (2023)",
+      "doi": "10.1103/PhysRevX.13.041035",
+      "url": "https://doi.org/10.1103/PhysRevX.13.041035",
+      "referenceRole": "Supplemental 578 nm experimental candidate; source parameters screened, not an accepted matched independent Rabi benchmark",
+      "evidenceNotes": [
+        "90 mW is upstream doubler output; it precedes AOMs and fiber delivery and is not a measured atom-plane operating power.",
+        "power at atoms for the plotted 0.11 MHz oscillation",
+        "explicit intensity-radius convention",
+        "matched channel/polarization and beam calibration uncertainties"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "not-eligible-with-current-evidence",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [],
+      "documents": [
+        "references/papers/2023_Lis_171Yb_Midcircuit-omg_PRX13-041035.pdf"
+      ],
+      "documentHashes": [
+        "b33537c466775342db2c8f92ea275557013ab686078787a016838cc85633b809"
+      ]
+    },
+    {
+      "id": "zhang-2022",
+      "title": "X. Zhang et al.",
+      "detail": "Sub-recoil clock-transition laser cooling enabling shallow optical lattice clocks",
+      "authors": [
+        "X. Zhang",
+        "K. Beloy",
+        "Y. S. Hassan",
+        "W. F. McGrew",
+        "C.-C. Chen",
+        "J. L. Siegel",
+        "T. Grogan",
+        "A. D. Ludlow"
+      ],
+      "year": 2022,
+      "publication": "Phys. Rev. Lett. 129, 113202 (2022); local file is arXiv:2206.09056v1",
+      "doi": "10.1103/PhysRevLett.129.113202",
+      "url": "https://doi.org/10.1103/PhysRevLett.129.113202",
+      "referenceRole": "Supplemental 578 nm experimental candidate; source parameters screened, not an accepted matched independent Rabi benchmark",
+      "evidenceNotes": [
+        "The reported >3 kHz is a bound. 1/e field radius 170 um belongs to the 759 nm lattice, not the clock beam; 0.1 ms maximum must not be silently converted to a measured fitted Rabi frequency.",
+        "radius/diameter and intensity convention for 400 um",
+        "numerical Rabi fit with uncertainty",
+        "per-beam vs beam-pair power and addressed mF/polarization components"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "not-eligible-with-current-evidence",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [],
+      "documents": [
+        "references/papers/2022_Zhang_171Yb_Subrecoil-clock-cooling_arXiv2206.09056v1.pdf"
+      ],
+      "documentHashes": [
+        "2e976648051f4aa383fc9bdc073b50c7d78a5e3126d77f596fcf6ec8ed63f2bf"
+      ],
+      "arxivVersion": "2206.09056v1"
+    },
+    {
+      "id": "zaporski-2025",
+      "title": "Leon Zaporski et al.",
+      "detail": "Quantum-amplified global-phase spectroscopy on an optical clock transition",
+      "authors": [
+        "Leon Zaporski",
+        "Qi Liu",
+        "Gustavo Velez",
+        "Matthew Radzihovsky",
+        "Zeyang Li",
+        "Simone Colombo",
+        "Edwin Pedrozo-Peñafiel",
+        "Vladan Vuletić"
+      ],
+      "year": 2025,
+      "publication": "Nature 646 (2025); article begins on p.309; DOI 10.1038/s41586-025-09578-8",
+      "doi": "10.1038/s41586-025-09578-8",
+      "url": "https://doi.org/10.1038/s41586-025-09578-8",
+      "referenceRole": "Supplemental 578 nm experimental candidate; source parameters screened, not an accepted matched independent Rabi benchmark",
+      "evidenceNotes": [
+        "A measured clock oscillation is present, but the two reported Rabi operating points cannot be merged and neither has a numerical matched clock power/waist.",
+        "clock power at atoms",
+        "clock waist and its definition",
+        "power/waist linked to one of the separately reported Rabi operating points"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "not-eligible-with-current-evidence",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [],
+      "documents": [
+        "references/papers/2025_Zaporski_171Yb_Quantum-amplified-global-phase_published.pdf"
+      ],
+      "documentHashes": [
+        "5aba1612109652dc7eb80484c186c66a0edcae39f891329942ae0cfdc15a9f79"
+      ]
+    },
+    {
+      "id": "bettermann-2022",
+      "title": "Oscar Bettermann",
+      "detail": "Interorbital interactions in ytterbium-171",
+      "authors": [
+        "Oscar Bettermann"
+      ],
+      "year": 2022,
+      "publication": "Doctoral thesis, Ludwig-Maximilians-Universität München (2022)",
+      "doi": "10.5282/edoc.32171",
+      "url": "https://doi.org/10.5282/edoc.32171",
+      "referenceRole": "Supplemental 578 nm experimental candidate; source parameters screened, not an accepted matched independent Rabi benchmark",
+      "evidenceNotes": [
+        "100 mW is an apparatus maximum, not a power supplied for the oscillation curves. The associated PRA108,L041302 article and supplement do not supply the missing matched power.",
+        "actual power for each measured Rabi curve",
+        "a published experimental article containing the matched full parameter set"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "not-eligible-with-current-evidence",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [],
+      "documents": [
+        "references/papers/2022_Bettermann_171Yb_Interorbital-interactions_thesis.pdf"
+      ],
+      "documentHashes": [
+        "57f72aa6f0ecb4cc68c8730e5232948937272ac1649ab77bb3baabc99e0f3b9d"
+      ]
+    },
+    {
+      "id": "norcia-2023",
+      "title": "M. A. Norcia et al.",
+      "detail": "Midcircuit Qubit Measurement and Rearrangement in a 171Yb Atomic Array",
+      "authors": [
+        "M. A. Norcia",
+        "W. B. Cairncross",
+        "K. Barnes",
+        "P. Battaglino",
+        "A. Brown",
+        "M. O. Brown",
+        "K. Cassella",
+        "C.-A. Chen",
+        "R. Coxe",
+        "D. Crow",
+        "J. Epstein",
+        "C. Griger",
+        "A. M. W. Jones",
+        "H. Kim",
+        "J. M. Kindem",
+        "J. King",
+        "S. S. Kondov",
+        "K. Kotru",
+        "J. Lauigan",
+        "M. Li",
+        "M. Lu",
+        "E. Megidish",
+        "J. Marjanovic",
+        "M. McDonald",
+        "T. Mittiga",
+        "J. A. Muniz",
+        "S. Narayanaswami",
+        "C. Nishiguchi",
+        "R. Notermans",
+        "T. Paule",
+        "K. A. Pawlak",
+        "L. S. Peng",
+        "A. Ryou",
+        "A. Smull",
+        "D. Stack",
+        "M. Stone",
+        "A. Sucich",
+        "M. Urbanek",
+        "R. J. M. van de Veerdonk",
+        "Z. Vendeiro",
+        "T. Wilkason",
+        "T.-Y. Wu",
+        "X. Xie",
+        "X. Zhang",
+        "B. J. Bloom"
+      ],
+      "year": 2023,
+      "publication": "Phys. Rev. X 13, 041034 (2023)",
+      "doi": "10.1103/PhysRevX.13.041034",
+      "url": "https://doi.org/10.1103/PhysRevX.13.041034",
+      "referenceRole": "Supplemental 578 nm experimental candidate; source parameters screened, not an accepted matched independent Rabi benchmark",
+      "evidenceNotes": [
+        "The 1.4 kHz rate is a two-photon nuclear-spin Raman rate, not the direct 578 nm optical-clock Rabi rate.",
+        "clock power",
+        "clock waist and definition",
+        "measured optical-clock Rabi frequency"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "not-eligible-with-current-evidence",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [],
+      "documents": [
+        "references/papers/2023_Norcia_171Yb_Midcircuit-measurement_PRX13-041034.pdf"
+      ],
+      "documentHashes": [
+        "3faacd25c310d3cde79e258d9f5e4a39325d42cb7fe45f50f48057ae1a9b213d"
+      ]
+    },
+    {
+      "id": "offer-2026",
+      "title": "R. F. Offer et al.",
+      "detail": "Portable laser-cooled ytterbium beam clock based on an ultra-narrow optical transition",
+      "authors": [
+        "R. F. Offer",
+        "E. Klantsataya",
+        "A. P. Hilton",
+        "A. Strathearn",
+        "N. Bourbeau Hébert",
+        "C. J. Billington",
+        "S. Watzdorf",
+        "S. K. Scholten",
+        "B. White",
+        "M. Nelligan",
+        "T. M. Stace",
+        "A. N. Luiten"
+      ],
+      "year": 2026,
+      "publication": "Optica 13(4), 677–685 (2026)",
+      "doi": "10.1364/OPTICA.584095",
+      "url": "https://doi.org/10.1364/OPTICA.584095",
+      "referenceRole": "Supplemental 578 nm conditional power/coupling comparison and model-convention audit; stage-available power and fitted effective power remain distinct",
+      "evidenceNotes": [
+        "338mW is a fit parameter, not an independent measured input. A contrast-derived coupling can be eligible in principle, but 1070mW is stage-available power and the exact waist/channel/interaction-power mapping remains incomplete. Feeding 338mW back into the same scalar-coupling model is circular.",
+        "1mm diameter explicitly mapped to Gaussian 1/e^2 intensity diameter at the interaction region",
+        "numerical power at each interaction location / optical transmission and mode overlap",
+        "addressed q components and dipole/saturation-intensity convention",
+        "independent power/waist and fitted-coupling uncertainties"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "model-dependent-near-match; strict-independent-benchmark-not-closed",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [
+        "offer-main",
+        "offer-sm",
+        "offer-2026-main",
+        "offer-2026-sm-v2"
+      ],
+      "documents": [
+        "references/papers/2026_Offer_171Yb_Portable-beam-clock_published.pdf",
+        "references/papers/2026_Offer_171Yb_Portable-beam-clock_supplement-v2.pdf"
+      ],
+      "documentHashes": [
+        "7a3598bcc2fb6a6ed7d8280212d572a4f6bc5fa5dc49715b284ffc719473b472",
+        "3146ceef9a5c2bfd260406fd33030ea6d1995d44b1f9408e37ad62605ed38bfe"
+      ],
+      "supplementDoi": "10.6084/m9.figshare.31537450.v2"
+    },
+    {
+      "id": "strathearn-2023-pra",
+      "title": "A. Strathearn et al.",
+      "detail": "Wave-front curvature in optical atomic beam clocks",
+      "titleVariants": [
+        "Wavefront Curvature in Optical Atomic Beam Clocks (local preprint title)"
+      ],
+      "authors": [
+        "A. Strathearn",
+        "R. F. Offer",
+        "A. P. Hilton",
+        "E. Klantsataya",
+        "A. N. Luiten",
+        "R. P. Anderson",
+        "B. M. Sparkes",
+        "T. M. Stace"
+      ],
+      "year": 2023,
+      "publication": "Phys. Rev. A 108, 013105 (2023); local file is arXiv:2212.00308v2",
+      "doi": "10.1103/PhysRevA.108.013105",
+      "arxivVersion": "2212.00308v2",
+      "url": "https://doi.org/10.1103/PhysRevA.108.013105",
+      "referenceRole": "Supplemental method source cited by Offer2026; examples model 40Ca, not an additional matched 171Yb experiment",
+      "evidenceNotes": [
+        "The model convention does not by itself identify the 2026 apparatus 1mm diameter with 2w0 at each interaction location.",
+        "The off-diagonal model Omega and pulse-area symbols must be translated before comparison; no author-specific 171Yb numerical saturation intensity or dipole is supplied."
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local preprint title and author list reviewed on 2026-10-31",
+        "DOI and method scope retained from candidates.json methodDocuments and offer-saturation-cg source-check.json"
+      ],
+      "reviewStatus": "method-conventions-reviewed; author-numerical-normalization-unresolved",
+      "reviewedAt": "2026-10-31",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "method/convention support only; not independent experimental validation",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [
+        "strathearn-model"
+      ],
+      "documents": [
+        "references/papers/2023_Strathearn_Wavefront-curvature_arXiv2212.00308v2.pdf"
+      ],
+      "documentHashes": [
+        "21c79f5126320fd8ba76ffb6347dec853bba87b96a4787e3862513b995934fef"
+      ]
+    },
+    {
+      "id": "ludlow-2015-rmp",
+      "title": "Andrew D. Ludlow et al.",
+      "detail": "Optical atomic clocks",
+      "authors": [
+        "Andrew D. Ludlow",
+        "Martin M. Boyd",
+        "Jun Ye",
+        "E. Peik",
+        "P. O. Schmidt"
+      ],
+      "year": 2015,
+      "publication": "Rev. Mod. Phys. 87, 637–701 (2015)",
+      "doi": "10.1103/RevModPhys.87.637",
+      "url": "https://doi.org/10.1103/RevModPhys.87.637",
+      "referenceRole": "Supplemental review supporting identification of the clock-transition linewidth context; not an original matched 171Yb Rabi calibration",
+      "evidenceNotes": [
+        "Yb clock transition is tabulated as578.4nm and10mHz; the inspected Yb material does not supply a7.6mHz or21s author input.20.6s elsewhere is27Al+, not Yb."
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local review title page, authors and printed DOI reviewed on 2026-10-31",
+        "Specific linewidth scope retained from data/literature/offer-saturation-cg-2026-10-30/source-check.json"
+      ],
+      "reviewStatus": "review-context-inspected; no-author-specific-rate-input-established",
+      "reviewedAt": "2026-10-31",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "review context only; not independent experimental validation",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [
+        "ludlow-rmp"
+      ],
+      "documents": [
+        "references/papers/2015_Ludlow_Optical-atomic-clocks_RMP87-637.pdf"
+      ],
+      "documentHashes": [
+        "adc7ac2dc7f74991a7317001fc698f574654e2b7a6d44f0f6749775e0b0ce9f0"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "sha256": "b33537c466775342db2c8f92ea275557013ab686078787a016838cc85633b809",
+      "path": "references/papers/2023_Lis_171Yb_Midcircuit-omg_PRX13-041035.pdf",
+      "bytes": 2911579,
+      "pages": 22,
+      "sourceIds": [
+        "lis-2023"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=956158",
+        "https://doi.org/10.1103/PhysRevX.13.041035"
+      ],
+      "versionNote": "Published journal version (2023-11-22)",
+      "documentType": "experimental-article",
+      "aliases": [],
+      "validation": "PDF header, Poppler parse/page count, file size and SHA-256 checked mechanically; title-page identity reviewed separately",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      },
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "doi": "10.1103/PhysRevX.13.041035"
+    },
+    {
+      "sha256": "2e976648051f4aa383fc9bdc073b50c7d78a5e3126d77f596fcf6ec8ed63f2bf",
+      "path": "references/papers/2022_Zhang_171Yb_Subrecoil-clock-cooling_arXiv2206.09056v1.pdf",
+      "bytes": 776121,
+      "pages": 10,
+      "sourceIds": [
+        "zhang-2022"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/pdf/2206.09056v1",
+        "https://doi.org/10.1103/PhysRevLett.129.113202"
+      ],
+      "versionNote": "arXiv:2206.09056v1; identifier date 2022-06-18, embedded draft date 2022-06-22",
+      "documentType": "experimental-article",
+      "aliases": [],
+      "validation": "PDF header, Poppler parse/page count, file size and SHA-256 checked mechanically; title-page identity reviewed separately",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      },
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "doi": "10.1103/PhysRevLett.129.113202"
+    },
+    {
+      "sha256": "5aba1612109652dc7eb80484c186c66a0edcae39f891329942ae0cfdc15a9f79",
+      "path": "references/papers/2025_Zaporski_171Yb_Quantum-amplified-global-phase_published.pdf",
+      "bytes": 6770047,
+      "pages": 12,
+      "sourceIds": [
+        "zaporski-2025"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://eapg.mit.edu/wp-content/uploads/2026/01/Zaporski_et_al-2025-Nature.pdf",
+        "https://doi.org/10.1038/s41586-025-09578-8"
+      ],
+      "versionNote": "Published Nature version; online publication 2025-10-08; issue 2025-10-09",
+      "documentType": "experimental-article",
+      "aliases": [],
+      "validation": "PDF header, Poppler parse/page count, file size and SHA-256 checked mechanically; title-page identity reviewed separately",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      },
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "doi": "10.1038/s41586-025-09578-8"
+    },
+    {
+      "sha256": "57f72aa6f0ecb4cc68c8730e5232948937272ac1649ab77bb3baabc99e0f3b9d",
+      "path": "references/papers/2022_Bettermann_171Yb_Interorbital-interactions_thesis.pdf",
+      "bytes": 2701598,
+      "pages": 124,
+      "sourceIds": [
+        "bettermann-2022"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://edoc.ub.uni-muenchen.de/32171/1/Bettermann_Oscar.pdf",
+        "https://doi.org/10.5282/edoc.32171"
+      ],
+      "versionNote": "Thesis title page München 2022; PDF creation metadata 2023-07-27 retained separately",
+      "documentType": "doctoral-thesis",
+      "aliases": [],
+      "validation": "PDF header, Poppler parse/page count, file size and SHA-256 checked mechanically; title-page identity reviewed separately",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      },
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "doi": "10.5282/edoc.32171"
+    },
+    {
+      "sha256": "3faacd25c310d3cde79e258d9f5e4a39325d42cb7fe45f50f48057ae1a9b213d",
+      "path": "references/papers/2023_Norcia_171Yb_Midcircuit-measurement_PRX13-041034.pdf",
+      "bytes": 901266,
+      "pages": 12,
+      "sourceIds": [
+        "norcia-2023"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://journals.aps.org/prx/pdf/10.1103/PhysRevX.13.041034",
+        "https://doi.org/10.1103/PhysRevX.13.041034"
+      ],
+      "versionNote": "Published journal version (2023-11-22)",
+      "documentType": "experimental-article",
+      "aliases": [],
+      "validation": "PDF header, Poppler parse/page count, file size and SHA-256 checked mechanically; title-page identity reviewed separately",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      },
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "doi": "10.1103/PhysRevX.13.041034"
+    },
+    {
+      "sha256": "7a3598bcc2fb6a6ed7d8280212d572a4f6bc5fa5dc49715b284ffc719473b472",
+      "path": "references/papers/2026_Offer_171Yb_Portable-beam-clock_published.pdf",
+      "bytes": 4231019,
+      "pages": 9,
+      "sourceIds": [
+        "offer-2026"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://strathprints.strath.ac.uk/96758/",
+        "https://doi.org/10.1364/OPTICA.584095"
+      ],
+      "versionNote": "Published Optica journal version (2026-04-01)",
+      "documentType": "experimental-article-and-supplement",
+      "aliases": [
+        "offer-main",
+        "offer-2026-main"
+      ],
+      "validation": "PDF header, Poppler parse/page count, file size and SHA-256 checked mechanically; title-page identity reviewed separately",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      },
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "doi": "10.1364/OPTICA.584095"
+    },
+    {
+      "sha256": "3146ceef9a5c2bfd260406fd33030ea6d1995d44b1f9408e37ad62605ed38bfe",
+      "path": "references/papers/2026_Offer_171Yb_Portable-beam-clock_supplement-v2.pdf",
+      "bytes": 613877,
+      "pages": 4,
+      "sourceIds": [
+        "offer-2026"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://ndownloader.figshare.com/files/63390231",
+        "https://doi.org/10.6084/m9.figshare.31537450.v2"
+      ],
+      "versionNote": "Published supplement v2, Figshare DOI 10.6084/m9.figshare.31537450.v2; title page states publication with parent article on 2026-04-01",
+      "documentType": "published-supplement",
+      "aliases": [
+        "offer-sm",
+        "offer-2026-sm-v2"
+      ],
+      "validation": "PDF header, Poppler parse/page count, file size and SHA-256 checked mechanically; title-page identity reviewed separately",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      },
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "doi": "10.6084/m9.figshare.31537450.v2",
+      "parentArticleDoi": "10.1364/OPTICA.584095",
+      "licenseEvidence": "Supplement title page states Creative Commons Attribution 4.0; retained locally by project policy"
+    },
+    {
+      "sha256": "21c79f5126320fd8ba76ffb6347dec853bba87b96a4787e3862513b995934fef",
+      "path": "references/papers/2023_Strathearn_Wavefront-curvature_arXiv2212.00308v2.pdf",
+      "bytes": 811487,
+      "pages": 13,
+      "sourceIds": [
+        "strathearn-2023-pra"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/pdf/2212.00308v2",
+        "https://doi.org/10.1103/PhysRevA.108.013105"
+      ],
+      "versionNote": "arXiv:2212.00308v2 (2023-01-25)",
+      "documentType": "method-preprint",
+      "aliases": [
+        "strathearn-model"
+      ],
+      "validation": "PDF header, Poppler parse/page count, file size and SHA-256 checked mechanically; title-page identity reviewed separately",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      },
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "doi": "10.1103/PhysRevA.108.013105"
+    },
+    {
+      "sha256": "adc7ac2dc7f74991a7317001fc698f574654e2b7a6d44f0f6749775e0b0ce9f0",
+      "path": "references/papers/2015_Ludlow_Optical-atomic-clocks_RMP87-637.pdf",
+      "bytes": 5714243,
+      "pages": 65,
+      "sourceIds": [
+        "ludlow-2015-rmp"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://doi.org/10.1103/RevModPhys.87.637"
+      ],
+      "versionNote": "Published review (2015-06-26)",
+      "documentType": "review",
+      "aliases": [
+        "ludlow-rmp"
+      ],
+      "validation": "PDF header, Poppler parse/page count, file size and SHA-256 checked mechanically; title-page identity reviewed separately",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      },
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "doi": "10.1103/RevModPhys.87.637"
+    }
+  ],
+  "attachments": [
+    {
+      "id": "offer-arxiv-source-tar",
+      "sourceIds": [
+        "offer-2026"
+      ],
+      "path": "references/local-only/offer2026-source-arXiv2603.25261v1/source.tar",
+      "sha256": "f72ee23d6a410fb590c1fc87d3b7f61e492ad692d5fa53379edca77539ee4d27",
+      "bytes": 14845787,
+      "doi": "10.48550/arXiv.2603.25261",
+      "arxivVersion": "2603.25261v1",
+      "url": "https://arxiv.org/src/2603.25261v1",
+      "role": "Local preprint source attachment; not a separate papers PDF or new experimental benchmark",
+      "relationship": "Preprint source material for the Offer work; not interchangeable with the published supplement v2",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "validation": "SHA-256 and byte size checked mechanically",
+      "kind": "source-archive-tar"
+    },
+    {
+      "id": "offer-arxiv-source-tex",
+      "sourceIds": [
+        "offer-2026"
+      ],
+      "path": "references/local-only/offer2026-source-arXiv2603.25261v1/main2.tex",
+      "sha256": "95f6787dc76de0ac025e93a539217aba45dd9e7ec50c8e27b1a568cf94cba01f",
+      "bytes": 45312,
+      "doi": "10.48550/arXiv.2603.25261",
+      "arxivVersion": "2603.25261v1",
+      "url": "https://arxiv.org/src/2603.25261v1",
+      "role": "Local preprint source attachment; not a separate papers PDF or new experimental benchmark",
+      "relationship": "Preprint source material for the Offer work; not interchangeable with the published supplement v2",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "validation": "SHA-256 and byte size checked mechanically",
+      "kind": "source-tex",
+      "memberOf": "offer-arxiv-source-tar"
+    },
+    {
+      "id": "offer-arxiv-ancillary-sm",
+      "sourceIds": [
+        "offer-2026"
+      ],
+      "path": "references/local-only/offer2026-source-arXiv2603.25261v1/ancillary-supplement.pdf",
+      "sha256": "25951b94faa18c6a93bdc93e760b68d745043aa479cd310b937ca17b5ccb0664",
+      "bytes": 353336,
+      "doi": "10.48550/arXiv.2603.25261",
+      "arxivVersion": "2603.25261v1",
+      "url": "https://arxiv.org/src/2603.25261v1",
+      "role": "Local preprint source attachment; not a separate papers PDF or new experimental benchmark",
+      "relationship": "Preprint source material for the Offer work; not interchangeable with the published supplement v2",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "validation": "SHA-256 and byte size checked mechanically",
+      "pages": 3,
+      "kind": "ancillary-supplement-pdf",
+      "memberOf": "offer-arxiv-source-tar"
+    }
+  ]
+}

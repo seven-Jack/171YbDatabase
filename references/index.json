@@ -1,13 +1,14 @@
 {
-  "schemaVersion": 1,
-  "checkedAt": "2026-10-30T14:24:12+08:00",
-  "policy": "local-only source archive; original paper library unmodified; bibliography identity and numeric verification are separate",
+  "schemaVersion": 2,
+  "checkedAt": "2026-10-31",
+  "policy": "Registered source metadata and expected fingerprints; originals remain local. Current byte availability is reported separately by --check; identity and numerical validation are separate.",
   "counts": {
-    "sourceRecords": 36,
+    "sourceRecords": 48,
     "canonicalSourceRecords": 35,
-    "supplementalOnlySources": 1,
-    "pdfFiles": 31,
-    "newPublicDownloads": 8,
+    "supplementalOnlySources": 13,
+    "pdfFiles": 44,
+    "historicalDownloadRecords": 8,
+    "registeredSupplementalPdfFiles": 13,
     "userReceivedDownloads": 9
   },
   "sources": [
@@ -1163,6 +1164,7 @@
         "Xiao Hu",
         "Yu-yan Liu"
       ],
+      "year": 2001,
       "publication": "JQSRT69,469-473(2001)",
       "doi": "10.1016/S0022-4073(00)00096-0",
       "url": "https://doi.org/10.1016/S0022-4073(00)00096-0",
@@ -1175,6 +1177,558 @@
       ],
       "documentHashes": [
         "b4ac15f7330220bd5888f884421b28ffd11dd02c74b48a95091f1c15ca8ef177"
+      ]
+    },
+    {
+      "id": "pizzocaro-2017-metrologia",
+      "title": "Marco Pizzocaro et al.",
+      "detail": "Absolute frequency measurement of the 1S0-3P0 transition of 171Yb",
+      "authors": [
+        "Marco Pizzocaro",
+        "Pierre Thoumany",
+        "Benjamin Rauf",
+        "Filippo Bregolin",
+        "Gianmaria Milani",
+        "Cecilia Clivati",
+        "Giovanni A. Costanzo",
+        "Filippo Levi",
+        "Davide Calonico"
+      ],
+      "year": 2017,
+      "publication": "Metrologia 54, 102-112 (2017)",
+      "doi": "10.1088/1681-7575/aa4e62",
+      "arxivVersion": "1609.01610v2",
+      "referenceRole": "578 nm clock interrogation power, stated waist and nominal pi-pulse operating point; not a complete absolute Rabi calibration",
+      "evidenceNotes": [
+        "The same operating paragraph explicitly states 70 nW incident power, a 200 um 1/e^2 intensity waist radius and a 60 ms nominal pi pulse. The radius convention is established; absolute beam calibration and matched time-domain Rabi data remain incomplete.",
+        "These experimental operating parameters are not a separately fitted Rabi frequency and do not determine the historical source of the internal T3 matrix element."
+      ],
+      "url": "https://doi.org/10.1088/1681-7575/aa4e62",
+      "identityStatus": "verified-primary-metadata-and-local-pdf",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "source-support-only; not a complete independent Rabi calibration",
+      "supplementalIndex": "references/clock-rabi-sources-20261030.json",
+      "documents": [
+        "references/papers/2017_Pizzocaro_171Yb_Absolute-frequency_arXiv1609.01610v2.pdf"
+      ],
+      "documentHashes": [
+        "1d20e391c49bd9e9af8adeebfeccf7580a12c71d636aff44616f139a4951bfbc"
+      ]
+    },
+    {
+      "id": "xu-2014-prl",
+      "title": "C.-Y. Xu et al.",
+      "detail": "Measurement of the Hyperfine Quenching Rate of the Clock Transition in 171Yb",
+      "authors": [
+        "C.-Y. Xu",
+        "J. Singh",
+        "J. C. Zappala",
+        "K. G. Bailey",
+        "M. R. Dietrich",
+        "J. P. Greene",
+        "W. Jiang",
+        "N. D. Lemke",
+        "Z.-T. Lu",
+        "P. Mueller",
+        "T. P. O'Connor"
+      ],
+      "year": 2014,
+      "publication": "Phys. Rev. Lett. 113, 033003 (2014)",
+      "doi": "10.1103/PhysRevLett.113.033003",
+      "arxivVersion": "1406.2340v1",
+      "referenceRole": "Independent source for the free-atom hyperfine-quenching rate and a derived effective F-reduced clock dipole",
+      "evidenceNotes": [
+        "The reported free-171Yb rate is (4.42 +/- 0.35)e-2 s^-1, inferred from fluorescence in solid Ne with medium corrections; it is not an uncorrected trap-survival lifetime.",
+        "Numerical support for a clock dipole does not establish that this paper was the source of the old internal 5.30e-5 or 9.19e-5 records.",
+        "The local PDF identifier states arXiv:1406.2340v1 (9 June 2014), while its embedded draft date is 6 October 2018; retain the identifier, hash and 2014 journal identity separately."
+      ],
+      "url": "https://doi.org/10.1103/PhysRevLett.113.033003",
+      "identityStatus": "verified-primary-metadata-and-local-pdf",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "source-support-only; not a complete independent Rabi calibration",
+      "supplementalIndex": "references/clock-rabi-sources-20261030.json",
+      "documents": [
+        "references/papers/2014_Xu_171Yb_Hyperfine-quenching-rate_arXiv1406.2340v1.pdf"
+      ],
+      "documentHashes": [
+        "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e"
+      ]
+    },
+    {
+      "id": "siegel-2024-prl",
+      "title": "J. L. Siegel et al.",
+      "detail": "Excited-Band Coherent Delocalization for Improved Optical Lattice Clock Performance",
+      "authors": [
+        "J. L. Siegel",
+        "W. F. McGrew",
+        "Y. S. Hassan",
+        "C.-C. Chen",
+        "K. Beloy",
+        "T. Grogan",
+        "X. Zhang",
+        "A. D. Ludlow"
+      ],
+      "year": 2024,
+      "publication": "Phys. Rev. Lett. 132, 133201 (2024)",
+      "doi": "10.1103/PhysRevLett.132.133201",
+      "arxivVersion": "2402.04968v2",
+      "referenceRole": "171Yb 3P0 natural-lifetime determination and separation of trap-light-induced quenching",
+      "evidenceNotes": [
+        "The reported natural lifetime is 19(2) s; the separately reported trap-light quenching rate is 5.7(7)e-4 Er^-1 s^-1.",
+        "A natural-lifetime inference and trap-light quenching must not be replaced by one unspecified in-trap survival time or treated as a matched power-waist-Rabi measurement."
+      ],
+      "url": "https://doi.org/10.1103/PhysRevLett.132.133201",
+      "identityStatus": "verified-primary-metadata-and-local-pdf",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "source-support-only; not a complete independent Rabi calibration",
+      "supplementalIndex": "references/clock-rabi-sources-20261030.json",
+      "documents": [
+        "references/papers/2024_Siegel_171Yb_Clock-natural-lifetime_arXiv2402.04968v2.pdf"
+      ],
+      "documentHashes": [
+        "d18cc23ba21e08a10c2115e0f3ae72df7a3ee8b34cf2747e2ed5daa8bf1ff477"
+      ]
+    },
+    {
+      "id": "blatt-2009-pra",
+      "title": "S. Blatt et al.",
+      "detail": "Rabi Spectroscopy and Excitation Inhomogeneity in a 1D Optical Lattice Clock",
+      "authors": [
+        "S. Blatt",
+        "J. W. Thomsen",
+        "G. K. Campbell",
+        "A. D. Ludlow",
+        "M. D. Swallows",
+        "M. J. Martin",
+        "M. M. Boyd",
+        "J. Ye"
+      ],
+      "year": 2009,
+      "publication": "Phys. Rev. A 80, 052703 (2009)",
+      "doi": "10.1103/PhysRevA.80.052703",
+      "arxivVersion": "0906.1419v2",
+      "referenceRole": "Method source for motional-state-dependent carrier Rabi coupling and excitation inhomogeneity",
+      "evidenceNotes": [
+        "The experimental species is 87Sr; the mathematical treatment can inform a conditional 171Yb analysis, but the Sr numerical trap and temperature values are not 171Yb data.",
+        "Motional averaging can differ from the bare beam-centre dipole coupling; this source alone does not prove the cause or size of the Pizzocaro operating-point discrepancy."
+      ],
+      "url": "https://doi.org/10.1103/PhysRevA.80.052703",
+      "identityStatus": "verified-primary-metadata-and-local-pdf",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "source-support-only; not a complete independent Rabi calibration",
+      "supplementalIndex": "references/clock-rabi-sources-20261030.json",
+      "documents": [
+        "references/papers/2009_Blatt_Rabi-spectroscopy-inhomogeneity_arXiv0906.1419v2.pdf"
+      ],
+      "documentHashes": [
+        "16fe88d226fe10c7b713cd448c05a0bccb2e0ec1ade30087c0b092d260fd372e"
+      ]
+    },
+    {
+      "id": "lis-2023",
+      "title": "Joanna W. Lis et al.",
+      "detail": "Midcircuit Operations Using the omg Architecture in Neutral Atom Arrays",
+      "authors": [
+        "Joanna W. Lis",
+        "Aruku Senoo",
+        "William F. McGrew",
+        "Felix Rönchen",
+        "Alec Jenkins",
+        "Adam M. Kaufman"
+      ],
+      "year": 2023,
+      "publication": "Phys. Rev. X 13, 041035 (2023)",
+      "doi": "10.1103/PhysRevX.13.041035",
+      "url": "https://doi.org/10.1103/PhysRevX.13.041035",
+      "referenceRole": "Supplemental 578 nm experimental candidate; source parameters screened, not an accepted matched independent Rabi benchmark",
+      "evidenceNotes": [
+        "90 mW is upstream doubler output; it precedes AOMs and fiber delivery and is not a measured atom-plane operating power.",
+        "power at atoms for the plotted 0.11 MHz oscillation",
+        "explicit intensity-radius convention",
+        "matched channel/polarization and beam calibration uncertainties"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "not-eligible-with-current-evidence",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [],
+      "documents": [
+        "references/papers/2023_Lis_171Yb_Midcircuit-omg_PRX13-041035.pdf"
+      ],
+      "documentHashes": [
+        "b33537c466775342db2c8f92ea275557013ab686078787a016838cc85633b809"
+      ]
+    },
+    {
+      "id": "zhang-2022",
+      "title": "X. Zhang et al.",
+      "detail": "Sub-recoil clock-transition laser cooling enabling shallow optical lattice clocks",
+      "authors": [
+        "X. Zhang",
+        "K. Beloy",
+        "Y. S. Hassan",
+        "W. F. McGrew",
+        "C.-C. Chen",
+        "J. L. Siegel",
+        "T. Grogan",
+        "A. D. Ludlow"
+      ],
+      "year": 2022,
+      "publication": "Phys. Rev. Lett. 129, 113202 (2022); local file is arXiv:2206.09056v1",
+      "doi": "10.1103/PhysRevLett.129.113202",
+      "url": "https://doi.org/10.1103/PhysRevLett.129.113202",
+      "referenceRole": "Supplemental 578 nm experimental candidate; source parameters screened, not an accepted matched independent Rabi benchmark",
+      "evidenceNotes": [
+        "The reported >3 kHz is a bound. 1/e field radius 170 um belongs to the 759 nm lattice, not the clock beam; 0.1 ms maximum must not be silently converted to a measured fitted Rabi frequency.",
+        "radius/diameter and intensity convention for 400 um",
+        "numerical Rabi fit with uncertainty",
+        "per-beam vs beam-pair power and addressed mF/polarization components"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "not-eligible-with-current-evidence",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [],
+      "documents": [
+        "references/papers/2022_Zhang_171Yb_Subrecoil-clock-cooling_arXiv2206.09056v1.pdf"
+      ],
+      "documentHashes": [
+        "2e976648051f4aa383fc9bdc073b50c7d78a5e3126d77f596fcf6ec8ed63f2bf"
+      ],
+      "arxivVersion": "2206.09056v1"
+    },
+    {
+      "id": "zaporski-2025",
+      "title": "Leon Zaporski et al.",
+      "detail": "Quantum-amplified global-phase spectroscopy on an optical clock transition",
+      "authors": [
+        "Leon Zaporski",
+        "Qi Liu",
+        "Gustavo Velez",
+        "Matthew Radzihovsky",
+        "Zeyang Li",
+        "Simone Colombo",
+        "Edwin Pedrozo-Peñafiel",
+        "Vladan Vuletić"
+      ],
+      "year": 2025,
+      "publication": "Nature 646 (2025); article begins on p.309; DOI 10.1038/s41586-025-09578-8",
+      "doi": "10.1038/s41586-025-09578-8",
+      "url": "https://doi.org/10.1038/s41586-025-09578-8",
+      "referenceRole": "Supplemental 578 nm experimental candidate; source parameters screened, not an accepted matched independent Rabi benchmark",
+      "evidenceNotes": [
+        "A measured clock oscillation is present, but the two reported Rabi operating points cannot be merged and neither has a numerical matched clock power/waist.",
+        "clock power at atoms",
+        "clock waist and its definition",
+        "power/waist linked to one of the separately reported Rabi operating points"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "not-eligible-with-current-evidence",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [],
+      "documents": [
+        "references/papers/2025_Zaporski_171Yb_Quantum-amplified-global-phase_published.pdf"
+      ],
+      "documentHashes": [
+        "5aba1612109652dc7eb80484c186c66a0edcae39f891329942ae0cfdc15a9f79"
+      ]
+    },
+    {
+      "id": "bettermann-2022",
+      "title": "Oscar Bettermann",
+      "detail": "Interorbital interactions in ytterbium-171",
+      "authors": [
+        "Oscar Bettermann"
+      ],
+      "year": 2022,
+      "publication": "Doctoral thesis, Ludwig-Maximilians-Universität München (2022)",
+      "doi": "10.5282/edoc.32171",
+      "url": "https://doi.org/10.5282/edoc.32171",
+      "referenceRole": "Supplemental 578 nm experimental candidate; source parameters screened, not an accepted matched independent Rabi benchmark",
+      "evidenceNotes": [
+        "100 mW is an apparatus maximum, not a power supplied for the oscillation curves. The associated PRA108,L041302 article and supplement do not supply the missing matched power.",
+        "actual power for each measured Rabi curve",
+        "a published experimental article containing the matched full parameter set"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "not-eligible-with-current-evidence",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [],
+      "documents": [
+        "references/papers/2022_Bettermann_171Yb_Interorbital-interactions_thesis.pdf"
+      ],
+      "documentHashes": [
+        "57f72aa6f0ecb4cc68c8730e5232948937272ac1649ab77bb3baabc99e0f3b9d"
+      ]
+    },
+    {
+      "id": "norcia-2023",
+      "title": "M. A. Norcia et al.",
+      "detail": "Midcircuit Qubit Measurement and Rearrangement in a 171Yb Atomic Array",
+      "authors": [
+        "M. A. Norcia",
+        "W. B. Cairncross",
+        "K. Barnes",
+        "P. Battaglino",
+        "A. Brown",
+        "M. O. Brown",
+        "K. Cassella",
+        "C.-A. Chen",
+        "R. Coxe",
+        "D. Crow",
+        "J. Epstein",
+        "C. Griger",
+        "A. M. W. Jones",
+        "H. Kim",
+        "J. M. Kindem",
+        "J. King",
+        "S. S. Kondov",
+        "K. Kotru",
+        "J. Lauigan",
+        "M. Li",
+        "M. Lu",
+        "E. Megidish",
+        "J. Marjanovic",
+        "M. McDonald",
+        "T. Mittiga",
+        "J. A. Muniz",
+        "S. Narayanaswami",
+        "C. Nishiguchi",
+        "R. Notermans",
+        "T. Paule",
+        "K. A. Pawlak",
+        "L. S. Peng",
+        "A. Ryou",
+        "A. Smull",
+        "D. Stack",
+        "M. Stone",
+        "A. Sucich",
+        "M. Urbanek",
+        "R. J. M. van de Veerdonk",
+        "Z. Vendeiro",
+        "T. Wilkason",
+        "T.-Y. Wu",
+        "X. Xie",
+        "X. Zhang",
+        "B. J. Bloom"
+      ],
+      "year": 2023,
+      "publication": "Phys. Rev. X 13, 041034 (2023)",
+      "doi": "10.1103/PhysRevX.13.041034",
+      "url": "https://doi.org/10.1103/PhysRevX.13.041034",
+      "referenceRole": "Supplemental 578 nm experimental candidate; source parameters screened, not an accepted matched independent Rabi benchmark",
+      "evidenceNotes": [
+        "The 1.4 kHz rate is a two-photon nuclear-spin Raman rate, not the direct 578 nm optical-clock Rabi rate.",
+        "clock power",
+        "clock waist and definition",
+        "measured optical-clock Rabi frequency"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "not-eligible-with-current-evidence",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [],
+      "documents": [
+        "references/papers/2023_Norcia_171Yb_Midcircuit-measurement_PRX13-041034.pdf"
+      ],
+      "documentHashes": [
+        "3faacd25c310d3cde79e258d9f5e4a39325d42cb7fe45f50f48057ae1a9b213d"
+      ]
+    },
+    {
+      "id": "offer-2026",
+      "title": "R. F. Offer et al.",
+      "detail": "Portable laser-cooled ytterbium beam clock based on an ultra-narrow optical transition",
+      "authors": [
+        "R. F. Offer",
+        "E. Klantsataya",
+        "A. P. Hilton",
+        "A. Strathearn",
+        "N. Bourbeau Hébert",
+        "C. J. Billington",
+        "S. Watzdorf",
+        "S. K. Scholten",
+        "B. White",
+        "M. Nelligan",
+        "T. M. Stace",
+        "A. N. Luiten"
+      ],
+      "year": 2026,
+      "publication": "Optica 13(4), 677–685 (2026)",
+      "doi": "10.1364/OPTICA.584095",
+      "url": "https://doi.org/10.1364/OPTICA.584095",
+      "referenceRole": "Supplemental 578 nm conditional power/coupling comparison and model-convention audit; stage-available power and fitted effective power remain distinct",
+      "evidenceNotes": [
+        "338mW is a fit parameter, not an independent measured input. A contrast-derived coupling can be eligible in principle, but 1070mW is stage-available power and the exact waist/channel/interaction-power mapping remains incomplete. Feeding 338mW back into the same scalar-coupling model is circular.",
+        "1mm diameter explicitly mapped to Gaussian 1/e^2 intensity diameter at the interaction region",
+        "numerical power at each interaction location / optical transmission and mode overlap",
+        "addressed q components and dipole/saturation-intensity convention",
+        "independent power/waist and fitted-coupling uncertainties"
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local PDF title page and bibliographic metadata reviewed on 2026-10-31",
+        "DOI and parameter locations retained from data/literature/clock-rabi-crosscheck-search-2026-10-30/candidates.json"
+      ],
+      "reviewStatus": "model-dependent-near-match; strict-independent-benchmark-not-closed",
+      "reviewedAt": "2026-10-31",
+      "parameterReviewDate": "2026-10-30",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "not an independent absolute Rabi calibration",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [
+        "offer-main",
+        "offer-sm",
+        "offer-2026-main",
+        "offer-2026-sm-v2"
+      ],
+      "documents": [
+        "references/papers/2026_Offer_171Yb_Portable-beam-clock_published.pdf",
+        "references/papers/2026_Offer_171Yb_Portable-beam-clock_supplement-v2.pdf"
+      ],
+      "documentHashes": [
+        "7a3598bcc2fb6a6ed7d8280212d572a4f6bc5fa5dc49715b284ffc719473b472",
+        "3146ceef9a5c2bfd260406fd33030ea6d1995d44b1f9408e37ad62605ed38bfe"
+      ],
+      "supplementDoi": "10.6084/m9.figshare.31537450.v2"
+    },
+    {
+      "id": "strathearn-2023-pra",
+      "title": "A. Strathearn et al.",
+      "detail": "Wave-front curvature in optical atomic beam clocks",
+      "titleVariants": [
+        "Wavefront Curvature in Optical Atomic Beam Clocks (local preprint title)"
+      ],
+      "authors": [
+        "A. Strathearn",
+        "R. F. Offer",
+        "A. P. Hilton",
+        "E. Klantsataya",
+        "A. N. Luiten",
+        "R. P. Anderson",
+        "B. M. Sparkes",
+        "T. M. Stace"
+      ],
+      "year": 2023,
+      "publication": "Phys. Rev. A 108, 013105 (2023); local file is arXiv:2212.00308v2",
+      "doi": "10.1103/PhysRevA.108.013105",
+      "arxivVersion": "2212.00308v2",
+      "url": "https://doi.org/10.1103/PhysRevA.108.013105",
+      "referenceRole": "Supplemental method source cited by Offer2026; examples model 40Ca, not an additional matched 171Yb experiment",
+      "evidenceNotes": [
+        "The model convention does not by itself identify the 2026 apparatus 1mm diameter with 2w0 at each interaction location.",
+        "The off-diagonal model Omega and pulse-area symbols must be translated before comparison; no author-specific 171Yb numerical saturation intensity or dipole is supplied."
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local preprint title and author list reviewed on 2026-10-31",
+        "DOI and method scope retained from candidates.json methodDocuments and offer-saturation-cg source-check.json"
+      ],
+      "reviewStatus": "method-conventions-reviewed; author-numerical-normalization-unresolved",
+      "reviewedAt": "2026-10-31",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "method/convention support only; not independent experimental validation",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [
+        "strathearn-model"
+      ],
+      "documents": [
+        "references/papers/2023_Strathearn_Wavefront-curvature_arXiv2212.00308v2.pdf"
+      ],
+      "documentHashes": [
+        "21c79f5126320fd8ba76ffb6347dec853bba87b96a4787e3862513b995934fef"
+      ]
+    },
+    {
+      "id": "ludlow-2015-rmp",
+      "title": "Andrew D. Ludlow et al.",
+      "detail": "Optical atomic clocks",
+      "authors": [
+        "Andrew D. Ludlow",
+        "Martin M. Boyd",
+        "Jun Ye",
+        "E. Peik",
+        "P. O. Schmidt"
+      ],
+      "year": 2015,
+      "publication": "Rev. Mod. Phys. 87, 637–701 (2015)",
+      "doi": "10.1103/RevModPhys.87.637",
+      "url": "https://doi.org/10.1103/RevModPhys.87.637",
+      "referenceRole": "Supplemental review supporting identification of the clock-transition linewidth context; not an original matched 171Yb Rabi calibration",
+      "evidenceNotes": [
+        "Yb clock transition is tabulated as578.4nm and10mHz; the inspected Yb material does not supply a7.6mHz or21s author input.20.6s elsewhere is27Al+, not Yb."
+      ],
+      "identityStatus": "local-pdf-title-page-and-existing-audit-reviewed",
+      "identityEvidence": [
+        "Local review title page, authors and printed DOI reviewed on 2026-10-31",
+        "Specific linewidth scope retained from data/literature/offer-saturation-cg-2026-10-30/source-check.json"
+      ],
+      "reviewStatus": "review-context-inspected; no-author-specific-rate-input-established",
+      "reviewedAt": "2026-10-31",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "numericalValidation": "review context only; not independent experimental validation",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/rabi-crosscheck-sources-20261031.json",
+      "aliases": [
+        "ludlow-rmp"
+      ],
+      "documents": [
+        "references/papers/2015_Ludlow_Optical-atomic-clocks_RMP87-637.pdf"
+      ],
+      "documentHashes": [
+        "adc7ac2dc7f74991a7317001fc698f574654e2b7a6d44f0f6749775e0b0ce9f0"
       ]
     }
   ],
@@ -1194,8 +1748,9 @@
         "https://arxiv.org/abs/2509.04416v2"
       ],
       "versionNote": "2509.04416v2",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a",
@@ -1212,8 +1767,9 @@
         "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.15.011009"
       ],
       "versionNote": "2406.01482v2",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "66abd4d74c1d7ce3f0b5bd5ebc51c1cc1743b3da98680229967eec5b86c08606",
@@ -1230,8 +1786,9 @@
         "https://arxiv.org/abs/2507.11487v1"
       ],
       "versionNote": "2507.11487v1",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "30823c38c870ec150528e375d58a63d5272a52da171c6f0d02ee7b8a8f49a5f6",
@@ -1248,8 +1805,9 @@
         "https://journals.aps.org/pra/abstract/10.1103/mzsv-rckx"
       ],
       "versionNote": "2507.11487v1",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "867b41ec2620c1e9ee393438ae95cb03cb8e67ab5c66dfd9b15ac07d2dcb7061",
@@ -1264,8 +1822,9 @@
       ],
       "urls": [],
       "versionNote": "2411.11708v2",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e",
@@ -1282,8 +1841,9 @@
         "https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.6.020334"
       ],
       "versionNote": "2411.11708v2",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "28842cae29d58fc635b93c777d597a6ccea9d41ca022a833007cad27896fa2a5",
@@ -1298,8 +1858,9 @@
       ],
       "urls": [],
       "versionNote": "2112.06799v1",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "cafb618ffa6f60aa23a134b3ad73bdaa07679c02c234fdb7f83b8306d850d787",
@@ -1316,8 +1877,9 @@
         "https://link.aps.org/doi/10.1103/PhysRevLett.128.033201"
       ],
       "versionNote": "1912.08754v2",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "7a3330aaf5c798266b04b2fdb4c461acb2b10ab4c9fefc9b15f12cf686d97716",
@@ -1332,8 +1894,9 @@
       ],
       "urls": [],
       "versionNote": "1810.10517v1",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "47c724a73142b37e882599ec16bed9a40be68d282232bf95e4111fbb7d2b581d",
@@ -1351,8 +1914,9 @@
         "https://arxiv.org/abs/2211.04748v2"
       ],
       "versionNote": "2211.04748v2",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "1c812aeb51e0009e93551b09fd1a182b6912aeeec03415f81df952f09d3d899f",
@@ -1369,8 +1933,9 @@
         "https://arxiv.org/abs/2201.04083v3"
       ],
       "versionNote": "2201.04083v3",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "605afdb1ef7d3e76004024c409cf44c34037305556aabdae5d2644ca7116ee7a",
@@ -1385,8 +1950,9 @@
       ],
       "urls": [],
       "versionNote": "2305.05493v1",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "9b477683f712c305c3ab2f5f45ab1b7538584a8dd39ef7a6785b24ebbbf376e7",
@@ -1401,8 +1967,9 @@
       ],
       "urls": [],
       "versionNote": "2305.05493v1",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3",
@@ -1419,8 +1986,9 @@
         "https://arxiv.org/pdf/physics/9903004v1"
       ],
       "versionNote": "physics/9903004v1",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e",
@@ -1437,8 +2005,9 @@
         "https://arxiv.org/pdf/1208.0552v1"
       ],
       "versionNote": "1208.0552v1",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "628816472904aabb4e88172b958f1b80b791a3b7f6d72b06cb2302aa70424e83",
@@ -1455,8 +2024,9 @@
         "https://digital.library.unt.edu/ark:/67531/metadc835985/m2/1/high_res_d/1029514.pdf"
       ],
       "versionNote": "Phys. Rev. A 53, 3103 (1996)",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f",
@@ -1473,8 +2043,9 @@
         "https://arxiv.org/pdf/physics/0312006v1"
       ],
       "versionNote": "physics/0312006v1",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "dc91616b29454e06ee5a933c0cdd8b6a088766e1395a2fdbc8977634f4a8f9c8",
@@ -1492,8 +2063,9 @@
         "https://arxiv.org/abs/2204.07995v1"
       ],
       "versionNote": null,
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "24b9d9c2d467b609b57dd8c10652fc70bd2cef7e906fd18caa309069bd65f284",
@@ -1511,8 +2083,9 @@
         "https://arxiv.org/abs/2110.06902v1"
       ],
       "versionNote": null,
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "38057d7e2e2e7abd5d8d9ec9c2909eb685b625c6fb73cebe2eb8dfaac1f1ccf4",
@@ -1530,8 +2103,9 @@
         "https://arxiv.org/abs/1805.02712v2"
       ],
       "versionNote": null,
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "7bab7cf336bcc82be834b31ee364e11c1362c996ddf1c2187ec340040b1a36eb",
@@ -1548,8 +2122,9 @@
         "https://journals.aps.org/prx/supplemental/10.1103/PhysRevX.15.011009"
       ],
       "versionNote": "local supplement dated 2024-12-05; preserved original filename",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "b4ac15f7330220bd5888f884421b28ffd11dd02c74b48a95091f1c15ca8ef177",
@@ -1566,8 +2141,9 @@
         "https://www.sciencedirect.com/science/article/abs/pii/S0022407300000960"
       ],
       "versionNote": "published JQSRT69 469-473",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "208431f4b46db7195a46a87d34dd6d0d73cddc2818310be95d29582d80156783",
@@ -1584,8 +2160,9 @@
         "https://www.sciencedirect.com/science/article/pii/S2211379723002322"
       ],
       "versionNote": "Results in Physics 48, 106439 (2023); user downloaded publisher PDF; original numbered filename retained",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
@@ -1602,8 +2179,9 @@
         "https://www.sciencedirect.com/science/article/abs/pii/S0022407300001175"
       ],
       "versionNote": "Journal of Quantitative Spectroscopy and Radiative Transfer69(6),769–780(2001); user downloaded publisher PDF; original numbered filename retained",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "3bdd0ddd781d41583a0530446f9247d4d38f98e816651b14c39bcf4b42f12dc0",
@@ -1620,8 +2198,9 @@
         "https://doi.org/10.1088/0022-3700/18/17/001"
       ],
       "versionNote": "J. Phys. B: Atom. Mol. Phys. 18, L601 (1985); user downloaded publisher PDF; original numbered filename retained",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "e2d263f0b1762d45b04bdbba8c3adc4fdf4ff098427054b4f8124f624e295df4",
@@ -1638,8 +2217,9 @@
         "https://pubs.aip.org/apl/article/122/22/224002/2893691/Investigation-of-the-6s6p-3P2-6s7s-3S1-transition"
       ],
       "versionNote": "Applied Physics Letters122(22),224002(2023); user downloaded publisher PDF; original numbered filename retained",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "3aecb39c63b436ef56cd59bc1c38e6c09cc300c5e4d34ba7120f43e4ad1d12de",
@@ -1656,8 +2236,9 @@
         "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.101.062506"
       ],
       "versionNote": "Phys. Rev. A 101, 062506 (2020); user downloaded publisher PDF; original numbered filename retained",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "5c0e26a7ffb56471aff199941159da7686533620e5341f7633cfba594ab322ae",
@@ -1674,8 +2255,9 @@
         "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.042816"
       ],
       "versionNote": "Phys. Rev. A 110, 042816 (2024); user downloaded publisher PDF; original numbered filename retained",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "b058a900e9aaa292d3800087a823b57de74049434ee2ee663ac05aaa4c173bf0",
@@ -1692,8 +2274,9 @@
         "https://doi.org/10.1088/0022-3700/17/18/006"
       ],
       "versionNote": "J. Phys. B: Atom. Mol. Phys. 17, 3645 (1984); user downloaded publisher PDF; original numbered filename retained",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "14034e18a46ceb8b68c854d74f663ccce0a487ff40ff39d46e81f01dac14895b",
@@ -1710,8 +2293,9 @@
         "https://journals.aps.org/pra/issues/14/2"
       ],
       "versionNote": "Physical Review A14(2),738–743(1976); user downloaded publisher PDF; original numbered filename retained",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
     },
     {
       "sha256": "1bdc3d40c247b1e725d2541ffb03aae7d930abd653deb0df00f530539450873b",
@@ -1728,8 +2312,316 @@
         "https://ieeexplore.ieee.org/document/585119"
       ],
       "versionNote": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control44(2),344–354(1997); user downloaded publisher PDF; original numbered filename retained",
-      "validation": "PDF header,parse,pagecount,first-page identity and SHA256 checked",
-      "rights": "local research evidence only; no redistribution permission inferred"
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
+    },
+    {
+      "sha256": "1d20e391c49bd9e9af8adeebfeccf7580a12c71d636aff44616f139a4951bfbc",
+      "path": "references/papers/2017_Pizzocaro_171Yb_Absolute-frequency_arXiv1609.01610v2.pdf",
+      "bytes": 1019102,
+      "pages": 13,
+      "sourceIds": [
+        "pizzocaro-2017-metrologia"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/abs/1609.01610v2",
+        "https://arxiv.org/pdf/1609.01610v2"
+      ],
+      "versionNote": "1609.01610v2",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
+    },
+    {
+      "sha256": "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e",
+      "path": "references/papers/2014_Xu_171Yb_Hyperfine-quenching-rate_arXiv1406.2340v1.pdf",
+      "bytes": 631461,
+      "pages": 5,
+      "sourceIds": [
+        "xu-2014-prl"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/abs/1406.2340v1",
+        "https://arxiv.org/pdf/1406.2340v1"
+      ],
+      "versionNote": "1406.2340v1",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
+    },
+    {
+      "sha256": "d18cc23ba21e08a10c2115e0f3ae72df7a3ee8b34cf2747e2ed5daa8bf1ff477",
+      "path": "references/papers/2024_Siegel_171Yb_Clock-natural-lifetime_arXiv2402.04968v2.pdf",
+      "bytes": 2123677,
+      "pages": 9,
+      "sourceIds": [
+        "siegel-2024-prl"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/abs/2402.04968v2",
+        "https://arxiv.org/pdf/2402.04968v2"
+      ],
+      "versionNote": "2402.04968v2",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
+    },
+    {
+      "sha256": "16fe88d226fe10c7b713cd448c05a0bccb2e0ec1ade30087c0b092d260fd372e",
+      "path": "references/papers/2009_Blatt_Rabi-spectroscopy-inhomogeneity_arXiv0906.1419v2.pdf",
+      "bytes": 655052,
+      "pages": 12,
+      "sourceIds": [
+        "blatt-2009-pra"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/abs/0906.1419v2",
+        "https://arxiv.org/pdf/0906.1419v2"
+      ],
+      "versionNote": "0906.1419v2",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "versionNoteBoundary": "Historical source-level note retained from the pre-archive index; the actual PDF version identity was not re-reviewed in this archive step."
+    },
+    {
+      "sha256": "b33537c466775342db2c8f92ea275557013ab686078787a016838cc85633b809",
+      "path": "references/papers/2023_Lis_171Yb_Midcircuit-omg_PRX13-041035.pdf",
+      "bytes": 2911579,
+      "pages": 22,
+      "sourceIds": [
+        "lis-2023"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=956158",
+        "https://doi.org/10.1103/PhysRevX.13.041035"
+      ],
+      "versionNote": "Published journal version (2023-11-22)",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "aliases": [],
+      "doi": "10.1103/PhysRevX.13.041035",
+      "documentType": "experimental-article",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      }
+    },
+    {
+      "sha256": "2e976648051f4aa383fc9bdc073b50c7d78a5e3126d77f596fcf6ec8ed63f2bf",
+      "path": "references/papers/2022_Zhang_171Yb_Subrecoil-clock-cooling_arXiv2206.09056v1.pdf",
+      "bytes": 776121,
+      "pages": 10,
+      "sourceIds": [
+        "zhang-2022"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/pdf/2206.09056v1",
+        "https://doi.org/10.1103/PhysRevLett.129.113202"
+      ],
+      "versionNote": "arXiv:2206.09056v1; identifier date 2022-06-18, embedded draft date 2022-06-22",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "aliases": [],
+      "doi": "10.1103/PhysRevLett.129.113202",
+      "documentType": "experimental-article",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      }
+    },
+    {
+      "sha256": "5aba1612109652dc7eb80484c186c66a0edcae39f891329942ae0cfdc15a9f79",
+      "path": "references/papers/2025_Zaporski_171Yb_Quantum-amplified-global-phase_published.pdf",
+      "bytes": 6770047,
+      "pages": 12,
+      "sourceIds": [
+        "zaporski-2025"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://eapg.mit.edu/wp-content/uploads/2026/01/Zaporski_et_al-2025-Nature.pdf",
+        "https://doi.org/10.1038/s41586-025-09578-8"
+      ],
+      "versionNote": "Published Nature version; online publication 2025-10-08; issue 2025-10-09",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "aliases": [],
+      "doi": "10.1038/s41586-025-09578-8",
+      "documentType": "experimental-article",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      }
+    },
+    {
+      "sha256": "57f72aa6f0ecb4cc68c8730e5232948937272ac1649ab77bb3baabc99e0f3b9d",
+      "path": "references/papers/2022_Bettermann_171Yb_Interorbital-interactions_thesis.pdf",
+      "bytes": 2701598,
+      "pages": 124,
+      "sourceIds": [
+        "bettermann-2022"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://edoc.ub.uni-muenchen.de/32171/1/Bettermann_Oscar.pdf",
+        "https://doi.org/10.5282/edoc.32171"
+      ],
+      "versionNote": "Thesis title page München 2022; PDF creation metadata 2023-07-27 retained separately",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "aliases": [],
+      "doi": "10.5282/edoc.32171",
+      "documentType": "doctoral-thesis",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      }
+    },
+    {
+      "sha256": "3faacd25c310d3cde79e258d9f5e4a39325d42cb7fe45f50f48057ae1a9b213d",
+      "path": "references/papers/2023_Norcia_171Yb_Midcircuit-measurement_PRX13-041034.pdf",
+      "bytes": 901266,
+      "pages": 12,
+      "sourceIds": [
+        "norcia-2023"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://journals.aps.org/prx/pdf/10.1103/PhysRevX.13.041034",
+        "https://doi.org/10.1103/PhysRevX.13.041034"
+      ],
+      "versionNote": "Published journal version (2023-11-22)",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "aliases": [],
+      "doi": "10.1103/PhysRevX.13.041034",
+      "documentType": "experimental-article",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      }
+    },
+    {
+      "sha256": "7a3598bcc2fb6a6ed7d8280212d572a4f6bc5fa5dc49715b284ffc719473b472",
+      "path": "references/papers/2026_Offer_171Yb_Portable-beam-clock_published.pdf",
+      "bytes": 4231019,
+      "pages": 9,
+      "sourceIds": [
+        "offer-2026"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://strathprints.strath.ac.uk/96758/",
+        "https://doi.org/10.1364/OPTICA.584095"
+      ],
+      "versionNote": "Published Optica journal version (2026-04-01)",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "aliases": [
+        "offer-main",
+        "offer-2026-main"
+      ],
+      "doi": "10.1364/OPTICA.584095",
+      "documentType": "experimental-article-and-supplement",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      }
+    },
+    {
+      "sha256": "3146ceef9a5c2bfd260406fd33030ea6d1995d44b1f9408e37ad62605ed38bfe",
+      "path": "references/papers/2026_Offer_171Yb_Portable-beam-clock_supplement-v2.pdf",
+      "bytes": 613877,
+      "pages": 4,
+      "sourceIds": [
+        "offer-2026"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://ndownloader.figshare.com/files/63390231",
+        "https://doi.org/10.6084/m9.figshare.31537450.v2"
+      ],
+      "versionNote": "Published supplement v2, Figshare DOI 10.6084/m9.figshare.31537450.v2; title page states publication with parent article on 2026-04-01",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "aliases": [
+        "offer-sm",
+        "offer-2026-sm-v2"
+      ],
+      "doi": "10.6084/m9.figshare.31537450.v2",
+      "parentArticleDoi": "10.1364/OPTICA.584095",
+      "documentType": "published-supplement",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      }
+    },
+    {
+      "sha256": "21c79f5126320fd8ba76ffb6347dec853bba87b96a4787e3862513b995934fef",
+      "path": "references/papers/2023_Strathearn_Wavefront-curvature_arXiv2212.00308v2.pdf",
+      "bytes": 811487,
+      "pages": 13,
+      "sourceIds": [
+        "strathearn-2023-pra"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://arxiv.org/pdf/2212.00308v2",
+        "https://doi.org/10.1103/PhysRevA.108.013105"
+      ],
+      "versionNote": "arXiv:2212.00308v2 (2023-01-25)",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "aliases": [
+        "strathearn-model"
+      ],
+      "doi": "10.1103/PhysRevA.108.013105",
+      "documentType": "method-preprint",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      }
+    },
+    {
+      "sha256": "adc7ac2dc7f74991a7317001fc698f574654e2b7a6d44f0f6749775e0b0ce9f0",
+      "path": "references/papers/2015_Ludlow_Optical-atomic-clocks_RMP87-637.pdf",
+      "bytes": 5714243,
+      "pages": 65,
+      "sourceIds": [
+        "ludlow-2015-rmp"
+      ],
+      "originalPaths": [],
+      "urls": [
+        "https://doi.org/10.1103/RevModPhys.87.637"
+      ],
+      "versionNote": "Published review (2015-06-26)",
+      "validation": "Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.",
+      "rights": "local research evidence only; no redistribution permission inferred",
+      "aliases": [
+        "ludlow-rmp"
+      ],
+      "doi": "10.1103/RevModPhys.87.637",
+      "documentType": "review",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-10-31",
+        "evidence": "Local PDF title page compared with the existing source-review record; DOI/identifier provenance is recorded in the parent source"
+      }
     }
   ]
 }

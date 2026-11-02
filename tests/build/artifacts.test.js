@@ -58,16 +58,20 @@ test('artifact checks reject a changed file after packaging', t => {
   assert.throws(() => checkArtifacts(path.join(root, 'dist'), { quiet: true }), /mismatch/);
 });
 
-test('local literature originals and audit evidence never enter the website artifact',t=>{
+test('local literature evidence and workstation metadata never enter the website artifact',t=>{
   const root=fixture(t);
   fs.mkdirSync(path.join(root,'data/literature/raw'),{recursive:true});
   fs.mkdirSync(path.join(root,'references/papers'),{recursive:true});
   fs.writeFileSync(path.join(root,'data/literature/raw/paper.txt'),'local source text');
   fs.writeFileSync(path.join(root,'references/papers/paper.pdf'),'%PDF-local research evidence');
+  fs.writeFileSync(path.join(root,'src/.DS_Store'),'local Finder metadata');
+  fs.writeFileSync(path.join(root,'assets/._private'),'local resource fork');
   const manifest=build(root,{quiet:true});
   assert.equal(fs.existsSync(path.join(root,'dist/data/literature')),false);
   assert.equal(fs.existsSync(path.join(root,'dist/references')),false);
   assert.equal(fs.existsSync(path.join(root,'dist/data/dataset.json')),true);
+  assert.equal(fs.existsSync(path.join(root,'dist/src/.DS_Store')),false);
+  assert.equal(fs.existsSync(path.join(root,'dist/assets/._private')),false);
   assert.ok(manifest.files.every(file=>!file.path.includes('literature/')&&!file.path.includes('references/')));
 });
 
