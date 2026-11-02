@@ -82,6 +82,28 @@
 #secRabi #configExport { margin-left: auto; }
 #secRabi .calculation-toolbar :is(select,button) { background: #0c1726; border: 1px solid #2a3b54; color: #bdcce1; min-height: 36px; font-size: 11px; }
 #secRabi .calculation-toolbar #calcSolveFor { color: #e4d0a7; min-width: 210px; }
+/* Research records share the toolbar while their optional choices stay folded. */
+#secRabi .calculation-record-export { position: relative; min-width: 0; max-width: 100%; }
+#secRabi .calculation-record-export > summary { display: flex; align-items: center; justify-content: center; gap: 8px; list-style: none; box-sizing: border-box; min-height: 36px; padding: 6px 12px; border: 1px solid #665637; border-radius: 6px; background: #24231e; color: #dfc58e; font: 400 11px/1.5 var(--font-ui); cursor: pointer; }
+#secRabi .calculation-record-export > summary::-webkit-details-marker { display: none; }
+#secRabi .calculation-record-export > summary::after { content: '+'; color: #afc9ec; }
+#secRabi .calculation-record-export[open] > summary::after { content: '−'; }
+#secRabi .calculation-record-export > summary:hover { border-color: #a48a57; background: #2d291f; }
+#secRabi .calculation-record-export :is(summary,button):focus-visible { outline: 2px solid #a6caff; outline-offset: 3px; }
+#secRabi .calculation-record-export-panel { position: absolute; z-index: 8; top: calc(100% + 8px); right: 0; display: grid; gap: 8px; box-sizing: border-box; width: min(300px,calc(100vw - 48px)); max-width: calc(100vw - 48px); padding: 14px; border: 1px solid #354c6b; border-radius: 9px; background: #0e1b2c; box-shadow: 0 12px 30px #02070f88; }
+#secRabi .calculation-record-export:not([open]) > .calculation-record-export-panel { display: none; }
+#secRabi .calculation-record-export-panel :is(p,button) { min-width: 0; max-width: 100%; }
+#secRabi .calculation-record-export-panel p { margin: 0; font-size: 11px; line-height: 1.75; overflow-wrap: anywhere; }
+#secRabi .calculation-record-export-help { color: #afc2dd; }
+#secRabi .calculation-record-export-hint { color: #c5af82; }
+#secRabi .calculation-record-export-panel button { display: block; width: 100%; min-height: 40px; padding: 8px 12px; text-align: left; border-radius: 6px; }
+#secRabi .calculation-record-export-panel button:hover:not(:disabled) { color: #e5cd9d; border-color: #7c6842; background: #1b2634; }
+#secRabi .calculation-record-export-panel button:disabled { opacity: .5; cursor: not-allowed; }
+@media (max-width: 680px) {
+  #secRabi .calculation-record-export { flex-basis: 100%; width: 100%; }
+  #secRabi .calculation-record-export > summary { justify-content: space-between; min-height: 40px; }
+  #secRabi .calculation-record-export-panel { position: static; width: 100%; max-width: 100%; margin-top: 8px; box-shadow: none; }
+}
 #secRabi .coupling-console { display: grid; grid-template-columns: minmax(0,.88fr) minmax(0,1.12fr); border: 1px solid #33405a; border-radius: 14px; overflow: hidden; margin-bottom: 20px; background: #0b1421; }
 #secRabi .coupling-inputs { padding: 26px; border-right: 1px solid #293950; }
 #secRabi .workspace-help { color: #8fa5c0; font-size: 11px; margin: -4px 0 22px; }

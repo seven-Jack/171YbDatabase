@@ -2,7 +2,9 @@ import * as catalog from './data/catalog.js';
 import { SOFTWARE_VERSION, APP_COMMIT, WORKTREE_DIRTY } from './version.js';
 import { FORMULA_VERSION } from './physics/constants.js';
 import { generateRydbergStates, buildRydbergTransitions } from './physics/estimates.js';
-import { exportCalculationConfig, parseCalculationConfig } from './state/config.js';
+import { exportCalculationConfig } from './state/config.js';
+import { parseCalculationRecordOrConfig } from './ui/calculation-record.js';
+import { initCalculationRecordExport } from './ui/calculation-record-controls.js';
 import { decorateTransition } from './ui/spectral-color.js';
 import { createTooltips } from './ui/tooltips.js';
 import { initEnergyDiagram } from './ui/energy-diagram.js';
@@ -53,8 +55,10 @@ export function start() {
     (available.find(line=>line.getAttribute('aria-pressed')==='true')||available[0]||levelDiagram).focus({preventScroll:true});
   });
   const versions={softwareVersion:SOFTWARE_VERSION,appCommit:APP_COMMIT,
-    datasetVersion:catalog.DATASET_VERSION,datasetHash:catalog.DATASET_MANIFEST.contentHash,formulaVersion:FORMULA_VERSION};
+    datasetVersion:catalog.DATASET_VERSION,datasetHash:catalog.DATASET_MANIFEST.contentHash,formulaVersion:FORMULA_VERSION,
+    worktreeDirty:WORKTREE_DIRTY};
   const configStatus=document.getElementById('configStatus');
+  initCalculationRecordExport({calculator,versions,status:configStatus});
   document.getElementById('configExport').addEventListener('click',()=>{
     try{
       const state=calculator.getState();
@@ -73,7 +77,7 @@ export function start() {
     try{
       const file=configFile.files?.[0];if(!file)return;
       if(file.size>64*1024)throw Error('配置文件过大，限 64 KiB。');
-      const restored=parseCalculationConfig(await file.text(),versions);
+      const restored=parseCalculationRecordOrConfig(await file.text(),versions);
       charts.applyConfiguration(restored.state,{solveFor:restored.state.solveFor,units:restored.state.calculatorUnits});
       configStatus.textContent='已恢复计算配置，并使用当前数据重新计算。'+restored.warnings.join('；');
     }catch(error){configStatus.textContent='导入失败：'+error.message;}
