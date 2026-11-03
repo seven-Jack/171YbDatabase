@@ -11,6 +11,7 @@ import { initEnergyDiagram } from './ui/energy-diagram.js';
 import { initHyperfineCalculator } from './ui/hyperfine-diagram.js';
 import { initRabiCharts } from './ui/rabi-chart.js';
 import { initDataTables } from './ui/data-table.js';
+import { initDataBrowser } from './ui/data-browser.js';
 import { initSourcePanel, createFieldView } from './ui/source-panel.js';
 import { initPageControls } from './ui/page-controls.js';
 import { initWorkflowNavigation } from './ui/workflow-navigation.js';
@@ -34,7 +35,7 @@ export function start() {
   })});
   const charts=initRabiCharts(calculator,tooltips);
   preventNumberInputWheelChanges(document.getElementById('secRabi'));
-  initDataTables(data,tooltips);
+  const tables=initDataTables(data,tooltips);
   initSourcePanel(calculator,CORE_TRANSITIONS);
   initPageControls(catalog.HYPERFINE_DATA);
   initTransitionKnowledge({transitions:CORE_TRANSITIONS,calculator});
@@ -57,6 +58,16 @@ export function start() {
   const versions={softwareVersion:SOFTWARE_VERSION,appCommit:APP_COMMIT,
     datasetVersion:catalog.DATASET_VERSION,datasetHash:catalog.DATASET_MANIFEST.contentHash,formulaVersion:FORMULA_VERSION,
     worktreeDirty:WORKTREE_DIRTY};
+  initDataBrowser({transitions:CORE_TRANSITIONS,calculator,tables,versions,
+    onOpenTransition(transition){
+      calculator.loadTransition(transition);tooltips.hideTooltip();
+      createChannelNavigation({destination:document.getElementById('secCalc')})();
+    },
+    onLoadComparison(state){
+      charts.applyConfiguration(state,{solveFor:'rabi',units:state.calculatorUnits});tooltips.hideTooltip();
+      createChannelNavigation({destination:document.getElementById('secRabi')})();
+    }
+  });
   const configStatus=document.getElementById('configStatus');
   initCalculationRecordExport({calculator,versions,status:configStatus});
   document.getElementById('configExport').addEventListener('click',()=>{

@@ -1,3 +1,4 @@
+@import url('./data-browser.css');
 /* Object browsing is independent of the diagram and calculation controls. */
 .transition-explorer-toolbar { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; font-family: var(--font-ui,system-ui,sans-serif); font-size: 12px; color: var(--text-1); }
 .transition-explorer-toolbar :is(input,select,button,summary) { font: inherit; }

@@ -63,6 +63,8 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
   const tabs=document.getElementById('tableTabs');
   if (tabs&&initialized.has(tabs)) return initialized.get(tabs);
   const cleanups=[];
+  const coreRenderListeners=new Set();
+  let coreFilterIds=null;
   const bind=(target,event,listener)=>{target.addEventListener(event,listener);cleanups.push(()=>target.removeEventListener(event,listener));};
   const sortStates={core:{col:null,dir:null},rydberg:{col:'n',dir:'asc'},states:{col:null,dir:null},defects:{col:null,dir:null}};
   let fullCore=false;
@@ -129,7 +131,8 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
     const table=document.querySelector(`table[data-table="${tableId}"]`);
     if (!table) return;
     const tbody=table.querySelector('tbody');
-    tbody.innerHTML=sortTableRows(data,sortStates[tableId]).map(row=>`<tr${isRyd?' class="ryd-row"':''} data-row-id="${escapeHTML(row.id||'')}">${columns.map(column=>`<td data-column="${column}">${formatCell(row,column,tableId)}</td>`).join('')}</tr>`).join('');
+    const visible=tableId==='core'&&coreFilterIds!==null?data.filter(row=>coreFilterIds.has(row.id)):data;
+    tbody.innerHTML=sortTableRows(visible,sortStates[tableId]).map(row=>`<tr${isRyd?' class="ryd-row"':''} data-row-id="${escapeHTML(row.id||'')}">${columns.map(column=>`<td data-column="${column}">${formatCell(row,column,tableId)}</td>`).join('')}</tr>`).join('');
     table.querySelectorAll('th[data-sort]').forEach(header=>{
       const active=sortStates[tableId].col===header.dataset.sort;
       header.classList.toggle('sort-asc',active&&sortStates[tableId].dir==='asc');header.classList.toggle('sort-desc',active&&sortStates[tableId].dir==='desc');
@@ -138,6 +141,7 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
       if (button) button.setAttribute('aria-label',`按${button.textContent}排序${active?'，当前'+(sortStates[tableId].dir==='asc'?'升序':'降序'):''}`);
     });
     applyColumnVisibility(table,columns,tableId);attachTableInfoTooltips(table);
+    if(tableId==='core')for(const listener of coreRenderListeners)listener(table);
   }
 
   definitions.forEach(([tableId,data,columns,isRyd])=>{
@@ -196,7 +200,16 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
   }
   const referenceCount=document.getElementById('referenceCount');
   if(referenceCount) referenceCount.textContent=`${REFERENCES.length} 项文献 · ${DIAGRAM_SUPPLEMENTAL_SOURCE_COUNT} 项数据记录`;
-  const api=Object.freeze({destroy(){cleanups.forEach(cleanup=>cleanup());if(tabs)initialized.delete(tabs);}});
+  const api=Object.freeze({
+    setCoreFilter(ids=null){coreFilterIds=ids===null?null:new Set(ids);renderTable('core',CORE_TRANSITIONS,coreCols,false);},
+    onCoreRender(listener){
+      coreRenderListeners.add(listener);
+      const table=document.querySelector('table[data-table="core"]');
+      if(table)listener(table);
+      return()=>coreRenderListeners.delete(listener);
+    },
+    destroy(){coreRenderListeners.clear();cleanups.forEach(cleanup=>cleanup());if(tabs)initialized.delete(tabs);}
+  });
   if(tabs)initialized.set(tabs,api);
   return api;
 }
