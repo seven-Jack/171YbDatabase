@@ -1,0 +1,21 @@
+/* Optional export controls are confined to the existing Rabi workspace. */
+#secRabi .result-copy-fallback { box-sizing: border-box; width: 100%; min-height: 170px; padding: 10px; border: 1px solid #557197; border-radius: 6px; background: #08111e; color: #d4e2f5; font: 400 11px/1.7 var(--font-ui); resize: vertical; }
+#secRabi .result-copy-fallback[hidden] { display: none; }
+#secRabi .rabi-chart-heading { position: relative; }
+#secRabi .rabi-chart-heading:has(.chart-result-export) > h3 { padding-right: 100px; }
+#secRabi .rabi-chart-heading:has(.chart-result-export):has(.chart-toolbar) > :is(h3,.workspace-eyebrow) { padding-right: 214px; }
+#secRabi .rabi-chart-heading:has(.chart-result-export) .chart-toolbar { right: 100px; }
+#secRabi .chart-result-export { position: absolute; right: 0; top: 0; z-index: 9; font: 400 11px/1.6 var(--font-ui); }
+#secRabi .chart-result-export > summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 32px; box-sizing: border-box; padding: 5px 9px; border: 1px solid #665637; border-radius: 6px; background: #24231e; color: #dfc58e; cursor: pointer; list-style: none; }
+#secRabi .chart-result-export > summary::-webkit-details-marker { display: none; }
+#secRabi .chart-result-export > summary::after { content: '+'; color: #afc9ec; }
+#secRabi .chart-result-export[open] > summary::after { content: '−'; }
+#secRabi .chart-result-export-panel { position: absolute; right: 0; top: calc(100% + 7px); display: grid; gap: 7px; width: min(250px,calc(100vw - 64px)); box-sizing: border-box; padding: 12px; border: 1px solid #354c6b; border-radius: 8px; background: #0e1b2c; box-shadow: 0 12px 30px #02070f88; }
+#secRabi .chart-result-export:not([open]) > .chart-result-export-panel { display: none; }
+#secRabi .chart-result-export-panel button { min-width: 0; max-width: 100%; min-height: 38px; padding: 8px 10px; border: 1px solid #30445f; border-radius: 5px; background: #101e31; color: #c4d8f2; text-align: left; font: inherit; cursor: pointer; }
+#secRabi .chart-result-export-panel button:hover:not(:disabled) { border-color: #7c6842; color: #e5cd9d; }
+#secRabi .chart-result-export-panel button:disabled { opacity: .5; cursor: not-allowed; }
+#secRabi .chart-result-export-panel p { margin: 3px 0 0; color: #9fb5d1; font-size: 10px; line-height: 1.7; overflow-wrap: anywhere; }
+#secRabi :is(.chart-result-export,.result-copy-fallback) :is(button,summary):focus-visible,#secRabi .result-copy-fallback:focus-visible { outline: 2px solid #a6caff; outline-offset: 3px; }
+@media(max-width:680px){#secRabi .chart-result-export > summary,#secRabi .chart-result-export-panel button{min-height:44px;}#secRabi .chart-result-export{top:-3px;} }
+@media(max-width:640px){#secRabi .rabi-chart-heading:has(.chart-result-export):has(.chart-toolbar) > :is(h3,.workspace-eyebrow){padding-right:100px;} }

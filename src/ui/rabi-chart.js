@@ -96,6 +96,9 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
   // 上次绘制的曲线图几何（供悬停读数反算 x/y 用）
   var curveGeom = null;
   var heatGeom = null;
+  // Read-only export snapshots come from the same draw pass, not a second model.
+  var curveExport = null, heatExport = null, heatRaster = null;
+  var lastDrawnKey = null;
   var chartProbes = null;
   var focusedView = null;
   var focusedPointKey = null;
@@ -271,6 +274,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     var W = dim.w, H = dim.h;
     var ctx = curveCtx;
     ctx.clearRect(0, 0, W, H);
+    var exportXTicks=[],exportYTicks=[],exportWorkPoint=null;
 
     var plotW = W - pad.left - pad.right;
     var plotH = H - pad.top - pad.bottom;
@@ -329,7 +333,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
       ctx.moveTo(pad.left, y);
       ctx.lineTo(pad.left + plotW, y);
       ctx.stroke();
-      if (i < ySteps) ctx.fillText(fmtRabi(yVal), pad.left - 8, y);
+      if (i < ySteps) {ctx.fillText(fmtRabi(yVal), pad.left - 8, y);exportYTicks.push({value:yVal,position:y,label:fmtRabi(yVal)});}
     }
 
     // X axis grid + labels (in display power)
@@ -362,7 +366,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
       ctx.lineTo(x, pad.top + plotH);
       ctx.strokeStyle = chartTheme.grid;
       ctx.stroke();
-      if(x-lastXLabel>=48&&pad.left+plotW-x>=48){ctx.fillText(fmtPwr(p),x,pad.top+plotH+8);lastXLabel=x;}
+      if(x-lastXLabel>=48&&pad.left+plotW-x>=48){ctx.fillText(fmtPwr(p),x,pad.top+plotH+8);lastXLabel=x;exportXTicks.push({value:p,position:x,label:fmtPwr(p)});}
     });
 
     // Axis titles and endpoint maxima are accessible HTML controls on the axes.
@@ -377,7 +381,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
 
     // Draw curves
     var nPts = 200;
-    var probeCurves=waistSeries.map((waist_um,id)=>({id,waist_um,visible:curveVisible[id],points:[]}));
+    var probeCurves=waistSeries.map((waist_um,id)=>({id,waist_um,visible:curveVisible[id],color:curveColors[id%curveColors.length],points:[],samples:[]}));
     ctx.save();ctx.beginPath();ctx.rect(pad.left,pad.top,plotW,plotH);ctx.clip();
     waistSeries.forEach(function(w, idx) {
       if (!curveVisible[idx]) return; // 隐藏的曲线不绘制
@@ -393,10 +397,12 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
           P = Pmin + (i / nPts)**2 * (Pmax - Pmin);
         }
         var P_mW = P / pf;
-        var fR = rabiHz(d_ea0, P_mW, w) / 1e6 * rf;
+        var fR_Hz = rabiHz(d_ea0, P_mW, w);
+        var fR = fR_Hz / 1e6 * rf;
         var x = xScale(P);
         var y = yScale(fR);
         probeCurves[idx].points.push({x,y});
+        probeCurves[idx].samples.push({power_mW:P_mW,waist_um:w,rabi_Hz:fR_Hz,power_display:P,rabi_display:fR});
         if (i === 0) ctx.moveTo(x, y);
         else ctx.lineTo(x, y);
       }
@@ -428,9 +434,11 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
 
     // Working point marker
     if (curP_mW > 0 && curW_um > 0) {
-      var fR_cur = rabiHz(d_ea0, curP_mW, curW_um) / 1e6 * rf;
+      var fR_cur_Hz = rabiHz(d_ea0, curP_mW, curW_um);
+      var fR_cur = fR_cur_Hz / 1e6 * rf;
       var px = xScale(curP_mW * pf);
       var py = yScale(fR_cur);
+      exportWorkPoint={x:px,y:py,power_mW:curP_mW,waist_um:curW_um,rabi_Hz:fR_cur_Hz};
 
       ctx.beginPath();
       ctx.arc(px, py, 6, 0, Math.PI * 2);
@@ -460,6 +468,9 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
       d_ea0: d_ea0,left:pad.left,top:pad.top,curves:probeCurves,unitPowerFactor:pwrFactor(pUnit)
     };
     publishGeometry(curveCanvas,curveGeom,'curve');
+    curveExport={kind:'curve',width:W,height:H,geometry:curveGeom,theme:{...chartTheme},
+      ticks:{x:exportXTicks,y:exportYTicks},workPoint:exportWorkPoint,
+      powerConvention:isSigma?'2Pq':'Pq',xTitle:`功率 ${isSigma?'2Pq':'Pq'} (${pUnit})`,yTitle:`Ω/2π (${rUnit})`};
   }
   // Build legend（束腰数值可编辑 + 点击 µm 切换曲线显隐）
   function buildLegend() {
@@ -1031,6 +1042,11 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = chartTheme.text;
+    heatRaster={grid:offCanvas,colorbar:cbCanvas};
+    heatExport={kind:'heat',width:W,height:H,geometry:heatGeom,theme:{...chartTheme},
+      grid:{nx,ny,values_MHz:grid,colorLo_MHz:colorLo,colorHi_MHz:colorHi},
+      powerConvention:isSigma?'2Pq':'Pq',xTitle:`功率 ${isSigma?'2Pq':'Pq'} (${pUnit})`,yTitle:`束腰 w₀ (${wUnit})`,
+      workPoint:curP_mW>0&&curW_um>0?{x:xScale(curP_mW*pf),y:yScale(curW_um*wf),power_mW:curP_mW,waist_um:curW_um}:null};
   }
 
   function drawHeatAxes(ctx, plotW, plotH, pad, xScale, yScale, Pmin, Pmax, Wmin, Wmax, W, H, pUnit, wUnit, isSigma) {
@@ -1089,6 +1105,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
       d = state.dEff;
     }
     if (!(d > 0)) {
+      curveExport=null;heatExport=null;heatRaster=null;lastDrawnKey=null;
       document.querySelectorAll('[data-chart-axis-controls]').forEach(controls=>{controls.hidden=true;});
       curveGeom=null;heatGeom=null;curveTip.classList.remove('show');heatTip.classList.remove('show');
       [curveCanvas,heatCanvas].forEach(canvas=>{const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.fillStyle=chartTheme.text;ctx.font=chartTheme.font;ctx.fillText('当前通道无适用的 E1 计算结果',20,36);ctx.restore();});
@@ -1102,6 +1119,7 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
     updateAxisUI();
     updateHeatAxisUI();
     chartProbes?.sync();
+    lastDrawnKey=workingPointKey(state);
   }
 
   window.addEventListener('resize', () => requestAnimationFrame(redrawAll));
@@ -1343,6 +1361,20 @@ export function initRabiCharts(calculator,{showCompactTooltip,scheduleTooltipHid
   });
   return Object.freeze({
     redraw:redrawAll,
+    getExportSnapshot(kind){
+      const state=calculator.getState();
+      if(!['curve','heat'].includes(kind))throw Error('未知图表。');
+      if(state.inputStatus!=='valid'||!(state.dEff>0)||lastDrawnKey!==workingPointKey(state))throw Error('图表尚未对应当前有效工作点，请修正输入后再导出。');
+      const source=kind==='curve'?curveExport:heatExport;
+      if(!source)throw Error('当前没有可导出的图表。');
+      const snapshot=structuredClone(source);
+      snapshot.context={transitionId:state.transition.id,P_mW:state.P_mW,w_um:state.w_um,dEff_ea0:state.dEff,pol:state.pol,F:state.F_lower,Fp:state.F_upper,
+        selectedChannel:state.selectedChannel?Object.fromEntries(['F','m','Fp','mp','q'].map(key=>[key,state.selectedChannel[key]])):null};
+      if(kind==='heat')snapshot.raster={grid:heatRaster.grid.toDataURL('image/png'),colorbar:heatRaster.colorbar.toDataURL('image/png')};
+      const output=document.getElementById(kind==='curve'?'rpCurveReadout':'rpHeatReadout');
+      if(output?.dataset.mode==='pinned')snapshot.pinned={power_mW:Number(output.dataset.powerMw),waist_um:Number(output.dataset.waistUm),rabi_Hz:Number(output.dataset.rabiHz),text:output.textContent};
+      return snapshot;
+    },
     getConfiguration:()=>({solveFor:direction.value,units:{...calcUnits}}),
     applyConfiguration(snapshot,ui={}){
       const definition=validateBeamDefinition(snapshot.beamDefinition||DEFAULT_BEAM_DEFINITION);

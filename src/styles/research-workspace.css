@@ -1,3 +1,4 @@
+@import url('./result-export.css');
 /* Scoped to the three research views. The original main diagram is excluded. */
 #secRabi .beam-definition-settings { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 14px; }
 #secRabi .beam-definition-settings > summary { cursor: pointer; color: var(--text-1); font-size: 13px; line-height: 1.6; }

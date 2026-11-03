@@ -1,0 +1,17 @@
+/* Startup recovery controls only; atlas and research panels keep their styles. */
+#appLoading .startup-reload {
+  margin-inline-start: 10px;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1px solid #665637;
+  border-radius: 6px;
+  background: #24231e;
+  color: #dfc58e;
+  font: inherit;
+  cursor: pointer;
+}
+#appLoading .startup-reload:hover { border-color: #a48a57; background: #2d291f; }
+#appLoading .startup-reload:focus-visible { outline: 2px solid #a6caff; outline-offset: 3px; }
+@media (max-width: 680px) {
+  #appLoading .startup-reload { min-height: 44px; }
+}
