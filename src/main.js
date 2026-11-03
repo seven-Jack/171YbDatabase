@@ -5,6 +5,7 @@ import { generateRydbergStates, buildRydbergTransitions } from './physics/estima
 import { exportCalculationConfig } from './state/config.js';
 import { parseCalculationRecordOrConfig } from './ui/calculation-record.js';
 import { initCalculationRecordExport } from './ui/calculation-record-controls.js';
+import { initResultExportControls } from './ui/result-export-controls.js';
 import { decorateTransition } from './ui/spectral-color.js';
 import { createTooltips } from './ui/tooltips.js';
 import { initEnergyDiagram } from './ui/energy-diagram.js';
@@ -69,6 +70,7 @@ export function start() {
     }
   });
   const configStatus=document.getElementById('configStatus');
+  initResultExportControls({calculator,charts,versions,status:configStatus});
   initCalculationRecordExport({calculator,versions,status:configStatus});
   document.getElementById('configExport').addEventListener('click',()=>{
     try{

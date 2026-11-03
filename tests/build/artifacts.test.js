@@ -43,8 +43,7 @@ test('identical source has deterministic files and artifact hashes', t => {
 test('artifact checks fail on a missing production import and a root-relative Pages path', t => {
   const root = fixture(t);
   fs.writeFileSync(path.join(root, 'src/main.js'), "import './missing.js';\n");
-  build(root, { quiet: true });
-  assert.throws(() => checkArtifacts(path.join(root, 'dist'), { quiet: true }), /Missing built resource/);
+  assert.throws(() => build(root, { quiet: true }), /Missing startup module/);
   fs.writeFileSync(path.join(root, 'src/main.js'), 'export {};\n');
   fs.writeFileSync(path.join(root, 'index.html'), '<script type="module" src="/src/main.js"></script>');
   build(root, { quiet: true });

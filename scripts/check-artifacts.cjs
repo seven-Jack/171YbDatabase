@@ -31,6 +31,22 @@ function checkArtifacts(directory, options = {}) {
     checked++;
   }
   for (const match of html.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)) localReference('index.html', match[1]);
+  const preloadLists=[...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)]
+    .filter(match=>/\bdata-startup-preloads(?:\s|=|$)/i.test(match[1]));
+  assert(preloadLists.length<=1,'Duplicate startup preload data scripts');
+  for(const [,attributes,content] of preloadLists){
+    assert(/\btype=["']application\/json["']/i.test(attributes),'Startup preload data must be inert JSON');
+    let modules;
+    try{modules=JSON.parse(content);}catch{assert.fail('Invalid startup preload JSON');}
+    assert(Array.isArray(modules)&&modules.every(href=>typeof href==='string'),'Startup preload data must be a module URL array');
+    assert.equal(new Set(modules).size,modules.length,'Duplicate startup preload module URLs');
+    for(const href of modules){
+      assert(href.startsWith('src/')&&!href.includes('\\'),'Startup preload must use a relative src module URL');
+      const file=path.posix.normalize(decodeURIComponent(href.split(/[?#]/)[0]));
+      assert(file.startsWith('src/')&&file.endsWith('.js'),'Startup preload escapes local src modules');
+      localReference('index.html',href);
+    }
+  }
   for (const relative of fileSet) {
     if (!/\.(?:js|css)$/.test(relative)) continue;
     const content = fs.readFileSync(path.join(root, relative), 'utf8');
