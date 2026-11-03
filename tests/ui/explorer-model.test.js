@@ -13,6 +13,11 @@ test('keyword search normalizes term typography and full-width wavelength input'
   assert.deepEqual(ids(filterExplorerRecords(records,{query:'65S 里德堡'})),['R2']);
   assert.deepEqual(ids(filterExplorerRecords(records,{query:'窄线 冷却'})),['T2']);
   assert.deepEqual(ids(filterExplorerRecords(records,{query:'重泵 649'})),['T6']);
+  assert.deepEqual(ids(filterExplorerRecords(records,{query:'556'})),['T2']);
+  assert.deepEqual(ids(filterExplorerRecords(records,{query:'³P₁ 556'})),['T2']);
+  assert.deepEqual(ids(filterExplorerRecords(records,{query:'3P1 556'})),['T2']);
+  assert.deepEqual(ids(filterExplorerRecords(records,{query:'556 literature-reported'})),['T2']);
+  assert.deepEqual(ids(filterExplorerRecords(records,{query:'556 文献'})),['T2']);
 });
 
 test('independent filters combine region, class and matrix-element evidence',()=>{
