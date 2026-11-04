@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "policy": "Explicit erratum corrections, source-internal attribution conflicts, experimental/model disagreements and assignment ambiguity are distinct statuses. Never average or silently relocate values.",
+  "records": [
+    {
+      "id": "honda-d-lifetime-erratum",
+      "kind": "explicit-published-correction",
+      "status": "resolved-by-original-erratum",
+      "sourceIds": [
+        "honda-1999-pra",
+        "honda-1999-erratum"
+      ],
+      "recordIds": [
+        "honda-original-3d1-superseded-lifetime",
+        "honda-original-3d2-superseded-lifetime",
+        "honda-erratum-3d1-corrected-lifetime",
+        "honda-erratum-3d2-corrected-lifetime"
+      ],
+      "claims": {
+        "original_ns": {
+          "3D1": 100,
+          "3D2": 120
+        },
+        "erratum_ns": {
+          "3D1": 380,
+          "3D2": 460
+        }
+      },
+      "resolution": "Keep original misprints as superseded audit records; use correctedcitation only in thissource chain, without changing canonical lifetimes.",
+      "detailFile": "honda-loftus.json",
+      "canonicalAdopted": false
+    },
+    {
+      "id": "honda-fluorescence-ratio-direction",
+      "kind": "ambiguous-wording",
+      "status": "definition-resolved-from-explicit-note",
+      "sourceIds": [
+        "honda-1999-pra"
+      ],
+      "recordIds": [
+        "honda-cascade-fluorescence-ratio"
+      ],
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": "4",
+        "equation": null
+      },
+      "claims": {
+        "nearbyWordOrder": "399nm and556nm",
+        "explicitDefinition": "556nm fluorescence divided by399nm fluorescence"
+      },
+      "resolution": "Use the explicit operational note and the small ratio; do not invert the reported number.",
+      "detailFile": "honda-loftus.json",
+      "canonicalAdopted": false
+    },
+    {
+      "id": "loftus-theory-versus-experiment-absolute-rates",
+      "kind": "reported-experiment-theory-disagreement",
+      "status": "unresolved-do-not-average",
+      "sourceIds": [
+        "loftus-2000-pra"
+      ],
+      "recordIds": [
+        "loftus-experimental-effective-a20",
+        "loftus-cited-experimental-effective-a1",
+        "loftus-theory-effective-a20",
+        "loftus-theory-effective-a1",
+        "loftus-experimental-effective-rate-ratio",
+        "loftus-theory-effective-rate-ratio"
+      ],
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "051401-3"
+        ],
+        "table": "I",
+        "figure": null,
+        "equation": null
+      },
+      "claims": {
+        "experiment_a20_s-1": [
+          23,
+          11
+        ],
+        "experiment_a1_s-1": [
+          21.3,
+          2.6
+        ],
+        "theory_a20_s-1": [
+          6.6,
+          4.6
+        ],
+        "theory_a1_s-1": [
+          5.2,
+          2.6
+        ],
+        "experiment_ratio": [
+          1.1,
+          0.5
+        ],
+        "theory_ratio": [
+          1.25,
+          0.34
+        ]
+      },
+      "resolution": "Authors report absolute rates about4times theory while ratio agrees withinuncertainty; cause unresolved. Preserve model-dependentexcitedfraction systematic and do not call this171Yb independent directbeta verification.",
+      "detailFile": "honda-loftus.json",
+      "canonicalAdopted": false
+    },
+    {
+      "id": "loftus-table-theory-reference-number",
+      "kind": "source-internal-reference-conflict",
+      "status": "pending-upstream-source-chain-check",
+      "sourceIds": [
+        "loftus-2000-pra"
+      ],
+      "recordIds": [
+        "loftus-theory-effective-a20",
+        "loftus-theory-effective-a1",
+        "loftus-theory-effective-rate-ratio"
+      ],
+      "locator": {
+        "pdfPages": [
+          3,
+          4
+        ],
+        "printedPages": [
+          "051401-3",
+          "051401-4"
+        ],
+        "table": "I",
+        "figure": null,
+        "equation": null
+      },
+      "claims": {
+        "tableCaptionReferences": [
+          8,
+          12
+        ],
+        "bodyMatrixElementReference": "Porsev etal inRef12",
+        "tableFootnote_a": [
+          8,
+          11
+        ],
+        "reference11": "Bell etal,Europhys.Lett.45,156(1999)"
+      },
+      "resolution": "Keep original tablefootnote and body/caption attributions separately. Do not silently relabel thefootnote as12 or presume an erratum.",
+      "detailFile": "honda-loftus.json",
+      "canonicalAdopted": false
+    },
+    {
+      "id": "b94-ybi-1p1-between-methods",
+      "status": "unresolved-original-method-comparison",
+      "kind": "experimental-disagreement",
+      "recordIds": [
+        "b94-yb1-p33-state003-cell1",
+        "b94-yb1-p33-state003-cell2",
+        "b94-yb1-p33-state003-cell3",
+        "b94-yb1-p33-state003-cell4",
+        "b94-yb1-p33-state003-cell5",
+        "b94-yb1-p33-state003-cell6"
+      ],
+      "summary": "Same1P1 table entries range5.12(0.12) to6.4(0.2)ns; keep all methods/references, no average or production replacement.",
+      "resolution": "Requires original-source method/systematic review; source compilation alone cannot resolve.",
+      "detailFile": "blagoev-yb.json",
+      "sourceIds": [
+        "blagoev-1994-adndt"
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "b94-ybi-3p1-old-theory",
+      "status": "unresolved-model-difference",
+      "kind": "experiment-theory-disagreement",
+      "recordIds": [
+        "b94-yb1-p33-state001-cell1",
+        "b94-yb1-p33-state001-cell2",
+        "b94-yb1-p33-state001-cell3",
+        "b94-yb1-p33-state001-cell4",
+        "b94-yb1-p33-state001-cell5",
+        "b94-yb1-p33-state001-cell6",
+        "b94-yb1-p33-state001-cell7",
+        "b94-yb1-p33-state001-cell8",
+        "b94-yb1-p33-state001-cell9",
+        "b94-yb1-p33-state001-cell10"
+      ],
+      "summary": "Older Ref95 theory1294ns differs from compiled measurements around760–875ns; no adoption or model reconciliation.",
+      "detailFile": "blagoev-yb.json",
+      "sourceIds": [
+        "blagoev-1994-adndt"
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "b94-ybi-8d",
+      "status": "unresolved-model-difference",
+      "kind": "experiment-theory-disagreement",
+      "recordIds": [
+        "b94-yb1-p34-state023-cell1",
+        "b94-yb1-p34-state023-cell2"
+      ],
+      "summary": "6s8d1D2 experimental466(70)ns versus theoretical123.8ns; perturbation/model and original reference conditions need checking.",
+      "detailFile": "blagoev-yb.json",
+      "sourceIds": [
+        "blagoev-1994-adndt"
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "b94-ybi-13d",
+      "status": "unresolved-original-method-comparison",
+      "kind": "experimental-disagreement",
+      "recordIds": [
+        "b94-yb1-p36-state050-cell1",
+        "b94-yb1-p36-state050-cell2",
+        "b94-yb1-p36-state050-cell3"
+      ],
+      "summary": "6s13d1D2 has415(62)ns fromRef82 and260.6(9.0)ns fromRef80, alongside255.9ns theory; preserve all, no averaging.",
+      "detailFile": "blagoev-yb.json",
+      "sourceIds": [
+        "blagoev-1994-adndt"
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "b94-ybii-34575",
+      "status": "unresolved-author-identified-disagreement",
+      "kind": "experimental-disagreement",
+      "recordIds": [
+        "b94-yb2-p38-state007-cell1",
+        "b94-yb2-p38-state007-cell2"
+      ],
+      "summary": "YbII34575.37cm^-1: BF18(3)ns versus DC31(3)ns. Compilationp8 explicitly requests further experiments; its prose saysfactor1.5 while exact table ratio is not redefined here.",
+      "locator": {
+        "pdfPages": [
+          8,
+          38
+        ]
+      },
+      "detailFile": "blagoev-yb.json",
+      "sourceIds": [
+        "blagoev-1994-adndt"
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "b94-1185-row-binding",
+      "status": "pending-primary-table-check",
+      "kind": "state-assignment-ambiguity",
+      "recordIds": [
+        "b94-yb1-p37-state084-cell2"
+      ],
+      "summary": "1185.7ns T83 appears after6s22s1S0. Ref83 is described as D-series theory onp9, and neighboring6s20d1D2 has1199(73)ns. Do not silently attach the theory to another state; originalRef83 required.",
+      "locator": {
+        "pdfPages": [
+          9,
+          37
+        ]
+      },
+      "detailFile": "blagoev-yb.json",
+      "sourceIds": [
+        "blagoev-1994-adndt"
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "honda-lower-bound-versus-adopted-low-state-theory",
+      "kind": "experiment-theory-comparison-with-different-observables",
+      "status": "unresolved-scope-and-model-boundary",
+      "sourceIds": [
+        "honda-1999-pra",
+        "porsev-1999-pra",
+        "ref-01"
+      ],
+      "recordIds": [
+        "honda-cascade-fluorescence-ratio",
+        "honda-all-triplet-leakage-lower-bound"
+      ],
+      "claims": {
+        "measuredCascadeFluorescenceRatio": {
+          "value": 1.21e-07,
+          "standardDeviation": 3.9e-08,
+          "isotope": 174,
+          "denominator": "399nm cycling fluorescence with detector response calibration",
+          "numerator": "556nm cascade fluorescence only"
+        },
+        "authorsTotalLeakageLowerBound": 1.2e-07,
+        "existingElectronicLowStateE1Theory": {
+          "value": 6e-08,
+          "uncertainty": 4e-08,
+          "path": "data/literature/decay-audit-2026-11-04/branching-fractions.json",
+          "recordId": "1p1-low-state-leak",
+          "scope": "Sum of direct1P1->3D1/3D2 E1 rates divided by declared model total departure rate"
+        }
+      },
+      "resolution": "Preserve experiment, lower bound and model separately. Do not replace theory with the observed cascade channel, call the lower bound an exact total beta, compute a significance without compatible uncertainty definitions, or claim a171Yb F/mF-resolved verification. No runtime value changed.",
+      "canonicalAdopted": false
+    }
+  ]
+}

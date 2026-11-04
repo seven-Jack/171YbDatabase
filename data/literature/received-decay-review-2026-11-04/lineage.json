@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "independencePolicy": "A reprinted compiled lifetime, cited diagram input, a re-expression/lower-bound of one fluorescence dataset, and a later use of existing input do not create new independent experiments.",
+  "relationships": [
+    {
+      "id": "honda-fluorescence-and-lower-bound-same-data",
+      "sourceId": "honda-1999-pra",
+      "recordIds": [
+        "honda-cascade-fluorescence-ratio",
+        "honda-all-triplet-leakage-lower-bound"
+      ],
+      "relationship": "same primary dataset; ratio and lower-bound interpretations, not two measurements"
+    },
+    {
+      "id": "honda-corrected-citations",
+      "sourceIds": [
+        "honda-1999-pra",
+        "honda-1999-erratum",
+        "loftus-2000-pra"
+      ],
+      "relationship": "100/120ns superseded by quoted380/460ns, then reused byLoftus; no new primary lifetime determination"
+    },
+    {
+      "id": "baumann-lange-s1-repeated-input",
+      "sourceId": "blagoev-1994-adndt",
+      "primarySourceId": "baumann-1985-jpb",
+      "primaryDoi": "10.1088/0022-3700/18/17/001",
+      "compilationReferenceNumbers": [
+        72,
+        78
+      ],
+      "existingExtraction": "data/literature/source-followup-2026-10-30/lifetimes/baumann-1985-table-1.csv",
+      "state": "6s7s3S1",
+      "values_ns": [
+        12.5,
+        15.9
+      ],
+      "uncertainties_ns": [
+        1.5,
+        1.9
+      ],
+      "relationship": "12.5ns is citedLange1970 and15.9ns isBaumann1985. Reappearing in compilation is not independent evidence. PrimaryLange not reverified."
+    },
+    {
+      "id": "rambow-compilation-repeat",
+      "sourceId": "blagoev-1994-adndt",
+      "primarySourceId": "rambow-1976-pra",
+      "primaryDoi": "10.1103/PhysRevA.14.738",
+      "compilationReferenceNumber": 73,
+      "existingExtraction": "data/literature/source-followup-2026-10-30/lifetimes/rambow-1976.json",
+      "relationship": "Cross-linked to existing primary-extraction package; natural-mixture Hanle/collisional/error and HFS correction boundaries do not disappear in the compilation."
+    },
+    {
+      "id": "burshtein-secondary-only",
+      "sourceId": "blagoev-1994-adndt",
+      "primarySourceId": "burshtein-1974-optspec",
+      "compilationReferenceNumber": 75,
+      "originalVerified": false,
+      "relationship": "Bibliography and table transcription are verified in compilation only; original measurement paper still pending."
+    }
+  ],
+  "primaryReferenceIndexAsPrinted": [
+    {
+      "number": 9,
+      "citationAsPrinted": "T. Andersen, O. Poulsen, P. S. Ramanujam, and A. Petrakiev-Petkov, Sol. Phys.44,257(1975)",
+      "locator": {
+        "pdfPages": [
+          11
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 40,
+      "citationAsPrinted": "M. Gustavsson, H. Lundberg, and L. Walsson, J. Opt. Soc. Am.69,984(1979)",
+      "locator": {
+        "pdfPages": [
+          12
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 69,
+      "citationAsPrinted": "V. A. Komarovskii and N. P. Penkin, Opt. Spectrosc.(USSR)26,483(1969)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 70,
+      "citationAsPrinted": "M. Baumann and G. Wandel, Phys. Lett.22,283(1966)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 71,
+      "citationAsPrinted": "B. Budick and J. Snir, Phys. Rev. A1,545(1970)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 72,
+      "citationAsPrinted": "W. Lange, J. Luther, and A. Stendel, Proceedings2ndConferenceEuropeanGroupAtomicSpectroscopy(Hanover1970),p31",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 73,
+      "citationAsPrinted": "F. H. K. Rambow and L. O. Schearer, Phys. Rev. A14,738(1976)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": true,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": "rambow-1976-pra",
+      "primarySourceReverified": false
+    },
+    {
+      "number": 74,
+      "citationAsPrinted": "H. Liening, Z. Naturforsch. Teil A36,694(1981)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 75,
+      "citationAsPrinted": "M. L. Burshtein, Ya. F. Verolainen, V. A. Komarovskii, A. L. Osherovich, and N. P. Penkin, Opt. Spectrosc.(USSR)37,351(1974)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": false,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": "burshtein-1974-optspec",
+      "primarySourceReverified": false
+    },
+    {
+      "number": 76,
+      "citationAsPrinted": "K. B. Blagoev, V. A. Komarovskii, and N. P. Penkin, Opt. Spectrosc.(USSR)45,832(1978)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 77,
+      "citationAsPrinted": "M. Baumann, M. Gaiser, H. Liening, and H. Lindel, Opt. Commun.38,259(1981)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 78,
+      "citationAsPrinted": "M. Baumann, M. Braun, A. Gaiser, and H. Liening, J. Phys. B18,L601(1985)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": true,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": "baumann-1985-jpb",
+      "primarySourceReverified": false
+    },
+    {
+      "number": 79,
+      "citationAsPrinted": "Wang Dadi, Wang Chengfei, and Jiang Zhankui, J. Phys. B20,L555(1987)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 80,
+      "citationAsPrinted": "Jiang Zhankui, Wang Chengfei, and Wang Dadi, Phys. Rev. A36,3184(1987)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 81,
+      "citationAsPrinted": "Y. S. Bai and T. W. Mossberg, Phys. Rev. A35,619(1987)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 82,
+      "citationAsPrinted": "M. Baumann, M. Braun, and J. Maier, Z. Phys. D6,275(1987)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 83,
+      "citationAsPrinted": "X. W. Liu and Z. W. Wang, Phys. Rev. A40,1838(1989)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 84,
+      "citationAsPrinted": "J. E. Golub, Y. S. Bai, and T. W. Mossberg, Phys. Rev. A37,119(1988)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 87,
+      "citationAsPrinted": "Ch. Gerz, J. Roths, F. Vedel, and G. Werth, Z. Phys. D8,235(1988)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 88,
+      "citationAsPrinted": "H. Lehmitz, T. Hattendorf-Ledwoch, R. Blatt, and H. Harde, Proceedings20thEGAS(Graz1988),p140; Phys. Rev. Lett.62,2108(1989)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 95,
+      "citationAsPrinted": "Jiang Migdalek and W. E. Baylis, J. Phys. B24,L99(1991) [author string as printed]",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 96,
+      "citationAsPrinted": "J. Zhankui and J. Larsson, Z. Phys. D22,387(1991)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 98,
+      "citationAsPrinted": "B. B. Konetskii, V. A. Mishin, and A. M. Prohorov, Zh. Prikl. Spektrosk.[J.Appl.Spectrosc.(USSR)]54,558(1991)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    },
+    {
+      "number": 104,
+      "citationAsPrinted": "S. K. Borisov, N. A. Karpov, F. E. Karulin, B. B. Krynetzkii, V. A. Mishin, O. M. Stelmakh, and S. Yu. Pentegov, Opt. Spectrosc.(USSR)62,719(1987)",
+      "locator": {
+        "pdfPages": [
+          13
+        ]
+      },
+      "originalAvailable": null,
+      "originalAvailabilityMeaning": "Only central registry matched for73/78 and user-confirmed missing75; null means not inventoried by this task. Available does not mean primary values were independently reverified here.",
+      "registeredSourceId": null,
+      "primarySourceReverified": false
+    }
+  ],
+  "pendingUpstreamChecks": [
+    {
+      "id": "kuwamoto-a1-rate-chain",
+      "citationAsPrinted": "Kuwamoto etal.,Phys.Rev.A60,R745(1999); LoftusRef4 also includesHonda1999",
+      "doi": null,
+      "status": "pending-original-and-uncertainty-chain",
+      "reason": "Title/DOI/local availability not established in this five-paper review; do not invent a new download identity."
+    },
+    {
+      "id": "porsev-theory-attribution",
+      "sourceId": "loftus-2000-pra",
+      "status": "pending-table-footnote-versus-body-reference-chain",
+      "reason": "Tablecaption/body refer8/12 while footnoteprints8/11; no silent erratum inferred."
+    },
+    {
+      "id": "b94-ref83-state-binding",
+      "sourceId": "blagoev-1994-adndt",
+      "status": "pending-primary-theory-reference",
+      "reason": "Literal1185.7ns at22s row retained, alongside incompatible D-series prose; originalRef83 required."
+    }
+  ],
+  "canonicalAdopted": false
+}

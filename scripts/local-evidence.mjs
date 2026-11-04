@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
+import {resolvePaperPath} from './paper-paths.mjs';
 
 /**
  * Original papers are local research evidence, not repository dependencies.
@@ -11,7 +12,7 @@ export function verifyLocalEvidence(root,source) {
     localPath:source.localPath,expectedSha256:source.sha256};
   let bytes;
   try {
-    bytes=fs.readFileSync(new URL(source.localPath,root));
+    bytes=fs.readFileSync(new URL(resolvePaperPath(root,source.localPath,source.sha256),root));
   } catch(error) {
     if(error.code!=='ENOENT')throw error;
     return {...identity,status:'unavailable',verified:false,sha256:null,unchanged:null,

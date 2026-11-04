@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "records": [
+    {
+      "id": "covey-3d1-ratios",
+      "status": "unresolved-not-adopted",
+      "sourceIds": [
+        "covey-2019",
+        "porsev-1999",
+        "kroeze-2026",
+        "li-2025"
+      ],
+      "sourceLocators": [
+        "Covey AppendixA PDFp8",
+        "Porsev TableI PDFp10",
+        "Kroeze Table12 PDFp25",
+        "Li AppendixA3"
+      ],
+      "originalClaims": {
+        "fineStructureRatio": "60:3:1",
+        "freeSpaceDesiredPhotonPercent": 93.3,
+        "hyperfineSpecificRatio": "20.9:1.9:1",
+        "purcellEnhancement": 47
+      },
+      "workingModelComparison": "Porsev/Kroeze electronic branches approximately64:35:1",
+      "disposition": "Keep conflicting theoretical/cavity channel definitions separate; do not average or replace current low-state E1 model. Complete summation over final F/mF in weak field should preserve electronic J totals; exact cause of this discrepancy was not reconstructed."
+    },
+    {
+      "id": "senoo-spin-mapping",
+      "status": "unresolved-not-adopted",
+      "sourceIds": [
+        "senoo-2026"
+      ],
+      "sourceLocators": [
+        "Methods PDFp10",
+        "Extended Data Fig5b PDFp18",
+        "main Fig2d PDFp3"
+      ],
+      "originalClaims": {
+        "methods_p10": {
+          "m1": "2.7(5)%",
+          "m0": "4(1)%"
+        },
+        "extendedDataFig5b_p18": {
+          "m0": "2.7(5)%",
+          "m1": "4(1)%"
+        },
+        "mainFig2d_p3": "m0 smaller violet bar; m1 larger blue bar, consistent with ED5b",
+        "resolution": "not-resolved; retain both mappings; do not silently choose",
+        "safeAggregate": "2.7+4=6.7% approx; no combined uncertainty without covariance"
+      },
+      "disposition": "Retain both original mappings; individual m0/m1 fractions are pending, not adopted as target65S channels."
+    },
+    {
+      "id": "cho-effective-rate-sum",
+      "status": "unexplained-original-difference-retained",
+      "sourceIds": [
+        "cho-2012"
+      ],
+      "sourceLocators": [
+        "TableI PDFp4"
+      ],
+      "originalClaims": {
+        "a0_plus_a2_s-1": 6.38,
+        "a20_s-1": 6.48
+      },
+      "disposition": "Difference is below reported errors; cause not established. Preserve reported values, do not force closure or attribute cause to independent fits."
+    }
+  ]
+}

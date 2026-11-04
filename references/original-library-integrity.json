@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "checkedAt": "2026-10-31",
+  "checkedAt": "2026-11-04",
   "recordType": "registered-original-library-fingerprints",
   "verificationBoundary": "Expected fingerprints only; current original-byte verification is reported by --check. Missing bytes are unavailable, never verified.",
   "files": [

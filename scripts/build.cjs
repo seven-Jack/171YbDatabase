@@ -3,6 +3,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const { writeVersion } = require('./write-version.cjs');
 const { exportEvidence } = require('./evidence-data.cjs');
+const { exportDecay } = require('./decay-data.cjs');
 
 // Read static module declarations without interpreting quoted examples, comments,
 // template bodies or dynamic import expressions as eager dependencies.
@@ -163,6 +164,7 @@ function build(directory, options = {}) {
   const output = path.join(root, 'dist');
   if (!fs.existsSync(path.join(root, 'index.html'))) throw new Error('Missing source index.html');
   if (fs.existsSync(path.join(root, 'data/evidence.json'))) exportEvidence({root,check:true});
+  if (fs.existsSync(path.join(root, 'data/decay.json'))) exportDecay({root,check:true});
   const version = writeVersion(root);
   const sourceHTML=fs.readFileSync(path.join(root,'index.html'),'utf8');
   const entries=['src/main.js'];

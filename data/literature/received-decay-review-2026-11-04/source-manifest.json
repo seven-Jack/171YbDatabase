@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "documents": [
+    {
+      "sourceId": "honda-1999-pra",
+      "title": "Magneto-optical trapping of Yb atoms and a limit on the branching ratio of the 1P1 state",
+      "authors": [
+        "K. Honda",
+        "Y. Takahashi",
+        "T. Kuwamoto",
+        "M. Fujimoto",
+        "K. Toyoda",
+        "K. Ishikawa",
+        "T. Yabuzaki"
+      ],
+      "doi": "10.1103/PhysRevA.59.R934",
+      "path": "references/papers/1999_Honda_Yb_1P1-branching-limit_published-print.pdf",
+      "sha256": "0c5cec3a1520b20f288abc23a6b7c4dc88e059863bca61553e582f15675937f2",
+      "bytes": 199444,
+      "pages": 4,
+      "documentVersion": "published-print",
+      "reviewedAt": "2026-11-04",
+      "canonicalAdopted": false,
+      "scope": "New primary papers or secondary compilation facts; no automatic numerical adoption."
+    },
+    {
+      "sourceId": "honda-1999-erratum",
+      "title": "Erratum: Magneto-optical trapping of Yb atoms and a limit on the branching ratio of the 1P1 state [Phys. Rev. A 59, R934 (1999)]",
+      "authors": [
+        "K. Honda",
+        "Y. Takahashi",
+        "T. Kuwamoto",
+        "M. Fujimoto",
+        "K. Toyoda",
+        "K. Ishikawa",
+        "T. Yabuzaki"
+      ],
+      "doi": "10.1103/PhysRevA.60.2603.2",
+      "path": "references/papers/1999_Honda_Yb_1P1-branching-limit_erratum-published-print.pdf",
+      "sha256": "66c27f4fe81a834d1b8250ecf544ec3c5595079be9f65aae1da38ae897a969c2",
+      "bytes": 48923,
+      "pages": 1,
+      "documentVersion": "published-print;erratum",
+      "reviewedAt": "2026-11-04",
+      "canonicalAdopted": false,
+      "scope": "New primary papers or secondary compilation facts; no automatic numerical adoption."
+    },
+    {
+      "sourceId": "loftus-2000-pra",
+      "title": "Power-dependent loss from an ytterbium magneto-optic trap",
+      "authors": [
+        "T. Loftus",
+        "J. R. Bochinski",
+        "R. Shivitz",
+        "T. W. Mossberg"
+      ],
+      "doi": "10.1103/PhysRevA.61.051401",
+      "path": "references/papers/2000_Loftus_Yb_Power-dependent-MOT-loss_published.pdf",
+      "sha256": "280a186b46599eaecf96bc895e3e9cc3fbfe76d216865f48bfeaaee1fa488277",
+      "bytes": 66607,
+      "pages": 4,
+      "documentVersion": "published",
+      "reviewedAt": "2026-11-04",
+      "canonicalAdopted": false,
+      "scope": "New primary papers or secondary compilation facts; no automatic numerical adoption."
+    },
+    {
+      "sourceId": "guo-1993-pra",
+      "title": "Lifetimes of Rydberg levels in the perturbed 6snp 3P2 series of ytterbium I",
+      "authors": [
+        "Guo Chuan",
+        "Yu Yingning",
+        "Yu Hua",
+        "Jiang Zhankui",
+        "Peng Weixian"
+      ],
+      "doi": "10.1103/PhysRevA.47.1551",
+      "path": "references/papers/1993_Guo_Yb_Perturbed-6snp-3P2-lifetimes_published.pdf",
+      "sha256": "a59e8a1e1363341e7a920bafa04fc9d58199eb6f1da8b3f8594cf88856dfc2f9",
+      "bytes": 128697,
+      "pages": 3,
+      "documentVersion": "published",
+      "reviewedAt": "2026-11-04",
+      "canonicalAdopted": false,
+      "scope": "New primary papers or secondary compilation facts; no automatic numerical adoption."
+    },
+    {
+      "sourceId": "blagoev-1994-adndt",
+      "title": "Lifetimes of Levels of Neutral and Singly Ionized Lanthanide Atoms",
+      "authors": [
+        "K. B. Blagoev",
+        "V. A. Komarovskii"
+      ],
+      "doi": "10.1006/adnd.1994.1001",
+      "path": "references/papers/1994_Blagoev_Lanthanide-lifetimes-compilation_published-scan.pdf",
+      "sha256": "d4421279b8c5dc31cf1d1e7e685157220ae121d6c13d9bec833640477fcfd2b2",
+      "bytes": 1745299,
+      "pages": 40,
+      "documentVersion": "published-scan",
+      "reviewedAt": "2026-11-04",
+      "canonicalAdopted": false,
+      "scope": "New primary papers or secondary compilation facts; no automatic numerical adoption."
+    }
+  ],
+  "missingOriginals": [
+    {
+      "sourceId": "burshtein-1974-optspec",
+      "title": "Lifetimes of the 3P1 level of Yb I and the 2P3/2,1/2 level of Yb II",
+      "publication": "Optics and Spectroscopy37,351(1974)",
+      "doi": null,
+      "status": "pending",
+      "originalVerified": false,
+      "secondarySourceId": "blagoev-1994-adndt",
+      "secondaryLocator": "PDFp13 reference75 andPDFp33 TableXXV",
+      "boundary": "Secondary citation and table transcription do not replace the unavailable primary paper."
+    }
+  ],
+  "redistributionPolicy": "OriginalPDFs, OCR and rendered pages remain ignored local evidence. Only metadata and structured scientific facts are public."
+}

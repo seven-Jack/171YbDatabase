@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "quantityDefinition": "beta_ij=A_ij/sum_k(A_ik), with denominator scope stated. Direct first-emission fractions only.",
+  "noSilentRenormalization": true,
+  "rounding": {
+    "D1_sum": 0.9999,
+    "S1_three_triplet_sum": 0.998,
+    "S1_four_sum": 1.0001,
+    "normalizationRecommendation": "Preserve reported values and source uncertainty; do not silently renormalize three triplet channels and erase the 1P1 branch."
+  },
+  "records": [
+    {
+      "id": "direct-e1-1",
+      "upperLevelId": "yb171-6s5d-3d1",
+      "lowerLevelId": "yb171-6s6p-3p0",
+      "quantity": "direct-spontaneous-branching-fraction",
+      "mechanism": "E1",
+      "value": 0.638,
+      "uncertainty": 0.027,
+      "unit": "1",
+      "originalReportedValue": "0.638(27)",
+      "evidenceKind": "theory-derived",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "verified-candidate-for-runtime-theory-model",
+      "sourceIds": [
+        "kroeze-2026",
+        "porsev-1999"
+      ],
+      "sourceLocator": "Kroeze Table 12, PDF/printed p25",
+      "matrixElement": {
+        "value": 2.61,
+        "uncertainty": 0.1,
+        "unit": "e*a0",
+        "convention": "electronic J-reduced Racah-Wigner length gauge absolute magnitude; Porsev Eq2/TableI",
+        "sourceId": "porsev-1999",
+        "sourceLocator": "TableI, PDF p10"
+      },
+      "conditions": {
+        "isotopeApplicability": "electronic J model adopted for 171Yb with explicit conditions; not isotope-specific F/mF experiment",
+        "F": null,
+        "mF": null,
+        "magneticField_G": null,
+        "radiationTemperature_K": null,
+        "environment": "free-space spontaneous E1 model",
+        "finalStateSum": "sum final hyperfine/Zeeman states and photon modes; neglect small hyperfine frequency differences"
+      },
+      "normalizationScope": "J-resolved low-state spontaneous E1 model. Four 6s6p odd fine-structure final states were considered by Porsev; not experimentally demonstrated all-atomic-state/all-multipole completeness. Do not substitute for F,mF,B/polarization/cavity/BBR-specific branching."
+    },
+    {
+      "id": "direct-e1-2",
+      "upperLevelId": "yb171-6s5d-3d1",
+      "lowerLevelId": "yb171-6s6p-3p1",
+      "quantity": "direct-spontaneous-branching-fraction",
+      "mechanism": "E1",
+      "value": 0.352,
+      "uncertainty": 0.027,
+      "unit": "1",
+      "originalReportedValue": "0.352(27)",
+      "evidenceKind": "theory-derived",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "verified-candidate-for-runtime-theory-model",
+      "sourceIds": [
+        "kroeze-2026",
+        "porsev-1999"
+      ],
+      "sourceLocator": "Kroeze Table 12, PDF/printed p25",
+      "matrixElement": {
+        "value": 2.26,
+        "uncertainty": 0.1,
+        "unit": "e*a0",
+        "convention": "electronic J-reduced Racah-Wigner length gauge absolute magnitude; Porsev Eq2/TableI",
+        "sourceId": "porsev-1999",
+        "sourceLocator": "TableI, PDF p10"
+      },
+      "conditions": {
+        "isotopeApplicability": "electronic J model adopted for 171Yb with explicit conditions; not isotope-specific F/mF experiment",
+        "F": null,
+        "mF": null,
+        "magneticField_G": null,
+        "radiationTemperature_K": null,
+        "environment": "free-space spontaneous E1 model",
+        "finalStateSum": "sum final hyperfine/Zeeman states and photon modes; neglect small hyperfine frequency differences"
+      },
+      "normalizationScope": "J-resolved low-state spontaneous E1 model. Four 6s6p odd fine-structure final states were considered by Porsev; not experimentally demonstrated all-atomic-state/all-multipole completeness. Do not substitute for F,mF,B/polarization/cavity/BBR-specific branching."
+    },
+    {
+      "id": "direct-e1-3",
+      "upperLevelId": "yb171-6s5d-3d1",
+      "lowerLevelId": "yb171-6s6p-3p2",
+      "quantity": "direct-spontaneous-branching-fraction",
+      "mechanism": "E1",
+      "value": 0.0099,
+      "uncertainty": 0.0039,
+      "unit": "1",
+      "originalReportedValue": "0.0099(39)",
+      "evidenceKind": "theory-derived",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "verified-candidate-for-runtime-theory-model",
+      "sourceIds": [
+        "kroeze-2026",
+        "porsev-1999"
+      ],
+      "sourceLocator": "Kroeze Table 12, PDF/printed p25",
+      "matrixElement": {
+        "value": 0.6,
+        "uncertainty": 0.12,
+        "unit": "e*a0",
+        "convention": "electronic J-reduced Racah-Wigner length gauge absolute magnitude; Porsev Eq2/TableI",
+        "sourceId": "porsev-1999",
+        "sourceLocator": "TableI, PDF p10"
+      },
+      "conditions": {
+        "isotopeApplicability": "electronic J model adopted for 171Yb with explicit conditions; not isotope-specific F/mF experiment",
+        "F": null,
+        "mF": null,
+        "magneticField_G": null,
+        "radiationTemperature_K": null,
+        "environment": "free-space spontaneous E1 model",
+        "finalStateSum": "sum final hyperfine/Zeeman states and photon modes; neglect small hyperfine frequency differences"
+      },
+      "normalizationScope": "J-resolved low-state spontaneous E1 model. Four 6s6p odd fine-structure final states were considered by Porsev; not experimentally demonstrated all-atomic-state/all-multipole completeness. Do not substitute for F,mF,B/polarization/cavity/BBR-specific branching."
+    },
+    {
+      "id": "direct-e1-4",
+      "upperLevelId": "yb171-6s7s-3s1",
+      "lowerLevelId": "yb171-6s6p-3p0",
+      "quantity": "direct-spontaneous-branching-fraction",
+      "mechanism": "E1",
+      "value": 0.13,
+      "uncertainty": 0.013,
+      "unit": "1",
+      "originalReportedValue": "0.130(13)",
+      "evidenceKind": "theory-derived",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "verified-candidate-for-runtime-theory-model",
+      "sourceIds": [
+        "kroeze-2026",
+        "porsev-1999"
+      ],
+      "sourceLocator": "Kroeze Tables 13/14, PDF/printed p26",
+      "matrixElement": {
+        "value": 1.98,
+        "uncertainty": 0.1,
+        "unit": "e*a0",
+        "convention": "electronic J-reduced Racah-Wigner length gauge absolute magnitude; Porsev Eq2/TableI",
+        "sourceId": "porsev-1999",
+        "sourceLocator": "TableI, PDF p10"
+      },
+      "conditions": {
+        "isotopeApplicability": "electronic J model adopted for 171Yb with explicit conditions; not isotope-specific F/mF experiment",
+        "F": null,
+        "mF": null,
+        "magneticField_G": null,
+        "radiationTemperature_K": null,
+        "environment": "free-space spontaneous E1 model",
+        "finalStateSum": "sum final hyperfine/Zeeman states and photon modes; neglect small hyperfine frequency differences"
+      },
+      "normalizationScope": "J-resolved low-state spontaneous E1 model. Four 6s6p odd fine-structure final states were considered by Porsev; not experimentally demonstrated all-atomic-state/all-multipole completeness. Do not substitute for F,mF,B/polarization/cavity/BBR-specific branching."
+    },
+    {
+      "id": "direct-e1-5",
+      "upperLevelId": "yb171-6s7s-3s1",
+      "lowerLevelId": "yb171-6s6p-3p1",
+      "quantity": "direct-spontaneous-branching-fraction",
+      "mechanism": "E1",
+      "value": 0.36,
+      "uncertainty": 0.025,
+      "unit": "1",
+      "originalReportedValue": "0.360(25)",
+      "evidenceKind": "theory-derived",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "verified-candidate-for-runtime-theory-model",
+      "sourceIds": [
+        "kroeze-2026",
+        "porsev-1999"
+      ],
+      "sourceLocator": "Kroeze Tables 13/14, PDF/printed p26",
+      "matrixElement": {
+        "value": 3.53,
+        "uncertainty": 0.15,
+        "unit": "e*a0",
+        "convention": "electronic J-reduced Racah-Wigner length gauge absolute magnitude; Porsev Eq2/TableI",
+        "sourceId": "porsev-1999",
+        "sourceLocator": "TableI, PDF p10"
+      },
+      "conditions": {
+        "isotopeApplicability": "electronic J model adopted for 171Yb with explicit conditions; not isotope-specific F/mF experiment",
+        "F": null,
+        "mF": null,
+        "magneticField_G": null,
+        "radiationTemperature_K": null,
+        "environment": "free-space spontaneous E1 model",
+        "finalStateSum": "sum final hyperfine/Zeeman states and photon modes; neglect small hyperfine frequency differences"
+      },
+      "normalizationScope": "J-resolved low-state spontaneous E1 model. Four 6s6p odd fine-structure final states were considered by Porsev; not experimentally demonstrated all-atomic-state/all-multipole completeness. Do not substitute for F,mF,B/polarization/cavity/BBR-specific branching."
+    },
+    {
+      "id": "direct-e1-6",
+      "upperLevelId": "yb171-6s7s-3s1",
+      "lowerLevelId": "yb171-6s6p-3p2",
+      "quantity": "direct-spontaneous-branching-fraction",
+      "mechanism": "E1",
+      "value": 0.508,
+      "uncertainty": 0.026,
+      "unit": "1",
+      "originalReportedValue": "0.508(26)",
+      "evidenceKind": "theory-derived",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "verified-candidate-for-runtime-theory-model",
+      "sourceIds": [
+        "kroeze-2026",
+        "porsev-1999"
+      ],
+      "sourceLocator": "Kroeze Tables 13/14, PDF/printed p26",
+      "matrixElement": {
+        "value": 5.05,
+        "uncertainty": 0.2,
+        "unit": "e*a0",
+        "convention": "electronic J-reduced Racah-Wigner length gauge absolute magnitude; Porsev Eq2/TableI",
+        "sourceId": "porsev-1999",
+        "sourceLocator": "TableI, PDF p10"
+      },
+      "conditions": {
+        "isotopeApplicability": "electronic J model adopted for 171Yb with explicit conditions; not isotope-specific F/mF experiment",
+        "F": null,
+        "mF": null,
+        "magneticField_G": null,
+        "radiationTemperature_K": null,
+        "environment": "free-space spontaneous E1 model",
+        "finalStateSum": "sum final hyperfine/Zeeman states and photon modes; neglect small hyperfine frequency differences"
+      },
+      "normalizationScope": "J-resolved low-state spontaneous E1 model. Four 6s6p odd fine-structure final states were considered by Porsev; not experimentally demonstrated all-atomic-state/all-multipole completeness. Do not substitute for F,mF,B/polarization/cavity/BBR-specific branching."
+    },
+    {
+      "id": "direct-e1-7",
+      "upperLevelId": "yb171-6s7s-3s1",
+      "lowerLevelId": "yb171-6s6p-1p1",
+      "quantity": "direct-spontaneous-branching-fraction",
+      "mechanism": "E1",
+      "value": 0.0021,
+      "uncertainty": 0.0009,
+      "unit": "1",
+      "originalReportedValue": "0.0021(9)",
+      "evidenceKind": "theory-derived",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "verified-candidate-for-runtime-theory-model",
+      "sourceIds": [
+        "kroeze-2026",
+        "porsev-1999"
+      ],
+      "sourceLocator": "Kroeze Tables 13/14, PDF/printed p26",
+      "matrixElement": {
+        "value": 0.73,
+        "uncertainty": 0.15,
+        "unit": "e*a0",
+        "convention": "electronic J-reduced Racah-Wigner length gauge absolute magnitude; Porsev Eq2/TableI",
+        "sourceId": "porsev-1999",
+        "sourceLocator": "TableI, PDF p10"
+      },
+      "conditions": {
+        "isotopeApplicability": "electronic J model adopted for 171Yb with explicit conditions; not isotope-specific F/mF experiment",
+        "F": null,
+        "mF": null,
+        "magneticField_G": null,
+        "radiationTemperature_K": null,
+        "environment": "free-space spontaneous E1 model",
+        "finalStateSum": "sum final hyperfine/Zeeman states and photon modes; neglect small hyperfine frequency differences"
+      },
+      "normalizationScope": "J-resolved low-state spontaneous E1 model. Four 6s6p odd fine-structure final states were considered by Porsev; not experimentally demonstrated all-atomic-state/all-multipole completeness. Do not substitute for F,mF,B/polarization/cavity/BBR-specific branching."
+    }
+  ],
+  "aggregateLeakage": [
+    {
+      "id": "1p1-low-state-leak",
+      "upperLevelId": "yb171-6s6p-1p1",
+      "lowerStateSet": [
+        "6s5d 3D1",
+        "6s5d 3D2"
+      ],
+      "quantity": "aggregate-direct-E1-leakage-fraction",
+      "value": 6e-08,
+      "uncertainty": 4e-08,
+      "groundExpression": "1 - 6(4)e-8",
+      "unit": "1",
+      "evidenceKind": "theory-derived",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "verified-candidate-with-model-boundary",
+      "sourceIds": [
+        "kroeze-2026",
+        "porsev-1999"
+      ],
+      "sourceLocator": "Kroeze Table8 PDFp23; Porsev TableI PDFp10",
+      "boundary": "Not a full experimental leakage measurement. The 1D2 level is above1P1 and is not a downward channel."
+    }
+  ]
+}

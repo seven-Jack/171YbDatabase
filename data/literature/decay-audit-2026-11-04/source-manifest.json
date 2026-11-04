@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "paperLibraryRootEnvironment": "YB_PAPER_LIBRARY_ROOT",
+  "defaultPaperLibraryLocation": "sibling directory paper",
+  "originalPolicy": "Original files retained once; missing originals are unavailable, present originals must match fingerprints. No PDF/full text/page image is tracked here.",
+  "sources": [
+    {
+      "id": "kroeze-2026",
+      "title": "171Yb Reference Data",
+      "doi": "10.48550/arXiv.2509.04416",
+      "url": "https://arxiv.org/abs/2509.04416v2",
+      "locations": [
+        "PDF pp11-12, Sections5.2-5.3, Eqs46-54",
+        "PDF p23, Table8",
+        "PDF pp25-26, Tables12-14"
+      ],
+      "evidenceScope": "compilation; branching fractions derived from theoretical reduced matrix elements",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2026_Kroeze_171Yb_Reference-data_arXiv2509.04416v2.pdf",
+          "sha256": "4ffbcc4a8fade841f0f053392617abd4fa05fd501bbe5325ebaf0246d5bcd200",
+          "bytes": 1848415
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "porsev-1999",
+      "title": "Electric-dipole amplitudes, lifetimes, and polarizabilities of the low-lying levels of atomic ytterbium",
+      "doi": "10.1103/PhysRevA.60.2781",
+      "url": "https://arxiv.org/abs/physics/9903004",
+      "locations": [
+        "PDF pp2-3, Eqs2-3",
+        "PDF p10, TableI"
+      ],
+      "evidenceScope": "primary CI+MBPT electronic J-reduced E1 theoretical matrix elements",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/1999_Porsev_Yb_Electric-dipole-amplitudes_arXivphysics9903004v1.pdf",
+          "sha256": "7bbb193a4d09ba26f266868d2425224986cf42f6dcb21f3fee4d1d3a908192e3",
+          "bytes": 132741
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "beloy-2012",
+      "title": "Determination of the 5d6s 3D1 state lifetime and blackbody-radiation clock shift in Yb",
+      "doi": "10.1103/PhysRevA.86.051404",
+      "url": "https://arxiv.org/abs/1208.0552",
+      "locations": [
+        "PDF p2, MethodII and Eq8",
+        "PDF p4, lifetime result"
+      ],
+      "evidenceScope": "experimental total lifetime; adopted calculated branching for matrix-element inference",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2012_Beloy_Yb_3D1-lifetime_arXiv1208.0552v1.pdf",
+          "sha256": "a0ff1fa887c54a4e130bea34f56f1565657b4ebfb98e026ba4e123934c57bb4e",
+          "bytes": 1094263
+        }
+      ],
+      "notes": [
+        "zeta0=.64(1) is used when inferring a dipole from lifetime. The free-amplitude cascade fit does not independently measure all branching fractions."
+      ]
+    },
+    {
+      "id": "porsev-2004",
+      "title": "Hyperfine quenching of the metastable 3P0,2 states in divalent atoms",
+      "doi": "10.1103/PhysRevA.69.042506",
+      "url": "https://arxiv.org/abs/physics/0312006",
+      "locations": [
+        "PDF p8, TableIV",
+        "PDF p9, TableV"
+      ],
+      "evidenceScope": "hyperfine-resolved theoretical partial rates; non-E1 rate reported as aggregate",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2003_Porsev_Yb_Hyperfine-quenching_arXivphysics0312006v1.pdf",
+          "sha256": "653d1b48421ff23e63dee4c22b49ef035932ea2b974b487f9fa16bb9d0fdca1f",
+          "bytes": 152202
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "mishra-2001",
+      "title": "Radiative lifetimes of the first excited 3P2,0 metastable levels in Kr I, Xe I, Yb I and Hg-like atoms",
+      "doi": "10.1016/S0022-4073(00)00117-5",
+      "url": "https://doi.org/10.1016/S0022-4073(00)00117-5",
+      "locations": [
+        "PDF pp7-9, Eq15 and Tables2-5"
+      ],
+      "evidenceScope": "distinct theoretical model; F-resolved and statistically averaged rates are separate",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2.pdf",
+          "sha256": "1fba52d567ba7dbdc805752a50796b998fd8fba30c9acf72b2bd0c7bd0ae2d7b",
+          "bytes": 257461
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "xu-2014",
+      "title": "Measurement of the Hyperfine Quenching Rate of the Clock Transition in 171Yb",
+      "doi": "10.1103/PhysRevLett.113.033003",
+      "url": "https://arxiv.org/abs/1406.2340",
+      "locations": [
+        "PDF p1, abstract",
+        "PDF p4, TableI"
+      ],
+      "evidenceScope": "experimental rate inferred for free atoms after solid-Ne medium and energy corrections",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2014_Xu_171Yb_Hyperfine-quenching-rate_arXiv1406.2340v1.pdf",
+          "sha256": "67c37e39e5368e374ffe26a5c90d86e87512847cb745668a063d4d4185f7839e",
+          "bytes": 631461
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "cho-2012",
+      "title": "Optical repumping of triplet P-states enhances magneto-optical trapping of ytterbium atoms",
+      "doi": "10.1103/PhysRevA.85.035401",
+      "url": "https://arxiv.org/abs/1111.6225",
+      "locations": [
+        "PDF pp2-3, SectionIII",
+        "PDF p4, TableI"
+      ],
+      "evidenceScope": "174Yb experimental effective cascade rates, not direct 1P1-to-Pj E1 rates",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2012_Cho_Yb_Triplet-P-repumping_arXiv1111.6225v1.pdf",
+          "sha256": "c2f6ae9f567e7cec443c07c9941d9f05fbbde2246f1f6d3738cba221463f493c",
+          "bytes": 433563
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "covey-2019",
+      "title": "Telecom-Band Quantum Optics with Ytterbium Atoms and Silicon Nanophotonics",
+      "doi": "10.1103/PhysRevApplied.11.034044",
+      "url": "https://doi.org/10.1103/PhysRevApplied.11.034044",
+      "locations": [
+        "PDF p8, AppendixA, printed034044-8"
+      ],
+      "evidenceScope": "cavity proposal and theoretical branch estimates; conflicting values not adopted",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2019_Covey_Yb_Telecom-band-quantum-optics_published.pdf",
+          "sha256": "60c0e3d4cbf5b8d487b7a731897d883a49437b0bd2e8c56c6279a50fac658442",
+          "bytes": 1322590
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "li-2025",
+      "title": "Parallelized telecom quantum networking with a ytterbium-171 atom array",
+      "doi": "10.1038/s41567-025-03022-4",
+      "url": "https://arxiv.org/html/2502.17406v2",
+      "locations": [
+        "PDF AppendixA3",
+        "PDF p14, AppendixF TableI, SPAM model parameters"
+      ],
+      "evidenceScope": "experimental networking paper adopting fixed existing branching fractions",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2025_Li_171Yb_Parallelized-telecom-networking_arXiv2502.17406v2.pdf",
+          "sha256": "f8b4464bf3b79cc8fd451c3cc91c514755e5c2b41fd06f4428b06e7e52615f1e",
+          "bytes": 4962809
+        }
+      ],
+      "notes": [
+        "Adopts .35/.64/.01 for 3D1 to3P1/3P0/3P2; not a new full branch measurement.",
+        "Locator correction from newly checked v2 PDF: prior local-only survey said AppendixF TableII. That historical wording is retained here; the SPAM model parameters are TableI on PDFp14, while TableII is the error budget. Numeric branching claims were not changed by this locator correction."
+      ]
+    },
+    {
+      "id": "senoo-2026",
+      "title": "High-fidelity entanglement and coherent multi-qubit mapping in an atom array",
+      "doi": "10.1038/s41567-026-03258-8",
+      "url": "https://www.nature.com/articles/s41567-026-03258-8",
+      "locations": [
+        "PDF p2 / printed904: state identity and typical8.2G",
+        "PDF p3 / printed905 Fig2d and detection96(1)%",
+        "PDF p4 / printed906 detection93(1)%",
+        "PDF p10 Methods Rydberg-state decay branching ratios",
+        "PDF p18 Extended Data Fig5b,c"
+      ],
+      "evidenceScope": "primary study; state and observable-specific boundaries retained",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2026_Senoo_171Yb_Entanglement-and-multi-qubit-mapping_published.pdf",
+          "sha256": "75911f332df5b221e47b9162041c4f441ddea50a3f8688579d3bafaf72fe20d6",
+          "bytes": 6992435
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "ma-2023",
+      "title": "High-fidelity gates and mid-circuit erasure conversion in an atomic qubit",
+      "doi": "10.1038/s41586-023-06438-1",
+      "url": "https://www.nature.com/articles/s41586-023-06438-1",
+      "locations": [
+        "PDF p2 / printed280:6s59s F3/2,mF3/2",
+        "PDF p3 / printed281:400us populations",
+        "PDF p4 / printed282:Fig4a,b"
+      ],
+      "evidenceScope": "primary study; state and observable-specific boundaries retained",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2023_Ma_171Yb_Mid-circuit-erasure-gates_published.pdf",
+          "sha256": "9b477683f712c305c3ab2f5f45ab1b7538584a8dd39ef7a6785b24ebbbf376e7",
+          "bytes": 10893597
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "muniz-2025",
+      "title": "High-Fidelity Universal Gates in the 171Yb Ground-State Nuclear-Spin Qubit",
+      "doi": "10.1103/PRXQuantum.6.020334",
+      "url": "https://doi.org/10.1103/PRXQuantum.6.020334",
+      "locations": [
+        "PDF p2 Fig1a:518G",
+        "PDF p11 AppendixD and Fig7a:65(3)us population return",
+        "PDF p15 error model:lost Rydberg population assumed permanently lost"
+      ],
+      "evidenceScope": "primary study; state and observable-specific boundaries retained",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2025_Muniz_171Yb_Universal-gates_published.pdf",
+          "sha256": "345e7bd31663c838e3baa0a447c8c13fa4fd9675549931afbc992df0556b7b7e",
+          "bytes": 1803757
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "peper-2025",
+      "title": "Spectroscopy and Modeling of 171Yb Rydberg States for High-Fidelity Two-Qubit Gates",
+      "doi": "10.1103/PhysRevX.15.011009",
+      "url": "https://doi.org/10.1103/PhysRevX.15.011009",
+      "locations": [
+        "PDF pp10-11 / printed011009-10 to11:lifetimes and branching ratios explicitly future work"
+      ],
+      "evidenceScope": "primary study; state and observable-specific boundaries retained",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2025_Peper_171Yb_Spectroscopy-modeling_published.pdf",
+          "sha256": "ca3fb39f0b6245d8d09def6deee9d62849dd6300e222c3d1a0dbf132aa3ee24a",
+          "bytes": 3414281
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "wu-2022",
+      "title": "Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays",
+      "doi": "10.1038/s41467-022-32094-6",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9363413/",
+      "locations": [
+        "Main PDF pp2-3 Fig1 and results",
+        "Supplementary Note2 pp1-3; Supplementary Fig1 p2"
+      ],
+      "evidenceScope": "primary study; state and observable-specific boundaries retained",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2022_Wu_Yb_Erasure-conversion_published.pdf",
+          "sha256": "24fd5d8bfd00fc6e6aa4d539975e7ea9c1cea76f253ad296a991b39eccd785dc",
+          "bytes": 934294
+        },
+        {
+          "root": "repository",
+          "path": "references/papers/2022_Wu_Yb_Erasure-conversion_supplement.pdf",
+          "sha256": "e9de9bbdbd23df15d4badee5fa5a3fd7b4fbfa0eff7f7cb3ad270605d8986b4f",
+          "bytes": 593894
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "honda-1999",
+      "title": "Magneto-optical trapping of Yb atoms and a limit on the branching ratio of the 1P1 state",
+      "doi": "10.1103/PhysRevA.59.R934",
+      "url": "https://doi.org/10.1103/PhysRevA.59.R934",
+      "locations": [
+        "APS abstract; Kroeze Section5.2 cites the uncertainty"
+      ],
+      "evidenceScope": "leakage lower bound only; exact definition and isotope need original plus erratum",
+      "accessStatus": "abstract-only",
+      "originals": [],
+      "notes": [
+        "Full article and erratum not obtained in this audit. Do not describe the full text as reviewed."
+      ]
+    },
+    {
+      "id": "honda-1999-erratum",
+      "title": "Erratum: Magneto-optical trapping of Yb atoms and a limit on the branching ratio of the 1P1 state",
+      "doi": "10.1103/PhysRevA.60.2603.2",
+      "url": "https://doi.org/10.1103/PhysRevA.60.2603.2",
+      "locations": [
+        "APS erratum metadata"
+      ],
+      "evidenceScope": "erratum identity only; content not established",
+      "accessStatus": "metadata-only",
+      "originals": [],
+      "notes": []
+    },
+    {
+      "id": "loftus-2000",
+      "title": "Power-dependent loss from an ytterbium magneto-optic trap",
+      "doi": "10.1103/PhysRevA.61.051401",
+      "url": "https://doi.org/10.1103/PhysRevA.61.051401",
+      "locations": [
+        "TableI, author-uploaded full text; nominal PDF p3"
+      ],
+      "evidenceScope": "174Yb effective cascade rate and excitation-fraction uncertainty",
+      "accessStatus": "author-fulltext-web-reviewed",
+      "originals": [],
+      "notes": [
+        "Institution PDF request timed out; local original PDF not available. Do not mark as local-original-PDF reviewed."
+      ]
+    },
+    {
+      "id": "ishiyama-2026",
+      "title": "Orders-of-magnitude improvement in precision spectroscopy of an inner-shell orbital clock transition in neutral ytterbium",
+      "doi": "10.1038/s41566-026-01857-8",
+      "url": "https://arxiv.org/abs/2505.04154v2",
+      "locations": [
+        "arXiv2505.04154v2 PDFp4, Eq1 and Fig2"
+      ],
+      "evidenceScope": "174Yb environmental partial/total decay rates and extrapolated lifetime; outside current eight-level diagram",
+      "accessStatus": "original-pdf-reviewed",
+      "originals": [
+        {
+          "root": "repository",
+          "path": "references/papers/2026_Ishiyama_Yb_Inner-shell-clock-precision_arXiv2505.04154v2.pdf",
+          "sha256": "b61c5c05a03b8fc49542f386d36295246b00a8e014cc5913ea85f8eba26deb09",
+          "bytes": 2705098
+        }
+      ],
+      "notes": [
+        "No direct spontaneous beta inferred from environmental Gamma_e_to_g/Gamma_total. Preserve authors quoted66s lifetime/lower bound20s separately from .02(.04)Hz extrapolation."
+      ]
+    }
+  ]
+}

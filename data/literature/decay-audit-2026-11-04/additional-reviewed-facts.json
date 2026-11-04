@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-11-04",
+  "canonicalAdopted": false,
+  "newlyReviewed": [
+    {
+      "sourceId": "li-2025",
+      "location": "PDFp9 AppendixA3 and p14 TableI",
+      "kind": "fixed-model-input-not-independent-beta-measurement",
+      "fractions": {
+        "3D1->3P0": 0.64,
+        "3D1->3P1": 0.35,
+        "3D1->3P2": 0.01,
+        "3S1->3P1": 0.367,
+        "3S1->3P2": 0.503
+      },
+      "uncertainties": "not specified for these fixed SPAM constants",
+      "note": "PDF TableI is SPAM parameter table; TableII is error budget. Existing historicalHTML/summary mislocation not silently rewritten.",
+      "adoptionState": "review-only-not-adopted"
+    },
+    {
+      "sourceId": "ishiyama-2026",
+      "location": "arXiv2505.04154v2 PDFp4 Eq1/Fig2",
+      "kind": "experimental-environmental-decay-and-extrapolated-lifetime",
+      "isotope": 174,
+      "state": "4f13 5d6s2 J=2",
+      "latticeDepthPerAxis_Er": 45,
+      "Gamma_e_to_g_per_s": {
+        "value": 0.05,
+        "uncertainty": 0.002
+      },
+      "Gamma_total_per_s": {
+        "value": 0.169,
+        "uncertainty": 0.01
+      },
+      "zeroScatteringExtrapolatedRate_per_s": {
+        "value": 0.02,
+        "uncertainty": 0.04
+      },
+      "authorsQuotedLifetime_s": 66,
+      "authorsQuotedLowerLifetimeBound_s": 20,
+      "note": "Preserve authors reported statistical inference. Gamma includes environmental loss and BBR; not pure spontaneous branch. This state lies outside current8state diagram.",
+      "adoptionState": "review-only-not-adopted"
+    }
+  ],
+  "scope": "Review-only extension; no canonical beta, lifetime or atomic parameter changed."
+}
