@@ -1,6 +1,6 @@
 # 文献提取数据与字段审计
 
-本目录保存原文提取与来源证据；网站运行时采用的canonical文件仍为`data/levels.json`、`transitions.json`、`hyperfine.json`、`sources.json`和`estimates.json`。历史逐表文件索引、记录数量与哈希见[index.json](index.json)，2026-10-30订正结论见[原文核对报告](../../references/audits/source-followup-20261030.md)。生产数据2026.10.30.1已发布；2026-10-31整理的是独立的补充审计归档，不改变生产数据和公式。
+本目录保存原文提取与来源证据；既有原子量canonical文件为`data/levels.json`、`transitions.json`、`hyperfine.json`、`sources.json`和`estimates.json`。衰变分支另由独立版本的[`data/decay.json`](../decay.json)显式采用，原文证据见[2026-11-04 decay审计包](decay-audit-2026-11-04/README.md)。历史逐表文件索引、记录数量与哈希见[index.json](index.json)，2026-10-30订正结论见[原文核对报告](../../references/audits/source-followup-20261030.md)。生产原子数据2026.10.30.1已发布；历史归档不因新增分支包重写统计或公式。
 
 新增：[578nm钟跃迁专门复核](clock-rabi-audit-2026-10-30/README.md)。逐字段核对束腰/功率/π时间，加入Xu2014独立HFI率推导和条件运动诊断；保留13.9086Hz与名义8.3333Hz的差异，不把反推参数当测量。此独立核查包不改变下方历史71表/1645记录的原统计口径。
 
@@ -15,6 +15,10 @@
 公开仓库保存结构化事实数据、索引、来源指纹、脚本和报告；原PDF、全文`.txt`、论文页图、整页文本JSON及Notebook原件仅保留本地，不随Git上传。文中指向这些本地原件的链接在新检出中可能不存在，下载入口和SHA-256仍可用。网页自身的核查截图可随报告保留。缺失PDF的字节检查明确返回`unavailable`，不会跳过数值核查或把缺失原件写成验证成功。
 
 ## 数据集入口
+
+[五份新文献数值复核](received-decay-review-2026-11-04/README.md)另保存240条记录：Honda/勘误/Loftus30、Guo10、Blagoev200（全部Yb I/Yb II寿命格、二级汇编）。11项冲突或订正、20项待核/边界独立保存；不加总为下方历史1645条，也不作为新增240次独立实验或自动修改采用值。
+
+新增的[decay-audit-2026-11-04](decay-audit-2026-11-04/README.md)独立保存7条核实低态理论分支、¹P₁漏出、P态部分率、寿命与级联对照、冲突及来源指纹；未核实的65S分支保持待核。该包不计入下方历史71表/1645记录，也不把部分率、末态人口或重复引用计为独立β测量。
 
 | 目录 | 表格覆盖 | 记录数 | 主要内容 |
 |---|---|---:|---|

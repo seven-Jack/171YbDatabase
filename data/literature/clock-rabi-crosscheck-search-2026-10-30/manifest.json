@@ -46,13 +46,18 @@
     },
     {
       "path": "scripts/literature-audit.mjs",
-      "bytes": 19288,
-      "sha256": "06cf8b6c4990aa5439e9442fc5bd2dd5c0e230b77a7771ad304441094be85684"
+      "bytes": 19315,
+      "sha256": "3d0211994fba753088d43519d3902f5a8e930209a870acde45a79205bbfc618f"
     },
     {
       "path": "scripts/local-evidence.mjs",
-      "bytes": 1061,
-      "sha256": "5ebbe7a46b98b40855375e2747e527e6b37b325a0b25512a22451ec9dbb88125"
+      "bytes": 1150,
+      "sha256": "556b59a5b257896ee52566d56c544f9f82b26eb1cc00b4cc4e676c8c7a3ca030"
+    },
+    {
+      "path": "scripts/paper-paths.mjs",
+      "bytes": 3333,
+      "sha256": "1ea3adc3b9c021173e8f3ab7a8ce774f1c7c1a7e8062bade09f1539de8939c97"
     }
   ]
 }

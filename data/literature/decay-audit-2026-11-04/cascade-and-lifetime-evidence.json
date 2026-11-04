@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "cho2012": {
+    "doi": "10.1103/PhysRevA.85.035401",
+    "url": "https://arxiv.org/pdf/1111.6225",
+    "locator": "PDFp4 TableI; SecIII PDFpp2-3",
+    "isotope": 174,
+    "semantics": "D1/D2 cascade eliminated effective rates, not direct 1P1->Pj E1 rates",
+    "a20_s-1": {
+      "value": 6.48,
+      "uncertainty": 2.11
+    },
+    "a0_s-1": {
+      "value": 5.96,
+      "uncertainty": 1.97
+    },
+    "a2_s-1": {
+      "value": 0.42,
+      "uncertainty": 0.14
+    },
+    "a1_s-1": {
+      "value": 21.3,
+      "uncertainty": 2.6,
+      "kind": "previous-work not Cho measurement"
+    },
+    "sumNote": "a0+a2=6.38 differs from reported a20=6.48; difference below reported uncertainties, cause not established; no forced closure.",
+    "repumpBranchModel": "3S1 1:3:5 assumed, not measured",
+    "sourceIds": [
+      "cho-2012"
+    ],
+    "evidenceKind": "experiment-effective-cascade",
+    "adoptionState": "evidence-only-not-direct-branch"
+  },
+  "comparisons": [
+    {
+      "initialState": "171Yb |nu~53.3,L=0,F=1/2,mF=-1/2>, n~58; typical operating B=8.2G, not separately restated for each branch experiment; radiation temperature not established in quoted section",
+      "measurement": "Initial destination-population accumulation slopes over first30us divided by total Rydberg-population loss slope; 3P2 F3/2 inferred by repump-on/off comparison, ratio48(6)% to ground-state population and adopted15% repump decay probability.",
+      "populationPercent": {
+        "1S0": 42,
+        "1S0_uncertainty": 2,
+        "3P2_F3/2": 20,
+        "3P2_F3/2_uncertainty": 2,
+        "3P0_twoSpinAggregateApprox": 6.7,
+        "unidentified": 31,
+        "unidentified_uncertainty": 3
+      },
+      "singleSpinSourceConflict": {
+        "methods_p10": {
+          "m1": "2.7(5)%",
+          "m0": "4(1)%"
+        },
+        "extendedDataFig5b_p18": {
+          "m0": "2.7(5)%",
+          "m1": "4(1)%"
+        },
+        "mainFig2d_p3": "m0 smaller violet bar; m1 larger blue bar, consistent with ED5b",
+        "resolution": "not-resolved; retain both mappings; do not silently choose",
+        "safeAggregate": "2.7+4=6.7% approx; no combined uncertainty without covariance"
+      },
+      "normalization": "Fraction of experimentally departing initial Rydberg population; includes resolved low-state endpoints and31(3)% unobserved. Not a complete direct spontaneous single-photon branch table. Do not renormalize observed~69% to100%.",
+      "detectionEfficiencyPercent": {
+        "rQubit": "96(1)%",
+        "mAndRQubit": "93(1)%",
+        "denominator": "decayed events under stated loss-detectable measurement protocol, not all initial population or lifetime"
+      },
+      "lifetimeBoundary": "46(2)us selected-population decay and1.2(2)ms loss-conditioned effective survival are distinct quantities.",
+      "id": "senooExperimentalEndpoints",
+      "sourceIds": [
+        "senoo-2026"
+      ],
+      "adoptionState": "evidence-only-not-target65S-direct-branch"
+    },
+    {
+      "initialState": "171Yb 6s59s 3S1,F=3/2,mF=3/2",
+      "wait_us": 400,
+      "populationPercent": {
+        "3P0": 10,
+        "1S0": 25,
+        "3P2": 35,
+        "unaccounted_approx": 30
+      },
+      "after3P2RepumpVia3S1Percent": {
+        "1S0": 51,
+        "3P0": 19
+      },
+      "evidenceKind": "experiment finite-time cascade/repump endpoint population; no explicit uncertainties quoted with these rounded percentages in passage",
+      "boundary": "Not n65 and not first-photon Aij/sumA. Repump-on population is a different protocol.",
+      "id": "maExperimentalEndpoints",
+      "sourceIds": [
+        "ma-2023"
+      ],
+      "adoptionState": "evidence-only-not-target65S-direct-branch"
+    },
+    {
+      "initialState": "171Yb 65 3S1,F=3/2,mF=-3/2 atB518G",
+      "lifetime_us": 65,
+      "uncertainty_us": 3,
+      "measurement": "pi-wait-pi population return,460nm traps on at typical depth",
+      "channelBranchingProvided": false,
+      "boundary": "Cannot infer partial rates or zero-field triplet-connected F1/2 decay fractions. 50/50 ground-spin scattering assumption elsewhere concerns clock-state trap scattering, not Rydberg branching.",
+      "id": "muniz65STotalLifetime",
+      "sourceIds": [
+        "muniz-2025"
+      ],
+      "adoptionState": "evidence-only-not-target65S-direct-branch"
+    },
+    {
+      "initialState": "6s75s 3S1,F=3/2,mF=3/2 target; J-state174Yb single-active-electron/Numerov approximation to171Yb; HFS not explicitly included",
+      "partialRates_per_s": {
+        "BBR": 3480,
+        "radiative": 2200
+      },
+      "totalDepartureFractionsApprox": {
+        "BBR_nearbyRydberg": 0.61,
+        "radiative_eventuallyGround_withRepumping": 0.34,
+        "qubitReturn_afterCascade": 0.05
+      },
+      "direct3P0FractionOfAllDeparture": 0.025,
+      "afterCascade3P0Fraction": 0.051,
+      "omitted": "n_final10-35 missing spectroscopic data; core/doubly-excited perturbers not quantified; S/D path split unknown and taken0.5",
+      "evidenceKind": "theoretical approximate model; not measured and not n65 zero-temperature spontaneous branch table",
+      "radiationTemperature": "BBR included; no numeric radiation T found in the cited branch section, so do not silently label0K or300K",
+      "id": "wuModelEstimate",
+      "sourceIds": [
+        "wu-2022"
+      ],
+      "adoptionState": "evidence-only-not-target65S-direct-branch"
+    }
+  ],
+  "target65SDirectBranchTable": {
+    "status": "not-established-in-verified-literature",
+    "reasons": [
+      "Current entry does not jointly establish F,mF,B,T and threshold/branch identity.",
+      "Senoo data n~58,F1/2; Ma data n59,F3/2; Wu model n75,F3/2 are not target n65.",
+      "Muniz n65 is F3/2,mF-3/2 at518G and gives total population lifetime, not channel-resolved Aij.",
+      "Peper2025 states extension to lifetimes/branching is future work; low-n perturbers and inter-core matrix elements require additional treatment."
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "conditions": [
+    "Direct spontaneous first-emission branching is distinct from repeated repumping and cascade endpoints.",
+    "Electronic J theory is not a per-F/mF experimental table; strong-field, cavity/Purcell and BBR conditions require separate data.",
+    "Unknown uncertainty stays null, unverified fractions stay null, no absent value is replaced with zero.",
+    "A normalized finite model is not proof of all-state/all-multipole completeness."
+  ],
+  "states": [
+    {
+      "levelId": "yb171-6s2-1s0",
+      "status": "not-applicable",
+      "branchingValue": null,
+      "reason": "Stable electronic ground state; no lower electronic radiative level."
+    },
+    {
+      "levelId": "yb171-6s6p-1p1",
+      "status": "theory-model-with-weak-leak",
+      "branchingValue": null,
+      "expression": "1 - 6(4)e-8",
+      "reason": "Electronic E1 model; aggregate leakage checked, not a complete experimental table."
+    },
+    {
+      "levelId": "yb171-6s6p-3p0",
+      "status": "dominant-ground-channel-approximation",
+      "branchingValue": null,
+      "expression": "approximately1 within isolated-atom spontaneous low-state model",
+      "reason": "Partial HFI-E1 evidence does not establish exact100% measured branching."
+    },
+    {
+      "levelId": "yb171-6s6p-3p1",
+      "status": "dominant-ground-channel-approximation",
+      "branchingValue": null,
+      "expression": "approximately1 in low-state E1 model",
+      "reason": "Total rate is known; weak non-E1 channels not fully quantified here."
+    },
+    {
+      "levelId": "yb171-6s6p-3p2",
+      "status": "F-dependent-pending-branch-table",
+      "branchingValue": null,
+      "reason": "F3/2 permits HFI-E1 to groundF1/2; F5/2 forbids that E1. Other mechanisms remain. Do not use inverse statistical mean rate as each-F lifetime."
+    },
+    {
+      "levelId": "yb171-6s5d-3d1",
+      "status": "verified-theory-model",
+      "branchingValue": null,
+      "recordIds": [
+        "direct-e1-1",
+        "direct-e1-2",
+        "direct-e1-3"
+      ]
+    },
+    {
+      "levelId": "yb171-6s7s-3s1",
+      "status": "verified-theory-model",
+      "branchingValue": null,
+      "recordIds": [
+        "direct-e1-4",
+        "direct-e1-5",
+        "direct-e1-6",
+        "direct-e1-7"
+      ]
+    },
+    {
+      "levelId": "yb171-6s65s-3s1-triplet-connected",
+      "status": "pending",
+      "branchingValue": null,
+      "reason": "No complete direct table jointly matching n65,F,mF,B,T,threshold/branch identity located. Preserve nearby-state measurements as separate evidence."
+    }
+  ]
+}

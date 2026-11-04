@@ -8,8 +8,13 @@ Git仓库公开保存书目、DOI/下载入口、原件SHA-256、结构化提取
 
 | 入口 | 用途 |
 |---|---|
+| [五份新文献数值复核](audits/received-decay-review-20261104.md) / [结构化数据与完整CSV](../data/literature/received-decay-review-2026-11-04/README.md) | 240条记录，区分原始/转引/汇编、理论/实验与条件；11项冲突或订正、20项待核/边界；不改变采用值 |
+| [手动下载接收与更名核查](audits/received-decay-20261104.md) / [机器可读回执](received-decay-20261104.json) | 新收到5份PDF，12份仅更名，56份当前原件；Burshtein1974仍缺；旧路径按SHA兼容 |
+| [Decay分支接入审计](audits/decay-branching-20261104.md) / [结构化原文证据](../data/literature/decay-audit-2026-11-04/README.md) | 7条低态电子E1理论分支、弱³S₁→¹P₁支路、F依赖/级联/寿命边界和原文冲突；采用值另在data/decay.json |
+| [Decay补充来源登记](decay-sources-20261104.json) | 本轮新增/归集原件与书目指纹，原副本保留；新增文献不自动成为生产采用值 |
+| [Decay寿命/分支文献与手动下载队列](decay-literature-queue-20261104.md) / [JSON](decay-literature-queue-20261104.json) | 区分已取得原文、现有库匹配、候选扩展与需要手动下载的明确缺口 |
 | [最新补充核对报告](audits/source-followup-20261030.md) | 已订正内容、仍未闭合的问题、适用边界和最终检查结果 |
-| [文献索引 JSON](index.json) / [CSV](index.csv) | 48个来源条目、44份PDF版本文件的路径、版本、来源ID和SHA256；另登记3项Offer本地附件 |
+| [文献索引 JSON](index.json) / [CSV](index.csv) | 当前59个来源条目、56份PDF版本文件的路径、版本、来源ID和SHA256；另登记3项Offer本地附件 |
 | [BibTeX](references.bib) | 可复用书目；存在身份冲突的条目仍需按审计说明核对 |
 | [待下载清单](missing-downloads.md) | 本次没有取得可核验全文、或身份仍待确认的文章，含可用入口 |
 | [原始及方法依赖队列](primary-source-queue.md) / [JSON](primary-source-queue.json) | 当前数据链涉及的78条依赖，逐条连接受影响字段与获取状态；包括常数/方法文献，并非78篇原始实验 |
@@ -20,6 +25,10 @@ Git仓库公开保存书目、DOI/下载入口、原件SHA-256、结构化提取
 | [归档验收](audits/literature-archive-verification-20261102.md) / [JSON](audits/literature-archive-verification-20261102.json) | 2026-11-02的327项本地/无项目原件检查、保护指纹与未闭合边界 |
 
 ## 收录规模与版本
+
+**当前（2026-11-04接收后）为59条来源、56份PDF版本文件**。本次用户补入5份，已规范12个文件名；仅Burshtein1974原文仍待获取。旧9份编号文件及Honda两份均为Safari/Quartz刊版打印副本，当前登记明确标为published-print；Blagoev为published-scan。原字节和历史路径身份通过[路径映射](paper-path-aliases.json)保留，当前索引使用新名。
+
+以下2026-10-31数量是历史快照，不代表当前目录规模。
 
 截至2026-10-31整理，本索引包含**48个来源条目**：35个canonical来源、额外收录的Fang文章、4条钟跃迁补充来源和8条检索/条件比较/方法来源。后13条均为supplemental，新增文献没有因此成为canonical采用值。来源条目包括外部文献、数据库以及内部记录；来源数不能等同于论文数。
 

@@ -32,7 +32,8 @@ test('hover details expand every mF state of each F manifold at the unchanged ze
       assert.equal(shift,HYPERFINE_DATA[term].levels.find(branch=>branch.F===F).shift);
       assert.equal((statesHTML.match(/<i aria-hidden="true"><\/i>/g)||[]).length,2*F+1);
     }
-    assert.doesNotMatch(html,/±|…/);
+    const hfsHTML=html.slice(html.indexOf('<section class="diagram-hfs-detail"'));
+    assert.doesNotMatch(hfsHTML,/±|…/);
   }
 });
 
@@ -84,4 +85,16 @@ test('rendering all level details leaves canonical energies, lifetimes and HFS v
   for(const row of CORE_LEVELS) render(row.term);
   assert.equal(JSON.stringify({levels:CATALOG.levels,hyperfine:CATALOG.hyperfine}),before);
   assert.equal(renderLevelDetails(null,null),'');
+});
+
+test('lifetime citations use the lifetime quantity rather than the separate energy source',()=>{
+  const p2=render('³P₂');
+  const lifetime=p2.match(/<span>寿命 τ<\/span><strong>([\s\S]*?)<\/strong>/)[1];
+  const energy=p2.match(/<span>能量 E<\/span><strong>([\s\S]*?)<\/strong>/)[1];
+  assert.match(lifetime,/diagram-source-mishra-2001-jqsrt/);
+  assert.doesNotMatch(lifetime,/diagram-source-qiao-2023-rinp/);
+  assert.match(energy,/diagram-source-qiao-2023-rinp/);
+  const savedLifetime=render('65³S₁').match(/<span>寿命 τ<\/span><strong>([\s\S]*?)<\/strong>/)[1];
+  assert.match(savedLifetime,/diagram-source-legacy-scaling/);
+  assert.doesNotMatch(savedLifetime,/diagram-source-legacy-levels/);
 });

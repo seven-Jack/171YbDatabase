@@ -6,7 +6,7 @@ import {isDeepStrictEqual} from 'node:util';
 import {verifyLocalEvidence} from './local-evidence.mjs';
 
 const root = new URL('../', import.meta.url);
-const common = ['scripts/literature-audit.mjs', 'scripts/local-evidence.mjs'];
+const common = ['scripts/literature-audit.mjs', 'scripts/local-evidence.mjs', 'scripts/paper-paths.mjs'];
 export const auditPackages = [
   {name: 'clock-rabi-audit-2026-10-30', report: 'clock-rabi-578-audit-20261030.md',
     tests: ['tests/physics/clock-rabi-audit.test.js', 'tests/physics/clock-motion.test.js']},

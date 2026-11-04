@@ -1,0 +1,784 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "sourceIds": [
+    "guo-1993-pra"
+  ],
+  "source": {
+    "title": "Lifetimes of Rydberg levels in the perturbed 6snp 3P2 series of ytterbium I",
+    "doi": "10.1103/PhysRevA.47.1551",
+    "pdfPath": "references/papers/1993_Guo_Yb_Perturbed-6snp-3P2-lifetimes_published.pdf",
+    "sha256": "a59e8a1e1363341e7a920bafa04fc9d58199eb6f1da8b3f8594cf88856dfc2f9",
+    "bytes": 128697,
+    "pages": 3,
+    "version": "published publisher layout with iText wrapper"
+  },
+  "coverage": [
+    {
+      "sourceId": "guo-1993-pra",
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "totalPages": 3,
+      "completeRelevantNumericExtraction": true,
+      "coverageDefinition": "All ten explicitly tabulated lifetime values and wave numbers, all numerical lifetime-related accuracy/check statements, and the qualitative scaling comparator are recorded; raw graph trace not digitized.",
+      "visualInspection": "All3rendered PDF pages inspected, including Table I, Fig.3, Fig.4 and all IV(1)-(4) caveats."
+    }
+  ],
+  "experimentalConditions": {
+    "sample": "Neutral ytterbium atomic beam; isotope and hyperfine F not specified.",
+    "measurementMethod": "Three-step pulsed-laser excitation followed by time-resolved fluorescence; repeated measurements fitted to a single exponential plus constant background.",
+    "fitModel": {
+      "expression": "Y(x)=R0 exp(-R1 x)+R2",
+      "lifetimeDefinition": "tau=1/R1",
+      "locator": {
+        "pdfPages": [
+          2
+        ],
+        "printedPages": [
+          "1552"
+        ],
+        "section": "III"
+      }
+    },
+    "environment": {
+      "radiation": "Room-temperature lifetime measurements as stated for Fig.4; exact wall temperature not reported.",
+      "radiationTemperature_K": null,
+      "ovenTemperature_K": 700,
+      "ovenTemperatureQualifier": "about; this is source/atomic-beam temperature, not blackbody bath temperature",
+      "residualPressure_Pa": 0.0001,
+      "atomicBeamDiameter_mm": 4
+    },
+    "laser": {
+      "pulseDuration_ns": 8,
+      "pulseDurationQualifier": "approximately",
+      "linewidth_nm": 0.01,
+      "repetitionRate_Hz": 10,
+      "pulseEnergyRange_mJ": [
+        0.3,
+        0.6
+      ],
+      "geometry": "Laser beams cross atomic beam at right angles; small mutual laser-beam angle about1mrad."
+    },
+    "uncertaintyDefinition": {
+      "relativeOverallAccuracy": 0.1,
+      "qualifier": "about",
+      "includes": [
+        "statistical scatter",
+        "estimated possible systematic error"
+      ],
+      "isPerRowStandardDeviation": false,
+      "perRowSigma": null,
+      "locator": {
+        "pdfPages": [
+          2
+        ],
+        "printedPages": [
+          "1552"
+        ],
+        "section": "IV"
+      }
+    },
+    "checks": [
+      {
+        "name": "blackbody radiation",
+        "result": "Surrounding the interaction region with a liquid-nitrogen-cooled trap changed lifetimes by an amount of the same order as experimental uncertainties.",
+        "quantifiedCorrection": null,
+        "locator": {
+          "pdfPages": [
+            2
+          ],
+          "printedPages": [
+            "1552"
+          ],
+          "section": "IV(1)"
+        }
+      },
+      {
+        "name": "radiation trapping",
+        "result": "Density range checked and density kept low enough to avoid a large lifetime influence; no numerical density or correction provided.",
+        "locator": {
+          "pdfPages": [
+            2
+          ],
+          "printedPages": [
+            "1552"
+          ],
+          "section": "IV(2)"
+        }
+      },
+      {
+        "name": "flight out of view",
+        "result": "Collection optics adjusted; authors estimate flight-out effect negligible for lifetimes shorter than3 microseconds. Exact3-microsecond entry is at the stated boundary, not a stricter bound.",
+        "lifetimeThreshold_us": 3,
+        "atomicSpeed_mm_per_us": 0.3,
+        "locator": {
+          "pdfPages": [
+            2,
+            3
+          ],
+          "printedPages": [
+            "1552",
+            "1553"
+          ],
+          "section": "IV(3)"
+        }
+      },
+      {
+        "name": "quantum beats",
+        "result": "Helmholtz field applied to make Zeeman beats faster than time resolution; no lifetime difference within error with/without field. Field magnitude not reported.",
+        "magneticField_G": null,
+        "locator": {
+          "pdfPages": [
+            3
+          ],
+          "printedPages": [
+            "1553"
+          ],
+          "section": "IV(4)"
+        }
+      }
+    ]
+  },
+  "records": [
+    {
+      "id": "guo1993-6s12p-3P2-lifetime",
+      "sourceId": "guo-1993-pra",
+      "quantity": "lifetime",
+      "value": 149,
+      "uncertainty": null,
+      "uncertaintyDescription": "No per-entry uncertainty printed. Authors estimate about10% overall accuracy including statistical scatter and possible systematic errors; no1sigma interpretation is supplied.",
+      "unit": "ns",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": {
+        "configuration": "6s12p",
+        "term": "3P2",
+        "J": 2,
+        "F": null,
+        "n": 12,
+        "energy_cm1": 48744.8,
+        "energyAsPrinted_cm1": "48 744.80",
+        "energyUncertainty_cm1": null,
+        "isPerturber": false
+      },
+      "lowerState": null,
+      "definition": "Single-exponential fluorescence decay time; paper labels Table I values as natural radiative lifetimes while Fig.4 and discussion identify room-temperature measurements with finite-temperature checks. Not a state-resolved decay branching fraction.",
+      "conditions": {
+        "method": "See experimentalConditions for shared apparatus and checks.",
+        "radiation": "Room-temperature measurement; no published0K correction.",
+        "isotopeAssignment": "not-specified",
+        "hyperfineAssignment": "not-specified",
+        "relativeOverallAccuracyEstimate": 0.1,
+        "accuracyIsIndependentPerPointSigma": false
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "1553"
+        ],
+        "section": "Table I and IV",
+        "table": "I",
+        "figure": null,
+        "equation": null,
+        "tableRow": 1
+      },
+      "notes": [
+        "Wave number column transcribed with published precision; no quantum defect is tabulated.",
+        "Term labels use the article electronic assignment; perturbed eigenstates are not pure configurations.",
+        "No65S extrapolation or rate/branch conversion made."
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "guo1993-6s13p-3P2-lifetime",
+      "sourceId": "guo-1993-pra",
+      "quantity": "lifetime",
+      "value": 172,
+      "uncertainty": null,
+      "uncertaintyDescription": "No per-entry uncertainty printed. Authors estimate about10% overall accuracy including statistical scatter and possible systematic errors; no1sigma interpretation is supplied.",
+      "unit": "ns",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": {
+        "configuration": "6s13p",
+        "term": "3P2",
+        "J": 2,
+        "F": null,
+        "n": 13,
+        "energy_cm1": 49136.7,
+        "energyAsPrinted_cm1": "49 136.70",
+        "energyUncertainty_cm1": null,
+        "isPerturber": false
+      },
+      "lowerState": null,
+      "definition": "Single-exponential fluorescence decay time; paper labels Table I values as natural radiative lifetimes while Fig.4 and discussion identify room-temperature measurements with finite-temperature checks. Not a state-resolved decay branching fraction.",
+      "conditions": {
+        "method": "See experimentalConditions for shared apparatus and checks.",
+        "radiation": "Room-temperature measurement; no published0K correction.",
+        "isotopeAssignment": "not-specified",
+        "hyperfineAssignment": "not-specified",
+        "relativeOverallAccuracyEstimate": 0.1,
+        "accuracyIsIndependentPerPointSigma": false
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "1553"
+        ],
+        "section": "Table I and IV",
+        "table": "I",
+        "figure": null,
+        "equation": null,
+        "tableRow": 2
+      },
+      "notes": [
+        "Wave number column transcribed with published precision; no quantum defect is tabulated.",
+        "Term labels use the article electronic assignment; perturbed eigenstates are not pure configurations.",
+        "No65S extrapolation or rate/branch conversion made."
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "guo1993-6s14p-3P2-lifetime",
+      "sourceId": "guo-1993-pra",
+      "quantity": "lifetime",
+      "value": 1560,
+      "uncertainty": null,
+      "uncertaintyDescription": "No per-entry uncertainty printed. Authors estimate about10% overall accuracy including statistical scatter and possible systematic errors; no1sigma interpretation is supplied.",
+      "unit": "ns",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": {
+        "configuration": "6s14p",
+        "term": "3P2",
+        "J": 2,
+        "F": null,
+        "n": 14,
+        "energy_cm1": 49370.6,
+        "energyAsPrinted_cm1": "49 370.60",
+        "energyUncertainty_cm1": null,
+        "isPerturber": false
+      },
+      "lowerState": null,
+      "definition": "Single-exponential fluorescence decay time; paper labels Table I values as natural radiative lifetimes while Fig.4 and discussion identify room-temperature measurements with finite-temperature checks. Not a state-resolved decay branching fraction.",
+      "conditions": {
+        "method": "See experimentalConditions for shared apparatus and checks.",
+        "radiation": "Room-temperature measurement; no published0K correction.",
+        "isotopeAssignment": "not-specified",
+        "hyperfineAssignment": "not-specified",
+        "relativeOverallAccuracyEstimate": 0.1,
+        "accuracyIsIndependentPerPointSigma": false
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "1553"
+        ],
+        "section": "Table I and IV",
+        "table": "I",
+        "figure": null,
+        "equation": null,
+        "tableRow": 3
+      },
+      "notes": [
+        "Wave number column transcribed with published precision; no quantum defect is tabulated.",
+        "Term labels use the article electronic assignment; perturbed eigenstates are not pure configurations.",
+        "No65S extrapolation or rate/branch conversion made."
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "guo1993-6s15p-3P2-lifetime",
+      "sourceId": "guo-1993-pra",
+      "quantity": "lifetime",
+      "value": 2700,
+      "uncertainty": null,
+      "uncertaintyDescription": "No per-entry uncertainty printed. Authors estimate about10% overall accuracy including statistical scatter and possible systematic errors; no1sigma interpretation is supplied.",
+      "unit": "ns",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": {
+        "configuration": "6s15p",
+        "term": "3P2",
+        "J": 2,
+        "F": null,
+        "n": 15,
+        "energy_cm1": 49553.3,
+        "energyAsPrinted_cm1": "49 553.30",
+        "energyUncertainty_cm1": null,
+        "isPerturber": false
+      },
+      "lowerState": null,
+      "definition": "Single-exponential fluorescence decay time; paper labels Table I values as natural radiative lifetimes while Fig.4 and discussion identify room-temperature measurements with finite-temperature checks. Not a state-resolved decay branching fraction.",
+      "conditions": {
+        "method": "See experimentalConditions for shared apparatus and checks.",
+        "radiation": "Room-temperature measurement; no published0K correction.",
+        "isotopeAssignment": "not-specified",
+        "hyperfineAssignment": "not-specified",
+        "relativeOverallAccuracyEstimate": 0.1,
+        "accuracyIsIndependentPerPointSigma": false
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "1553"
+        ],
+        "section": "Table I and IV",
+        "table": "I",
+        "figure": null,
+        "equation": null,
+        "tableRow": 4
+      },
+      "notes": [
+        "Wave number column transcribed with published precision; no quantum defect is tabulated.",
+        "Term labels use the article electronic assignment; perturbed eigenstates are not pure configurations.",
+        "No65S extrapolation or rate/branch conversion made."
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "guo1993-6s16p-3P2-lifetime",
+      "sourceId": "guo-1993-pra",
+      "quantity": "lifetime",
+      "value": 3000,
+      "uncertainty": null,
+      "uncertaintyDescription": "No per-entry uncertainty printed. Authors estimate about10% overall accuracy including statistical scatter and possible systematic errors; no1sigma interpretation is supplied.",
+      "unit": "ns",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": {
+        "configuration": "6s16p",
+        "term": "3P2",
+        "J": 2,
+        "F": null,
+        "n": 16,
+        "energy_cm1": 49691.6,
+        "energyAsPrinted_cm1": "49 691.60",
+        "energyUncertainty_cm1": null,
+        "isPerturber": false
+      },
+      "lowerState": null,
+      "definition": "Single-exponential fluorescence decay time; paper labels Table I values as natural radiative lifetimes while Fig.4 and discussion identify room-temperature measurements with finite-temperature checks. Not a state-resolved decay branching fraction.",
+      "conditions": {
+        "method": "See experimentalConditions for shared apparatus and checks.",
+        "radiation": "Room-temperature measurement; no published0K correction.",
+        "isotopeAssignment": "not-specified",
+        "hyperfineAssignment": "not-specified",
+        "relativeOverallAccuracyEstimate": 0.1,
+        "accuracyIsIndependentPerPointSigma": false
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "1553"
+        ],
+        "section": "Table I and IV",
+        "table": "I",
+        "figure": null,
+        "equation": null,
+        "tableRow": 5
+      },
+      "notes": [
+        "Wave number column transcribed with published precision; no quantum defect is tabulated.",
+        "Term labels use the article electronic assignment; perturbed eigenstates are not pure configurations.",
+        "No65S extrapolation or rate/branch conversion made."
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "guo1993-6s17p-3P2-lifetime",
+      "sourceId": "guo-1993-pra",
+      "quantity": "lifetime",
+      "value": 1160,
+      "uncertainty": null,
+      "uncertaintyDescription": "No per-entry uncertainty printed. Authors estimate about10% overall accuracy including statistical scatter and possible systematic errors; no1sigma interpretation is supplied.",
+      "unit": "ns",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": {
+        "configuration": "6s17p",
+        "term": "3P2",
+        "J": 2,
+        "F": null,
+        "n": 17,
+        "energy_cm1": 49805.1,
+        "energyAsPrinted_cm1": "49 805.10",
+        "energyUncertainty_cm1": null,
+        "isPerturber": false
+      },
+      "lowerState": null,
+      "definition": "Single-exponential fluorescence decay time; paper labels Table I values as natural radiative lifetimes while Fig.4 and discussion identify room-temperature measurements with finite-temperature checks. Not a state-resolved decay branching fraction.",
+      "conditions": {
+        "method": "See experimentalConditions for shared apparatus and checks.",
+        "radiation": "Room-temperature measurement; no published0K correction.",
+        "isotopeAssignment": "not-specified",
+        "hyperfineAssignment": "not-specified",
+        "relativeOverallAccuracyEstimate": 0.1,
+        "accuracyIsIndependentPerPointSigma": false
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "1553"
+        ],
+        "section": "Table I and IV",
+        "table": "I",
+        "figure": null,
+        "equation": null,
+        "tableRow": 6
+      },
+      "notes": [
+        "Wave number column transcribed with published precision; no quantum defect is tabulated.",
+        "Term labels use the article electronic assignment; perturbed eigenstates are not pure configurations.",
+        "No65S extrapolation or rate/branch conversion made."
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "guo1993-6s18p-3P2-lifetime",
+      "sourceId": "guo-1993-pra",
+      "quantity": "lifetime",
+      "value": 2180,
+      "uncertainty": null,
+      "uncertaintyDescription": "No per-entry uncertainty printed. Authors estimate about10% overall accuracy including statistical scatter and possible systematic errors; no1sigma interpretation is supplied.",
+      "unit": "ns",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": {
+        "configuration": "6s18p",
+        "term": "3P2",
+        "J": 2,
+        "F": null,
+        "n": 18,
+        "energy_cm1": 49891.5,
+        "energyAsPrinted_cm1": "49 891.50",
+        "energyUncertainty_cm1": null,
+        "isPerturber": false
+      },
+      "lowerState": null,
+      "definition": "Single-exponential fluorescence decay time; paper labels Table I values as natural radiative lifetimes while Fig.4 and discussion identify room-temperature measurements with finite-temperature checks. Not a state-resolved decay branching fraction.",
+      "conditions": {
+        "method": "See experimentalConditions for shared apparatus and checks.",
+        "radiation": "Room-temperature measurement; no published0K correction.",
+        "isotopeAssignment": "not-specified",
+        "hyperfineAssignment": "not-specified",
+        "relativeOverallAccuracyEstimate": 0.1,
+        "accuracyIsIndependentPerPointSigma": false
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "1553"
+        ],
+        "section": "Table I and IV",
+        "table": "I",
+        "figure": null,
+        "equation": null,
+        "tableRow": 7
+      },
+      "notes": [
+        "Wave number column transcribed with published precision; no quantum defect is tabulated.",
+        "Term labels use the article electronic assignment; perturbed eigenstates are not pure configurations.",
+        "No65S extrapolation or rate/branch conversion made."
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "guo1993-6s19p-3P2-lifetime",
+      "sourceId": "guo-1993-pra",
+      "quantity": "lifetime",
+      "value": 2640,
+      "uncertainty": null,
+      "uncertaintyDescription": "No per-entry uncertainty printed. Authors estimate about10% overall accuracy including statistical scatter and possible systematic errors; no1sigma interpretation is supplied.",
+      "unit": "ns",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": {
+        "configuration": "6s19p",
+        "term": "3P2",
+        "J": 2,
+        "F": null,
+        "n": 19,
+        "energy_cm1": 49961.83,
+        "energyAsPrinted_cm1": "49 961.83",
+        "energyUncertainty_cm1": null,
+        "isPerturber": false
+      },
+      "lowerState": null,
+      "definition": "Single-exponential fluorescence decay time; paper labels Table I values as natural radiative lifetimes while Fig.4 and discussion identify room-temperature measurements with finite-temperature checks. Not a state-resolved decay branching fraction.",
+      "conditions": {
+        "method": "See experimentalConditions for shared apparatus and checks.",
+        "radiation": "Room-temperature measurement; no published0K correction.",
+        "isotopeAssignment": "not-specified",
+        "hyperfineAssignment": "not-specified",
+        "relativeOverallAccuracyEstimate": 0.1,
+        "accuracyIsIndependentPerPointSigma": false
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "1553"
+        ],
+        "section": "Table I and IV",
+        "table": "I",
+        "figure": null,
+        "equation": null,
+        "tableRow": 8
+      },
+      "notes": [
+        "Wave number column transcribed with published precision; no quantum defect is tabulated.",
+        "Term labels use the article electronic assignment; perturbed eigenstates are not pure configurations.",
+        "No65S extrapolation or rate/branch conversion made."
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "guo1993-perturber-3P2-lifetime",
+      "sourceId": "guo-1993-pra",
+      "quantity": "lifetime",
+      "value": 328,
+      "uncertainty": null,
+      "uncertaintyDescription": "No per-entry uncertainty printed. Authors estimate about10% overall accuracy including statistical scatter and possible systematic errors; no1sigma interpretation is supplied.",
+      "unit": "ns",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": {
+        "configuration": "4f13 5d2 6s",
+        "term": "3P2",
+        "J": 2,
+        "F": null,
+        "n": null,
+        "energy_cm1": 48965.3,
+        "energyAsPrinted_cm1": "48 965.30",
+        "energyUncertainty_cm1": null,
+        "isPerturber": true
+      },
+      "lowerState": null,
+      "definition": "Single-exponential fluorescence decay time; paper labels Table I values as natural radiative lifetimes while Fig.4 and discussion identify room-temperature measurements with finite-temperature checks. Not a state-resolved decay branching fraction.",
+      "conditions": {
+        "method": "See experimentalConditions for shared apparatus and checks.",
+        "radiation": "Room-temperature measurement; no published0K correction.",
+        "isotopeAssignment": "not-specified",
+        "hyperfineAssignment": "not-specified",
+        "relativeOverallAccuracyEstimate": 0.1,
+        "accuracyIsIndependentPerPointSigma": false
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "1553"
+        ],
+        "section": "Table I and IV",
+        "table": "I",
+        "figure": null,
+        "equation": null,
+        "tableRow": 9
+      },
+      "notes": [
+        "Wave number column transcribed with published precision; no quantum defect is tabulated.",
+        "Term labels use the article electronic assignment; perturbed eigenstates are not pure configurations.",
+        "No65S extrapolation or rate/branch conversion made."
+      ],
+      "canonicalAdopted": false
+    },
+    {
+      "id": "guo1993-perturber-1D2-lifetime",
+      "sourceId": "guo-1993-pra",
+      "quantity": "lifetime",
+      "value": 100,
+      "uncertainty": null,
+      "uncertaintyDescription": "No per-entry uncertainty printed. Authors estimate about10% overall accuracy including statistical scatter and possible systematic errors; no1sigma interpretation is supplied.",
+      "unit": "ns",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": {
+        "configuration": "4f13 5d2 6s",
+        "term": "1D2",
+        "J": 2,
+        "F": null,
+        "n": null,
+        "energy_cm1": 49751.9,
+        "energyAsPrinted_cm1": "49 751.90",
+        "energyUncertainty_cm1": null,
+        "isPerturber": true
+      },
+      "lowerState": null,
+      "definition": "Single-exponential fluorescence decay time; paper labels Table I values as natural radiative lifetimes while Fig.4 and discussion identify room-temperature measurements with finite-temperature checks. Not a state-resolved decay branching fraction.",
+      "conditions": {
+        "method": "See experimentalConditions for shared apparatus and checks.",
+        "radiation": "Room-temperature measurement; no published0K correction.",
+        "isotopeAssignment": "not-specified",
+        "hyperfineAssignment": "not-specified",
+        "relativeOverallAccuracyEstimate": 0.1,
+        "accuracyIsIndependentPerPointSigma": false
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "1553"
+        ],
+        "section": "Table I and IV",
+        "table": "I",
+        "figure": null,
+        "equation": null,
+        "tableRow": 10
+      },
+      "notes": [
+        "Wave number column transcribed with published precision; no quantum defect is tabulated.",
+        "Term labels use the article electronic assignment; perturbed eigenstates are not pure configurations.",
+        "No65S extrapolation or rate/branch conversion made."
+      ],
+      "canonicalAdopted": false
+    }
+  ],
+  "theoryComparisons": [
+    {
+      "id": "guo1993-nstar3-guide",
+      "sourceId": "guo-1993-pra",
+      "evidenceKind": "theory",
+      "provenance": "reference-scaling-guide",
+      "expression": "tau proportional to (n*)^3",
+      "slopeOnLogLogAxes": 3,
+      "normalization": null,
+      "computedLifetimes": null,
+      "nStarValuesTabulated": false,
+      "definition": "Fig.4 includes a slope3 straight line for orientation; it is not a reported fit coefficient or a numerical MQDT prediction of these measured states.",
+      "locator": {
+        "pdfPages": [
+          2
+        ],
+        "printedPages": [
+          "1552"
+        ],
+        "figure": "4",
+        "section": "III"
+      },
+      "canonicalAdopted": false
+    },
+    {
+      "id": "guo1993-prior-theory-context",
+      "sourceId": "guo-1993-pra",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "referencedArticle": {
+        "authors": [
+          "X. W. Liu",
+          "Z. W. Wang"
+        ],
+        "publication": "Phys. Rev. A40,1838(1989)",
+        "articleReference": 6
+      },
+      "definition": "Introduction cites theory for perturbed6snd singlet/triplet D2 series, which is different from the present6snp3P2 set. No numeric theory lifetime is supplied in this paper.",
+      "computedLifetimes": null,
+      "locator": {
+        "pdfPages": [
+          1,
+          3
+        ],
+        "printedPages": [
+          "1551",
+          "1553"
+        ],
+        "section": "I and references"
+      },
+      "canonicalAdopted": false
+    }
+  ],
+  "decayBranchingCoverage": {
+    "reportedNumericalBranchingFractions": 0,
+    "completeBranchingTablePresent": false,
+    "boundary": "Time-resolved fluorescence lifetimes alone do not determine a normalized state-resolved decay branching table."
+  },
+  "conflicts": [],
+  "pending": [
+    {
+      "id": "guo1993-isotope-F-pending",
+      "status": "not-specified-in-original",
+      "description": "No isotope-resolved or hyperfine-resolved assignment is given; do not label these values171Yb or a particular F."
+    },
+    {
+      "id": "guo1993-zeroK-pending",
+      "status": "not-provided-in-original",
+      "description": "No tabulated blackbody-corrected0K lifetimes or per-state LN2/room-temperature differences."
+    },
+    {
+      "id": "guo1993-point-sigma-pending",
+      "status": "not-provided-in-original",
+      "description": "Individual uncertainty bars/standard deviations and covariance are absent; overall10% accuracy cannot be silently assigned as per-point1sigma."
+    },
+    {
+      "id": "guo1993-quantum-defect-pending",
+      "status": "not-tabulated",
+      "description": "Effective principal quantum numbers are only graphical; no exact n* or quantum-defect table is reported. Do not infer precise numbers from graph positions."
+    },
+    {
+      "id": "guo1993-MQDT-pending",
+      "status": "not-provided-in-original",
+      "description": "Authors state interpretation using an odd-parity J=2 MQDT wave function is in progress; no fitted MQDT lifetimes or expansion coefficients are published here."
+    },
+    {
+      "id": "guo1993-magnetic-field-pending",
+      "status": "not-specified-in-original",
+      "description": "Helmholtz-field quantum-beat test lacks numerical field/time-resolution settings."
+    },
+    {
+      "id": "guo1993-flight-boundary",
+      "status": "applicability-boundary",
+      "description": "Text claims flight-out negligible for tau shorter than3microseconds; Table I16P2=3000ns is at the stated threshold. No correction magnitude is supplied."
+    }
+  ],
+  "adoptionPolicy": "Evidence archive only. Does not modify canonical atomic lifetime, low-state decay branching, physics formulas, or main diagram."
+}

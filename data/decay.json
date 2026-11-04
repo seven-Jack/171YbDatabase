@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "decayVersion": "2026.11.04.1",
+  "reviewedAt": "2026-11-04",
+  "definition": "βᵢⱼ = Aᵢⱼ / Σₖ Aᵢₖ；直接自发首跳分支，分母须注明末态和多极范围。",
+  "sources": [
+    {
+      "id": "kroeze-2026-arxiv",
+      "title": "¹⁷¹Yb Reference Data",
+      "doi": "10.48550/arXiv.2509.04416",
+      "url": "https://arxiv.org/abs/2509.04416v2",
+      "locations": [
+        "Section 5.2–5.3, PDF pp.11–12, Eqs.46–54",
+        "Tables 8–14, PDF pp.23–26"
+      ]
+    },
+    {
+      "id": "porsev-1999-pra",
+      "title": "Electric-dipole amplitudes, lifetimes, and polarizabilities of the low-lying levels of atomic ytterbium",
+      "doi": "10.1103/PhysRevA.60.2781",
+      "url": "https://arxiv.org/abs/physics/9903004",
+      "locations": [
+        "Table I, arXiv PDF p.10; reduced matrix elements",
+        "Eqs.2–3, arXiv PDF pp.2–3; electronic J-reduced convention and spontaneous rates"
+      ]
+    },
+    {
+      "id": "porsev-2004-pra",
+      "title": "Hyperfine quenching of the metastable ³P₀,₂ states in divalent atoms",
+      "doi": "10.1103/PhysRevA.69.042506",
+      "url": "https://arxiv.org/abs/physics/0312006",
+      "locations": [
+        "Table IV, arXiv PDF p.8; F-resolved HFI-E1 partial rates",
+        "Table V, arXiv PDF p.9; aggregate non-E1 rates"
+      ]
+    },
+    {
+      "id": "xu-2014-prl",
+      "title": "Measurement of the Hyperfine Quenching Rate of the Clock Transition in ¹⁷¹Yb",
+      "doi": "10.1103/PhysRevLett.113.033003",
+      "url": "https://arxiv.org/abs/1406.2340",
+      "locations": [
+        "Abstract, arXiv PDF p.1; free-atom HFI-E1 rate inferred from solid-neon experiment",
+        "Table I, arXiv PDF p.4; correction factors"
+      ]
+    },
+    {
+      "id": "mishra-2001-jqsrt",
+      "title": "Radiative lifetimes of the first excited ³P₂,₀ metastable levels in Kr I, Xe I, Yb I and Hg-like atoms",
+      "doi": "10.1016/S0022-4073(00)00117-5",
+      "url": "https://doi.org/10.1016/S0022-4073(00)00117-5",
+      "locations": [
+        "Table 2, PDF p.7; electronic M1 and M2 rates",
+        "Tables 3–5, PDF pp.8–9; statistical-average and F-resolved HFI-E1 rates and lifetime"
+      ]
+    },
+    {
+      "id": "peper-2025-prx",
+      "title": "Spectroscopy and Modeling of ¹⁷¹Yb Rydberg States for High-Fidelity Two-Qubit Gates",
+      "doi": "10.1103/PhysRevX.15.011009",
+      "url": "https://doi.org/10.1103/PhysRevX.15.011009",
+      "locations": [
+        "Conclusion, PDF pp.10–11; lifetime and decay-branching models remain future work"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "levelId": "yb171-6s2-1s0",
+      "status": "not-applicable",
+      "evidenceKind": "not-applicable",
+      "summary": "电子基态：自发衰变分支不适用。",
+      "boundary": "没有更低电子能级；不将“不适用”编码为零分支。",
+      "conditions": [
+        "中性 ¹⁷¹Yb 电子基态"
+      ],
+      "sourceIds": [
+        "kroeze-2026-arxiv"
+      ],
+      "normalizationScope": "无可归一的向下电子辐射通道。",
+      "branches": [],
+      "rateEvidence": []
+    },
+    {
+      "levelId": "yb171-6s6p-3p0",
+      "status": "approximate",
+      "evidenceKind": "approximation",
+      "summary": "HFS 诱导 E1 回到 ¹S₀ 为主；β≈1 是低能模型近似。",
+      "boundary": "完整分支未独立实测；黑体、阱光淬灭和碰撞损失不能并入自然分支。",
+      "conditions": [
+        "¹⁷¹Yb；F=1/2",
+        "孤立原子自发衰变近似；非环境损失"
+      ],
+      "sourceIds": [
+        "kroeze-2026-arxiv",
+        "porsev-2004-pra",
+        "xu-2014-prl"
+      ],
+      "normalizationScope": "电子终态近似为基态，精确非主导分支未量化。",
+      "branches": [
+        {
+          "id": "3p0-ground",
+          "lowerLevelId": "yb171-6s2-1s0",
+          "label": "¹S₀",
+          "mechanism": "HFI-E1",
+          "status": "approximate",
+          "evidenceKind": "approximation",
+          "value": null,
+          "uncertainty": null,
+          "expression": "≈1（低能模型）",
+          "sourceIds": [
+            "kroeze-2026-arxiv",
+            "porsev-2004-pra"
+          ],
+          "sourceLocator": "Porsev2004 Table IV, PDF p.8；Kroeze Table 9, PDF p.24",
+          "conditions": [
+            "¹⁷¹Yb；F=1/2 → F=1/2"
+          ],
+          "missingReason": "完整分支未测量，不能编码为精确 1。"
+        }
+      ],
+      "rateEvidence": [
+        {
+          "id": "3p0-hfi-xu",
+          "label": "HFI-E1 → ¹S₀",
+          "value": 0.0442,
+          "uncertainty": 0.0035,
+          "unit": "s^-1",
+          "mechanism": "HFI-E1",
+          "upperF": 0.5,
+          "status": "original-source-checked",
+          "evidenceKind": "experiment",
+          "sourceIds": [
+            "xu-2014-prl"
+          ],
+          "sourceLocator": "Xu2014 abstract, PDF p.1; Table I, PDF p.4",
+          "conditions": [
+            "固态 Ne 中测量，经介质和能量修正推断自由原子部分率",
+            "部分率支持不是完整分支测量"
+          ],
+          "uncertaintyNote": "绝对标准不确定度；保留原文报告。"
+        }
+      ]
+    },
+    {
+      "levelId": "yb171-6s6p-3p1",
+      "status": "approximate",
+      "evidenceKind": "approximation",
+      "summary": "到 ¹S₀ 的 E1 绝对主导，近似闭合。",
+      "boundary": "原文总率不能证明精确 β=1；弱 M1 通道未在本轮量化。",
+      "conditions": [
+        "电子 J=1 → J=0；对基态 F、mF 求和",
+        "自由空间低能自发衰变近似"
+      ],
+      "sourceIds": [
+        "kroeze-2026-arxiv"
+      ],
+      "normalizationScope": "主 E1 与未量化弱多极通道分开；不强制归一。",
+      "branches": [
+        {
+          "id": "3p1-ground",
+          "lowerLevelId": "yb171-6s2-1s0",
+          "label": "¹S₀",
+          "mechanism": "E1",
+          "status": "approximate",
+          "evidenceKind": "approximation",
+          "value": null,
+          "uncertainty": null,
+          "expression": "≈1（主 E1）",
+          "sourceIds": [
+            "kroeze-2026-arxiv"
+          ],
+          "sourceLocator": "Kroeze Table 10, PDF p.24",
+          "conditions": [
+            "总衰减率已记录；精确分支没有独立测量"
+          ],
+          "missingReason": "未取得严格分支比。"
+        },
+        {
+          "id": "3p1-3p0-m1",
+          "lowerLevelId": "yb171-6s6p-3p0",
+          "label": "³P₀",
+          "mechanism": "M1",
+          "status": "pending",
+          "evidenceKind": "pending",
+          "value": null,
+          "uncertainty": null,
+          "expression": "待核查",
+          "sourceIds": [
+            "kroeze-2026-arxiv"
+          ],
+          "sourceLocator": "Kroeze Section 5.2–5.3, PDF pp.11–12",
+          "conditions": [
+            "同宇称弱 M1；本轮未取得量化率或分支"
+          ],
+          "missingReason": "未量化的弱多极通道。"
+        }
+      ],
+      "rateEvidence": []
+    },
+    {
+      "levelId": "yb171-6s6p-3p2",
+      "status": "pending",
+      "evidenceKind": "pending",
+      "summary": "β 待核查：必须区分 F=3/2 与 F=5/2。",
+      "boundary": "部分率及选择定则不是归一分支；不同文献模型的率不能拼成统一 β。",
+      "conditions": [
+        "¹⁷¹Yb；良好 F、弱磁场条件",
+        "F=3/2 → ground F=1/2 的 HFI-E1 可开",
+        "F=5/2 → ground F=1/2 的 E1 因 ΔF=2 关闭，M1/M2 仍在"
+      ],
+      "sourceIds": [
+        "porsev-2004-pra",
+        "mishra-2001-jqsrt"
+      ],
+      "normalizationScope": "未建立逐 F、含全部机制的统一分母。",
+      "branches": [],
+      "rateEvidence": [
+        {
+          "id": "3p2-hfi-porsev-f32",
+          "label": "F=3/2 · HFI-E1 → ¹S₀",
+          "value": 0.0918,
+          "uncertainty": null,
+          "unit": "s^-1",
+          "mechanism": "HFI-E1",
+          "upperF": 1.5,
+          "status": "original-source-checked",
+          "evidenceKind": "theory",
+          "sourceIds": [
+            "porsev-2004-pra"
+          ],
+          "sourceLocator": "Porsev2004 Table IV, PDF p.8",
+          "conditions": [
+            "Porsev2004 模型；不与 Mishra2001 的率交叉归一"
+          ],
+          "uncertaintyNote": "原文未逐项提供不确定度。"
+        },
+        {
+          "id": "3p2-hfi-mishra-f32",
+          "label": "F=3/2 · HFI-E1 → ¹S₀",
+          "value": 0.1097,
+          "uncertainty": null,
+          "unit": "s^-1",
+          "mechanism": "HFI-E1",
+          "upperF": 1.5,
+          "status": "original-source-checked",
+          "evidenceKind": "theory",
+          "sourceIds": [
+            "mishra-2001-jqsrt"
+          ],
+          "sourceLocator": "Mishra2001 Table 4, PDF p.9",
+          "conditions": [
+            "Mishra2001 模型；与 Porsev2004 保持独立"
+          ],
+          "uncertaintyNote": "原文未逐项提供不确定度。"
+        },
+        {
+          "id": "3p2-m1-mishra",
+          "label": "M1 → ³P₁",
+          "value": 0.0677,
+          "uncertainty": null,
+          "unit": "s^-1",
+          "mechanism": "M1",
+          "upperF": null,
+          "status": "original-source-checked",
+          "evidenceKind": "theory",
+          "sourceIds": [
+            "mishra-2001-jqsrt"
+          ],
+          "sourceLocator": "Mishra2001 Table 2, PDF p.7",
+          "conditions": [
+            "Mishra2001 电子率；不是 β"
+          ],
+          "uncertaintyNote": "原文未逐项提供不确定度。"
+        },
+        {
+          "id": "3p2-m2-mishra",
+          "label": "M2 → ¹S₀",
+          "value": 0.00018,
+          "uncertainty": null,
+          "unit": "s^-1",
+          "mechanism": "M2",
+          "upperF": null,
+          "status": "original-source-checked",
+          "evidenceKind": "theory",
+          "sourceIds": [
+            "mishra-2001-jqsrt"
+          ],
+          "sourceLocator": "Mishra2001 Table 2, PDF p.7",
+          "conditions": [
+            "Mishra2001 电子率；不是 β"
+          ],
+          "uncertaintyNote": "原文未逐项提供不确定度。"
+        },
+        {
+          "id": "3p2-hfi-average-mishra",
+          "label": "统计平均 HFI-E1",
+          "value": 0.044,
+          "uncertainty": null,
+          "unit": "s^-1",
+          "mechanism": "HFI-E1",
+          "upperF": null,
+          "status": "original-source-checked",
+          "evidenceKind": "theory",
+          "sourceIds": [
+            "mishra-2001-jqsrt"
+          ],
+          "sourceLocator": "Mishra2001 Table 3, PDF p.8",
+          "conditions": [
+            "按 (2F+1) 平均；不是每个 F 的率",
+            "8.9 s 为平均总率的倒数，不能当所有 F 的寿命"
+          ],
+          "uncertaintyNote": "原文未逐项提供不确定度。"
+        }
+      ]
+    },
+    {
+      "levelId": "yb171-6s5d-3d1",
+      "status": "quantified-model",
+      "evidenceKind": "theory",
+      "summary": "已核实三条低能 E1 模型分支；非完整实验测量。",
+      "boundary": "采用文献覆盖的低能电子 E1 末态；不证明全原子全部末态及多极阶完备。",
+      "conditions": [
+        "自由空间、弱场电子 J 级模型；可用于 ¹⁷¹Yb 的电子总分支近似",
+        "不含黑体诱导跃迁、激光重复重泵或腔 Purcell 增强",
+        "不是指定 F、mF 或偏振 q 的独立实验分支测量"
+      ],
+      "sourceIds": [
+        "kroeze-2026-arxiv",
+        "porsev-1999-pra"
+      ],
+      "normalizationScope": "所引低能 E1 模型的 ³P₀、³P₁、³P₂ 三支；原表舍入和为 0.9999，不重新归一。",
+      "branches": [
+        {
+          "id": "3d1-3p0",
+          "lowerLevelId": "yb171-6s6p-3p0",
+          "label": "³P₀",
+          "mechanism": "E1",
+          "status": "quantified-model",
+          "evidenceKind": "theory",
+          "value": 0.638,
+          "uncertainty": 0.027,
+          "expression": null,
+          "sourceIds": [
+            "kroeze-2026-arxiv",
+            "porsev-1999-pra"
+          ],
+          "sourceLocator": "Kroeze Table 12, PDF p.25; Porsev1999 Table I, PDF p.10",
+          "conditions": [
+            "电子 J 级分支；对末态 F、mF 及发光模式求和"
+          ],
+          "missingReason": null
+        },
+        {
+          "id": "3d1-3p1",
+          "lowerLevelId": "yb171-6s6p-3p1",
+          "label": "³P₁",
+          "mechanism": "E1",
+          "status": "quantified-model",
+          "evidenceKind": "theory",
+          "value": 0.352,
+          "uncertainty": 0.027,
+          "expression": null,
+          "sourceIds": [
+            "kroeze-2026-arxiv",
+            "porsev-1999-pra"
+          ],
+          "sourceLocator": "Kroeze Table 12, PDF p.25; Porsev1999 Table I, PDF p.10",
+          "conditions": [
+            "电子 J 级分支；对末态 F、mF 及发光模式求和"
+          ],
+          "missingReason": null
+        },
+        {
+          "id": "3d1-3p2",
+          "lowerLevelId": "yb171-6s6p-3p2",
+          "label": "³P₂",
+          "mechanism": "E1",
+          "status": "quantified-model",
+          "evidenceKind": "theory",
+          "value": 0.0099,
+          "uncertainty": 0.0039,
+          "expression": null,
+          "sourceIds": [
+            "kroeze-2026-arxiv",
+            "porsev-1999-pra"
+          ],
+          "sourceLocator": "Kroeze Table 12, PDF p.25; Porsev1999 Table I, PDF p.10",
+          "conditions": [
+            "电子 J 级分支；对末态 F、mF 及发光模式求和"
+          ],
+          "missingReason": null
+        }
+      ],
+      "rateEvidence": []
+    },
+    {
+      "levelId": "yb171-6s6p-1p1",
+      "status": "quantified-model",
+      "evidenceKind": "theory",
+      "summary": "到 ¹S₀：1 − 6(4) × 10⁻⁸；总漏出为 6(4) × 10⁻⁸。",
+      "boundary": "理论低能 E1 漏出，不是完整实验分支测量；漏出先到 ³D₁、³D₂，不能将级联有效率视为直接分支。",
+      "conditions": [
+        "自由空间、弱场电子 J 级模型；可用于 ¹⁷¹Yb 的电子总分支近似",
+        "不含黑体诱导跃迁、激光重复重泵或腔 Purcell 增强",
+        "不是指定 F、mF 或偏振 q 的独立实验分支测量"
+      ],
+      "sourceIds": [
+        "kroeze-2026-arxiv",
+        "porsev-1999-pra"
+      ],
+      "normalizationScope": "ground 与理论总漏出互补；不分配未独立列明的 ³D₁/₂ 个别 β。",
+      "branches": [
+        {
+          "id": "1p1-ground",
+          "lowerLevelId": "yb171-6s2-1s0",
+          "label": "¹S₀",
+          "mechanism": "E1",
+          "status": "quantified-model",
+          "evidenceKind": "theory",
+          "value": 0.99999994,
+          "uncertainty": 4e-08,
+          "expression": "1 − 6(4) × 10⁻⁸",
+          "sourceIds": [
+            "kroeze-2026-arxiv",
+            "porsev-1999-pra"
+          ],
+          "sourceLocator": "Kroeze Table 8, PDF p.23; Porsev1999 Table I, PDF p.10",
+          "conditions": [
+            "理论总漏出 6(4) × 10⁻⁸；保留互补表达式，不四舍五入成精确 1"
+          ],
+          "missingReason": null
+        }
+      ],
+      "rateEvidence": []
+    },
+    {
+      "levelId": "yb171-6s7s-3s1",
+      "status": "quantified-model",
+      "evidenceKind": "theory",
+      "summary": "四条低能 E1 分支，含 ³S₁ → ¹P₁ 的 0.21(9)% 弱支。",
+      "boundary": "采用文献覆盖的低能电子 E1 末态；不证明全原子全部末态及多极阶完备。",
+      "conditions": [
+        "自由空间、弱场电子 J 级模型；可用于 ¹⁷¹Yb 的电子总分支近似",
+        "不含黑体诱导跃迁、激光重复重泵或腔 Purcell 增强",
+        "不是指定 F、mF 或偏振 q 的独立实验分支测量"
+      ],
+      "sourceIds": [
+        "kroeze-2026-arxiv",
+        "porsev-1999-pra"
+      ],
+      "normalizationScope": "所引低能 E1 模型的 ³P₀、³P₁、³P₂、¹P₁ 四支；原表舍入和为 1.0001，不重新归一。",
+      "branches": [
+        {
+          "id": "3s1-3p0",
+          "lowerLevelId": "yb171-6s6p-3p0",
+          "label": "³P₀",
+          "mechanism": "E1",
+          "status": "quantified-model",
+          "evidenceKind": "theory",
+          "value": 0.13,
+          "uncertainty": 0.013,
+          "expression": null,
+          "sourceIds": [
+            "kroeze-2026-arxiv",
+            "porsev-1999-pra"
+          ],
+          "sourceLocator": "Kroeze Table 13, PDF p.26; Porsev1999 Table I, PDF p.10",
+          "conditions": [
+            "电子 J 级分支；对末态 F、mF 及发光模式求和"
+          ],
+          "missingReason": null
+        },
+        {
+          "id": "3s1-3p1",
+          "lowerLevelId": "yb171-6s6p-3p1",
+          "label": "³P₁",
+          "mechanism": "E1",
+          "status": "quantified-model",
+          "evidenceKind": "theory",
+          "value": 0.36,
+          "uncertainty": 0.025,
+          "expression": null,
+          "sourceIds": [
+            "kroeze-2026-arxiv",
+            "porsev-1999-pra"
+          ],
+          "sourceLocator": "Kroeze Tables 13–14, PDF p.26; Porsev1999 Table I, PDF p.10",
+          "conditions": [
+            "电子 J 级分支；对末态 F、mF 及发光模式求和"
+          ],
+          "missingReason": null
+        },
+        {
+          "id": "3s1-3p2",
+          "lowerLevelId": "yb171-6s6p-3p2",
+          "label": "³P₂",
+          "mechanism": "E1",
+          "status": "quantified-model",
+          "evidenceKind": "theory",
+          "value": 0.508,
+          "uncertainty": 0.026,
+          "expression": null,
+          "sourceIds": [
+            "kroeze-2026-arxiv",
+            "porsev-1999-pra"
+          ],
+          "sourceLocator": "Kroeze Tables 13–14, PDF p.26; Porsev1999 Table I, PDF p.10",
+          "conditions": [
+            "电子 J 级分支；对末态 F、mF 及发光模式求和"
+          ],
+          "missingReason": null
+        },
+        {
+          "id": "3s1-1p1",
+          "lowerLevelId": "yb171-6s6p-1p1",
+          "label": "¹P₁",
+          "mechanism": "E1",
+          "status": "quantified-model",
+          "evidenceKind": "theory",
+          "value": 0.0021,
+          "uncertainty": 0.0009,
+          "expression": null,
+          "sourceIds": [
+            "kroeze-2026-arxiv",
+            "porsev-1999-pra"
+          ],
+          "sourceLocator": "Kroeze Tables 13–14, PDF p.26; Porsev1999 Table I, PDF p.10",
+          "conditions": [
+            "弱单重态分支；不可从三个 triplet 分支中省略"
+          ],
+          "missingReason": null
+        }
+      ],
+      "rateEvidence": []
+    },
+    {
+      "levelId": "yb171-6s65s-3s1-triplet-connected",
+      "status": "pending",
+      "evidenceKind": "pending",
+      "summary": "decay β 待核查。",
+      "boundary": "尚未取得与图中 triplet-connected 65S 条目共同匹配的完整首跳分支表。",
+      "conditions": [
+        "需同时确认 n、F、mF、磁场 B、辐射温度与 triplet-connected 分支身份",
+        "不套用 6s7s ³S₁ 数值，不移植其他 n 的级联终态人口或高场总寿命"
+      ],
+      "sourceIds": [
+        "peper-2025-prx"
+      ],
+      "normalizationScope": "未建立完整下态集合与自发首跳分母。",
+      "branches": [],
+      "rateEvidence": []
+    }
+  ]
+}

@@ -15,7 +15,8 @@ import re
 import shutil
 import sys
 
-SUPPLEMENTS = ('clock-rabi-sources-20261030.json', 'rabi-crosscheck-sources-20261031.json')
+SUPPLEMENTS = ('clock-rabi-sources-20261030.json', 'rabi-crosscheck-sources-20261031.json',
+               'decay-sources-20261104.json')
 OUTPUTS = ('index.json', 'index.csv', 'references.bib', 'original-library-integrity.json',
            'missing-downloads.json', 'missing-downloads.md')
 CSV_FIELDS = ['id', 'referenceNumber', 'title', 'doi', 'publication', 'documents', 'identityStatus']
@@ -65,6 +66,83 @@ def verify(path, expected, size=None, pdf=False):
     return {'status': 'verified', 'verified': True, 'path': str(path)}
 
 
+def load_paper_aliases(root):
+    """Resolve reviewed file renames without rewriting historical evidence."""
+    manifest = read(root / 'references/paper-path-aliases.json',
+                    {'schemaVersion': 1, 'aliases': []})
+    if (not isinstance(manifest, dict) or manifest.get('schemaVersion') != 1
+            or not isinstance(manifest.get('aliases'), list)):
+        raise ValueError('Invalid paper alias manifest')
+    if 'checkedOn' in manifest:
+        try:
+            if not isinstance(manifest['checkedOn'], str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', manifest['checkedOn']):
+                raise ValueError('Expected ISO date')
+            date.fromisoformat(manifest['checkedOn'])
+        except ValueError as error:
+            raise ValueError('Invalid paper alias audit date') from error
+    aliases, targets, hashes = {}, set(), set()
+    for row in manifest['aliases']:
+        if not isinstance(row, dict):
+            raise ValueError('Invalid paper alias record')
+        for key in ('oldPath', 'path'):
+            value = row.get(key)
+            if (not isinstance(value, str) or not value.startswith('references/papers/')
+                    or '\\' in value or ':' in value or any(ord(c) < 32 for c in value)
+                    or any(part in ('', '.', '..') for part in value.split('/'))):
+                raise ValueError('Unsafe paper alias path')
+            try:
+                (root / value).resolve().relative_to((root / 'references/papers').resolve())
+            except ValueError as error:
+                raise ValueError('Unsafe paper alias path escapes papers directory') from error
+        if not row['path'].endswith('.pdf') or row['oldPath'] == row['path']:
+            raise ValueError('Paper alias target must be a distinct PDF path')
+        if (not isinstance(row.get('sha256'), str)
+                or not re.fullmatch(r'[a-f0-9]{64}', row['sha256'])
+                or any(type(row.get(key)) is not int or row[key] <= 0 for key in ('bytes', 'pages'))):
+            raise ValueError('Invalid paper alias fingerprint or dimensions')
+        if row['oldPath'] in aliases or row['path'] in targets or row['sha256'] in hashes:
+            raise ValueError('Duplicate or conflicting paper alias')
+        if 'identityReview' in row and not isinstance(row['identityReview'], dict):
+            raise ValueError('Invalid paper alias identity review')
+        for key in ('versionNote', 'documentType'):
+            if key in row and (not isinstance(row[key], str) or not row[key]):
+                raise ValueError('Invalid paper alias version metadata')
+        aliases[row['oldPath']] = row
+        targets.add(row['path'])
+        hashes.add(row['sha256'])
+    if targets.intersection(aliases):
+        raise ValueError('Paper alias chains or cycles are not allowed')
+    return manifest, aliases
+
+
+def apply_paper_aliases(root, registered, aliases):
+    """Bind every alias to registered content and check both old and new bytes."""
+    by_path = {record['path']: digest for digest, record in registered.items()}
+    for row in aliases.values():
+        expected = row['sha256']
+        if expected not in registered:
+            raise ValueError('Paper alias SHA-256 is not registered')
+        record = registered[expected]
+        if record['path'] not in (row['oldPath'], row['path']):
+            raise ValueError('Paper alias does not match registered document path')
+        if any(by_path.get(p, expected) != expected for p in (row['oldPath'], row['path'])):
+            raise ValueError('Paper alias SHA-256 conflicts with registered path')
+        if any(record[key] != row[key] for key in ('bytes', 'pages')):
+            raise ValueError('Paper alias dimensions conflict with registered document')
+        # A clean target must never conceal a tampered file reusing its old name.
+        for relative in (row['oldPath'], row['path']):
+            verify(root / relative, expected, row['bytes'], pdf=True)
+        record['path'] = row['path']
+        record['aliases'] = list(dict.fromkeys(record.get('aliases', []) + [row['oldPath']]))
+        if 'versionNote' in row:
+            record['historicalVersionNote'] = record.get('versionNote')
+        for key in ('documentType', 'versionNote'):
+            if key in row:
+                record[key] = row[key]
+        if 'identityReview' in row:
+            record['identityReview'] = {**record.get('identityReview', {}), **row['identityReview']}
+
+
 def csv_bytes(rows, fields):
     stream = io.StringIO(newline='')
     writer = csv.DictWriter(stream, fieldnames=fields, lineterminator='\n')
@@ -75,7 +153,7 @@ def csv_bytes(rows, fields):
     return stream.getvalue().encode()
 
 
-def check_queue(ref, sources):
+def check_queue(ref, sources, aliases=None):
     """Validate the independently maintained queue; never rewrite its audit states."""
     queue = read(ref / 'primary-source-queue.json')
     rows = queue['items']
@@ -110,13 +188,16 @@ def check_queue(ref, sources):
             raise ValueError('Primary-source queue refers to an unregistered source')
         if source and row.get('doi') and row['doi'].lower() != (source.get('doi') or '').lower():
             raise ValueError('Primary-source queue DOI mismatch')
-        if source and not set(row.get('localDocuments', [])) <= set(source['documents']):
+        local_documents = {aliases.get(value, {}).get('path', value)
+                           for value in row.get('localDocuments', [])} if aliases else set(row.get('localDocuments', []))
+        if source and not local_documents <= set(source['documents']):
             raise ValueError('Primary-source queue document/source mapping mismatch')
     return len(rows)
 
 
 def build_outputs(root, checked_at=None):
     ref = root / 'references'
+    alias_manifest, aliases = load_paper_aliases(root)
     bib = read(ref / 'bibliography-audit.json')
     downloads = read(ref / 'download-validation.json')
     inventory = read(ref / 'local-library-inventory.json')
@@ -125,7 +206,8 @@ def build_outputs(root, checked_at=None):
     received = read(ref / 'received-downloads-20261030.json', {'documents': []})['documents']
     metadata = read(ref / 'document-metadata-20261031.json')
     supplements = [read(ref / name, {'sources': [], 'documents': [], 'attachments': []}) for name in SUPPLEMENTS]
-    checked = checked_at or max([metadata['checkedOn']] + [s.get('checkedOn', '') for s in supplements])
+    checked = checked_at or max([metadata['checkedOn'], alias_manifest.get('checkedOn', '') if aliases else '']
+                                + [s.get('checkedOn', '') for s in supplements])
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}(?:T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2}))?', checked):
         raise ValueError('Use an ISO date or timezone-qualified timestamp for --checked-at')
     try:
@@ -144,6 +226,7 @@ def build_outputs(root, checked_at=None):
             if prior and any(prior.get(k) != doc.get(k) for k in ('path', 'bytes', 'pages')):
                 raise ValueError(f'Conflicting registered document metadata: {doc["path"]}')
             registered[doc['sha256']] = {**(prior or {}), **doc}
+    apply_paper_aliases(root, registered, aliases)
     documents = {}
 
     def add_document(path, source_id=None, origin=None, version=None, expected=None, url=None):
@@ -156,6 +239,11 @@ def build_outputs(root, checked_at=None):
             raise ValueError('Registered paper path must stay inside references/papers')
         if record.get('bytes', 0) <= 0 or record.get('pages', 0) <= 0:
             raise ValueError('Registered byte and page counts must be positive')
+        alias = aliases.get(str(path))
+        if alias:
+            if alias['sha256'] != expected:
+                raise ValueError('Paper alias SHA-256 differs from requested source fingerprint')
+            path = alias['path']
         path = Path(path)
         verify(path if path.is_absolute() else root / path, expected, pdf=True)
         if expected not in documents:
@@ -165,7 +253,7 @@ def build_outputs(root, checked_at=None):
                 'validation': 'Registered metadata; current local SHA-256 and PDF-header availability is reported by --check. Title/DOI identity review is separate and is not inferred automatically.',
                 'rights': 'local research evidence only; no redistribution permission inferred',
             }
-            for key in ('versionNoteBoundary', 'aliases', 'doi', 'parentArticleDoi', 'documentType', 'identityReview'):
+            for key in ('versionNoteBoundary', 'historicalVersionNote', 'aliases', 'doi', 'parentArticleDoi', 'documentType', 'identityReview'):
                 if key in record:
                     documents[expected][key] = record[key]
         doc = documents[expected]
@@ -223,11 +311,12 @@ def build_outputs(root, checked_at=None):
     originals = [verify(Path(item['path']), item['sha256']) for item in inventory]
     attachments = [verify(root / item['path'], item['sha256'], item.get('bytes'))
                    for s in supplements for item in s.get('attachments', [])]
+    known_paths = {d['path'] for d in documents.values()} | set(aliases)
     unregistered = sorted(str(p.relative_to(root)) for p in (ref / 'papers').glob('*.pdf')
-                          if str(p.relative_to(root)) not in {d['path'] for d in documents.values()})
+                          if str(p.relative_to(root)) not in known_paths)
     if unregistered:
         raise ValueError('Unregistered local PDF files: ' + ', '.join(unregistered))
-    queue_count = check_queue(ref, indexed)
+    queue_count = check_queue(ref, indexed, aliases)
     counts = {'sourceRecords': len(indexed), 'canonicalSourceRecords': len(catalog['references']) + len(catalog['sources']),
               'supplementalOnlySources': 1 + sum(len(s['sources']) for s in supplements), 'pdfFiles': len(documents),
               'historicalDownloadRecords': sum(d['status'] == 'downloaded' for d in downloads),

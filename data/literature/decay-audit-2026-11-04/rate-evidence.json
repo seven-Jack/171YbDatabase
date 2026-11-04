@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-04",
+  "records": [
+    {
+      "id": "p-rate-1",
+      "initialState": "171Yb 3P0 F1/2",
+      "finalState": "1S0 F1/2",
+      "quantity": "HFI-E1 partial rate s^-1",
+      "value": 0.0442,
+      "uncertainty": 0.0035,
+      "unit": "s^-1",
+      "evidenceKind": "experiment-with-medium-corrections",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "evidence-only-not-normalized-branch",
+      "sourceIds": [
+        "xu-2014"
+      ],
+      "sourceLocator": "Abstract PDFp1; TableI PDFp4",
+      "boundary": "Partial/average rates cannot be mixed across models or treated as a measured branching fraction."
+    },
+    {
+      "id": "p-rate-2",
+      "initialState": "171Yb 3P2 F3/2",
+      "finalState": "1S0 F1/2",
+      "quantity": "HFI-E1 partial rate s^-1",
+      "value": 0.0918,
+      "uncertainty": null,
+      "unit": "s^-1",
+      "evidenceKind": "theory-T0",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "evidence-only-not-normalized-branch",
+      "sourceIds": [
+        "porsev-2004"
+      ],
+      "sourceLocator": "TableIV PDFp8",
+      "boundary": "Partial/average rates cannot be mixed across models or treated as a measured branching fraction."
+    },
+    {
+      "id": "p-rate-3",
+      "initialState": "171Yb 3P2 F5/2",
+      "finalState": "1S0 F1/2",
+      "quantity": "HFI-E1 partial rate",
+      "value": 0,
+      "uncertainty": null,
+      "unit": "s^-1",
+      "evidenceKind": "selection-rule",
+      "reviewStatus": "selection-rule",
+      "adoptionState": "evidence-only-not-normalized-branch",
+      "sourceIds": [
+        "porsev-2004"
+      ],
+      "sourceLocator": "Porsev2004 SectionIV and E1 DeltaF rule",
+      "boundary": "M1/M2 still possible; not zero total decay"
+    },
+    {
+      "id": "p-rate-4",
+      "initialState": "Yb 3P2",
+      "finalState": "3P1",
+      "quantity": "M1 partial rate s^-1",
+      "value": 0.0677,
+      "uncertainty": null,
+      "unit": "s^-1",
+      "evidenceKind": "theory",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "evidence-only-not-normalized-branch",
+      "sourceIds": [
+        "mishra-2001"
+      ],
+      "sourceLocator": "Table2 PDFp7",
+      "boundary": "Partial/average rates cannot be mixed across models or treated as a measured branching fraction."
+    },
+    {
+      "id": "p-rate-5",
+      "initialState": "Yb 3P2",
+      "finalState": "1S0",
+      "quantity": "M2 partial rate s^-1",
+      "value": 0.00018,
+      "uncertainty": null,
+      "unit": "s^-1",
+      "evidenceKind": "theory",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "evidence-only-not-normalized-branch",
+      "sourceIds": [
+        "mishra-2001"
+      ],
+      "sourceLocator": "Table2 PDFp7",
+      "boundary": "Partial/average rates cannot be mixed across models or treated as a measured branching fraction."
+    },
+    {
+      "id": "p-rate-6",
+      "initialState": "171Yb 3P2 F3/2",
+      "finalState": "1S0 F1/2",
+      "quantity": "HFI-E1 partial rate s^-1",
+      "value": 0.1097,
+      "uncertainty": null,
+      "unit": "s^-1",
+      "evidenceKind": "theory-distinct-from-Porsev2004",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "evidence-only-not-normalized-branch",
+      "sourceIds": [
+        "mishra-2001"
+      ],
+      "sourceLocator": "Table4 PDFp9",
+      "boundary": "Partial/average rates cannot be mixed across models or treated as a measured branching fraction."
+    },
+    {
+      "id": "p-rate-7",
+      "initialState": "171Yb 3P2 F-statistical-average",
+      "finalState": "1S0",
+      "quantity": "HFI-E1 averaged rate s^-1",
+      "value": 0.044,
+      "uncertainty": null,
+      "unit": "s^-1",
+      "evidenceKind": "theory-averaged-not-F-resolved",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "evidence-only-not-normalized-branch",
+      "sourceIds": [
+        "mishra-2001"
+      ],
+      "sourceLocator": "Eq15 PDFp7; Table3 PDFp8",
+      "boundary": "Partial/average rates cannot be mixed across models or treated as a measured branching fraction."
+    },
+    {
+      "id": "p2-porsev-non-e1",
+      "initialState": "171Yb 3P2",
+      "finalState": "all conventional non-E1 final states in cited model",
+      "quantity": "aggregate-non-E1-rate",
+      "value": 0.067,
+      "uncertainty": null,
+      "unit": "s^-1",
+      "evidenceKind": "theory",
+      "reviewStatus": "original-source-checked",
+      "adoptionState": "evidence-only-not-normalized-branch",
+      "sourceIds": [
+        "porsev-2004"
+      ],
+      "sourceLocator": "TableV PDFp9",
+      "boundary": "Aggregate M1/M2/E2/E3 set; not a pure M2-to-ground partial rate; do not mix with Mishra rates."
+    }
+  ],
+  "lifetimes": [
+    {
+      "id": "beloy-3d1-lifetime",
+      "initialState": "Yb 5d6s 3D1",
+      "value": 329.3,
+      "uncertainty": 7.1,
+      "unit": "ns",
+      "quantity": "total-radiative-lifetime",
+      "evidenceKind": "experiment",
+      "sourceIds": [
+        "beloy-2012"
+      ],
+      "sourceLocator": "PDFp4",
+      "adoptionState": "evidence-only-existing-canonical-lifetime-not-replaced",
+      "boundary": "Branch affects free cascade amplitude, not its time constants. zeta0=.64(1) is adopted when inferring a dipole, not independently fitted full branching."
+    }
+  ]
+}

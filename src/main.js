@@ -9,6 +9,7 @@ import { initResultExportControls } from './ui/result-export-controls.js';
 import { decorateTransition } from './ui/spectral-color.js';
 import { createTooltips } from './ui/tooltips.js';
 import { initEnergyDiagram } from './ui/energy-diagram.js';
+import { initDecayHoverDetails } from './ui/decay-details.js';
 import { initHyperfineCalculator } from './ui/hyperfine-diagram.js';
 import { initRabiCharts } from './ui/rabi-chart.js';
 import { initDataTables } from './ui/data-table.js';
@@ -31,6 +32,7 @@ export function start() {
     RYDBERG_TRANSITIONS:buildRydbergTransitions(RYDBERG_QC_TRANSITIONS)};
   const tooltips=createTooltips();
   initEnergyDiagram({...data,CORE_TRANSITIONS:catalog.CORE_TRANSITIONS},tooltips);
+  initDecayHoverDetails();
   const calculator=initHyperfineCalculator(data,tooltips,{onChannelSelected:createChannelNavigation({
     destination:document.getElementById('secRabi'),hideTooltip:tooltips.hideTooltip
   })});

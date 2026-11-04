@@ -140,3 +140,111 @@ test('an unregistered PDF is not silently omitted from the local inventory',t=>{
   const {root}=fixture(t);success(run(root,'--write'));const before=snapshot(root);fs.writeFileSync(path.join(root,'references/papers/new.pdf'),'%PDF-new evidence');
   const result=run(root,'--write');assert.equal(result.status,1);assert.match(result.stderr,/Unregistered local PDF/);assert.deepEqual(snapshot(root),before);
 });
+
+function aliasDocument(root,doc,overrides={}){
+  const row={oldPath:doc.path,path:doc.path.replace('.pdf','_published-print.pdf'),sha256:doc.sha256,bytes:doc.bytes,pages:doc.pages,
+    documentType:'published-print',versionNote:'Reviewed Safari print of published pages',identityReview:{status:'title-and-producer-reviewed'},...overrides};
+  writeJSON(root,'references/paper-path-aliases.json',{schemaVersion:1,checkedOn:'2026-11-04',aliases:[row]});
+  return row;
+}
+
+test('an empty rename registry leaves prior exports and their audit date unchanged',t=>{
+  const {root}=fixture(t);success(run(root,'--write'));const before=snapshot(root);
+  writeJSON(root,'references/paper-path-aliases.json',{schemaVersion:1,checkedOn:'2026-11-04',aliases:[]});
+  assert.deepEqual(success(run(root,'--check')).changedOutputs,[]);assert.deepEqual(snapshot(root),before);
+});
+
+test('a real rename exports the current path and corrected version while preserving historical queue and evidence bytes',t=>{
+  const {root,docs}=fixture(t);const alias=aliasDocument(root,docs[0]);
+  const history=['references/document-metadata-20261031.json','references/bibliography-audit.json','references/primary-source-queue.json','references/primary-source-queue.csv'].map(p=>[p,hash(fs.readFileSync(path.join(root,p)))]);
+  const oldFile=path.join(root,alias.oldPath),newFile=path.join(root,alias.path),inode=fs.statSync(oldFile).ino;
+  fs.renameSync(oldFile,newFile);
+  const report=success(run(root,'--write'));assert.deepEqual(report.localPdfs,{verified:3,unavailable:0});
+  const index=readJSON(root,'references/index.json'),doc=index.documents.find(d=>d.sha256===alias.sha256);
+  assert.equal(doc.path,alias.path);assert.deepEqual(doc.aliases,[alias.oldPath]);assert.equal(doc.historicalVersionNote,'registered version a');
+  assert.equal(doc.versionNote,alias.versionNote);assert.equal(doc.documentType,'published-print');assert.deepEqual(doc.identityReview,alias.identityReview);
+  assert.deepEqual(index.sources.find(s=>s.id==='source-a').documents,[alias.path]);
+  assert.equal(hash(fs.readFileSync(newFile)),docs[0].sha256);assert.equal(fs.statSync(newFile).ino,inode);
+  for(const [p,h] of history)assert.equal(hash(fs.readFileSync(path.join(root,p))),h);
+  const before=snapshot(root);success(run(root,'--check'));assert.deepEqual(snapshot(root),before);
+});
+
+test('aliases also attach to a newly registered current pathname and allow an extensionless historical name',t=>{
+  const {root,docs}=fixture(t);const alias=aliasDocument(root,docs[1],{oldPath:docs[1].path.replace('.pdf',''),path:docs[1].path});
+  const registry=readJSON(root,'references/clock-rabi-sources-20261030.json');
+  assert.equal(registry.documents[0].path,alias.path);
+  success(run(root,'--write'));const doc=readJSON(root,'references/index.json').documents.find(d=>d.sha256===alias.sha256);
+  assert.deepEqual(doc.aliases,[alias.oldPath]);assert.equal(doc.path,docs[1].path);
+});
+
+test('renaming corrects current identity fields without discarding the independent numerical review',t=>{
+  const {root,docs}=fixture(t);
+  const registryPath='references/clock-rabi-sources-20261030.json',registry=readJSON(root,registryPath);
+  const numericalReview={path:'data/literature/review/facts.json',records:2,canonicalAdopted:false};
+  registry.documents[0].identityReview={status:'previous-identity-note',evidence:'previous version label',numericalReview};
+  writeJSON(root,registryPath,registry);
+  const sourceRegistryHash=hash(fs.readFileSync(path.join(root,registryPath)));
+  const alias=aliasDocument(root,docs[1],{identityReview:{status:'title-and-producer-reviewed',evidence:'current Safari print identity'}});
+  fs.renameSync(path.join(root,alias.oldPath),path.join(root,alias.path));
+  success(run(root,'--write'));
+  const doc=readJSON(root,'references/index.json').documents.find(d=>d.sha256===alias.sha256);
+  assert.equal(doc.path,alias.path);assert.equal(doc.documentType,'published-print');
+  assert.equal(doc.identityReview.status,alias.identityReview.status);
+  assert.equal(doc.identityReview.evidence,alias.identityReview.evidence);
+  assert.deepEqual(doc.identityReview.numericalReview,numericalReview);
+  assert.equal(hash(fs.readFileSync(path.join(root,registryPath))),sourceRegistryHash);
+  const before=snapshot(root);success(run(root,'--check'));assert.deepEqual(snapshot(root),before);
+});
+
+test('a relocated checkout without any PDFs reports unavailable originals without changing exports or fabricating verification',t=>{
+  const {root,docs,original}=fixture(t);const alias=aliasDocument(root,docs[0]);fs.renameSync(path.join(root,alias.oldPath),path.join(root,alias.path));
+  success(run(root,'--write'));const before=snapshot(root);
+  fs.rmSync(path.join(root,'references/papers'),{recursive:true});fs.unlinkSync(original);
+  const report=success(run(root,'--check'));assert.deepEqual(report.localPdfs,{verified:0,unavailable:3});assert.deepEqual(report.originalLibrary,{verified:0,unavailable:1});assert.deepEqual(snapshot(root),before);
+});
+
+for(const attack of ['changed-target','wrong-manifest-hash','tampered-old-name']){
+  test(`relocation rejects ${attack} before changing any export`,t=>{
+    const {root,docs}=fixture(t);const alias=aliasDocument(root,docs[0]);fs.renameSync(path.join(root,alias.oldPath),path.join(root,alias.path));
+    success(run(root,'--write'));const before=snapshot(root);
+    if(attack==='changed-target')fs.appendFileSync(path.join(root,alias.path),'tampered');
+    if(attack==='tampered-old-name')fs.writeFileSync(path.join(root,alias.oldPath),'%PDF-wrong same name');
+    if(attack==='wrong-manifest-hash')aliasDocument(root,docs[0],{sha256:'0'.repeat(64)});
+    const result=run(root,'--write');assert.equal(result.status,1);assert.match(result.stderr,/SHA-256/);assert.deepEqual(snapshot(root),before);
+  });
+}
+
+test('duplicate, unsafe and chained aliases fail before any export transaction',t=>{
+  const {root,docs}=fixture(t);success(run(root,'--write'));const before=snapshot(root);
+  const first={oldPath:docs[0].path,path:'references/papers/renamed-a.pdf',sha256:docs[0].sha256,bytes:docs[0].bytes,pages:docs[0].pages};
+  const second={oldPath:docs[1].path,path:'references/papers/renamed-b.pdf',sha256:docs[1].sha256,bytes:docs[1].bytes,pages:docs[1].pages};
+  const cases=[
+    [first,first],
+    [first,{...second,path:first.path}],
+    [first,{...second,oldPath:first.path}],
+    [first,{...second,oldPath:first.path,path:first.oldPath}],
+    [{...first,path:'/tmp/outside.pdf'}],
+    [{...first,path:'references/papers/../outside.pdf'}],
+    [{...first,path:'references/papers/https://example.test/a.pdf'}],
+    [{...first,oldPath:'references/papers/..\\outside.pdf'}],
+    [{...first,path:'references/papers/not-a-pdf'}],
+    [{...first,bytes:0}],
+    [{...first,pages:1.5}]
+  ];
+  for(const aliases of cases){
+    writeJSON(root,'references/paper-path-aliases.json',{schemaVersion:1,aliases});
+    const result=run(root,'--write');assert.equal(result.status,1,JSON.stringify(aliases));assert.match(result.stderr,/alias/);assert.deepEqual(snapshot(root),before);
+  }
+});
+
+test('an alias cannot claim another registered document hash for an existing historical path',t=>{
+  const {root,docs}=fixture(t);success(run(root,'--write'));const before=snapshot(root);
+  aliasDocument(root,docs[0],{sha256:docs[1].sha256,bytes:docs[1].bytes,pages:docs[1].pages});
+  const result=run(root,'--write');assert.equal(result.status,1);assert.match(result.stderr,/alias does not match registered document path/);assert.deepEqual(snapshot(root),before);
+});
+
+test('a relocated document does not allow an unrelated unregistered PDF to disappear from inventory',t=>{
+  const {root,docs}=fixture(t);const alias=aliasDocument(root,docs[0]);fs.renameSync(path.join(root,alias.oldPath),path.join(root,alias.path));
+  success(run(root,'--write'));const before=snapshot(root);fs.writeFileSync(path.join(root,'references/papers/unregistered.pdf'),'%PDF-new');
+  const result=run(root,'--write');assert.equal(result.status,1);assert.match(result.stderr,/Unregistered local PDF/);assert.deepEqual(snapshot(root),before);
+});

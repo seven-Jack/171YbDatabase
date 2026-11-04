@@ -1,0 +1,29 @@
+/* Decay stays within the existing state hover card, never the plotted SVG. */
+#hfsPanel .diagram-decay-detail { margin: 9px 0; padding: 8px 9px; border: 1px solid #2e405b; border-radius: 7px; background: #0c1727; }
+.diagram-decay-heading { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+.diagram-decay-heading h4 { margin: 0; color: #dce6f5; font: 500 11px/1.5 var(--font-ui); }
+.diagram-decay-heading h4 span { color: #9aacc4; font-weight: 400; }
+.diagram-decay-kind { margin-left: auto; color: #d4bb88; font: 400 9px/1.4 var(--font-ui); white-space: nowrap; }
+.diagram-decay-heading .diagram-decay-sources { margin-left: 0; }
+.diagram-decay-row { display: flex; justify-content: space-between; gap: 8px; padding: 2px 0; color: #acbdd5; font: 400 10px/1.5 var(--font-ui); }
+.diagram-decay-row strong { color: #d6e2f4; font-weight: 400; text-align: right; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.diagram-decay-row.is-weak { color: #e3c795; }
+.diagram-decay-row.is-weak strong { color: #e3c795; }
+.diagram-decay-row.is-pending strong { color: #a4b3c9; }
+.diagram-decay-summary { margin: 3px 0; color: #b5c5dc; font: 400 10px/1.5 var(--font-ui); }
+.diagram-decay-scope { margin: 5px 0 3px; color: #99abc5; font: 400 9px/1.5 var(--font-ui); }
+.diagram-decay-evidence { margin-top: 4px; color: #a8bad2; font: 400 9px/1.6 var(--font-ui); }
+.diagram-decay-evidence > summary { cursor: pointer; color: #c9b182; width: fit-content; }
+.diagram-decay-evidence > summary:focus-visible { outline: 2px solid #91b9f2; outline-offset: 3px; border-radius: 2px; }
+.diagram-decay-evidence-body { margin-top: 5px; padding-top: 3px; border-top: 1px solid #30415b; overflow-wrap: anywhere; }
+.diagram-decay-evidence-body p { margin: 4px 0; }
+.diagram-decay-evidence-body ul { padding-left: 14px; margin: 4px 0; }
+.diagram-decay-evidence-body small { display: block; color: #92a6c3; font: inherit; }
+.diagram-decay-rate-heading { margin-top: 7px; color: #dcc18c; }
+.diagram-decay-rate { padding: 3px 0; border-bottom: 1px solid #2b3c54; }
+.diagram-decay-rate > strong { display: block; color: #c9d8ed; font-weight: 400; }
+.diagram-decay-bibliography { list-style: none; padding: 0; margin: 6px 0; }
+.diagram-decay-bibliography li { margin-top: 6px; }
+.diagram-decay-bibliography a { color: #a9c7f2; text-decoration: none; }
+.diagram-decay-bibliography a:hover { text-decoration: underline; }
+.diagram-decay-version { color: #7f95b4; font-variant-numeric: tabular-nums; }

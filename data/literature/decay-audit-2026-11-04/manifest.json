@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "archiveVersion": "2026.11.04.1",
+  "reviewedAt": "2026-11-04",
+  "baseCommit": "227ae4f704a9709ae619caeb9dd54e5ae9ad2e55",
+  "scope": "Main diagram8levels; structured branching/lifetime/source facts, not paper text or model recomputation.",
+  "files": [
+    "source-manifest.json",
+    "branching-fractions.json",
+    "rate-evidence.json",
+    "cascade-and-lifetime-evidence.json",
+    "conflicts.json",
+    "applicability.json",
+    "additional-reviewed-facts.json"
+  ],
+  "counts": {
+    "sources": 18,
+    "directTheoreticalBranches": 7,
+    "rateEvidenceRecords": 8,
+    "conflicts": 3,
+    "additionalReviewedComparisons": 2
+  },
+  "lineage": [
+    {
+      "path": "references/local-only/decay-branching-20261104/sd/findings.json",
+      "sha256": "594d6316ac80544910137582948d40fbcb84b1dac8af1d5f73981712de64cb63",
+      "requiredForPortableValidation": false
+    },
+    {
+      "path": "references/local-only/decay-branching-20261104/p/findings.json",
+      "sha256": "332e6ee59e30c116f4e34883ed0ac9ec93dbe9f8cb299624567602c9b014daa3",
+      "requiredForPortableValidation": false
+    },
+    {
+      "path": "references/local-only/decay-branching-20261104/rydberg/findings.json",
+      "sha256": "91c45a948c029f536a06d57d3e4c0a61a66c642a05c943f041aab094934cd14e",
+      "requiredForPortableValidation": false
+    },
+    {
+      "path": "references/local-only/decay-branching-20261104/decay-branching-survey-20261104.md",
+      "sha256": "38d26ab7b64952e7da4491cd9d8794aa54da112c205ee50e18efb65f5c1dc3dd",
+      "requiredForPortableValidation": false
+    },
+    {
+      "path": "references/local-only/decay-literature-20261104/additional-source-facts.json",
+      "sha256": "9835314d11bea289ff5db918b8929563c962beefb682cc56349c41d7606f28db",
+      "requiredForPortableValidation": false
+    }
+  ],
+  "adoptionPolicy": "Verified candidate theory branches may be adopted explicitly into data/decay.json; other evidence and source conflicts do not automatically become canonical values.",
+  "publicationPolicy": "Entire data/literature and references directories remain excluded from the public website artifact."
+}

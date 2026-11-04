@@ -1,3 +1,4 @@
+@import url('./decay-details.css');
 /* Object-specific hover cards; the main diagram's geometry and colors stay intact. */
 #tooltip.diagram-transition-tooltip,#hfsPanel {
   color: #e9eff8;

@@ -1,0 +1,822 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-11-04",
+  "purpose": "Neutral-Yb lifetime and decay source register, including five user-provided originals received2026-11-04. Public bibliographic facts and fingerprints only; originals remain local.",
+  "policy": "No canonical atomic inputs changed. Downloaded, identity-reviewed, parameter-audited, theory-derived and independently measured remain separate states.",
+  "counts": {
+    "supplementalSources": 11,
+    "papersPdfDocuments": 12,
+    "copiedExistingOriginals": 5,
+    "newOpenDownloads": 2,
+    "newUserReceivedDocuments": 5
+  },
+  "sources": [
+    {
+      "id": "cho-2012-pra",
+      "title": "Jun Woo Cho et al.",
+      "detail": "Optical repumping of triplet P-states enhances magneto-optical trapping of ytterbium atoms",
+      "authors": [
+        "Jun Woo Cho",
+        "Han-gyeol Lee",
+        "Sangkyung Lee",
+        "Jaewook Ahn",
+        "Won-Kyu Lee",
+        "Dai-Hyuk Yu",
+        "Sun Kyung Lee",
+        "Chang Yong Park"
+      ],
+      "year": 2012,
+      "publication": "Phys. Rev. A 85, 035401 (2012); local arXiv1111.6225v1",
+      "doi": "10.1103/PhysRevA.85.035401",
+      "url": "https://arxiv.org/abs/1111.6225v1",
+      "referenceRole": "174Yb cascade effective-loss measurements; not direct fine-structure branching fractions",
+      "evidenceNotes": [
+        "PDF p4 TableI: a0=5.96(1.97), a2=.42(.14), a20=6.48(2.11) per second.",
+        "SecIII eliminates D manifolds; the rates are effective cascade flows. 3S1 1:3:5 is an assumed model, not measured precise beta."
+      ],
+      "identityStatus": "local-pdf-title-page-and-source-reviewed",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json"
+    },
+    {
+      "id": "covey-2019-prapplied",
+      "title": "Jacob P. Covey et al.",
+      "detail": "Telecom-Band Quantum Optics with Ytterbium Atoms and Silicon Nanophotonics",
+      "authors": [
+        "Jacob P. Covey",
+        "Alp Sipahigil",
+        "Szilard Szoke",
+        "Neil Sinclair",
+        "Manuel Endres",
+        "Oskar Painter"
+      ],
+      "year": 2019,
+      "publication": "Phys. Rev. Applied 11, 034044 (2019)",
+      "doi": "10.1103/PhysRevApplied.11.034044",
+      "url": "https://doi.org/10.1103/PhysRevApplied.11.034044",
+      "referenceRole": "Cavity proposal and conflicting branching assumptions; not adopted as free-space canonical beta",
+      "evidenceNotes": [
+        "PDF p8 AppendixA: fine-structure60:3:1 and state-specific20.9:1.9:1 differ substantially from Porsev/Kroeze64:35:1.",
+        "Purcell-modified fractions are not free-space constants; summation convention remains unresolved."
+      ],
+      "identityStatus": "local-pdf-title-page-and-source-reviewed",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json"
+    },
+    {
+      "id": "senoo-2026-nphys",
+      "title": "Aruku Senoo et al.",
+      "detail": "High-fidelity entanglement and coherent multi-qubit mapping in an atom array",
+      "authors": [
+        "Aruku Senoo",
+        "Alexander Baumgärtner",
+        "Joanna W. Lis",
+        "Gaurav M. Vaidya",
+        "Zhongda Zeng",
+        "Giuliano Giudici",
+        "Hannes Pichler",
+        "Adam M. Kaufman"
+      ],
+      "year": 2026,
+      "publication": "Nature Physics 22, 903-909 (2026)",
+      "doi": "10.1038/s41567-026-03258-8",
+      "url": "https://www.nature.com/articles/s41567-026-03258-8",
+      "referenceRole": "Condition-specific measured Rydberg population and endpoint evidence; not target65S first-emission table",
+      "evidenceNotes": [
+        "PDF p10 Methods and p18 ExtendedDataFig5: n about58, F1/2, typical8.2G; endpoint42(2)% ground and20(2)% 3P2F3/2 include cascade/readout assumptions.",
+        "m0/m1 mapping of2.7(5)% and4(1)% is opposite between Methods and figure; retained unresolved. 96/93% refer to detection of already-decayed events."
+      ],
+      "identityStatus": "local-pdf-title-page-and-source-reviewed",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json"
+    },
+    {
+      "id": "wu-2022-ncomms",
+      "title": "Yue Wu et al.",
+      "detail": "Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays",
+      "authors": [
+        "Yue Wu",
+        "Shimon Kolkowitz",
+        "Shruti Puri",
+        "Jeff D. Thompson"
+      ],
+      "year": 2022,
+      "publication": "Nature Communications 13, 4657 (2022)",
+      "doi": "10.1038/s41467-022-32094-6",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9363413/",
+      "referenceRole": "n75 radiative/BBR/cascade model assumptions for erasure conversion; not measured65S beta",
+      "evidenceNotes": [
+        "SupplementaryNote2 pp1-3: n75, F3/2 approximate radiative+BBR model with isotope/HFS and omitted-channel limitations.",
+        "Modeled first departure, final cascade populations and erasure-detection fraction remain distinct."
+      ],
+      "identityStatus": "local-pdf-title-page-and-source-reviewed",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json"
+    },
+    {
+      "id": "li-2025-nphys",
+      "title": "Lintao Li et al.",
+      "detail": "Parallelized telecom quantum networking with a ytterbium-171 atom array",
+      "authors": [
+        "Lintao Li",
+        "Xiye Hu",
+        "Zhubing Jia",
+        "William Huie",
+        "Won Kyu Calvin Sun",
+        "Aakash",
+        "Yuhao Dong",
+        "Narisak Hiri-O-Tuppa",
+        "Jacob P. Covey"
+      ],
+      "year": 2025,
+      "publication": "Nature Physics (2025); local arXiv2502.17406v2",
+      "doi": "10.1038/s41567-025-03022-4",
+      "url": "https://arxiv.org/abs/2502.17406v2",
+      "referenceRole": "Independent experimental use of adopted low-state fractions; not independent branching measurement",
+      "evidenceNotes": [
+        "PDF p9 AppendixA3 adopts .64/.35/.01 and acknowledges differing estimates.",
+        "PDF p14 TableI (SPAM parameters, not TableII) fixes 3S1->3P1 .367, ->3P2 .503 and 3D1 .35/.01 from previous theory/experiment. TableII is error budget."
+      ],
+      "identityStatus": "local-pdf-title-page-and-source-reviewed",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json"
+    },
+    {
+      "id": "ishiyama-2026-nphoton",
+      "title": "Taiki Ishiyama et al.",
+      "detail": "Orders-of-magnitude improvement in precision spectroscopy of an inner-shell orbital clock transition in neutral ytterbium",
+      "authors": [
+        "Taiki Ishiyama",
+        "Koki Ono",
+        "Hokuto Kawase",
+        "Tetsushi Takano",
+        "Reiji Asano",
+        "Ayaki Sunaga",
+        "Yasuhiro Yamamoto",
+        "Minoru Tanaka",
+        "Yoshiro Takahashi"
+      ],
+      "year": 2026,
+      "publication": "Nature Photonics (2026); local arXiv2505.04154v2",
+      "doi": "10.1038/s41566-026-01857-8",
+      "url": "https://arxiv.org/abs/2505.04154v2",
+      "referenceRole": "Additional neutral174Yb inner-shell lifetime and environmental-decay model; outside current eight-state diagram",
+      "evidenceNotes": [
+        "PDF p4 Fig2 and Eq1: at45Er per axis Gammae->g=.050(.002)Hz and Gammatot=.169(.010)Hz; loss, BBR, lattice scattering included.",
+        "Zero-scattering extrapolation Gammatot=.02(.04)Hz; authors quote tau66s with lower bound20s; preserve original inference, not simple reciprocal error propagation. Not a complete direct beta table."
+      ],
+      "identityStatus": "local-pdf-title-page-and-source-reviewed",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json"
+    },
+    {
+      "id": "honda-1999-pra",
+      "title": "K. Honda et al.",
+      "detail": "Magneto-optical trapping of Yb atoms and a limit on the branching ratio of the 1P1 state",
+      "authors": [
+        "K. Honda",
+        "Y. Takahashi",
+        "T. Kuwamoto",
+        "M. Fujimoto",
+        "K. Toyoda",
+        "K. Ishikawa",
+        "T. Yabuzaki"
+      ],
+      "year": 1999,
+      "publication": "Phys. Rev. A 59, R934-R937 (1999)",
+      "doi": "10.1103/PhysRevA.59.R934",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.59.R934",
+      "referenceRole": "Primary1P1-to-triplet leakage lower-bound and loss-model definitions; original and erratum now received",
+      "evidenceNotes": [
+        "Received from user on2026-11-04. PDF identity and version confirmed; reviewed PDF pages: 1,2,3,4.",
+        "PDF p2/R935: All following quantitative measurements are on174Yb; natural-isotope survey does not make these171Yb data.",
+        "PDF p3/R936 Fig4 and text: Fluorescence ratio mean1.21e-7, standard deviation0.39e-7; authors call it a lower limit on total branching because only cascades terminating in3P1 are detected. This is not direct1P1-to-single-lower-state beta.",
+        "Original plus erratum available and identity read; no production atomic value changes. Read jointly with erratum; absolute leakage comparison to Porsev theory remains an unresolved experimental/theory issue.",
+        "Structuredreview2026.11.04.2: 14relevant numericrecords; seedata/literature/received-decay-review-2026-11-04/honda-loftus.json. Primary/cited/compilation origin and conditions are separated; unresolved conflicts/pending items retained; no runtime adoption."
+      ],
+      "identityStatus": "local-pdf-title-authors-journal-and-version-reviewed",
+      "reviewStatus": "numeric-source-extraction-complete-with-explicit-pending-boundaries",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json",
+      "numericReview": {
+        "path": "data/literature/received-decay-review-2026-11-04/honda-loftus.json",
+        "reviewVersion": "2026.11.04.2",
+        "reviewedAt": "2026-11-04",
+        "records": 14,
+        "reviewedPdfPages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "scope": "All explicit relevant tabulated/text/diagram numeric values; graph traces not digitized.",
+        "canonicalAdopted": false
+      }
+    },
+    {
+      "id": "honda-1999-erratum",
+      "title": "K. Honda et al.",
+      "detail": "Erratum: Magneto-optical trapping of Yb atoms and a limit on the branching ratio of the 1P1 state [Phys. Rev. A 59, R934 (1999)]",
+      "authors": [
+        "K. Honda",
+        "Y. Takahashi",
+        "T. Kuwamoto",
+        "M. Fujimoto",
+        "K. Toyoda",
+        "K. Ishikawa",
+        "T. Yabuzaki"
+      ],
+      "year": 1999,
+      "publication": "Phys. Rev. A 60, 2603 (1999)",
+      "doi": "10.1103/PhysRevA.60.2603.2",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.60.2603.2",
+      "referenceRole": "Correction chain for Honda leakage result; complete erratum reviewed",
+      "evidenceNotes": [
+        "Received from user on2026-11-04. PDF identity and version confirmed; reviewed PDF pages: 1.",
+        "PDF p1/2603 items1–3: Correct3D1/3D2 lifetimes380ns/460ns, correct398nm to399nm and796nm to798nm.",
+        "PDF p1/2603 complete erratum: No correction to branching lower limit is stated. These quoted D-state lifetimes are not a new direct lifetime measurement and do not override more recent adopted lifetime sources.",
+        "Full one-page erratum inspected and rendered; no calculator/formula or canonical data changed.",
+        "Structuredreview2026.11.04.2: 2relevant numericrecords; seedata/literature/received-decay-review-2026-11-04/honda-loftus.json. Primary/cited/compilation origin and conditions are separated; unresolved conflicts/pending items retained; no runtime adoption."
+      ],
+      "identityStatus": "local-pdf-title-authors-journal-and-version-reviewed",
+      "reviewStatus": "numeric-source-extraction-complete-with-explicit-pending-boundaries",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json",
+      "numericReview": {
+        "path": "data/literature/received-decay-review-2026-11-04/honda-loftus.json",
+        "reviewVersion": "2026.11.04.2",
+        "reviewedAt": "2026-11-04",
+        "records": 2,
+        "reviewedPdfPages": [
+          1
+        ],
+        "scope": "All explicit relevant tabulated/text/diagram numeric values; graph traces not digitized.",
+        "canonicalAdopted": false
+      }
+    },
+    {
+      "id": "loftus-2000-pra",
+      "title": "T. Loftus et al.",
+      "detail": "Power-dependent loss from an ytterbium magneto-optic trap",
+      "authors": [
+        "T. Loftus",
+        "J. R. Bochinski",
+        "R. Shivitz",
+        "T. W. Mossberg"
+      ],
+      "year": 2000,
+      "publication": "Phys. Rev. A 61, 051401(R) (2000)",
+      "doi": "10.1103/PhysRevA.61.051401",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.61.051401",
+      "referenceRole": "Primary174Yb effective1P1-to-metastable cascade-loss measurement; originalPDF now received",
+      "evidenceNotes": [
+        "Received from user on2026-11-04. PDF identity and version confirmed; reviewed PDF pages: 1,2,3,4.",
+        "PDF p2/051401-2: Remainder of experiments focuses on174Yb MOT. Excited fraction f modeled using trap-volume energy density, detuning and saturation.",
+        "PDF p3/051401-3 TableI: Experiment effective cascade rate a2,0=23(11)s^-1; cited previous a1=21.3(2.6)s^-1; predicted6.6(4.6) and5.2(2.6)s^-1 respectively.",
+        "PDF p3/051401-3 last right-column paragraphs: Authors say experimental absolute rates exceed theory by about4; ratio agrees within uncertainties; discrepancy cause unresolved. Excited-state fraction uncertainty around50% dominates inferred a2,0.",
+        "MOT model-dependent effective cascade population rates; not direct fine-structure beta and not171Yb hyperfine-resolved decay validation.",
+        "Structuredreview2026.11.04.2: 14relevant numericrecords; seedata/literature/received-decay-review-2026-11-04/honda-loftus.json. Primary/cited/compilation origin and conditions are separated; unresolved conflicts/pending items retained; no runtime adoption."
+      ],
+      "identityStatus": "local-pdf-title-authors-journal-and-version-reviewed",
+      "reviewStatus": "numeric-source-extraction-complete-with-explicit-pending-boundaries",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json",
+      "numericReview": {
+        "path": "data/literature/received-decay-review-2026-11-04/honda-loftus.json",
+        "reviewVersion": "2026.11.04.2",
+        "reviewedAt": "2026-11-04",
+        "records": 14,
+        "reviewedPdfPages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "scope": "All explicit relevant tabulated/text/diagram numeric values; graph traces not digitized.",
+        "canonicalAdopted": false
+      }
+    },
+    {
+      "id": "guo-1993-pra",
+      "title": "Guo Chuan et al.",
+      "detail": "Lifetimes of Rydberg levels in the perturbed 6snp 3P2 series of ytterbium I",
+      "authors": [
+        "Guo Chuan",
+        "Yu Yingning",
+        "Yu Hua",
+        "Jiang Zhankui",
+        "Peng Weixian"
+      ],
+      "year": 1993,
+      "publication": "Phys. Rev. A 47, 1551-1553 (1993)",
+      "doi": "10.1103/PhysRevA.47.1551",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.47.1551",
+      "referenceRole": "Primary neutral-Yb perturbedP-series lifetimes and perturber sensitivity; not65S values",
+      "evidenceNotes": [
+        "Received from user on2026-11-04. PDF identity and version confirmed; reviewed PDF pages: 1,2,3.",
+        "PDF p1 introduction;PDF p3/TableI: Measured neutralYb6snp3P2 n12–19 and two perturbers. TableI lifetimes149,172,1560,2700,3000,1160,2180,2640ns for n12–19; two perturbers328/100ns. Not65S data.",
+        "PDF p2/1552 discussion: Authors estimate about10% overall accuracy including statistical scatter and estimated systematic errors; LN2-cooled shield change comparable to uncertainties; room-temperature lifetimes plotted. No explicit171Yb isotope/F assignment.",
+        "All3pages text reviewed; TableI content not promoted into canonical data in file-management task. Numeric OCR remains secondary to original table image.",
+        "Structuredreview2026.11.04.2: 10relevant numericrecords; seedata/literature/received-decay-review-2026-11-04/guo.json. Primary/cited/compilation origin and conditions are separated; unresolved conflicts/pending items retained; no runtime adoption."
+      ],
+      "identityStatus": "local-pdf-title-authors-journal-and-version-reviewed",
+      "reviewStatus": "numeric-source-extraction-complete-with-explicit-pending-boundaries",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json",
+      "numericReview": {
+        "path": "data/literature/received-decay-review-2026-11-04/guo.json",
+        "reviewVersion": "2026.11.04.2",
+        "reviewedAt": "2026-11-04",
+        "records": 10,
+        "reviewedPdfPages": [
+          1,
+          2,
+          3
+        ],
+        "scope": "All explicit relevant tabulated/text/diagram numeric values; graph traces not digitized.",
+        "canonicalAdopted": false
+      }
+    },
+    {
+      "id": "blagoev-1994-adndt",
+      "title": "K. B. Blagoev et al.",
+      "detail": "Lifetimes of Levels of Neutral and Singly Ionized Lanthanide Atoms",
+      "authors": [
+        "K. B. Blagoev",
+        "V. A. Komarovskii"
+      ],
+      "year": 1994,
+      "publication": "Atomic Data and Nuclear Data Tables56,1-40(1994)",
+      "doi": "10.1006/adnd.1994.1001",
+      "url": "https://doi.org/10.1006/adnd.1994.1001",
+      "referenceRole": "Historical compilation for original-source discovery; isolate neutralYb from ions",
+      "evidenceNotes": [
+        "Received from user on2026-11-04. PDF identity and version confirmed; reviewed PDF pages: 1,2,7,11,12,13,33,34,35,36,37.",
+        "PDF p13 reference75: M.L.Burshtein,Ya.F.Verolainen,V.A.Komarovskii,A.L.Osherovich,N.P.Penkin,Opt.Spectrosc.(USSR)37,351(1974). Original remains missing; secondary bibliography corroborates citation only.",
+        "PDF p33/TableXXV,17992.01cm^-1 row3P1: Compilation lists850(80)ns,methodDC,reference75(Burshtein1974). This is a secondary-transcribed value, not a primary-source recheck. Same table lists3S1 15.9(1.9)ns fromreference78(Baumann1985).",
+        "Image-only; reviewed selected Yb-related pages and bibliography via rendering+OCR, not all lanthanide entries. No claim of40pagecomplete data extraction or originalBurshtein availability.",
+        "Structuredreview2026.11.04.2: 200relevant numericrecords; seedata/literature/received-decay-review-2026-11-04/blagoev-yb.json. Primary/cited/compilation origin and conditions are separated; unresolved conflicts/pending items retained; no runtime adoption."
+      ],
+      "identityStatus": "local-pdf-title-authors-journal-and-version-reviewed",
+      "reviewStatus": "numeric-source-extraction-complete-with-explicit-pending-boundaries",
+      "reviewedAt": "2026-11-04",
+      "rightsStatus": "local-research-copy; redistribution-not-assumed",
+      "canonicalAdopted": false,
+      "supplementalIndex": "references/decay-sources-20261104.json",
+      "numericReview": {
+        "path": "data/literature/received-decay-review-2026-11-04/blagoev-yb.json",
+        "reviewVersion": "2026.11.04.2",
+        "reviewedAt": "2026-11-04",
+        "records": 200,
+        "reviewedPdfPages": [
+          1,
+          2,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39
+        ],
+        "scope": "All YbI/YbII table cells, selected related explanation and bibliography; compilation evidence only.",
+        "canonicalAdopted": false
+      }
+    }
+  ],
+  "documents": [
+    {
+      "path": "references/papers/2012_Cho_Yb_Triplet-P-repumping_arXiv1111.6225v1.pdf",
+      "sha256": "c2f6ae9f567e7cec443c07c9941d9f05fbbde2246f1f6d3738cba221463f493c",
+      "bytes": 433563,
+      "pages": 5,
+      "sourceIds": [
+        "cho-2012-pra"
+      ],
+      "urls": [
+        "https://arxiv.org/pdf/1111.6225v1"
+      ],
+      "originalPaths": [],
+      "versionNote": "arXiv1111.6225v1; title and TableI checked",
+      "documentType": "article",
+      "doi": "10.1103/PhysRevA.85.035401",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "evidence": "Title page and DOI/arXiv version matched; field-level restrictions are recorded in parent source. Availability is not scientific validation."
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/2019_Covey_Yb_Telecom-band-quantum-optics_published.pdf",
+      "sha256": "60c0e3d4cbf5b8d487b7a731897d883a49437b0bd2e8c56c6279a50fac658442",
+      "bytes": 1322590,
+      "pages": 15,
+      "sourceIds": [
+        "covey-2019-prapplied"
+      ],
+      "urls": [
+        "https://painterlab.caltech.edu/wp-content/uploads/2019/08/teletcom-band_quantum_optics_with_Ytterbium_atoms_and_silicon_nanophotonics.pdf"
+      ],
+      "originalPaths": [],
+      "versionNote": "Author-hosted published version; AppendixA checked",
+      "documentType": "article",
+      "doi": "10.1103/PhysRevApplied.11.034044",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "evidence": "Title page and DOI/arXiv version matched; field-level restrictions are recorded in parent source. Availability is not scientific validation."
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/2026_Senoo_171Yb_Entanglement-and-multi-qubit-mapping_published.pdf",
+      "sha256": "75911f332df5b221e47b9162041c4f441ddea50a3f8688579d3bafaf72fe20d6",
+      "bytes": 6992435,
+      "pages": 23,
+      "sourceIds": [
+        "senoo-2026-nphys"
+      ],
+      "urls": [
+        "https://www.nature.com/articles/s41567-026-03258-8"
+      ],
+      "originalPaths": [],
+      "versionNote": "Published version including Methods and ExtendedData; original retained",
+      "documentType": "article",
+      "doi": "10.1038/s41567-026-03258-8",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "evidence": "Title page and DOI/arXiv version matched; field-level restrictions are recorded in parent source. Availability is not scientific validation."
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/2022_Wu_Yb_Erasure-conversion_published.pdf",
+      "sha256": "24fd5d8bfd00fc6e6aa4d539975e7ea9c1cea76f253ad296a991b39eccd785dc",
+      "bytes": 934294,
+      "pages": 7,
+      "sourceIds": [
+        "wu-2022-ncomms"
+      ],
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9363413/"
+      ],
+      "originalPaths": [],
+      "versionNote": "Published article; local original preserved",
+      "documentType": "article",
+      "doi": "10.1038/s41467-022-32094-6",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "evidence": "Title page and DOI/arXiv version matched; field-level restrictions are recorded in parent source. Availability is not scientific validation."
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/2022_Wu_Yb_Erasure-conversion_supplement.pdf",
+      "sha256": "e9de9bbdbd23df15d4badee5fa5a3fd7b4fbfa0eff7f7cb3ad270605d8986b4f",
+      "bytes": 593894,
+      "pages": 12,
+      "sourceIds": [
+        "wu-2022-ncomms"
+      ],
+      "urls": [
+        "https://static-content.springer-cdn.com/esm/art%3A10.1038%2Fs41467-022-32094-6/MediaObjects/41467_2022_32094_MOESM1_ESM.pdf"
+      ],
+      "originalPaths": [],
+      "versionNote": "Supplement to NatureCommunications13,4657; parent DOI is not a standalone supplement DOI",
+      "documentType": "supplement",
+      "doi": "10.1038/s41467-022-32094-6",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "evidence": "Title page and DOI/arXiv version matched; field-level restrictions are recorded in parent source. Availability is not scientific validation."
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/2025_Li_171Yb_Parallelized-telecom-networking_arXiv2502.17406v2.pdf",
+      "sha256": "f8b4464bf3b79cc8fd451c3cc91c514755e5c2b41fd06f4428b06e7e52615f1e",
+      "bytes": 4962809,
+      "pages": 23,
+      "sourceIds": [
+        "li-2025-nphys"
+      ],
+      "urls": [
+        "https://arxiv.org/pdf/2502.17406v2"
+      ],
+      "originalPaths": [],
+      "versionNote": "arXiv2502.17406v2; p9 and p14 checked",
+      "documentType": "article",
+      "doi": "10.1038/s41567-025-03022-4",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "evidence": "Title page and DOI/arXiv version matched; field-level restrictions are recorded in parent source. Availability is not scientific validation."
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/2026_Ishiyama_Yb_Inner-shell-clock-precision_arXiv2505.04154v2.pdf",
+      "sha256": "b61c5c05a03b8fc49542f386d36295246b00a8e014cc5913ea85f8eba26deb09",
+      "bytes": 2705098,
+      "pages": 37,
+      "sourceIds": [
+        "ishiyama-2026-nphoton"
+      ],
+      "urls": [
+        "https://arxiv.org/pdf/2505.04154v2"
+      ],
+      "originalPaths": [],
+      "versionNote": "arXiv2505.04154v2 (2026-03-21); p4 lifetime interpretation checked",
+      "documentType": "article",
+      "doi": "10.1038/s41566-026-01857-8",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "evidence": "Title page and DOI/arXiv version matched; field-level restrictions are recorded in parent source. Availability is not scientific validation."
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/1999_Honda_Yb_1P1-branching-limit_published-print.pdf",
+      "sha256": "0c5cec3a1520b20f288abc23a6b7c4dc88e059863bca61553e582f15675937f2",
+      "bytes": 199444,
+      "pages": 4,
+      "sourceIds": [
+        "honda-1999-pra"
+      ],
+      "urls": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.59.R934"
+      ],
+      "originalPaths": [
+        "references/papers/1999_Honda_Yb_1P1-branching-limit_published.pdf"
+      ],
+      "versionNote": "PDF p1 title/authors/journal: PRA59,R934–R937(1999); metadata title is APS DOI PDF URL; creator Safari and producer macOS Quartz; A4 4-page print copy",
+      "documentType": "article",
+      "doi": "10.1103/PhysRevA.59.R934",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "version": "published-print",
+        "reviewedPdfPages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "evidence": "PDF p1 title/authors/journal: PRA59,R934–R937(1999); metadata title is APS DOI PDF URL; creator Safari and producer macOS Quartz; A4 4-page print copy",
+        "boundary": "Original plus erratum available and identity read; no production atomic value changes. Read jointly with erratum; absolute leakage comparison to Porsev theory remains an unresolved experimental/theory issue.",
+        "numericalReview": {
+          "path": "data/literature/received-decay-review-2026-11-04/honda-loftus.json",
+          "reviewVersion": "2026.11.04.2",
+          "reviewedAt": "2026-11-04",
+          "records": 14,
+          "reviewedPdfPages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "scope": "All explicit relevant tabulated/text/diagram numeric values; graph traces not digitized.",
+          "canonicalAdopted": false
+        }
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/1999_Honda_Yb_1P1-branching-limit_erratum-published-print.pdf",
+      "sha256": "66c27f4fe81a834d1b8250ecf544ec3c5595079be9f65aae1da38ae897a969c2",
+      "bytes": 48923,
+      "pages": 1,
+      "sourceIds": [
+        "honda-1999-erratum"
+      ],
+      "urls": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.60.2603.2"
+      ],
+      "originalPaths": [
+        "references/papers/1999_Honda_Yb_1P1-branching-limit_erratum.pdf"
+      ],
+      "versionNote": "PDF p1 title/authors/journal PRA60,2603(1999); metadata title APS DOI PDF URL; Safari/Quartz A4 print",
+      "documentType": "erratum",
+      "doi": "10.1103/PhysRevA.60.2603.2",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "version": "published-print;erratum",
+        "reviewedPdfPages": [
+          1
+        ],
+        "evidence": "PDF p1 title/authors/journal PRA60,2603(1999); metadata title APS DOI PDF URL; Safari/Quartz A4 print",
+        "boundary": "Full one-page erratum inspected and rendered; no calculator/formula or canonical data changed.",
+        "numericalReview": {
+          "path": "data/literature/received-decay-review-2026-11-04/honda-loftus.json",
+          "reviewVersion": "2026.11.04.2",
+          "reviewedAt": "2026-11-04",
+          "records": 2,
+          "reviewedPdfPages": [
+            1
+          ],
+          "scope": "All explicit relevant tabulated/text/diagram numeric values; graph traces not digitized.",
+          "canonicalAdopted": false
+        }
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/2000_Loftus_Yb_Power-dependent-MOT-loss_published.pdf",
+      "sha256": "280a186b46599eaecf96bc895e3e9cc3fbfe76d216865f48bfeaaee1fa488277",
+      "bytes": 66607,
+      "pages": 4,
+      "sourceIds": [
+        "loftus-2000-pra"
+      ],
+      "urls": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.61.051401"
+      ],
+      "originalPaths": [
+        "references/papers/2000_Loftus_Yb_Power-dependent-MOT-loss_published.pdf"
+      ],
+      "versionNote": "PDF p1 title/authors/PRA61,051401(R)(2000); published7Apr2000; original publisher typography; metadata Xyvision/Postscript/Distiller, letter4pages, not Quartz print",
+      "documentType": "article",
+      "doi": "10.1103/PhysRevA.61.051401",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "version": "published",
+        "reviewedPdfPages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "evidence": "PDF p1 title/authors/PRA61,051401(R)(2000); published7Apr2000; original publisher typography; metadata Xyvision/Postscript/Distiller, letter4pages, not Quartz print",
+        "boundary": "MOT model-dependent effective cascade population rates; not direct fine-structure beta and not171Yb hyperfine-resolved decay validation.",
+        "numericalReview": {
+          "path": "data/literature/received-decay-review-2026-11-04/honda-loftus.json",
+          "reviewVersion": "2026.11.04.2",
+          "reviewedAt": "2026-11-04",
+          "records": 14,
+          "reviewedPdfPages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "scope": "All explicit relevant tabulated/text/diagram numeric values; graph traces not digitized.",
+          "canonicalAdopted": false
+        }
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/1993_Guo_Yb_Perturbed-6snp-3P2-lifetimes_published.pdf",
+      "sha256": "a59e8a1e1363341e7a920bafa04fc9d58199eb6f1da8b3f8594cf88856dfc2f9",
+      "bytes": 128697,
+      "pages": 3,
+      "sourceIds": [
+        "guo-1993-pra"
+      ],
+      "urls": [
+        "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.47.1551"
+      ],
+      "originalPaths": [
+        "references/papers/1993_Guo_Yb_Perturbed-6snp-3P2-lifetimes_published.pdf"
+      ],
+      "versionNote": "PDF p1 title/authors/PRA47,1551–1553(Feb1993); metadata keywords include exactDOI, APS copyright, iText redistribution wrapper; not Quartz print",
+      "documentType": "article",
+      "doi": "10.1103/PhysRevA.47.1551",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "version": "published",
+        "reviewedPdfPages": [
+          1,
+          2,
+          3
+        ],
+        "evidence": "PDF p1 title/authors/PRA47,1551–1553(Feb1993); metadata keywords include exactDOI, APS copyright, iText redistribution wrapper; not Quartz print",
+        "boundary": "All3pages text reviewed; TableI content not promoted into canonical data in file-management task. Numeric OCR remains secondary to original table image.",
+        "numericalReview": {
+          "path": "data/literature/received-decay-review-2026-11-04/guo.json",
+          "reviewVersion": "2026.11.04.2",
+          "reviewedAt": "2026-11-04",
+          "records": 10,
+          "reviewedPdfPages": [
+            1,
+            2,
+            3
+          ],
+          "scope": "All explicit relevant tabulated/text/diagram numeric values; graph traces not digitized.",
+          "canonicalAdopted": false
+        }
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    },
+    {
+      "path": "references/papers/1994_Blagoev_Lanthanide-lifetimes-compilation_published-scan.pdf",
+      "sha256": "d4421279b8c5dc31cf1d1e7e685157220ae121d6c13d9bec833640477fcfd2b2",
+      "bytes": 1745299,
+      "pages": 40,
+      "sourceIds": [
+        "blagoev-1994-adndt"
+      ],
+      "urls": [
+        "https://doi.org/10.1006/adnd.1994.1001"
+      ],
+      "originalPaths": [
+        "references/papers/1994_Blagoev_Lanthanide-lifetimes-compilation_published"
+      ],
+      "versionNote": "RenderedPDF p1 title/authors; ADNDT56,1–40(1994); p2 tableofcontents; 40page image-only PDF; metadata generic tmp title, AcrobatPDFWriter2.01; copy and print allowed; .pdf extension absent; DOI supplied by existing registered bibliography, not printed on inspected firstpages",
+      "documentType": "article",
+      "doi": "10.1006/adnd.1994.1001",
+      "identityReview": {
+        "status": "reviewed",
+        "checkedOn": "2026-11-04",
+        "version": "published-scan",
+        "reviewedPdfPages": [
+          1,
+          2,
+          7,
+          11,
+          12,
+          13,
+          33,
+          34,
+          35,
+          36,
+          37
+        ],
+        "evidence": "RenderedPDF p1 title/authors; ADNDT56,1–40(1994); p2 tableofcontents; 40page image-only PDF; metadata generic tmp title, AcrobatPDFWriter2.01; copy and print allowed; .pdf extension absent; DOI supplied by existing registered bibliography, not printed on inspected firstpages",
+        "boundary": "Image-only; reviewed selected Yb-related pages and bibliography via rendering+OCR, not all lanthanide entries. No claim of40pagecomplete data extraction or originalBurshtein availability.",
+        "numericalReview": {
+          "path": "data/literature/received-decay-review-2026-11-04/blagoev-yb.json",
+          "reviewVersion": "2026.11.04.2",
+          "reviewedAt": "2026-11-04",
+          "records": 200,
+          "reviewedPdfPages": [
+            1,
+            2,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          "scope": "All YbI/YbII table cells, selected related explanation and bibliography; compilation evidence only.",
+          "canonicalAdopted": false
+        }
+      },
+      "rights": "local research evidence only; no redistribution permission inferred"
+    }
+  ],
+  "attachments": []
+}

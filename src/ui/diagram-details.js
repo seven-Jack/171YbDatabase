@@ -1,6 +1,7 @@
 import { CATALOG, getTransitionRecord } from '../data/catalog.js';
 import { createFieldView, escapeHTML } from './source-panel.js';
 import { renderDiagramSourceMarks } from './diagram-references.js';
+import { renderDecayDetails } from './decay-details.js';
 
 const esc = escapeHTML;
 const number = (value, digits=3) => Number.isFinite(value) ? value.toFixed(digits).replace(/\.?0+$/, '') : '待补充';
@@ -32,6 +33,7 @@ export function renderLevelDetails(level,hfs) {
   const canonical=CATALOG.levels.records.find(record=>record.attributes.term===level.term&&record.attributes.config===level.config);
   const energy=canonical?.quantities.energy_cm;
   const levelSource=energy?.sourceId;
+  const lifetimeSources=[...new Set(CATALOG.transitions.records.filter(record=>record.upperLevelId===canonical?.id).map(record=>record.quantities.lifetime_ns?.sourceId).filter(Boolean))];
   const energySources=saved?[levelSource,'legacy-scaling']:[levelSource];
   const hfsSource=saved?CATALOG.hyperfine.saved65S.sourceId:CATALOG.hyperfine.states[level.term]?.sourceId;
   const levels=[...hfs.levels].sort((a,b)=>b.shift-a.shift);
@@ -55,8 +57,9 @@ export function renderLevelDetails(level,hfs) {
   return `<header class="diagram-level-head"><h3>${esc(level.config)} <span>${esc(level.term==='65³S₁'?'³S₁':level.term)}</span></h3><p>J = ${level.J} <span>·</span> I = 1/2 <span>·</span> ${level.parity==='even'?'偶宇称':'奇宇称'}</p></header>
     <div class="diagram-level-data">
       ${row('能量 E',Number.isFinite(energy?.value)?`${saved?'≈':''}${esc(number(energy.value,3))} cm⁻¹`:Number.isFinite(level.energy_cm)?`≈${number(level.energy_cm,3)} cm⁻¹`:'未收录',energySources)}
-      ${level.lifetime&&level.lifetime!=='估算'?row('寿命 τ',esc(level.lifetime==='stable'?'稳定':level.lifetime),[levelSource]):''}
+      ${level.lifetime&&level.lifetime!=='估算'?row('寿命 τ',esc(level.lifetime==='stable'?'稳定':level.lifetime),lifetimeSources.length?lifetimeSources:[levelSource]):''}
     </div>
+    ${renderDecayDetails(canonical?.id)}
     <section class="diagram-hfs-detail" aria-label="零场超精细结构">
       <div class="diagram-hfs-heading"><h4>超精细结构</h4><span>B = 0</span></div>
       <div class="hfs-detail-metrics">

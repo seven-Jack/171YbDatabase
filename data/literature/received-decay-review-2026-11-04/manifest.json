@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "reviewVersion": "2026.11.04.2",
+  "reviewedAt": "2026-11-04",
+  "canonicalAdopted": false,
+  "runtimeDecayVersionUnchanged": "2026.11.04.1",
+  "scope": "Five newlyreceived papers, all relevant explicit numeric text/table/diagram entries; full Yb I/II tables of compilation, not all lanthanides or graph digitization. Structured audit only.",
+  "counts": {
+    "sourceDocuments": 5,
+    "records": 240,
+    "conflicts": 11,
+    "pending": 20,
+    "additionalUpstreamTasks": 3,
+    "secondaryCompilationEntries": 200,
+    "neutralCompilationEntries": 183,
+    "ionCompilationEntries": 17,
+    "compilationStateRows": 121,
+    "newCompleteDirectBranchingTables": 0
+  },
+  "recordClassification": {
+    "byProvenance": {
+      "cited-value": 21,
+      "primary-result": 19,
+      "compilation-entry": 200
+    },
+    "byEvidenceKind": {
+      "reported-reference": 15,
+      "experiment": 162,
+      "derived": 2,
+      "theory": 61
+    }
+  },
+  "countingBoundary": "Counts are data entries, not independent measurements. Same data re-expressions, quoted input lifetimes and secondary records are intentionally retained with lineage.",
+  "files": [
+    {
+      "name": "source-manifest.json",
+      "bytes": 4589,
+      "sha256": "8b2c5ce6ccd130481925c1a04d56b0df3c04f65fc0d1fca3c18e089fbbecdc64"
+    },
+    {
+      "name": "conflicts.json",
+      "bytes": 10079,
+      "sha256": "79d31c6db5f1e1d56e25b2afda65f17a20fdfa045fb4bcb95780391cb1a3a4e4"
+    },
+    {
+      "name": "lineage.json",
+      "bytes": 16570,
+      "sha256": "899975e70ad991b2b7f8341372af3621dfb0a2a9c8cac8a05792003478700c13"
+    },
+    {
+      "name": "honda-loftus.json",
+      "bytes": 51056,
+      "sha256": "eb404ad40c21a47518ec9d0df86a85ebe08222d7b530228aaca72828eb5c155b"
+    },
+    {
+      "name": "guo.json",
+      "bytes": 29429,
+      "sha256": "e06846d41ef522db23e9754c62b302ff432bacac56a1d4fa021b7bdb93d017ec"
+    },
+    {
+      "name": "blagoev-yb.json",
+      "bytes": 483366,
+      "sha256": "9ac02fa9ed60b6c5faa6f9c18fe059afd8ca6c8fbd5873a928bf96a7aa8963a5"
+    },
+    {
+      "name": "records.csv",
+      "bytes": 283165,
+      "sha256": "f4c0f61136a7ab6e32c5180e6bba6313bc2b4d2f42e5af6ade8bc8d14621f92a"
+    },
+    {
+      "name": "export.mjs",
+      "bytes": 1896,
+      "sha256": "c52af555e819c31e5ef4e640521e436fd1594d5f390049cc821ed0a5d646a711"
+    },
+    {
+      "name": "verify.mjs",
+      "bytes": 11811,
+      "sha256": "982f5e203ac56f60d711df7072cba6199875ce81d9bfa63fe65374f7b17a474b"
+    },
+    {
+      "name": "README.md",
+      "bytes": 4464,
+      "sha256": "1da0566153cd18a53fe6c64e87241e20efd29ab09252d88ad9144cf4a5bff524"
+    }
+  ]
+}

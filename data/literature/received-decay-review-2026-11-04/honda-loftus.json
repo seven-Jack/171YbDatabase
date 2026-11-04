@@ -1,0 +1,1531 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-11-04",
+  "scope": "Original-source review ofHonda1999+erratum andLoftus2000; all explicitYb lifetime,leakage andcascade-rate values, with quoted/model/experiment distinctions. No productionvalueadoption.",
+  "sourceIds": [
+    "honda-1999-pra",
+    "honda-1999-erratum",
+    "loftus-2000-pra"
+  ],
+  "coverage": [
+    {
+      "sourceId": "honda-1999-pra",
+      "path": "references/papers/1999_Honda_Yb_1P1-branching-limit_published-print.pdf",
+      "sha256": "0c5cec3a1520b20f288abc23a6b7c4dc88e059863bca61553e582f15675937f2",
+      "bytes": 199444,
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "totalPages": 4,
+      "completeRelevantNumericExtraction": true,
+      "coverageBoundary": "All explicit relevant text/table/diagram-label numbers and footnotes inspected; graph-onlypoints not digitized. UnrelatedMOTengineering and spectroscopynumbers areconditions, not a completeallnumericcontentclaim.",
+      "pageImagesVisuallyReviewed": true
+    },
+    {
+      "sourceId": "honda-1999-erratum",
+      "path": "references/papers/1999_Honda_Yb_1P1-branching-limit_erratum-published-print.pdf",
+      "sha256": "66c27f4fe81a834d1b8250ecf544ec3c5595079be9f65aae1da38ae897a969c2",
+      "bytes": 48923,
+      "pages": [
+        1
+      ],
+      "totalPages": 1,
+      "completeRelevantNumericExtraction": true,
+      "coverageBoundary": "All explicit relevant text/table/diagram-label numbers and footnotes inspected; graph-onlypoints not digitized. UnrelatedMOTengineering and spectroscopynumbers areconditions, not a completeallnumericcontentclaim.",
+      "pageImagesVisuallyReviewed": true
+    },
+    {
+      "sourceId": "loftus-2000-pra",
+      "path": "references/papers/2000_Loftus_Yb_Power-dependent-MOT-loss_published.pdf",
+      "sha256": "280a186b46599eaecf96bc895e3e9cc3fbfe76d216865f48bfeaaee1fa488277",
+      "bytes": 66607,
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "totalPages": 4,
+      "completeRelevantNumericExtraction": true,
+      "coverageBoundary": "All explicit relevant text/table/diagram-label numbers and footnotes inspected; graph-onlypoints not digitized. UnrelatedMOTengineering and spectroscopynumbers areconditions, not a completeallnumericcontentclaim.",
+      "pageImagesVisuallyReviewed": true
+    }
+  ],
+  "records": [
+    {
+      "id": "honda-1p1-quoted-lifetime",
+      "sourceId": "honda-1999-pra",
+      "quantity": "lifetime",
+      "value": 5.5,
+      "uncertainty": null,
+      "unit": "ns",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "6s2 1S0",
+      "definition": "Quoted short lifetime used as experimental context, not a lifetime measured in this paper.",
+      "conditions": {},
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "R934"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "No uncertainty or uniquely attached primary lifetime citation is given at this sentence. Isotope of upstream lifetime source not resolved here."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false
+    },
+    {
+      "id": "honda-mot-decay-time",
+      "sourceId": "honda-1999-pra",
+      "quantity": "trap-population-decay-time",
+      "value": 200,
+      "uncertainty": null,
+      "unit": "ms",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": 174,
+      "chargeState": 0,
+      "upperState": "174Yb MOT population",
+      "lowerState": null,
+      "definition": "Approximate decay time after mechanical shutter stops atomic beam while trapping illumination remains on.",
+      "conditions": {
+        "sample": "174Yb MOT",
+        "detuning": "about half natural linewidth",
+        "sensitivity": "Depends on alignment and detuning; background pressure of order1e-8Torr",
+        "notAtomicNaturalLifetime": true
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "approximate": true
+    },
+    {
+      "id": "honda-mot-loading-time",
+      "sourceId": "honda-1999-pra",
+      "quantity": "trap-population-loading-time",
+      "value": 200,
+      "uncertainty": null,
+      "unit": "ms",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": 174,
+      "chargeState": 0,
+      "upperState": "174Yb MOT population",
+      "lowerState": null,
+      "definition": "Approximate loading time after mechanical shutter turns atomic beam on; stated consistent with trap decay time.",
+      "conditions": {
+        "sample": "174Yb MOT",
+        "notAtomicNaturalLifetime": true
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Loading and decay times are apparatus population time scales, not two independent atomic lifetime measurements."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "approximate": true
+    },
+    {
+      "id": "honda-original-3d1-superseded-lifetime",
+      "sourceId": "honda-1999-pra",
+      "quantity": "lifetime",
+      "value": 100,
+      "uncertainty": null,
+      "unit": "ns",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s5d 3D1",
+      "lowerState": "6s6p 3P0,1,2",
+      "definition": "Original printed lifetime; explicitly superseded by Honda erratum.",
+      "conditions": {},
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Original text cites itsRef10 Bowers etal,PRA53,3103(1996).",
+        "Keep the original misprint for audit; do not use it as an independent datum."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "status": "superseded-by-erratum",
+      "correctedValue": 380,
+      "correctionSourceId": "honda-1999-erratum"
+    },
+    {
+      "id": "honda-original-3d2-superseded-lifetime",
+      "sourceId": "honda-1999-pra",
+      "quantity": "lifetime",
+      "value": 120,
+      "uncertainty": null,
+      "unit": "ns",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s5d 3D2",
+      "lowerState": "6s6p 3P0,1,2",
+      "definition": "Original printed lifetime; explicitly superseded by Honda erratum.",
+      "conditions": {},
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Original text cites itsRef10 Bowers etal,PRA53,3103(1996).",
+        "Keep the original misprint for audit; do not use it as an independent datum."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "status": "superseded-by-erratum",
+      "correctedValue": 460,
+      "correctionSourceId": "honda-1999-erratum"
+    },
+    {
+      "id": "honda-3p1-quoted-lifetime",
+      "sourceId": "honda-1999-pra",
+      "quantity": "lifetime",
+      "value": 875,
+      "uncertainty": null,
+      "unit": "ns",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 3P1",
+      "lowerState": "6s2 1S0",
+      "definition": "Quoted radiative lifetime for cascade recovery, not measured here.",
+      "conditions": {},
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "No uncertainty attached. Upstream isotope/temperature not resolved by this paper."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false
+    },
+    {
+      "id": "honda-3p1-approximate-recovery-lifetime",
+      "sourceId": "honda-1999-pra",
+      "quantity": "lifetime",
+      "value": 1,
+      "uncertainty": null,
+      "unit": "us",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 3P1",
+      "lowerState": "6s2 1S0",
+      "definition": "Approximate lifetime in proposed770/649nm repumping discussion.",
+      "conditions": {},
+      "locator": {
+        "pdfPages": [
+          4
+        ],
+        "printedPages": [
+          "R937"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Visual page reads1microsecond; text extraction loses the Greek mu.",
+        "Approximation to the same3P1 lifetime quoted as875ns, not an independent value or a1ms lifetime."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "approximate": true,
+      "duplicateContextOf": "honda-3p1-quoted-lifetime"
+    },
+    {
+      "id": "honda-cascade-fluorescence-ratio",
+      "sourceId": "honda-1999-pra",
+      "quantity": "cascade-fluorescence-ratio",
+      "value": 1.21e-07,
+      "uncertainty": 3.9e-08,
+      "unit": "1",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": 174,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "cascade ending at6s6p 3P1 then6s2 1S0",
+      "definition": "Calibrated556nm cascade photon count rate divided by399nm direct-ground-state fluorescence rate.",
+      "conditions": {
+        "sample": "174Yb MOT; natural-isotope survey is separate",
+        "illumination": "Only399nm cooling light during branching measurement;556nm fluorescence is detected without556nm drive",
+        "detection": "LN2-cooled CCD and monochromator; relative response at399/556nm calibrated with standard lamp including window,lens,mirror and monochromator",
+        "configurations": "Seven datasets under changed experimental configurations; numerical settings not tabulated per dataset",
+        "F": null,
+        "mF": null,
+        "branchScope": "Cascade return through3P1 only, not all weak direct first-step branches"
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": "4",
+        "equation": null
+      },
+      "notes": [
+        "Explicit note defines556nm/399nm; nearby wording lists399and556 in the opposite order without defining division.",
+        "Mean of seven configuration datasets;0.39e-7 is the stated standard deviation, not an assumed standard error of the mean or a95% confidence interval.",
+        "Not a direct1P1->3P1 E1 branch and not all-triplet leakage."
+      ],
+      "uncertaintyType": "standard-deviation-across-seven-datasets",
+      "canonicalAdopted": false,
+      "status": "original-checked"
+    },
+    {
+      "id": "honda-all-triplet-leakage-lower-bound",
+      "sourceId": "honda-1999-pra",
+      "quantity": "branching-lower-bound",
+      "value": 1.2e-07,
+      "uncertainty": null,
+      "unit": "1",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": 174,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "triplet manifold via cascades",
+      "definition": "Authors rounded lower limit on overall leakage relative to strong1P1->1S0 cycling decay, inferred from the detected cascade subset.",
+      "conditions": {
+        "sample": "174Yb MOT; natural-isotope survey is separate",
+        "illumination": "Only399nm cooling light during branching measurement;556nm fluorescence is detected without556nm drive",
+        "detection": "LN2-cooled CCD and monochromator; relative response at399/556nm calibrated with standard lamp including window,lens,mirror and monochromator",
+        "configurations": "Seven datasets under changed experimental configurations; numerical settings not tabulated per dataset",
+        "F": null,
+        "mF": null,
+        "branchScope": "Cascade return through3P1 only, not all weak direct first-step branches"
+      },
+      "locator": {
+        "pdfPages": [
+          1,
+          3
+        ],
+        "printedPages": [
+          "R934",
+          "R936"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Same measurement as honda-cascade-fluorescence-ratio, not an independent second experiment.",
+        "A complete normalized direct branching table is not provided; no exact complement or additional individual branches inferred.",
+        "The lower limit is a central-value lower-bound statement, not a statistically specified one-sided confidence bound."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "relation": "lower-bound",
+      "derivedFromRecord": "honda-cascade-fluorescence-ratio",
+      "status": "original-checked"
+    },
+    {
+      "id": "honda-inferred-cascade-time",
+      "sourceId": "honda-1999-pra",
+      "quantity": "illumination-dependent-cascade-event-time",
+      "value": 274,
+      "uncertainty": null,
+      "unit": "ms",
+      "evidenceKind": "derived",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": 174,
+      "chargeState": 0,
+      "upperState": "399nm-driven1S0-1P1 cycling ensemble",
+      "lowerState": "cascade ending in3P1",
+      "definition": "Authors approximate time constant for reaching3P1 while blue light drives the atom; not3P1 atomic lifetime.",
+      "conditions": {
+        "sample": "174Yb",
+        "detuning": "half natural linewidth",
+        "intensity": "one saturation intensity",
+        "blueWavelengthCorrected_nm": 399
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Quoted author inference; not a new calculation by this archive.",
+        "Differs in meaning from200ms measured MOT loss; reaching3P1 returns atoms to cycling rather than permanently losing them."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "approximate": true
+    },
+    {
+      "id": "honda-cited-old-theory-leakage-lower",
+      "sourceId": "honda-1999-pra",
+      "quantity": "reported-theory-branching-range-endpoint",
+      "value": 1e-09,
+      "uncertainty": null,
+      "unit": "1",
+      "evidenceKind": "theory",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "triplet states",
+      "definition": "Endpoint of the broad earlier theoretical leakage range quoted from Migdalek/BaylisRef9.",
+      "conditions": {
+        "isotope": "not resolved",
+        "theorySource": "HondaRef9:J.Migdalek andW.E.Baylis,J.Phys.B24,L99(1991)",
+        "denominator": "decay to1S0 as described byHonda"
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Original calculation not rechecked in this five-paper review; endpoints are not a new prediction or uncertainty distribution."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "rangeBoundary": "lower",
+      "status": "secondary-citation-only"
+    },
+    {
+      "id": "honda-cited-old-theory-leakage-upper",
+      "sourceId": "honda-1999-pra",
+      "quantity": "reported-theory-branching-range-endpoint",
+      "value": 1e-06,
+      "uncertainty": null,
+      "unit": "1",
+      "evidenceKind": "theory",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "triplet states",
+      "definition": "Endpoint of the broad earlier theoretical leakage range quoted from Migdalek/BaylisRef9.",
+      "conditions": {
+        "isotope": "not resolved",
+        "theorySource": "HondaRef9:J.Migdalek andW.E.Baylis,J.Phys.B24,L99(1991)",
+        "denominator": "decay to1S0 as described byHonda"
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Original calculation not rechecked in this five-paper review; endpoints are not a new prediction or uncertainty distribution."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "rangeBoundary": "upper",
+      "status": "secondary-citation-only"
+    },
+    {
+      "id": "honda-1p1-quoted-natural-linewidth",
+      "sourceId": "honda-1999-pra",
+      "quantity": "natural-linewidth-frequency",
+      "value": 29,
+      "uncertainty": null,
+      "unit": "MHz",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "6s2 1S0",
+      "definition": "Quoted Gamma/(2pi) for detuning conventions; original text statesGamma=2pi*29MHz.",
+      "conditions": {},
+      "locator": {
+        "pdfPages": [
+          2
+        ],
+        "printedPages": [
+          "R935"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Context input, not an independent linewidth measurement in this work."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false
+    },
+    {
+      "id": "honda-3p1-quoted-natural-linewidth",
+      "sourceId": "honda-1999-pra",
+      "quantity": "natural-linewidth-frequency",
+      "value": 180,
+      "uncertainty": null,
+      "unit": "kHz",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 3P1",
+      "lowerState": "6s2 1S0",
+      "definition": "Approximate natural linewidth cited for the556nm probing transition.",
+      "conditions": {},
+      "locator": {
+        "pdfPages": [
+          2
+        ],
+        "printedPages": [
+          "R935"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Not the measured7MHz Autler-Townes broadened steady-state spectrum and not a new natural-lifetime measurement."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "approximate": true
+    },
+    {
+      "id": "honda-erratum-3d1-corrected-lifetime",
+      "sourceId": "honda-1999-erratum",
+      "quantity": "lifetime",
+      "value": 380,
+      "uncertainty": null,
+      "unit": "ns",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s5d 3D1",
+      "lowerState": "6s6p 3P0,1,2",
+      "definition": "Corrected lifetime stated in item1 of erratum; replaces the original100/120ns misprint.",
+      "conditions": {},
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "2603"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "No uncertainty supplied; correction acknowledgesD.Budker, but is not a new time-resolved measurement.",
+        "More recent canonical sources are not overwritten by this cited correction."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "status": "corrected-citation-checked",
+      "correctsRecord": "honda-original-3d1-superseded-lifetime"
+    },
+    {
+      "id": "honda-erratum-3d2-corrected-lifetime",
+      "sourceId": "honda-1999-erratum",
+      "quantity": "lifetime",
+      "value": 460,
+      "uncertainty": null,
+      "unit": "ns",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s5d 3D2",
+      "lowerState": "6s6p 3P0,1,2",
+      "definition": "Corrected lifetime stated in item1 of erratum; replaces the original100/120ns misprint.",
+      "conditions": {},
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "2603"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "No uncertainty supplied; correction acknowledgesD.Budker, but is not a new time-resolved measurement.",
+        "More recent canonical sources are not overwritten by this cited correction."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "status": "corrected-citation-checked",
+      "correctsRecord": "honda-original-3d2-superseded-lifetime"
+    },
+    {
+      "id": "loftus-cycling-einstein-rate",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "einstein-decay-rate",
+      "value": 176000000.0,
+      "uncertainty": null,
+      "unit": "s^-1",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "6s2 1S0",
+      "definition": "QuotedEinstein coefficientAE for the398.8nm cycling transition fromRef8(NBS/NIST).",
+      "conditions": {},
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "051401-1"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "This is the strong cycling decay coefficient, not the weak leak rate or MOTlossalpha.",
+        "No uncertainty supplied."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false
+    },
+    {
+      "id": "loftus-figure-1p1-quoted-lifetime",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "lifetime",
+      "value": 5.68,
+      "uncertainty": null,
+      "unit": "ns",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": null,
+      "definition": "Lifetime printed on the partial174Yb energy-level diagram; not a lifetime measured byLoftus.",
+      "conditions": {
+        "diagramIsotope": 174,
+        "upstreamMeasurementIsotope": null,
+        "F": null,
+        "mF": null
+      },
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "051401-1"
+        ],
+        "table": null,
+        "figure": "1",
+        "equation": null
+      },
+      "notes": [
+        "No uncertainty or unique upstream lifetime-reference assignment is attached to this diagram label.",
+        "Do not assume these older diagram inputs are exact171Yb lifetimes or independent new data."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "reportedApplicationIsotope": 174,
+      "status": "diagram-citation-checked-upstream-pending"
+    },
+    {
+      "id": "loftus-figure-3d1-quoted-lifetime",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "lifetime",
+      "value": 380,
+      "uncertainty": null,
+      "unit": "ns",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s5d 3D1",
+      "lowerState": null,
+      "definition": "Lifetime printed on the partial174Yb energy-level diagram; not a lifetime measured byLoftus.",
+      "conditions": {
+        "diagramIsotope": 174,
+        "upstreamMeasurementIsotope": null,
+        "F": null,
+        "mF": null
+      },
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "051401-1"
+        ],
+        "table": null,
+        "figure": "1",
+        "equation": null
+      },
+      "notes": [
+        "No uncertainty or unique upstream lifetime-reference assignment is attached to this diagram label.",
+        "Do not assume these older diagram inputs are exact171Yb lifetimes or independent new data."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "reportedApplicationIsotope": 174,
+      "status": "diagram-citation-checked-upstream-pending"
+    },
+    {
+      "id": "loftus-figure-3d2-quoted-lifetime",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "lifetime",
+      "value": 460,
+      "uncertainty": null,
+      "unit": "ns",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s5d 3D2",
+      "lowerState": null,
+      "definition": "Lifetime printed on the partial174Yb energy-level diagram; not a lifetime measured byLoftus.",
+      "conditions": {
+        "diagramIsotope": 174,
+        "upstreamMeasurementIsotope": null,
+        "F": null,
+        "mF": null
+      },
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "051401-1"
+        ],
+        "table": null,
+        "figure": "1",
+        "equation": null
+      },
+      "notes": [
+        "No uncertainty or unique upstream lifetime-reference assignment is attached to this diagram label.",
+        "Do not assume these older diagram inputs are exact171Yb lifetimes or independent new data."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "reportedApplicationIsotope": 174,
+      "status": "diagram-citation-checked-upstream-pending"
+    },
+    {
+      "id": "loftus-figure-3p1-quoted-lifetime",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "lifetime",
+      "value": 875,
+      "uncertainty": null,
+      "unit": "ns",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 3P1",
+      "lowerState": null,
+      "definition": "Lifetime printed on the partial174Yb energy-level diagram; not a lifetime measured byLoftus.",
+      "conditions": {
+        "diagramIsotope": 174,
+        "upstreamMeasurementIsotope": null,
+        "F": null,
+        "mF": null
+      },
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "051401-1"
+        ],
+        "table": null,
+        "figure": "1",
+        "equation": null
+      },
+      "notes": [
+        "No uncertainty or unique upstream lifetime-reference assignment is attached to this diagram label.",
+        "Do not assume these older diagram inputs are exact171Yb lifetimes or independent new data."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "reportedApplicationIsotope": 174,
+      "status": "diagram-citation-checked-upstream-pending"
+    },
+    {
+      "id": "loftus-figure-3p2-quoted-lifetime",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "lifetime",
+      "value": 14.5,
+      "uncertainty": null,
+      "unit": "s",
+      "evidenceKind": "reported-reference",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 3P2",
+      "lowerState": null,
+      "definition": "Lifetime printed on the partial174Yb energy-level diagram; not a lifetime measured byLoftus.",
+      "conditions": {
+        "diagramIsotope": 174,
+        "upstreamMeasurementIsotope": null,
+        "F": null,
+        "mF": null
+      },
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "051401-1"
+        ],
+        "table": null,
+        "figure": "1",
+        "equation": null
+      },
+      "notes": [
+        "No uncertainty or unique upstream lifetime-reference assignment is attached to this diagram label.",
+        "Do not assume these older diagram inputs are exact171Yb lifetimes or independent new data."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "reportedApplicationIsotope": 174,
+      "status": "diagram-citation-checked-upstream-pending"
+    },
+    {
+      "id": "loftus-experimental-effective-a20",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "effective-cascade-transfer-rate",
+      "value": 23,
+      "uncertainty": 11,
+      "unit": "s^-1",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": 174,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "cascade ending at6s6p 3P2 or3P0",
+      "definition": "a2,0 obtained from measured MOTlossalpha slope versus totalbluepower and modeled1P1 excited fraction.",
+      "conditions": {
+        "sample": "174Yb MOT loaded from a Zeeman-slowed atomic beam",
+        "detuning_MHz": -30,
+        "backgroundPressure_Torr": 6e-09,
+        "axialGradient_G_per_cm": 60,
+        "beamProfile": "Gaussian;1/e2 intensity diameter1.5cm",
+        "powerDefinition": "PT is total blue power divided into three mutually orthogonal retroreflected beam pairs",
+        "fDefinition": "Excited1P1 fraction f=(s/2)/(1+s+(2Delta/Gamma)^2);Gamma=AE/(2pi)=28MHz;s=mu_a/mu_s",
+        "saturationEnergyDensity_pJ_per_cm3": 1.93,
+        "equivalentSaturationIntensity_mW_per_cm2": 58,
+        "fApproximation": "Trap-volume averaged beam energy density; magnetic-field detuning variation neglected",
+        "fRelativeAccuracyEstimate": 0.5,
+        "lossScope": "a20 is effective cascade transfer per1P1 population; trap loss alpha also includes f and background collisions; not direct fine-structure beta",
+        "F": null,
+        "mF": null
+      },
+      "locator": {
+        "pdfPages": [
+          2,
+          3
+        ],
+        "printedPages": [
+          "051401-2",
+          "051401-3"
+        ],
+        "table": "I",
+        "figure": "4",
+        "equation": "1"
+      },
+      "notes": [
+        "Weak-excitation fit assumes nearlyconstantalpha over each fill trace; no clearYb-Yb density loss seen in studied range.",
+        "Absolute excited-state fraction estimate about50% accurate dominates inferred rate error.",
+        "No direct individual1P1->3Dj beta or complete fine-structure branching measured."
+      ],
+      "uncertaintyType": "reported-total-estimate-dominated-by-f-systematic",
+      "canonicalAdopted": false,
+      "status": "original-checked"
+    },
+    {
+      "id": "loftus-cited-experimental-effective-a1",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "effective-cascade-transfer-rate",
+      "value": 21.3,
+      "uncertainty": 2.6,
+      "unit": "s^-1",
+      "evidenceKind": "experiment",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "cascade ending at6s6p 3P1",
+      "definition": "Previous-work effectivea1 rate reproduced in TableI; literature measurement was the ratioa1/AE.",
+      "conditions": {
+        "sample": "174Yb application inLoftus",
+        "previousWork": "Ref4 groupsHonda1999PRA59R934 andKuwamoto1999PRA60R745",
+        "denominator": "per1P1 population, as cascade outcome rather than directsingle step"
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "051401-3"
+        ],
+        "table": "I",
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Previous-work citation, not a second measurement byLoftus.",
+        "Do not claim this rate and uncertainty were reconstructed solely fromHonda1.21(0.39)e-7; Ref4 also containsKuwamoto and exact input chain remains to be traced."
+      ],
+      "uncertaintyType": "parenthetical-uncertainty-not-further-classified",
+      "canonicalAdopted": false,
+      "status": "printed-value-checked-primary-chain-pending"
+    },
+    {
+      "id": "loftus-theory-effective-a20",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "effective-cascade-transfer-rate",
+      "value": 6.6,
+      "uncertainty": 4.6,
+      "unit": "s^-1",
+      "evidenceKind": "theory",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "cascade ending at6s6p 3P2 or3P0",
+      "definition": "Theoretical effective cascade rate as printed inTableI, using reduced matrix elements plus experimental transition frequencies.",
+      "conditions": {
+        "matrixElementSource": "Body explicitly saysPorsev etalRef12(PRA60,2781,1999)",
+        "frequencySource": "Ref8,NBS/NIST experimental energies/frequencies",
+        "theoryUncertainty": "Tablecaption says propagation of reported matrix-element uncertainties",
+        "F": null,
+        "mF": null
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "051401-3"
+        ],
+        "table": "I",
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Tablecaption citesRefs8,12 but superscripta footnote printsRefs8,11; Ref11 isBell etal1999 rather thanPorsev. Preserve conflict.",
+        "These are cascaded outcome rates, not rawEinsteinA for one fine-structure line.",
+        "No new independent theory calculation performed inthisarchive."
+      ],
+      "uncertaintyType": "parenthetical-uncertainty-not-further-classified",
+      "canonicalAdopted": false,
+      "status": "printed-theory-value-checked-source-footnote-conflict"
+    },
+    {
+      "id": "loftus-theory-effective-a1",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "effective-cascade-transfer-rate",
+      "value": 5.2,
+      "uncertainty": 2.6,
+      "unit": "s^-1",
+      "evidenceKind": "theory",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "cascade ending at6s6p 3P1",
+      "definition": "Theoretical effective cascade rate as printed inTableI, using reduced matrix elements plus experimental transition frequencies.",
+      "conditions": {
+        "matrixElementSource": "Body explicitly saysPorsev etalRef12(PRA60,2781,1999)",
+        "frequencySource": "Ref8,NBS/NIST experimental energies/frequencies",
+        "theoryUncertainty": "Tablecaption says propagation of reported matrix-element uncertainties",
+        "F": null,
+        "mF": null
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "051401-3"
+        ],
+        "table": "I",
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Tablecaption citesRefs8,12 but superscripta footnote printsRefs8,11; Ref11 isBell etal1999 rather thanPorsev. Preserve conflict.",
+        "These are cascaded outcome rates, not rawEinsteinA for one fine-structure line.",
+        "No new independent theory calculation performed inthisarchive."
+      ],
+      "uncertaintyType": "parenthetical-uncertainty-not-further-classified",
+      "canonicalAdopted": false,
+      "status": "printed-theory-value-checked-source-footnote-conflict"
+    },
+    {
+      "id": "loftus-experimental-effective-rate-ratio",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "effective-cascade-rate-ratio",
+      "value": 1.1,
+      "uncertainty": 0.5,
+      "unit": "1",
+      "evidenceKind": "derived",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": 174,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "(3P2+3P0) outcomes divided by3P1 outcome",
+      "definition": "Authors ratioa2,0/a1 combining the present a20 and prior experimental a1.",
+      "conditions": {
+        "inputs": [
+          "loftus-experimental-effective-a20",
+          "loftus-cited-experimental-effective-a1"
+        ],
+        "isotope": "174Yb application"
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "051401-3"
+        ],
+        "table": "I",
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Published comparison ratio; not a direct branching probability and not constrained below1.",
+        "Footnoteb refersRef4;正文clearlycombinespresent andpreviouswork.",
+        "Do not regard rates21.3,23andratio1.1 as three independent measurements."
+      ],
+      "uncertaintyType": "parenthetical-uncertainty-not-further-classified",
+      "canonicalAdopted": false,
+      "status": "original-checked"
+    },
+    {
+      "id": "loftus-theory-effective-rate-ratio",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "effective-cascade-rate-ratio",
+      "value": 1.25,
+      "uncertainty": 0.34,
+      "unit": "1",
+      "evidenceKind": "theory",
+      "provenance": "cited-value",
+      "species": "Yb I",
+      "isotope": null,
+      "chargeState": 0,
+      "upperState": "6s6p 1P1",
+      "lowerState": "(3P2+3P0) outcomes divided by3P1 outcome",
+      "definition": "Theoreticala2,0/a1 comparison printed inTableI.",
+      "conditions": {
+        "matrixElementSource": "BodyPorsevRef12; tablefootnotea insteadRefs8,11"
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "051401-3"
+        ],
+        "table": "I",
+        "figure": null,
+        "equation": null
+      },
+      "notes": [
+        "Retain published1.25(0.34); do not overwrite by dividingrounded6.6/5.2 or assume independent matrix-element covariance.",
+        "Not a normalized directbranchingfraction."
+      ],
+      "uncertaintyType": "parenthetical-uncertainty-not-further-classified",
+      "canonicalAdopted": false,
+      "status": "printed-theory-value-checked-source-footnote-conflict"
+    },
+    {
+      "id": "loftus-observed-mot-lifetime-min",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "trap-population-lifetime-range-endpoint",
+      "value": 200,
+      "uncertainty": null,
+      "unit": "ms",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": 174,
+      "chargeState": 0,
+      "upperState": "174Yb MOT population",
+      "lowerState": null,
+      "definition": "Endpoint of authors reported200ms<=tau<=800ms MOTpopulation lifetime range inFig4caption.",
+      "conditions": {
+        "sample": "174Yb MOT loaded from a Zeeman-slowed atomic beam",
+        "detuning_MHz": -30,
+        "backgroundPressure_Torr": 6e-09,
+        "axialGradient_G_per_cm": 60,
+        "beamProfile": "Gaussian;1/e2 intensity diameter1.5cm",
+        "powerDefinition": "PT is total blue power divided into three mutually orthogonal retroreflected beam pairs",
+        "fDefinition": "Excited1P1 fraction f=(s/2)/(1+s+(2Delta/Gamma)^2);Gamma=AE/(2pi)=28MHz;s=mu_a/mu_s",
+        "saturationEnergyDensity_pJ_per_cm3": 1.93,
+        "equivalentSaturationIntensity_mW_per_cm2": 58,
+        "fApproximation": "Trap-volume averaged beam energy density; magnetic-field detuning variation neglected",
+        "fRelativeAccuracyEstimate": 0.5,
+        "lossScope": "a20 is effective cascade transfer per1P1 population; trap loss alpha also includes f and background collisions; not direct fine-structure beta",
+        "F": null,
+        "mF": null
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "051401-3"
+        ],
+        "table": null,
+        "figure": "4",
+        "equation": null
+      },
+      "notes": [
+        "Same power-dependentloss dataset, not two separate atomicnatural lifetimes.",
+        "No individualpoint lifetime table provided and no graph-onlypoint digitization claimed."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "rangeBoundary": "lower-inclusive",
+      "status": "original-checked"
+    },
+    {
+      "id": "loftus-observed-mot-lifetime-max",
+      "sourceId": "loftus-2000-pra",
+      "quantity": "trap-population-lifetime-range-endpoint",
+      "value": 800,
+      "uncertainty": null,
+      "unit": "ms",
+      "evidenceKind": "experiment",
+      "provenance": "primary-result",
+      "species": "Yb I",
+      "isotope": 174,
+      "chargeState": 0,
+      "upperState": "174Yb MOT population",
+      "lowerState": null,
+      "definition": "Endpoint of authors reported200ms<=tau<=800ms MOTpopulation lifetime range inFig4caption.",
+      "conditions": {
+        "sample": "174Yb MOT loaded from a Zeeman-slowed atomic beam",
+        "detuning_MHz": -30,
+        "backgroundPressure_Torr": 6e-09,
+        "axialGradient_G_per_cm": 60,
+        "beamProfile": "Gaussian;1/e2 intensity diameter1.5cm",
+        "powerDefinition": "PT is total blue power divided into three mutually orthogonal retroreflected beam pairs",
+        "fDefinition": "Excited1P1 fraction f=(s/2)/(1+s+(2Delta/Gamma)^2);Gamma=AE/(2pi)=28MHz;s=mu_a/mu_s",
+        "saturationEnergyDensity_pJ_per_cm3": 1.93,
+        "equivalentSaturationIntensity_mW_per_cm2": 58,
+        "fApproximation": "Trap-volume averaged beam energy density; magnetic-field detuning variation neglected",
+        "fRelativeAccuracyEstimate": 0.5,
+        "lossScope": "a20 is effective cascade transfer per1P1 population; trap loss alpha also includes f and background collisions; not direct fine-structure beta",
+        "F": null,
+        "mF": null
+      },
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "051401-3"
+        ],
+        "table": null,
+        "figure": "4",
+        "equation": null
+      },
+      "notes": [
+        "Same power-dependentloss dataset, not two separate atomicnatural lifetimes.",
+        "No individualpoint lifetime table provided and no graph-onlypoint digitization claimed."
+      ],
+      "uncertaintyType": "not-reported",
+      "canonicalAdopted": false,
+      "rangeBoundary": "upper-inclusive",
+      "status": "original-checked"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "honda-d-lifetime-erratum",
+      "kind": "explicit-published-correction",
+      "status": "resolved-by-original-erratum",
+      "sourceIds": [
+        "honda-1999-pra",
+        "honda-1999-erratum"
+      ],
+      "recordIds": [
+        "honda-original-3d1-superseded-lifetime",
+        "honda-original-3d2-superseded-lifetime",
+        "honda-erratum-3d1-corrected-lifetime",
+        "honda-erratum-3d2-corrected-lifetime"
+      ],
+      "claims": {
+        "original_ns": {
+          "3D1": 100,
+          "3D2": 120
+        },
+        "erratum_ns": {
+          "3D1": 380,
+          "3D2": 460
+        }
+      },
+      "resolution": "Keep original misprints as superseded audit records; use correctedcitation only in thissource chain, without changing canonical lifetimes."
+    },
+    {
+      "id": "honda-fluorescence-ratio-direction",
+      "kind": "ambiguous-wording",
+      "status": "definition-resolved-from-explicit-note",
+      "sourceIds": [
+        "honda-1999-pra"
+      ],
+      "recordIds": [
+        "honda-cascade-fluorescence-ratio"
+      ],
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "R936"
+        ],
+        "table": null,
+        "figure": "4",
+        "equation": null
+      },
+      "claims": {
+        "nearbyWordOrder": "399nm and556nm",
+        "explicitDefinition": "556nm fluorescence divided by399nm fluorescence"
+      },
+      "resolution": "Use the explicit operational note and the small ratio; do not invert the reported number."
+    },
+    {
+      "id": "loftus-theory-versus-experiment-absolute-rates",
+      "kind": "reported-experiment-theory-disagreement",
+      "status": "unresolved-do-not-average",
+      "sourceIds": [
+        "loftus-2000-pra"
+      ],
+      "recordIds": [
+        "loftus-experimental-effective-a20",
+        "loftus-cited-experimental-effective-a1",
+        "loftus-theory-effective-a20",
+        "loftus-theory-effective-a1",
+        "loftus-experimental-effective-rate-ratio",
+        "loftus-theory-effective-rate-ratio"
+      ],
+      "locator": {
+        "pdfPages": [
+          3
+        ],
+        "printedPages": [
+          "051401-3"
+        ],
+        "table": "I",
+        "figure": null,
+        "equation": null
+      },
+      "claims": {
+        "experiment_a20_s-1": [
+          23,
+          11
+        ],
+        "experiment_a1_s-1": [
+          21.3,
+          2.6
+        ],
+        "theory_a20_s-1": [
+          6.6,
+          4.6
+        ],
+        "theory_a1_s-1": [
+          5.2,
+          2.6
+        ],
+        "experiment_ratio": [
+          1.1,
+          0.5
+        ],
+        "theory_ratio": [
+          1.25,
+          0.34
+        ]
+      },
+      "resolution": "Authors report absolute rates about4times theory while ratio agrees withinuncertainty; cause unresolved. Preserve model-dependentexcitedfraction systematic and do not call this171Yb independent directbeta verification."
+    },
+    {
+      "id": "loftus-table-theory-reference-number",
+      "kind": "source-internal-reference-conflict",
+      "status": "pending-upstream-source-chain-check",
+      "sourceIds": [
+        "loftus-2000-pra"
+      ],
+      "recordIds": [
+        "loftus-theory-effective-a20",
+        "loftus-theory-effective-a1",
+        "loftus-theory-effective-rate-ratio"
+      ],
+      "locator": {
+        "pdfPages": [
+          3,
+          4
+        ],
+        "printedPages": [
+          "051401-3",
+          "051401-4"
+        ],
+        "table": "I",
+        "figure": null,
+        "equation": null
+      },
+      "claims": {
+        "tableCaptionReferences": [
+          8,
+          12
+        ],
+        "bodyMatrixElementReference": "Porsev etal inRef12",
+        "tableFootnote_a": [
+          8,
+          11
+        ],
+        "reference11": "Bell etal,Europhys.Lett.45,156(1999)"
+      },
+      "resolution": "Keep original tablefootnote and body/caption attributions separately. Do not silently relabel thefootnote as12 or presume an erratum."
+    }
+  ],
+  "pending": [
+    {
+      "id": "honda-no-complete-direct-beta-table",
+      "sourceIds": [
+        "honda-1999-pra",
+        "honda-1999-erratum"
+      ],
+      "status": "pending",
+      "quantity": "individual-direct-branching-fractions",
+      "reason": "No numeric1P1->3D1/3D2/(7/2,3/2)2 or D->3PJ relativeprobabilitytable is printed. HondaRef4 mentionsDeMille relativeD1 probabilities, but they are not numerically supplied here.",
+      "value": null
+    },
+    {
+      "id": "honda-3p0-3p2-lifetimes",
+      "sourceIds": [
+        "honda-1999-pra"
+      ],
+      "status": "pending",
+      "quantity": "metastable-state-lifetimes",
+      "reason": "Only qualitativemetastability and escape are stated for3P0/3P2; no numericlifetimes are measured here.",
+      "value": null
+    },
+    {
+      "id": "loftus-a1-prior-source-detail",
+      "sourceIds": [
+        "loftus-2000-pra",
+        "honda-1999-pra"
+      ],
+      "status": "pending",
+      "quantity": "primary-source-uncertainty-chain",
+      "reason": "LoftusRef4 includesHondaandKuwamoto; original21.3(2.6)/s measurement/uncertainty chain isnot determined fromHondaalone. KuwamotoPRA60R745 isoutside these five receivedPDFs.",
+      "value": null
+    },
+    {
+      "id": "loftus-quoted-diagram-lifetime-upstream",
+      "sourceIds": [
+        "loftus-2000-pra"
+      ],
+      "status": "pending",
+      "quantity": "upstream-lifetime-source-and-isotope",
+      "reason": "Figure1 lifetime labels have no individual primarysource identifiers/uncertainties; application is174Yb but upstream measured isotope/temperature not established.",
+      "value": null
+    },
+    {
+      "id": "figure-only-points-not-digitized",
+      "sourceIds": [
+        "honda-1999-pra",
+        "loftus-2000-pra"
+      ],
+      "status": "not-digitized",
+      "quantity": "raw-plot-point-data",
+      "reason": "HondaFig4 sevenratio/errorbar points andLoftusFigs2–5 traces/fitpoints have no fullnumericaltables; allprinted summaries are transcribed and fullpageimages retained, but no unreportedrawprecision fabricated.",
+      "value": null
+    },
+    {
+      "id": "171yb-specific-transfer",
+      "sourceIds": [
+        "honda-1999-pra",
+        "honda-1999-erratum",
+        "loftus-2000-pra"
+      ],
+      "status": "pending",
+      "quantity": "171Yb-hyperfine-resolved-branching",
+      "reason": "Quantitative MOTmeasurements are174Yb; no171Yb F/mF-conditioned completefree-space directdecay table isprovided.",
+      "value": null
+    }
+  ],
+  "erratumOtherCorrections": [
+    {
+      "sourceId": "honda-1999-erratum",
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "2603"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "quantity": "wavelength",
+      "original_nm": 398,
+      "corrected_nm": 399,
+      "scope": "1S0-1P1 throughoutHonda original"
+    },
+    {
+      "sourceId": "honda-1999-erratum",
+      "locator": {
+        "pdfPages": [
+          1
+        ],
+        "printedPages": [
+          "2603"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "quantity": "wavelength",
+      "original_nm": 796,
+      "corrected_nm": 798,
+      "scope": "ringTi:sapphire laser"
+    }
+  ],
+  "qualitativeOnly": [
+    {
+      "sourceId": "honda-1999-pra",
+      "locator": {
+        "pdfPages": [
+          4
+        ],
+        "printedPages": [
+          "R937"
+        ],
+        "table": null,
+        "figure": null,
+        "equation": null
+      },
+      "claim": "3P1intercombination coolingtreatedasclosed inthisexperimentaldiscussion",
+      "adoption": "No exactbeta=1orunmeasuredzero-leakage probabilitycreated."
+    }
+  ],
+  "canonicalAdopted": false,
+  "counts": {
+    "records": 30,
+    "conflicts": 4,
+    "pending": 6
+  }
+}
