@@ -1,11 +1,10 @@
 import fs from 'node:fs';
-import {createHash} from 'node:crypto';
 import {HBAR,C,EPS0,EA0} from '../../../src/physics/constants.js';
-import {CORE_TRANSITIONS,getQuantity} from '../../../src/data/catalog.js';
+import {CORE_TRANSITIONS,getQuantity,DATASET_VERSION} from '../../../src/data/catalog.js';
 import {spRabi,dipoleFromDecayRate} from '../../../src/physics/rabi.js';
 import {matrixElement_F_q} from '../../../src/physics/angular.js';
 import {verifyLocalEvidence} from '../../../scripts/local-evidence.mjs';
-import {runReproductionCLI} from '../../../scripts/literature-audit.mjs';
+import {runReproductionCLI,verifyProtectedAuditInputs} from '../../../scripts/literature-audit.mjs';
 
 const root=new URL('../../../',import.meta.url);
 export const evidence=JSON.parse(fs.readFileSync(new URL('./source-check.json',import.meta.url),'utf8'));
@@ -70,10 +69,7 @@ export function reproduce() {
     independentPythonFigure10mHz:near(ten.scalarRabi_Hz,25242.6691,1e-8)
   };
   if(Object.values(checks).some(x=>!x))throw Error('Normalization audit check failed: '+JSON.stringify(checks));
-  const protectedHashes=JSON.parse(fs.readFileSync(new URL('../clock-rabi-audit-2026-10-30/protected-hashes.json',import.meta.url),'utf8'));
-  for(const [p,expected] of Object.entries(protectedHashes)) {
-    if(createHash('sha256').update(fs.readFileSync(new URL(p,root))).digest('hex')!==expected)throw Error('Protected file changed: '+p);
-  }
+  const protectedFileCount=verifyProtectedAuditInputs(DATASET_VERSION);
   return {schemaVersion:1,checkedOn:evidence.checkedOn,status:evidence.status,
     exactAuthorNormalizationEstablished:false,authorCGOmissionEstablished:false,
     independentExperimentalValidationPassed:false,productionChanged:false,
@@ -98,7 +94,7 @@ export function reproduce() {
       strathOffDiagonalOmega_rad_s:omegaStrathearnPeak,physicalBlochArea_rad:thetaGaussian,
       offerPhi_rad:thetaOffer,strathPhi_rad:halfPhiStrathearn,
       conclusion:'Offer Phi = physical Bloch area = 2*Strathearn Phi; model Omega = physical Omega/2. No factor-two correction is justified after translating definitions.'},
-    engineeringChecks:checks,protectedFileCount:Object.keys(protectedHashes).length,
+    engineeringChecks:checks,protectedFileCount,
     sourceBytes:evidence.sources.map(s=>verifyLocalEvidence(root,s))};
 }
 

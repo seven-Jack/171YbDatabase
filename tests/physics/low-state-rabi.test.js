@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {createHash} from 'node:crypto';
 import {evidence,reproduce,stateFor} from '../../data/literature/low-state-rabi-validation-2026-10-30/reproduce.mjs';
 import {reducedFFromJJ,matrixElement_F_q} from '../../src/physics/angular.js';
-import {getQuantity} from '../../src/data/catalog.js';
+import {DATASET_VERSION,getQuantity} from '../../src/data/catalog.js';
+import {verifyProtectedAuditInputs} from '../../scripts/literature-audit.mjs';
 
 const result=reproduce();
 const near=(a,b,tolerance)=>assert.ok(Math.abs(a-b)<=tolerance,`${a} differs from ${b} by more than ${tolerance}`);
@@ -69,11 +69,10 @@ test('507 nm stays unsupported with an unknown E1 dipole, rather than becoming a
   assert.equal(result.unsupportedCase.calculatedRabi_MHz,null);
 });
 
-test('this audit preserves the main diagram, canonical atomic data, production physics and saved 65S inputs',()=>{
+test('protected low-state inputs match the reviewed dataset fingerprints',()=>{
   const root=new URL('../../',import.meta.url);
   const baseline=JSON.parse(fs.readFileSync(new URL('data/literature/low-state-rabi-validation-2026-10-30/protected-hashes.json',root)));
-  for(const [path,expected] of Object.entries(baseline)) {
-    const hash=createHash('sha256').update(fs.readFileSync(new URL(path,root))).digest('hex');
-    assert.equal(hash,expected,path);
-  }
+  const shared=JSON.parse(fs.readFileSync(new URL('data/literature/clock-rabi-audit-2026-10-30/protected-hashes.json',root)));
+  assert.deepEqual(baseline,shared);
+  assert.equal(verifyProtectedAuditInputs(DATASET_VERSION),Object.keys(baseline).length);
 });

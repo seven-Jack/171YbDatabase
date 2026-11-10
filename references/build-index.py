@@ -327,10 +327,9 @@ def build_outputs(root, checked_at=None):
               'counts': counts, 'sources': indexed, 'documents': list(documents.values())}
     priorities = {row['sourceId']: row for row in read(ref / 'missing-downloads-prioritized-20261030.json', {'items': []})['items']}
     missing = []
-    excluded = {'legacy-levels', 'legacy-hfs', 'legacy-scaling', 'internal-t2-calibration', 'internal-t3-20260908',
-                'this-work-hyperfine-65s', 'ref-17', 'ref-14'}
     for source in indexed:
-        if source['id'] in excluded or (source['documents'] and not source.get('identityStatus', '').startswith('unresolved')):
+        identity = source.get('identityStatus', '')
+        if source['id'] == 'ref-14' or identity == 'internal-not-literature' or (source['documents'] and not identity.startswith('unresolved')):
             continue
         priority = priorities.get(source['id'], {})
         missing.append({'sourceId': source['id'], 'title': source['detail'], 'publication': source.get('publication'),
@@ -346,7 +345,7 @@ def build_outputs(root, checked_at=None):
         url = 'https://doi.org/' + item['doi'] if item['doi'] else item['url']
         link = f'[原文入口]({url})' if url else '标识符仍待核对'
         lines.append(f'| {item["sourceId"]} | {item["title"]}；{item.get("publication") or ""} | {item["neededFor"]} | {link}；{item["reason"]} |')
-    lines += ['', '内部待补：T3、R2矩阵元的原始Notebook/Run/版本与分支证据，以及65S原始输入哈希及模型误差。文献不能替代内部生成工件。', '',
+    lines += ['', '内部待补包括 T3 和历史 R2（0.0376 ea₀）的原始计算工件，以及 65S 模型误差。现行 R2 的零场分支矩阵元另有 R017 保存结果。', '',
               '原始及方法依赖的逐项状态另见 `primary-source-queue.json`；缺少本地PDF时，数值核查仍可运行，但原件字节状态必须是 unavailable。']
     bibtex = []
     for source in indexed:

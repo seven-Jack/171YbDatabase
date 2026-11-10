@@ -28,13 +28,15 @@ test('curve probes preserve independent cursor coordinates without inventing a n
 });
 
 test('heat probes keep the evaluated power, waist and Rabi readouts with source bound to input d',()=>{
-  const model=buildRabiProbeTooltip({state:state('R2'),kind:'heat',powerText:'2.34 mW',waistText:'67.8 µm',rabiText:'123 kHz'});
+  const model=buildRabiProbeTooltip({state:{...state('R2'),F_upper:1.5},kind:'heat',powerText:'2.34 mW',waistText:'67.8 µm',rabiText:'123 kHz'});
   assert.equal(model.title,'参数图读数');
   assert.deepEqual(model.rows.slice(0,3).map(row=>row.value),['2.34 mW','67.8 µm','123 kHz']);
   assert.ok(model.rows.slice(0,3).every(row=>!row.sourceIds));
   const basis=model.rows[3];
   assert.equal(basis.label,'模型输入 d');
-  assert.deepEqual(basis.sourceIds,[getTransitionRecord('R2').quantities.d_num.sourceId]);
+  assert.deepEqual(basis.sourceIds,[getTransitionRecord('R2').quantities.d_F32.sourceId]);
+  assert.match(basis.value,/−3\.491291695/);
+  assert.match(basis.note,/F′ = 3\/2/);
   assert.match(basis.note,/本工作计算/);
   assert.match(model.footnote,/未独立验证/);
 });

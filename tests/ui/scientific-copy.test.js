@@ -43,7 +43,7 @@ test('radius label and footer describe a size estimate after the independent uni
 
 test('versions and constant provenance identify the literature audit without a physical-validation upgrade',()=>{
   assert.equal(FORMULA_VERSION,'1.0.1');
-  assert.equal(DATASET_VERSION,'2026.10.30.1');
+  assert.equal(DATASET_VERSION,'2026.11.10.2');
   assert.match(DATASET_MANIFEST.physicalValidation,/not established for all records/);
   assert.match(DATASET_MANIFEST.physicalValidation,/compilation, theory, source conflicts.*internal models/);
   assert.equal(ESTIMATE_CONFIG.reviewStatus,'conflict-unresolved');

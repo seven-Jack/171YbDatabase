@@ -1,5 +1,5 @@
 import {getQuantity} from '../data/catalog.js';
-import {createFieldView, conventionLabel, evidenceLabel, reviewLabel} from './source-panel.js';
+import {createFieldView, createDipoleFieldViews, conventionLabel, evidenceLabel, reviewLabel} from './source-panel.js';
 import {wavelengthAppearance} from './spectral-color.js';
 
 export const COMPARISON_LIMIT = 3;
@@ -18,10 +18,11 @@ export function normalizeSearch(value) {
 
 function fieldSnapshot(id,key) {
   const quantity=getQuantity(id,key), view=createFieldView(id,key);
+  const branches=key==='d_num'&&view?.branch?createDipoleFieldViews(id):[];
   const missing=!quantity || !Number.isFinite(quantity.value);
   const valueText=missing
     ? (!view || view.valueText.includes('缺失') ? view?.valueText || '缺失：原记录未提供' : `缺失 · ${view.valueText}`)
-    : view.valueText;
+    : branches.length?branches.map(field=>`${field.branch} · ${field.valueText}`).join(' / '):view.valueText;
   return Object.freeze({
     key, value:missing?null:quantity.value, missing, valueText,
     convention:quantity?.convention || null,

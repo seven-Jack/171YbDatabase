@@ -69,6 +69,28 @@ test('effective F, unsupported M2 and calculated Rydberg evidence remain distinc
   await expect(page.locator('#sourcePanel [data-source-field="wavelength_vac_nm"]')).toContainText('标度估算');
   await expect(page.locator('#hfCGTableBody tr')).toHaveCount(10);
   await expect.poll(async()=>Number(await page.locator('#rpCalcR').inputValue())).toBeGreaterThan(0);
+  await expect(page.locator('#ryd65BranchRows tr')).toHaveCount(2);
+  await expect(page.locator('#ryd65BranchRows')).toContainText('60.1761270465');
+  await expect(page.locator('#ryd65BranchRows')).toContainText('60.5610730290');
+  const electronic=page.locator('#ryd65ElectronicDipole');
+  await expect(electronic).toBeVisible();
+  await expect(electronic).toContainText('D_J = (√3/2) D_F = −0.00302354730001 ea₀');
+  await expect(electronic).toContainText('|D_J| = 0.00302354730001 ea₀');
+  const tableRegion=page.getByRole('region',{name:'65S 矩阵元表'});
+  expect(await tableRegion.evaluate(region=>{
+    if (region.scrollWidth<=region.clientWidth) return true;
+    region.scrollLeft=region.scrollWidth;
+    return region.scrollLeft>0;
+  })).toBe(true);
+  for (const [key, signed, magnitude] of [
+    ['0.5|0.5|0.5|-0.5|-1', '+1.250435e-3', '0.00125043'],
+    ['0.5|0.5|1.5|1.5|1', '−1.745646e-3', '0.00174565'],
+  ]) {
+    const row=page.locator(`#hfCGTableBody tr[data-key="${key}"]`);
+    await expect(row).toContainText(signed);
+    await row.getByRole('button').click();
+    await expect(page.locator('#rabiResult small').first()).toContainText(`d_eff=${magnitude} ea₀`);
+  }
 });
 
 test('zero power is a valid zero result after a diagram jump',async ({page})=>{

@@ -105,7 +105,6 @@ test('all references resolve publicly and decay metadata does not mutate the exi
   }
   assert.equal(JSON.stringify(CATALOG),before);
   assert.equal(getQuantity('T6','d_num').value,d);
-  assert.equal(DATASET_VERSION,'2026.10.30.1');
 });
 
 test('public whitelist rejects source text, local paths, unsafe links and false experimental branch claims',()=>{

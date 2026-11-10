@@ -3861,22 +3861,88 @@ export const canonicalCatalog = {
             "modelId": "legacy-rydberg-scaling-v1"
           },
           "d_num": {
-            "value": 0.0376,
+            "value": 0.00216581649,
             "unit": "e*a0",
-            "quantity": "d_num",
-            "sourceId": "ref-17",
-            "sourceLocator": null,
+            "quantity": "hyperfine_reduced_E1_matrix_element",
+            "sourceId": "internal-r017-20261110",
+            "sourceLocator": "yb_matrix_elements.csv line 158; D_F = M_fi sqrt(2F_f+1) / CG",
             "evidenceKind": "internal-calculation",
-            "reviewStatus": "definition-needs-review",
+            "reviewStatus": "original-source-located",
             "uncertainty": null,
-            "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+            "uncertaintyNote": "Saved-model result; convergence and total uncertainty have not been established.",
             "conditions": {
-              "auditDate": "2026-10-29",
-              "auditDisposition": "unverified-internal-record",
-              "excludedFromValidatedPrediction": true,
-              "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+              "F": 0.5,
+              "Fp": 0.5,
+              "m": 0.5,
+              "mp": -0.5,
+              "q": -1,
+              "nu": 60.1761270465,
+              "matrixElement_ea0": 0.001250434734,
+              "branch": "triplet-connected",
+              "magneticField_G": 0,
+              "electricField_V_cm": 0,
+              "quantizationAxis": "z",
+              "branchEvidence": "tutorial_label_only",
+              "phaseConvention": "Condon–Shortley"
             },
-            "convention": "J-reduced"
+            "convention": "F-reduced"
+          },
+          "d_F32": {
+            "value": -0.003491291695,
+            "unit": "e*a0",
+            "quantity": "hyperfine_reduced_E1_matrix_element",
+            "sourceId": "internal-r017-20261110",
+            "sourceLocator": "yb_matrix_elements.csv line 33; D_F = M_fi sqrt(2F_f+1) / CG",
+            "evidenceKind": "internal-calculation",
+            "reviewStatus": "original-source-located",
+            "uncertainty": null,
+            "uncertaintyNote": "Saved-model result; convergence and total uncertainty have not been established.",
+            "conditions": {
+              "F": 0.5,
+              "Fp": 1.5,
+              "m": 0.5,
+              "mp": 1.5,
+              "q": 1,
+              "nu": 60.561073029,
+              "matrixElement_ea0": -0.001745645848,
+              "branch": "F=3/2",
+              "magneticField_G": 0,
+              "electricField_V_cm": 0,
+              "quantizationAxis": "z",
+              "branchEvidence": "tutorial_label_only",
+              "phaseConvention": "Condon–Shortley"
+            },
+            "convention": "F-reduced"
+          },
+          "d_J_from_F32": {
+            "value": -0.00302354730001,
+            "unit": "e*a0",
+            "quantity": "electronic_reduced_E1_matrix_element",
+            "sourceId": "internal-r017-20261110",
+            "sourceLocator": "yb_matrix_elements.csv line 33; D_F = 2 M_fi, D_J = sqrt(3) D_F / 2",
+            "evidenceKind": "derived",
+            "reviewStatus": "original-source-located",
+            "uncertainty": null,
+            "uncertaintyNote": "Derived from the saved Rydcalc model; physical uncertainty has not been evaluated.",
+            "conditions": {
+              "J": 0,
+              "Jp": 1,
+              "F": 0.5,
+              "Fp": 1.5,
+              "m": 0.5,
+              "mp": 1.5,
+              "q": 1,
+              "nu": 60.561073029,
+              "magneticField_G": 0,
+              "electricField_V_cm": 0,
+              "sourceMatrixElement_ea0": -0.001745645847568784,
+              "phaseConvention": "Rydcalc saved state phase",
+              "scope": "Equivalent J-reduced dipole inferred from the F_f=3/2 branch of this zero-field model"
+            },
+            "convention": "J-reduced",
+            "derivedFrom": [
+              "R2.d_F32"
+            ]
           },
           "Gamma_per_s_num": {
             "value": 26660,
@@ -3969,20 +4035,19 @@ export const canonicalCatalog = {
               "lower": "³P₀",
               "upper": "65³S₁",
               "label": "65S 里德堡激发",
-              "d_reduced_ea0": "0.0376",
               "linewidth_FWHM": "2π × 4.24 kHz",
               "multipole": "E1",
               "classification": "强",
               "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
-              "source": "历史标度示意，非逐态文献值；d为内部记录",
+              "source": "矩阵元采用 R017 零场保存值；波长和寿命来自历史标度估算",
               "color": "#a78bfa",
               "approximate": true,
-              "d_convention": "J-reduced, This work",
+              "d_convention": "F-reduced, R017, B=E=0",
               "Gamma_per_s": "26660",
               "oscillator_strength_f": "待核查",
               "Isat": "待核查",
               "branching": "待核查",
-              "forbidden_reason": "E1 允许；矩阵元：This work（J 级约化量）",
+              "forbidden_reason": "E1 允许；各 F′ 分支使用对应的 F 级约化矩阵元",
               "use": "65S 激发与 Rabi 示意计算"
             },
             "quantityFields": {
@@ -3994,7 +4059,9 @@ export const canonicalCatalog = {
               "energy_eV": "energy_eV",
               "lifetime_ns": "lifetime_ns"
             },
-            "aliases": {},
+            "aliases": {
+              "d_reduced_ea0": "d_num"
+            },
             "legacyNullValues": {}
           },
           "rydberg": {
@@ -4003,13 +4070,13 @@ export const canonicalCatalog = {
               "lower": "³P₀",
               "upper": "65³S₁",
               "label": "³P₀ → 65³S₁ · CZ 门",
-              "d_reduced_ea0": "0.0376",
               "linewidth_FWHM": "2π × 4.24 kHz",
               "multipole": "E1",
               "classification": "强",
               "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
-              "source": "历史标度示意，非逐态文献值；d为内部记录",
-              "color": "#b08f76"
+              "source": "矩阵元采用 R017 零场保存值；波长和寿命来自历史标度估算",
+              "color": "#b08f76",
+              "d_convention": "F-reduced, R017, B=E=0"
             },
             "quantityFields": {
               "wavelength_vac_nm": "wavelength_vac_nm",
@@ -4018,9 +4085,15 @@ export const canonicalCatalog = {
               "d_num": "d_num",
               "Gamma_per_s_num": "Gamma_per_s_num"
             },
-            "aliases": {},
+            "aliases": {
+              "d_reduced_ea0": "d_num"
+            },
             "legacyNullValues": {}
           }
+        },
+        "fReducedDipoles": {
+          "0.5": "d_num",
+          "1.5": "d_F32"
         }
       },
       {
@@ -6339,6 +6412,25 @@ export const canonicalCatalog = {
         "artifactManifest": "data/literature/rydberg-audit/internal-evidence-manifest.json",
         "savedNotebookSha256": "ab624645b2003083565484ad405f8024f09d992ac80300384ff9e52e2df14791",
         "savedValidationSha256": "b177d7ebc6fc422839d3f1025915bcb67b2fcebf367ce5557bb6cc96b4689d16"
+      },
+      {
+        "id": "internal-r017-20261110",
+        "title": "R017 · ¹⁷¹Yb 65S Rydcalc 零场计算",
+        "detail": "原始保存值为 ³P₀ F=1/2、mF=+1/2 出发的 E1 磁子态矩阵元。各末态 F 的带符号约化量由相应 M_fi 和 Condon–Shortley CG 因子换算。",
+        "publication": "Calculation R017 · local_20261110T025200Z",
+        "artifactLocator": "Calculation/runs/R017/results/local_20261110T025200Z/yb_matrix_elements.csv",
+        "artifactSha256": "7cb1c7c40fbe231ad331c59618a33b4410443c1cbaf6262019d4febee8c5db14",
+        "codeRevision": "Rydcalc d17b981af24b0ef7132819d53504bc84c42f95b2",
+        "reviewStatus": "original-source-located",
+        "reviewedAt": "2026-11-10",
+        "rightsStatus": "internal research record",
+        "identityStatus": "internal-not-literature",
+        "numericalValidation": "not-established",
+        "evidenceNotes": [
+          "B=0, E=0, z quantization axis; source lines 158 (F=1/2) and 33 (F=3/2).",
+          "The saved F=1/2 sequence label matches the triplet-connected nu in the saved 65S hyperfine table. The tutorial replay did not independently validate branch identity, convergence, or experimental accuracy."
+        ],
+        "year": 2026
       }
     ]
   },
@@ -6528,12 +6620,12 @@ export const canonicalCatalog = {
 };
 export const datasetManifest = {
   "schemaVersion": 1,
-  "datasetVersion": "2026.10.30.1",
+  "datasetVersion": "2026.11.10.2",
   "sourceCommit": "2e2e9d5",
-  "sourceDate": "2026-10-30",
+  "sourceDate": "2026-11-10",
   "migrationDate": "2026-10-26",
-  "generatedAt": "2026-10-30T06:26:37.581Z",
-  "contentHash": "3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28",
+  "generatedAt": "2026-11-10T08:01:45.101Z",
+  "contentHash": "946cabc410ba50e842c5b746fa6a6c149dd514c37c8c94b6ff4350b4a8178271",
   "files": [
     {
       "path": "data/levels.json",
@@ -6541,7 +6633,7 @@ export const datasetManifest = {
     },
     {
       "path": "data/transitions.json",
-      "sha256": "aa8fe6b42776e8e6045ad3cb17d487d1802f27329fa153f9139b153784fa59b0"
+      "sha256": "32b8c4998b5b5feab5fe378bcd3677d7b220fe658badf5b421009603828c0e70"
     },
     {
       "path": "data/hyperfine.json",
@@ -6549,14 +6641,14 @@ export const datasetManifest = {
     },
     {
       "path": "data/sources.json",
-      "sha256": "4d9a8c53bbf668efb02ab9b9c3dcbc68b3bbdebfbcfe39bcdcc00ca910884e62"
+      "sha256": "c77955fac2b5080982014b2efe6cc8efd530ce6d11dcb74a6b0ab0ecc8662a7e"
     },
     {
       "path": "data/estimates.json",
       "sha256": "ffb73032f906ff73fe23b7674c05008ccb1296b292d493fd46f2b42b484c21a9"
     }
   ],
-  "reviewStatus": "nine new primary PDFs checked; explicitRitzP2centroid,statistical-rate-lifetime andionic-frequency corrections; remaining boundaries retained",
+  "reviewStatus": "R2 zero-field branch-resolved matrix elements and F=3/2-derived J-reduced dipole checked against the saved R017 CSV",
   "physicalValidation": "not established for all records: compilation, theory, source conflicts, missing originals and internal models are explicitly distinguished",
   "exports": [
     {

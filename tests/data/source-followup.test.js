@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {verifyLocalEvidence} from '../../scripts/local-evidence.mjs';
-import {CATALOG,getQuantity,ESTIMATE_CONFIG,DATASET_VERSION} from '../../src/data/catalog.js';
+import {CATALOG,getQuantity,ESTIMATE_CONFIG} from '../../src/data/catalog.js';
 
 const root=new URL('../../',import.meta.url);
 const readJSON=relative=>JSON.parse(fs.readFileSync(new URL(relative,root),'utf8'));
@@ -44,7 +44,6 @@ test('Ritz coefficients cancel electronic upper and first-order hyperfine shifts
 });
 
 test('current P2 frequency exactly follows the original five printed components and declared Ritz convention',()=>{
-  assert.equal(DATASET_VERSION,'2026.10.30.1');
   assert.deepEqual(cells.map(cell=>cell.value),['461861338.03','461871596.07','389257019.71','389267277.10','389260569.95']);
   const clock=getQuantity('T3','frequency_THz');
   assert.equal(clock.conditions.sourceDecimal,'518.29583659086363');

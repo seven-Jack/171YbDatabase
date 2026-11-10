@@ -1,7 +1,6 @@
 import fs from 'node:fs';
-import {createHash} from 'node:crypto';
 import {verifyLocalEvidence} from '../../../scripts/local-evidence.mjs';
-import {runReproductionCLI} from '../../../scripts/literature-audit.mjs';
+import {runReproductionCLI,verifyProtectedAuditInputs} from '../../../scripts/literature-audit.mjs';
 import {CORE_TRANSITIONS,getQuantity,DATASET_VERSION} from '../../../src/data/catalog.js';
 import {computeDEff} from '../../../src/physics/angular.js';
 import {spRabi,powerFromRabiHz,dipoleFromDecayRate} from '../../../src/physics/rabi.js';
@@ -55,10 +54,7 @@ export function reproduce() {
     independentPython338mW:near(rows[1].rabi_Hz,12225.1465068,1e-9)
   };
   if(Object.values(checks).some(x=>!x))throw Error('Conditional audit numerical check failed');
-  const protectedHashes=JSON.parse(fs.readFileSync(new URL('../clock-rabi-audit-2026-10-30/protected-hashes.json',import.meta.url),'utf8'));
-  for(const [p,h] of Object.entries(protectedHashes)) {
-    if(createHash('sha256').update(fs.readFileSync(new URL(p,root))).digest('hex')!==h)throw Error('Protected file changed: '+p);
-  }
+  const protectedFileCount=verifyProtectedAuditInputs(DATASET_VERSION);
   return {schemaVersion:1,checkedOn:inputs.checkedOn,status:'conditional-calculation-only',
     independentExperimentalValidationPassed:false,datasetVersion:DATASET_VERSION,formulaVersion:FORMULA_VERSION,
     radius_um:w,wavelengthForRateConversion_nm:t.wavelength_vac_nm,
@@ -72,7 +68,7 @@ export function reproduce() {
       linearBranchChecks:branchChecks},
     uncertaintyBoundary:'Xu uncertainties include only the HFI rate input. Beam power/waist/mode and 22kHz fit uncertainties are unknown; no significance, chi-square, or validation pass is inferred.',
     sourceBytes:inputs.sources.map(s=>verifyLocalEvidence(root,s)),
-    engineeringChecks:checks,protectedFileCount:Object.keys(protectedHashes).length,
+    engineeringChecks:checks,protectedFileCount,
     mainTransitionDiagramChanged:false,productionPhysicsChanged:false,canonicalDataChanged:false};
 }
 

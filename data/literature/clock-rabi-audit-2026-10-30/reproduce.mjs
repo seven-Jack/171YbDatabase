@@ -1,7 +1,6 @@
 import fs from 'node:fs';
-import {createHash} from 'node:crypto';
 import {verifyLocalEvidence} from '../../../scripts/local-evidence.mjs';
-import {runReproductionCLI} from '../../../scripts/literature-audit.mjs';
+import {runReproductionCLI,verifyProtectedAuditInputs} from '../../../scripts/literature-audit.mjs';
 import {CORE_TRANSITIONS,DATASET_VERSION,getQuantity} from '../../../src/data/catalog.js';
 import {HBAR,C,EPS0,EA0,FORMULA_VERSION} from '../../../src/physics/constants.js';
 import {computeDEff,computeCGChannels} from '../../../src/physics/angular.js';
@@ -54,11 +53,7 @@ export function reproduce() {
   const upperSums=new Map();
   const channels=computeCGChannels(state);
   for(const ch of channels){const key=[ch.Fp,ch.mp].join('|');upperSums.set(key,(upperSums.get(key)||0)+ch.matEl**2);}
-  const protectedHashes=JSON.parse(fs.readFileSync(new URL('./protected-hashes.json',import.meta.url),'utf8'));
-  for(const [path,expected] of Object.entries(protectedHashes)) {
-    const actual=createHash('sha256').update(fs.readFileSync(new URL(path,root))).digest('hex');
-    if(actual!==expected)throw Error('Protected production/data file changed: '+path);
-  }
+  verifyProtectedAuditInputs(DATASET_VERSION);
   return {schemaVersion:1,checkedOn:evidence.checkedOn,datasetVersion:DATASET_VERSION,formulaVersion:FORMULA_VERSION,
     conclusion:evidence.conclusion,sourceHashes,
     current:{dF_ea0:dF,dPi_ea0:d,dSigma_ea0:dF/Math.sqrt(3),power_nW:ex.power_nW,

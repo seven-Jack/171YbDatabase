@@ -40,7 +40,9 @@ const legacyFixture = {
 
 test('actual version-1 fixture restores its original physical work point with explicit default definitions', () => {
   const parsed = parseCalculationConfig(structuredClone(legacyFixture), versions);
-  assert.equal(parsed.warnings.length, 0);
+  assert.equal(parsed.warnings.length, 2);
+  assert.ok(parsed.warnings.some(warning => warning.startsWith('数据版本不同')));
+  assert.ok(parsed.warnings.some(warning => warning.startsWith('数据摘要不同')));
   assert.deepEqual(parsed.state.beamDefinition, DEFAULT_BEAM_DEFINITION);
   close(parsed.state.beamInput.power_mW, 1);
   close(parsed.state.beamInput.size_um, 50);

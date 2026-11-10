@@ -2899,22 +2899,88 @@
           "modelId": "legacy-rydberg-scaling-v1"
         },
         "d_num": {
-          "value": 0.0376,
+          "value": 0.00216581649,
           "unit": "e*a0",
-          "quantity": "d_num",
-          "sourceId": "ref-17",
-          "sourceLocator": null,
+          "quantity": "hyperfine_reduced_E1_matrix_element",
+          "sourceId": "internal-r017-20261110",
+          "sourceLocator": "yb_matrix_elements.csv line 158; D_F = M_fi sqrt(2F_f+1) / CG",
           "evidenceKind": "internal-calculation",
-          "reviewStatus": "definition-needs-review",
+          "reviewStatus": "original-source-located",
           "uncertainty": null,
-          "uncertaintyNote": "not established after source audit; retain unknown, never zero",
+          "uncertaintyNote": "Saved-model result; convergence and total uncertainty have not been established.",
           "conditions": {
-            "auditDate": "2026-10-29",
-            "auditDisposition": "unverified-internal-record",
-            "excludedFromValidatedPrediction": true,
-            "stateBoundary": "F,mF,B,triplet/singlet branch and temperature not jointly established; no substitution from other isotope or high-field experiment"
+            "F": 0.5,
+            "Fp": 0.5,
+            "m": 0.5,
+            "mp": -0.5,
+            "q": -1,
+            "nu": 60.1761270465,
+            "matrixElement_ea0": 0.001250434734,
+            "branch": "triplet-connected",
+            "magneticField_G": 0,
+            "electricField_V_cm": 0,
+            "quantizationAxis": "z",
+            "branchEvidence": "tutorial_label_only",
+            "phaseConvention": "Condon–Shortley"
           },
-          "convention": "J-reduced"
+          "convention": "F-reduced"
+        },
+        "d_F32": {
+          "value": -0.003491291695,
+          "unit": "e*a0",
+          "quantity": "hyperfine_reduced_E1_matrix_element",
+          "sourceId": "internal-r017-20261110",
+          "sourceLocator": "yb_matrix_elements.csv line 33; D_F = M_fi sqrt(2F_f+1) / CG",
+          "evidenceKind": "internal-calculation",
+          "reviewStatus": "original-source-located",
+          "uncertainty": null,
+          "uncertaintyNote": "Saved-model result; convergence and total uncertainty have not been established.",
+          "conditions": {
+            "F": 0.5,
+            "Fp": 1.5,
+            "m": 0.5,
+            "mp": 1.5,
+            "q": 1,
+            "nu": 60.561073029,
+            "matrixElement_ea0": -0.001745645848,
+            "branch": "F=3/2",
+            "magneticField_G": 0,
+            "electricField_V_cm": 0,
+            "quantizationAxis": "z",
+            "branchEvidence": "tutorial_label_only",
+            "phaseConvention": "Condon–Shortley"
+          },
+          "convention": "F-reduced"
+        },
+        "d_J_from_F32": {
+          "value": -0.00302354730001,
+          "unit": "e*a0",
+          "quantity": "electronic_reduced_E1_matrix_element",
+          "sourceId": "internal-r017-20261110",
+          "sourceLocator": "yb_matrix_elements.csv line 33; D_F = 2 M_fi, D_J = sqrt(3) D_F / 2",
+          "evidenceKind": "derived",
+          "reviewStatus": "original-source-located",
+          "uncertainty": null,
+          "uncertaintyNote": "Derived from the saved Rydcalc model; physical uncertainty has not been evaluated.",
+          "conditions": {
+            "J": 0,
+            "Jp": 1,
+            "F": 0.5,
+            "Fp": 1.5,
+            "m": 0.5,
+            "mp": 1.5,
+            "q": 1,
+            "nu": 60.561073029,
+            "magneticField_G": 0,
+            "electricField_V_cm": 0,
+            "sourceMatrixElement_ea0": -0.001745645847568784,
+            "phaseConvention": "Rydcalc saved state phase",
+            "scope": "Equivalent J-reduced dipole inferred from the F_f=3/2 branch of this zero-field model"
+          },
+          "convention": "J-reduced",
+          "derivedFrom": [
+            "R2.d_F32"
+          ]
         },
         "Gamma_per_s_num": {
           "value": 26660,
@@ -3007,20 +3073,19 @@
             "lower": "³P₀",
             "upper": "65³S₁",
             "label": "65S 里德堡激发",
-            "d_reduced_ea0": "0.0376",
             "linewidth_FWHM": "2π × 4.24 kHz",
             "multipole": "E1",
             "classification": "强",
             "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
-            "source": "历史标度示意，非逐态文献值；d为内部记录",
+            "source": "矩阵元采用 R017 零场保存值；波长和寿命来自历史标度估算",
             "color": "#a78bfa",
             "approximate": true,
-            "d_convention": "J-reduced, This work",
+            "d_convention": "F-reduced, R017, B=E=0",
             "Gamma_per_s": "26660",
             "oscillator_strength_f": "待核查",
             "Isat": "待核查",
             "branching": "待核查",
-            "forbidden_reason": "E1 允许；矩阵元：This work（J 级约化量）",
+            "forbidden_reason": "E1 允许；各 F′ 分支使用对应的 F 级约化矩阵元",
             "use": "65S 激发与 Rabi 示意计算"
           },
           "quantityFields": {
@@ -3032,7 +3097,9 @@
             "energy_eV": "energy_eV",
             "lifetime_ns": "lifetime_ns"
           },
-          "aliases": {},
+          "aliases": {
+            "d_reduced_ea0": "d_num"
+          },
           "legacyNullValues": {}
         },
         "rydberg": {
@@ -3041,13 +3108,13 @@
             "lower": "³P₀",
             "upper": "65³S₁",
             "label": "³P₀ → 65³S₁ · CZ 门",
-            "d_reduced_ea0": "0.0376",
             "linewidth_FWHM": "2π × 4.24 kHz",
             "multipole": "E1",
             "classification": "强",
             "selection_check": "ΔS=0 ✓, ΔL=−1 ✓, ΔJ=+1 ✓, 奇偶变 ✓",
-            "source": "历史标度示意，非逐态文献值；d为内部记录",
-            "color": "#b08f76"
+            "source": "矩阵元采用 R017 零场保存值；波长和寿命来自历史标度估算",
+            "color": "#b08f76",
+            "d_convention": "F-reduced, R017, B=E=0"
           },
           "quantityFields": {
             "wavelength_vac_nm": "wavelength_vac_nm",
@@ -3056,9 +3123,15 @@
             "d_num": "d_num",
             "Gamma_per_s_num": "Gamma_per_s_num"
           },
-          "aliases": {},
+          "aliases": {
+            "d_reduced_ea0": "d_num"
+          },
           "legacyNullValues": {}
         }
+      },
+      "fReducedDipoles": {
+        "0.5": "d_num",
+        "1.5": "d_F32"
       }
     },
     {

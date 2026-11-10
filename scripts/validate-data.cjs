@@ -3,7 +3,7 @@ const path = require('node:path');
 
 const DATA_FILES = ['levels.json', 'transitions.json', 'hyperfine.json', 'sources.json', 'estimates.json'];
 const PROJECT_ROOT = path.resolve(__dirname, '..');
-const EXPECTED_UNITS = {wavelength_vac_nm:'nm', wavelength_air_nm:'nm', frequency_THz:'THz', energy_eV:'eV', energy_cm:'cm^-1', Gamma_per_s_num:'s^-1', lifetime_ns:'ns', oscillator_strength_f_num:'dimensionless', d_num:'e*a0', linewidth_frequency_coefficient_Hz:'Hz'};
+const EXPECTED_UNITS = {wavelength_vac_nm:'nm', wavelength_air_nm:'nm', frequency_THz:'THz', energy_eV:'eV', energy_cm:'cm^-1', Gamma_per_s_num:'s^-1', lifetime_ns:'ns', oscillator_strength_f_num:'dimensionless', d_num:'e*a0', d_F32:'e*a0', d_J_from_F32:'e*a0', linewidth_frequency_coefficient_Hz:'Hz'};
 const fail = (location, message) => { throw new Error(`${location}: ${message}`); };
 const typeMatches = (value, type) => type === 'null' ? value === null : type === 'array' ? Array.isArray(value) : type === 'object' ? value !== null && typeof value === 'object' && !Array.isArray(value) : type === 'number' ? typeof value === 'number' && Number.isFinite(value) : typeof value === type;
 
@@ -81,6 +81,16 @@ function validateCatalog(catalog, root = PROJECT_ROOT) {
     for (const [field,quantity] of Object.entries(transition.quantities)) {
       checkQuantity(quantity,`${location}.${field}`);
       if (quantity.unit !== EXPECTED_UNITS[field]) fail(`${location}.${field}.unit`,'incorrect unit for field');
+    }
+    if (transition.fReducedDipoles) {
+      if (!Object.values(transition.fReducedDipoles).includes('d_num')) fail(`${location}.fReducedDipoles`,'missing default branch');
+      for (const [Fp, field] of Object.entries(transition.fReducedDipoles)) {
+        const dipole = transition.quantities[field];
+        if (dipole?.convention !== 'F-reduced' || dipole.unit !== 'e*a0' || !Number.isFinite(dipole.value) ||
+            String(dipole.conditions?.Fp) !== Fp) {
+          fail(`${location}.fReducedDipoles.${Fp}`,'expected an F-reduced dipole for this upper F');
+        }
+      }
     }
     for (const [viewName,view] of Object.entries(transition.views)) {
       for (const [field,quantityName] of Object.entries({...view.quantityFields,...view.aliases})) if (!transition.quantities[quantityName]) fail(`${location}.views.${viewName}.${field}`,'unresolved quantity alias');

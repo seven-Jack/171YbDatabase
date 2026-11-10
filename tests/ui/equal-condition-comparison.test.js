@@ -99,7 +99,7 @@ test('forged, inconsistent or nonexistent source channels never fall back to the
   }
 });
 
-test('J-reduced and hyperfine-effective F-reduced inputs use their own canonical channel conventions', () => {
+test('J-reduced, effective F-reduced and branch-specific F-reduced inputs use their own canonical channel conventions', () => {
   const source = sourceState('T2', {F_upper:.5, pol:'pi'});
   const view = buildEqualConditionComparison(selected('T1', 'T2', 'T3', 'R2'), source, versions);
   for (const row of view.rows) {
@@ -110,12 +110,23 @@ test('J-reduced and hyperfine-effective F-reduced inputs use their own canonical
   }
   assert.equal(rowFor(view, 'T3').state.convention, 'F-reduced-effective');
   assert.equal(rowFor(view, 'T2').state.convention, 'J-reduced');
+  assert.equal(rowFor(view, 'R2').state.convention, 'F-reduced');
   assert.ok(rowFor(view, 'T3').dEff_ea0 > 0);
   const clockSource = sourceState('T3', {F_upper:.5, pol:'pi'});
   Object.assign(clockSource, {J_upper:1, dReduced:10, convention:'J-reduced'});
   const clockView = buildEqualConditionComparison(selected('T3', 'T2'), clockSource, versions);
   assert.equal(clockView.context.status, 'ready');
   close(rowFor(clockView, 'T3').result.fR, rowFor(view, 'T3').result.fR);
+
+  const stretched = {F:.5, m:.5, Fp:1.5, mp:1.5, q:1};
+  for (const id of ['T2', 'R2']) {
+    const stretchedSource = sourceState(id, {F_upper:1.5, pol:'sigmap', selectedChannel:stretched});
+    const rydberg = rowFor(buildEqualConditionComparison(selected('R2'), stretchedSource, versions), 'R2');
+    assert.equal(rydberg.status, 'ok');
+    assert.equal(rydberg.state.dReduced, -.003491291695);
+    close(rydberg.channel.matEl, -.003491291695/2);
+    assert.equal(rydberg.evidence.calculationStatus, 'valid');
+  }
 });
 
 test('targets without the identical F/mF/polarization channel remain unavailable rather than selecting an alternative', () => {

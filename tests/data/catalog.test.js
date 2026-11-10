@@ -34,10 +34,40 @@ test('all eight homepage paths reference unique canonical levels and transitions
   }
 });
 
-test('field sources separate adopted literature, unresolved internal elements and missing quantities',()=>{
-  assert.equal(data.getQuantity('R2','d_num').sourceId,'ref-17');
-  assert.equal(data.getQuantity('R2','d_num').evidenceKind,'internal-calculation');
-  assert.equal(data.getQuantity('R2','d_num').reviewStatus,'definition-needs-review');
+test('R2 equivalent J dipole comes from the full-precision F=3/2 stretched amplitude',()=>{
+  const dipole=data.getQuantity('R2','d_J_from_F32');
+  const branch=data.getDipoleQuantity('R2',1.5);
+  assert.equal(dipole.value,-0.00302354730001);
+  assert.equal(dipole.convention,'J-reduced');
+  assert.equal(dipole.evidenceKind,'derived');
+  assert.equal(dipole.sourceId,branch.sourceId);
+  assert.match(dipole.sourceLocator,/line 33/);
+  assert.equal(dipole.uncertainty,null);
+  assert.deepEqual(dipole.derivedFrom,['R2.d_F32']);
+  assert.equal(dipole.conditions.sourceMatrixElement_ea0,-0.001745645847568784);
+  assert.equal(dipole.value,Number((Math.sqrt(3)*dipole.conditions.sourceMatrixElement_ea0).toPrecision(12)));
+  assert.equal(branch.value,-0.003491291695);
+  assert.equal(data.getDipoleQuantity('R2',0.5).value,0.00216581649);
+});
+
+test('field sources separate adopted literature, internal elements and missing quantities',()=>{
+  const r2Branches=[
+    {Fp:0.5,mp:-0.5,q:-1,nu:60.1761270465,value:0.002165816490,matrixElement_ea0:0.001250434734},
+    {Fp:1.5,mp:1.5,q:1,nu:60.5610730290,value:-0.003491291695,matrixElement_ea0:-0.001745645848}
+  ];
+  for(const {value,...anchor} of r2Branches) {
+    const dipole=data.getDipoleQuantity('R2',anchor.Fp);
+    assert.equal(dipole.value,value);
+    assert.equal(dipole.sourceId,'internal-r017-20261110');
+    assert.equal(dipole.evidenceKind,'internal-calculation');
+    assert.equal(dipole.reviewStatus,'original-source-located');
+    assert.equal(dipole.convention,'F-reduced');
+    assert.equal(dipole.uncertainty,null);
+    for(const [key,expected] of Object.entries({...anchor,F:0.5,m:0.5,magneticField_G:0,electricField_V_cm:0})) {
+      assert.equal(dipole.conditions[key],expected,key);
+    }
+  }
+  assert.equal(data.getQuantity('R2','d_num'),data.getDipoleQuantity('R2',0.5));
   assert.equal(data.getQuantity('R2','wavelength_vac_nm').evidenceKind,'scaling-estimate');
   const t2=data.getQuantity('T2','d_num');
   assert.equal(t2.sourceId,'ref-01');

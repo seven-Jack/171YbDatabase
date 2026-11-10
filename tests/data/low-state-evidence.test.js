@@ -8,6 +8,7 @@ const evidence = read('../../data/evidence.json');
 const original = read('../../data/literature/low-state-rabi-validation-2026-10-30/cases.json');
 const archived = read('../../data/literature/low-state-rabi-validation-2026-10-30/results.json');
 const canonical = read('../../data/transitions.json');
+const dataset = read('../../data/dataset.json');
 const ids = ['T1', 'T2', 'T5', 'T6', 'T7'];
 const sourceIds = {
   T1:['kroeze-2026'], T2:['kroeze-2026','beloy-2012'],
@@ -24,7 +25,11 @@ test('M4 preserves the reviewed main T3 record and Offer comparison facts', () =
   const t3 = evidence.records.find(record => record.transitionId === 'T3');
   const {kind, ...offer} = evidence.comparisons.find(comparison => comparison.id === 'offer-578-conditional');
   assert.equal(kind, 'conditional-power');
-  assert.equal(fingerprint(t3), 'fb5dc856c3dbec0d3fd9f16c6895ed4ec5e242edaaf7bc658e63e1f034475ba1');
+  assert.equal(t3.appliesTo.datasetHash, dataset.contentHash);
+  // The R2-only release rebinds the global dataset hash. Verify the original
+  // fingerprint of every other T3 field against the reviewed record.
+  const historical = {...t3, appliesTo: {...t3.appliesTo, datasetHash: '3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28'}};
+  assert.equal(fingerprint(historical), 'fb5dc856c3dbec0d3fd9f16c6895ed4ec5e242edaaf7bc658e63e1f034475ba1');
   assert.equal(fingerprint(offer), 'bb56b421b4a0d30db7887aed1b6a40b93b777d49807f58d7e3fc6ce9f4e3b1f9');
 });
 
@@ -43,6 +48,7 @@ for (const id of ids) {
     assert.equal(record.appliesTo.dipole_ea0, result.canonicalDipole_ea0);
     assert.equal(record.appliesTo.dipole_ea0, dipole.value);
     assert.equal(record.appliesTo.convention, dipole.convention);
+    assert.equal(record.appliesTo.datasetHash, dataset.contentHash);
     assert.equal(record.appliesTo.formulaVersion, archived.formulaVersion);
     assert.deepEqual(record.appliesTo.channels, [sourceCase.channel]);
     assert.deepEqual(record.appliesTo.channels, [result.channel]);

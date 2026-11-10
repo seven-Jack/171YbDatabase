@@ -111,15 +111,19 @@ export function computeHfChannels(state, allPol = false) {
 
 /** Full-polarization channel table. This function does not mutate UI state. */
 export function computeCGChannels(state) {
-  if (!state?.transition || !(state.dReduced > 0)) return [];
+  if (!state?.transition) return [];
+  const branchDipoles = state.transition.fReducedDipoles;
+  if (!branchDipoles && !(state.dReduced > 0)) return [];
   if (state.transition.multipole && !String(state.transition.multipole).startsWith('E1')) return [];
-  if (state.transition.hf_induced || state.convention === 'F-reduced') return computeHfChannels(state, true);
+  if (!branchDipoles && (state.transition.hf_induced || state.convention === 'F-reduced')) return computeHfChannels(state, true);
   const J = state.J_lower, Jp = state.J_upper;
   if (J === 0 && Jp === 0) return [];
   const channels = [];
   for (const F of getFs(J)) {
     for (const Fp of getFs(Jp)) {
-      const dF = reducedFFromJJ(Jp, J, Fp, F, state.dReduced);
+      const dF = branchDipoles ? branchDipoles[Fp] : reducedFFromJJ(Jp, J, Fp, F, state.dReduced);
+      if (branchDipoles && !dF) continue;
+      const reduced = branchDipoles ? dF : state.dReduced;
       for (let m = -F; m <= F + EPS; m += 1) {
         for (const q of [-1, 0, 1]) {
           const mp = m + q;
@@ -127,7 +131,7 @@ export function computeCGChannels(state) {
           const cgVal = cg(F, m, 1, q, Fp, mp);
           if (Math.abs(cgVal) < 1e-10) continue;
           const matEl = matrixElement_F_q(F, m, Fp, mp, q, dF);
-          channels.push({ F, m, Fp, mp, q, cgVal, matEl, angFactor: matEl / state.dReduced });
+          channels.push({ F, m, Fp, mp, q, cgVal, matEl, angFactor: matEl / reduced });
         }
       }
     }
@@ -138,18 +142,20 @@ export function computeCGChannels(state) {
 /** Explicit selection or strongest allowed component of the current F pair/polarization. */
 export function computeDEff(state) {
   const empty = { dEff: 0, cg: 0 };
-  if (!state?.transition || !(state.dReduced > 0)) return empty;
-  const isHf = state.transition.hf_induced || state.convention === 'F-reduced';
+  if (!state?.transition) return empty;
+  const branchDipoles = state.transition.fReducedDipoles;
+  if (!branchDipoles && !(state.dReduced > 0)) return empty;
+  const isHf = !branchDipoles && (state.transition.hf_induced || state.convention === 'F-reduced');
   const q = polarizationQ(state.pol);
   const channels = isHf ? computeHfChannels(state) : computeCGChannels(state).filter(ch => ch.q === q);
   if (state.selectedChannel) {
     const selected = channels.find(ch => channelKey(ch) === channelKey(state.selectedChannel));
-    if (selected) return { dEff: Math.abs(selected.matEl), cg: Math.abs(selected.matEl) / state.dReduced, mF: selected.m, mFp: selected.mp };
+    if (selected) return { dEff: Math.abs(selected.matEl), cg: Math.abs(selected.angFactor), mF: selected.m, mFp: selected.mp };
   }
   const candidates = isHf ? channels : channels.filter(ch => ch.F === state.F_lower && ch.Fp === state.F_upper).sort((a, b) => a.m - b.m || a.mp - b.mp);
   let best;
   for (const ch of candidates) if (!best || Math.abs(ch.matEl) > Math.abs(best.matEl)) best = ch;
-  return best ? { dEff: Math.abs(best.matEl), cg: Math.abs(best.matEl) / state.dReduced, mF: best.m, mFp: best.mp } : empty;
+  return best ? { dEff: Math.abs(best.matEl), cg: Math.abs(best.angFactor), mF: best.m, mFp: best.mp } : empty;
 }
 
 export function formatCG(x) {

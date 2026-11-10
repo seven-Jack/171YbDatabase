@@ -11,7 +11,8 @@ test('table hover citations follow each saved quantity with newly adopted litera
   assert.deepEqual(model('T2','d_num').rows[0].sourceIds,['ref-01']);
   assert.deepEqual(model('T3','d_num').rows[0].sourceIds,['internal-t3-20260908']);
   assert.deepEqual(model('R2','wavelength_vac_nm').rows[0].sourceIds,['legacy-scaling']);
-  assert.deepEqual(model('R2','d_num').rows[0].sourceIds,['ref-17']);
+  assert.deepEqual(model('R2','d_num').rows.map(row=>row.sourceIds),[['internal-r017-20261110'],['internal-r017-20261110']]);
+  assert.match(model('R2','d_num').rows[1].value,/−3\.491291695/);
   assert.match(model('R2','wavelength_vac_nm').rows[0].value,/^≈/);
 });
 
