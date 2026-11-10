@@ -21,10 +21,9 @@ test('each indexed literature entry keeps its stable source anchor and verified 
 
 test('browser adopts T2 literature dipole while retaining clock and wavelength source conflicts',async({page})=>{
   const data=await page.evaluate(async()=>{
-    const {getQuantity,DATASET_VERSION}=await import('./src/data/catalog.js');
-    return {version:DATASET_VERSION,t2:getQuantity('T2','d_num'),t3:getQuantity('T3','oscillator_strength_f_num'),t7:getQuantity('T7','wavelength_vac_nm')};
+    const {getQuantity}=await import('./src/data/catalog.js');
+    return {t2:getQuantity('T2','d_num'),t3:getQuantity('T3','oscillator_strength_f_num'),t7:getQuantity('T7','wavelength_vac_nm')};
   });
-  expect(data.version).toBe('2026.10.30.1');
   expect(data.t2.value).toBe(.5398);
   expect(data.t2.uncertainty).toBe(.0006);
   expect(data.t2.sourceId).toBe('ref-01');

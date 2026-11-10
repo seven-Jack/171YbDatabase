@@ -6,6 +6,16 @@ import {isDeepStrictEqual} from 'node:util';
 import {verifyLocalEvidence} from './local-evidence.mjs';
 
 const root = new URL('../', import.meta.url);
+const historicalDatasetVersion = '2026.10.30.1';
+const r017DatasetVersion = '2026.11.10.2';
+// R017 updated the R2 dipole branches, their angular dispatch and the derived
+// J-reduced record. These are the replacement fingerprints for protected inputs.
+const r017InputHashes = {
+  'data/dataset.json': '44021f1997c599c835f2e2143033975ec20860827585ac876b54775000176f96',
+  'data/transitions.json': '32b8c4998b5b5feab5fe378bcd3677d7b220fe658badf5b421009603828c0e70',
+  'data/sources.json': 'c77955fac2b5080982014b2efe6cc8efd530ce6d11dcb74a6b0ab0ecc8662a7e',
+  'src/physics/angular.js': 'aca6278178e9a82270ccc39f0e2ecabb999f8a96b152068f2c99f75a77e78a6e',
+};
 const common = ['scripts/literature-audit.mjs', 'scripts/local-evidence.mjs', 'scripts/paper-paths.mjs'];
 export const auditPackages = [
   {name: 'clock-rabi-audit-2026-10-30', report: 'clock-rabi-578-audit-20261030.md',
@@ -23,6 +33,20 @@ function location(base, relative) {
   return resolved;
 }
 const readJSON = (base, relative) => JSON.parse(fs.readFileSync(location(base, relative), 'utf8'));
+
+export function verifyProtectedAuditInputs(datasetVersion, base = root) {
+  if (![historicalDatasetVersion, r017DatasetVersion].includes(datasetVersion)) {
+    throw Error(`Protected audit inputs have no reviewed fingerprints for dataset ${datasetVersion}`);
+  }
+  const historical = readJSON(base, 'data/literature/clock-rabi-audit-2026-10-30/protected-hashes.json');
+  const replacement = datasetVersion === r017DatasetVersion ? r017InputHashes : {};
+  for (const [relative, historicalHash] of Object.entries(historical)) {
+    if (digest(fs.readFileSync(location(base, relative))) !== (replacement[relative] ?? historicalHash)) {
+      throw Error(`Protected production/data file changed: ${relative}`);
+    }
+  }
+  return Object.keys(historical).length;
+}
 
 function packageFiles(definition, base = root) {
   const walk = relative => fs.readdirSync(location(base, relative), {withFileTypes: true}).flatMap(entry => {
@@ -109,12 +133,18 @@ function snapshotDifference(actual, expected, at = '$', roundoff = []) {
 }
 
 export function compareReproductionSnapshot(current, historical) {
-  const roundoff = [], difference = snapshotDifference(scientificProjection(current), scientificProjection(historical), '$', roundoff);
+  const currentProjection = scientificProjection(current), historicalProjection = scientificProjection(historical);
+  const datasetVersions = current.datasetVersion === r017DatasetVersion && historical.datasetVersion === historicalDatasetVersion
+    ? {reproductionDatasetVersion: current.datasetVersion, historicalDatasetVersion: historical.datasetVersion} : {};
+  // This release only changes R2. Compare every clock input and output, while
+  // reporting the live catalog version separately from the frozen baseline.
+  if (datasetVersions.reproductionDatasetVersion) currentProjection.datasetVersion = historical.datasetVersion;
+  const roundoff = [], difference = snapshotDifference(currentProjection, historicalProjection, '$', roundoff);
   if (difference) {
     throw Error(`Reproduction differs from the historical scientific result or source identity: ${JSON.stringify(difference)}`);
   }
   const records = current.sourceHashes || current.sourceBytes || [];
-  return {scientificSnapshotMatches: true, originalsVerified: records.filter(item => item.verified).length,
+  return {scientificSnapshotMatches: true, ...datasetVersions, originalsVerified: records.filter(item => item.verified).length,
     originalsUnavailable: records.filter(item => !item.verified).length,
     derivedProbabilityRoundoffMatches: roundoff,
     boundary: 'Historical source-byte availability is not a claim that originals are present in this checkout.'};

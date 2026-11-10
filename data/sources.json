@@ -961,6 +961,25 @@
       "artifactManifest": "data/literature/rydberg-audit/internal-evidence-manifest.json",
       "savedNotebookSha256": "ab624645b2003083565484ad405f8024f09d992ac80300384ff9e52e2df14791",
       "savedValidationSha256": "b177d7ebc6fc422839d3f1025915bcb67b2fcebf367ce5557bb6cc96b4689d16"
+    },
+    {
+      "id": "internal-r017-20261110",
+      "title": "R017 · ¹⁷¹Yb 65S Rydcalc 零场计算",
+      "detail": "原始保存值为 ³P₀ F=1/2、mF=+1/2 出发的 E1 磁子态矩阵元。各末态 F 的带符号约化量由相应 M_fi 和 Condon–Shortley CG 因子换算。",
+      "publication": "Calculation R017 · local_20261110T025200Z",
+      "artifactLocator": "Calculation/runs/R017/results/local_20261110T025200Z/yb_matrix_elements.csv",
+      "artifactSha256": "7cb1c7c40fbe231ad331c59618a33b4410443c1cbaf6262019d4febee8c5db14",
+      "codeRevision": "Rydcalc d17b981af24b0ef7132819d53504bc84c42f95b2",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-11-10",
+      "rightsStatus": "internal research record",
+      "identityStatus": "internal-not-literature",
+      "numericalValidation": "not-established",
+      "evidenceNotes": [
+        "B=0, E=0, z quantization axis; source lines 158 (F=1/2) and 33 (F=3/2).",
+        "The saved F=1/2 sequence label matches the triplet-connected nu in the saved 65S hyperfine table. The tutorial replay did not independently validate branch identity, convergence, or experimental accuracy."
+      ],
+      "year": 2026
     }
   ]
 }

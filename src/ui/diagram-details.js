@@ -1,5 +1,5 @@
 import { CATALOG, getTransitionRecord } from '../data/catalog.js';
-import { createFieldView, escapeHTML } from './source-panel.js';
+import { createDipoleFieldViews, escapeHTML } from './source-panel.js';
 import { renderDiagramSourceMarks } from './diagram-references.js';
 import { renderDecayDetails } from './decay-details.js';
 
@@ -13,16 +13,19 @@ const row = (label,value,sourceIds=[],note='') => `<div class="diagram-detail-ro
 export function renderTransitionTooltip(t,isCore=true) {
   const record=getTransitionRecord(t.id);
   const source=field=>record?.quantities[field]?.sourceId;
-  const dipole=createFieldView(t.id,'d_num');
-  const review=t.id==='T3'?'波长：文献汇编 · d：内部待核':t.id==='T4'?'λ：Ritz 派生 · τ：统计平均理论':t.id==='T7'?'λ 由 ν 推导 · 原表存在冲突':t.id.startsWith('R')?'历史估算 / 内部矩阵元 · 待核':'文献汇编 · 定义见来源';
-  const matrixLabel=record?.quantities.d_num?.value===null?'矩阵元（E1）':dipole?.convention==='有效 F 级约化量'?'d（有效 F）':'d（J 约化）';
-  const matrixNote=dipole?.kind==='内部校准'?'内部校准':dipole?.kind==='本工作计算'?'本工作计算':'';
+  const dipoles=createDipoleFieldViews(t.id);
+  const review=t.id==='T3'?'波长：文献汇编 · d：内部待核':t.id==='T4'?'λ：Ritz 派生 · τ：统计平均理论':t.id==='T7'?'λ 由 ν 推导 · 原表存在冲突':record?.fReducedDipoles?'波长：历史估算 · D_F：R017 零场计算':t.id.startsWith('R')?'历史估算 / 内部矩阵元 · 待核':'文献汇编 · 定义见来源';
+  const matrixRows=dipoles.map(dipole=>{
+    const label=dipole.branch?dipole.label:record?.quantities.d_num?.value===null?'矩阵元（E1）':dipole.convention==='有效 F 级约化量'?'d（有效 F）':'d（J 约化）';
+    const note=['内部校准','本工作计算'].includes(dipole.kind)?dipole.kind:'';
+    return row(esc(label),esc(dipole.valueText),[dipole.sourceId],note);
+  }).join('');
   const wavelength=isCore?`${t.approximate?'≈':''}${t.wavelength_vac_nm.toFixed(t.approximate?2:4)} nm`:`${t.wavelength_vac_nm} nm`;
   return `<div class="diagram-transition-head"><span class="diagram-transition-id">${esc(t.id)}</span>
     <div class="tt-title">${esc(t.lower&&t.upper?`${t.lower} → ${t.upper}`:t.label)}</div></div>
     ${row('λ（真空）',esc(wavelength),[source('wavelength_vac_nm')])}
     ${Number.isFinite(t.frequency_THz)?row('频率 ν',`${t.approximate?'≈':''}${number(t.frequency_THz,5)} THz`,[source('frequency_THz')]):''}
-    ${dipole?row(matrixLabel,esc(dipole.valueText),[source('d_num')],matrixNote):''}
+    ${matrixRows}
     ${row('多极性',esc(t.multipole||'—'))}
     <div class="diagram-detail-foot">${esc(review)}</div>`;
 }

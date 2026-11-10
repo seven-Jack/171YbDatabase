@@ -14,7 +14,7 @@ import { initHyperfineCalculator } from './ui/hyperfine-diagram.js';
 import { initRabiCharts } from './ui/rabi-chart.js';
 import { initDataTables } from './ui/data-table.js';
 import { initDataBrowser } from './ui/data-browser.js';
-import { initSourcePanel, createFieldView } from './ui/source-panel.js';
+import { initSourcePanel, createDipoleFieldView, createFieldView } from './ui/source-panel.js';
 import { initPageControls } from './ui/page-controls.js';
 import { initWorkflowNavigation } from './ui/workflow-navigation.js';
 import { initDiagramNavigation } from './ui/transition-navigation.js';
@@ -111,7 +111,7 @@ export function start() {
       :state.inputError||'请先选择适用跃迁与输入';
     result.append(title,value,context);
     if(state.transition){
-      const dipole=createFieldView(state.transition.id,'d_num');
+      const dipole=createDipoleFieldView(state.transition.id,state.selectedChannel?.Fp ?? state.F_upper);
       const lifetime=createFieldView(state.transition.id,'lifetime_ns');
       const evidence=document.createElement('div');evidence.className='result-evidence';
       const validation=document.createElement('p');validation.className='result-validation';

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {CORE_TRANSITIONS,getTransitionRecord} from '../../src/data/catalog.js';
 import {CORE_SUMMARY_COLUMNS,sortTableRows,formatLinewidthDisplay} from '../../src/ui/data-table.js';
-import {buildSourceView,createFieldView,renderSourceDetailsHTML,renderFieldSourceHTML,escapeHTML,formatFrequency} from '../../src/ui/source-panel.js';
+import {buildSourceView,createFieldView,renderSourceDetailsHTML,renderFieldSourceHTML,renderR2BranchRowsHTML,escapeHTML,formatFrequency} from '../../src/ui/source-panel.js';
 
 const selected=id=>({transition:CORE_TRANSITIONS.find(row=>row.id===id),F_lower:.5,F_upper:.5,pol:'pi',dEff:.01,P_mW:1,w_um:50,selectedChannel:null});
 
@@ -33,13 +33,28 @@ test('R2 makes dipole, wavelength and derived-lifetime evidence visibly distinct
   assert.match(html,/本工作计算/);
   assert.match(html,/标度估算/);
   assert.match(html,/由标度估算推导/);
-  assert.match(html,/0\.0376 ea₀/);
-  assert.match(html,/J 级约化量/);
+  assert.match(html,/\+2\.165816490 × 10⁻³ ea₀/);
+  assert.match(html,/−3\.491291695 × 10⁻³ ea₀/);
+  assert.match(html,/F 级约化量/);
+  assert.match(html,/已定位计算工件/);
+  const electronic=createFieldView('R2','d_J_from_F32');
+  assert.equal(electronic.valueText,'−0.00302354730001 ea₀');
+  assert.equal(electronic.convention,'J 级约化量');
+  assert.equal(electronic.review,'已定位计算工件');
+  assert.match(electronic.label,/F′ = 3\/2 折算/);
+  assert.match(electronic.locator,/line 33/);
+  assert.match(html,/data-source-field="d_J_from_F32"/);
   assert.match(html,/定义待核查/);
-  assert.match(html,/Notebook \/ Run 及版本定位待补充/);
+  assert.match(html,/R017\/results\/local_20261110T025200Z\/yb_matrix_elements\.csv/);
   assert.match(html,/原文页 \/ 表 \/ 式：待核查/);
   assert.doesNotMatch(html,/已验证|实验验证通过/);
-  assert.equal(getTransitionRecord('R2').quantities.d_num.value,.0376);
+  assert.equal(getTransitionRecord('R2').quantities.d_num.value,.00216581649);
+});
+
+test('R2 channel note shows both signed amplitudes and the actual roots at saved display precision',()=>{
+  const html=renderR2BranchRowsHTML();
+  assert.match(html,/F′ = 1\/2（三重态关联）[\s\S]*?60\.1761270465[\s\S]*?−1\/2, −1[\s\S]*?\+1\.250434734 × 10⁻³[\s\S]*?\+2\.165816490 × 10⁻³/);
+  assert.match(html,/F′ = 3\/2[\s\S]*?60\.5610730290[\s\S]*?\+3\/2, \+1[\s\S]*?−1\.745645848 × 10⁻³[\s\S]*?−3\.491291695 × 10⁻³/);
 });
 
 test('T2 adopts the located literature derivation while T3 retains its unresolved F convention',()=>{

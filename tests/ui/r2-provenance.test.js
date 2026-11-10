@@ -18,21 +18,20 @@ test('R2 provenance retains two website-attribution records with complete finger
     assert.match(item.sha256,/^[a-f0-9]{64}$/);
     assert.ok(item.path&&item.lines&&item.excerpt);
   }
-  assert.match(R2_PROVENANCE.scope,/网站归属历史，不是原始生成证据/);
+  assert.match(R2_PROVENANCE.scope,/旧值 0\.0376 ea₀ 的网站归属历史/);
 });
 
-test('only R2 gains a native details disclosure and its evidence status is unchanged',()=>{
+test('R2 keeps its historical value separate from the located R017 fields',()=>{
   const before=JSON.stringify(getQuantity('R2','d_num'));
   const html=renderSourceDetailsHTML(buildSourceView(selected('R2')));
-  assert.match(html,/<details[^>]*data-testid="r2-provenance"><summary>R2来源追溯与误差边界<\/summary>/);
-  assert.match(html,/0\.0376 ea₀ 仍为原输入/);
+  assert.match(html,/<details[^>]*data-testid="r2-provenance"><summary>R2 历史值的来源与误差边界<\/summary>/);
+  assert.match(html,/旧版将 0\.0376 ea₀/);
   assert.match(html,/电子态 J 级约化量/);
-  assert.match(html,/尚未独立验证/);
   assert.match(html,/Notebook \/ Run、计算代码版本、输入输出工件及哈希未定位/);
   assert.match(html,/实际混合态根 \/ branch、F \/ mF、B 及辐射温度 T 均未知/);
   assert.doesNotMatch(renderSourceDetailsHTML(buildSourceView(selected('T2'))),/data-testid="r2-provenance"/);
-  assert.equal(createFieldView('R2','d_num').review,'定义待核查');
-  assert.equal(createFieldView('R2','d_num').missingArtifact,true);
+  assert.equal(createFieldView('R2','d_num').review,'已定位计算工件');
+  assert.equal(createFieldView('R2','d_num').missingArtifact,false);
   assert.equal(JSON.stringify(getQuantity('R2','d_num')),before);
 });
 
@@ -50,7 +49,7 @@ test('all four uncertainty categories remain unknown and Run evidence cannot tra
 });
 
 
-test('public sources support bounded context and never promote the unresolved R2 input',()=>{
+test('public sources support bounded context while current R2 values cite the R017 artifact',()=>{
   assert.equal(R2_EVIDENCE_EXTENSION.reviewedAt,'2026-10-27');
   assert.equal(R2_EVIDENCE_EXTENSION.sources.length,3);
   assert.match(R2_EVIDENCE_EXTENSION.sources[0].supports,/518 G/);
@@ -58,9 +57,9 @@ test('public sources support bounded context and never promote the unresolved R2
   for(const source of R2_EVIDENCE_EXTENSION.sources){assert.equal(new URL(source.url).protocol,'https:');assert.ok(source.locator&&source.limit);}
   const html=renderSourceDetailsHTML(buildSourceView(selected('R2')));
   assert.match(html,/文献能支持什么（非本数值来源）/);
-  assert.match(html,/原始计算来源仍未定位/);
-  assert.equal(getQuantity('R2','d_num').value,0.0376);
-  assert.equal(createFieldView('R2','d_num').missingArtifact,true);
+  assert.match(html,/旧值的原始计算工件未定位/);
+  assert.equal(getQuantity('R2','d_num').sourceId,'internal-r017-20261110');
+  assert.equal(getQuantity('R2','d_F32').sourceId,'internal-r017-20261110');
 });
 
 test('conditional uncertainty method preserves missing inputs, covariance and nonzero boundaries',()=>{

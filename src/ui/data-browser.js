@@ -1,7 +1,7 @@
 import {buildExplorerRecords,filterExplorerRecords,toggleComparison,COMPARISON_LIMIT,COMPARISON_FIELDS} from './explorer-model.js';
 import {buildEqualConditionComparison} from './equal-condition-comparison.js';
-import {createFieldView,renderFieldSourceHTML,escapeHTML} from './source-panel.js';
-import {getQuantity} from '../data/catalog.js';
+import {createFieldView,createDipoleFieldViews,renderFieldSourceHTML,escapeHTML} from './source-panel.js';
+import {getDipoleQuantity,getQuantity} from '../data/catalog.js';
 import {renderDiagramSourceMarks} from './diagram-references.js';
 
 const activeBrowsers=new WeakMap();
@@ -85,7 +85,7 @@ export function initDataBrowser({transitions=[],calculator,tables,versions={},on
       <output class="data-comparison-context" id="dataComparisonContext" data-status="${e(context.status)}">${e(contextText)}</output>
       <p class="data-comparison-note">${context.status==='ready'?e(context.selectionOrigin==='auto'?'沿用当前自动选择的实际通道。':'沿用当前手选通道。'):''} <a href="#secRabi">调整当前工作点与通道</a></p>
       <div class="data-comparison-grid">${comparisonView.rows.map(row=>{
-        const record=byId.get(row.id),quantity=getQuantity(row.id,'d_num'),wave=getQuantity(row.id,'wavelength_vac_nm'),valid=row.status==='ok';
+        const record=byId.get(row.id),quantity=getDipoleQuantity(row.id,context.channel?.Fp),wave=getQuantity(row.id,'wavelength_vac_nm'),valid=row.status==='ok';
         const formula=row.evidence?.rows.find(item=>item.key==='formula');
         const experiment=row.evidence?.rows.find(item=>item.key==='experiment');
         return `<article class="data-comparison-card" data-comparison-id="${e(row.id)}" data-status="${e(row.status)}"${valid?` data-rabi-hz="${e(row.result.fR)}"`:''}>
@@ -94,7 +94,7 @@ export function initDataBrowser({transitions=[],calculator,tables,versions={},on
           <div class="data-comparison-result"><strong>${valid?e(number(row.result.fR/frequencyScales[unit])):'—'}</strong><span>${valid?e(unit)+' · Ω/2π':'当前条件不可计算'}</span></div>
           <p class="data-comparison-channel">${valid?`d_eff = ${e(number(row.dEff_ea0))} ea₀ · 采用 d 的来源 ${renderDiagramSourceMarks(quantity?.sourceId?[quantity.sourceId]:[])}`:e(row.message)}</p>
           <p class="data-comparison-evidence">${valid?e(formula?.statusText||'当前通道尚未核查')+' · '+e(experiment?.statusText||'未独立验证'):''}</p>
-          <details class="data-comparison-source" data-comparison-source="${e(row.id)}"><summary>原记录参数与来源</summary>${COMPARISON_FIELDS.map(({key})=>renderFieldSourceHTML(createFieldView(row.id,key))).join('')}</details>
+          <details class="data-comparison-source" data-comparison-source="${e(row.id)}"><summary>原记录参数与来源</summary>${COMPARISON_FIELDS.flatMap(({key})=>key==='d_num'?createDipoleFieldViews(row.id):[createFieldView(row.id,key)]).map(renderFieldSourceHTML).join('')}</details>
           <button type="button" class="data-comparison-load" data-comparison-load="${e(row.id)}"${valid?'':' disabled'}>载入此工作点计算</button>
         </article>`;
       }).join('')}</div>

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { cg, sixJ, reducedFFromJJ, matrixElement_F_q, computeCGChannels, computeDEff, formatCG, getFs } from '../../src/physics/angular.js';
+import { CORE_TRANSITIONS, getDipoleQuantity } from '../../src/data/catalog.js';
 
 const fixtures = JSON.parse(fs.readFileSync(new URL('../fixtures/angular.json', import.meta.url), 'utf8'));
 const baseline = JSON.parse(fs.readFileSync(new URL('../fixtures/physics-baseline.json', import.meta.url), 'utf8'));
@@ -20,7 +21,7 @@ test('production 6-j and full signed J→F angular factors agree with SymPy', ()
   }
 });
 
-test('T2/T3/R2 complete channel sets and signed values preserve the original production baseline', () => {
+test('historical scalar T2/T3/R2 inputs reproduce the saved channel baseline', () => {
   for (const saved of baseline.channels) {
     const p = saved.parameters;
     const state = { transition: { id: p.id, multipole: 'E1', hf_induced: Boolean(p.hf) }, J_lower: p.J, J_upper: p.Jp, dReduced: p.d, pol: 'pi', F_lower: 0.5, F_upper: 0.5 };
@@ -31,6 +32,24 @@ test('T2/T3/R2 complete channel sets and signed values preserve the original pro
       assert.ok(now, `${saved.transition}: missing channel ${JSON.stringify(old)}`);
       for (const key of ['cgVal', 'matEl', 'angFactor']) close(now[key], old[key], saved.transition + ' ' + key);
     }
+  }
+});
+
+test('current 65S channels use the signed F-reduced dipole of their own branch', () => {
+  const transition = CORE_TRANSITIONS.find(row => row.id === 'R2');
+  const state = { transition, J_lower: 0, J_upper: 1, dReduced: transition.d_num, convention: 'F-reduced', F_lower: 0.5 };
+  const channels = computeCGChannels(state);
+  assert.equal(channels.length, 10);
+  for (const Fp of [0.5, 1.5]) {
+    const dipole = getDipoleQuantity('R2', Fp);
+    const {F, m, mp, q, matrixElement_ea0} = dipole.conditions;
+    const selectedChannel = channels.find(ch => ch.F === F && ch.m === m && ch.Fp === Fp && ch.mp === mp && ch.q === q);
+    assert.ok(selectedChannel);
+    assert.ok(Math.abs(selectedChannel.matEl - matrixElement_ea0) < 6e-13);
+    close(selectedChannel.angFactor, Fp === 0.5 ? 1 / Math.sqrt(3) : 0.5, 'branch angular factor');
+    const pol = q === -1 ? 'sigmam' : 'sigmap';
+    close(computeDEff({...state, F_upper: Fp, pol, selectedChannel}).dEff, Math.abs(selectedChannel.matEl), 'explicit Rabi dipole');
+    close(computeDEff({...state, F_upper: Fp, pol}).dEff, Math.abs(selectedChannel.matEl), 'default Rabi dipole');
   }
 });
 

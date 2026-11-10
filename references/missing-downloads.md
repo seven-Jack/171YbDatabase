@@ -8,6 +8,6 @@
 |---|---|---|---|
 | burshtein-1974-optspec | Lifetimes of the ³P₁ level of Yb I and the ²P₃/₂,₁/₂ level of Yb II；Optics and Spectroscopy 37, 351 (1974) | T2：中性Yb3P1历史寿命、测量误差和方法；不能混用文中YbII2P数据。按英文卷37页351–352申请馆际扫描亦可。 | [原文入口](https://archive.org/details/pub_optics-and-spectroscopy)；no-validated-fulltext-in-this-audit |
 
-内部待补：T3、R2矩阵元的原始Notebook/Run/版本与分支证据，以及65S原始输入哈希及模型误差。文献不能替代内部生成工件。
+内部待补包括 T3 和历史 R2（0.0376 ea₀）的原始计算工件，以及 65S 模型误差。现行 R2 的零场分支矩阵元另有 R017 保存结果。
 
 原始及方法依赖的逐项状态另见 `primary-source-queue.json`；缺少本地PDF时，数值核查仍可运行，但原件字节状态必须是 unavailable。

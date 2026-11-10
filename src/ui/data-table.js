@@ -1,6 +1,6 @@
 import {formatLifetime} from './format.js';
 import {getQuantity,getSourceRecord} from '../data/catalog.js';
-import {createFieldView,renderFieldSourceHTML,escapeHTML,formatFrequency} from './source-panel.js';
+import {createFieldView,createDipoleFieldViews,renderFieldSourceHTML,escapeHTML,formatFrequency} from './source-panel.js';
 import {DIAGRAM_SUPPLEMENTAL_SOURCE_COUNT,renderDiagramProvenanceIndexHTML} from './diagram-references.js';
 import {renderCompactTooltip} from './compact-tooltip.js';
 
@@ -43,6 +43,10 @@ export function formatLinewidthDisplay(row) {
 export function buildTableTooltipModel(row,column,tableId='core',title=null) {
   const field=createFieldView(row.id,column),quantity=getQuantity(row.id,column);
   if (!field) return {id:row.id||'',title:title||column,rows:[{label:'数值',value:String(row[column]??'未提供')}],footnote:'来源待补充'};
+  if (column==='d_num'&&field.branch) {
+    const rows=createDipoleFieldViews(row.id).map(dipole=>({label:dipole.branch,value:dipole.valueText,sourceIds:[dipole.sourceId]}));
+    return {id:row.id,title:title||'F 级约化矩阵元',rows,footnote:`${field.convention} · ${field.kind}`};
+  }
   let value=field.valueText;
   if (row.approximate&&['wavelength_vac_nm','frequency_THz','energy_eV','energy_cm'].includes(column)&&quantity?.value!==null) value='≈'+value;
   const rows=[{label:'数值',value,sourceIds:quantity?.sourceId?[quantity.sourceId]:[]}];
@@ -53,9 +57,9 @@ export function buildTableTooltipModel(row,column,tableId='core',title=null) {
 }
 
 function sourceSummaryHTML(row) {
-  const wave=createFieldView(row.id,'wavelength_vac_nm'),dipole=createFieldView(row.id,'d_num');
-  if (!wave&&!dipole) return `<div class="src-text">${escapeHTML(row.source||'来源待补充')}</div>`;
-  return `<details class="table-source-details"><summary>${escapeHTML([wave?`λ：${wave.kind}`:'',dipole?`d：${dipole.kind}`:''].filter(Boolean).join('；'))}</summary><div class="source-grid">${[dipole,wave].filter(Boolean).map(renderFieldSourceHTML).join('')}</div></details>`;
+  const wave=createFieldView(row.id,'wavelength_vac_nm'),dipoles=createDipoleFieldViews(row.id);
+  if (!wave&&!dipoles.length) return `<div class="src-text">${escapeHTML(row.source||'来源待补充')}</div>`;
+  return `<details class="table-source-details"><summary>${escapeHTML([wave?`λ：${wave.kind}`:'',dipoles.length?`d：${dipoles[0].kind}`:''].filter(Boolean).join('；'))}</summary><div class="source-grid">${[...dipoles,wave].filter(Boolean).map(renderFieldSourceHTML).join('')}</div></details>`;
 }
 
 const initialized=new WeakMap();
@@ -104,7 +108,12 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
           return `<div class="mono">${cellTip('线宽频率系数',escapeHTML(linewidth.frequencyText),'linewidth_frequency_coefficient_Hz')}</div><details class="linewidth-original"><summary>Γ 与原记录</summary><p>衰减率 Γ = ${escapeHTML(linewidth.decayText)}</p><p>原记录：${escapeHTML(linewidth.originalText)}</p><p>${escapeHTML(linewidth.reviewText)}</p></details>`;
         }
         case 'oscillator_strength_f_num':return cellTip('振子强度 f',`<span class="mono">${getQuantity(row.id,column)?.value===null?'缺失':escapeHTML(row.oscillator_strength_f)}</span>`);
-        case 'd_num':return `<div>${cellTip('约化矩阵元 d',`<span class="mono">${getQuantity(row.id,'d_num')?.value===null?'缺少适用 E1 数据':escapeHTML(row.d_reduced_ea0)+' ea₀'}</span>`)}</div><div class="wl-sub">${escapeHTML(field?.convention||'约定待核查')}</div>`;
+        case 'd_num': {
+          const value=field?.branch
+            ? createDipoleFieldViews(row.id).map(dipole=>escapeHTML(`${dipole.branch} · ${dipole.valueText}`)).join('<br>')
+            : getQuantity(row.id,'d_num')?.value===null?'缺少适用 E1 数据':escapeHTML(row.d_reduced_ea0)+' ea₀';
+          return `<div>${cellTip('约化矩阵元 d',`<span class="mono">${value}</span>`)}</div><div class="wl-sub">${escapeHTML(field?.convention||'约定待核查')}</div>`;
+        }
         case 'classification':return `<span class="badge badge-${row.classification==='强'?'strong':row.classification==='弱'?'weak':'forbidden'}">${escapeHTML(row.classification)}</span>`;
         case 'multipole':return `<span class="badge badge-${row.multipole.includes('M2')?'m2':'e1'}">${escapeHTML(row.multipole)}</span>`;
         case 'forbidden_reason':return `<div class="reason-text">${escapeHTML(row.forbidden_reason)}</div><div class="wl-sub">${escapeHTML(row.selection_check)}</div>`;

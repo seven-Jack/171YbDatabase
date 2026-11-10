@@ -1,5 +1,5 @@
 import { channelKey, computeCGChannels, computeDEff, polarizationQ } from '../physics/angular.js';
-import { getTransitionRecord } from '../data/catalog.js';
+import { getDipoleQuantity, getTransitionRecord } from '../data/catalog.js';
 import { buildSourceView } from './source-panel.js';
 import { renderCompactTooltip } from './compact-tooltip.js';
 
@@ -23,13 +23,14 @@ export function buildSelectionContext(state={}) {
   const hiddenByFilter=!!channel&&((state.diagF_lower!==undefined&&state.diagF_lower!=='all'&&Number(state.diagF_lower)!==channel.F)||(state.diagF_upper!==undefined&&state.diagF_upper!=='all'&&Number(state.diagF_upper)!==channel.Fp));
   const record=getTransitionRecord(transition.id);
   const refs=key=>record?.quantities[key]?.sourceId?[record.quantities[key].sourceId]:[];
+  const dipoleSource=getDipoleQuantity(transition.id,channel?.Fp)?.sourceId;
   const pol=polarization[state.pol]||'—';
   const wavelength=`${state.wavelength_nm||transition.wavelength_vac_nm} nm`;
   const rows=[
     {label:'波长',value:wavelength,sourceIds:refs('wavelength_vac_nm')},
     {label:'初态',value:channel?`${transition.lower} · ${stateLabel(channel)}`:transition.lower},
     {label:'末态',value:channel?`${transition.upper} · ${stateLabel(channel,true)}`:transition.upper},
-    ...(channel?[{label:'偏振',value:`${pol} · ΔmF=${channel.q>0?'+':''}${channel.q}`},{label:'|d_eff|',value:`${number(state.dEff)} ea₀`,sourceIds:refs('d_num')}]:[])
+    ...(channel?[{label:'偏振',value:`${pol} · ΔmF=${channel.q>0?'+':''}${channel.q}`},{label:'|d_eff|',value:`${number(state.dEff)} ea₀`,sourceIds:dipoleSource?[dipoleSource]:[]}]:[])
   ];
   return {transition,channel,mode,status:source.status,hiddenByFilter,wavelength,
     transitionText:`${transition.id} · ${transition.lower} → ${transition.upper}`,

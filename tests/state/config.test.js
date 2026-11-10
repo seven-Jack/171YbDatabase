@@ -33,6 +33,31 @@ test('T2/T3/R2 configuration JSON round trips selection, SI values and current-m
   }
 });
 
+test('R2 saves the signed F′=3/2 dipole and restores historical J-reduced files using the same selected channel', () => {
+  const state = { ...stateFor('R2', 'sigmap'), F_upper: 1.5, selectedChannel: { F: .5, m: .5, Fp: 1.5, mp: 1.5, q: 1 } };
+  const config = exportCalculationConfig(state, versions);
+  assert.deepEqual(config.matrixElement, { reduced_ea0: -0.003491291695, convention: 'F-reduced', sourceId: 'internal-r017-20261110' });
+  assert.deepEqual(parseCalculationConfig(config, versions).warnings, []);
+  for (const schemaVersion of [1, 2]) {
+    const historical = structuredClone(config);
+    historical.schemaVersion = schemaVersion;
+    historical.datasetVersion = '2026.10.30.1';
+    historical.datasetHash = '3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28';
+    historical.matrixElement = { reduced_ea0: .0376, convention: 'J-reduced', sourceId: 'ref-17' };
+    const oldFrequency = rabiHz(.0376 / Math.sqrt(3), state.P_mW, state.w_um);
+    historical.result = { status: 'ok', power_W: .001, frequency_Hz: oldFrequency, omega_rad_s: 2 * Math.PI * oldFrequency, piTime_s: 1 / (2 * oldFrequency) };
+    if (schemaVersion === 1) {
+      delete historical.inputDefinition;
+      delete historical.enteredParameters;
+    }
+    const restored = parseCalculationConfig(historical, versions);
+    assert.equal(restored.state.dReduced, -0.003491291695);
+    close(restored.state.selectedChannel.matEl, -0.003491291695 / 2);
+    close(restored.result.fR, rabiHz(0.003491291695 / 2, state.P_mW, state.w_um));
+    for (const warning of ['数据版本', '矩阵元', '保存结果']) assert.ok(restored.warnings.some(text => text.includes(warning)));
+  }
+});
+
 test('imports do not trust a forged stored result or atomic matrix element', () => {
   const config = exportCalculationConfig(stateFor('T3', 'sigmam'), versions);
   config.matrixElement.reduced_ea0 = 9;

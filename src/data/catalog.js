@@ -19,6 +19,11 @@ export const getLevelRecord = id => levelById.get(id) || null;
 export const getTransitionRecord = id => transitionById.get(id) || null;
 export const getSourceRecord = id => sourceById.get(id) || null;
 export const getQuantity = (id,field) => transitionById.get(id)?.quantities[field] || null;
+export function getDipoleQuantity(id, Fp) {
+  const record = transitionById.get(id);
+  const field = record?.fReducedDipoles && Fp !== undefined ? record.fReducedDipoles[Fp] : 'd_num';
+  return record?.quantities[field] || null;
+}
 
 function legacyLevel(id) {
   const level=levelById.get(id);
@@ -30,6 +35,10 @@ function legacyLevel(id) {
 function legacyTransition(id,viewName) {
   const record=transitionById.get(id),view=record.views[viewName];
   const result={...view.presentation};
+  if (record.fReducedDipoles) {
+    result.fReducedDipoles = Object.fromEntries(Object.entries(record.fReducedDipoles)
+      .map(([Fp, field]) => [Fp, record.quantities[field].value]));
+  }
   for (const [field,quantityName] of Object.entries({...view.quantityFields,...view.aliases})) {
     const value=record.quantities[quantityName].value;
     result[field]=value===null&&Object.hasOwn(view.legacyNullValues,quantityName)?view.legacyNullValues[quantityName]:value;

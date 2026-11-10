@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {CORE_TRANSITIONS,getQuantity,getTransitionRecord,getLevelRecord,DATASET_VERSION,DATASET_MANIFEST} from '../../src/data/catalog.js';
+import {CORE_TRANSITIONS,getDipoleQuantity,getQuantity,getTransitionRecord,getLevelRecord,DATASET_VERSION,DATASET_MANIFEST} from '../../src/data/catalog.js';
 import {EVIDENCE_VERSION,getEvidenceRecord} from '../../src/data/evidence.js';
 import {FORMULA_VERSION} from '../../src/physics/constants.js';
 import {computeCGChannels,computeDEff,channelKey} from '../../src/physics/angular.js';
@@ -8,6 +8,7 @@ import {rabiHz} from '../../src/physics/rabi.js';
 import {DEFAULT_BEAM_DEFINITION} from '../../src/physics/beam-conventions.js';
 import {exportCalculationConfig,parseCalculationConfig,ConfigurationError} from '../../src/state/config.js';
 import {buildCalculationRecord,serializeCalculationRecord,renderCalculationRecordMarkdown,parseCalculationRecordOrConfig} from '../../src/ui/calculation-record.js';
+import {resultCSVRow} from '../../src/ui/result-export.js';
 
 const versions = {softwareVersion:'0.3.3',appCommit:'33270877d433c83cb2c07243f1e741dd98d52cdb',worktreeDirty:false,datasetVersion:DATASET_VERSION,datasetHash:DATASET_MANIFEST.contentHash,formulaVersion:FORMULA_VERSION};
 const close = (a,b) => assert.ok(Math.abs(a-b) <= 1e-11 * Math.max(1e-30,Math.abs(a),Math.abs(b)),`${a} != ${b}`);
@@ -123,15 +124,25 @@ test('a different allowed mF channel or declared version cannot inherit reviewed
   assert.throws(()=>buildCalculationRecord(invalid,versions),ConfigurationError);
 });
 
-test('R2 retains unknown uncertainty and unreviewed evidence instead of borrowing low-state conclusions',()=>{
-  const record=buildCalculationRecord(stateFor('R2'),versions);
-  assert.equal(record.evidence.hasReview,false);
-  assert.ok(record.evidence.rows.every(row=>row.status==='not-reviewed'));
-  assert.equal(record.primaryQuantity.uncertainty,null);
-  assert.equal(record.primaryQuantity.sourceId,'ref-17');
-  const markdown=serializeCalculationRecord(record,'markdown');
-  assert.match(markdown,/未知／未建立（null，不是零）/);
-  assert.match(markdown,/完整 Rabi 不确定度/);
+test('R2 records and exports each signed dipole with its branch and unknown uncertainty',()=>{
+  for(const [Fp,mp,q,pol,D,M] of [[.5,-.5,-1,'sigmam',.002165816490,.001250434734],[1.5,1.5,1,'sigmap',-.003491291695,-.001745645848]]){
+    const state=stateFor('R2',{F_upper:Fp,pol,selectedChannel:{F:.5,m:.5,Fp,mp,q}});
+    const record=buildCalculationRecord(state,versions), csv=resultCSVRow(record);
+    assert.equal(record.evidence.hasReview,false);
+    assert.ok(record.evidence.rows.every(row=>row.status==='not-reviewed'));
+    assert.equal(record.primaryQuantity.uncertainty,null);
+    assert.equal(record.primaryQuantity.sourceId,'internal-r017-20261110');
+    assert.deepEqual(record.primaryQuantity.conditions,getDipoleQuantity('R2',Fp).conditions);
+    assert.equal(record.primaryQuantity.value,D);
+    assert.equal(record.primaryQuantity.convention,'F-reduced');
+    assert.ok(Math.abs(record.resolvedChannel.matrixElement_ea0-M)<1e-12);
+    assert.equal(csv.magnetic_sublevel_dipole_ea0,record.resolvedChannel.matrixElement_ea0);
+    assert.equal(csv.effective_dipole_ea0,Math.abs(csv.magnetic_sublevel_dipole_ea0));
+    const markdown=serializeCalculationRecord(record,'markdown');
+    assert.match(markdown,/磁子态矩阵元 M/);
+    assert.match(markdown,/未知／未建立（null，不是零）/);
+    assert.match(markdown,/完整 Rabi 不确定度/);
+  }
 });
 
 test('invalid/incomplete/unsupported inputs do not export a stale result; zero power remains a valid finite-frequency record',()=>{

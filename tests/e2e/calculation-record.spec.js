@@ -217,7 +217,7 @@ test('the compact menu supports keyboard dismissal and unreviewed R2 records wit
   const record=await downloadRecord(page);
   expect(record.evidence.hasReview).toBe(false);
   expect(record.evidence.rows.every(row=>row.status==='not-reviewed')).toBe(true);
-  expect(record.primaryQuantity).toMatchObject({sourceId:'ref-17',uncertainty:null});
+  expect(record.primaryQuantity).toMatchObject({sourceId:'internal-r017-20261110',uncertainty:null,convention:'F-reduced'});
   expect(record.transition.wavelength.evidenceKind).toBe('scaling-estimate');
   await menu(page);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth)).toBeLessThanOrEqual(1);

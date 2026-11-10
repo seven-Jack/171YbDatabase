@@ -1,8 +1,8 @@
 import { rabiHz, powerFromRabiHz, waistFromRabiHz } from '../physics/rabi.js';
 import { convert } from '../physics/units.js';
 import { parseAxisMaximum, hasFiniteRange, bindAxisMaximumInput } from './chart-ranges.js';
-import { getTransitionRecord } from '../data/catalog.js';
-import { createFieldView } from './source-panel.js';
+import { getDipoleQuantity } from '../data/catalog.js';
+import { createDipoleFieldView } from './source-panel.js';
 import { DEFAULT_BEAM_DEFINITION, validateBeamDefinition, getBeamFactors, getSizeFactor, normalizeBeamInput, denormalizeSolvedInput } from '../physics/beam-conventions.js';
 import {buildFocusRanges} from './chart-readout.js';
 import {initChartProbes} from './chart-probes.js';
@@ -11,8 +11,9 @@ import {initChartProbes} from './chart-probes.js';
 // consumers remain explicitly labelled. Citations always belong to the input d.
 export function buildRabiProbeTooltip({state,kind,powerText,waistText,rabiText}) {
   const transition=state?.transition;
-  const quantity=transition&&getTransitionRecord(transition.id)?.quantities.d_num;
-  const field=transition&&createFieldView(transition.id,'d_num');
+  const Fp=state?.selectedChannel?.Fp??state?.F_upper;
+  const quantity=transition&&getDipoleQuantity(transition.id,Fp);
+  const field=transition&&createDipoleFieldView(transition.id,Fp);
   const rows=[{label:'P（图轴）',value:powerText}];
   const modelPoint=kind==='heat'||!!waistText;
   if(modelPoint) rows.push({label:'束腰 w₀',value:waistText});
@@ -21,7 +22,7 @@ export function buildRabiProbeTooltip({state,kind,powerText,waistText,rabiText})
     label:kind==='heat'?'模型输入 d':'曲线依据 d',
     value:field.valueText,
     sourceIds:[quantity.sourceId],
-    note:[field.convention,field.kind].filter(Boolean).join(' · ')
+    note:[field.branch,field.convention,field.kind].filter(Boolean).join(' · ')
   });
   return {id:transition?.id||'RABI',title:kind==='heat'?'参数图读数':modelPoint?'曲线吸附读数':'曲线坐标',rows,
     footnote:modelPoint?'模型换算 · 未独立验证':'图轴坐标 · 非曲线上取值'};

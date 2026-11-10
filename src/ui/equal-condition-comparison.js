@@ -1,4 +1,4 @@
-import {CORE_TRANSITIONS, getTransitionRecord, getLevelRecord, getQuantity} from '../data/catalog.js';
+import {CORE_TRANSITIONS, getTransitionRecord, getLevelRecord, getDipoleQuantity, getQuantity} from '../data/catalog.js';
 import {channelKey, computeCGChannels, computeDEff, polarizationQ} from '../physics/angular.js';
 import {calculateRabi} from '../physics/rabi.js';
 import {DEFAULT_BEAM_DEFINITION, validateBeamDefinition, getBeamFactors, normalizeBeamInput, denormalizeSolvedInput} from '../physics/beam-conventions.js';
@@ -12,11 +12,11 @@ const close = (a, b) => Number.isFinite(a) && Number.isFinite(b)
 const copyChannel = channel => channel ? Object.fromEntries(channelFields.map(key => [key, channel[key]])) : null;
 
 /** Only an id selects scientific fields; caller-provided adapters are not data authority. */
-function canonicalIdentity(id) {
+function canonicalIdentity(id, Fp) {
   const transition = transitionsById.get(id), record = getTransitionRecord(id);
   if (!transition || !record) return null;
   const lower = getLevelRecord(record.lowerLevelId), upper = getLevelRecord(record.upperLevelId);
-  return {transition, record, quantity:getQuantity(id, 'd_num'),
+  return {transition, record, quantity:getDipoleQuantity(id, Fp),
     J_lower:lower?.attributes.J, J_upper:upper?.attributes.J};
 }
 
@@ -44,12 +44,12 @@ function sourceContext(state) {
   const base = {status:'invalid', message:'请先完成有效的当前计算，再比较同条件耦合。',
     P_mW:null, w_um:null, pol:null, channel:null, selectionOrigin:null};
   const fail = (status, message) => ({context:{...base, status, message}, source:null});
-  const identity = canonicalIdentity(state?.transition?.id);
+  const identity = canonicalIdentity(state?.transition?.id, state?.F_upper);
   if (!identity) return fail('unsupported', '当前跃迁不在已接入的核心目录中。');
   if (!String(identity.transition.multipole || '').startsWith('E1')) {
     return fail('unsupported', '当前跃迁没有适用的单光子 E1 模型，不能作为同条件比较基准。');
   }
-  if (!(Number.isFinite(identity.quantity?.value) && identity.quantity.value > 0)) {
+  if (!(Number.isFinite(identity.quantity?.value) && identity.quantity.value !== 0)) {
     return fail('unsupported', '当前跃迁缺少适用的约化矩阵元。');
   }
   if (state.inputStatus !== 'valid' || !Number.isFinite(state.P_mW) || state.P_mW < 0
@@ -101,7 +101,7 @@ function sourceContext(state) {
 export function buildEqualConditionComparison(transitions = [], state, versions = {}) {
   const {context, source} = sourceContext(state);
   const rows = transitions.map(requested => {
-    const id = requested?.id ?? null, identity = canonicalIdentity(id);
+    const id = requested?.id ?? null, identity = canonicalIdentity(id, context.channel?.Fp);
     const row = {id, transition:identity?.transition ?? null, status:'invalid-context', message:context.message,
       channel:null, dEff_ea0:null, result:null, evidence:null, state:null};
     if (!source) return row;
@@ -109,7 +109,7 @@ export function buildEqualConditionComparison(transitions = [], state, versions 
     if (!String(identity.transition.multipole || '').startsWith('E1')) {
       return {...row, status:'unsupported', message:'当前单光子 E1 比较模型不适用于该跃迁。'};
     }
-    if (!(Number.isFinite(identity.quantity?.value) && identity.quantity.value > 0)) {
+    if (!(Number.isFinite(identity.quantity?.value) && identity.quantity.value !== 0)) {
       return {...row, status:'missing-data', message:'缺少适用的约化矩阵元，未输出耦合数值。'};
     }
     const rowState = canonicalState(identity, {

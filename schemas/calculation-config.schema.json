@@ -20,10 +20,12 @@
       "type": "object", "additionalProperties": false,
       "required": ["reduced_ea0", "convention", "sourceId"],
       "properties": {
-        "reduced_ea0": { "type": ["number", "null"], "minimum": 0 },
+        "reduced_ea0": { "type": ["number", "null"], "description": "Signed for F-reduced records; older J-reduced and effective F-reduced values are nonnegative." },
         "convention": { "$ref": "#/$defs/shortText" },
         "sourceId": { "anyOf": [{ "$ref": "#/$defs/shortText" }, { "type": "null" }] }
-      }
+      },
+      "if": { "properties": { "convention": { "const": "F-reduced" } } },
+      "else": { "properties": { "reduced_ea0": { "minimum": 0 } } }
     },
     "selection": {
       "type": "object", "additionalProperties": false,

@@ -1,4 +1,4 @@
-import {getQuantity, getSourceRecord} from '../data/catalog.js';
+import {getDipoleQuantity, getQuantity, getSourceRecord} from '../data/catalog.js';
 import {EVIDENCE_VERSION} from '../data/evidence.js';
 import {computeCGChannels, computeDEff, channelKey, polarizationQ} from '../physics/angular.js';
 import {exportCalculationConfig, parseCalculationConfig, ConfigurationError} from '../state/config.js';
@@ -50,7 +50,7 @@ export function buildCalculationRecord(state, versions = {}) {
     : candidates.find(item => item.m === effective.mF && item.mp === effective.mFp);
   if (!actual || !(effective.dEff > 0)) throw new ConfigurationError('selection.channel','没有可记录的实际允许通道。');
   const view = buildEvidenceView(current,{datasetHash:configuration.datasetHash,formulaVersion:configuration.formulaVersion});
-  const quantity = getQuantity(configuration.transitionId,'d_num');
+  const quantity = getDipoleQuantity(configuration.transitionId,actual.Fp);
   const wavelength = getQuantity(configuration.transitionId,'wavelength_vac_nm');
   if (!quantity) throw new ConfigurationError('matrixElement','当前数据缺少矩阵元来源记录。');
   const record = {
@@ -59,8 +59,9 @@ export function buildCalculationRecord(state, versions = {}) {
     configuration,
     transition:{id:restored.transition.id,lower:restored.transition.lower,upper:restored.transition.upper,J_lower:current.J_lower,J_upper:current.J_upper,multipole:restored.transition.multipole,
       wavelength:{value:wavelength?.value ?? null,unit:wavelength?.unit ?? null,sourceId:wavelength?.sourceId ?? null,sourceLocator:wavelength?.sourceLocator ?? null,evidenceKind:wavelength?.evidenceKind ?? null,uncertainty:wavelength?.uncertainty ?? null}},
-    resolvedChannel:{...Object.fromEntries(TUPLE.map(key => [key,actual[key]])),selectionOrigin:configuration.selection.channel === null ? 'auto' : 'manual',dEff_ea0:effective.dEff},
-    primaryQuantity:{quantity:'d_num',value:quantity.value,unit:quantity.unit,convention:quantity.convention,
+    resolvedChannel:{...Object.fromEntries(TUPLE.map(key => [key,actual[key]])),selectionOrigin:configuration.selection.channel === null ? 'auto' : 'manual',dEff_ea0:effective.dEff,
+      ...(quantity.convention === 'F-reduced' ? {matrixElement_ea0:actual.matEl} : {})},
+    primaryQuantity:{quantity:quantity.quantity,value:quantity.value,unit:quantity.unit,convention:quantity.convention,
       sourceId:quantity.sourceId,sourceLocator:quantity.sourceLocator ?? null,evidenceKind:quantity.evidenceKind,reviewStatus:quantity.reviewStatus,
       uncertainty:quantity.uncertainty ?? null,uncertaintyNote:quantity.uncertaintyNote ?? null,conditions:copy(quantity.conditions ?? {}),source:sourceProjection(getSourceRecord(quantity.sourceId))},
     evidence:{evidenceVersion:EVIDENCE_VERSION,reviewVersion:view.reviewVersion,reviewedAt:view.reviewedAt,summary:view.summary,
@@ -129,7 +130,9 @@ export function renderCalculationRecordMarkdown(record) {
     '## 版本与代码基线',
     table([['记录格式',`${record.kind} / schema ${record.schemaVersion}`],['软件版本',record.build.softwareVersion],['代码基线',record.build.appCommit],['工作区',dirty],['数据版本',config.datasetVersion],['数据 SHA-256',config.datasetHash],['公式版本',config.formulaVersion],['证据版本',evidence.evidenceVersion],['核查版本',evidence.reviewVersion],['核查日期',evidence.reviewedAt]]),
     '## 计算对象与实际通道',
-    table([['跃迁',`${transition.id} · ${transition.lower} → ${transition.upper}`],['电子角动量',`J=${transition.J_lower} → J′=${transition.J_upper}`],['多极性',transition.multipole],['真空波长',transition.wavelength.value === null ? '未记录' : `${transition.wavelength.value} ${transition.wavelength.unit}`],['波长证据类型',transition.wavelength.evidenceKind],['波长来源',transition.wavelength.sourceId],['波长原文定位',transition.wavelength.sourceLocator],['波长不确定度',transition.wavelength.uncertainty === null ? '未知／未建立（null，不是零）' : `${transition.wavelength.uncertainty} ${transition.wavelength.unit}`],['求解方向',solve],['通道选择',channel.selectionOrigin === 'manual' ? '手动选定' : '自动：当前 F 对及偏振内最强允许通道'],['实际通道',tupleText(channel)],['d_eff',`${channel.dEff_ea0} ea₀`],['约化矩阵元',`${config.matrixElement.reduced_ea0} ea₀`],['矩阵元约定',config.matrixElement.convention]]),
+    table([['跃迁',`${transition.id} · ${transition.lower} → ${transition.upper}`],['电子角动量',`J=${transition.J_lower} → J′=${transition.J_upper}`],['多极性',transition.multipole],['真空波长',transition.wavelength.value === null ? '未记录' : `${transition.wavelength.value} ${transition.wavelength.unit}`],['波长证据类型',transition.wavelength.evidenceKind],['波长来源',transition.wavelength.sourceId],['波长原文定位',transition.wavelength.sourceLocator],['波长不确定度',transition.wavelength.uncertainty === null ? '未知／未建立（null，不是零）' : `${transition.wavelength.uncertainty} ${transition.wavelength.unit}`],['求解方向',solve],['通道选择',channel.selectionOrigin === 'manual' ? '手动选定' : '自动：当前 F 对及偏振内最强允许通道'],['实际通道',tupleText(channel)],['d_eff',`${channel.dEff_ea0} ea₀`],
+      ...(Number.isFinite(channel.matrixElement_ea0) ? [['磁子态矩阵元 M_fi',`${channel.matrixElement_ea0} ea₀`]] : []),
+      ['约化矩阵元',`${config.matrixElement.reduced_ea0} ea₀`],['矩阵元约定',config.matrixElement.convention]]),
     '## 输入定义、录入值与规范化参数',
     '规范化参数是进入现有物理公式的原子处分量功率 Pq 和 1/e² 强度半径 w₀；不得再次拆分偏振或再除以直径因子。',
     table([['功率位置',definition.powerPlane === 'upstream' ? '上游' : '原子处'],['功率口径',definition.powerBasis === 'linear-total' ? '线偏振总功率' : '指定偏振分量功率'],['传输效率 η',definition.transmission ?? '未使用／未填写'],['线偏振方向',definition.linearOrientation ?? '未使用／未填写'],['手动分量占比',definition.manualFraction ?? '未使用／未填写'],['强度尺寸定义',definition.sizeKind === 'diameter' ? '1/e² 强度直径' : '1/e² 强度半径'],['录入功率',`${config.enteredParameters.power_W} W`],['录入尺寸',`${config.enteredParameters.size_m} m`],['原子处分量功率 Pq',`${config.parameters.power_W} W`],['1/e² 强度半径 w₀',`${config.parameters.waist_m} m`],['反算目标 Ω/2π',config.display.solveFor === 'rabi' ? '不适用（正算）' : `${config.parameters.targetRabi_Hz} Hz`]]),

@@ -1,4 +1,4 @@
-import { CORE_LEVELS, CORE_TRANSITIONS, RYDBERG_QC_TRANSITIONS, RYDBERG_QC_DATA, DATASET_MANIFEST, DATASET_VERSION, getQuantity } from '../data/catalog.js';
+import { CORE_LEVELS, CORE_TRANSITIONS, RYDBERG_QC_TRANSITIONS, RYDBERG_QC_DATA, DATASET_MANIFEST, DATASET_VERSION, getDipoleQuantity } from '../data/catalog.js';
 import { FORMULA_VERSION, PhysicsInputError } from '../physics/constants.js';
 import { computeCGChannels, computeDEff, getFs, channelKey, polarizationQ } from '../physics/angular.js';
 import { calculateRabi, powerFromRabiHz, waistFromRabiHz } from '../physics/rabi.js';
@@ -50,12 +50,13 @@ function currentVersions(overrides = {}) {
     formulaVersion: overrides.formulaVersion ?? FORMULA_VERSION,
   };
 }
-function canonicalDipole(transition) {
-  const record = getQuantity(transition.id, 'd_num');
-  const raw = record ? record.value : transition.d_num;
+function canonicalDipole(transition, Fp) {
+  const record = getDipoleQuantity(transition.id, Fp);
+  const raw = record?.value;
+  const convention = record?.convention || (transition.hf_induced ? 'F-reduced-effective' : 'J-reduced');
   return {
-    reduced_ea0: typeof raw === 'number' && Number.isFinite(raw) && raw >= 0 ? raw : null,
-    convention: record?.convention || (transition.hf_induced ? 'F-reduced-effective' : 'J-reduced'),
+    reduced_ea0: Number.isFinite(raw) && (convention === 'F-reduced' || raw >= 0) ? raw : null,
+    convention,
     sourceId: record?.sourceId || null,
   };
 }
@@ -84,7 +85,7 @@ function beamContext(config) {
 function restoreAgainstCatalog(config) {
   const transition = transitions.get(config.transitionId);
   if (!transition) throw new ConfigurationError('transitionId', `当前数据没有跃迁 ${config.transitionId}`);
-  const selection = config.selection, dipole = canonicalDipole(transition);
+  const selection = config.selection, dipole = canonicalDipole(transition, selection.F_upper);
   const J_lower = getJ(transition.lower), J_upper = getJ(transition.upper);
   for (const [key, values] of [['F_lower', getFs(J_lower)], ['F_upper', getFs(J_upper)]]) {
     if (!values.includes(selection[key])) throw new ConfigurationError(`selection.${key}`, '与当前跃迁角动量不匹配');
@@ -96,7 +97,7 @@ function restoreAgainstCatalog(config) {
   const calculatorUnits = config.display.units ?? { power: config.display.powerUnit, rabi: config.display.rabiUnit, waist: 'µm' };
   const beam = beamContext(config);
   const state = {
-    transition, dReduced: dipole.reduced_ea0 ?? 0, J_lower, J_upper,
+    transition, dReduced: dipole.reduced_ea0 ?? 0, convention: dipole.convention, J_lower, J_upper,
     wavelength_nm: transition.wavelength_vac_nm,
     gamma_kHz: typeof transition.Gamma_per_s_num === 'number' ? transition.Gamma_per_s_num / (2 * Math.PI) / 1e3 : null,
     F_lower: selection.F_lower, F_upper: selection.F_upper,
@@ -143,8 +144,11 @@ function validateStructure(config) {
   text(config.appCommit, 'appCommit', true);
   if (!/^[a-f0-9]{64}$/i.test(config.datasetHash)) throw new ConfigurationError('datasetHash', '必须为 SHA-256 十六进制摘要');
   object(config.matrixElement, 'matrixElement', ['reduced_ea0', 'convention', 'sourceId']);
-  if (config.matrixElement.reduced_ea0 !== null) number(config.matrixElement.reduced_ea0, 'matrixElement.reduced_ea0');
   text(config.matrixElement.convention, 'matrixElement.convention'); text(config.matrixElement.sourceId, 'matrixElement.sourceId', true);
+  if (config.matrixElement.reduced_ea0 !== null) {
+    const minimum = config.matrixElement.convention === 'F-reduced' ? -Number.MAX_VALUE : 0;
+    number(config.matrixElement.reduced_ea0, 'matrixElement.reduced_ea0', minimum);
+  }
   const s = object(config.selection, 'selection', ['F_lower', 'F_upper', 'diagF_lower', 'diagF_upper', 'pol', 'channel']);
   number(s.F_lower, 'selection.F_lower'); number(s.F_upper, 'selection.F_upper');
   for (const key of ['diagF_lower', 'diagF_upper']) if (s[key] !== 'all') number(s[key], `selection.${key}`);
@@ -234,7 +238,7 @@ export function exportCalculationConfig(state, versions = {}) {
   const config = {
     schemaVersion: CONFIG_SCHEMA_VERSION, kind: '171yb-rabi-config', exportedAt: new Date().toISOString(),
     ...currentVersions(versions), transitionId,
-    matrixElement: canonicalDipole(transition),
+    matrixElement: canonicalDipole(transition, state.F_upper),
     selection: { F_lower: state.F_lower, F_upper: state.F_upper, diagF_lower: state.diagF_lower ?? 'all', diagF_upper: state.diagF_upper ?? 'all', pol: state.pol, channel: state.selectedChannel ? Object.fromEntries(Q.map(key => [key, state.selectedChannel[key]])) : null },
     parameters: { power_W: typeof state.P_mW === 'number' ? state.P_mW * 1e-3 : state.P_mW, waist_m: typeof state.w_um === 'number' ? state.w_um * 1e-6 : state.w_um, targetRabi_Hz: typeof state.fR_MHz === 'number' ? state.fR_MHz * 1e6 : 0 },
     inputDefinition: definition,

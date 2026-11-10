@@ -11,6 +11,7 @@
     "upperLevelId": {"type": "string", "minLength": 1},
     "category": {"enum": ["core", "rydberg"]},
     "quantities": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "quantity.schema.json"}},
+    "fReducedDipoles": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
     "views": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "object", "required": ["presentation", "quantityFields", "aliases", "legacyNullValues"], "additionalProperties": false, "properties": {"presentation": {"type": "object"}, "quantityFields": {"type": "object", "additionalProperties": {"type": "string"}}, "aliases": {"type": "object", "additionalProperties": {"type": "string"}}, "legacyNullValues": {"type": "object"}}}}
   }
 }

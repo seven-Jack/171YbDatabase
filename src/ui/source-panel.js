@@ -1,4 +1,4 @@
-import {getTransitionRecord,getQuantity,getSourceRecord,DATASET_VERSION} from '../data/catalog.js';
+import {getTransitionRecord,getQuantity,getDipoleQuantity,getSourceRecord,DATASET_VERSION} from '../data/catalog.js';
 import {formatLifetime} from './format.js';
 import {R2_PROVENANCE,R2_EVIDENCE_EXTENSION} from './r2-provenance.js';
 import {buildEvidenceView} from './evidence-model.js';
@@ -14,12 +14,13 @@ const REVIEW_LABELS = Object.freeze({
 });
 const FIELD_LABELS = Object.freeze({
   d_num:'约化矩阵元 d',wavelength_vac_nm:'真空波长 λ',wavelength_air_nm:'空气波长',
+  d_J_from_F32:'电子态 D_J（零场 F′ = 3/2 折算）',
   lifetime_ns:'寿命 τ',frequency_THz:'跃迁频率 ν',energy_eV:'能量差 ΔE',energy_cm:'能量差 / 波数',
   Gamma_per_s_num:'衰减率 Γ',oscillator_strength_f_num:'振子强度 f',
   linewidth_frequency_coefficient_Hz:'线宽频率系数'
 });
 const CONVENTION_LABELS = Object.freeze({
-  'J-reduced':'J 级约化量','F-reduced-effective':'有效 F 级约化量','no-E1-data':'缺少适用 E1 数据',
+  'J-reduced':'J 级约化量','F-reduced':'F 级约化量','F-reduced-effective':'有效 F 级约化量','no-E1-data':'缺少适用 E1 数据',
   'ordinary-frequency-FWHM=Gamma/(2*pi); source-table-extra-2pi-conflict':'普通频率 FWHM = Γ/2π；原表多写 2π，冲突保留',
   'hyperfine-center-of-gravity; ordinary frequency nu=omega/(2*pi)':'超精细重心 · ν=ω/2π',
   'total upper-state radiative lifetime; not inverse partial decay rate or trap survival':'上态总辐射寿命',
@@ -37,12 +38,18 @@ const MISSING_LABELS = Object.freeze({
 });
 export const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 export const evidenceLabel = value => EVIDENCE_LABELS[value] || '证据类型待核查';
-export const reviewLabel = value => REVIEW_LABELS[value] || '核查状态未记录';
+export const reviewLabel = (value,internal=false) => value==='original-source-located'&&internal
+  ? '已定位计算工件' : REVIEW_LABELS[value] || '核查状态未记录';
 export const conventionLabel = value => CONVENTION_LABELS[value] || value || '约定待核查';
 const fLabel = value => Number.isFinite(value) ? ({0.5:'1/2',1.5:'3/2',2.5:'5/2',3.5:'7/2'}[value] || String(value)) : '未选择';
 const mLabel = value => Number.isFinite(value) ? (value>0?'+':'')+fLabel(value<0?-value:value).replace(/^/,value<0?'−':'') : '未选择';
 const polLabel = value => ({pi:'π',sigmap:'σ⁺',sigmam:'σ⁻'}[value] || '未选择');
 const presentNumber = value => Number.isFinite(value) ? Number(value.toPrecision(8)).toString() : '缺失';
+const signedScientific = value => {
+  const [mantissa,exponent]=Math.abs(value).toExponential(9).split('e');
+  const superscript=exponent.replace(/[-+0-9]/g,char=>({'-':'⁻','+':'⁺'}[char] || '⁰¹²³⁴⁵⁶⁷⁸⁹'[Number(char)]));
+  return `${value<0?'−':'+'}${mantissa} × 10${superscript}`;
+};
 const safeHTTPS = value => { try {const url=new URL(value);return url.protocol==='https:'?url.href:null;} catch {return null;} };
 
 export function formatFrequency(hertz) {
@@ -56,6 +63,8 @@ export function createFieldView(transitionId,field) {
   const quantity=getQuantity(transitionId,field);
   if (!quantity) return null;
   const source=getSourceRecord(quantity.sourceId);
+  const branch=quantity.convention==='F-reduced'&&Number.isFinite(quantity.conditions?.Fp)
+    ? `F′ = ${fLabel(quantity.conditions.Fp)}` : null;
   const sourceEvidence=quantity.conditions?.sourceEvidenceType||'';
   const kind=quantity.evidenceKind==='derived'&&quantity.modelId==='legacy-rydberg-scaling-v1'?'由标度估算推导':
     quantity.evidenceKind==='literature-reported'&&sourceEvidence.includes('theory')?'理论采用值':
@@ -65,11 +74,13 @@ export function createFieldView(transitionId,field) {
   if (quantity.value===null) valueText=MISSING_LABELS[quantity.missingReason] || '缺失：原因待补充';
   else if (field==='linewidth_frequency_coefficient_Hz') valueText=formatFrequency(quantity.value);
   else if (field==='lifetime_ns') valueText=formatLifetime(quantity.value);
+  else if (branch) valueText=`${signedScientific(quantity.value)} ea₀`;
+  else if (field==='d_J_from_F32') valueText=`${String(quantity.value).replace('-', '−')} ea₀`;
   else valueText=`${presentNumber(quantity.value)} ${quantity.unit==='e*a0'?'ea₀':quantity.unit==='dimensionless'?'':quantity.unit==='s^-1'?'s⁻¹':quantity.unit==='cm^-1'?'cm⁻¹':quantity.unit}`.trim();
   return {
-    key:field,label:FIELD_LABELS[field] || field,valueText,
+    key:field,label:branch?`D_F（${branch}）`:FIELD_LABELS[field] || field,valueText,branch,sourceId:quantity.sourceId,
     savedValue:quantity.value===null?'缺失':`${quantity.value} ${quantity.unit}`,
-    kind,review:reviewLabel(quantity.reviewStatus),
+    kind,review:reviewLabel(quantity.reviewStatus,quantity.evidenceKind==='internal-calculation'||source?.identityStatus==='internal-not-literature'),
     convention:quantity.convention?conventionLabel(quantity.convention):null,
     uncertainty:quantity.uncertainty===null?'总不确定度未建立':`${quantity.uncertainty} ${quantity.unit}`,
     conditions:quantity.conditions===null?'原记录未提供完整条件':Object.entries(quantity.conditions).map(([key,value])=>`${key}=${value===null?'未提供':typeof value==='object'?JSON.stringify(value):value}`).join('；'),
@@ -86,6 +97,26 @@ export function createFieldView(transitionId,field) {
     derivedFrom:quantity.derivedFrom || [],
     modelId:quantity.modelId || null
   };
+}
+
+export function createDipoleFieldViews(id) {
+  const branches=getTransitionRecord(id)?.fReducedDipoles;
+  return (branches?Object.values(branches):['d_num']).map(key=>createFieldView(id,key)).filter(Boolean);
+}
+
+export function createDipoleFieldView(id,Fp) {
+  const branches=getTransitionRecord(id)?.fReducedDipoles;
+  return createFieldView(id,branches&&Fp!==undefined ? branches[Fp] : 'd_num');
+}
+
+export function renderR2BranchRowsHTML() {
+  return createDipoleFieldViews('R2').filter(field=>field.branch).map(field=>{
+    const {branch,nu,mp,q,matrixElement_ea0}=getQuantity('R2',field.key).conditions;
+    const actualNu=Number(nu).toFixed(10);
+    return `<tr><th scope="row">${escapeHTML(field.branch)}${branch==='triplet-connected'?'（三重态关联）':''}</th>
+      <td>${actualNu}</td><td>${mLabel(mp)}, ${q>0?'+':''}${String(q).replace('-','−')}</td>
+      <td>${signedScientific(matrixElement_ea0)}</td><td><strong>${escapeHTML(field.valueText.replace(' ea₀',''))}</strong></td></tr>`;
+  }).join('');
 }
 
 export function renderFieldSourceHTML(field) {
@@ -120,7 +151,8 @@ export function buildSourceView(state) {
   const record=getTransitionRecord(transition.id);
   const selected=state.selectedChannel;
   const channel=selected?`F=${fLabel(selected.F)}, mF=${mLabel(selected.m)} → F′=${fLabel(selected.Fp)}, mF′=${mLabel(selected.mp)} · ${polLabel(selected.q===0?'pi':selected.q===1?'sigmap':'sigmam')}`:`F=${fLabel(state.F_lower)} → F′=${fLabel(state.F_upper)} · ${polLabel(state.pol)} · 默认选当前 F 对与偏振内最强允许通道`;
-  const dipole=getQuantity(transition.id,'d_num');
+  const Fp=selected?.Fp??state.F_upper;
+  const dipole=getDipoleQuantity(transition.id,Fp);
   let status='ready',statusText=selected?'使用所选通道':'使用默认最强允许通道';
   if (String(transition.multipole).includes('M2')) {status='unsupported';statusText='M2 跃迁：当前单光子 E1 计算不适用';}
   else if (!record||!dipole||dipole.value===null) {status='missing-data';statusText='缺少适用的矩阵元数据';}
@@ -155,7 +187,7 @@ function renderR2ProvenanceHTML() {
 
 export function renderSourceDetailsHTML(view) {
   if (!view.transition) return '<p class="source-empty">选择跃迁后查看各物理量的来源与条件。</p>';
-  const primaryKeys=['d_num','wavelength_vac_nm','lifetime_ns'];
+  const primaryKeys=[...createDipoleFieldViews(view.transition.id).map(field=>field.key),'d_J_from_F32','wavelength_vac_nm','lifetime_ns'];
   const primary=primaryKeys.map(key=>view.fields.find(field=>field.key===key)).filter(Boolean);
   const extra=view.fields.filter(field=>!primaryKeys.includes(field.key));
   return `<div class="source-grid">${primary.map(renderFieldSourceHTML).join('')}</div>${view.transition.id==='R2'?renderR2ProvenanceHTML():''}${extra.length?`<details class="source-extra"><summary>其余物理量与出处（${extra.length} 项）</summary><div class="source-grid">${extra.map(renderFieldSourceHTML).join('')}</div></details>`:''}`;
@@ -167,6 +199,15 @@ export function initSourcePanel(calculator,decoratedCoreTransitions=[]) {
   const context=document.getElementById('currentContext');
   if (!panel||!context) return Object.freeze({destroy(){}});
   if (activePanels.has(panel)) return activePanels.get(panel);
+  const r2Rows=document.getElementById('ryd65BranchRows');
+  if (r2Rows) r2Rows.innerHTML=renderR2BranchRowsHTML();
+  const r2Electronic=document.getElementById('ryd65ElectronicDipole');
+  const electronicDipole=getQuantity('R2','d_J_from_F32');
+  if (r2Electronic&&Number.isFinite(electronicDipole?.value)) {
+    const valueText=createFieldView('R2','d_J_from_F32').valueText;
+    r2Electronic.textContent=`电子态 J 约化矩阵元由零场 F′ = 3/2 的分量折算。D_J = (√3/2) D_F = ${valueText}，|D_J| = ${Math.abs(electronicDipole.value)} ea₀。符号沿用 RydCalc 态相位，物理误差尚未评估。`;
+    r2Electronic.hidden=false;
+  }
   const details=document.getElementById('selectedSource');
   const evidence=document.createElement('section');
   evidence.id='evidenceReview';

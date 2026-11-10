@@ -31,8 +31,8 @@
     },
     {
       "path": "data/literature/offer-saturation-cg-2026-10-30/reproduce.mjs",
-      "bytes": 7701,
-      "sha256": "4a9f99b1cbcf413b191401ea558ed74b0c3c82d0fe012c0fbec7a337453aae93"
+      "bytes": 7395,
+      "sha256": "a424931f22f084937fd02627e73fa971e4cf9e67d9f6e9a1b6724ef9fc7e33d3"
     },
     {
       "path": "data/literature/offer-saturation-cg-2026-10-30/results.json",
@@ -51,8 +51,8 @@
     },
     {
       "path": "scripts/literature-audit.mjs",
-      "bytes": 19315,
-      "sha256": "3d0211994fba753088d43519d3902f5a8e930209a870acde45a79205bbfc618f"
+      "bytes": 21359,
+      "sha256": "d7a824a344c797c09352b68e72f4646c8d8670d2d51fe9dcf26e7f1b2a9dac3e"
     },
     {
       "path": "scripts/local-evidence.mjs",

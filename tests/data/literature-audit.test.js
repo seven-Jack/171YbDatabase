@@ -83,19 +83,17 @@ test('unsupported oscillator strengths and unresolved internal amplitudes cannot
   }
   const t4=getQuantity('T4','d_num');
   assert.equal(t4.value,null);assert.equal(t4.convention,'no-E1-data');
-  for(const id of ['T3','R2']) {
-    const d=getQuantity(id,'d_num');
-    assert.equal(d.evidenceKind,'internal-calculation');
-    assert.equal(d.reviewStatus,'definition-needs-review');
-    assert.equal(d.uncertainty,null);
-  }
-  assert.equal(getQuantity('T3','d_num').convention,'F-reduced-effective');
+  const t3=getQuantity('T3','d_num');
+  assert.equal(t3.evidenceKind,'internal-calculation');
+  assert.equal(t3.reviewStatus,'definition-needs-review');
+  assert.equal(t3.uncertainty,null);
+  assert.equal(t3.convention,'F-reduced-effective');
   const t2=getQuantity('T2','d_num');
   assert.equal(t2.value,.5398);assert.equal(t2.uncertainty,.0006);
   assert.match(t2.conditions.sourceEvidenceType,/^compilation-derived/);
 });
 
-test('historical and followup audits form an exact chain to every current canonical field',()=>{
+test('dated audit chain still matches all canonical fields outside the later R2 dipole update',()=>{
   const expected=new Map();
   for(const group of ['transitions','levels']) for(const record of CATALOG[group].records)
     for(const [key,quantity] of Object.entries(record.quantities)) expected.set(`${group}/${record.id}/${key}`,quantity);
@@ -103,7 +101,9 @@ test('historical and followup audits form an exact chain to every current canoni
   expected.set('hyperfine/saved65S',CATALOG.hyperfine.saved65S);
   expected.set('estimates',CATALOG.estimates);
   assert.equal(new Set(audit.records.map(row=>row.path)).size,audit.records.length);
-  assert.deepEqual([...audit.records.map(row=>row.path)].sort(),[...expected.keys()].sort());
+  const updatedDipole='transitions/R2/d_num';
+  const addedDipoles=['transitions/R2/d_F32','transitions/R2/d_J_from_F32'];
+  assert.deepEqual([...audit.records.map(row=>row.path),...addedDipoles].sort(),[...expected.keys()].sort());
   const historical={};
   for(const group of ['transitions','levels','hyperfine','estimates'])
     historical[group]=readJSON(`data/literature/source-followup-2026-10-30/baseline/${group}.json`);
@@ -121,7 +121,15 @@ test('historical and followup audits form an exact chain to every current canoni
     assert.deepEqual(row.new,lookup(historical,row.path),`${row.path}: dated audit must equal next audit baseline`);
     const next=newest.get(row.path);
     if(next) assert.deepEqual(next.old,row.new,`${row.path}: the new record must retain the previous audited value`);
-    assert.deepEqual(next?.new||row.new,expected.get(row.path),`${row.path}: composed audit must describe current canonical state`);
+    const audited=next?.new||row.new;
+    if(row.path===updatedDipole) {
+      assert.equal(audited.value,0.0376);
+      assert.equal(audited.convention,'J-reduced');
+      assert.equal(audited.sourceId,'ref-17');
+      assert.equal(audited.reviewStatus,'definition-needs-review');
+    } else {
+      assert.deepEqual(audited,expected.get(row.path),`${row.path}: composed audit must describe current canonical state`);
+    }
     assert.ok(Object.hasOwn(row,'old'),`${row.path}: original value retained`);
     assert.ok(row.reason&&row.status&&row.auditedAt,`${row.path}: missing audit disposition`);
   }

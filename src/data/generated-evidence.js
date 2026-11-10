@@ -78,7 +78,7 @@ export const evidenceData = {
       "reviewVersion": "2026.10.30.2",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28",
+        "datasetHash": "946cabc410ba50e842c5b746fa6a6c149dd514c37c8c94b6ff4350b4a8178271",
         "formulaVersion": "1.0.1",
         "F": 0.5,
         "Fp": 0.5,
@@ -149,7 +149,7 @@ export const evidenceData = {
       "reviewVersion": "2026.11.02.1",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28",
+        "datasetHash": "946cabc410ba50e842c5b746fa6a6c149dd514c37c8c94b6ff4350b4a8178271",
         "formulaVersion": "1.0.1",
         "F": 0.5,
         "Fp": 1.5,
@@ -216,7 +216,7 @@ export const evidenceData = {
       "reviewVersion": "2026.11.02.1",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28",
+        "datasetHash": "946cabc410ba50e842c5b746fa6a6c149dd514c37c8c94b6ff4350b4a8178271",
         "formulaVersion": "1.0.1",
         "F": 0.5,
         "Fp": 1.5,
@@ -291,7 +291,7 @@ export const evidenceData = {
       "reviewVersion": "2026.11.02.1",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28",
+        "datasetHash": "946cabc410ba50e842c5b746fa6a6c149dd514c37c8c94b6ff4350b4a8178271",
         "formulaVersion": "1.0.1",
         "F": 0.5,
         "Fp": 1.5,
@@ -374,7 +374,7 @@ export const evidenceData = {
       "reviewVersion": "2026.11.02.1",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28",
+        "datasetHash": "946cabc410ba50e842c5b746fa6a6c149dd514c37c8c94b6ff4350b4a8178271",
         "formulaVersion": "1.0.1",
         "F": 0.5,
         "Fp": 1.5,
@@ -449,7 +449,7 @@ export const evidenceData = {
       "reviewVersion": "2026.11.02.1",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28",
+        "datasetHash": "946cabc410ba50e842c5b746fa6a6c149dd514c37c8c94b6ff4350b4a8178271",
         "formulaVersion": "1.0.1",
         "F": 2.5,
         "Fp": 1.5,

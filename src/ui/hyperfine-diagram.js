@@ -1,9 +1,9 @@
 import { I } from '../physics/constants.js';
-import { cg, reducedFFromJJ, matrixElement_F_q, getFs, formatCG, computeHfChannels as angularHfChannels, computeCGChannels as angularChannels, computeDEff as angularDEff } from '../physics/angular.js';
+import { cg, matrixElement_F_q, getFs, formatCG, computeHfChannels as angularHfChannels, computeCGChannels as angularChannels, computeDEff as angularDEff } from '../physics/angular.js';
 import { spRabi } from '../physics/rabi.js';
 import { rabiToDisplay as displayRabi } from '../physics/units.js';
 import { createCalculatorStore } from '../state/store.js';
-import { getTransitionRecord } from '../data/catalog.js';
+import { getDipoleQuantity } from '../data/catalog.js';
 import { DEFAULT_BEAM_DEFINITION } from '../physics/beam-conventions.js';
 
 // The displayed result is a channel calculation; references identify its
@@ -11,10 +11,11 @@ import { DEFAULT_BEAM_DEFINITION } from '../physics/beam-conventions.js';
 export function buildHyperfineTooltipModel(transition, channel, polarization, hfInduced=false) {
   const fraction=value=>({0.5:'1/2',1.5:'3/2',2.5:'5/2'}[value]??String(value));
   const magnetic=value=>`${value<0?'−':value>0?'+':''}${fraction(Math.abs(value))}`;
-  const sourceId=getTransitionRecord(transition?.id)?.quantities.d_num?.sourceId;
+  const dipole=getDipoleQuantity(transition?.id,channel.Fp);
+  const sourceId=dipole?.sourceId;
   const sourceIds=sourceId?[sourceId]:[];
   const matrix=Number.isFinite(channel.matEl)
-    ? `${channel.matEl<0?'−':'+'}${hfInduced?Math.abs(channel.matEl).toExponential(2):Math.abs(channel.matEl).toFixed(5)} ea₀`
+    ? `${channel.matEl<0?'−':'+'}${dipole?.convention==='F-reduced'?Math.abs(channel.matEl).toExponential(6):hfInduced?Math.abs(channel.matEl).toExponential(2):Math.abs(channel.matEl).toFixed(5)} ea₀`
     : '—';
   return {
     id:transition?.id||'',title:`${polarization} 超精细分量`,
@@ -24,7 +25,7 @@ export function buildHyperfineTooltipModel(transition, channel, polarization, hf
       {label:'d_eff',value:matrix,sourceIds},
       {label:'Ω/2π',value:channel.rabiStr||'—',sourceIds}
     ],
-    footnote:`输入 d：${hfInduced?'有效 F':'J'} 级约化量 · 模型换算`
+    footnote:`输入 d：${dipole?.convention==='F-reduced'?`F′=${fraction(channel.Fp)} 的 F`:hfInduced?'有效 F':'J'} 级约化量 · 模型换算`
   };
 }
 export function syncPolarizationView(buttons, rule, pol) {
@@ -42,7 +43,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   // ---- State ----
   const store = createCalculatorStore({
     transition: null, // { id, lower, upper, ... }
-    dReduced: 0,      // ⟨J'||d||J⟩ in ea0
+    dReduced: 0,      // default reduced element in ea0
     dEff: 0,          // current effective matrix element (ea0)
     gamma_kHz: null,  // Γ/2π in kHz
     wavelength_nm: 0,
@@ -439,24 +440,11 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
         })
       : _upperFsRaw.slice().reverse();
 
-    // Enumerate allowed transitions for selected polarization across displayed F manifolds
-    const lines = [];
-    for (const F of lowerFs) {
-      for (const Fp of upperFs) {
-        const dRed_F = reducedFFromJJ(Jp, J, Fp, F, state.dReduced);
-        for (let m = -F; m <= F + 1e-9; m += 1) {
-          const mp = m + q;
-          if (mp < -Fp - 1e-9 || mp > Fp + 1e-9) continue;
-          const cgVal = cg(F, m, 1, q, Fp, mp);
-          if (Math.abs(cgVal) < 1e-10) continue;
-          const matEl = matrixElement_F_q(F, m, Fp, mp, q, dRed_F);
-          let rabiStr = '—';
-          if (Math.abs(matEl) > 1e-12 && state.P_mW !== null && state.P_mW >= 0 && state.w_um > 0) {
-            const r = spRabi(Math.abs(matEl), state.P_mW, state.w_um);
-              rabiStr = rabiToDisplay(r.fR / 1e6).toPrecision(4) + ' ' + state.rabiUnit;
-          }
-          lines.push({ F, Fp, m, mp, cgVal, matEl, rabiStr });
-        }
+    const lines = computeCGChannels().filter(ch => ch.q === q && lowerFs.includes(ch.F) && upperFs.includes(ch.Fp));
+    for (const line of lines) {
+      if (Math.abs(line.matEl) > 1e-12 && state.P_mW !== null && state.P_mW >= 0 && state.w_um > 0) {
+        const {fR} = spRabi(Math.abs(line.matEl), state.P_mW, state.w_um);
+        line.rabiStr = rabiToDisplay(fR / 1e6).toPrecision(4) + ' ' + state.rabiUnit;
       }
     }
 
@@ -626,11 +614,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       const q = state.pol === 'pi' ? 0 : state.pol === 'sigmap' ? 1 : -1;
       const key = channelKey({ F: ln.F, m: ln.m, Fp: ln.Fp, mp: ln.mp, q: q });
 
-      // Label along the vertical line: CG 系数（角向因子）= ⟨F′m′|T¹q|Fm⟩/d_reduced
-      // 与 CG 矩阵表「角向因子 (CG×6j)」列同源同值（含 6-j 相位与 √(2F+1) 因子，含符号），
-      // 仅依赖 F/mF/偏振与 J/J′/I，与 d_reduced（随跃迁/主量子数变化）无关。
-      const angFactor = (state.dReduced > 1e-12) ? ln.matEl / state.dReduced : 0;
-      const textStr = formatCG(angFactor);
+      const textStr = formatCG(ln.angFactor);
       const textW = textStr.length * 5.8;
       const gapHalf = Math.min(textW / 2 + 2, lineLen / 2 - 4);
 
@@ -720,6 +704,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     }
     const selKey = state.selectedChannel ? channelKey(state.selectedChannel) : null;
     const hfMode = isHfInduced();
+    const branchMode = !!state.transition.fReducedDipoles;
     let html = '';
     for (const ch of channels) {
       const key = channelKey(ch);
@@ -728,8 +713,8 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       // ⟨F m; 1 q | F′ m′⟩ (±1/√3) and the matrix element = d_reduced × CG —
       // shown in exponential form because values are ~10⁻⁵ ea₀.
       const angCell = formatCG(ch.angFactor);
-      const matCell = hfMode
-        ? '<span style="font-family:\'JetBrains Mono\',monospace;color:var(--accent)">' + (ch.matEl >= 0 ? '+' : '−') + Math.abs(ch.matEl).toExponential(2) + '</span>'
+      const matCell = hfMode || branchMode
+        ? '<span style="font-family:\'JetBrains Mono\',monospace;color:var(--accent)">' + (ch.matEl >= 0 ? '+' : '−') + Math.abs(ch.matEl).toExponential(branchMode ? 6 : 2) + '</span>'
         : '<span style="font-family:\'JetBrains Mono\',monospace">' + (ch.matEl >= 0 ? '+' : '−') + Math.abs(ch.matEl).toFixed(4) + '</span>';
       html += `<tr class="${cls}" data-key="${key}">
         <td><button type="button" class="channel-select" data-channel-key="${key}" aria-pressed="${key === selKey}" aria-controls="secRabi" title="选择此通道并进入 Rabi 计算">|F=${fStr(ch.F)}, m<sub>F</sub>=${mStr(ch.m)}⟩</button></td>

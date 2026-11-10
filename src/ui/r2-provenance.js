@@ -1,8 +1,8 @@
 // Display-only provenance metadata; never used as a calculation input.
 export const R2_PROVENANCE=Object.freeze({
-  title:'R2来源追溯与误差边界',
-  scope:'以下两段记录只证明网站归属历史，不是原始生成证据；本地追溯未定位该矩阵元的原始计算工件。',
-  inputStatement:'0.0376 ea₀ 仍为原输入；网站声明按电子态 J 级约化量使用，该约化层级与数值尚未独立验证。',
+  title:'R2 历史值的来源与误差边界',
+  scope:'以下为旧值 0.0376 ea₀ 的网站归属历史。旧值的原始计算工件未定位。',
+  inputStatement:'旧版将 0.0376 ea₀ 作为电子态 J 级约化量。当前零场计算采用 R017 的分支 F 级约化矩阵元。',
   history:Object.freeze([
     Object.freeze({
       commit:'ea024f99421a2a5e7756b2dcc310c5f1891962b5',
@@ -49,7 +49,7 @@ export const R2_PROVENANCE=Object.freeze({
 // Reviewed context and a proposed validation contract; not calculation inputs.
 export const R2_EVIDENCE_EXTENSION=Object.freeze({
   reviewedAt:'2026-10-27',
-  status:'原始计算来源仍未定位；以下原文只支持各自声明的范围。',
+  status:'此处保留旧值的来源核查与误差传播方法。当前 R017 保存工件见上方字段。',
   searchUpdate:'本轮增量只读检索83个文件、15条本地历史，未找到生成链；旧导出引用的 knowledge_base.md 未定位。此结论不覆盖未检索的私人目录、二进制库或压缩档。',
   sources:Object.freeze([
     Object.freeze({

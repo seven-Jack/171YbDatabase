@@ -29,21 +29,25 @@ test('source index binds every field to its own source without merging calculati
   const allFields=view.sources.flatMap(source=>source.fields.map(field=>({field,sourceId:source.id})));
   assert.equal(allFields.length,Object.keys(getTransitionRecord('R2').quantities).length);
   for (const {field,sourceId} of allFields) assert.equal(getTransitionRecord('R2').quantities[field.key].sourceId,sourceId);
-  assert.deepEqual(view.sources.find(source=>source.id==='ref-17').fields.map(field=>field.key),['d_num']);
+  const r017=view.sources.find(source=>source.id==='internal-r017-20261110');
+  assert.deepEqual(r017.fields.map(field=>field.key),['d_num','d_F32','d_J_from_F32']);
+  assert.ok(r017.fields.every(field=>field.review==='已定位计算工件'));
   const scaling=view.sources.find(source=>source.id==='legacy-scaling');
   assert.equal(scaling.fields.find(field=>field.key==='lifetime_ns').kind,'由标度估算推导');
   assert.equal(scaling.fields.find(field=>field.key==='wavelength_vac_nm').kind,'标度估算');
-  assert.ok(view.sources.every(source=>source.fields.every(field=>field.review==='定义待核查'||field.review==='定义待核查')));
+  assert.ok(scaling.fields.every(field=>field.review==='定义待核查'));
 });
 
-test('missing E1 data and absent calculation artifacts remain explicit',()=>{
+test('missing E1 data and calculation artifact status remain explicit',()=>{
   const missing=buildKnowledgeView('T4',CORE_TRANSITIONS).sources.flatMap(source=>source.fields).find(field=>field.key==='d_num');
   assert.equal(missing.missing,true);
   assert.match(missing.missingText,/缺少适用的 E1/);
   const r2=buildKnowledgeView('R2',CORE_TRANSITIONS);
-  assert.equal(r2.sources.find(source=>source.id==='ref-17').fields[0].missingArtifact,true);
+  assert.ok(r2.sources.find(source=>source.id==='internal-r017-20261110').fields.every(field=>!field.missingArtifact));
   const html=renderKnowledgeHTML(r2);
-  assert.match(html,/Notebook \/ Run 及版本定位待补充/);
+  assert.match(html,/已登记保存工件/);
+  const t3=renderKnowledgeHTML(buildKnowledgeView('T3',CORE_TRANSITIONS));
+  assert.match(t3,/Notebook \/ Run 及版本定位待补充/);
   assert.match(html,/定义待核查/);
   assert.doesNotMatch(html,/已验证|独立验证通过|推荐路径/);
 });

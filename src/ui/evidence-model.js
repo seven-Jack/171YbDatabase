@@ -1,4 +1,4 @@
-import {DATASET_MANIFEST, getQuantity, getTransitionRecord, getLevelRecord} from '../data/catalog.js';
+import {DATASET_MANIFEST, getDipoleQuantity, getTransitionRecord, getLevelRecord} from '../data/catalog.js';
 import {EVIDENCE_VERSION, getEvidenceRecord, getEvidenceSource, getEvidenceComparison} from '../data/evidence.js';
 import {FORMULA_VERSION} from '../physics/constants.js';
 import {channelKey, computeCGChannels, computeDEff, polarizationQ} from '../physics/angular.js';
@@ -17,13 +17,13 @@ export function buildEvidenceView(state = {}, versionsOverrides = {}) {
   const transition = state.transition;
   const transitionId = transition?.id || null;
   const canonical = getTransitionRecord(transitionId);
-  const quantity = getQuantity(transitionId, 'd_num');
+  const quantity = getDipoleQuantity(transitionId, state.F_upper);
   const review = getEvidenceRecord(transitionId);
   const versions = {
     datasetHash:versionsOverrides.datasetHash ?? DATASET_MANIFEST.contentHash,
     formulaVersion:versionsOverrides.formulaVersion ?? FORMULA_VERSION,
   };
-  const applicable = !!canonical && String(transition.multipole || '').startsWith('E1') && Number.isFinite(quantity?.value) && quantity.value > 0;
+  const applicable = !!canonical && String(transition.multipole || '').startsWith('E1') && Number.isFinite(quantity?.value) && quantity.value !== 0;
   let definition, definitionValid = true;
   try {
     definition = validateBeamDefinition(state.beamDefinition || DEFAULT_BEAM_DEFINITION);

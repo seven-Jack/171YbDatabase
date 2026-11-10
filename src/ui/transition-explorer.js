@@ -60,7 +60,7 @@ export function initTransitionExplorer({transitions=[],calculator,
     const summary=document.createElement('span');summary.className='explorer-card-summary';
     summary.innerHTML=`<span class="explorer-state-pair">${e(transition.lower)} <span aria-hidden="true">→</span> ${e(transition.upper)}</span>
       <span class="explorer-purpose">${e(transition.label)}</span>
-      <span class="explorer-dipole">${fields.d_num.missing?'矩阵元缺失':`d ${e(fields.d_num.valueText)}`}<span>${e(fields.d_num.conventionText || '约定待核查')}</span></span>`;
+      <span class="explorer-dipole">${fields.d_num.missing?'矩阵元缺失':`${transition.fReducedDipoles?'':'d '}${e(fields.d_num.valueText)}`}<span>${e(fields.d_num.conventionText || '约定待核查')}</span></span>`;
     button.append(summary);
     const compare=document.createElement('button');compare.type='button';compare.className='explorer-compare';
     compare.dataset.compareTransition=record.id;compare.setAttribute('aria-pressed','false');

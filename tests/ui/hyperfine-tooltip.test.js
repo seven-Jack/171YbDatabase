@@ -31,8 +31,9 @@ test('clock channels retain the effective F input convention and its actual inte
 
 test('Rydberg channel result cites the dipole calculation rather than the saved HFS data or scaling input',()=>{
   const model=buildHyperfineTooltipModel(transition('R2'),channel,'π');
-  assert.deepEqual(model.rows[2].sourceIds,['ref-17']);
-  assert.deepEqual(model.rows[3].sourceIds,['ref-17']);
+  assert.deepEqual(model.rows[2].sourceIds,['internal-r017-20261110']);
+  assert.deepEqual(model.rows[3].sourceIds,['internal-r017-20261110']);
+  assert.match(model.footnote,/F′=3\/2 的 F 级约化量/);
   assert.doesNotMatch(JSON.stringify(model),/this-work-hyperfine-65s|legacy-scaling/);
 });
 

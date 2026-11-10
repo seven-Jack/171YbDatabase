@@ -28,7 +28,7 @@ export function renderDiagramSourceMarks(sourceIds=[]) {
   if (!ids.length) return '';
   return `<sup class="diagram-source-marks">${ids.map(id=>{
     const source=getSourceRecord(id),number=numbers.get(id);
-    const title=`${source.title} · ${reviewLabel(source.reviewStatus)}`;
+    const title=`${source.title} · ${reviewLabel(source.reviewStatus,Boolean(source.artifactLocator))}`;
     return `<a href="#diagram-source-${escapeHTML(id)}" title="${escapeHTML(title)}" aria-label="来源 ${number}：${escapeHTML(source.title)}">[${number}]</a>`;
   }).join('')}</sup>`;
 }
@@ -37,6 +37,6 @@ export function renderDiagramProvenanceIndexHTML() {
   return `<details class="diagram-provenance-index"><summary>图内数据记录与核查状态 <span>${supplemental.length} 项</span></summary><ol class="diagram-provenance-list" start="${firstSupplementalNumber}">${supplemental.map(source=>{
     const [title,note]=supplementalNotes[source.id]||[source.title,source.detail||'出处与核查状态待补充。'];
     const savedLink=source.id==='this-work-hyperfine-65s'?'<a class="diagram-source-artifact" href="assets/05.21_yb171_65s_hyperfine.csv" download>保存的 CSV ↗</a>':'';
-    return `<li id="diagram-source-${escapeHTML(source.id)}" value="${numbers.get(source.id)}"><div class="diagram-provenance-heading"><strong>${escapeHTML(title)}</strong><span>${escapeHTML(reviewLabel(source.reviewStatus))}</span></div><p>${escapeHTML(note)}</p>${savedLink}</li>`;
+    return `<li id="diagram-source-${escapeHTML(source.id)}" value="${numbers.get(source.id)}"><div class="diagram-provenance-heading"><strong>${escapeHTML(title)}</strong><span>${escapeHTML(reviewLabel(source.reviewStatus,Boolean(source.artifactLocator)))}</span></div><p>${escapeHTML(note)}</p>${savedLink}</li>`;
   }).join('')}</ol></details>`;
 }

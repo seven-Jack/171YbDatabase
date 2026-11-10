@@ -13,7 +13,7 @@ test('transition hovers keep the four optical fields and leave level properties 
     assert.match(html,/λ（真空）/);
     assert.match(html,/频率 ν/);
     assert.match(html,/多极性/);
-    assert.equal((html.match(/class="diagram-detail-row"/g)||[]).length,4);
+    assert.equal((html.match(/class="diagram-detail-row"/g)||[]).length,row.id==='R2'?5:4);
     assert.doesNotMatch(html,/寿命|线宽|振子强度|超精细结构|原记录表达：|寿命依据：|温度与包含过程|Notebook \/ Run/);
     assert.doesNotMatch(html,/已验证|实验验证通过/);
     assert.equal(JSON.stringify(getTransitionRecord(row.id)),before);
@@ -39,14 +39,15 @@ test('T3 retains its effective F-reduced matrix element instead of relabeling it
   assert.doesNotMatch(html,/J 约化|J 级约化量/);
 });
 
-test('R2 cites scaling for wavelength and this-work record for dipole',()=>{
+test('R2 cites scaling for wavelength and R017 for both signed F-reduced dipoles',()=>{
   const html=renderTransitionTooltip(transition('R2'));
   assert.match(html,/≈301\.87 nm/);
   assert.match(html,/href="#diagram-source-legacy-scaling"/);
-  assert.match(html,/href="#diagram-source-ref-17"/);
-  assert.match(html,/0\.0376 ea₀/);
+  assert.equal((html.match(/href="#diagram-source-internal-r017-20261110"/g)||[]).length,2);
+  assert.match(html,/F′ = 1\/2[\s\S]*?\+2\.165816490 × 10⁻³ ea₀/);
+  assert.match(html,/F′ = 3\/2[\s\S]*?−3\.491291695 × 10⁻³ ea₀/);
   assert.match(html,/本工作计算/);
-  assert.doesNotMatch(html,/href="#diagram-source-ref-04"|this-work-hyperfine-65s|实验验证/);
+  assert.doesNotMatch(html,/href="#diagram-source-ref-04"|href="#diagram-source-ref-17"|0\.0376|this-work-hyperfine-65s|实验验证/);
 });
 
 test('T4 keeps its missing E1 matrix element distinct from a zero',()=>{
