@@ -8,10 +8,11 @@ test.beforeEach(async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('data-app-ready', 'true');
 });
 
-test('switches both endpoints, preserves the low-state geometry, and uses the selected R017 branch', async ({ page }) => {
+test('switches n in the paired matrix display and uses the chosen R017 channel for Rabi', async ({ page }) => {
   const n = page.getByLabel('主量子数 n');
   const f = page.getByLabel('末态 F′');
   const line = page.locator('#rydbergDiagramSelection .transition-line');
+  const dipoles = page.locator('#ryd65BranchRows tr');
   const lowGeometry = () => page.locator('#levelDiagram > .transition-line .trans-main-line').evaluateAll(lines =>
     lines.map(line => ['x1', 'y1', 'x2', 'y2', 'stroke'].map(attribute => line.getAttribute(attribute))));
   const before = await lowGeometry();
@@ -22,11 +23,20 @@ test('switches both endpoints, preserves the low-state geometry, and uses the se
   await n.fill('29');
   await n.press('Tab');
   await expect(line).toHaveAttribute('data-id', 'NS-29-F32');
-  await expect(page.locator('#hfCGTableBody tr')).toHaveCount(6);
+  await expect(page.locator('#hfCGTableBody tr')).toHaveCount(10);
+  await expect(page.getByRole('region', {name:'29S 矩阵元表'})).toBeVisible();
+  await expect(dipoles).toHaveCount(2);
+  await expect(dipoles.nth(0)).toContainText('24.5448869845');
+  await expect(dipoles.nth(0)).toContainText('+9.560902015 × 10⁻³');
+  await expect(dipoles.nth(1)).toContainText('24.5669762300');
+  await expect(dipoles.nth(1)).toContainText('−1.356739900 × 10⁻²');
+  await expect(page.locator('#hfTransLines svg')).toContainText('F′=1/2');
+  await expect(page.locator('#hfTransLines svg')).toContainText('F′=3/2');
   const frequency = Number(await page.locator('#rpCalcR').inputValue());
-  await f.selectOption('0.5');
+  await page.locator('#hfCGTableBody button[data-channel-key="0.5|0.5|0.5|-0.5|-1"]').click();
   await expect(line).toHaveAttribute('data-id', 'NS-29-F12');
-  await expect(page.locator('#hfCGTableBody tr')).toHaveCount(4);
+  await expect(f).toHaveValue('0.5');
+  await expect(page.locator('#hfCGTableBody tr')).toHaveCount(10);
   await expect(page.locator('#rabiResult')).toContainText('NS-29-F12');
   expect(Number(await page.locator('#rpCalcR').inputValue())).not.toBeCloseTo(frequency, 6);
 
@@ -38,6 +48,8 @@ test('switches both endpoints, preserves the low-state geometry, and uses the se
   await expect(n).toHaveValue('100');
   await expect(f).toHaveValue('1.5');
   await expect(line).toHaveAttribute('data-id', 'NS-100-F32');
+  await expect(page.getByRole('region', {name:'100S 矩阵元表'})).toBeVisible();
+  await expect(dipoles).toHaveCount(2);
   await expect(line).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('#sourcePanel')).toContainText('R017');
   await expect(page.locator('#levelDiagram .transition-line')).toHaveCount(8);

@@ -54,7 +54,9 @@ export function initRydbergSelection({ transitions, calculator, draw, onDraw }) 
     for (const button of document.querySelectorAll('button[data-rydberg-id]')) {
       button.setAttribute('aria-pressed', String(button.dataset.rydbergId === transition.id));
     }
-    draw(transition);
+    // Draw the common nS level at the 2:4 weighted center of the two branches.
+    const centroid = pair.reduce((sum, branch) => sum + (2 * branch.Fp + 1) * branch.upperEnergy_eV, 0) / 6;
+    draw({ ...transition, upper: `6s${transition.n}s ³S₁ · F′=1/2, 3/2`, upperEnergy_eV: centroid });
     onDraw?.();
   }
 
