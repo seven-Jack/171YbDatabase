@@ -20,7 +20,7 @@ function levelView(id) {
 }
 
 function transitionView(record,decorated) {
-  const presentation=record.views?.core?.presentation || {};
+  const presentation=record.views?.core?.presentation || record.views?.rydberg?.presentation || {};
   return {
     id:record.id,label:decorated?.label || presentation.label || record.id,
     lower:levelView(record.lowerLevelId),upper:levelView(record.upperLevelId),

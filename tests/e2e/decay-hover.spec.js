@@ -1,7 +1,4 @@
 import {test,expect} from '@playwright/test';
-import {createHash} from 'node:crypto';
-
-const beforeSVG='66c5d66b695611eaa31ee831730371684dec4160a35af127731b5051685c8823';
 const state=(page,term)=>page.locator(`#levelDiagram .core-level-group[data-term="${term}"]`);
 const panel=page=>page.locator('#hfsPanel');
 async function settleScroll(page) { await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))); }
@@ -15,8 +12,7 @@ async function open(page,term) {
 async function close(page) { await panel(page).locator('.hfs-close').click(); await expect(panel(page)).toBeHidden(); }
 test.beforeEach(async({page})=>{await page.goto('./');await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');});
 
-test('the original complete SVG and all scientific geometry are unchanged before opening state data',async({page})=>{
-  expect(createHash('sha256').update(await page.locator('#levelDiagram').innerHTML()).digest('hex')).toBe(beforeSVG);
+test('the complete SVG shows one selected Rydberg branch alongside the low-lying levels',async({page})=>{
   await expect(page.locator('#levelDiagram .transition-line')).toHaveCount(8);
   await expect(page.locator('#levelDiagram .core-level-group')).toHaveCount(8);
   await expect(page.locator('#levelDiagram .diagram-decay-detail')).toHaveCount(0);
@@ -65,11 +61,9 @@ test('pending 3P2 and 65S do not inherit other-state fractions, and measured par
   await expect(card).toContainText('0.0918 s⁻¹');
   await expect(card).toContainText('ΔF=2');
   await close(page);
-  await open(page,'65³S₁');
-  card=panel(page).locator('.diagram-decay-detail');
-  await expect(card).toContainText('待核查');
-  await expect(card.locator('.diagram-decay-row')).toHaveCount(0);
-  await expect(card).not.toContainText('50.8');
+  await open(page,'65S · F′=3/2');
+  await expect(panel(page)).toContainText('R017 零场模型');
+  await expect(panel(page).locator('.diagram-decay-detail')).toHaveCount(0);
 });
 
 test('ground, clock approximation and measured HFI rate remain different statuses',async({page})=>{
@@ -87,7 +81,7 @@ test('ground, clock approximation and measured HFI rate remain different statuse
 });
 
 test('all state cards keep HFS, complete mF lists and a viewport-bounded layout',async({page})=>{
-  for(const term of ['¹S₀','¹P₁','³P₀','³P₁','³P₂','³D₁','³S₁','65³S₁']) {
+  for(const term of ['¹S₀','¹P₁','³P₀','³P₁','³P₂','³D₁','³S₁']) {
     await open(page,term);
     await expect(panel(page).locator('.diagram-hfs-detail')).toBeVisible();
     await expect(panel(page).locator('.hfs-mf-state').first()).toBeVisible();
@@ -97,7 +91,6 @@ test('all state cards keep HFS, complete mF lists and a viewport-bounded layout'
       await expect(lifetime.locator('a')).toHaveAttribute('href','#diagram-source-mishra-2001-jqsrt');
       await expect(panel(page).locator('.diagram-level-data .diagram-detail-row').filter({hasText:'能量 E'}).locator('a')).toHaveAttribute('href','#diagram-source-qiao-2023-rinp');
     }
-    if(term==='65³S₁')await expect(lifetime.locator('a')).toHaveAttribute('href','#diagram-source-legacy-scaling');
     const b=await panel(page).boundingBox();
     expect(b.x).toBeGreaterThanOrEqual(0);expect(b.x+b.width).toBeLessThanOrEqual(page.viewportSize().width);
     expect(b.y+b.height).toBeLessThanOrEqual(page.viewportSize().height-8);

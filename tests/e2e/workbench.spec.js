@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const transitionIds = ['T1','T2','T3','T4','T5','T6','T7','R2'];
+const transitionIds = ['T1','T2','T3','T4','T5','T6','T7','NS-65-F32'];
 const lineFor = (page,id) => page.locator(`#levelDiagram .transition-line[data-id="${id}"]`);
 const problems = new WeakMap();
 
@@ -64,7 +64,7 @@ test('effective F, unsupported M2 and calculated Rydberg evidence remain distinc
   await expect(page.locator('#sourcePanel [data-source-field="d_num"]')).toContainText('缺少适用');
   await expect(page.locator('#rabiResult strong')).toHaveText('—');
 
-  await choose(page,'R2');
+  await page.locator('[data-data-open="R2"]').click();
   await expect(page.locator('#sourcePanel [data-source-field="d_num"]')).toContainText('本工作计算');
   await expect(page.locator('#sourcePanel [data-source-field="wavelength_vac_nm"]')).toContainText('标度估算');
   await expect(page.locator('#hfCGTableBody tr')).toHaveCount(10);
@@ -115,7 +115,7 @@ test('shared-level relations still synchronize the object, channels and selected
   await expect(page.locator('[data-workflow-object="channels"]')).toContainText('R2 ·');
   await expect(page.locator('[data-workflow-object="result"]')).toContainText('R2 ·');
   await expect(knowledge.locator('.knowledge-header h3')).toContainText('R2');
-  await expect(lineFor(page,'R2')).toHaveAttribute('aria-pressed','true');
+  await expect(lineFor(page,'NS-65-F12')).toHaveAttribute('aria-pressed','true');
 });
 
 test('native workflow links reflect the current section without marking stages complete',async ({page})=>{

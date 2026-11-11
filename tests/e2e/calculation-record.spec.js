@@ -22,7 +22,7 @@ async function downloadRecord(page, format = 'json') {
   await page.locator(format === 'json' ? '#recordExportJSON' : '#recordExportMarkdown').click();
   const download = await pending;
   const text = await readFile(await download.path(), 'utf8');
-  expect(download.suggestedFilename()).toMatch(new RegExp(`^171yb-[A-Z][0-9]+-record\\.${format === 'json' ? 'json' : 'md'}$`));
+  expect(download.suggestedFilename()).toMatch(new RegExp(`^171yb-(?:[A-Z][0-9]+|NS-[0-9]+-F(?:12|32))-record\\.${format === 'json' ? 'json' : 'md'}$`));
   await expect(page.locator('#calculationRecordExport')).not.toHaveAttribute('open','');
   return format === 'json' ? JSON.parse(text) : text;
 }
@@ -204,7 +204,7 @@ test('zero power records zero frequency and an infinite pi time without inventin
   expect(markdown).toMatch(/∞|无穷|无限/);
 });
 
-test('the compact menu supports keyboard dismissal and unreviewed R2 records without page overflow', async ({page}) => {
+test('the compact menu supports keyboard dismissal and unreviewed Rydberg records without page overflow', async ({page}) => {
   const control=page.locator('#calculationRecordExport'), summary=control.locator(':scope > summary');
   await summary.focus();
   await summary.press('Enter');
@@ -213,12 +213,12 @@ test('the compact menu supports keyboard dismissal and unreviewed R2 records wit
   await page.locator('#recordExportJSON').press('Escape');
   await expect(control).not.toHaveAttribute('open','');
   await expect(summary).toBeFocused();
-  await choose(page,'R2');
+  await choose(page,'NS-65-F32');
   const record=await downloadRecord(page);
   expect(record.evidence.hasReview).toBe(false);
   expect(record.evidence.rows.every(row=>row.status==='not-reviewed')).toBe(true);
-  expect(record.primaryQuantity).toMatchObject({sourceId:'internal-r017-20261110',uncertainty:null,convention:'F-reduced'});
-  expect(record.transition.wavelength.evidenceKind).toBe('scaling-estimate');
+  expect(record.primaryQuantity).toMatchObject({sourceId:'internal-r017-ns-20261111',uncertainty:null,convention:'F-reduced'});
+  expect(record.transition.wavelength.evidenceKind).toBe('derived');
   await menu(page);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth)).toBeLessThanOrEqual(1);
   await page.locator('#rabiResult').click();

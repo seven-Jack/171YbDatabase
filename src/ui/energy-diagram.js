@@ -1,10 +1,11 @@
 // Main diagram geometry retains the published original; details are scoped hover cards.
-import { renderLevelDetails } from './diagram-details.js';
+import { renderLevelDetails, renderRydbergLevelDetails } from './diagram-details.js';
 import { chooseDiagramPanelPosition } from './diagram-placement.js';
 import { readDiagramGeometry } from './diagram-geometry.js';
 export function initEnergyDiagram({ CORE_LEVELS, CORE_TRANSITIONS, HYPERFINE_DATA, E_I_EV }, { showTooltip, moveTooltip, hideTooltip, scheduleTooltipHide }) {
 let attachHfsHover;
 let hfsAnchor = null;
+let selectedRydberg;
 function closeHyperfinePanel() {
   document.getElementById('hfsPanel').classList.remove('active');
   document.querySelectorAll('.core-level-group').forEach(g=>g.classList.remove('selected'));
@@ -73,11 +74,11 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
   }
 })();
 
-(function() {
+return (function() {
   const svg = document.getElementById('levelDiagram');
   svg.replaceChildren();
   svg.setAttribute('role', 'img');
-  svg.setAttribute('aria-label', '¹⁷¹Yb 原始能级跃迁图，八条跃迁。点击连线进入对应的超精细分量。');
+  svg.setAttribute('aria-label', '¹⁷¹Yb 能级跃迁图。点击连线进入对应的超精细分量。');
   const NS = 'http://www.w3.org/2000/svg';
   const W = 1000, H = 760;
   const padTop = 85, padBottom = 30;
@@ -111,10 +112,6 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
       return ySplit - frac * (1 - fracLow) * plotH;
     }
   }
-
-  // Build level map for core levels
-  const levelMap = {};
-  CORE_LEVELS.forEach(l => levelMap[l.term] = l);
 
   // Column headers (3-column parity-symmetric Grotrian)
   // Each column gets a series label (large, serif) + parity tag (small, mono)
@@ -255,10 +252,6 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
     svg.appendChild(div);
   });
 
-  // (Ionization limit line removed — no Rydberg levels in this diagram)
-
-  // (Rydberg region shaded band and label removed — no Rydberg levels in this diagram)
-
   // ===== Draw core levels =====
   function drawCoreLevel(level, x, opts = {}) {
     const y = eVtoY(level.energy_eV);
@@ -271,7 +264,7 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
     const line = document.createElementNS(NS, 'line');
     line.setAttribute('x1', x - lw/2); line.setAttribute('y1', y);
     line.setAttribute('x2', x + lw/2); line.setAttribute('y2', y);
-    const lineColor = level.type === 'singlet' ? '#e8edf7' : '#7aa2ff';
+    const lineColor = opts.color ?? (level.type === 'singlet' ? '#e8edf7' : '#7aa2ff');
     line.setAttribute('stroke', lineColor);
     line.setAttribute('stroke-width', '3');
     line.setAttribute('stroke-linecap', 'butt');
@@ -308,7 +301,7 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
     } else if (shortLabel) {
       displayLabel = level.term;
     } else {
-      displayLabel = level.term === '65³S₁' ? '6s65s ³S₁' : level.config === '6s7s' ? '6s7s ' + level.term : '(' + level.config + ') ' + level.term;
+      displayLabel = level.config === '6s7s' ? '6s7s ' + level.term : '(' + level.config + ') ' + level.term;
     }
 
     const label = document.createElementNS(NS, 'text');
@@ -347,14 +340,12 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
       g.appendChild(cfgLabel);
     }
 
-    // Hover/touch handler for hyperfine panel
     g.classList.add('core-level-group');
     g.setAttribute('tabindex','0');
-    g.setAttribute('aria-label',level.config+' '+level.term+'，能级与超精细结构');
+    g.setAttribute('aria-label',`${opts.group ? level.term : level.config+' '+level.term}，能级与超精细结构`);
     g.setAttribute('aria-controls','hfsPanel');
     attachHfsHover(g, () => level.term);
-
-    svg.appendChild(g);
+    (opts.group ?? svg).appendChild(g);
     return { y, x };
   }
 
@@ -369,7 +360,7 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
   }
 
   // Draw all core levels
-  CORE_LEVELS.forEach(l => {
+  CORE_LEVELS.filter(l => l.term !== '65³S₁').forEach(l => {
     const x = getLevelX(l);
     if (l.term === '³P₀') {
       // Bottom of triplet: short label (term only), same config as ³P₁
@@ -406,23 +397,7 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
     }
   });
 
-  // ===== Core levels only — Rydberg levels removed (shown in dedicated diagram below) =====
-
-  // ===== Draw core transitions =====
   const transitionEls = [];
-
-  const coreLabelLayout = {
-    // Left side transition (¹P₁ → ¹S₀)
-    'T1': { frac: 0.5, side: -1 },
-    // Right side transitions from ¹S₀ — parallel ³P family, labels staggered on alternating sides
-    'T3': { frac: 0.28, side: 1 },   // 578 nm: lower-right of line
-    'T2': { frac: 0.52, side: -1 },  // 556 nm: middle-left of line (opposite side)
-    'T4': { frac: 0.78, side: 1 },   // 507 nm: upper-right of line
-    // Repumper transitions between ³P and even levels — alternate sides & positions
-    'T5': { frac: 0.5, side: -1 },
-    'T6': { frac: 0.65, side: 1 },
-    'T7': { frac: 0.35, side: -1 },
-  };
 
   // Special layout for T1–T4: four transitions divide the ¹S₀ bar into 5 equal parts;
   // the three ³P_J → ¹S₀ lines (T2,T3,T4) are drawn mutually parallel.
@@ -477,36 +452,18 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
   t6UpperX = Math.max(s1BarX - s1BarW/2, Math.min(s1BarX + s1BarW/2, t6UpperX));
   t7UpperX = Math.max(s1BarX - s1BarW/2, Math.min(s1BarX + s1BarW/2, t7UpperX));
 
-  function drawTransition(t, isCore = true) {
-    const lower = levelMap[t.lower];
+  function drawTransition(t, upperPos = levelPos[t.upper], group = svg) {
     const lowerPos = levelPos[t.lower];
-    if (!lowerPos) return null;
-    const sameSide = lower.parity === (t.upper_parity || levelMap[t.upper]?.parity);
-
-    let upperPos, upperParity;
-    if (isCore) {
-      upperPos = levelPos[t.upper];
-      upperParity = levelMap[t.upper].parity;
-    } else {
-      // Rydberg transition - find matching rydLevel by series term and n
-      const upperTerm = t.upper.replace(/^n/, ''); // e.g. "n³S₁" → "³S₁", "n³D₂" → "³D₂"
-      const rl = rydLevels.find(r => r.n === t.n && r.series === 'n' + upperTerm);
-      if (!rl) return null;
-      const y = eVtoY(rl.energy_eV);
-      const x = rl.parity === 'even' ? colEven : colOddR;
-      upperPos = { x, y };
-      upperParity = rl.parity;
-    }
+    if (!lowerPos || !upperPos) return null;
 
     const g = document.createElementNS(NS, 'g');
     g.setAttribute('class', 'transition-line');
     g.setAttribute('data-id', t.id);
     const clsKey = t.classification.startsWith('强') ? 'strong' : t.classification.startsWith('弱') ? 'weak' : 'forbidden';
     g.setAttribute('data-strength', clsKey);
-    g.setAttribute('data-category', isCore ? 'core' : 'rydberg');
+    g.setAttribute('data-category', t.n === undefined ? 'core' : 'rydberg');
     g.style.cursor = 'pointer';
 
-    const fromEven = lower.parity === 'even';
     let x1 = lowerPos.x;
     let y1 = lowerPos.y;
     let x2 = upperPos.x;
@@ -514,7 +471,7 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
 
     // Special routing for T1–T4: divide ¹S₀ bar into 5 equal parts and make
     // the three ³P_J → ¹S₀ transitions parallel.
-    if (isCore && (t.id === 'T1' || t.id === 'T2' || t.id === 'T3' || t.id === 'T4')) {
+    if (['T1', 'T2', 'T3', 'T4'].includes(t.id)) {
       y1 = sBarY;
       if (t.id === 'T1') {
         x1 = singletLowerX;   // leftmost division point on ¹S₀
@@ -527,7 +484,7 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
     }
 
     // Special routing for T5–T7: ³P connection at left 1/3, T6/T7 parallel
-    if (isCore && (t.id === 'T5' || t.id === 'T6' || t.id === 'T7')) {
+    if (['T5', 'T6', 'T7'].includes(t.id)) {
       if (t.id === 'T5') {
         // ³D₁ → ³P₀: ³P₀ endpoint at left 1/3
         x1 = pThirdLeftX;
@@ -549,19 +506,18 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
       }
     }
 
-    // 65S excitation starts one fifth of the bar width inward from the right edge.
-    if (isCore && t.id === 'R2') x1 = colOddR + levelW / 2 - levelW / 5;
+    if (t.n !== undefined) x1 = colOddR + levelW / 2 - levelW / 5;
 
     // Line stroke by strength classification
-    const strokeW = t.classification.startsWith('强') ? (isCore ? 2.5 : 2) : t.classification.startsWith('弱') ? 2 : 1.2;
+    const strokeW = t.classification.startsWith('强') ? 2.5 : t.classification.startsWith('弱') ? 2 : 1.2;
     const isDashed = t.classification.startsWith('禁戒') || t.multipole.includes('M2') || t.multipole.includes('双光子');
 
     // Break line at midpoint to make room for wavelength label
     const _dx = x2 - x1, _dy = y2 - y1;
     const _len = Math.sqrt(_dx*_dx + _dy*_dy) || 1;
     const _ux = _dx / _len, _uy = _dy / _len;
-    const _textStr = (isCore ? t.wavelength_vac_nm.toFixed(2) : t.wavelength_vac_nm.toFixed(1)) + ' nm';
-    const _textW = _textStr.length * (isCore ? 6.8 : 5.8);
+    const _textStr = t.wavelength_vac_nm.toFixed(t.n === undefined ? 2 : 5) + ' nm';
+    const _textW = _textStr.length * 6.8;
     const _gapHalf = _textW / 2 + 5;
     const _midX = (x1 + x2) / 2;
     const _midY = (y1 + y2) / 2;
@@ -593,33 +549,31 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
     g.appendChild(line2);
 
     // Simple two-line chevron arrows at both ends: lower tip → low level, upper tip → high level
-    if (isCore) {
-      function drawChevron(g, x, y, dirX, dirY, color, size) {
-        const angle = Math.atan2(dirY, dirX);
-        const spread = 0.45;
-        const a1 = angle + spread, a2 = angle - spread;
-        const legLen = size || 6;
-        const makeLeg = function(a) {
-          const leg = document.createElementNS(NS, 'line');
-          leg.setAttribute('class', 'trans-arrow');
-          // legs extend outward from endpoint along dir, so arrow tip sits at endpoint and points along dir
-          leg.setAttribute('x1', x); leg.setAttribute('y1', y);
-          leg.setAttribute('x2', x + legLen * Math.cos(a));
-          leg.setAttribute('y2', y + legLen * Math.sin(a));
-          leg.setAttribute('stroke', color);
-          leg.setAttribute('stroke-width', '1.5');
-          leg.setAttribute('stroke-linecap', 'round');
-          return leg;
-        };
-        g.appendChild(makeLeg(a1));
-        g.appendChild(makeLeg(a2));
-      }
-      // _ux,_uy is the unit vector from lower level (x1,y1) to upper level (x2,y2)
-      // Lower endpoint: legs extend toward upper level → tip points down toward low level
-      drawChevron(g, x1, y1, _ux, _uy, t.color, 6.5);
-      // Upper endpoint: legs extend toward lower level → tip points up toward high level
-      drawChevron(g, x2, y2, -_ux, -_uy, t.color, 6.5);
+    function drawChevron(g, x, y, dirX, dirY, color, size) {
+      const angle = Math.atan2(dirY, dirX);
+      const spread = 0.45;
+      const a1 = angle + spread, a2 = angle - spread;
+      const legLen = size || 6;
+      const makeLeg = function(a) {
+        const leg = document.createElementNS(NS, 'line');
+        leg.setAttribute('class', 'trans-arrow');
+        // legs extend outward from endpoint along dir, so arrow tip sits at endpoint and points along dir
+        leg.setAttribute('x1', x); leg.setAttribute('y1', y);
+        leg.setAttribute('x2', x + legLen * Math.cos(a));
+        leg.setAttribute('y2', y + legLen * Math.sin(a));
+        leg.setAttribute('stroke', color);
+        leg.setAttribute('stroke-width', '1.5');
+        leg.setAttribute('stroke-linecap', 'round');
+        return leg;
+      };
+      g.appendChild(makeLeg(a1));
+      g.appendChild(makeLeg(a2));
     }
+    // _ux,_uy is the unit vector from lower level (x1,y1) to upper level (x2,y2)
+    // Lower endpoint: legs extend toward upper level → tip points down toward low level
+    drawChevron(g, x1, y1, _ux, _uy, t.color, 6.5);
+    // Upper endpoint: legs extend toward lower level → tip points up toward high level
+    drawChevron(g, x2, y2, -_ux, -_uy, t.color, 6.5);
 
     // Wavelength label: at midpoint of line, rotated along line direction
     // (line is broken at this position — text sits in the gap)
@@ -632,17 +586,13 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
 
     const wlLabel = document.createElementNS(NS, 'text');
     wlLabel.setAttribute('x', 0);
-    wlLabel.setAttribute('y', isCore ? 4 : 3);
+    wlLabel.setAttribute('y', 4);
     wlLabel.setAttribute('text-anchor', 'middle');
     wlLabel.setAttribute('fill', t.color);
-    wlLabel.setAttribute('font-size', isCore ? '11.5' : '9.5');
+    wlLabel.setAttribute('font-size', '11.5');
     wlLabel.setAttribute('font-family', 'Times New Roman, SimSun, Songti SC, serif');
-    wlLabel.setAttribute('font-weight', isCore ? '600' : '400');
-    if (isCore) {
-      wlLabel.setAttribute('style', 'paint-order: stroke; stroke: rgba(10,14,22,0.9); stroke-width: 3px; stroke-linejoin: round;');
-    } else {
-      wlLabel.setAttribute('opacity', '0.85');
-    }
+    wlLabel.setAttribute('font-weight', '600');
+    wlLabel.setAttribute('style', 'paint-order: stroke; stroke: rgba(10,14,22,0.9); stroke-width: 3px; stroke-linejoin: round;');
     wlLabel.textContent = _textStr;
     labelGroup.appendChild(wlLabel);
 
@@ -662,7 +612,7 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
     // Hover
     g.addEventListener('mouseenter', (e) => {
       closeHyperfinePanel();
-      showTooltip(e, t, isCore, g);
+      showTooltip(e, t, true, g);
       g.querySelectorAll('.trans-main-line').forEach(el => {
         el.setAttribute('stroke-width', parseFloat(el.getAttribute('stroke-width')) * 1.6);
       });
@@ -670,27 +620,29 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
     g.addEventListener('mousemove', moveTooltip);
     g.addEventListener('mouseleave', () => {
       scheduleTooltipHide();
-      const origW = t.classification.startsWith('强') ? (isCore ? 2.5 : 1.5) : t.classification.startsWith('弱') ? 2 : 1.2;
       g.querySelectorAll('.trans-main-line').forEach(el => {
-        el.setAttribute('stroke-width', origW);
+        el.setAttribute('stroke-width', strokeW);
       });
     });
 
-    svg.appendChild(g);
+    group.appendChild(g);
     return g;
   }
 
-  // Draw all core transitions (Rydberg transitions removed from this diagram — see dedicated Rydberg QC diagram below)
-  CORE_TRANSITIONS.forEach(t => {
-    const el = drawTransition(t, true);
+  CORE_TRANSITIONS.filter(t => t.id !== 'R2').forEach(t => {
+    const el = drawTransition(t);
     if (el) transitionEls.push(el);
   });
+  const rydbergGroup = document.createElementNS(NS, 'g');
+  rydbergGroup.id = 'rydbergDiagramSelection';
+  svg.appendChild(rydbergGroup);
+  let rydbergLine;
 
   // ===== Filter controls =====
   let curCat = 'all', curStrength = 'all';
 
   function applyFilter() {
-    transitionEls.forEach(el => {
+    [...transitionEls, rydbergLine].filter(Boolean).forEach(el => {
       const cat = el.dataset.category;
       const str = el.dataset.strength;
       const catOk = curCat === 'all' || cat === curCat;
@@ -722,6 +674,16 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
     });
   });
 
+  return function drawRydbergSelection(transition) {
+    selectedRydberg = transition;
+    closeHyperfinePanel();
+    hideTooltip();
+    rydbergGroup.replaceChildren();
+    const upper = drawCoreLevel({ term: transition.upper, energy_eV: transition.upperEnergy_eV }, colEven,
+      { group: rydbergGroup, shortLabel: true, color: transition.color });
+    rydbergLine = drawTransition(transition, upper, rydbergGroup);
+    applyFilter();
+  };
 })();
 
 // ============================================================
@@ -730,8 +692,9 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
 function showHyperfinePanel(term) {
   const panel=document.getElementById('hfsPanel');
   const level=CORE_LEVELS.find(l=>l.term===term), hfs=HYPERFINE_DATA[term];
-  if (!level||!hfs) return;
-  document.getElementById('hfsContent').innerHTML=renderLevelDetails(level,hfs);
+  const rydberg = selectedRydberg?.upper === term;
+  if (!rydberg && (!level||!hfs)) return;
+  document.getElementById('hfsContent').innerHTML=rydberg ? renderRydbergLevelDetails(selectedRydberg) : renderLevelDetails(level,hfs);
   panel.classList.add('active');
   document.querySelectorAll('.core-level-group').forEach(g=>g.classList.toggle('selected',g.dataset.term===term));
   positionHyperfinePanel();

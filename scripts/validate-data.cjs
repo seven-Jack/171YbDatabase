@@ -1,7 +1,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const {deriveSpectrum} = require('./import-rydberg-series.cjs');
 
-const DATA_FILES = ['levels.json', 'transitions.json', 'hyperfine.json', 'sources.json', 'estimates.json'];
+const DATA_FILES = ['levels.json', 'transitions.json', 'hyperfine.json', 'sources.json', 'estimates.json', 'rydberg-series.json'];
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const EXPECTED_UNITS = {wavelength_vac_nm:'nm', wavelength_air_nm:'nm', frequency_THz:'THz', energy_eV:'eV', energy_cm:'cm^-1', Gamma_per_s_num:'s^-1', lifetime_ns:'ns', oscillator_strength_f_num:'dimensionless', d_num:'e*a0', d_F32:'e*a0', d_J_from_F32:'e*a0', linewidth_frequency_coefficient_Hz:'Hz'};
 const fail = (location, message) => { throw new Error(`${location}: ${message}`); };
@@ -42,6 +43,29 @@ function loadCatalog(root = PROJECT_ROOT) {
   return Object.fromEntries(DATA_FILES.map(filename => [filename.replace('.json',''),JSON.parse(fs.readFileSync(path.join(root,'data',filename),'utf8'))]));
 }
 
+function validateRydbergSeries(series) {
+  const location = 'data/rydberg-series.json';
+  if (series.schemaVersion !== 1 || series.isotope !== 171 || series.B_T !== 0 ||
+      series.E_V_m !== 0 || series.nuReference !== 'ionic F_c=1' || series.physicalUncertainty !== null ||
+      !/^[a-f0-9]{64}$/.test(series.sourceSha256) || !/^[a-f0-9]{40}$/.test(series.rydcalcCommit)) {
+    fail(location, 'expected traceable zero-field 171Yb model data');
+  }
+  const keys = new Set(Array.from({length: 72}, (_, i) => [`${i + 29}:0.5`, `${i + 29}:1.5`]).flat());
+  const sourceIds = new Set();
+  for (const row of series.states) {
+    if (!keys.delete(`${row.n}:${row.Fp}`) || !Number.isFinite(row.nu) || row.nu <= 0 ||
+        !Number.isFinite(row.dipole_ea0) || !row.sourceStateId || sourceIds.has(row.sourceStateId) ||
+        !row.identityReview || !row.numericalReview || !row.originalSelection) {
+      fail(location, `invalid or duplicate state ${row.n}S F′=${row.Fp}`);
+    }
+    sourceIds.add(row.sourceStateId);
+    for (const [field, value] of Object.entries(deriveSpectrum(row.nu, series.spectroscopy))) {
+      if (!Number.isFinite(value) || value <= 0 || row[field] !== value) fail(location, `invalid ${field} for ${row.sourceStateId}`);
+    }
+  }
+  if (keys.size) fail(location, 'expected both branches at every n from 29 through 100');
+}
+
 function validateCatalog(catalog, root = PROJECT_ROOT) {
   const schemas = Object.fromEntries(['quantity.schema.json','transition.schema.json'].map(filename => [filename,JSON.parse(fs.readFileSync(path.join(root,'schemas',filename),'utf8'))]));
   const {levels,transitions,hyperfine,sources,estimates} = catalog;
@@ -53,6 +77,10 @@ function validateCatalog(catalog, root = PROJECT_ROOT) {
     sourceIds.add(source.id);
     if (!source.reviewStatus || !source.rightsStatus) fail(`source.${source.id}`,'review and rights status required');
   }
+  const series = catalog['rydberg-series'];
+  validateRydbergSeries(series);
+  const seriesSource = allSources.find(source => source.id === series.sourceId);
+  if (seriesSource?.artifactSha256 !== series.sourceSha256) fail('rydberg-series.sourceId', 'source digest does not match the series');
   const levelIds = new Set();
   function checkQuantity(quantity, location) {
     validateSchema(quantity,schemas['quantity.schema.json'],location,schemas);
@@ -132,7 +160,7 @@ function validateCatalog(catalog, root = PROJECT_ROOT) {
   return {levels:levelIds.size,transitions:transitionIds.size,coreTransitions:transitions.coreTransitionIds.length,sources:sourceIds.size};
 }
 
-module.exports = {DATA_FILES,EXPECTED_UNITS,loadCatalog,validateCatalog,validateSchema};
+module.exports = {DATA_FILES,EXPECTED_UNITS,loadCatalog,validateCatalog,validateSchema,validateRydbergSeries};
 if (require.main === module) {
   try { console.log('Data validation passed:',JSON.stringify(validateCatalog(loadCatalog()))); }
   catch (error) { console.error(error.message); process.exitCode=1; }

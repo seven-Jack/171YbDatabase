@@ -63,7 +63,7 @@
       </div>
       <h1 class="title"><span class="hero-isotope"><sup>171</sup>Yb</span><span class="hero-title-text">跃迁数据图谱</span></h1>
       <p class="hero-lead">从能级结构，到光场耦合。</p>
-      <p class="subtitle">核心跃迁、65S 路径与单光子耦合计算。包含文献数据、内部参数及模型估算；请核对来源与适用条件。</p>
+      <p class="subtitle">核心跃迁、29S–100S 零场光谱与单光子耦合计算。</p>
       <div class="hero-actions"><a class="hero-primary" href="#secLevel">探索能级图谱 <span aria-hidden="true">↗</span></a><a class="hero-secondary" href="#secRabi">计算耦合强度 <span aria-hidden="true">→</span></a></div>
     </div>
     <div class="header-right">
@@ -105,6 +105,12 @@
         <span class="flow-caption" id="workflowLocation">当前 · 能级与来源</span>
       </nav>
     </div>
+    <form id="rydbergSelection" class="rydberg-selection" aria-label="里德堡跃迁选择">
+      <strong>³P₀ → nS</strong>
+      <label>主量子数 n <input id="rydbergN" type="number" min="29" max="100" step="1" value="65" required></label>
+      <label>末态 F′ <select id="rydbergFp"><option value="0.5">1/2</option><option value="1.5" selected>3/2</option></select></label>
+      <span class="rydberg-conditions">¹⁷¹Yb · B = E = 0</span>
+    </form>
     <div class="original-diagram-main">
     <div class="original-diagram-wrap" data-diagram-version="published-original">
       <div class="original-filter-bar">
@@ -112,6 +118,7 @@
           <span class="original-filter-label">类别</span>
           <button class="original-f-btn active" data-fcat="all">全部</button>
           <button class="original-f-btn" data-fcat="core">核心跃迁</button>
+          <button class="original-f-btn" data-fcat="rydberg">里德堡激发</button>
         </div>
         <div class="original-filter-group">
           <span class="original-filter-label">强度</span>
@@ -151,7 +158,7 @@
           </div>
           <div class="original-legend-item">
             <span class="original-legend-line solid" style="border-color:#a78bfa"></span>
-            <span>65S 激发 E1</span>
+            <span>nS 激发 E1</span>
           </div>
         </div>
         <div class="original-legend-col">
@@ -180,6 +187,30 @@
     </div>
     </div>
     <p class="diagram-click-guide">点击跃迁线，进入对应的超精细分量与计算。</p>
+    <section class="rydberg-details" aria-labelledby="rydbergDetailsTitle">
+      <div class="rydberg-details-heading">
+        <h3 id="rydbergDetailsTitle">65S 零场分支</h3>
+        <span>R017 模型 · ν 相对 F<sub>c</sub>=1 · 物理不确定度未评估</span>
+      </div>
+      <p id="rydbergLegacyContext" class="rydberg-conditions" hidden>当前 Rabi 使用旧 R2 参数。选择下方分支可切换到 R017 系列。</p>
+      <div class="rydberg-table-scroll" role="region" tabindex="0" aria-label="可滚动的当前里德堡分支">
+        <table class="rydberg-table" aria-label="当前 n 的两条里德堡分支">
+          <thead><tr><th scope="col">末态 F′</th><th scope="col">有效主量子数 ν</th><th scope="col">频率 / THz</th><th scope="col">真空波长 / nm</th><th scope="col">D<sub>F</sub> / ea₀</th></tr></thead>
+          <tbody id="rydbergPairRows"></tbody>
+        </table>
+      </div>
+      <details id="rydbergSeriesTable">
+        <summary>查看 29S–100S 全表</summary>
+        <label class="rydberg-search">搜索光谱 <input id="rydbergSearch" type="search" placeholder="n、频率 / THz、波长 / nm"></label>
+        <span id="rydbergSearchCount" role="status"></span>
+        <div class="rydberg-table-scroll rydberg-table-scroll-full" role="region" tabindex="0" aria-label="可滚动的里德堡光谱全表">
+          <table class="rydberg-table" aria-label="29S–100S 零场光谱">
+            <thead><tr><th scope="col">末态</th><th scope="col">有效主量子数 ν</th><th scope="col">频率 / THz</th><th scope="col">真空波长 / nm</th><th scope="col">D<sub>F</sub> / ea₀</th></tr></thead>
+            <tbody id="rydbergAllRows"></tbody>
+          </table>
+        </div>
+      </details>
+    </section>
     <section id="currentContext" class="current-context" data-testid="current-context" aria-label="当前计算对象" aria-live="polite"></section>
     <div class="object-workspace">
       <details id="selectedSource" open><summary>当前跃迁 · 数值与来源</summary><div id="sourcePanel"></div></details>
@@ -285,7 +316,7 @@
                   <span class="formula">⟨F′||d||F⟩ = (−1)<sup>J′+I+F+1</sup> √(2F′+1)(2F+1) {J′ F′ I; F J 1} ⟨J′||d||J⟩</span>（6-j 符号耦合）<br>
                   <span class="formula">⟨F′m′|d|Fm⟩ = CG × ⟨F′||d||F⟩ / √(2F′+1)</span>（Wigner-Eckart 定理）<br>
                   <span class="formula">J 级约化输入的角向因子 = CG × (−1)<sup>J′+I+F+1</sup> √(2F+1) {J′ F′ I; F J 1}</span><br>
-                  <span class="formula">F 级约化输入的角向因子 = CG / √(2F′+1)</span>。65S 使用对应末态 F′ 的 D<sub>F</sub>。<br>
+                  <span class="formula">F 级约化输入的角向因子 = CG / √(2F′+1)</span>。nS 使用对应末态 F′ 的 D<sub>F</sub>。<br>
                   <span class="formula">d<sub>cyc</sub> = √(3πε₀ℏc³Γ/ω₀³)</span>（由线宽反推循环跃迁等效矩阵元）<br>
                   <strong>选择定则：</strong>π (q=0, Δm<sub>F</sub>=0) · σ⁺ (q=+1, Δm<sub>F</sub>=+1) · σ⁻ (q=−1, Δm<sub>F</sub>=−1)
                 </div>

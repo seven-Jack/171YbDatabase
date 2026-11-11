@@ -39,7 +39,7 @@ export function syncPolarizationView(buttons, rule, pol) {
   if (rule) rule.innerHTML = ruleMap[pol];
 }
 
-export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC_DATA,HYPERFINE_DATA,RYDBERG_QC_TRANSITIONS=[]}, {showCompactTooltip,scheduleTooltipHide}, {onChannelSelected}={}) {
+export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC_DATA,HYPERFINE_DATA,RYDBERG_QC_TRANSITIONS=[],RYDBERG_SERIES_TRANSITIONS=[]}, {showCompactTooltip,scheduleTooltipHide}, {onChannelSelected}={}) {
   // ---- State ----
   const store = createCalculatorStore({
     transition: null, // { id, lower, upper, ... }
@@ -83,9 +83,10 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   // ---- Format helpers ----
 
   // ---- Populate F selectors based on J values ----
+  const availableUpperFs = () => state.transition.Fp === undefined ? getFs(state.J_upper) : [state.transition.Fp];
   function populateFSelects() {
     state.F_lower=getFs(state.J_lower)[0];
-    state.F_upper=getFs(state.J_upper)[0];
+    state.F_upper=availableUpperFs()[0];
     state.diagF_lower='all';state.diagF_upper='all';
     populateDiagFSelects();
   }
@@ -109,7 +110,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   // ---- Populate diagram F selectors (with "all" option) ----
   function populateDiagFSelects() {
     const lowerFs = getFs(state.J_lower);
-    const upperFs = getFs(state.J_upper);
+    const upperFs = availableUpperFs();
     function opts(Fs, prime) {
       let html = '<option value="all">全部</option>';
       for (const F of Fs) html += `<option value="${F}">F${prime ? '′' : ''} = ${fStr(F)}</option>`;
@@ -430,7 +431,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     // Sort upper F′ manifolds by hyperfine energy shift (descending ⇒ highest energy on top).
     // Correct for both A>0 (higher F′ on top) and A<0 (lower F′ on top, e.g. ¹P₁ A=−214 MHz ⇒ F′=1/2 上、F′=3/2 下),
     // consistent with the core-diagram hyperfine hover panel. Falls back to .reverse() if no A data.
-    const _upperFsRaw = state.diagF_upper === 'all' ? getFs(Jp) : [parseFloat(state.diagF_upper)];
+    const _upperFsRaw = state.diagF_upper === 'all' ? availableUpperFs() : [parseFloat(state.diagF_upper)];
     const _hfsUp = HYPERFINE_DATA[state.transition.upper];
     const upperFs = _hfsUp
       ? _upperFsRaw.slice().sort((a, b) => {
@@ -764,7 +765,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     document.getElementById('ryd65CalcNote').hidden = t.id !== 'R2';
     state.selectedChannel = null;
     var lowerJ = findLevelJ(t.lower);
-    var upperJ = findLevelJ(t.upper);
+    var upperJ = t.upperJ ?? findLevelJ(t.upper);
     if (lowerJ === null || upperJ === null) return;
 
     state.J_lower = lowerJ;
@@ -839,7 +840,9 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     onChange: store.subscribe,
     patchInputs(patch) { for(const [key,value] of Object.entries(patch)) state[key]=value; recalc(); },
     restore(snapshot) {
-      const t=CORE_TRANSITIONS.find(t=>t.id===snapshot.transition.id)||RYDBERG_QC_TRANSITIONS.find(t=>t.id===snapshot.transition.id);
+      const t=CORE_TRANSITIONS.find(t=>t.id===snapshot.transition.id)||
+        RYDBERG_QC_TRANSITIONS.find(t=>t.id===snapshot.transition.id)||
+        RYDBERG_SERIES_TRANSITIONS.find(t=>t.id===snapshot.transition.id);
       if(!t)throw Error('当前数据中不存在待恢复的跃迁');
       loadTransition(t);
       for(const key of ['F_lower','F_upper','diagF_lower','diagF_upper','pol','P_mW','w_um','fR_MHz','selectedChannel','calcMode','powerUnit','rabiUnit','solveFor','calculatorUnits','beamDefinition','beamInput'])if(key in snapshot)state[key]=snapshot[key];

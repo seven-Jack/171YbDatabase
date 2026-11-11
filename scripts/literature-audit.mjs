@@ -8,6 +8,7 @@ import {verifyLocalEvidence} from './local-evidence.mjs';
 const root = new URL('../', import.meta.url);
 const historicalDatasetVersion = '2026.10.30.1';
 const r017DatasetVersion = '2026.11.10.2';
+const rydbergSeriesVersion = '2026.11.11.1';
 // R017 updated the R2 dipole branches, their angular dispatch and the derived
 // J-reduced record. These are the replacement fingerprints for protected inputs.
 const r017InputHashes = {
@@ -15,6 +16,14 @@ const r017InputHashes = {
   'data/transitions.json': '32b8c4998b5b5feab5fe378bcd3677d7b220fe658badf5b421009603828c0e70',
   'data/sources.json': 'c77955fac2b5080982014b2efe6cc8efd530ce6d11dcb74a6b0ab0ecc8662a7e',
   'src/physics/angular.js': 'aca6278178e9a82270ccc39f0e2ecabb999f8a96b152068f2c99f75a77e78a6e',
+};
+// The series adds one source and a separate dataset. Existing low-state
+// records and their calculation code retain the audited fingerprints.
+const rydbergSeriesInputHashes = {
+  ...r017InputHashes,
+  'data/dataset.json': '7fee71aed8995307d1dd708b7710d8b0de29f16a8822152b579dbe6454d16aa2',
+  'data/sources.json': '79f5e8d3f42d8fb33caf7369839353b45c57447647d9083c8867d7e90a66adfe',
+  'src/ui/energy-diagram.js': '084261c0e149e904e34c8c287402d4282ab54c384ad23e30b443c65e17d16132',
 };
 const common = ['scripts/literature-audit.mjs', 'scripts/local-evidence.mjs', 'scripts/paper-paths.mjs'];
 export const auditPackages = [
@@ -35,11 +44,12 @@ function location(base, relative) {
 const readJSON = (base, relative) => JSON.parse(fs.readFileSync(location(base, relative), 'utf8'));
 
 export function verifyProtectedAuditInputs(datasetVersion, base = root) {
-  if (![historicalDatasetVersion, r017DatasetVersion].includes(datasetVersion)) {
+  if (![historicalDatasetVersion, r017DatasetVersion, rydbergSeriesVersion].includes(datasetVersion)) {
     throw Error(`Protected audit inputs have no reviewed fingerprints for dataset ${datasetVersion}`);
   }
   const historical = readJSON(base, 'data/literature/clock-rabi-audit-2026-10-30/protected-hashes.json');
-  const replacement = datasetVersion === r017DatasetVersion ? r017InputHashes : {};
+  const replacement = datasetVersion === rydbergSeriesVersion ? rydbergSeriesInputHashes
+    : datasetVersion === r017DatasetVersion ? r017InputHashes : {};
   for (const [relative, historicalHash] of Object.entries(historical)) {
     if (digest(fs.readFileSync(location(base, relative))) !== (replacement[relative] ?? historicalHash)) {
       throw Error(`Protected production/data file changed: ${relative}`);
@@ -134,9 +144,9 @@ function snapshotDifference(actual, expected, at = '$', roundoff = []) {
 
 export function compareReproductionSnapshot(current, historical) {
   const currentProjection = scientificProjection(current), historicalProjection = scientificProjection(historical);
-  const datasetVersions = current.datasetVersion === r017DatasetVersion && historical.datasetVersion === historicalDatasetVersion
+  const datasetVersions = [r017DatasetVersion, rydbergSeriesVersion].includes(current.datasetVersion) && historical.datasetVersion === historicalDatasetVersion
     ? {reproductionDatasetVersion: current.datasetVersion, historicalDatasetVersion: historical.datasetVersion} : {};
-  // This release only changes R2. Compare every clock input and output, while
+  // The Rydberg releases leave clock inputs alone. Compare every clock input and output, while
   // reporting the live catalog version separately from the frozen baseline.
   if (datasetVersions.reproductionDatasetVersion) currentProjection.datasetVersion = historical.datasetVersion;
   const roundoff = [], difference = snapshotDifference(currentProjection, historicalProjection, '$', roundoff);
