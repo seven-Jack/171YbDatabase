@@ -1,5 +1,18 @@
 # 171YbDatabase 逐项实施与验收记录
 
+## 2026-11-11 · n=29–100 里德堡跃迁结项
+
+- PR #13 已合并到 `main`，合并提交为 `4d681c7fc3cb7176f93ad68b36ea3f434a4455a7`。GitHub Pages 已部署该提交，发布工作流的 330 项浏览器回归全部通过。[PR #13](https://github.com/seven-Jack/171YbDatabase/pull/13) · [发布记录](https://github.com/seven-Jack/171YbDatabase/actions/runs/43012741421)
+- 正式站点返回数据版本 `2026.11.11.1` 和上述合并提交。首页、入口模块、里德堡选择器、生成的数据模块和版本模块的 SHA-256 均与发布清单一致。[线上构建信息](https://seven-jack.github.io/171YbDatabase/build-info.json) · [发布清单](https://seven-jack.github.io/171YbDatabase/artifact-manifest.json)
+- 在正式站点用 Chrome 核对主图默认显示 65S、F′=3/2，全表含 n=29–100 的 144 条分支。实测 29S、100S 各自的 F′=1/2 和 F′=3/2，跃迁箭头、真空波长、CG 通道和 Rabi 结果随选择同步更新。固定束腰半径 50 µm，选择 mF=+1/2 → mF′=+1/2 的 π 通道，将原子处分量功率从 1 mW 增至 4 mW，四组 Ω/2π 均约翻倍。[线上主图](https://seven-jack.github.io/171YbDatabase/#secLevel)
+- 已完成 R017 零场光谱与矩阵元接入、主图切换、Rabi 联动和线上发布。旧 R2 配置恢复通过发布工作流的浏览器回归。物理不确定度、有限场和实验验证仍待评估。[回归用例](../tests/e2e/rydberg-series.spec.js)
+
+## 2026-11-04 · Issue #1 低激发态分支数据结项
+
+用户已明确确认本项完成；[PR #11](https://github.com/seven-Jack/171YbDatabase/pull/11) 的相关数据与界面已交付，本次收到的远端核验结果为 [Issue #1 已关闭（completed）](https://github.com/seven-Jack/171YbDatabase/issues/1#issuecomment-6624043361)。本地已存在 `data/decay.json`、运行时衰变数据接口及能级悬浮展示；本项不再描述为“尚未实现”。数据与显示范围见 [Decay 数据管理说明](decay-data-management-20261104.md)。
+
+本次仅同步任务结项：已交付的低态电子 J 级理论分支不提升为完整逐 F/mF 实验分支或全多极完备证明；³P₂ 的 β 和图内 65S 全条件首跳表等原有科学缺口继续保留。下文按原日期保留历史验收快照，不以历史待办覆盖本次用户完成确认；本次未改科学数据、公式或代码，也未新增科学验收。
+
 日期：2026-10-26。对应 2026-10-23 的完整方案：UI-01–UI-22 与 E01–E34。两组编号分别描述用户行为和实现机制，有对应关系，不能作为 56 项独立工程重复排期。
 
 状态说明（2026-11-03）：下文保留2026-10-26的历史验收快照，其中“未推送／待CI／未部署”描述当时状态。当前M1–M5已发布到提交`31db0b9`，对应[Pages记录](https://github.com/seven-Jack/171YbDatabase/actions/runs/41471835758)；最新发布与本地增量以[README](../README.md#后续同步与网页发布)为准。历史计数、旧待办和旧界面入口不反写为当前状态；后续原文核查见`references/audits/`的具名报告。M6数据检索与同条件比较另见[实施说明](ui-data-comparison-20261103.md)。
