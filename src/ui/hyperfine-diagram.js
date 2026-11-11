@@ -3,7 +3,7 @@ import { cg, matrixElement_F_q, getFs, formatCG, computeHfChannels as angularHfC
 import { spRabi } from '../physics/rabi.js';
 import { rabiToDisplay as displayRabi } from '../physics/units.js';
 import { createCalculatorStore } from '../state/store.js';
-import { getDipoleQuantity } from '../data/catalog.js';
+import { getDipoleQuantity, getRydbergPair } from '../data/catalog.js';
 import { DEFAULT_BEAM_DEFINITION } from '../physics/beam-conventions.js';
 
 // The displayed result is a channel calculation; references identify its
@@ -68,7 +68,12 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   const state=store.editor;
 
   function computeHfChannels(allPol) { return angularHfChannels(state, allPol); }
-  function computeCGChannels() { return angularChannels(state); }
+  function computeCGChannels() {
+    const pair = getRydbergPair(state.transition?.n);
+    return pair.length
+      ? pair.toReversed().flatMap(transition => angularChannels({ ...state, transition }))
+      : angularChannels(state);
+  }
   function computeDEff() { return angularDEff(state); }
   // ---- Unit conversion helpers (internal: mW, MHz) ----
   function rabiToDisplay(fR_MHz) { return displayRabi(fR_MHz,state.rabiUnit); }
@@ -83,10 +88,10 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   // ---- Format helpers ----
 
   // ---- Populate F selectors based on J values ----
-  const availableUpperFs = () => state.transition.Fp === undefined ? getFs(state.J_upper) : [state.transition.Fp];
+  const availableUpperFs = () => getFs(state.J_upper);
   function populateFSelects() {
     state.F_lower=getFs(state.J_lower)[0];
-    state.F_upper=availableUpperFs()[0];
+    state.F_upper=state.transition.Fp ?? availableUpperFs()[0];
     state.diagF_lower='all';state.diagF_upper='all';
     populateDiagFSelects();
   }
@@ -143,6 +148,8 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   }
   function selectHFChannel(ln) {
     const q = state.pol === 'pi' ? 0 : state.pol === 'sigmap' ? 1 : -1;
+    const branch = getRydbergPair(state.transition.n).find(transition => transition.Fp === ln.Fp);
+    if (branch && branch.id !== state.transition.id) setTransition(branch, false);
     state.selectedChannel = { F: ln.F, m: ln.m, Fp: ln.Fp, mp: ln.mp, q: q, cgVal: ln.cgVal, matEl: ln.matEl };
     state.F_lower = ln.F;
     state.F_upper = ln.Fp;
@@ -407,7 +414,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   function renderTransitionLines() {
     const elTL = document.getElementById('hfTransLines');
     if (!elTL) return;
-    if (!state.transition || state.dReduced <= 0) {
+    if (!state.transition || (!state.transition.fReducedDipoles && state.dReduced <= 0)) {
       elTL.innerHTML = '<div class="trans-empty">选择跃迁后自动显示超精细跃迁图</div>';
       return;
     }
@@ -670,7 +677,8 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       hit.style.cursor = 'pointer';
       hit.addEventListener('click', () => selectHFChannel(ln));
       hit.addEventListener('mouseenter', e => {
-        showCompactTooltip(e,buildHyperfineTooltipModel(state.transition,ln,polInfo.label),{target:hit,plot:svg});
+        const branch = getRydbergPair(state.transition.n).find(transition => transition.Fp === ln.Fp);
+        showCompactTooltip(e,buildHyperfineTooltipModel(branch ?? state.transition,ln,polInfo.label),{target:hit,plot:svg});
       });
       hit.addEventListener('mouseleave', scheduleTooltipHide);
       arrowG.appendChild(hit);
@@ -760,14 +768,13 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   }
 
   // ---- Load transition ----
-  function loadTransition(t) {
-    state.transition = t;
-    document.getElementById('ryd65CalcNote').hidden = t.id !== 'R2';
-    state.selectedChannel = null;
+  function setTransition(t, resetFilters = true) {
     var lowerJ = findLevelJ(t.lower);
     var upperJ = t.upperJ ?? findLevelJ(t.upper);
     if (lowerJ === null || upperJ === null) return;
 
+    state.transition = t;
+    state.selectedChannel = null;
     state.J_lower = lowerJ;
     state.J_upper = upperJ;
     state.wavelength_nm = t.wavelength_vac_nm;
@@ -792,8 +799,12 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     }
 
     // F selects
-    populateFSelects();
-    recalc();
+    if (resetFilters) populateFSelects();
+    return true;
+  }
+
+  function loadTransition(t) {
+    if (setTransition(t)) recalc();
   }
 
   // ---- Event handlers ----

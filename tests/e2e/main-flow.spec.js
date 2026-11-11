@@ -33,13 +33,13 @@ test('homepage keeps the complete level diagram and all eight transitions', asyn
   await expect(page.locator('#levelDiagram')).toBeVisible();
   const ids = await page.locator('#levelDiagram .transition-line').evaluateAll(elements => elements.map(element => element.dataset.id).sort());
   expect(ids).toEqual(expectedTransitions);
-  await expect(page.locator('#levelDiagram')).toContainText('65S · F′=3/2');
+  await expect(page.locator('#levelDiagram')).toContainText('6s65s ³S₁ · F′=1/2, 3/2');
   await expect(page.locator('#levelDiagram')).toContainText('6s7s');
   // Whole-page overflow is a layout failure; a locally scrollable scientific figure is permitted.
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
 });
 
-for (const [id, expectedTitle, rows] of [['T2', '³P₁', 10], ['T3', '³P₀', 4], ['NS-65-F32', '65S · F′=3/2', 6]]) {
+for (const [id, expectedTitle, rows] of [['T2', '³P₁', 10], ['T3', '³P₀', 4], ['NS-65-F32', '65S · F′=3/2', 10]]) {
   test(`${id}: the real diagram updates hyperfine channels and Rabi context`, async ({ page }) => {
     await selectTransition(page, id);
     await expect(page.locator('#hfTransTitle')).toContainText(expectedTitle);

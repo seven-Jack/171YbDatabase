@@ -11,7 +11,7 @@ test('formula dialog closes with Escape and returns focus', async ({page})=>{
   await expect(trigger).toBeFocused();
 });
 
-for(const [id,key,rows] of [['T3','Enter',4],['NS-65-F32','Space',6]]){
+for(const [id,key,rows] of [['T3','Enter',4],['NS-65-F32','Space',10]]){
   test(`${key} activates the ${id} diagram line and focuses its channel workspace`,async ({page})=>{
     await page.goto('./');
     await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');

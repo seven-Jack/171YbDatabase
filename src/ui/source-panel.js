@@ -1,4 +1,5 @@
-import {getTransitionRecord,getQuantity,getDipoleQuantity,getSourceRecord,DATASET_VERSION} from '../data/catalog.js';
+import {getTransitionRecord,getQuantity,getDipoleQuantity,getRydbergPair,getSourceRecord,DATASET_VERSION} from '../data/catalog.js';
+import {matrixElement_F_q,reducedFFromJJ} from '../physics/angular.js';
 import {formatLifetime} from './format.js';
 import {R2_PROVENANCE,R2_EVIDENCE_EXTENSION} from './r2-provenance.js';
 import {buildEvidenceView} from './evidence-model.js';
@@ -109,13 +110,26 @@ export function createDipoleFieldView(id,Fp) {
   return createFieldView(id,branches&&Fp!==undefined ? branches[Fp] : 'd_num');
 }
 
+function rydbergBranchRow(label, nu, mp, q, matrixElement, dipole) {
+  return `<tr><th scope="row">${escapeHTML(label)}</th>
+    <td>${nu.toFixed(10)}</td><td>${mLabel(mp)}, ${q>0?'+1':'−1'}</td>
+    <td>${signedScientific(matrixElement)}</td><td><strong>${signedScientific(dipole)}</strong></td></tr>`;
+}
+
 export function renderR2BranchRowsHTML() {
-  return createDipoleFieldViews('R2').filter(field=>field.branch).map(field=>{
-    const {branch,nu,mp,q,matrixElement_ea0}=getQuantity('R2',field.key).conditions;
-    const actualNu=Number(nu).toFixed(10);
-    return `<tr><th scope="row">${escapeHTML(field.branch)}${branch==='triplet-connected'?'（三重态关联）':''}</th>
-      <td>${actualNu}</td><td>${mLabel(mp)}, ${q>0?'+':''}${String(q).replace('-','−')}</td>
-      <td>${signedScientific(matrixElement_ea0)}</td><td><strong>${escapeHTML(field.valueText.replace(' ea₀',''))}</strong></td></tr>`;
+  return createDipoleFieldViews('R2').map(field=>{
+    const {value,conditions:{branch,nu,mp,q,matrixElement_ea0}}=getQuantity('R2',field.key);
+    const label=field.branch+(branch==='triplet-connected'?'（三重态关联）':'');
+    return rydbergBranchRow(label,nu,mp,q,matrixElement_ea0,value);
+  }).join('');
+}
+
+function renderSeriesBranchRowsHTML(pair) {
+  return pair.map(({Fp,nu,d_num})=>{
+    const q=Fp===0.5?-1:1;
+    const mp=0.5+q;
+    const matrixElement=matrixElement_F_q(0.5,0.5,Fp,mp,q,d_num);
+    return rydbergBranchRow(`F′ = ${fLabel(Fp)}`,nu,mp,q,matrixElement,d_num);
   }).join('');
 }
 
@@ -199,14 +213,30 @@ export function initSourcePanel(calculator,decoratedCoreTransitions=[]) {
   const context=document.getElementById('currentContext');
   if (!panel||!context) return Object.freeze({destroy(){}});
   if (activePanels.has(panel)) return activePanels.get(panel);
-  const r2Rows=document.getElementById('ryd65BranchRows');
-  if (r2Rows) r2Rows.innerHTML=renderR2BranchRowsHTML();
-  const r2Electronic=document.getElementById('ryd65ElectronicDipole');
-  const electronicDipole=getQuantity('R2','d_J_from_F32');
-  if (r2Electronic&&Number.isFinite(electronicDipole?.value)) {
-    const valueText=createFieldView('R2','d_J_from_F32').valueText;
-    r2Electronic.textContent=`电子态 J 约化矩阵元由零场 F′ = 3/2 的分量折算。D_J = (√3/2) D_F = ${valueText}，|D_J| = ${Math.abs(electronicDipole.value)} ea₀。符号沿用 RydCalc 态相位，物理误差尚未评估。`;
-    r2Electronic.hidden=false;
+  const rydbergNote=document.getElementById('ryd65CalcNote');
+  const rydbergRows=document.getElementById('ryd65BranchRows');
+  const rydbergTitle=document.getElementById('rydbergDipoleTitle');
+  const electronicNote=document.getElementById('ryd65ElectronicDipole');
+  let displayedSeries;
+  function renderRydbergNote(transition) {
+    const legacy=transition?.id==='R2';
+    const n=legacy?65:transition?.n;
+    rydbergNote.hidden=n===undefined;
+    if (n===undefined) return;
+    const series=legacy?'R2':n;
+    if (series===displayedSeries) return;
+    displayedSeries=series;
+    const pair=getRydbergPair(n);
+    rydbergTitle.textContent=`${n}S`;
+    rydbergNote.setAttribute('aria-label',`${n}S 零场跃迁矩阵元`);
+    rydbergRows.closest('[role="region"]').setAttribute('aria-label',`${n}S 矩阵元表`);
+    rydbergRows.innerHTML=legacy?renderR2BranchRowsHTML():renderSeriesBranchRowsHTML(pair);
+    const dJ=legacy?getQuantity('R2','d_J_from_F32').value
+      :pair.find(branch=>branch.Fp===1.5).d_num/reducedFFromJJ(1,0,1.5,0.5,1);
+    const valueText=legacy?String(dJ).replace('-','−'):signedScientific(dJ);
+    const magnitude=legacy?String(Math.abs(dJ)):signedScientific(Math.abs(dJ)).slice(1);
+    electronicNote.textContent=`电子态 J 约化矩阵元由零场 F′ = 3/2 的分量折算。D_J = (√3/2) D_F = ${valueText} ea₀，|D_J| = ${magnitude} ea₀。符号沿用 RydCalc 态相位，物理误差尚未评估。`;
+    electronicNote.hidden=false;
   }
   const details=document.getElementById('selectedSource');
   const evidence=document.createElement('section');
@@ -235,6 +265,7 @@ export function initSourcePanel(calculator,decoratedCoreTransitions=[]) {
       context.innerHTML=`<strong>${escapeHTML(transition.id)} · ${escapeHTML(transition.lower)} → ${escapeHTML(transition.upper)}</strong><span>${escapeHTML(wavelength)} nm</span><span>${escapeHTML(view.channel)}</span><span>${escapeHTML(view.convention)} · d_eff=${escapeHTML(view.dEff)}</span><span class="context-status">${escapeHTML(view.statusText)}</span>`;
     }
     if (lastTransitionId!==view.transition?.id) {
+      renderRydbergNote(view.transition);
       panel.innerHTML=renderSourceDetailsHTML(view);
       const summary=details?.querySelector(':scope > summary');
       if (summary) summary.textContent=view.transition?`${view.transition.id} · 数值与来源`:'当前跃迁 · 数值与来源';

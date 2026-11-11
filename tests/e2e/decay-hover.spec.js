@@ -12,7 +12,7 @@ async function open(page,term) {
 async function close(page) { await panel(page).locator('.hfs-close').click(); await expect(panel(page)).toBeHidden(); }
 test.beforeEach(async({page})=>{await page.goto('./');await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');});
 
-test('the complete SVG shows one selected Rydberg branch alongside the low-lying levels',async({page})=>{
+test('the complete SVG shows one shared Rydberg level alongside the low-lying levels',async({page})=>{
   await expect(page.locator('#levelDiagram .transition-line')).toHaveCount(8);
   await expect(page.locator('#levelDiagram .core-level-group')).toHaveCount(8);
   await expect(page.locator('#levelDiagram .diagram-decay-detail')).toHaveCount(0);
@@ -61,8 +61,10 @@ test('pending 3P2 and 65S do not inherit other-state fractions, and measured par
   await expect(card).toContainText('0.0918 s⁻¹');
   await expect(card).toContainText('ΔF=2');
   await close(page);
-  await open(page,'65S · F′=3/2');
+  await open(page,'6s65s ³S₁ · F′=1/2, 3/2');
   await expect(panel(page)).toContainText('R017 零场模型');
+  await expect(panel(page).locator('[data-mf-f="0.5"] .hfs-mf-state')).toHaveCount(2);
+  await expect(panel(page).locator('[data-mf-f="1.5"] .hfs-mf-state')).toHaveCount(4);
   await expect(panel(page).locator('.diagram-decay-detail')).toHaveCount(0);
 });
 
