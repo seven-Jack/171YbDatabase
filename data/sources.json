@@ -980,6 +980,21 @@
         "The saved F=1/2 sequence label matches the triplet-connected nu in the saved 65S hyperfine table. The tutorial replay did not independently validate branch identity, convergence, or experimental accuracy."
       ],
       "year": 2026
+    },
+    {
+      "id": "internal-r017-ns-20261111",
+      "title": "R017 · ¹⁷¹Yb n=29–100 零场 S 系列",
+      "detail": "D_F 与实际 ν 来自 R017 正式交付。光谱采用固定 RydCalc 的 F_c=1 阈值、质量修正里德堡常数和 ³P₀ 频率，按同一末态根换算。",
+      "publication": "Calculation R017 · delivery_20261111T085031Z",
+      "artifactLocator": "Calculation/runs/R017/results/delivery_20261111T085031Z/data/dataset.json",
+      "artifactSha256": "34268f13494583fd05ab3278568e87cc2716ba2b6f1815844c6b0dc371f25607",
+      "codeRevision": "Rydcalc d17b981af24b0ef7132819d53504bc84c42f95b2",
+      "reviewStatus": "original-source-located",
+      "reviewedAt": "2026-11-11",
+      "rightsStatus": "internal research record",
+      "identityStatus": "internal-not-literature",
+      "numericalValidation": "R017 89c4 declared nonshortened grid; physical uncertainty unknown",
+      "year": 2026
     }
   ]
 }

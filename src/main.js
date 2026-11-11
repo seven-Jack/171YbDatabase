@@ -18,6 +18,7 @@ import { initSourcePanel, createDipoleFieldView, createFieldView } from './ui/so
 import { initPageControls } from './ui/page-controls.js';
 import { initWorkflowNavigation } from './ui/workflow-navigation.js';
 import { initDiagramNavigation } from './ui/transition-navigation.js';
+import { initRydbergSelection } from './ui/rydberg-selection.js';
 import { initTransitionKnowledge } from './ui/transition-knowledge.js';
 import { initSelectionContext } from './ui/selection-context.js';
 import { createChannelNavigation } from './ui/channel-navigation.js';
@@ -31,7 +32,7 @@ export function start() {
     RYDBERG_STATES:generateRydbergStates(catalog.ESTIMATE_CONFIG),
     RYDBERG_TRANSITIONS:buildRydbergTransitions(RYDBERG_QC_TRANSITIONS)};
   const tooltips=createTooltips();
-  initEnergyDiagram({...data,CORE_TRANSITIONS:catalog.CORE_TRANSITIONS},tooltips);
+  const drawRydbergSelection=initEnergyDiagram({...data,CORE_TRANSITIONS:catalog.CORE_TRANSITIONS},tooltips);
   initDecayHoverDetails();
   const calculator=initHyperfineCalculator(data,tooltips,{onChannelSelected:createChannelNavigation({
     destination:document.getElementById('secRabi'),hideTooltip:tooltips.hideTooltip
@@ -50,7 +51,10 @@ export function start() {
   };
   const levelDiagram=document.getElementById('levelDiagram');
   levelDiagram.setAttribute('tabindex','-1');
-  initDiagramNavigation({svg:levelDiagram,transitions:CORE_TRANSITIONS,calculator,
+  let diagramNavigation;
+  const selectionId=initRydbergSelection({transitions:catalog.RYDBERG_SERIES_TRANSITIONS,calculator,
+    draw:drawRydbergSelection,onDraw:()=>diagramNavigation?.refresh()});
+  diagramNavigation=initDiagramNavigation({svg:levelDiagram,transitions:[...CORE_TRANSITIONS,...catalog.RYDBERG_SERIES_TRANSITIONS],calculator,selectionId,
     destination:document.getElementById('secCalc'),hideTooltip:tooltips.hideTooltip,closeLevelDetails});
   document.getElementById('hfsClose').addEventListener('click',()=>{
     closeLevelDetails();
@@ -99,7 +103,7 @@ export function start() {
     finally{configFile.value='';}
   });
   calculator.onChange(state=>{
-    document.querySelectorAll('#levelDiagram .transition-line').forEach(g=>g.classList.toggle('selected-trans',g.dataset.id===state.transition?.id));
+    document.querySelectorAll('#levelDiagram .transition-line').forEach(g=>g.classList.toggle('selected-trans',g.dataset.id===selectionId(state)));
     const result=document.getElementById('rabiResult');
     result.replaceChildren();
     const title=document.createElement('span');title.textContent='Ω/2π · '+(state.transition?state.transition.id+' '+state.transition.lower+' → '+state.transition.upper:'普通频率');

@@ -14,7 +14,7 @@ export function renderTransitionTooltip(t,isCore=true) {
   const record=getTransitionRecord(t.id);
   const source=field=>record?.quantities[field]?.sourceId;
   const dipoles=createDipoleFieldViews(t.id);
-  const review=t.id==='T3'?'波长：文献汇编 · d：内部待核':t.id==='T4'?'λ：Ritz 派生 · τ：统计平均理论':t.id==='T7'?'λ 由 ν 推导 · 原表存在冲突':record?.fReducedDipoles?'波长：历史估算 · D_F：R017 零场计算':t.id.startsWith('R')?'历史估算 / 内部矩阵元 · 待核':'文献汇编 · 定义见来源';
+  const review=t.n!==undefined?'R017 零场模型 · '+t.branchLabel:t.id==='T3'?'波长：文献汇编 · d：内部待核':t.id==='T4'?'λ：Ritz 派生 · τ：统计平均理论':t.id==='T7'?'λ 由 ν 推导 · 原表存在冲突':record?.fReducedDipoles?'波长：历史估算 · D_F：R017 零场计算':t.id.startsWith('R')?'历史估算 / 内部矩阵元 · 待核':'文献汇编 · 定义见来源';
   const matrixRows=dipoles.map(dipole=>{
     const label=dipole.branch?dipole.label:record?.quantities.d_num?.value===null?'矩阵元（E1）':dipole.convention==='有效 F 级约化量'?'d（有效 F）':'d（J 约化）';
     const note=['内部校准','本工作计算'].includes(dipole.kind)?dipole.kind:'';
@@ -28,6 +28,23 @@ export function renderTransitionTooltip(t,isCore=true) {
     ${matrixRows}
     ${row('多极性',esc(t.multipole||'—'))}
     <div class="diagram-detail-foot">${esc(review)}</div>`;
+}
+
+export function renderRydbergLevelDetails(transition) {
+  const record = getTransitionRecord(transition.id);
+  const source = record.quantities.frequency_THz.sourceId;
+  const { n, Fp, nu, upperEnergy_eV, branchLabel } = transition;
+  const sublevels = Array.from({length: 2 * Fp + 1}, (_, index) =>
+    `<span class="hfs-mf-state"><i aria-hidden="true"></i><span>${magnetic(index - Fp)}</span></span>`).join('');
+  return `<header class="diagram-level-head"><h3>${n}S · F = ${fraction(Fp)}</h3><p>${esc(branchLabel)} · 偶宇称</p></header>
+    <div class="diagram-level-data">
+      ${row('能量 E', `${upperEnergy_eV.toFixed(8)} eV`, [source], '相对中性原子基态')}
+      ${row('有效主量子数 ν', nu.toFixed(8), [source], '相对 F_c=1 阈值')}
+    </div>
+    <section class="diagram-hfs-detail" aria-label="零场超精细结构">
+      <div class="diagram-hfs-heading"><h4>mF 子能级</h4><span>B = E = 0 · 简并</span></div>
+      <div class="hfs-mf-manifold" style="--hfs-mf-count:${2 * Fp + 1}"><div class="hfs-mf-states">${sublevels}</div></div>
+    </section><div class="diagram-level-review">R017 零场模型 · 物理不确定度未评估</div>`;
 }
 
 export function renderLevelDetails(level,hfs) {

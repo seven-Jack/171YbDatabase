@@ -113,7 +113,7 @@ test('M1 edits update the live result without changing the fixed reference or ma
   await expect(page.getByTestId('evidence-row-experiment')).toHaveAttribute('data-evidence-status','not-closed');
 });
 
-test('switching transitions clears expanded records, retains T3, and keeps T4 and R2 outside low-state claims', async ({page}) => {
+test('switching transitions clears expanded records, retains T3, and keeps T4 and Rydberg states outside low-state claims', async ({page}) => {
   await choose(page, benchmarks[0]);
   await openEvidence(page);
   await page.getByTestId('evidence-comparison').locator(':scope > summary').click();
@@ -132,7 +132,7 @@ test('switching transitions clears expanded records, retains T3, and keeps T4 an
   await expect(page.getByTestId('evidence-comparison')).toHaveCount(0);
   await expect(page.getByTestId('evidence-primary-source')).toContainText('internal-t3-20260908');
 
-  for (const id of ['T4','R2']) {
+  for (const id of ['T4','NS-65-F32']) {
     await page.locator(`#levelDiagram .transition-line[data-id="${id}"]`).press('Enter');
     await openEvidence(page);
     await expect(page.getByTestId('evidence-comparison')).toHaveCount(0);

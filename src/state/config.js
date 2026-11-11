@@ -1,4 +1,4 @@
-import { CORE_LEVELS, CORE_TRANSITIONS, RYDBERG_QC_TRANSITIONS, RYDBERG_QC_DATA, DATASET_MANIFEST, DATASET_VERSION, getDipoleQuantity } from '../data/catalog.js';
+import { CORE_LEVELS, CORE_TRANSITIONS, RYDBERG_QC_TRANSITIONS, RYDBERG_SERIES_TRANSITIONS, RYDBERG_QC_DATA, DATASET_MANIFEST, DATASET_VERSION, getDipoleQuantity } from '../data/catalog.js';
 import { FORMULA_VERSION, PhysicsInputError } from '../physics/constants.js';
 import { computeCGChannels, computeDEff, getFs, channelKey, polarizationQ } from '../physics/angular.js';
 import { calculateRabi, powerFromRabiHz, waistFromRabiHz } from '../physics/rabi.js';
@@ -9,7 +9,7 @@ const POLARIZATIONS = ['pi', 'sigmap', 'sigmam'];
 const LEGACY_KEYS = ['schemaVersion', 'kind', 'exportedAt', 'softwareVersion', 'appCommit', 'datasetVersion', 'datasetHash', 'formulaVersion', 'transitionId', 'matrixElement', 'selection', 'parameters', 'display', 'result'];
 const KEYS = [...LEGACY_KEYS, 'inputDefinition', 'enteredParameters'];
 const DEFINITION_KEYS = Object.keys(DEFAULT_BEAM_DEFINITION);
-const transitions = new Map([...RYDBERG_QC_TRANSITIONS, ...CORE_TRANSITIONS].map(t => [t.id, t]));
+const transitions = new Map([...RYDBERG_QC_TRANSITIONS, ...CORE_TRANSITIONS, ...RYDBERG_SERIES_TRANSITIONS].map(t => [t.id, t]));
 const Q = ['F', 'm', 'Fp', 'mp', 'q'];
 
 export class ConfigurationError extends Error {
@@ -86,11 +86,12 @@ function restoreAgainstCatalog(config) {
   const transition = transitions.get(config.transitionId);
   if (!transition) throw new ConfigurationError('transitionId', `当前数据没有跃迁 ${config.transitionId}`);
   const selection = config.selection, dipole = canonicalDipole(transition, selection.F_upper);
-  const J_lower = getJ(transition.lower), J_upper = getJ(transition.upper);
-  for (const [key, values] of [['F_lower', getFs(J_lower)], ['F_upper', getFs(J_upper)]]) {
+  const J_lower = getJ(transition.lower), J_upper = transition.upperJ ?? getJ(transition.upper);
+  const upperFs = transition.Fp === undefined ? getFs(J_upper) : [transition.Fp];
+  for (const [key, values] of [['F_lower', getFs(J_lower)], ['F_upper', upperFs]]) {
     if (!values.includes(selection[key])) throw new ConfigurationError(`selection.${key}`, '与当前跃迁角动量不匹配');
   }
-  for (const [key, values] of [['diagF_lower', getFs(J_lower)], ['diagF_upper', getFs(J_upper)]]) {
+  for (const [key, values] of [['diagF_lower', getFs(J_lower)], ['diagF_upper', upperFs]]) {
     if (selection[key] !== 'all' && !values.includes(selection[key])) throw new ConfigurationError(`selection.${key}`, '不是当前跃迁的可用 F 值');
   }
   const solveFor = config.display.solveFor ?? (config.display.calcMode === 'rabi' ? 'power' : 'rabi');

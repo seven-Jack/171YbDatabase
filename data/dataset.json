@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "datasetVersion": "2026.11.10.2",
+  "datasetVersion": "2026.11.11.1",
   "sourceCommit": "2e2e9d5",
   "sourceDate": "2026-11-10",
   "migrationDate": "2026-10-26",
-  "generatedAt": "2026-11-10T08:01:45.101Z",
-  "contentHash": "946cabc410ba50e842c5b746fa6a6c149dd514c37c8c94b6ff4350b4a8178271",
+  "generatedAt": "2026-11-11T10:01:15.046Z",
+  "contentHash": "4b5df2bd0e5679ce5576f6bcfa5fa99b0b4cd586c371766de6aab2f9ea193068",
   "files": [
     {
       "path": "data/levels.json",
@@ -21,14 +21,18 @@
     },
     {
       "path": "data/sources.json",
-      "sha256": "c77955fac2b5080982014b2efe6cc8efd530ce6d11dcb74a6b0ab0ecc8662a7e"
+      "sha256": "79f5e8d3f42d8fb33caf7369839353b45c57447647d9083c8867d7e90a66adfe"
     },
     {
       "path": "data/estimates.json",
       "sha256": "ffb73032f906ff73fe23b7674c05008ccb1296b292d493fd46f2b42b484c21a9"
+    },
+    {
+      "path": "data/rydberg-series.json",
+      "sha256": "b4c9c84d724ba8d3a3c419217b6793690c016fd91a54295243e17708c8ac469c"
     }
   ],
-  "reviewStatus": "R2 zero-field branch-resolved matrix elements and F=3/2-derived J-reduced dipole checked against the saved R017 CSV",
+  "reviewStatus": "n=29–100 R017 zero-field S-series model catalogue, with the historical R2 configuration entry retained",
   "physicalValidation": "not established for all records: compilation, theory, source conflicts, missing originals and internal models are explicitly distinguished",
   "exports": [
     {

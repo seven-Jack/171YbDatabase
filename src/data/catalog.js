@@ -1,4 +1,5 @@
 import {canonicalCatalog, datasetManifest} from './generated-catalog.js';
+import { rydbergEntries } from './rydberg-series.js';
 
 function deepFreeze(value) {
   if (value && typeof value === 'object' && !Object.isFrozen(value)) {
@@ -11,8 +12,8 @@ function deepFreeze(value) {
 export const CATALOG = deepFreeze(canonicalCatalog);
 export const DATASET_MANIFEST = deepFreeze(datasetManifest);
 export const DATASET_VERSION = DATASET_MANIFEST.datasetVersion;
-const levelById = new Map(CATALOG.levels.records.map(level => [level.id,level]));
-const transitionById = new Map(CATALOG.transitions.records.map(transition => [transition.id,transition]));
+const levelById = new Map([...CATALOG.levels.records,...rydbergEntries.map(entry=>deepFreeze(entry.level))].map(level => [level.id,level]));
+const transitionById = new Map([...CATALOG.transitions.records,...rydbergEntries.map(entry=>deepFreeze(entry.record))].map(transition => [transition.id,transition]));
 const sourceById = new Map([...CATALOG.sources.references,...CATALOG.sources.sources].map(source=>[source.id,source]));
 
 export const getLevelRecord = id => levelById.get(id) || null;
@@ -49,6 +50,7 @@ function legacyTransition(id,viewName) {
 export const CORE_LEVELS = deepFreeze(CATALOG.levels.coreLevelIds.map(legacyLevel));
 export const CORE_TRANSITIONS = deepFreeze(CATALOG.transitions.coreTransitionIds.map(id=>legacyTransition(id,'core')));
 export const RYDBERG_QC_TRANSITIONS = deepFreeze(CATALOG.transitions.rydbergTransitionIds.map(id=>legacyTransition(id,'rydberg')));
+export const RYDBERG_SERIES_TRANSITIONS = deepFreeze(rydbergEntries.map(entry=>entry.presentation));
 export const QUANTUM_DEFECTS = CATALOG.estimates.quantumDefects;
 export const REFERENCES = deepFreeze(CATALOG.sources.references.map(reference=>({id:reference.id,num:reference.referenceNumber,title:reference.title,detail:reference.detail,doi:reference.publication})));
 export const ESTIMATE_CONFIG = CATALOG.estimates;

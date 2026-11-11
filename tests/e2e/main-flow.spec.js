@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const expectedTransitions = ['R2', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
+const expectedTransitions = ['NS-65-F32', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
 const lineFor = (page, id) => page.locator(`#levelDiagram .transition-line[data-id="${id}"]`);
 async function selectTransition(page, id) {
   const line = lineFor(page, id), label = line.locator('text').first();
@@ -33,13 +33,13 @@ test('homepage keeps the complete level diagram and all eight transitions', asyn
   await expect(page.locator('#levelDiagram')).toBeVisible();
   const ids = await page.locator('#levelDiagram .transition-line').evaluateAll(elements => elements.map(element => element.dataset.id).sort());
   expect(ids).toEqual(expectedTransitions);
-  await expect(page.locator('#levelDiagram')).toContainText('6s65s');
+  await expect(page.locator('#levelDiagram')).toContainText('65S · F′=3/2');
   await expect(page.locator('#levelDiagram')).toContainText('6s7s');
   // Whole-page overflow is a layout failure; a locally scrollable scientific figure is permitted.
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
 });
 
-for (const [id, expectedTitle, rows] of [['T2', '³P₁', 10], ['T3', '³P₀', 4], ['R2', '65³S₁', 10]]) {
+for (const [id, expectedTitle, rows] of [['T2', '³P₁', 10], ['T3', '³P₀', 4], ['NS-65-F32', '65S · F′=3/2', 6]]) {
   test(`${id}: the real diagram updates hyperfine channels and Rabi context`, async ({ page }) => {
     await selectTransition(page, id);
     await expect(page.locator('#hfTransTitle')).toContainText(expectedTitle);
@@ -57,7 +57,7 @@ test('published original retains its three-column layout and categorical line co
   await expect(page.locator('#levelDiagram')).toHaveAttribute('viewBox', '0 0 1000 760');
   await expect(page.locator('#levelDiagram')).toContainText('¹P 系列');
   await expect(page.locator('#levelDiagram')).toContainText('³P 系列');
-  const colours = { T1:'#34d399', T2:'#facc15', T3:'#f87171', T4:'#f87171', T5:'#34d399', T6:'#34d399', T7:'#34d399', R2:'#a78bfa' };
+  const colours = { T1:'#34d399', T2:'#facc15', T3:'#f87171', T4:'#f87171', T5:'#34d399', T6:'#34d399', T7:'#34d399', 'NS-65-F32':'#a78bfa' };
   for (const [id, colour] of Object.entries(colours)) {
     await expect(page.locator(`#levelDiagram .transition-line[data-id="${id}"] .trans-main-line`).first()).toHaveAttribute('stroke', colour);
   }
@@ -82,8 +82,8 @@ test('direct diagram navigation updates the workbench without restyling the orig
     })),
   })));
   const before = await snapshot();
-  await selectTransition(page, 'R2');
-  await expect(page.getByTestId('current-context').locator('strong')).toContainText('R2 ·');
+  await selectTransition(page, 'NS-65-F32');
+  await expect(page.getByTestId('current-context').locator('strong')).toContainText('NS-65-F32 ·');
   await page.locator('#secCalc h2').hover();
   await expect.poll(snapshot).toEqual(before);
   await expect(page.locator('.original-diagram-wrap')).toHaveCSS('background-color', 'rgb(15, 21, 36)');

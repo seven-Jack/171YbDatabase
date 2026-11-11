@@ -138,7 +138,7 @@ export function renderFieldSourceHTML(field) {
       ${field.modelId?`<dt>模型</dt><dd>${escapeHTML(field.modelId)}</dd>`:''}
       ${field.derivedFrom.length?`<dt>派生自</dt><dd>${escapeHTML(field.derivedFrom.join('；'))}</dd>`:''}
       ${field.artifactLocator?`<dt>保存记录</dt><dd>${escapeHTML(field.artifactLocator)}</dd>`:''}
-      ${field.artifactSha256?`<dt>原保存 CSV SHA256</dt><dd class="source-hash">${escapeHTML(field.artifactSha256)}</dd>`:''}
+      ${field.artifactSha256?`<dt>保存工件 SHA256</dt><dd class="source-hash">${escapeHTML(field.artifactSha256)}</dd>`:''}
       ${field.missingArtifact?'<dt>计算原始证据</dt><dd>Notebook / Run 及版本定位待补充</dd>':''}
       ${field.legacyText?`<dt>原记录表达</dt><dd>${escapeHTML(field.legacyText)}</dd>`:''}
     </dl>${link}</details>
@@ -231,7 +231,8 @@ export function initSourcePanel(calculator,decoratedCoreTransitions=[]) {
     else {
       const transition=decoratedCoreTransitions.find(row=>row.id===view.transition.id)||view.transition;
       context.dataset.status=view.status;
-      context.innerHTML=`<strong>${escapeHTML(transition.id)} · ${escapeHTML(transition.lower)} → ${escapeHTML(transition.upper)}</strong><span>${escapeHTML(transition.wavelength_vac_nm)} nm</span><span>${escapeHTML(view.channel)}</span><span>${escapeHTML(view.convention)} · d_eff=${escapeHTML(view.dEff)}</span><span class="context-status">${escapeHTML(view.statusText)}</span>`;
+      const wavelength=transition.n === undefined ? transition.wavelength_vac_nm : transition.wavelength_vac_nm.toFixed(5);
+      context.innerHTML=`<strong>${escapeHTML(transition.id)} · ${escapeHTML(transition.lower)} → ${escapeHTML(transition.upper)}</strong><span>${escapeHTML(wavelength)} nm</span><span>${escapeHTML(view.channel)}</span><span>${escapeHTML(view.convention)} · d_eff=${escapeHTML(view.dEff)}</span><span class="context-status">${escapeHTML(view.statusText)}</span>`;
     }
     if (lastTransitionId!==view.transition?.id) {
       panel.innerHTML=renderSourceDetailsHTML(view);
