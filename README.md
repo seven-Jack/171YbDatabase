@@ -81,7 +81,7 @@ npm run sync -- push
 
 `commit` 先运行检查，只暂存明确列出的文件，不接受整个目录；不会自动推送。`push` 推送当前已审阅分支，先检查工作区和远端祖先关系，不会创建 PR 或合并。旧式只给一句提交说明的调用会提示新用法，不再隐式提交并发布。
 
-PR 和工作分支运行 `.github/workflows/check.yml`，覆盖实际构建产物及浏览器路径。main 的 Pages 工作流复用同一检查结果，再部署已经检查的文件；只有部署 job 获得 Pages 写权限。需要有效 GitHub 身份时可用 `gh auth login`；失效的 `GH_TOKEN` 覆盖应先处理。
+PR 运行 `.github/workflows/check.yml`，新提交会取消同一 PR 尚未完成的旧检查。三个浏览器视口并行测试同一份构建产物，`check` 汇总构建和浏览器结果。合入 main 后，Pages 对该提交复用这套流程，再发布通过检查的产物。Pages 写权限授予部署 job。需要登录 GitHub CLI 时可用 `gh auth login`，并检查 `GH_TOKEN` 是否覆盖了已登录的账号。
 
 只有推送 main 且工作流成功才会更新公开站。本地保存、创建工作分支和生成 `dist/` 不会发布。最近一次确认的公开发布是2026-11-03的0.3.3、提交`9c8c6c6`，数据版本2026.10.30.1、公式版本1.0.1、证据版本2026.11.02.1；[部署记录](https://github.com/seven-Jack/171YbDatabase/actions/runs/41559585246)。M1–M6已随PR #9发布，桌面与手机104项线上验收通过；结果导出增强及性能整理属于后续工作分支，是否发布以对应Actions及线上commit为准。
 
