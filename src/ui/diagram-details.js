@@ -43,7 +43,7 @@ export function renderRydbergLevelDetails(transition) {
     return `<div class="hfs-mf-manifold" data-mf-f="${Fp}"><span class="hfs-mf-f">F = ${fraction(Fp)}</span>
       <div class="hfs-mf-states" style="--hfs-mf-count:${2 * Fp + 1}">${sublevels}</div></div>`;
   }).join('');
-  return `<header class="diagram-level-head"><h3>6s${transition.n}s ³S₁</h3><p>偶宇称 · ν 相对 F<sub>c</sub>=1 · E 相对中性原子基态</p></header>
+  return `<header class="diagram-level-head"><h3>6s${transition.n}s 零场 S 分支</h3><p>偶宇称 · ν 相对 F<sub>c</sub>=1 · E 相对中性原子基态</p></header>
     <div class="diagram-level-data">${energies}</div>
     <section class="diagram-hfs-detail" aria-label="零场超精细结构">
       <div class="diagram-hfs-heading"><h4>mF 子能级</h4><span>B = E = 0 · 简并</span></div>

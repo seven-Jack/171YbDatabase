@@ -33,6 +33,13 @@ test('lifetime and linewidth hovers distinguish located source conflicts from un
   assert.doesNotMatch(JSON.stringify(linewidth),/FWHM|已验证|实验验证|300 K/);
 });
 
+test('the T7 wavelength hover shows the centroid convention and a concise conflict marker',()=>{
+  const wavelength=model('T7','wavelength_vac_nm');
+  assert.equal(wavelength.title,'真空重心波长');
+  assert.ok(wavelength.rows.some(row=>row.value==='超精细重心 · ν=ω/2π'));
+  assert.equal(wavelength.footnote,'频率推导 · 原表波长冲突');
+});
+
 test('compact table summaries leave source data untouched and do not include long prose',()=>{
   for(const row of CORE_TRANSITIONS) {
     const before=JSON.stringify(getTransitionRecord(row.id));

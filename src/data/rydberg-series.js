@@ -34,7 +34,7 @@ function makeEntry(row) {
     '真空波长 λ=c/f', [`${id}.frequency_THz`]);
   const dipole = quantity(dipole_ea0, 'e*a0', 'hyperfine_reduced_E1_matrix_element', 'internal-calculation', 'F-reduced');
   const presentation = {
-    id, lower: '³P₀', upper: term, label: `${n}S 零场激发`, multipole: 'E1', classification: '强',
+    id, lower: '³P₀', upper: term, label: `${n}S 零场激发`, multipole: 'E1', classification: 'E1 允许（强度未分级）',
     color: '#a78bfa', n, Fp, upperJ: 1, nu, frequency_Hz, frequency_THz: frequency.value,
     wavelength_vac_nm: wavelength_nm, d_num: dipole_ea0, fReducedDipoles: { [Fp]: dipole_ea0 },
     branchLabel: conditions.branch, upperEnergy_eV: level.quantities.energy_eV.value

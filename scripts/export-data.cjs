@@ -12,9 +12,9 @@ function renderCsv(saved) {
   return [columns.join(','),...rows.map(row=>columns.map(column=>escape(row[column])).join(','))].join(newline)+(finalNewline?newline:'');
 }
 
-function prepareOutputs(root=PROJECT_ROOT) {
+function prepareOutputs(root=PROJECT_ROOT,schemaRoot=root) {
   const catalog=loadCatalog(root);
-  validateCatalog(catalog,root);
+  validateCatalog(catalog,schemaRoot);
   const manifestPath=path.join(root,'data','dataset.json');
   const previous=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
   const files=DATA_FILES.map(name=>({path:`data/${name}`,sha256:sha256(fs.readFileSync(path.join(root,'data',name)))}));
@@ -30,8 +30,8 @@ function prepareOutputs(root=PROJECT_ROOT) {
   ]);
 }
 
-function exportData({root=PROJECT_ROOT,check=false}={}) {
-  const outputs=prepareOutputs(root);
+function exportData({root=PROJECT_ROOT,check=false,schemaRoot=root}={}) {
+  const outputs=prepareOutputs(root,schemaRoot);
   for (const [filename,content] of outputs) {
     if (check) {
       if (!fs.existsSync(filename)||fs.readFileSync(filename,'utf8')!==content) throw new Error(`${path.relative(root,filename)} is stale; run node scripts/export-data.cjs`);

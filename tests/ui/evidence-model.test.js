@@ -53,7 +53,9 @@ test('dataset and formula drift require new formula/comparison checks but preser
   for (const overrides of [{datasetHash:'0'.repeat(64)}, {formulaVersion:'2.0.0'}]) {
     const view = buildEvidenceView(stateFor(), overrides);
     assert.deepEqual(statuses(view), {source:'checked',formula:'needs-review',comparison:'needs-review',experiment:'not-closed'});
-    assert.equal(view.sources.length, 4);
+    assert.deepEqual(view.sources.map(source=>source.id),[
+      'xu-2014-prl','offer-2026-main','offer-2026-sm-v2','strathearn-2023-model','pizzocaro-2017-metrologia',
+    ]);
     assert.equal(view.atomicSupport.quantities[0].value, 0.0442);
     assert.equal(view.comparisons[0].status, 'needs-review');
     assert.match(view.summary, /未独立验证.*需重核/);

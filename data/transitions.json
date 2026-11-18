@@ -2424,7 +2424,7 @@
           "evidenceKind": "derived",
           "reviewStatus": "conflict-unresolved",
           "uncertainty": 1.1871149320701517e-06,
-          "uncertaintyNote": "source-reported uncertainty; compilation/model systematics are not independently re-evaluated",
+          "uncertaintyNote": "Propagation of the reported ordinary-frequency uncertainty through lambda=c/nu only. The conflicting printed wavelength and compilation/model systematics are excluded.",
           "conditions": {
             "isotope": 171,
             "sourceEvidenceType": "compilation-derived",

@@ -26,11 +26,39 @@ test('M4 preserves the reviewed main T3 record and Offer comparison facts', () =
   const {kind, ...offer} = evidence.comparisons.find(comparison => comparison.id === 'offer-578-conditional');
   assert.equal(kind, 'conditional-power');
   assert.equal(t3.appliesTo.datasetHash, dataset.contentHash);
-  // The R2-only release rebinds the global dataset hash. Verify the original
-  // fingerprint of every other T3 field against the reviewed record.
-  const historical = {...t3, appliesTo: {...t3.appliesTo, datasetHash: '3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28'}};
+  // Retain the fingerprint of the original T3 record and historical Offer comparison.
+  const historical = {...t3, appliesTo: {...t3.appliesTo, datasetHash: '3c2fd5ca0a98d1e1e3e59aa6eab7fdcd9164678c048ed736f41dced0a3c20d28'},
+    sourceIds:t3.sourceIds.filter(id=>id!=='pizzocaro-2017-metrologia'),
+    missing:t3.missing.filter(item=>!item.startsWith('Pizzocaro 同一操作点')),
+  };
+  for(const field of ['sourceDetail','comparisonDetail','experimentDetail']) historical[field]=t3[field].split(' Pizzocaro 2017',1)[0];
   assert.equal(fingerprint(historical), 'fb5dc856c3dbec0d3fd9f16c6895ed4ec5e242edaaf7bc658e63e1f034475ba1');
   assert.equal(fingerprint(offer), 'bb56b421b4a0d30db7887aed1b6a40b93b777d49807f58d7e3fc6ce9f4e3b1f9');
+});
+
+test('T3 retains the 578 nm nominal comparison and lists measurements needed at the same operating point',()=>{
+  const result=read('../../data/literature/clock-rabi-audit-2026-10-30/results.json');
+  const t3=evidence.records.find(record=>record.transitionId==='T3');
+  const source=evidence.sources.find(item=>item.id===result.experiment.sourceId);
+  assert.ok(t3.sourceIds.includes(source.id));
+  assert.equal(source.doi,'10.1088/1681-7575/aa4e62');
+  assert.equal(source.url,'https://arxiv.org/abs/1609.01610v2');
+  assert.match(source.locations.join(' '),/PDF 第 4 页 §II\.E/);
+  assert.match(t3.sourceDetail,/PDF 第 4 页 §II\.E/);
+  for(const marker of [`${result.current.power_nW} nW`,`${result.current.waistRadius_um} µm`,`${result.experiment.piPulse_ms} ms`,
+    `${result.current.rabi_Hz.toFixed(2)} Hz`,`${result.experiment.nominalPiDerivedRabi_Hz.toFixed(2)} Hz`]) {
+    assert.ok(t3.comparisonDetail.includes(marker),marker);
+  }
+  assert.equal(result.experiment.directlyFittedRabi_Hz,null);
+  assert.match(t3.comparisonDetail,/束心 Ω\/2π 为 13\.91 Hz.*名义 π 脉冲 60 ms.*8\.33 Hz/);
+  assert.match(t3.experimentDetail,/直接时域 Rabi 拟合仍待补齐/);
+  assert.match(t3.summary,/未独立验证/);
+  const missing=t3.missing.filter(item=>item.startsWith('Pizzocaro 同一操作点'));
+  assert.equal(missing.length,4);
+  assert.match(missing[0],/绝对 π 分量功率.*偏振纯度/);
+  assert.match(missing[1],/束腰.*对准/);
+  assert.match(missing[2],/人口随脉冲时间.*独立 Ω\/2π 拟合/);
+  assert.match(missing[3],/运动分布.*残余夹角.*返回光.*噪声谱/);
 });
 
 for (const id of ids) {

@@ -1,9 +1,13 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
-const { writeVersion } = require('./write-version.cjs');
+const { writeVersion, versionModuleSource } = require('./write-version.cjs');
 const { exportEvidence } = require('./evidence-data.cjs');
 const { exportDecay } = require('./decay-data.cjs');
+const { exportData } = require('./export-data.cjs');
+const { DATA_FILES } = require('./validate-data.cjs');
+const { checkArtifacts } = require('./check-artifacts.cjs');
+const { filesBelow, publicationFiles, relativePath, sourceFingerprint } = require('./artifact-files.cjs');
 
 // Read static module declarations without interpreting quoted examples, comments,
 // template bodies or dynamic import expressions as eager dependencies.
@@ -152,66 +156,120 @@ function injectStartupPreloads(html, modules) {
   return html.replace(/<script\b/i,block+'$&');
 }
 
-function filesBelow(directory) {
-  return fs.readdirSync(directory, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name)).flatMap(entry => {
-    const target = path.join(directory, entry.name);
-    if (entry.isSymbolicLink()) throw new Error(`Publishing symlinks is not supported: ${target}`);
-    return entry.isDirectory() ? filesBelow(target) : [target];
-  });
+function publishDist(output, candidate, previous) {
+  const lock = path.join(path.dirname(output), 'tmp', 'dist-publish.lock');
+  try {
+    fs.mkdirSync(lock);
+  } catch (error) {
+    if (error.code !== 'EEXIST') throw error;
+    throw new Error('Another build is publishing dist. Retry after it completes.', { cause: error });
+  }
+  try {
+    const old = fs.lstatSync(output, { throwIfNoEntry: false });
+    if (old && !old.isDirectory()) {
+      throw new Error('dist must be a project-owned directory, not a symlink or file');
+    }
+    if (old) fs.renameSync(output, previous);
+    try {
+      fs.renameSync(candidate, output);
+    } catch (error) {
+      if (old) {
+        try {
+          fs.renameSync(previous, output);
+        } catch (restoreError) {
+          throw new AggregateError([error, restoreError], 'Previous dist retained at ' + previous);
+        }
+      }
+      throw error;
+    }
+  } finally {
+    fs.rmdirSync(lock);
+  }
 }
+
 function build(directory, options = {}) {
   const root = fs.realpathSync(directory);
   const output = path.join(root, 'dist');
   if (!fs.existsSync(path.join(root, 'index.html'))) throw new Error('Missing source index.html');
-  if (fs.existsSync(path.join(root, 'data/evidence.json'))) exportEvidence({root,check:true});
-  if (fs.existsSync(path.join(root, 'data/decay.json'))) exportDecay({root,check:true});
+  const sources = publicationFiles(root);
+  const fingerprint = sourceFingerprint(root, { sourceFiles: sources });
   const version = writeVersion(root);
-  const sourceHTML=fs.readFileSync(path.join(root,'index.html'),'utf8');
-  const entries=['src/main.js'];
-  if(/\bimport\s*\(\s*['"]\.\/src\/bootstrap\.js['"]\s*\)/.test(sourceHTML))entries.push('src/bootstrap.js');
-  const startupModules=collectStartupModules(root,entries);
-  if (fs.existsSync(output) && fs.lstatSync(output).isSymbolicLink()) throw new Error('dist must be a project-owned directory, not a symlink');
-  fs.rmSync(output, { recursive: true, force: true });
-  fs.mkdirSync(output);
-  for (const name of ['index.html', 'src', 'data', 'assets']) {
-    const source = path.join(root, name);
-    if (!fs.existsSync(source)) continue;
-    if (fs.lstatSync(source).isSymbolicLink()) throw new Error(`Publishing symlinks is not supported: ${name}`);
-    if (fs.statSync(source).isDirectory()) filesBelow(source);
-    // Local evidence includes full copyrighted papers, source text and audit
-    // snapshots. Only the canonical runtime data belongs in the web artifact.
-    fs.cpSync(source, path.join(output, name), { recursive: true,
-      filter: candidate => path.basename(candidate)!=='.DS_Store' && !path.basename(candidate).startsWith('._') &&
-        (name!=='data'||!candidate.startsWith(path.join(source,'literature'))) });
-  }
-  fs.writeFileSync(path.join(output,'index.html'),injectStartupPreloads(sourceHTML,startupModules));
-  const datasetPath = path.join(root, 'data', 'dataset.json');
-  const dataset = fs.existsSync(datasetPath) ? JSON.parse(fs.readFileSync(datasetPath, 'utf8')) : {};
-  const formulaFile = path.join(root, 'src', 'physics', 'constants.js');
-  const formulaVersion = fs.existsSync(formulaFile)
-    ? fs.readFileSync(formulaFile, 'utf8').match(/export\s+const\s+FORMULA_VERSION\s*=\s*['"]([^'"]+)['"]/)?.[1]
-    : null;
-  if (fs.existsSync(formulaFile) && !formulaVersion) throw new Error('The production formula module must export FORMULA_VERSION.');
   const commit = options.commit || version.appCommit;
-  const metadata = {
-    schemaVersion: 1, softwareVersion: version.softwareVersion, appCommit: commit,
-    worktreeDirty: version.worktreeDirty,
-    datasetVersion: dataset.datasetVersion || dataset.version || 'unversioned',
-    formulaVersion: formulaVersion || dataset.formulaVersion || 'unversioned',
-    sourceTimestamp: options.sourceTimestamp || (process.env.SOURCE_DATE_EPOCH ? new Date(Number(process.env.SOURCE_DATE_EPOCH) * 1000).toISOString() : version.sourceTimestamp),
-  };
-  fs.writeFileSync(path.join(output, 'build-info.json'), JSON.stringify(metadata, null, 2) + '\n');
-  const manifest = {
-    schemaVersion: 1, ...metadata,
-    files: filesBelow(output).map(file => ({
-      path: path.relative(output, file).split(path.sep).join('/'),
-      bytes: fs.statSync(file).size,
-      sha256: crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),
-    })),
-  };
-  fs.writeFileSync(path.join(output, 'artifact-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
-  if (!options.quiet) console.log(`Built ${manifest.files.length} files in dist/ (${version.softwareVersion}, ${commit.slice(0, 8)}).`);
-  return manifest;
+  const scratch = path.join(root, 'tmp');
+  fs.mkdirSync(scratch, { recursive: true });
+  if (!fs.lstatSync(scratch).isDirectory()) throw new Error('Build staging requires a project-owned tmp directory');
+  const transaction = fs.mkdtempSync(path.join(scratch, 'dist-build-'));
+  const candidate = path.join(transaction, 'candidate');
+  const previous = path.join(transaction, 'previous');
+  let published = false;
+  try {
+    fs.mkdirSync(candidate);
+    for (const file of sources) {
+      const relative = relativePath(root, file);
+      if (relative === 'src/version.js') continue;
+      const target = path.join(candidate, relative);
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.copyFileSync(file, target);
+    }
+    if (sourceFingerprint(root, { publicationRoot: candidate }) !== fingerprint) {
+      throw new Error('Build inputs changed while staging. Retry from the current source.');
+    }
+
+    // Validate the exact copies that will be published. Schemas stay in the source tree.
+    const dataFile = name => path.join(candidate, 'data', name);
+    // Focused build fixtures can use individual data files without a complete catalog.
+    const hasCatalog = fs.existsSync(path.join(candidate, 'src/data/generated-catalog.js')) ||
+      DATA_FILES.every(name => fs.existsSync(dataFile(name)));
+    if (hasCatalog) exportData({ root: candidate, schemaRoot: root, check: true });
+    if (fs.existsSync(dataFile('evidence.json'))) exportEvidence({ root: candidate, check: true });
+    if (fs.existsSync(dataFile('decay.json'))) exportDecay({ root: candidate, check: true });
+
+    const datasetPath = dataFile('dataset.json');
+    const dataset = fs.existsSync(datasetPath) ? JSON.parse(fs.readFileSync(datasetPath, 'utf8')) : {};
+    const formulaFile = path.join(candidate, 'src', 'physics', 'constants.js');
+    const formulaVersion = fs.existsSync(formulaFile)
+      ? fs.readFileSync(formulaFile, 'utf8').match(/export\s+const\s+FORMULA_VERSION\s*=\s*['"]([^'"]+)['"]/)?.[1]
+      : null;
+    if (fs.existsSync(formulaFile) && !formulaVersion) throw new Error('The production formula module must export FORMULA_VERSION.');
+    const metadata = {
+      schemaVersion: 1, softwareVersion: version.softwareVersion, appCommit: commit,
+      worktreeDirty: version.worktreeDirty,
+      datasetVersion: dataset.datasetVersion || dataset.version || 'unversioned',
+      formulaVersion: formulaVersion || dataset.formulaVersion || 'unversioned',
+      sourceTimestamp: options.sourceTimestamp || (process.env.SOURCE_DATE_EPOCH ? new Date(Number(process.env.SOURCE_DATE_EPOCH) * 1000).toISOString() : version.sourceTimestamp),
+      sourceFingerprint: fingerprint,
+    };
+
+    fs.mkdirSync(path.join(candidate, 'src'), { recursive: true });
+    fs.writeFileSync(path.join(candidate, 'src/version.js'), versionModuleSource({ ...version, appCommit: commit }));
+    const index = path.join(candidate, 'index.html');
+    const sourceHTML = fs.readFileSync(index, 'utf8');
+    const entries = ['src/main.js'];
+    if (/\bimport\s*\(\s*['"]\.\/src\/bootstrap\.js['"]\s*\)/.test(sourceHTML)) entries.push('src/bootstrap.js');
+    const startupModules = collectStartupModules(candidate, entries);
+    fs.writeFileSync(index, injectStartupPreloads(sourceHTML, startupModules));
+    fs.writeFileSync(path.join(candidate, 'build-info.json'), JSON.stringify(metadata, null, 2) + '\n');
+    const manifest = {
+      ...metadata,
+      files: filesBelow(candidate).map(file => ({
+        path: relativePath(candidate, file),
+        bytes: fs.statSync(file).size,
+        sha256: crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),
+      })),
+    };
+    fs.writeFileSync(path.join(candidate, 'artifact-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
+    checkArtifacts(candidate, { quiet: true, requireCatalogCsv: hasCatalog });
+    if (sourceFingerprint(root) !== fingerprint) {
+      throw new Error('Build inputs changed during assembly. Retry from the current source.');
+    }
+    publishDist(output, candidate, previous);
+    published = true;
+    if (!options.quiet) console.log('Built ' + manifest.files.length + ' files in dist/ (' + version.softwareVersion + ', ' + commit.slice(0, 8) + ').');
+    return manifest;
+  } finally {
+    // If restoration failed, retain the last published build for recovery.
+    if (published || !fs.existsSync(previous)) fs.rmSync(transaction, { recursive: true, force: true });
+  }
 }
 module.exports = { build, filesBelow, staticModuleSpecifiers, collectStartupModules, injectStartupPreloads };
 if (require.main === module) build(path.resolve(__dirname, '..'));

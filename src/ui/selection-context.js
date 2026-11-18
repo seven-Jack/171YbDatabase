@@ -2,6 +2,7 @@ import { channelKey, computeCGChannels, computeDEff, polarizationQ } from '../ph
 import { getDipoleQuantity, getTransitionRecord } from '../data/catalog.js';
 import { buildSourceView } from './source-panel.js';
 import { renderCompactTooltip } from './compact-tooltip.js';
+import { formatZeroFieldOffset, getTransitionWavelength, wavelengthLabel } from './transition-wavelength.js';
 
 const fraction=value=>Number.isFinite(value)?String(value%1===0?value:`${value*2}/2`):'—';
 const magnetic=value=>Number.isFinite(value)?`${value<0?'−':value>0?'+':''}${fraction(Math.abs(value))}`:'—';
@@ -25,9 +26,13 @@ export function buildSelectionContext(state={}) {
   const refs=key=>record?.quantities[key]?.sourceId?[record.quantities[key].sourceId]:[];
   const dipoleSource=getDipoleQuantity(transition.id,channel?.Fp)?.sourceId;
   const pol=polarization[state.pol]||'—';
-  const wavelength=`${state.wavelength_nm||transition.wavelength_vac_nm} nm`;
+  const wavelengthData=getTransitionWavelength(transition.id,channel);
+  const wavelength=Number.isFinite(wavelengthData.value)?`${wavelengthData.value} nm`:'未记录';
+  const offset=wavelengthData.zeroFieldOffset;
   const rows=[
-    {label:'波长',value:wavelength,sourceIds:refs('wavelength_vac_nm')},
+    {label:wavelengthLabel(wavelengthData),value:wavelength,sourceIds:refs('wavelength_vac_nm')},
+    ...(offset?[{label:'零场频移（相对重心）',value:formatZeroFieldOffset(offset),sourceIds:[offset.sourceId]}]:[]),
+    ...(wavelengthData.sourceConflict?[{label:'原表波长冲突',value:'采用频率推导值',sourceIds:refs('wavelength_vac_nm')}]:[]),
     {label:'初态',value:channel?`${transition.lower} · ${stateLabel(channel)}`:transition.lower},
     {label:'末态',value:channel?`${transition.upper} · ${stateLabel(channel,true)}`:transition.upper},
     ...(channel?[{label:'偏振',value:`${pol} · ΔmF=${channel.q>0?'+':''}${channel.q}`},{label:'|d_eff|',value:`${number(state.dEff)} ea₀`,sourceIds:dipoleSource?[dipoleSource]:[]}]:[])

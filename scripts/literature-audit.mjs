@@ -25,6 +25,26 @@ const rydbergSeriesInputHashes = {
   'data/sources.json': '79f5e8d3f42d8fb33caf7369839353b45c57447647d9083c8867d7e90a66adfe',
   'src/ui/energy-diagram.js': '084261c0e149e904e34c8c287402d4282ab54c384ad23e30b443c65e17d16132',
 };
+// Reviewed metadata and Rydberg display update. Clock quantities, the physics
+// implementation, and every immutable historical audit snapshot retain their hashes.
+const reviewedMetadataInputHashes = {
+  ...rydbergSeriesInputHashes,
+  'data/dataset.json': 'cdb419d040d6ae3b001c31160b0cde657898e46f8dfc5555e91e0daa696f1e45',
+  'data/transitions.json': 'ce79d976728ace0d196823443d06b594074c5f7d32200bf9525c76ce862faace',
+  'data/sources.json': 'e118df71444f11c80838fc4dd8f0021e37fd0fb9e6c02695f7f0a36e3ee00452',
+  'src/ui/energy-diagram.js': '6c693a0251a4109485c3372306e95dc9efb8cbc0f70e40728a030abd1e6fb3e8',
+};
+const releaseInputs = new Map([
+  [historicalDatasetVersion, {}],
+  [r017DatasetVersion, r017InputHashes],
+  [rydbergSeriesVersion, rydbergSeriesInputHashes],
+  ['2026.11.18.1', reviewedMetadataInputHashes],
+  ['2026.11.18.2', {
+    ...reviewedMetadataInputHashes,
+    'data/dataset.json': 'c13dfc5e67faccdfe622d80c413df340d786e21ff78ec377fd8f08a03626f968',
+    'data/sources.json': 'b06a82487f282d92fc88b8816fdb31ca16f5541e6ff46eaea1b0c649890bbda4',
+  }],
+]);
 const common = ['scripts/literature-audit.mjs', 'scripts/local-evidence.mjs', 'scripts/paper-paths.mjs'];
 export const auditPackages = [
   {name: 'clock-rabi-audit-2026-10-30', report: 'clock-rabi-578-audit-20261030.md',
@@ -44,12 +64,11 @@ function location(base, relative) {
 const readJSON = (base, relative) => JSON.parse(fs.readFileSync(location(base, relative), 'utf8'));
 
 export function verifyProtectedAuditInputs(datasetVersion, base = root) {
-  if (![historicalDatasetVersion, r017DatasetVersion, rydbergSeriesVersion].includes(datasetVersion)) {
+  if (!releaseInputs.has(datasetVersion)) {
     throw Error(`Protected audit inputs have no reviewed fingerprints for dataset ${datasetVersion}`);
   }
   const historical = readJSON(base, 'data/literature/clock-rabi-audit-2026-10-30/protected-hashes.json');
-  const replacement = datasetVersion === rydbergSeriesVersion ? rydbergSeriesInputHashes
-    : datasetVersion === r017DatasetVersion ? r017InputHashes : {};
+  const replacement = releaseInputs.get(datasetVersion);
   for (const [relative, historicalHash] of Object.entries(historical)) {
     if (digest(fs.readFileSync(location(base, relative))) !== (replacement[relative] ?? historicalHash)) {
       throw Error(`Protected production/data file changed: ${relative}`);
@@ -144,7 +163,7 @@ function snapshotDifference(actual, expected, at = '$', roundoff = []) {
 
 export function compareReproductionSnapshot(current, historical) {
   const currentProjection = scientificProjection(current), historicalProjection = scientificProjection(historical);
-  const datasetVersions = [r017DatasetVersion, rydbergSeriesVersion].includes(current.datasetVersion) && historical.datasetVersion === historicalDatasetVersion
+  const datasetVersions = current.datasetVersion !== historicalDatasetVersion && releaseInputs.has(current.datasetVersion) && historical.datasetVersion === historicalDatasetVersion
     ? {reproductionDatasetVersion: current.datasetVersion, historicalDatasetVersion: historical.datasetVersion} : {};
   // The Rydberg releases leave clock inputs alone. Compare every clock input and output, while
   // reporting the live catalog version separately from the frozen baseline.

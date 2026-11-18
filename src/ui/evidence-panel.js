@@ -26,15 +26,18 @@ const EVIDENCE_KIND = {
 };
 const evidenceKindText = value => EVIDENCE_KIND[value] || '证据类型待核查';
 
-/** Only public DOI and arXiv landing pages are usable as evidence links. */
+/** Allow DOI/arXiv landing pages and commit-pinned Calculation R017 artifacts. */
 export function evidenceSourceURL(source = {}) {
-  const candidate = source.url;
-  if (typeof candidate === 'string') {
+  for (const candidate of [source.url, source.artifactLocator]) {
+    if (typeof candidate !== 'string') continue;
     try {
       const url = new URL(candidate);
-      const official = ['doi.org','dx.doi.org','arxiv.org','export.arxiv.org'].includes(url.hostname.toLowerCase());
+      if (url.protocol !== 'https:' || url.port || url.username || url.password) continue;
+      const official = ['doi.org','dx.doi.org','arxiv.org','export.arxiv.org'].includes(url.hostname);
       const localOrDownload = /(?:\/Users\/|\/references\/papers\/|\/data\/literature\/|\.(?:pdf|tex|txt|tar|gz)$)/i.test(decodeURIComponent(url.pathname));
-      if (url.protocol === 'https:' && official && !url.port && !url.username && !url.password && !localOrDownload) return url.href;
+      const savedArtifact = url.hostname === 'github.com' && !url.search && !url.hash &&
+        /^\/seven-Jack\/Calculation\/blob\/[a-f0-9]{40}\/runs\/R017\/results\/[\w/-]+\.(?:csv|json)$/.test(url.pathname);
+      if (!localOrDownload && (official || savedArtifact)) return url.href;
     } catch { /* An unusable URL must remain plain text. */ }
   }
   const doi = typeof source.doi === 'string' ? source.doi.trim() : '';

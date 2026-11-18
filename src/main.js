@@ -24,6 +24,7 @@ import { initSelectionContext } from './ui/selection-context.js';
 import { createChannelNavigation } from './ui/channel-navigation.js';
 import { preventNumberInputWheelChanges } from './ui/number-input-wheel.js';
 import {buildEvidenceView} from './ui/evidence-model.js';
+import { initRecordLinks } from './ui/record-links.js';
 
 export function start() {
   const CORE_TRANSITIONS=catalog.CORE_TRANSITIONS.map(decorateTransition);
@@ -148,6 +149,7 @@ export function start() {
   const versionState=document.getElementById('versionState');
   versionState.textContent=WORKTREE_DIRTY?'含本地未提交改动':'工作区无未提交改动';
   versionState.dataset.dirty=String(WORKTREE_DIRTY);
+  initRecordLinks({host:document.getElementById('recordLinks'),calculator,charts,versions});
   document.documentElement.dataset.appReady='true';
 }
 function formatFrequency(hz){

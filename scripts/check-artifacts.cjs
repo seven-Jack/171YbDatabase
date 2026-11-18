@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const assert = require('node:assert/strict');
-const { filesBelow } = require('./build.cjs');
+const { filesBelow } = require('./artifact-files.cjs');
 
 function checkArtifacts(directory, options = {}) {
   const root = path.resolve(directory);
@@ -18,6 +18,9 @@ function checkArtifacts(directory, options = {}) {
     assert.equal(bytes.length, entry.bytes, `Size mismatch: ${entry.path}`);
     assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), entry.sha256, `Hash mismatch: ${entry.path}`);
   }
+  const { files: _entries, ...metadata } = manifest;
+  const buildInfo = JSON.parse(fs.readFileSync(path.join(root, 'build-info.json'), 'utf8'));
+  assert.deepEqual(buildInfo, metadata, 'Build info differs from the artifact manifest');
   let checked = 0;
   function localReference(from, reference) {
     if (!reference || /^(?:[a-z]+:|\/\/|#)/i.test(reference)) return;
@@ -59,9 +62,11 @@ function checkArtifacts(directory, options = {}) {
       for (const match of content.matchAll(/@import\s+["']([^"']+)["']/g)) localReference(relative, match[1]);
     }
   }
-  assert(fileSet.has('assets/05.21_yb171_65s_hyperfine.csv'), '65S CSV download must remain published');
+  if (options.requireCatalogCsv !== false) {
+    assert(fileSet.has('assets/05.21_yb171_65s_hyperfine.csv'), '65S CSV download must remain published');
+  }
   if (!options.quiet) console.log(`Artifact checks passed: ${fileSet.size} files, ${checked} local references, Pages prefix preserved.`);
-  return { files: fileSet.size, references: checked };
+  return { files: fileSet.size, references: checked, buildInfo };
 }
 module.exports = { checkArtifacts };
 if (require.main === module) checkArtifacts(path.resolve(__dirname, '..', 'dist'));

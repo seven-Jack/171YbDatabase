@@ -87,11 +87,12 @@ function restoreAgainstCatalog(config) {
   if (!transition) throw new ConfigurationError('transitionId', `当前数据没有跃迁 ${config.transitionId}`);
   const selection = config.selection, dipole = canonicalDipole(transition, selection.F_upper);
   const J_lower = getJ(transition.lower), J_upper = transition.upperJ ?? getJ(transition.upper);
-  const upperFs = transition.Fp === undefined ? getFs(J_upper) : [transition.Fp];
-  for (const [key, values] of [['F_lower', getFs(J_lower)], ['F_upper', upperFs]]) {
+  const lowerFs = getFs(J_lower), upperFs = getFs(J_upper);
+  const calculationUpperFs = transition.Fp === undefined ? upperFs : [transition.Fp];
+  for (const [key, values] of [['F_lower', lowerFs], ['F_upper', calculationUpperFs]]) {
     if (!values.includes(selection[key])) throw new ConfigurationError(`selection.${key}`, '与当前跃迁角动量不匹配');
   }
-  for (const [key, values] of [['diagF_lower', getFs(J_lower)], ['diagF_upper', upperFs]]) {
+  for (const [key, values] of [['diagF_lower', lowerFs], ['diagF_upper', upperFs]]) {
     if (selection[key] !== 'all' && !values.includes(selection[key])) throw new ConfigurationError(`selection.${key}`, '不是当前跃迁的可用 F 值');
   }
   const solveFor = config.display.solveFor ?? (config.display.calcMode === 'rabi' ? 'power' : 'rabi');

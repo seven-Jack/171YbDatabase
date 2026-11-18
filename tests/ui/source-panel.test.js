@@ -45,10 +45,22 @@ test('R2 makes dipole, wavelength and derived-lifetime evidence visibly distinct
   assert.match(electronic.locator,/line 33/);
   assert.match(html,/data-source-field="d_J_from_F32"/);
   assert.match(html,/定义待核查/);
-  assert.match(html,/R017\/results\/local_20261110T025200Z\/yb_matrix_elements\.csv/);
+  assert.match(html,/href="https:\/\/github\.com\/seven-Jack\/Calculation\/blob\/8e0dcea0feaf71fb15245655c3d2ced1de70d385\/runs\/R017\/results\/local_20261110T025200Z\/yb_matrix_elements\.csv"/);
+  assert.match(html,/href="https:\/\/github\.com\/seven-Jack\/Calculation\/blob\/8e0dcea0feaf71fb15245655c3d2ced1de70d385\/runs\/R017\/results\/local_20261110T025200Z\/raw_manifest\.json"/);
+  assert.match(html,/8ccc808d924fa1a71196c380650ebaf2171a4cef21c3e715bf5b9bf77e361d8b/);
+  assert.match(html,/7cb1c7c40fbe231ad331c59618a33b4410443c1cbaf6262019d4febee8c5db14/);
+  assert.match(html,/估算真空波长/);
   assert.match(html,/原文页 \/ 表 \/ 式：待核查/);
   assert.doesNotMatch(html,/已验证|实验验证通过/);
   assert.equal(getTransitionRecord('R2').quantities.d_num.value,.00216581649);
+});
+
+test('T7 full wavelength disclosure retains the printed conflict and propagation boundary',()=>{
+  const field=createFieldView('T7','wavelength_vac_nm');
+  const html=renderFieldSourceHTML(field);
+  assert.match(html,/真空重心波长/);
+  assert.match(html,/原表波长冲突.*770\.160284/);
+  assert.match(html,/不确定度口径.*Propagation of the reported ordinary-frequency uncertainty/);
 });
 
 test('R2 channel note shows both signed amplitudes and the actual roots at saved display precision',()=>{

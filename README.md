@@ -5,6 +5,14 @@
 - 网页：https://seven-Jack.github.io/171YbDatabase/
 - 源码：https://github.com/seven-Jack/171YbDatabase
 
+## 选择与复核跃迁
+
+在能级图上方可按 **n 或有效主量子数 ν** 选择 29S–100S。先确定 F′，两个输入使用该分支的 R017 零场表双向查找。点开 ν 输入的建议列表可查看对应的 n。切换 F′ 会保留 n 并更新 ν、波长和带符号的 F 约化矩阵元。ν 的阈值参考为离子芯 F_c=1。历史 R2 的 301.87 nm 为标度估算，当前计算对象在图下标出。
+
+“分享记录与引用数据”提供当前跃迁或完整工作点的链接，以及版本化数据清单与原始 JSON。可用 `data/transitions.json` 的 `lowerLevelId` 和 `upperLevelId` 关联 `data/levels.json`，按每个物理量的 `sourceId` 连接 `data/sources.json`。R017 的两条分支按 `data/rydberg-series.json` 的 `(n, Fp)` 选取。清单中的 `files[].sha256` 用于逐文件校验。
+
+556 nm 的真空波长是超精细重心，所选 F 分量的零场频移单列。770 nm 保留由频率推导的工作值和原表冲突说明。578 nm 的独立标定仍待同一操作点的原子处分量功率、束腰、通道、人口曲线和拟合误差。
+
 ## 新下载原文核对（2026-10-30）
 
 已收到1–8及10号PDF，编号原件未改动，第9篇仍缺。新增36张完整表、688条记录，累计71表1645条；最新[审计报告](references/audits/source-followup-20261030.md)、[提取入口](data/literature/source-followup-2026-10-30/README.md)及[剩余缺文献](references/missing-downloads.md)。
@@ -83,7 +91,7 @@ npm run sync -- push
 
 PR 运行 `.github/workflows/check.yml`，新提交会取消同一 PR 尚未完成的旧检查。三个浏览器视口并行测试同一份构建产物，`check` 汇总构建和浏览器结果。合入 main 后，Pages 对该提交复用这套流程，再发布通过检查的产物。Pages 写权限授予部署 job。需要登录 GitHub CLI 时可用 `gh auth login`，并检查 `GH_TOKEN` 是否覆盖了已登录的账号。
 
-只有推送 main 且工作流成功才会更新公开站。本地保存、创建工作分支和生成 `dist/` 不会发布。最近一次确认的公开发布是2026-11-03的0.3.3、提交`9c8c6c6`，数据版本2026.10.30.1、公式版本1.0.1、证据版本2026.11.02.1；[部署记录](https://github.com/seven-Jack/171YbDatabase/actions/runs/41559585246)。M1–M6已随PR #9发布，桌面与手机104项线上验收通过；结果导出增强及性能整理属于后续工作分支，是否发布以对应Actions及线上commit为准。
+2026-11-18 核对的公开站为软件 0.3.3、提交 `ad20cd78cb65fc245a29e7f35ffb373e7b416238`，数据 2026.11.11.1、公式 1.0.1。本地 0.4.0 的部署状态可与[公开构建清单](https://seven-Jack.github.io/171YbDatabase/build-info.json)核对。2026-11-03 的[部署记录](https://github.com/seven-Jack/171YbDatabase/actions/runs/41559585246)为 M1–M6 的历史验收。
 
 ## 65S 文献核查（2026-10-08）
 
@@ -91,7 +99,7 @@ PR 运行 `.github/workflows/check.yml`，新提交会取消同一 PR 尚未完�
 
 ## 数据使用范围
 
-核心能级图包含 6s65s ³S₁；点击 ³P₀→65³S₁ 激发线会自动填写参数并跳转到通用超精细计算器，可选择 F/mF 和偏振。独立里德堡图谱已移除，R1–R7 数据表保留。65S 波长和寿命沿用现有估算，图中的 F 分组位置仅为示意。
+核心能级图包含 6s65s ³S₁；点击 ³P₀→65³S₁ 激发线会自动填写参数并跳转到通用超精细计算器，可选择 F/mF 和偏振。独立里德堡图谱已移除，R1–R7 数据表保留。旧 R2 的波长和寿命沿用历史估算。当前选中 R017 系列的波长按各 F′ 的实际 ν 换算，图中的 F 分组位置用于示意。
 
 R2 采用 R017 的零场 Rydcalc 保存结果。F′=1/2 三重态关联根 ν=60.1761270465 对应 D_F=+2.165816490×10⁻³ ea₀，F′=3/2 根 ν=60.5610730290 对应 D_F=−3.491291695×10⁻³ ea₀。数据版本 2026.11.10.2 补记由 F′=3/2 拉伸通道折算的 D_J=−0.00302354730001 ea₀，符号采用 Rydcalc 态相位。Rabi 计算采用各分支的 D_F，旧值 0.0376 ea₀ 保留于历史记录。分支标签沿用教程序列，物理误差和独立实验验证尚未建立。见 [Rabi 与矩阵元约定](docs/formula-conventions.md#角动量与矩阵元)。
 

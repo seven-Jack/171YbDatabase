@@ -93,7 +93,7 @@ test('unsupported oscillator strengths and unresolved internal amplitudes cannot
   assert.match(t2.conditions.sourceEvidenceType,/^compilation-derived/);
 });
 
-test('dated audit chain still matches all canonical fields outside the later R2 dipole update',()=>{
+test('dated audit chain retains subsequent R2 dipole and T7 uncertainty-note revisions',()=>{
   const expected=new Map();
   for(const group of ['transitions','levels']) for(const record of CATALOG[group].records)
     for(const [key,quantity] of Object.entries(record.quantities)) expected.set(`${group}/${record.id}/${key}`,quantity);
@@ -127,6 +127,12 @@ test('dated audit chain still matches all canonical fields outside the later R2 
       assert.equal(audited.convention,'J-reduced');
       assert.equal(audited.sourceId,'ref-17');
       assert.equal(audited.reviewStatus,'definition-needs-review');
+    } else if (row.path === 'transitions/T7/wavelength_vac_nm') {
+      const {uncertaintyNote, ...current} = expected.get(row.path);
+      const {uncertaintyNote: historicalNote, ...original} = audited;
+      assert.match(historicalNote, /^source-reported uncertainty/);
+      assert.match(uncertaintyNote, /reported ordinary-frequency uncertainty through lambda=c\/nu/);
+      assert.deepEqual(current, original);
     } else {
       assert.deepEqual(audited,expected.get(row.path),`${row.path}: composed audit must describe current canonical state`);
     }

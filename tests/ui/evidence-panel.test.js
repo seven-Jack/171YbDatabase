@@ -59,12 +59,20 @@ test('four evidence categories stay distinct and Xu/Offer details start collapse
     assert.match(html,new RegExp(`<details[^>]*data-evidence-section="${name}"[^>]*data-testid="evidence-${name}"`));
   }
   assert.match(html,/data-evidence-section="missing"/);
-  assert.match(html,/待补证据（6 项）/);
+  assert.match(html,/待补证据（10 项）/);
   assert.doesNotMatch(html,/<details[^>]*\bopen(?:\s|=|>)/);
   assert.match(html,/data-testid="evidence-context" data-context-key="T3:0\.5:0\.5:pi:strongest" data-calculation-status="valid"/);
   assert.match(html,/https:\/\/doi\.org\/10\.1103\/PhysRevLett\.113\.033003/);
   assert.match(html,/PDF 第 3–4 页，式 \(2\)、表 I/);
   assert.match(html,/target="_blank" rel="noopener noreferrer"/);
+});
+
+test('Pizzocaro operating point shows both rates and measurements needed for independent validation',()=>{
+  const html=renderEvidencePanelHTML(makeView());
+  assert.match(html,/arXiv:1609\.01610v2，PDF 第 4 页 §II\.E，DOI 10\.1088\/1681-7575\/aa4e62/);
+  assert.match(html,/束心 Ω\/2π 为 13\.91 Hz.*名义 π 脉冲 60 ms.*8\.33 Hz/);
+  assert.match(html,/data-testid="evidence-row-experiment" data-evidence-status="not-closed"/);
+  assert.match(html,/Pizzocaro 同一操作点的激发态人口随脉冲时间的原始曲线/);
 });
 
 test('Xu support retains historical source gap and is not power-waist-Rabi validation',()=>{
@@ -140,13 +148,19 @@ test('evidence text and attributes are escaped and unsafe source paths never bec
   assert.equal(escapeEvidenceHTML('<>&"\''),'&lt;&gt;&amp;&quot;&#39;');
 });
 
-test('source links allow official HTTPS landing pages and valid DOI fallback only',()=>{
+test('source links allow official HTTPS landing pages, pinned R017 artifacts and valid DOI fallback',()=>{
   assert.equal(evidenceSourceURL({url:'https://arxiv.org/abs/1406.2340'}),'https://arxiv.org/abs/1406.2340');
   assert.equal(evidenceSourceURL({url:'file:///Users/seven/paper.tex',doi:'10.1103/PhysRevLett.113.033003'}),'https://doi.org/10.1103/PhysRevLett.113.033003');
   for (const url of ['http://doi.org/10.1000/a','javascript:alert(1)','file:///Users/seven/paper.pdf','https://evil.example/paper','https://arxiv.org/pdf/1406.2340.pdf','https://doi.org:8443/10.1000/a','https://doi.org/%E0%A4%A']) {
     assert.equal(evidenceSourceURL({url}),null,url);
   }
   assert.equal(evidenceSourceURL({doi:'10.1000/a" onclick="x'}),null);
+  const pinned='https://github.com/seven-Jack/Calculation/blob/8e0dcea0feaf71fb15245655c3d2ced1de70d385/runs/R017/results/local_20261110T025200Z/yb_matrix_elements.csv';
+  assert.equal(evidenceSourceURL({artifactLocator:pinned}),pinned);
+  assert.equal(evidenceSourceURL({url:pinned}),pinned);
+  for (const artifactLocator of [pinned.replace(/blob\/[a-f0-9]{40}\//,'blob/main/'),pinned.replace('/R017/','/R016/'),pinned.replace('/Calculation/','/Other/'),pinned+'?ref=other']) {
+    assert.equal(evidenceSourceURL({artifactLocator}),null,artifactLocator);
+  }
 });
 
 test('rendering is pure and deterministic for the same evidence view',()=>{

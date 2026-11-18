@@ -3,6 +3,7 @@ import {getQuantity,getSourceRecord} from '../data/catalog.js';
 import {createFieldView,createDipoleFieldViews,renderFieldSourceHTML,escapeHTML,formatFrequency} from './source-panel.js';
 import {DIAGRAM_SUPPLEMENTAL_SOURCE_COUNT,renderDiagramProvenanceIndexHTML} from './diagram-references.js';
 import {renderCompactTooltip} from './compact-tooltip.js';
+import {getTransitionWavelength,wavelengthLabel} from './transition-wavelength.js';
 
 export const CORE_SUMMARY_COLUMNS=Object.freeze(['id','label','wavelength_vac_nm','d_num','source']);
 const NUMERIC_COLUMNS=new Set(['wavelength_vac_nm','frequency_THz','energy_eV','lifetime_ns','Gamma_per_s_num','oscillator_strength_f_num','d_num','n','nstar','energy_cm','binding_cm','radius_um','lifetime_us','C6_ghz_um6','blockade_um','delta0','delta2']);
@@ -52,7 +53,10 @@ export function buildTableTooltipModel(row,column,tableId='core',title=null) {
   const rows=[{label:'数值',value,sourceIds:quantity?.sourceId?[quantity.sourceId]:[]}];
   if (field.convention&&column!=='linewidth_frequency_coefficient_Hz') rows.push({label:'约定',value:field.convention});
   rows.push({label:'依据',value:field.kind});
-  const footnote=column==='linewidth_frequency_coefficient_Hz'&&quantity?.conditions?.sourceConflict?'Δν=Γ/2π · 原表 2π 标注冲突':column==='lifetime_ns'?(quantity?.conditions?.sourceEvidenceType?'总辐射寿命 · 条件见来源':'定义待核查 · 寿命条件未注明'):field.review;
+  let footnote=field.review;
+  if (field.sourceConflict) footnote='频率推导 · 原表波长冲突';
+  else if (column==='linewidth_frequency_coefficient_Hz'&&quantity?.conditions?.sourceConflict) footnote='Δν=Γ/2π · 原表 2π 标注冲突';
+  else if (column==='lifetime_ns') footnote=quantity?.conditions?.sourceEvidenceType?'总辐射寿命 · 条件见来源':'定义待核查 · 寿命条件未注明';
   return {id:row.id||'',title:title||field.label,rows,footnote};
 }
 
@@ -99,7 +103,16 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
       switch(column) {
         case 'id':return `<span class="mono">${escapeHTML(row.id)}</span>`;
         case 'label':return `<div class="trans-label">${escapeHTML(row.label)}</div><div class="trans-pair">${escapeHTML(row.lower)} → ${escapeHTML(row.upper)}</div>`;
-        case 'wavelength_vac_nm':return `<div class="wl-cell"><span class="wl-dot" style="background:${escapeHTML(row.color)}"></span>${cellTip('真空波长 λ',escapeHTML(row.approximate?'≈'+row.wavelength_vac_nm.toFixed(2):row.wavelength_vac_nm.toFixed(4)))}</div><div class="wl-sub">空气：${Number.isFinite(row.wavelength_air_nm)?row.wavelength_air_nm.toFixed(4):'待补充'} nm</div>`;
+        case 'wavelength_vac_nm': {
+          const wavelength=getTransitionWavelength(row.id);
+          const label=wavelengthLabel(wavelength);
+          const value=Number.isFinite(wavelength.value)
+            ? row.approximate?'≈'+wavelength.value.toFixed(2):wavelength.value.toFixed(wavelength.sourceConflict?8:4)
+            : '待补充';
+          return `<div class="wl-cell"><span class="wl-dot" style="background:${escapeHTML(row.color)}"></span>${cellTip(label,escapeHTML(value))}</div>
+            <div class="wl-sub" data-wavelength-reference="${escapeHTML(wavelength.reference)}">${escapeHTML(label)}${wavelength.sourceConflict?' · 频率推导，原表有冲突':''}</div>
+            <div class="wl-sub">空气：${Number.isFinite(row.wavelength_air_nm)?row.wavelength_air_nm.toFixed(4):'待补充'} nm</div>`;
+        }
         case 'frequency_THz':return cellTip('跃迁频率 ν',`<span class="mono">${row.frequency_THz.toFixed(5)} THz</span>`);
         case 'energy_eV':return cellTip('能量差 ΔE',`<span class="mono">${row.energy_eV.toFixed(4)} eV</span>`);
         case 'lifetime_ns':return cellTip('寿命 τ',`<span class="mono">${escapeHTML(formatLifetime(row.lifetime_ns))}</span>`);
@@ -157,7 +170,7 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
     const table=document.querySelector(`table[data-table="${tableId}"]`);if (!table) return;
     const headers=Array.from(table.querySelectorAll('thead th'));
     if (tableId==='core') {
-      headers[2].textContent='波长 λ / nm';headers[6].textContent='线宽频率系数';headers[8].textContent='矩阵元 / 约定';headers[13].textContent='来源与条件';
+      headers[2].textContent='真空波长 λ / nm';headers[6].textContent='线宽频率系数';headers[8].textContent='矩阵元 / 约定';headers[13].textContent='来源与条件';
       table.id ||= 'core-data-table';
       const tools=document.createElement('div');tools.className='table-controls';
       const button=document.createElement('button');button.type='button';button.className='table-columns-toggle';button.textContent='显示全部字段';button.setAttribute('aria-expanded','false');button.setAttribute('aria-controls',table.id);

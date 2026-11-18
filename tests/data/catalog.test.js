@@ -7,7 +7,8 @@ import {fileURLToPath} from 'node:url';
 import * as data from '../../src/data/catalog.js';
 
 const require=createRequire(import.meta.url);
-const {loadCatalog,validateCatalog}=require('../../scripts/validate-data.cjs');
+const {loadCatalog,validateCatalog,validateRydbergSeries}=require('../../scripts/validate-data.cjs');
+const {deriveSpectrum}=require('../../scripts/import-rydberg-series.cjs');
 const {exportData,sha256}=require('../../scripts/export-data.cjs');
 const root=fileURLToPath(new URL('../../',import.meta.url));
 const baseline=JSON.parse(fs.readFileSync(new URL('../fixtures/catalog-baseline.json',import.meta.url),'utf8'));
@@ -109,6 +110,40 @@ test('schema and relational validation reject malformed production data with spe
   for (const [mutate,message] of checks) {
     const catalog=loadCatalog(root);mutate(catalog);assert.throws(()=>validateCatalog(catalog,root),message);
   }
+});
+
+test('all 144 saved n and ν values identify exact R017 states in their F branches',()=>{
+  const series=loadCatalog(root)['rydberg-series'];
+  validateRydbergSeries(series);
+  assert.equal(series.states.length,144);
+  assert.equal(data.RYDBERG_SERIES_TRANSITIONS.length,144);
+  for(const Fp of [0.5,1.5]) {
+    const source=series.states.filter(row=>row.Fp===Fp);
+    const byNu=new Map(data.RYDBERG_SERIES_TRANSITIONS.filter(row=>row.Fp===Fp).map(row=>[row.nu,row]));
+    assert.equal(byNu.size,72);
+    for(const row of source) {
+      const entry=byNu.get(row.nu);
+      assert.ok(entry,'Missing saved ν '+row.nu+' for F′='+Fp);
+      assert.equal(entry.n,row.n);
+      assert.equal(entry.id,'NS-'+row.n+(Fp===0.5?'-F12':'-F32'));
+      assert.equal(entry.wavelength_vac_nm,row.wavelength_nm);
+      assert.equal(entry.d_num,row.dipole_ea0);
+      assert.equal(entry.classification,'E1 允许（强度未分级）');
+      assert.strictEqual(data.getRydbergPair(row.n).find(other=>other.Fp===Fp),entry);
+    }
+  }
+});
+
+test('the saved ν must uniquely identify an n within each F branch',()=>{
+  const series=loadCatalog(root)['rydberg-series'];
+  const first=series.states.find(row=>row.n===29&&row.Fp===0.5);
+  const sharedAcrossBranches=series.states.find(row=>row.n===29&&row.Fp===1.5);
+  const duplicateInBranch=series.states.find(row=>row.n===30&&row.Fp===0.5);
+  const fields={nu:first.nu,...deriveSpectrum(first.nu,series.spectroscopy)};
+  Object.assign(sharedAcrossBranches,fields);
+  assert.doesNotThrow(()=>validateRydbergSeries(series));
+  Object.assign(duplicateInBranch,fields);
+  assert.throws(()=>validateRydbergSeries(series),/rydberg-series\.json: duplicate ν .* in F′=0\.5/);
 });
 
 test('generated module, manifest and CSV reflect the actual canonical files',()=>{
