@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "evidenceVersion": "2026.11.02.1",
-  "reviewedAt": "2026-11-02",
+  "evidenceVersion": "2026.11.18.1",
+  "reviewedAt": "2026-11-18",
   "sources": [
     {
       "id": "xu-2014-prl",
@@ -68,6 +68,15 @@
       "locations": [
         "arXiv:physics/9903004v1，PDF 第 10 页表 I：CI+MBPT 电子 J 约化 E1 矩阵元"
       ]
+    },
+    {
+      "id": "pizzocaro-2017-metrologia",
+      "title": "Absolute frequency measurement of the ¹S₀–³P₀ transition of ¹⁷¹Yb",
+      "doi": "10.1088/1681-7575/aa4e62",
+      "url": "https://arxiv.org/abs/1609.01610v2",
+      "locations": [
+        "Metrologia 54, 102–112 (2017)。arXiv:1609.01610v2，PDF 第 4 页 §II.E，光钟谱段落的入射功率、1/e² 半径及名义 π 脉冲时长"
+      ]
     }
   ],
   "records": [
@@ -77,7 +86,7 @@
       "reviewVersion": "2026.10.30.2",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "4b5df2bd0e5679ce5576f6bcfa5fa99b0b4cd586c371766de6aab2f9ea193068",
+        "datasetHash": "81b59dc7dc2eed8b7a3d82470753a594c6f4f8b4a5e5438024c497a77fb4267e",
         "formulaVersion": "1.0.1",
         "F": 0.5,
         "Fp": 0.5,
@@ -91,15 +100,16 @@
       },
       "summary": "模型换算 · 未独立验证（绝对标定未闭合） · Xu 原子率支持",
       "sourceStatusText": "支持原文已核；原采用值历史生成记录待补",
-      "sourceDetail": "Xu 与 Offer 原文已定位；Xu 支持当前矩阵元的大小，不补写原采用值 internal-t3-20260908 的历史来源。",
+      "sourceDetail": "Xu 与 Offer 原文已定位；Xu 支持当前矩阵元的大小，不补写原采用值 internal-t3-20260908 的历史来源。 Pizzocaro 2017 的操作点见 arXiv:1609.01610v2，PDF 第 4 页 §II.E，DOI 10.1088/1681-7575/aa4e62。",
       "formulaDetail": "当前 F=F′=1/2 约定：π 分量 |d|=dF/√6；σ 分量 |d|=dF/√3。这是公式与通道核查，不等于实验验证。",
-      "comparisonDetail": "固定文献输入下的条件比较；1070 mW 为阶段可用功率，338 mW 为拟合有效功率。两者均未确认为各相互作用处的实测功率。",
-      "experimentDetail": "Offer 的 22 kHz 来自对比度模型拟合，缺少闭合的功率、束腰、偏振及作者数值归一化，不能判定独立实验验证通过。",
+      "comparisonDetail": "固定文献输入下的条件比较；1070 mW 为阶段可用功率，338 mW 为拟合有效功率。两者均未确认为各相互作用处的实测功率。 Pizzocaro 2017 报告入射功率 70 nW、1/e² 强度半径 200 µm 和平行于偏置磁场的线偏振。若 70 nW 等于原子处的 π 分量功率，采用当前矩阵元的束心 Ω/2π 为 13.91 Hz。原文名义 π 脉冲 60 ms 经 1/(2tπ) 换算对应 8.33 Hz。两数的差异缺少同点完整误差预算。",
+      "experimentDetail": "Offer 的 22 kHz 来自对比度模型拟合，缺少闭合的功率、束腰、偏振及作者数值归一化，不能判定独立实验验证通过。 Pizzocaro 2017 同一操作点的绝对光束标定和直接时域 Rabi 拟合仍待补齐，差异成因尚未确定。",
       "sourceIds": [
         "xu-2014-prl",
         "offer-2026-main",
         "offer-2026-sm-v2",
-        "strathearn-2023-model"
+        "strathearn-2023-model",
+        "pizzocaro-2017-metrologia"
       ],
       "atomicSupport": {
         "title": "Xu 2014 · 独立原子率支持",
@@ -139,7 +149,11 @@
         "1 mm 光束直径的明确强度定义与相互作用处束腰",
         "量子化轴、偏振分量与 mF 通道权重",
         "作者使用的数值饱和强度、精确衰减率与模型归一化",
-        "独立 Rabi 频率测量及完整功率、束腰、拟合不确定度"
+        "独立 Rabi 频率测量及完整功率、束腰、拟合不确定度",
+        "Pizzocaro 同一操作点的原子处绝对 π 分量功率、光路传输、偏振纯度、量子化轴与模式重叠及其不确定度",
+        "Pizzocaro 同一操作点的原子处 1/e² 强度束腰、束心与原子云对准及其不确定度",
+        "Pizzocaro 同一操作点的激发态人口随脉冲时间的原始曲线、独立 Ω/2π 拟合、失谐及联合误差预算",
+        "Pizzocaro 同一操作点的轴向与径向运动分布、探针与晶格的残余夹角、返回光模式与相位及激光噪声谱"
       ]
     },
     {
@@ -148,7 +162,7 @@
       "reviewVersion": "2026.11.02.1",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "4b5df2bd0e5679ce5576f6bcfa5fa99b0b4cd586c371766de6aab2f9ea193068",
+        "datasetHash": "81b59dc7dc2eed8b7a3d82470753a594c6f4f8b4a5e5438024c497a77fb4267e",
         "formulaVersion": "1.0.1",
         "F": 0.5,
         "Fp": 1.5,
@@ -215,7 +229,7 @@
       "reviewVersion": "2026.11.02.1",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "4b5df2bd0e5679ce5576f6bcfa5fa99b0b4cd586c371766de6aab2f9ea193068",
+        "datasetHash": "81b59dc7dc2eed8b7a3d82470753a594c6f4f8b4a5e5438024c497a77fb4267e",
         "formulaVersion": "1.0.1",
         "F": 0.5,
         "Fp": 1.5,
@@ -290,7 +304,7 @@
       "reviewVersion": "2026.11.02.1",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "4b5df2bd0e5679ce5576f6bcfa5fa99b0b4cd586c371766de6aab2f9ea193068",
+        "datasetHash": "81b59dc7dc2eed8b7a3d82470753a594c6f4f8b4a5e5438024c497a77fb4267e",
         "formulaVersion": "1.0.1",
         "F": 0.5,
         "Fp": 1.5,
@@ -373,7 +387,7 @@
       "reviewVersion": "2026.11.02.1",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "4b5df2bd0e5679ce5576f6bcfa5fa99b0b4cd586c371766de6aab2f9ea193068",
+        "datasetHash": "81b59dc7dc2eed8b7a3d82470753a594c6f4f8b4a5e5438024c497a77fb4267e",
         "formulaVersion": "1.0.1",
         "F": 0.5,
         "Fp": 1.5,
@@ -448,7 +462,7 @@
       "reviewVersion": "2026.11.02.1",
       "reviewedAt": "2026-10-30",
       "appliesTo": {
-        "datasetHash": "4b5df2bd0e5679ce5576f6bcfa5fa99b0b4cd586c371766de6aab2f9ea193068",
+        "datasetHash": "81b59dc7dc2eed8b7a3d82470753a594c6f4f8b4a5e5438024c497a77fb4267e",
         "formulaVersion": "1.0.1",
         "F": 2.5,
         "Fp": 1.5,

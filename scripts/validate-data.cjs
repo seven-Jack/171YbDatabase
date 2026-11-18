@@ -52,13 +52,17 @@ function validateRydbergSeries(series) {
   }
   const keys = new Set(Array.from({length: 72}, (_, i) => [`${i + 29}:0.5`, `${i + 29}:1.5`]).flat());
   const sourceIds = new Set();
+  const nuByBranch = new Map([[0.5, new Set()], [1.5, new Set()]]);
   for (const row of series.states) {
-    if (!keys.delete(`${row.n}:${row.Fp}`) || !Number.isFinite(row.nu) || row.nu <= 0 ||
+    if (!Number.isInteger(row.n) || !nuByBranch.has(row.Fp) || !keys.delete(`${row.n}:${row.Fp}`) || !Number.isFinite(row.nu) || row.nu <= 0 ||
         !Number.isFinite(row.dipole_ea0) || !row.sourceStateId || sourceIds.has(row.sourceStateId) ||
         !row.identityReview || !row.numericalReview || !row.originalSelection) {
       fail(location, `invalid or duplicate state ${row.n}S F′=${row.Fp}`);
     }
     sourceIds.add(row.sourceStateId);
+    const branchNu = nuByBranch.get(row.Fp);
+    if (branchNu.has(row.nu)) fail(location, 'duplicate ν ' + row.nu + ' in F′=' + row.Fp);
+    branchNu.add(row.nu);
     for (const [field, value] of Object.entries(deriveSpectrum(row.nu, series.spectroscopy))) {
       if (!Number.isFinite(value) || value <= 0 || row[field] !== value) fail(location, `invalid ${field} for ${row.sourceStateId}`);
     }

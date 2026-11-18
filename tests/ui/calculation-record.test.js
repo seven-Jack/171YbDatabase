@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {CORE_TRANSITIONS,getDipoleQuantity,getQuantity,getTransitionRecord,getLevelRecord,DATASET_VERSION,DATASET_MANIFEST} from '../../src/data/catalog.js';
+import {CORE_TRANSITIONS,RYDBERG_SERIES_TRANSITIONS,getDipoleQuantity,getQuantity,getTransitionRecord,getLevelRecord,DATASET_VERSION,DATASET_MANIFEST} from '../../src/data/catalog.js';
 import {EVIDENCE_VERSION,getEvidenceRecord} from '../../src/data/evidence.js';
 import {FORMULA_VERSION} from '../../src/physics/constants.js';
 import {computeCGChannels,computeDEff,channelKey} from '../../src/physics/angular.js';
@@ -13,11 +13,11 @@ import {resultCSVRow} from '../../src/ui/result-export.js';
 const versions = {softwareVersion:'0.3.3',appCommit:'33270877d433c83cb2c07243f1e741dd98d52cdb',worktreeDirty:false,datasetVersion:DATASET_VERSION,datasetHash:DATASET_MANIFEST.contentHash,formulaVersion:FORMULA_VERSION};
 const close = (a,b) => assert.ok(Math.abs(a-b) <= 1e-11 * Math.max(1e-30,Math.abs(a),Math.abs(b)),`${a} != ${b}`);
 function stateFor(id='T2',patch={}) {
-  const transition=CORE_TRANSITIONS.find(row=>row.id===id);
+  const transition=[...CORE_TRANSITIONS,...RYDBERG_SERIES_TRANSITIONS].find(row=>row.id===id);
   const canonical=getTransitionRecord(id),review=getEvidenceRecord(id)?.appliesTo;
   const q=review?.channels?.[0]?.q ?? 0;
-  const state={transition,J_lower:getLevelRecord(canonical.lowerLevelId).attributes.J,J_upper:getLevelRecord(canonical.upperLevelId).attributes.J,
-    dReduced:getQuantity(id,'d_num').value ?? 0,F_lower:review?.F ?? .5,F_upper:review?.Fp ?? (id==='T4'?1.5:.5),
+  const state={transition,J_lower:getLevelRecord(canonical.lowerLevelId).attributes.J,J_upper:transition.upperJ??getLevelRecord(canonical.upperLevelId).attributes.J,
+    dReduced:getQuantity(id,'d_num').value ?? 0,F_lower:review?.F ?? .5,F_upper:transition.Fp??review?.Fp ?? (id==='T4'?1.5:.5),
     pol:({[-1]:'sigmam',0:'pi',1:'sigmap'})[q],diagF_lower:'all',diagF_upper:'all',selectedChannel:null,
     P_mW:1,w_um:500,solveFor:'rabi',powerUnit:'mW',rabiUnit:'MHz',inputStatus:'valid',...patch};
   state.dEff=computeDEff(state).dEff;
@@ -50,8 +50,11 @@ test('record envelopes preserve configuration v2 and resolve the actual automati
 test('standalone records identify both states, angular momenta and wavelength provenance without promoting R2 estimates',()=>{
   for(const id of ['T2','T3','R2']){
     const state=stateFor(id),record=buildCalculationRecord(state,versions),wavelength=getQuantity(id,'wavelength_vac_nm');
-    assert.deepEqual(record.transition,{id,lower:state.transition.lower,upper:state.transition.upper,J_lower:state.J_lower,J_upper:state.J_upper,multipole:state.transition.multipole,
-      wavelength:{value:wavelength.value,unit:wavelength.unit,sourceId:wavelength.sourceId,sourceLocator:wavelength.sourceLocator ?? null,evidenceKind:wavelength.evidenceKind,uncertainty:wavelength.uncertainty ?? null}});
+    const {wavelength:wave,...transition}=record.transition;
+    assert.deepEqual(transition,{id,lower:state.transition.lower,upper:state.transition.upper,J_lower:state.J_lower,J_upper:state.J_upper,multipole:state.transition.multipole});
+    for(const key of ['value','unit','sourceId','sourceLocator','evidenceKind','uncertainty','convention','uncertaintyNote','reviewStatus','conditions']){
+      assert.deepEqual(wave[key],wavelength[key]??null,key);
+    }
     const markdown=serializeCalculationRecord(record,'markdown');
     assert.ok(markdown.includes(state.transition.lower));assert.ok(markdown.includes(state.transition.upper));
     assert.ok(markdown.includes(`${wavelength.value} ${wavelength.unit}`));
@@ -61,6 +64,38 @@ test('standalone records identify both states, angular momenta and wavelength pr
   }
   const malformed=buildCalculationRecord(stateFor(),versions);malformed.transition=null;
   assert.throws(()=>parseCalculationRecordOrConfig(malformed,versions),ConfigurationError);
+});
+
+test('T2 and T7 research records distinguish centroid, optional zero-field offset and printed wavelength conflict',()=>{
+  for(const [Fp,value] of [[.5,-3957.85],[1.5,1978.925]]){
+    const record=buildCalculationRecord(stateFor('T2',{F_upper:Fp}),versions);
+    const wavelength=record.transition.wavelength, csv=resultCSVRow(record);
+    assert.equal(wavelength.reference,'hyperfine-centroid');
+    assert.equal(wavelength.value,555.80068663);
+    assert.equal(wavelength.zeroFieldOffset.value,value);
+    assert.equal(wavelength.zeroFieldOffset.Fp,Fp);
+    assert.equal(csv.zero_field_offset_from_centroid_MHz,value);
+    assert.match(csv.zero_field_offset_source_locator,/Table5/i);
+    const markdown=serializeCalculationRecord(record,'markdown');
+    assert.match(markdown,/真空重心波长.*555\.80068663 nm/);
+    assert.ok(markdown.includes(`零场频移（相对重心） | ${value<0?'−':'+'}${Math.abs(value)} MHz`));
+    const old=structuredClone(record);
+    old.transition.wavelength=Object.fromEntries(['value','unit','sourceId','sourceLocator','evidenceKind','uncertainty'].map(key=>[key,wavelength[key]]));
+    assert.equal(parseCalculationRecordOrConfig(old,versions).result.fR,record.configuration.result.frequency_Hz);
+  }
+  const record=buildCalculationRecord(reviewedState('T7'),versions), wave=record.transition.wavelength;
+  const csv=resultCSVRow(record);
+  assert.equal(wave.reference,'hyperfine-centroid');
+  assert.equal(wave.reviewStatus,'conflict-unresolved');
+  assert.equal(wave.evidenceKind,'derived');
+  assert.equal(wave.value,770.16026840069);
+  assert.match(wave.sourceConflict,/770\.160284/);
+  assert.equal(wave.zeroFieldOffset,null);
+  assert.equal(csv.wavelength_source_conflict,wave.sourceConflict);
+  assert.equal(csv.wavelength_uncertainty_nm,wave.uncertainty);
+  assert.equal(csv.wavelength_uncertainty_note,wave.uncertaintyNote);
+  assert.equal(csv.zero_field_offset_from_centroid_MHz,null);
+  assert.match(serializeCalculationRecord(record,'markdown'),/原表波长冲突.*770\.160284/);
 });
 
 test('all three solve directions retain upstream total power/diameter definitions and canonical SI work point',()=>{
@@ -143,6 +178,44 @@ test('R2 records and exports each signed dipole with its branch and unknown unce
     assert.match(markdown,/未知／未建立（null，不是零）/);
     assert.match(markdown,/完整 Rabi 不确定度/);
   }
+});
+
+test('series exports preserve both branch identities, zero fields and relative dipole sign',()=>{
+  for(const [id,nu,Fp,branch,dipole] of [
+    ['NS-65-F12',60.1761270465,.5,/混合态/,0.002165172596919359],
+    ['NS-65-F32',60.561073029,1.5,/单通道/,-0.003490253670468963],
+  ]){
+    const record=buildCalculationRecord(stateFor(id),versions);
+    const json=JSON.parse(serializeCalculationRecord(record)),csv=resultCSVRow(record);
+    const conditions=json.primaryQuantity.conditions;
+    assert.equal(conditions.n,65);
+    assert.equal(conditions.nu,nu);
+    assert.equal(conditions.Fp,Fp);
+    assert.equal(conditions.B_T,0);
+    assert.equal(conditions.E_V_m,0);
+    assert.match(conditions.branch,branch);
+    assert.equal(json.primaryQuantity.value,dipole);
+    assert.equal(json.transition.wavelength.reference,'model-branch');
+    assert.equal(csv.rydberg_n,65);
+    assert.equal(csv.rydberg_nu_effective,nu);
+    assert.equal(csv.rydberg_nu_reference,'ionic F_c=1');
+    assert.equal(csv.F_prime,Fp);
+    assert.equal(csv.rydberg_B_T,0);
+    assert.equal(csv.rydberg_E_V_m,0);
+    assert.match(csv.rydberg_branch,branch);
+    assert.equal(csv.reduced_dipole_ea0,dipole);
+    assert.equal(csv.dipole_convention,'F-reduced');
+    const markdown=serializeCalculationRecord(record,'markdown');
+    for(const marker of ['主量子数标签 n | 65',`实际有效主量子数 ν | ${nu}`,`末态 F′ | ${2*Fp}/2`,
+      '磁场 B | 0 T','静电场 E | 0 V/m',String.raw`带符号 D\_F | ${dipole} ea₀`]) assert.ok(markdown.includes(marker),marker);
+    assert.match(markdown,branch);
+  }
+  const old=buildCalculationRecord(stateFor('R2'),versions), row=resultCSVRow(old);
+  assert.equal(row.wavelength_reference,'historical-estimate');
+  assert.equal(row.wavelength_source_id,'legacy-scaling');
+  assert.equal(row.wavelength_vac_nm,301.87);
+  assert.equal(row.rydberg_n,null);
+  assert.equal(row.rydberg_nu_effective,null);
 });
 
 test('invalid/incomplete/unsupported inputs do not export a stale result; zero power remains a valid finite-frequency record',()=>{

@@ -4,6 +4,7 @@ import {formatLifetime} from './format.js';
 import {R2_PROVENANCE,R2_EVIDENCE_EXTENSION} from './r2-provenance.js';
 import {buildEvidenceView} from './evidence-model.js';
 import {renderEvidencePanelHTML} from './evidence-panel.js';
+import {formatZeroFieldOffset,getTransitionWavelength,wavelengthLabel} from './transition-wavelength.js';
 
 const EVIDENCE_LABELS = Object.freeze({
   'literature-reported':'文献记录','internal-calibration':'内部校准','internal-calculation':'本工作计算',
@@ -78,12 +79,16 @@ export function createFieldView(transitionId,field) {
   else if (branch) valueText=`${signedScientific(quantity.value)} ea₀`;
   else if (field==='d_J_from_F32') valueText=`${String(quantity.value).replace('-', '−')} ea₀`;
   else valueText=`${presentNumber(quantity.value)} ${quantity.unit==='e*a0'?'ea₀':quantity.unit==='dimensionless'?'':quantity.unit==='s^-1'?'s⁻¹':quantity.unit==='cm^-1'?'cm⁻¹':quantity.unit}`.trim();
+  const wavelength=field==='wavelength_vac_nm'?getTransitionWavelength(transitionId):null;
+  const label=branch?`D_F（${branch}）`:wavelength?wavelengthLabel(wavelength):FIELD_LABELS[field]||field;
   return {
-    key:field,label:branch?`D_F（${branch}）`:FIELD_LABELS[field] || field,valueText,branch,sourceId:quantity.sourceId,
+    key:field,label,valueText,branch,sourceId:quantity.sourceId,
     savedValue:quantity.value===null?'缺失':`${quantity.value} ${quantity.unit}`,
     kind,review:reviewLabel(quantity.reviewStatus,quantity.evidenceKind==='internal-calculation'||source?.identityStatus==='internal-not-literature'),
     convention:quantity.convention?conventionLabel(quantity.convention):null,
     uncertainty:quantity.uncertainty===null?'总不确定度未建立':`${quantity.uncertainty} ${quantity.unit}`,
+    uncertaintyNote:wavelength?.uncertaintyNote ?? null,
+    sourceConflict:wavelength?.sourceConflict ?? null,
     conditions:quantity.conditions===null?'原记录未提供完整条件':Object.entries(quantity.conditions).map(([key,value])=>`${key}=${value===null?'未提供':typeof value==='object'?JSON.stringify(value):value}`).join('；'),
     lifetimeBasis:quantity.convention==='inverse-of-statistically-averaged-total-decay-rate; not-F-resolved'?'统计平均总衰减率的倒数，不是每个 F 分量的寿命，也不是寿命的平均。':sourceEvidence?'上态总辐射寿命的文献汇编 / 理论采用值；F、温度及黑体条件须按该字段记录使用，不能替代陷阱人口寿命。':'温度与包含的辐射 / 黑体 / 其他损失过程未完整建立；不能直接作为实验有效寿命。',
     locator:quantity.sourceLocator?.replace('(original page label; not rechecked)','（沿用旧页面标注，尚未重核原文）') || '原文页 / 表 / 式：待核查',
@@ -147,6 +152,8 @@ export function renderFieldSourceHTML(field) {
       <dt>原文定位</dt><dd>${escapeHTML(field.locator)}</dd>
       <dt>条件</dt><dd>${escapeHTML(field.conditions)}</dd>
       <dt>不确定度</dt><dd>${escapeHTML(field.uncertainty)}</dd>
+      ${field.uncertaintyNote?`<dt>不确定度口径</dt><dd>${escapeHTML(field.uncertaintyNote)}</dd>`:''}
+      ${field.sourceConflict?`<dt>原表波长冲突</dt><dd>${escapeHTML(field.sourceConflict)}</dd>`:''}
       ${field.key==='lifetime_ns'?`<dt>寿命口径</dt><dd>${escapeHTML(field.lifetimeBasis)}</dd>`:''}
       <dt>保存数值</dt><dd>${escapeHTML(field.savedValue)}</dd>
       ${field.modelId?`<dt>模型</dt><dd>${escapeHTML(field.modelId)}</dd>`:''}
@@ -261,8 +268,16 @@ export function initSourcePanel(calculator,decoratedCoreTransitions=[]) {
     else {
       const transition=decoratedCoreTransitions.find(row=>row.id===view.transition.id)||view.transition;
       context.dataset.status=view.status;
-      const wavelength=transition.n === undefined ? transition.wavelength_vac_nm : transition.wavelength_vac_nm.toFixed(5);
-      context.innerHTML=`<strong>${escapeHTML(transition.id)} · ${escapeHTML(transition.lower)} → ${escapeHTML(transition.upper)}</strong><span>${escapeHTML(wavelength)} nm</span><span>${escapeHTML(view.channel)}</span><span>${escapeHTML(view.convention)} · d_eff=${escapeHTML(view.dEff)}</span><span class="context-status">${escapeHTML(view.statusText)}</span>`;
+      const wavelength=getTransitionWavelength(transition.id,{F:state.F_lower,Fp:state.F_upper});
+      const value=Number.isFinite(wavelength.value)
+        ? `${transition.n===undefined?wavelength.value:wavelength.value.toFixed(5)} nm`
+        : '未记录';
+      const offset=formatZeroFieldOffset(wavelength.zeroFieldOffset);
+      const waveText=[wavelengthLabel(wavelength),value,wavelength.sourceConflict?'频率推导，原表有冲突':''].filter(Boolean).join(' · ');
+      context.innerHTML=`<strong>${escapeHTML(transition.id)} · ${escapeHTML(transition.lower)} → ${escapeHTML(transition.upper)}</strong>
+        <span data-wavelength-reference="${escapeHTML(wavelength.reference)}">${escapeHTML(waveText)}</span>
+        ${offset?`<span data-zero-field-offset>零场频移（相对重心） ${escapeHTML(offset)}</span>`:''}
+        <span>${escapeHTML(view.channel)}</span><span>${escapeHTML(view.convention)} · d_eff=${escapeHTML(view.dEff)}</span><span class="context-status">${escapeHTML(view.statusText)}</span>`;
     }
     if (lastTransitionId!==view.transition?.id) {
       renderRydbergNote(view.transition);

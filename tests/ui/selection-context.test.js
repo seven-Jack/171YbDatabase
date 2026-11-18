@@ -52,9 +52,22 @@ test('manual selection retains exact initial and final state and field-specific 
   assert.equal(model.tooltip.rows.find(row=>row.label==='初态').value,'¹S₀ · F=1/2, mF=+1/2');
   assert.equal(model.tooltip.rows.find(row=>row.label==='末态').value,'³P₁ · F′=3/2, mF′=+3/2');
   const record=getTransitionRecord('T2');
-  assert.deepEqual(model.tooltip.rows.find(row=>row.label==='波长').sourceIds,[record.quantities.wavelength_vac_nm.sourceId]);
+  assert.deepEqual(model.tooltip.rows.find(row=>row.label==='真空重心波长').sourceIds,[record.quantities.wavelength_vac_nm.sourceId]);
   assert.deepEqual(model.tooltip.rows.find(row=>row.label==='|d_eff|').sourceIds,[record.quantities.d_num.sourceId]);
   assert.equal(JSON.stringify(state),before,'context construction must not mutate calculator state');
+});
+
+test('T2 exposes a selected zero-field offset while T7 retains its centroid conflict without a branch value',()=>{
+  const expected=[[.5,'−3957.85 MHz'],[1.5,'+1978.925 MHz']];
+  for(const [Fp,shift] of expected){
+    const model=buildSelectionContext(stateFor('T2',{F_upper:Fp}));
+    assert.equal(model.wavelength,'555.80068663 nm');
+    assert.equal(model.tooltip.rows.find(row=>row.label==='零场频移（相对重心）').value,shift);
+  }
+  const model=buildSelectionContext(stateFor('T7',{F_lower:2.5,F_upper:1.5}));
+  assert.equal(model.wavelength,'770.16026840069 nm');
+  assert.equal(model.tooltip.rows.find(row=>row.label==='原表波长冲突').value,'采用频率推导值');
+  assert.equal(model.tooltip.rows.some(row=>row.label==='零场频移（相对重心）'),false);
 });
 
 test('stale channel from a different polarization falls back to the actual current-polarization channel',()=>{

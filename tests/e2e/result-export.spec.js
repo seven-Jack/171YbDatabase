@@ -37,6 +37,52 @@ test('current-point CSV preserves the actual canonical channel and leaves M5 con
   expect(saved.bytes.toString('utf8')).not.toMatch(/\/Users\/|file:\/\/|references\/papers\//);
 });
 
+test('selected 556 nm channels retain the vacuum centroid and 770 nm carries the original conflict through export',async({page})=>{
+  const context=page.getByTestId('current-context');
+  for(const [key,value,text] of [['0.5|-0.5|0.5|-0.5|0',-3957.85,'−3957.85 MHz'],['0.5|-0.5|1.5|-0.5|0',1978.925,'+1978.925 MHz']]){
+    await choose(page,'T2',key);
+    await expect(context.locator('[data-wavelength-reference]')).toContainText('真空重心波长 · 555.80068663 nm');
+    await expect(context.locator('[data-zero-field-offset]')).toContainText(text);
+    const saved=await record(page);
+    expect(saved.transition.wavelength.zeroFieldOffset.value).toBe(value);
+    await menu(page,'calculationRecordExport');
+    const csv=parseCSV((await download(page,'recordExportCSV')).bytes.toString('utf8'))[0];
+    expect(csv.wavelength_reference).toBe('hyperfine-centroid');
+    expect(Number(csv.wavelength_vac_nm)).toBe(555.80068663);
+    expect(Number(csv.zero_field_offset_from_centroid_MHz)).toBe(value);
+  }
+  await choose(page,'T7','2.5|2.5|1.5|1.5|-1');
+  await expect(context.locator('[data-wavelength-reference]')).toContainText('频率推导，原表有冲突');
+  await expect(context.locator('[data-zero-field-offset]')).toHaveCount(0);
+  const saved=await record(page),wave=saved.transition.wavelength;
+  expect(wave.value).toBe(770.16026840069);
+  expect(wave.uncertaintyNote).toContain('reported ordinary-frequency uncertainty');
+  expect(wave.sourceConflict).toContain('770.160284');
+  await menu(page,'calculationRecordExport');
+  const csv=parseCSV((await download(page,'recordExportCSV')).bytes.toString('utf8'))[0];
+  expect(csv.wavelength_source_conflict).toBe(wave.sourceConflict);
+  expect(csv.wavelength_uncertainty_note).toBe(wave.uncertaintyNote);
+  expect(csv.zero_field_offset_from_centroid_MHz).toBe('unknown');
+  await page.locator('#sectionNav a[href="#secData"]').click();
+  const row=page.locator('#core-data-table [data-row-id="T7"] [data-column="wavelength_vac_nm"]');
+  await expect(row).toContainText('770.16026840');
+  await expect(row).toContainText('真空重心波长 · 频率推导，原表有冲突');
+});
+
+test('the selected formal R017 branch retains zero-field identity and signed D_F in point CSV',async({page})=>{
+  await choose(page,'NS-65-F32');
+  const saved=await record(page);
+  const conditions=saved.primaryQuantity.conditions;
+  expect(conditions).toMatchObject({n:65,nu:60.561073029,Fp:1.5,B_T:0,E_V_m:0,nuReference:'ionic F_c=1'});
+  expect(conditions.branch).toContain('单通道');
+  await menu(page,'calculationRecordExport');
+  const csv=parseCSV((await download(page,'recordExportCSV')).bytes.toString('utf8'))[0];
+  expect(csv).toMatchObject({rydberg_n:'65',rydberg_nu_effective:'60.561073029',F_prime:'1.5',
+    rydberg_B_T:'0',rydberg_E_V_m:'0',rydberg_branch:conditions.branch,dipole_convention:'F-reduced',
+    wavelength_reference:'model-branch'});
+  expect(Number(csv.reduced_dipole_ea0)).toBe(-0.003490253670468963);
+});
+
 test('all solve directions export M1 upstream total power and diameter as separate raw and normalized values',async({page})=>{
   await choose(page,'T3','0.5|-0.5|0.5|0.5|1');
   await menu(page,'beamDefinitionSettings');

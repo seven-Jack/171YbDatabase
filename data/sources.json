@@ -967,8 +967,8 @@
       "title": "R017 · ¹⁷¹Yb 65S Rydcalc 零场计算",
       "detail": "原始保存值为 ³P₀ F=1/2、mF=+1/2 出发的 E1 磁子态矩阵元。各末态 F 的带符号约化量由相应 M_fi 和 Condon–Shortley CG 因子换算。",
       "publication": "Calculation R017 · local_20261110T025200Z",
-      "artifactLocator": "Calculation/runs/R017/results/local_20261110T025200Z/yb_matrix_elements.csv",
-      "artifactSha256": "7cb1c7c40fbe231ad331c59618a33b4410443c1cbaf6262019d4febee8c5db14",
+      "artifactLocator": "Calculation/runs/R017_yb171_3p0_rydberg_transition_matrix_elements/results/local_20261110T025200Z/yb_matrix_elements.csv",
+      "artifactSha256": "8ccc808d924fa1a71196c380650ebaf2171a4cef21c3e715bf5b9bf77e361d8b",
       "codeRevision": "Rydcalc d17b981af24b0ef7132819d53504bc84c42f95b2",
       "reviewStatus": "original-source-located",
       "reviewedAt": "2026-11-10",
@@ -977,16 +977,22 @@
       "numericalValidation": "not-established",
       "evidenceNotes": [
         "B=0, E=0, z quantization axis; source lines 158 (F=1/2) and 33 (F=3/2).",
-        "The saved F=1/2 sequence label matches the triplet-connected nu in the saved 65S hyperfine table. The tutorial replay did not independently validate branch identity, convergence, or experimental accuracy."
+        "The saved F=1/2 sequence label matches the triplet-connected nu in the saved 65S hyperfine table. The tutorial replay did not independently validate branch identity, convergence, or experimental accuracy.",
+        "The tracked CSV uses LF. The original transfer manifest identifies the same numeric rows serialized with CRLF."
       ],
-      "year": 2026
+      "year": 2026,
+      "rawArtifactSha256": "7cb1c7c40fbe231ad331c59618a33b4410443c1cbaf6262019d4febee8c5db14",
+      "rawManifestLocator": "Calculation/runs/R017_yb171_3p0_rydberg_transition_matrix_elements/results/local_20261110T025200Z/raw_manifest.json",
+      "runId": "R017",
+      "batchId": "local_20261110T025200Z",
+      "artifactCheckedOn": "2026-11-18"
     },
     {
       "id": "internal-r017-ns-20261111",
       "title": "R017 · ¹⁷¹Yb n=29–100 零场 S 系列",
       "detail": "D_F 与实际 ν 来自 R017 正式交付。光谱采用固定 RydCalc 的 F_c=1 阈值、质量修正里德堡常数和 ³P₀ 频率，按同一末态根换算。",
       "publication": "Calculation R017 · delivery_20261111T085031Z",
-      "artifactLocator": "Calculation/runs/R017/results/delivery_20261111T085031Z/data/dataset.json",
+      "artifactLocator": "Calculation/runs/R017_yb171_3p0_rydberg_transition_matrix_elements/results/delivery_20261111T085031Z/data/dataset.json",
       "artifactSha256": "34268f13494583fd05ab3278568e87cc2716ba2b6f1815844c6b0dc371f25607",
       "codeRevision": "Rydcalc d17b981af24b0ef7132819d53504bc84c42f95b2",
       "reviewStatus": "original-source-located",
@@ -994,7 +1000,10 @@
       "rightsStatus": "internal research record",
       "identityStatus": "internal-not-literature",
       "numericalValidation": "R017 89c4 declared nonshortened grid; physical uncertainty unknown",
-      "year": 2026
+      "year": 2026,
+      "runId": "R017",
+      "batchId": "delivery_20261111T085031Z",
+      "artifactCheckedOn": "2026-11-18"
     }
   ]
 }

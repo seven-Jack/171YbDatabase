@@ -15,18 +15,21 @@ function readVersion(root) {
     sourceTimestamp: gitValue(root, ['show', '-s', '--format=%cI', 'HEAD'], null),
   };
 }
-function writeVersion(root) {
-  const version = readVersion(root);
-  const output = path.join(root, 'src', 'version.js');
-  const source = '// Generated from package.json and local Git metadata; do not edit.\n'
+function versionModuleSource(version) {
+  return '// Generated from package.json and local Git metadata; do not edit.\n'
     + `export const SOFTWARE_VERSION = ${JSON.stringify(version.softwareVersion)};\n`
     + `export const APP_COMMIT = ${JSON.stringify(version.appCommit)};\n`
     + `export const WORKTREE_DIRTY = ${JSON.stringify(version.worktreeDirty)};\n`;
+}
+function writeVersion(root) {
+  const version = readVersion(root);
+  const output = path.join(root, 'src', 'version.js');
+  const source = versionModuleSource(version);
   fs.mkdirSync(path.dirname(output), { recursive: true });
   if (!fs.existsSync(output) || fs.readFileSync(output, 'utf8') !== source) fs.writeFileSync(output, source);
   return version;
 }
-module.exports = { readVersion, writeVersion };
+module.exports = { readVersion, writeVersion, versionModuleSource };
 if (require.main === module) {
   const version = writeVersion(path.resolve(__dirname, '..'));
   console.log(`Generated src/version.js from package ${version.softwareVersion}, ${version.appCommit.slice(0, 8)}${version.worktreeDirty ? ' + local changes' : ''}.`);

@@ -46,8 +46,8 @@
     },
     {
       "path": "scripts/literature-audit.mjs",
-      "bytes": 22030,
-      "sha256": "bce90b95c796c79dc10a18fdb9c34ad2e0a1a113a2cbb89f90121e66203b18ab"
+      "bytes": 22662,
+      "sha256": "8fa54f32d396043512f6d6c39aee8504e0dd1071addff41b43e65ea598cb831e"
     },
     {
       "path": "scripts/local-evidence.mjs",

@@ -1,9 +1,10 @@
-import {getDipoleQuantity, getQuantity, getSourceRecord} from '../data/catalog.js';
+import {getDipoleQuantity, getSourceRecord} from '../data/catalog.js';
 import {EVIDENCE_VERSION} from '../data/evidence.js';
 import {computeCGChannels, computeDEff, channelKey, polarizationQ} from '../physics/angular.js';
 import {exportCalculationConfig, parseCalculationConfig, ConfigurationError} from '../state/config.js';
 import {buildEvidenceView} from './evidence-model.js';
 import {evidenceSourceURL} from './evidence-panel.js';
+import {formatZeroFieldOffset,getTransitionWavelength,wavelengthLabel} from './transition-wavelength.js';
 
 export const RECORD_SCHEMA_VERSION = 1;
 export const RECORD_KIND = '171yb-rabi-record';
@@ -51,14 +52,14 @@ export function buildCalculationRecord(state, versions = {}) {
   if (!actual || !(effective.dEff > 0)) throw new ConfigurationError('selection.channel','没有可记录的实际允许通道。');
   const view = buildEvidenceView(current,{datasetHash:configuration.datasetHash,formulaVersion:configuration.formulaVersion});
   const quantity = getDipoleQuantity(configuration.transitionId,actual.Fp);
-  const wavelength = getQuantity(configuration.transitionId,'wavelength_vac_nm');
+  const wavelength = getTransitionWavelength(configuration.transitionId,actual);
   if (!quantity) throw new ConfigurationError('matrixElement','当前数据缺少矩阵元来源记录。');
   const record = {
     schemaVersion:RECORD_SCHEMA_VERSION,kind:RECORD_KIND,exportedAt:configuration.exportedAt,
     build:{softwareVersion:configuration.softwareVersion,appCommit:configuration.appCommit,worktreeDirty:typeof versions.worktreeDirty === 'boolean' ? versions.worktreeDirty : null},
     configuration,
     transition:{id:restored.transition.id,lower:restored.transition.lower,upper:restored.transition.upper,J_lower:current.J_lower,J_upper:current.J_upper,multipole:restored.transition.multipole,
-      wavelength:{value:wavelength?.value ?? null,unit:wavelength?.unit ?? null,sourceId:wavelength?.sourceId ?? null,sourceLocator:wavelength?.sourceLocator ?? null,evidenceKind:wavelength?.evidenceKind ?? null,uncertainty:wavelength?.uncertainty ?? null}},
+      wavelength},
     resolvedChannel:{...Object.fromEntries(TUPLE.map(key => [key,actual[key]])),selectionOrigin:configuration.selection.channel === null ? 'auto' : 'manual',dEff_ea0:effective.dEff,
       ...(quantity.convention === 'F-reduced' ? {matrixElement_ea0:actual.matEl} : {})},
     primaryQuantity:{quantity:quantity.quantity,value:quantity.value,unit:quantity.unit,convention:quantity.convention,
@@ -119,7 +120,29 @@ function sourceMarkdown(source) {
 export function renderCalculationRecordMarkdown(record) {
   if (record?.kind !== RECORD_KIND || record.schemaVersion !== RECORD_SCHEMA_VERSION) throw new ConfigurationError('record','不是受支持的研究记录');
   const config = record.configuration, transition = record.transition, channel = record.resolvedChannel, primary = record.primaryQuantity, evidence = record.evidence;
-  const definition = config.inputDefinition;
+  const definition = config.inputDefinition, wavelength=transition.wavelength;
+  const conditions=primary.conditions||{};
+  const seriesRows=Number.isFinite(conditions.n)&&conditions.nuReference ? {
+    n:['主量子数标签 n',conditions.n],
+    nu:['实际有效主量子数 ν',conditions.nu],
+    nuReference:['ν 参考',conditions.nuReference],
+    Fp:['末态 F′',fraction(conditions.Fp)],
+    B_T:['磁场 B',`${conditions.B_T} T`],
+    E_V_m:['静电场 E',`${conditions.E_V_m} V/m`],
+    branch:['分支',conditions.branch],
+  } : null;
+  const offset=wavelength.zeroFieldOffset;
+  const wavelengthRows=[
+    [wavelengthLabel(wavelength),wavelength.value === null ? '未记录' : `${wavelength.value} ${wavelength.unit}`],
+    ['波长证据类型',wavelength.evidenceKind],
+    ['波长来源',wavelength.sourceId],
+    ['波长原文定位',wavelength.sourceLocator],
+    ['波长不确定度',wavelength.uncertainty === null ? '未知／未建立（null，不是零）' : `${wavelength.uncertainty} ${wavelength.unit}`],
+    ...(wavelength.convention?[['波长约定',wavelength.convention]]:[]),
+    ...(wavelength.uncertaintyNote?[['波长不确定度口径',wavelength.uncertaintyNote]]:[]),
+    ...(wavelength.sourceConflict?[['原表波长冲突',wavelength.sourceConflict]]:[]),
+    ...(offset?[['零场频移（相对重心）',formatZeroFieldOffset(offset)],['频移公式与来源',`${offset.convention} · ${offset.sourceLocator}`]]:[]),
+  ];
   const solve = {rabi:'功率、尺寸 → Rabi 频率',power:'Rabi 频率、尺寸 → 录入功率',waist:'功率、Rabi 频率 → 录入尺寸'}[config.display.solveFor] || '未记录';
   const dirty = record.build.worktreeDirty === true ? '含未提交改动；此提交仅为代码基线，不能保证精确复现当前运行代码。'
     : record.build.worktreeDirty === false ? '无未提交改动' : '构建工作区状态未知；不能仅凭代码基线保证精确复现。';
@@ -130,7 +153,7 @@ export function renderCalculationRecordMarkdown(record) {
     '## 版本与代码基线',
     table([['记录格式',`${record.kind} / schema ${record.schemaVersion}`],['软件版本',record.build.softwareVersion],['代码基线',record.build.appCommit],['工作区',dirty],['数据版本',config.datasetVersion],['数据 SHA-256',config.datasetHash],['公式版本',config.formulaVersion],['证据版本',evidence.evidenceVersion],['核查版本',evidence.reviewVersion],['核查日期',evidence.reviewedAt]]),
     '## 计算对象与实际通道',
-    table([['跃迁',`${transition.id} · ${transition.lower} → ${transition.upper}`],['电子角动量',`J=${transition.J_lower} → J′=${transition.J_upper}`],['多极性',transition.multipole],['真空波长',transition.wavelength.value === null ? '未记录' : `${transition.wavelength.value} ${transition.wavelength.unit}`],['波长证据类型',transition.wavelength.evidenceKind],['波长来源',transition.wavelength.sourceId],['波长原文定位',transition.wavelength.sourceLocator],['波长不确定度',transition.wavelength.uncertainty === null ? '未知／未建立（null，不是零）' : `${transition.wavelength.uncertainty} ${transition.wavelength.unit}`],['求解方向',solve],['通道选择',channel.selectionOrigin === 'manual' ? '手动选定' : '自动：当前 F 对及偏振内最强允许通道'],['实际通道',tupleText(channel)],['d_eff',`${channel.dEff_ea0} ea₀`],
+    table([['跃迁',`${transition.id} · ${transition.lower} → ${transition.upper}`],['电子角动量',`J=${transition.J_lower} → J′=${transition.J_upper}`],['多极性',transition.multipole],...wavelengthRows,['求解方向',solve],['通道选择',channel.selectionOrigin === 'manual' ? '手动选定' : '自动：当前 F 对及偏振内最强允许通道'],['实际通道',tupleText(channel)],['d_eff',`${channel.dEff_ea0} ea₀`],
       ...(Number.isFinite(channel.matrixElement_ea0) ? [['磁子态矩阵元 M_fi',`${channel.matrixElement_ea0} ea₀`]] : []),
       ['约化矩阵元',`${config.matrixElement.reduced_ea0} ea₀`],['矩阵元约定',config.matrixElement.convention]]),
     '## 输入定义、录入值与规范化参数',
@@ -142,7 +165,9 @@ export function renderCalculationRecordMarkdown(record) {
     table([['来源 ID',primary.sourceId],['原文定位',primary.sourceLocator],['采用值',`${primary.value} ${primary.unit}`],['约定',primary.convention],['证据类型',primary.evidenceKind],['来源核查状态',primary.reviewStatus],['原记录矩阵元不确定度',primary.uncertainty === null ? '未知／未建立（null，不是零）' : `${primary.uncertainty} ${primary.unit}`],['不确定度口径',primary.uncertaintyNote],['完整 Rabi 不确定度','未建立；不把矩阵元误差当成功率、束腰与模型的完整误差']]),
     primary.source ? sourceMarkdown(primary.source) : '来源元数据未记录。',
     '原始条件与适用边界：',
-    lines(Object.entries(primary.conditions || {}).map(([key,value]) => `${key}: ${typeof value === 'object' ? JSON.stringify(value) : value}`)),
+    seriesRows?table([...Object.values(seriesRows),['带符号 D_F',`${primary.value} ea₀`]]):'',
+    lines(Object.entries(conditions).filter(([key])=>!seriesRows||!Object.hasOwn(seriesRows,key))
+      .map(([key,value]) => `${key}: ${typeof value === 'object' ? JSON.stringify(value) : value}`)),
     '## 分层证据状态',
     md(evidence.summary),
     table((evidence.rows || []).map(row => [row.label,`${row.statusText}〔${row.status}〕：${row.detail}`])),

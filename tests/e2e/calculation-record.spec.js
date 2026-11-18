@@ -75,7 +75,7 @@ test('automatic channel is resolved in the research record without changing the 
   expect(record.resolvedChannel.mp).toBe(record.resolvedChannel.m);
   expect(record.resolvedChannel.dEff_ea0).toBeGreaterThan(0);
   expect(record.build).toHaveProperty('worktreeDirty');
-  expect(record.evidence.evidenceVersion).toBe('2026.11.02.1');
+  expect(record.evidence.evidenceVersion).toBe('2026.11.18.1');
   expect(record.configuration.result.frequency_Hz).toBeGreaterThan(0);
   const {exportedAt, ...savedConfig} = record.configuration;
   expect(savedConfig).toEqual(before);

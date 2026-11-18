@@ -107,9 +107,14 @@
     </div>
     <form id="rydbergSelection" class="rydberg-selection" aria-label="里德堡跃迁选择">
       <strong>³P₀ → nS</strong>
-      <label>主量子数 n <input id="rydbergN" type="number" min="29" max="100" step="1" value="65" required></label>
+      <div class="rydberg-quantum-numbers">
+        <label>主量子数 n <input id="rydbergN" type="number" min="29" max="100" step="1" value="65" required></label>
+        <label>有效主量子数 ν <input id="rydbergNu" type="number" inputmode="decimal" step="any" list="rydbergNuChoices" aria-describedby="rydbergInputMessage" required></label>
+        <datalist id="rydbergNuChoices"></datalist>
+      </div>
       <label>末态 F′ <select id="rydbergFp"><option value="0.5">1/2</option><option value="1.5" selected>3/2</option></select></label>
       <span class="rydberg-conditions">¹⁷¹Yb · B = E = 0</span>
+      <span id="rydbergInputMessage" role="status"></span>
     </form>
     <div class="original-diagram-main">
     <div class="original-diagram-wrap" data-diagram-version="published-original">
@@ -126,6 +131,7 @@
           <button class="original-f-btn" data-fstrength="strong">强</button>
           <button class="original-f-btn" data-fstrength="weak">弱</button>
           <button class="original-f-btn" data-fstrength="forbidden">禁戒</button>
+          <button class="original-f-btn" data-fstrength="ungraded">未分级</button>
         </div>
       </div>
       <svg class="original-diagram-svg" id="levelDiagram" viewBox="0 0 1000 760" preserveAspectRatio="xMidYMid meet">
@@ -193,6 +199,7 @@
         <span>R017 模型 · ν 相对 F<sub>c</sub>=1 · 物理不确定度未评估</span>
       </div>
       <p id="rydbergLegacyContext" class="rydberg-conditions" hidden>当前 Rabi 使用旧 R2 参数。选择下方分支可切换到 R017 系列。</p>
+      <p id="rydbergActiveBranch" class="rydberg-conditions"></p>
       <div class="rydberg-table-scroll" role="region" tabindex="0" aria-label="可滚动的当前里德堡分支">
         <table class="rydberg-table" aria-label="当前 n 的两条里德堡分支">
           <thead><tr><th scope="col">末态 F′</th><th scope="col">有效主量子数 ν</th><th scope="col">频率 / THz</th><th scope="col">真空波长 / nm</th><th scope="col">D<sub>F</sub> / ea₀</th></tr></thead>
@@ -212,6 +219,19 @@
       </details>
     </section>
     <section id="currentContext" class="current-context" data-testid="current-context" aria-label="当前计算对象" aria-live="polite"></section>
+    <details id="recordLinks">
+      <summary>分享记录与引用数据</summary>
+      <div class="calculation-toolbar">
+        <button type="button" data-copy-record="selection">复制跃迁链接</button>
+        <button type="button" data-copy-record="workpoint">复制通道与工作点链接</button>
+        <button type="button" data-copy-record="citation">复制数据引用</button>
+      </div>
+      <p>工作点链接包含当前输入。打开后按当前数据和公式重算。</p>
+      <p data-dataset-version></p>
+      <p><a data-dataset-manifest download>数据清单</a> · <a data-dataset-record download>数据原文件</a> <a data-dataset-public hidden target="_blank" rel="noopener noreferrer">永久数据版本</a></p>
+      <p data-record-link-status role="status" style="overflow-wrap:anywhere"></p>
+      <textarea rows="3" cols="32" readonly hidden aria-label="待手动复制的链接或数据引用"></textarea>
+    </details>
     <div class="object-workspace">
       <details id="selectedSource" open><summary>当前跃迁 · 数值与来源</summary><div id="sourcePanel"></div></details>
       <aside id="transitionKnowledge" aria-label="当前跃迁的能级关联与来源索引"></aside>

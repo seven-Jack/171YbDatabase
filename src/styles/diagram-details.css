@@ -132,6 +132,13 @@
 }
 
 .rydberg-selection input { width: 4.5rem; }
+.rydberg-quantum-numbers { display: flex; align-items: end; gap: 0.75rem; max-width: 100%; }
+.rydberg-selection #rydbergNu { width: 19ch; min-width: 0; }
+#rydbergInputMessage:empty { display: none; }
+#rydbergInputMessage:not(:empty) { flex-basis: 100%; color: var(--invalid); }
+@media (max-width: 600px) {
+  .rydberg-quantum-numbers label { flex-direction: column; align-items: start; }
+}
 .rydberg-conditions,
 .rydberg-details-heading span,
 #rydbergSearchCount { color: var(--text-2); font-size: 0.85em; }

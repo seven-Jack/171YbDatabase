@@ -28,25 +28,34 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
 (function() {
   let hfsLeaveTimer = null;
   let hfsPanelHovered = false;
+  let pendingTap = null;
+
+  function movedBeyondTap(touch, start) {
+    return touch.identifier !== start.identifier ||
+      Math.hypot(touch.clientX-start.clientX,touch.clientY-start.clientY) > 8;
+  }
 
   function scheduleClose(isTouch) {
     if (hfsLeaveTimer) clearTimeout(hfsLeaveTimer);
     hfsLeaveTimer = setTimeout(() => {
-      if (!hfsPanelHovered) {
-        const panel = document.getElementById('hfsPanel');
-        if (panel) panel.classList.remove('active');
-        document.querySelectorAll('.core-level-group').forEach(g => g.classList.remove('selected'));
-      }
+      const panel = document.getElementById('hfsPanel');
+      const focused = document.activeElement;
+      // Moving the panel away from the pointer can emit mouseleave after keyboard focus.
+      if (hfsPanelHovered || hfsAnchor?.contains(focused) || panel?.contains(focused)) return;
+      if (panel) closeHyperfinePanel();
     }, isTouch ? 900 : 380);
   }
 
   attachHfsHover = function(el, termGetter) {
     el.addEventListener('mouseenter', (e) => {
+      if (e.sourceCapabilities?.firesTouchEvents) return;
       if (hfsLeaveTimer) clearTimeout(hfsLeaveTimer);
       const term = typeof termGetter === 'function' ? termGetter(el, e) : termGetter;
       if (term) { hfsAnchor = el; hideTooltip(); showHyperfinePanel(term); }
     });
-    el.addEventListener('mouseleave', () => scheduleClose(false));
+    el.addEventListener('mouseleave', e => {
+      if (!e.sourceCapabilities?.firesTouchEvents) scheduleClose(false);
+    });
     el.addEventListener('focus', (e) => {
       if (hfsLeaveTimer) clearTimeout(hfsLeaveTimer);
       const term = typeof termGetter === 'function' ? termGetter(el,e) : termGetter;
@@ -54,11 +63,32 @@ window.addEventListener('scroll',()=>{ closeHyperfinePanel(); hideTooltip(); },{
     });
     el.addEventListener('blur', () => scheduleClose(false));
     el.addEventListener('keydown', e => { if(e.key==='Escape') closeHyperfinePanel(); });
-    el.addEventListener('touchstart', (e) => {
+    el.addEventListener('touchstart', e => {
       e.stopPropagation();
-      const term = typeof termGetter === 'function' ? termGetter(el, e) : termGetter;
-      if (term) { hfsAnchor = el; hideTooltip(); showHyperfinePanel(term); }
+      pendingTap = null;
+      if (e.touches.length !== 1) return;
+      const touch = e.changedTouches[0];
+      // Touch adjustment can choose a nearby level instead of the label under the finger.
+      const exact = document.elementFromPoint(touch.clientX,touch.clientY)?.closest('.core-level-group');
+      const anchor = exact?.ownerSVGElement === el.ownerSVGElement ? exact : el;
+      pendingTap = { touch, anchor };
     }, { passive: true });
+    el.addEventListener('touchmove', e => {
+      if (pendingTap && (e.touches.length !== 1 || movedBeyondTap(e.touches[0],pendingTap.touch))) pendingTap = null;
+    }, { passive: true });
+    el.addEventListener('touchcancel', () => { pendingTap = null; });
+    el.addEventListener('touchend', e => {
+      const tap = pendingTap;
+      pendingTap = null;
+      if (!tap || e.touches.length || movedBeyondTap(e.changedTouches[0],tap.touch) || !e.cancelable) return;
+      // Cancel compatibility mouse events only once a tap is confirmed, keeping scrolling native.
+      e.preventDefault();
+      e.stopPropagation();
+      if (hfsLeaveTimer) clearTimeout(hfsLeaveTimer);
+      hfsAnchor = tap.anchor;
+      hideTooltip();
+      showHyperfinePanel(tap.anchor.dataset.term);
+    }, { passive: false });
     // Touch cards remain until closed or another object is selected.
   };
 
@@ -459,7 +489,8 @@ return (function() {
     const g = document.createElementNS(NS, 'g');
     g.setAttribute('class', 'transition-line');
     g.setAttribute('data-id', t.id);
-    const clsKey = t.classification.startsWith('强') ? 'strong' : t.classification.startsWith('弱') ? 'weak' : 'forbidden';
+    const clsKey = t.n !== undefined ? 'ungraded'
+      : t.classification.startsWith('强') ? 'strong' : t.classification.startsWith('弱') ? 'weak' : 'forbidden';
     g.setAttribute('data-strength', clsKey);
     g.setAttribute('data-category', t.n === undefined ? 'core' : 'rydberg');
     g.style.cursor = 'pointer';
@@ -509,7 +540,7 @@ return (function() {
     if (t.n !== undefined) x1 = colOddR + levelW / 2 - levelW / 5;
 
     // Line stroke by strength classification
-    const strokeW = t.classification.startsWith('强') ? 2.5 : t.classification.startsWith('弱') ? 2 : 1.2;
+    const strokeW = { strong: 2.5, weak: 2, forbidden: 1.2, ungraded: 2 }[clsKey];
     const isDashed = t.classification.startsWith('禁戒') || t.multipole.includes('M2') || t.multipole.includes('双光子');
 
     // Break line at midpoint to make room for wavelength label

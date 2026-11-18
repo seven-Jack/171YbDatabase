@@ -22,6 +22,7 @@ export default defineConfig({
     command: 'node tests/e2e/server.cjs',
     url: 'http://127.0.0.1:4173/171YbDatabase/',
     reuseExistingServer: false,
+    stdout: 'pipe',
     timeout: 15_000,
   },
 });

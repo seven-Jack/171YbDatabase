@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "datasetVersion": "2026.11.11.1",
+  "datasetVersion": "2026.11.18.1",
   "sourceCommit": "2e2e9d5",
-  "sourceDate": "2026-11-10",
+  "sourceDate": "2026-11-18",
   "migrationDate": "2026-10-26",
-  "generatedAt": "2026-11-11T10:01:15.046Z",
-  "contentHash": "4b5df2bd0e5679ce5576f6bcfa5fa99b0b4cd586c371766de6aab2f9ea193068",
+  "generatedAt": "2026-11-18T06:07:27.785Z",
+  "contentHash": "81b59dc7dc2eed8b7a3d82470753a594c6f4f8b4a5e5438024c497a77fb4267e",
   "files": [
     {
       "path": "data/levels.json",
@@ -13,7 +13,7 @@
     },
     {
       "path": "data/transitions.json",
-      "sha256": "32b8c4998b5b5feab5fe378bcd3677d7b220fe658badf5b421009603828c0e70"
+      "sha256": "ce79d976728ace0d196823443d06b594074c5f7d32200bf9525c76ce862faace"
     },
     {
       "path": "data/hyperfine.json",
@@ -21,7 +21,7 @@
     },
     {
       "path": "data/sources.json",
-      "sha256": "79f5e8d3f42d8fb33caf7369839353b45c57447647d9083c8867d7e90a66adfe"
+      "sha256": "e118df71444f11c80838fc4dd8f0021e37fd0fb9e6c02695f7f0a36e3ee00452"
     },
     {
       "path": "data/estimates.json",
@@ -32,7 +32,7 @@
       "sha256": "b4c9c84d724ba8d3a3c419217b6793690c016fd91a54295243e17708c8ac469c"
     }
   ],
-  "reviewStatus": "n=29–100 R017 zero-field S-series model catalogue, with the historical R2 configuration entry retained",
+  "reviewStatus": "R017 zero-field S-series catalog with verified artifact locations; T7 wavelength uncertainty derived from frequency; historical R2 retained",
   "physicalValidation": "not established for all records: compilation, theory, source conflicts, missing originals and internal models are explicitly distinguished",
   "exports": [
     {

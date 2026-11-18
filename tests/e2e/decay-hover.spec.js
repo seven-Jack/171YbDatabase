@@ -8,6 +8,7 @@ async function open(page,term) {
   if (page.viewportSize().width<500) await state(page,term).locator('text').first().tap();
   else await state(page,term).focus();
   await expect(panel(page)).toBeVisible();
+  await expect(state(page,term)).toHaveClass(/\bselected\b/);
 }
 async function close(page) { await panel(page).locator('.hfs-close').click(); await expect(panel(page)).toBeHidden(); }
 test.beforeEach(async({page})=>{await page.goto('./');await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');});
@@ -61,7 +62,7 @@ test('pending 3P2 and 65S do not inherit other-state fractions, and measured par
   await expect(card).toContainText('0.0918 s⁻¹');
   await expect(card).toContainText('ΔF=2');
   await close(page);
-  await open(page,'6s65s ³S₁ · F′=1/2, 3/2');
+  await open(page,'6s65s · F′=1/2, 3/2');
   await expect(panel(page)).toContainText('R017 零场模型');
   await expect(panel(page).locator('[data-mf-f="0.5"] .hfs-mf-state')).toHaveCount(2);
   await expect(panel(page).locator('[data-mf-f="1.5"] .hfs-mf-state')).toHaveCount(4);
@@ -74,6 +75,7 @@ test('ground, clock approximation and measured HFI rate remain different statuse
   await close(page);
   await open(page,'³P₀');
   const card=panel(page).locator('.diagram-decay-detail');
+  await expect(card).toHaveAttribute('data-decay-level','yb171-6s6p-3p0');
   await expect(card.locator('.diagram-decay-kind')).toHaveText('近似');
   await expect(card).toContainText('≈1（低能模型）');
   await card.locator('summary').click();
@@ -102,15 +104,32 @@ test('all state cards keep HFS, complete mF lists and a viewport-bounded layout'
 });
 
 test('expanding evidence, changing levels and collapsing again preserve the card viewport bounds',async({page})=>{
+  const useKeyboard=page.viewportSize().width>=500;
+  if(useKeyboard)await page.clock.install();
   await open(page,'³P₂');
-  await panel(page).locator('.diagram-decay-evidence > summary').click();
+  const popup=panel(page);
+  await popup.locator('.diagram-decay-evidence > summary').click();
   for(const term of ['¹S₀','³S₁','³P₂','³D₁']) {
-    await state(page,term).scrollIntoViewIfNeeded();await settleScroll(page);
-    if(page.viewportSize().width<500)await state(page,term).locator('text').first().tap();
-    else await state(page,term).focus();
-    await expect(panel(page)).toBeVisible();
-    const card=panel(page).locator('.diagram-decay-detail');
+    const anchor=state(page,term);
+    await anchor.scrollIntoViewIfNeeded();await settleScroll(page);
+    if(useKeyboard)await anchor.focus();
+    else await anchor.locator('text').first().tap();
+    const card=popup.locator('.diagram-decay-detail');
     await expect(card).toBeVisible();
+    if(useKeyboard&&term==='¹S₀') {
+      // Repositioning away from the mouse can dispatch a late leave on the old hover target.
+      await expect(anchor).toBeFocused();
+      await expect(card).toHaveAttribute('data-decay-level','yb171-6s2-1s0');
+      await popup.dispatchEvent('mouseleave');
+      await page.clock.fastForward(500);
+      await expect(card).toBeVisible();
+      const outside=page.locator('#levelDiagram');
+      await outside.evaluate(svg=>svg.focus({preventScroll:true}));
+      await expect(outside).toBeFocused();
+      await page.clock.fastForward(500);
+      await expect(popup).toBeHidden();
+      await anchor.focus();
+    }
     for(const expand of [true,false]) {
       await card.locator('summary').click();
       if(expand)await expect(card.locator('details')).toHaveAttribute('open','');
