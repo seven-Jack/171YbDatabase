@@ -35,7 +35,8 @@ export function evidenceSourceURL(source = {}) {
       if (url.protocol !== 'https:' || url.port || url.username || url.password) continue;
       const official = ['doi.org','dx.doi.org','arxiv.org','export.arxiv.org'].includes(url.hostname);
       const localOrDownload = /(?:\/Users\/|\/references\/papers\/|\/data\/literature\/|\.(?:pdf|tex|txt|tar|gz)$)/i.test(decodeURIComponent(url.pathname));
-      const savedArtifact = url.hostname === 'github.com' && !url.search && !url.hash &&
+      const csvLine = url.pathname.endsWith('/channel_matrix_elements.csv') && url.search === '?plain=1' && /^#L[1-9]\d*$/.test(url.hash);
+      const savedArtifact = url.hostname === 'github.com' && ((!url.search && !url.hash) || csvLine) &&
         /^\/seven-Jack\/Calculation\/blob\/[a-f0-9]{40}\/runs\/R017\/results\/[\w/-]+\.(?:csv|json)$/.test(url.pathname);
       if (!localOrDownload && (official || savedArtifact)) return url.href;
     } catch { /* An unusable URL must remain plain text. */ }
@@ -63,6 +64,25 @@ function renderSources(sourceIds, sources) {
 function renderItems(items, className) {
   const values = list(items).filter(value => value !== null && value !== undefined && value !== '');
   return values.length ? `<ul class="${className}">${values.map(item => `<li>${text(item)}</li>`).join('')}</ul>` : '';
+}
+
+function renderCalculationSource(source, transitionId) {
+  function artifact(url, label) {
+    const href = evidenceSourceURL({url});
+    return href ? `<a href="${text(href)}" target="_blank" rel="noopener noreferrer">${text(label)}</a>` : text(label);
+  }
+  return `<details class="evidence-detail" data-evidence-section="r017-${text(transitionId)}" data-testid="evidence-calculation-record">
+    <summary><span>查看计算记录</span></summary><div class="evidence-detail-body">
+    <dl class="evidence-quantities">
+      <div><dt>R017 交付批次</dt><dd>${artifact(source.datasetUrl, source.batchId)}</dd></div>
+      <div><dt>RydCalc 版本</dt><dd><code>${text(source.codeRevision)}</code></dd></div>
+      <div><dt>数据集中的态记录</dt><dd><code>${text(source.stateId)}</code></dd></div>
+      <div><dt>原始通道表</dt><dd>${source.channelLine ? artifact(source.channelUrl, `channel_matrix_elements.csv 第 ${source.channelLine} 行`) : '请选择已匹配的通道'}</dd></div>
+      <div><dt>数据集 SHA-256</dt><dd><code>${text(source.datasetSha256)}</code></dd></div>
+      <div><dt>通道表 SHA-256</dt><dd><code>${text(source.channelTableSha256)}</code></dd></div>
+    </dl>
+    <p><a href="data/rydberg-series.json" target="_blank" rel="noopener noreferrer">本站分支数据（JSON）</a> 公开提供各分支的 ν、D_F 和模型波长。原始交付文件需 Calculation 仓库访问权限。</p>
+    </div></details>`;
 }
 
 function numberText(value, places = 4) {
@@ -138,26 +158,32 @@ function renderComparison(comparison, sources, transitionId) {
 export function renderEvidencePanelHTML(view = {}) {
   const sources = list(view.sources);
   const reviewed = view.hasReview === true;
+  const calculationSource = reviewed && view.calculationSource;
   const statusRows = list(view.rows);
   const calculationStatus = view.calculationStatus || 'unselected';
   const invalidInput = view.applicability?.inputValid === false || INVALID_CALCULATION.has(calculationStatus);
   const metadata = [view.reviewVersion ? `核查版本 ${view.reviewVersion}` : '',view.reviewedAt ? `核查日期 ${view.reviewedAt}` : ''].filter(Boolean);
   const missing = list(view.missing).filter(value => value !== null && value !== undefined && value !== '');
-  const rows = ROWS.map(definition => {
+  const rows = (calculationSource ? statusRows : ROWS).map(definition => {
     const row = statusRows.find(item => item?.key === definition.key) || {};
-    const requestedStatus = STATUS.has(row.status) ? row.status : 'not-reviewed';
+    const internalStatus = calculationSource && ['internal-calculation','model-derived','channel-projection'].includes(row.status);
+    const requestedStatus = internalStatus || STATUS.has(row.status) ? row.status : 'not-reviewed';
     const staleReview = !reviewed && !['not-reviewed','not-applicable'].includes(requestedStatus);
     const status = staleReview ? 'not-reviewed' : requestedStatus;
     const statusText = staleReview ? '尚未核查' : row.statusText || (status === 'not-applicable' ? '不适用' : '尚未核查');
     const detail = staleReview ? '当前跃迁没有可适用的核查记录。' : row.detail;
     return `<div class="evidence-status-row" data-testid="evidence-row-${definition.key}" data-evidence-status="${text(status)}"><dt>${text(row.label || definition.label)}</dt><dd><strong class="evidence-status-badge">${text(statusText)}</strong>${detail ? `<p>${text(detail)}</p>` : ''}</dd></div>`;
   }).join('');
-  return `<div class="evidence-review-header"><div><span class="evidence-eyebrow">EVIDENCE REVIEW</span><h3 id="evidenceReviewTitle">文献核查${view.transitionId ? ` · ${text(view.transitionId)}` : ''}</h3></div>${metadata.length ? `<p class="evidence-review-meta">${metadata.map(text).join(' · ')}</p>` : ''}</div>
-    ${view.summary ? `<p class="evidence-summary">${text(view.summary)}</p>` : ''}
+  const header = calculationSource ? `<h3 id="evidenceReviewTitle">${text(view.summary)}</h3>`
+    : `<div><span class="evidence-eyebrow">EVIDENCE REVIEW</span><h3 id="evidenceReviewTitle">文献核查${view.transitionId ? ` · ${text(view.transitionId)}` : ''}</h3></div>${metadata.length ? `<p class="evidence-review-meta">${metadata.map(text).join(' · ')}</p>` : ''}`;
+  const summary = calculationSource ? calculationSource.conditions : view.summary;
+  return `<div class="evidence-review-header">${header}</div>
+    ${summary ? `<p class="evidence-summary">${text(summary)}</p>` : ''}
     <div class="evidence-context" data-testid="evidence-context" data-context-key="${text(view.contextKey)}" data-calculation-status="${text(calculationStatus)}">${text(view.contextText || '请先选择跃迁与通道。')}</div>
-    ${reviewed && invalidInput ? '<p class="evidence-input-notice" role="note">当前输入未形成有效计算；以下为已保存的核查记录，不代表本次计算通过。</p>' : ''}
+    ${reviewed && invalidInput ? `<p class="evidence-input-notice" role="note">${calculationSource ? '下列原子参数来自 R017 保存记录。请修正当前输入后读取 Rabi 结果。' : '当前输入未形成有效计算；以下为已保存的核查记录，不代表本次计算通过。'}</p>` : ''}
     <dl class="evidence-status-grid">${rows}</dl>
-    ${reviewed && view.primarySourceId ? `<p class="evidence-primary-source" data-testid="evidence-primary-source">原采用数值出处 <code>${text(view.primarySourceId)}</code></p>` : ''}
+    ${calculationSource ? renderCalculationSource(calculationSource, view.transitionId)
+      : reviewed && view.primarySourceId ? `<p class="evidence-primary-source" data-testid="evidence-primary-source">原采用数值出处 <code>${text(view.primarySourceId)}</code></p>` : ''}
     ${reviewed ? renderAtomicSupport(view.atomicSupport,sources,view.transitionId) + list(view.comparisons).map(comparison => renderComparison(comparison,sources,view.transitionId)).join('') : ''}
     ${missing.length ? `<details class="evidence-detail" data-evidence-section="missing"><summary><span>待补证据（${missing.length} 项）</span><span class="evidence-detail-status">独立实验验证尚未闭合</span></summary><div class="evidence-detail-body">${renderItems(missing,'evidence-missing')}</div></details>` : ''}
     ${view.applicability?.applicable === false ? renderItems(view.applicability.reasons,'evidence-applicability') : ''}`;

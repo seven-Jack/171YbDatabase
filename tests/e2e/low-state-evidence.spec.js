@@ -138,6 +138,7 @@ test('switching transitions clears expanded records, retains T3, and keeps T4 an
     await expect(page.getByTestId('evidence-comparison')).toHaveCount(0);
     await expect(page.getByTestId('evidence-xu')).toHaveCount(0);
     await expect(page.getByTestId('evidence-offer')).toHaveCount(0);
-    await expect(page.getByTestId('evidence-row-formula')).toHaveAttribute('data-evidence-status', id === 'T4' ? 'not-applicable' : 'not-reviewed');
+    await expect(page.getByTestId('evidence-row-formula')).toHaveAttribute('data-evidence-status', id === 'T4' ? 'not-applicable' : 'channel-projection');
+    await expect(page.getByTestId('evidence-calculation-record')).toHaveCount(id === 'T4' ? 0 : 1);
   }
 });

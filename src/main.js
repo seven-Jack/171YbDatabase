@@ -120,7 +120,8 @@ export function start() {
       const lifetime=createFieldView(state.transition.id,'lifetime_ns');
       const evidence=document.createElement('div');evidence.className='result-evidence';
       const validation=document.createElement('p');validation.className='result-validation';
-      validation.textContent=buildEvidenceView(state).summary;
+      const review=buildEvidenceView(state);
+      validation.textContent=review.summary;
       const basis=document.createElement('p');basis.className='result-basis';
       basis.textContent=dipole?`矩阵元：${dipole.kind} · ${dipole.convention||'约定待核查'} · ${dipole.review}`:'矩阵元：当前记录缺失';
       evidence.append(validation,basis);
@@ -132,8 +133,11 @@ export function start() {
       if(dipole){const uncertainty=document.createElement('p');uncertainty.textContent=`矩阵元不确定度：${dipole.uncertainty}`;detail.append(uncertainty);}
       if(lifetime){const life=document.createElement('p');life.textContent=`寿命依据：${lifetime.kind} · ${lifetime.review} · ${lifetime.uncertainty}；温度与包含过程未在当前结构化记录中明确，请查来源详情。`;detail.append(life);}
       evidence.append(detail);
-      const sourceLink=document.createElement('a');sourceLink.href='#selectedSource';sourceLink.textContent='查看数值与原始来源';evidence.append(sourceLink);
-      const reviewLink=document.createElement('a');reviewLink.href='#evidenceReview';reviewLink.dataset.evidenceOpen='';reviewLink.textContent='查看核查详情';evidence.append(reviewLink);
+      if(!review.calculationSource){
+        const sourceLink=document.createElement('a');sourceLink.href='#selectedSource';sourceLink.textContent='查看数值与原始来源';evidence.append(sourceLink);
+      }
+      const reviewLink=document.createElement('a');reviewLink.href='#evidenceReview';reviewLink.dataset.evidenceOpen=review.calculationSource?'calculation':'';
+      reviewLink.textContent=review.calculationSource?'查看计算记录':'查看核查详情';evidence.append(reviewLink);
       result.append(evidence);
     }
   });

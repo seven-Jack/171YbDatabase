@@ -1,8 +1,88 @@
 // Generated from data/evidence.json by scripts/evidence-data.cjs. Do not edit.
 export const evidenceData = {
   "schemaVersion": 2,
-  "evidenceVersion": "2026.11.18.1",
+  "evidenceVersion": "2026.11.18.2",
   "reviewedAt": "2026-11-18",
+  "r017Series": {
+    "sourceId": "internal-r017-ns-20261111",
+    "datasetSha256": "34268f13494583fd05ab3278568e87cc2716ba2b6f1815844c6b0dc371f25607",
+    "channelTableSha256": "b7c6d957e5bb98bf8cc4083fc415320d07f50ed631a387e2c1554223af6f8bdf",
+    "formulaVersion": "1.0.1",
+    "firstN": 29,
+    "lastN": 100,
+    "csvChannelOrder": [
+      {
+        "F": 0.5,
+        "m": -0.5,
+        "Fp": 0.5,
+        "mp": -0.5,
+        "q": 0
+      },
+      {
+        "F": 0.5,
+        "m": -0.5,
+        "Fp": 0.5,
+        "mp": 0.5,
+        "q": 1
+      },
+      {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 0.5,
+        "mp": -0.5,
+        "q": -1
+      },
+      {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 0.5,
+        "mp": 0.5,
+        "q": 0
+      },
+      {
+        "F": 0.5,
+        "m": -0.5,
+        "Fp": 1.5,
+        "mp": -1.5,
+        "q": -1
+      },
+      {
+        "F": 0.5,
+        "m": -0.5,
+        "Fp": 1.5,
+        "mp": -0.5,
+        "q": 0
+      },
+      {
+        "F": 0.5,
+        "m": -0.5,
+        "Fp": 1.5,
+        "mp": 0.5,
+        "q": 1
+      },
+      {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": -0.5,
+        "q": -1
+      },
+      {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": 0.5,
+        "q": 0
+      },
+      {
+        "F": 0.5,
+        "m": 0.5,
+        "Fp": 1.5,
+        "mp": 1.5,
+        "q": 1
+      }
+    ]
+  },
   "sources": [
     {
       "id": "xu-2014-prl",

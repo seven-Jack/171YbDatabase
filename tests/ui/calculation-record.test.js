@@ -226,6 +226,16 @@ test('series exports preserve both branch identities, zero fields and relative d
     assert.equal(csv.reduced_dipole_ea0,dipole);
     assert.equal(csv.dipole_convention,'F-reduced');
     const markdown=serializeCalculationRecord(record,'markdown');
+    const line=Fp===1.5?367:362;
+    assert.equal(json.evidence.calculationSource.channelLine,line);
+    assert.equal(csv.r017_channel_csv_line,line);
+    assert.equal(csv.r017_batch_id,'delivery_20261111T085031Z');
+    assert.equal(csv.evidence_summary,'This work · R017 零场计算');
+    assert.ok(formatCalculationSummary(record).includes(csv.evidence_summary));
+    assert.ok(markdown.includes(`原始通道表第 ${line} 行`));
+    assert.ok(markdown.includes(csv.r017_channel_csv_sha256));
+    assert.ok(markdown.includes(csv.r017_channel_csv_url));
+    assert.doesNotMatch(markdown,/本轮未接入|本轮没有接入|波长原文定位/);
     for(const marker of ['主量子数标签 n | 65',`实际有效主量子数 ν | ${nu}`,`末态 F′ | ${2*Fp}/2`,
       '磁场 B | 0 T','静电场 E | 0 V/m',String.raw`带符号 D\_F | ${dipole} ea₀`]) assert.ok(markdown.includes(marker),marker);
     assert.match(markdown,branch);

@@ -63,10 +63,24 @@ function validateEvidence(data) {
     number(value.value, `${at}.value`, 0);
     string(value.evidenceKind, `${at}.evidenceKind`, ID);
   };
-  if (!object(data, ['schemaVersion','evidenceVersion','reviewedAt','sources','records','comparisons'], 'evidence')) return {valid:false, errors};
+  if (!object(data, ['schemaVersion','evidenceVersion','reviewedAt','sources','records','comparisons'], 'evidence', ['r017Series'])) return {valid:false, errors};
   if (![1, 2].includes(data.schemaVersion)) error('schemaVersion', 'unsupported schema');
   string(data.evidenceVersion, 'evidenceVersion', VERSION);
   date(data.reviewedAt, 'reviewedAt');
+  const series = data.r017Series;
+  if (series !== undefined && object(series, ['sourceId','datasetSha256','channelTableSha256','formulaVersion','firstN','lastN','csvChannelOrder'], 'r017Series')) {
+    string(series.sourceId, 'r017Series.sourceId', ID);
+    for (const key of ['datasetSha256','channelTableSha256']) string(series[key], `r017Series.${key}`, /^[a-f0-9]{64}$/);
+    string(series.formulaVersion, 'r017Series.formulaVersion', VERSION);
+    for (const key of ['firstN','lastN']) if (!Number.isSafeInteger(series[key]) || series[key] < 1) error(key, 'expected positive integer n');
+    if (series.firstN > series.lastN) error('r017Series', 'invalid n range');
+    array(series.csvChannelOrder, 'r017Series.csvChannelOrder', channel);
+    const order = series.csvChannelOrder;
+    if (!Array.isArray(order) || order.length !== 10 || order.some((item, index) =>
+      item?.F !== 0.5 || ![0.5,1.5].includes(item?.Fp) || order.slice(0, index).some(previous => sameChannel(previous, item)))) {
+      error('r017Series.csvChannelOrder', 'expected the ten distinct R017 channels per n in file order');
+    }
+  }
   array(data.sources, 'sources', (source, at) => {
     if (!object(source, ['id','title','doi','url','locations'], at)) return;
     string(source.id, `${at}.id`, ID); string(source.title, `${at}.title`);

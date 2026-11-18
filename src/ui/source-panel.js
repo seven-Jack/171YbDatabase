@@ -1,10 +1,11 @@
 import {getTransitionRecord,getQuantity,getDipoleQuantity,getRydbergPair,getSourceRecord,DATASET_VERSION} from '../data/catalog.js';
 import {matrixElement_F_q,reducedFFromJJ} from '../physics/angular.js';
-import {formatLifetime} from './format.js';
+import {formatLifetime,signedScientific} from './format.js';
 import {R2_PROVENANCE,R2_EVIDENCE_EXTENSION} from './r2-provenance.js';
 import {buildEvidenceView} from './evidence-model.js';
 import {renderEvidencePanelHTML} from './evidence-panel.js';
 import {formatZeroFieldOffset,getTransitionWavelength,wavelengthLabel} from './transition-wavelength.js';
+import {EVIDENCE} from '../data/evidence.js';
 
 const EVIDENCE_LABELS = Object.freeze({
   'literature-reported':'文献记录','internal-calibration':'内部校准','internal-calculation':'本工作计算',
@@ -47,11 +48,6 @@ const fLabel = value => Number.isFinite(value) ? ({0.5:'1/2',1.5:'3/2',2.5:'5/2'
 const mLabel = value => Number.isFinite(value) ? (value>0?'+':'')+fLabel(value<0?-value:value).replace(/^/,value<0?'−':'') : '未选择';
 const polLabel = value => ({pi:'π',sigmap:'σ⁺',sigmam:'σ⁻'}[value] || '未选择');
 const presentNumber = value => Number.isFinite(value) ? Number(value.toPrecision(8)).toString() : '缺失';
-const signedScientific = value => {
-  const [mantissa,exponent]=Math.abs(value).toExponential(9).split('e');
-  const superscript=exponent.replace(/[-+0-9]/g,char=>({'-':'⁻','+':'⁺'}[char] || '⁰¹²³⁴⁵⁶⁷⁸⁹'[Number(char)]));
-  return `${value<0?'−':'+'}${mantissa} × 10${superscript}`;
-};
 const safeHTTPS = value => { try {const url=new URL(value);return url.protocol==='https:'?url.href:null;} catch {return null;} };
 
 export function formatFrequency(hertz) {
@@ -91,6 +87,7 @@ export function createFieldView(transitionId,field) {
     sourceConflict:wavelength?.sourceConflict ?? null,
     conditions:quantity.conditions===null?'原记录未提供完整条件':Object.entries(quantity.conditions).map(([key,value])=>`${key}=${value===null?'未提供':typeof value==='object'?JSON.stringify(value):value}`).join('；'),
     lifetimeBasis:quantity.convention==='inverse-of-statistically-averaged-total-decay-rate; not-F-resolved'?'统计平均总衰减率的倒数，不是每个 F 分量的寿命，也不是寿命的平均。':sourceEvidence?'上态总辐射寿命的文献汇编 / 理论采用值；F、温度及黑体条件须按该字段记录使用，不能替代陷阱人口寿命。':'温度与包含的辐射 / 黑体 / 其他损失过程未完整建立；不能直接作为实验有效寿命。',
+    locatorLabel:EVIDENCE.r017Series && quantity.sourceId === EVIDENCE.r017Series.sourceId ? '计算记录定位' : '原文定位',
     locator:quantity.sourceLocator?.replace('(original page label; not rechecked)','（沿用旧页面标注，尚未重核原文）') || '原文页 / 表 / 式：待核查',
     sourceTitle:source?.title || '来源记录缺失',
     publication:source?.publication || null,
@@ -153,7 +150,7 @@ export function renderFieldSourceHTML(field) {
       <dt>来源</dt><dd>${escapeHTML(field.sourceTitle)}</dd>
       ${field.publication?`<dt>引用记录</dt><dd>${escapeHTML(field.publication)}</dd>`:''}
       ${field.sourceDetail?`<dt>原有来源说明</dt><dd>${escapeHTML(field.sourceDetail)}</dd>`:''}
-      <dt>原文定位</dt><dd>${escapeHTML(field.locator)}</dd>
+      <dt>${escapeHTML(field.locatorLabel || '原文定位')}</dt><dd>${escapeHTML(field.locator)}</dd>
       <dt>条件</dt><dd>${escapeHTML(field.conditions)}</dd>
       <dt>不确定度</dt><dd>${escapeHTML(field.uncertainty)}</dd>
       ${field.uncertaintyNote?`<dt>不确定度口径</dt><dd>${escapeHTML(field.uncertaintyNote)}</dd>`:''}
@@ -295,8 +292,10 @@ export function initSourcePanel(calculator,decoratedCoreTransitions=[]) {
     context.dataset.datasetVersion=DATASET_VERSION;
   };
   const unsubscribe=calculator.onChange(render);
-  const openEvidence=()=>{
+  const openEvidence=(showCalculationRecord=false)=>{
     if(details)details.open=true;
+    const record=showCalculationRecord && evidence.querySelector('[data-testid="evidence-calculation-record"]');
+    if(record)record.open=true;
     evidence.focus({preventScroll:true});
     evidence.scrollIntoView({block:'start',behavior:'auto'});
   };
@@ -304,7 +303,7 @@ export function initSourcePanel(calculator,decoratedCoreTransitions=[]) {
     const link=event.target.closest?.('a[data-evidence-open]');
     if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
     event.preventDefault();
-    openEvidence();
+    openEvidence(link.dataset.evidenceOpen==='calculation');
   };
   document.addEventListener('click',onEvidenceLink);
   const api=Object.freeze({openEvidence,destroy(){unsubscribe?.();document.removeEventListener('click',onEvidenceLink);evidence.remove();activePanels.delete(panel);}});
