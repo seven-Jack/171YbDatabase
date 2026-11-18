@@ -35,16 +35,18 @@ function publicationFiles(root) {
   });
 }
 
-function sourceFingerprint(root, sourceFiles = publicationFiles(root)) {
+function sourceFingerprint(root, { publicationRoot = root, sourceFiles = publicationFiles(publicationRoot) } = {}) {
   // The browser jobs fetch dist and do not generate the source copy of version.js.
-  const files = [
-    ...sourceFiles.filter(file => relativePath(root, file) !== 'src/version.js'),
-    ...buildInputs.map(name => path.join(root, name)).filter(file => fs.existsSync(file)),
-  ];
+  const files = new Map(sourceFiles.map(file => [relativePath(publicationRoot, file), file]));
+  files.delete('src/version.js');
+  for (const name of buildInputs) {
+    const file = path.join(root, name);
+    if (fs.existsSync(file)) files.set(name, file);
+  }
   const hash = crypto.createHash('sha256');
-  for (const file of files.sort()) {
-    hash.update(relativePath(root, file) + '\0');
-    hash.update(crypto.createHash('sha256').update(fs.readFileSync(file)).digest());
+  for (const name of [...files.keys()].sort()) {
+    hash.update(name + '\0');
+    hash.update(crypto.createHash('sha256').update(fs.readFileSync(files.get(name))).digest());
   }
   return hash.digest('hex');
 }

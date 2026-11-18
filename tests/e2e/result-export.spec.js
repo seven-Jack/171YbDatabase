@@ -37,19 +37,25 @@ test('current-point CSV preserves the actual canonical channel and leaves M5 con
   expect(saved.bytes.toString('utf8')).not.toMatch(/\/Users\/|file:\/\/|references\/papers\//);
 });
 
-test('selected 556 nm channels retain the vacuum centroid and 770 nm carries the original conflict through export',async({page})=>{
+test('556 nm shows and exports each offset uncertainty while 770 nm retains its original conflict',async({page})=>{
   const context=page.getByTestId('current-context');
-  for(const [key,value,text] of [['0.5|-0.5|0.5|-0.5|0',-3957.85,'−3957.85 MHz'],['0.5|-0.5|1.5|-0.5|0',1978.925,'+1978.925 MHz']]){
+  const cases=[['0.5|-0.5|0.5|-0.5|0',-3957.85,0.05,'−3957.85 ± 0.05 MHz'],
+    ['0.5|-0.5|1.5|-0.5|0',1978.925,0.025,'+1978.925 ± 0.025 MHz']];
+  for(const [key,value,uncertainty,text] of cases){
     await choose(page,'T2',key);
     await expect(context.locator('[data-wavelength-reference]')).toContainText('真空重心波长 · 555.80068663 nm');
     await expect(context.locator('[data-zero-field-offset]')).toContainText(text);
     const saved=await record(page);
-    expect(saved.transition.wavelength.zeroFieldOffset.value).toBe(value);
+    const offset=saved.transition.wavelength.zeroFieldOffset;
+    expect(offset).toMatchObject({value,uncertainty});
+    expect(offset.uncertaintyNote).toContain('一阶磁偶极超精细常数 A/h');
     await menu(page,'calculationRecordExport');
     const csv=parseCSV((await download(page,'recordExportCSV')).bytes.toString('utf8'))[0];
     expect(csv.wavelength_reference).toBe('hyperfine-centroid');
     expect(Number(csv.wavelength_vac_nm)).toBe(555.80068663);
     expect(Number(csv.zero_field_offset_from_centroid_MHz)).toBe(value);
+    expect(Number(csv.zero_field_offset_uncertainty_MHz)).toBe(uncertainty);
+    expect(csv.zero_field_offset_uncertainty_note).toBe(offset.uncertaintyNote);
   }
   await choose(page,'T7','2.5|2.5|1.5|1.5|-1');
   await expect(context.locator('[data-wavelength-reference]')).toContainText('频率推导，原表有冲突');
@@ -63,6 +69,7 @@ test('selected 556 nm channels retain the vacuum centroid and 770 nm carries the
   expect(csv.wavelength_source_conflict).toBe(wave.sourceConflict);
   expect(csv.wavelength_uncertainty_note).toBe(wave.uncertaintyNote);
   expect(csv.zero_field_offset_from_centroid_MHz).toBe('unknown');
+  expect(csv.zero_field_offset_uncertainty_MHz).toBe('unknown');
   await page.locator('#sectionNav a[href="#secData"]').click();
   const row=page.locator('#core-data-table [data-row-id="T7"] [data-column="wavelength_vac_nm"]');
   await expect(row).toContainText('770.16026840');

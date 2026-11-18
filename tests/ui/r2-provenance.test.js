@@ -1,8 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {CORE_TRANSITIONS,getQuantity} from '../../src/data/catalog.js';
+import {CORE_TRANSITIONS,RYDBERG_SERIES_TRANSITIONS,getQuantity,getSourceRecord} from '../../src/data/catalog.js';
 import {R2_PROVENANCE,R2_EVIDENCE_EXTENSION} from '../../src/ui/r2-provenance.js';
 import {buildSourceView,createFieldView,renderSourceDetailsHTML} from '../../src/ui/source-panel.js';
+import {buildCalculationRecord,renderCalculationRecordMarkdown} from '../../src/ui/calculation-record.js';
+import {resultCSVRow} from '../../src/ui/result-export.js';
 
 const selected=id=>({transition:CORE_TRANSITIONS.find(row=>row.id===id),F_lower:.5,F_upper:.5,pol:'pi',dEff:.01,P_mW:1,w_um:50,selectedChannel:null});
 
@@ -60,6 +62,26 @@ test('public sources support bounded context while current R2 values cite the R0
   assert.match(html,/旧值的原始计算工件未定位/);
   assert.equal(getQuantity('R2','d_num').sourceId,'internal-r017-20261110');
   assert.equal(getQuantity('R2','d_F32').sourceId,'internal-r017-20261110');
+});
+
+test('R2 and the formal series cite distinct, commit-pinned R017 artifacts in research exports',()=>{
+  const run='https://github.com/seven-Jack/Calculation/blob/8e0dcea0feaf71fb15245655c3d2ced1de70d385/runs/R017/results/';
+  const series=RYDBERG_SERIES_TRANSITIONS.find(row=>row.id==='NS-65-F12');
+  const cases=[
+    [selected('R2'), 'local_20261110T025200Z/yb_matrix_elements.csv', '8ccc808d924fa1a71196c380650ebaf2171a4cef21c3e715bf5b9bf77e361d8b'],
+    [{...selected('R2'),transition:series}, 'delivery_20261111T085031Z/data/dataset.json', '34268f13494583fd05ab3278568e87cc2716ba2b6f1815844c6b0dc371f25607'],
+  ];
+  for(const [state,path,sha256] of cases) {
+    const record=buildCalculationRecord(state);
+    const locator=run+path;
+    const source=getSourceRecord(record.primaryQuantity.sourceId);
+    assert.equal(source.artifactLocator,locator);
+    assert.equal(source.artifactSha256,sha256);
+    assert.ok(renderSourceDetailsHTML(buildSourceView(state)).includes(`href="${locator}"`));
+    assert.equal(record.primaryQuantity.source.url,locator);
+    assert.equal(resultCSVRow(record).source_url,locator);
+    assert.ok(renderCalculationRecordMarkdown(record).includes(`](${locator})`));
+  }
 });
 
 test('conditional uncertainty method preserves missing inputs, covariance and nonzero boundaries',()=>{

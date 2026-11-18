@@ -131,17 +131,16 @@ export function initRydbergSelection({ transitions, calculator, draw, onDraw }) 
   show(lookup(nInput.valueAsNumber, Number(fInput.value)));
   const selectionId = state => state.transition?.id === 'R2'
     ? lookup(65, state.F_upper)?.id : state.transition?.id;
-  let calculationId = calculator.getState().transition?.id;
+  let calculationTransition = calculator.getState().transition;
   calculator.onChange(state => {
-    const nextCalculationId = state.transition?.id;
-    const calculationChanged = nextCalculationId !== calculationId;
-    calculationId = nextCalculationId;
-    legacyContext.hidden = calculationId !== 'R2';
+    const calculationChanged = state.transition !== calculationTransition;
+    calculationTransition = state.transition;
+    legacyContext.hidden = calculationTransition?.id !== 'R2';
     const selected = byId.get(selectionId(state));
     if (!legacyContext.hidden && selected) {
       legacyContext.textContent = `当前 Rabi 使用旧 R2 参数，历史标度估算 λ = ${state.transition.wavelength_vac_nm} nm。本表为 R017 零场 F′=${rydbergFLabel(selected.Fp)}，λ = ${selected.wavelength_vac_nm.toFixed(6)} nm。选择表中分支可切换计算。`;
     }
-    // R2 can replace the calculation while pointing to the same branch in the diagram.
+    // A load or restore replaces the transition snapshot even for the same branch.
     if (calculationChanged && selected && selected === active) syncControls(selected);
     else show(selected);
   });

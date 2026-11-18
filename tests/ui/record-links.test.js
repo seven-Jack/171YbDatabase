@@ -50,6 +50,20 @@ test('workpoint links recover the actual channel and recalculate from the canoni
   assert.match(restored.warnings.join(' '), /当前重算结果不同/);
 });
 
+test('Rydberg workpoint links preserve display filters independently of the calculation branch', () => {
+  for (const [id, selected, filter] of [['NS-65-F12', 0.5, 1.5], ['NS-65-F32', 1.5, 0.5]]) {
+    const point = { ...workingPoint(series(id), selected), diagF_upper: filter };
+    const { hash } = new URL(createRecordLink(page, point, versions, true));
+    const restored = readRecordLink(hash, versions);
+
+    assert.equal(restored.transition.id, id);
+    assert.equal(restored.state.F_upper, selected);
+    assert.equal(restored.state.selectedChannel.Fp, selected);
+    assert.equal(restored.state.diagF_upper, filter);
+    assert.deepEqual(restored.warnings, []);
+  }
+});
+
 test('incoming version and dirty notices survive both record and workpoint links', () => {
   const historical = { ...versions, datasetVersion: '2026.01.01.1', datasetHash: '1'.repeat(64), formulaVersion: '0.0.1', worktreeDirty: true };
   for (const includeWorkpoint of [false, true]) {

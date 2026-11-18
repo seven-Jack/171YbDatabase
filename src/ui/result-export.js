@@ -57,6 +57,8 @@ export function resultCSVRow(record) {
     wavelength_uncertainty_nm:t.wavelength.uncertainty??null,wavelength_uncertainty_note:t.wavelength.uncertaintyNote??null,
     wavelength_source_conflict:t.wavelength.sourceConflict??null,
     zero_field_offset_from_centroid_MHz:t.wavelength.zeroFieldOffset?.value??null,
+    zero_field_offset_uncertainty_MHz:t.wavelength.zeroFieldOffset?.uncertainty??null,
+    zero_field_offset_uncertainty_note:t.wavelength.zeroFieldOffset?.uncertaintyNote??null,
     zero_field_offset_source_id:t.wavelength.zeroFieldOffset?.sourceId??null,
     zero_field_offset_source_locator:t.wavelength.zeroFieldOffset?.sourceLocator??null,
     zero_field_offset_convention:t.wavelength.zeroFieldOffset?.convention??null,
@@ -79,9 +81,10 @@ export function formatCalculationSummary(record) {
   const c=record.configuration,t=record.transition,ch=record.resolvedChannel,d=record.primaryQuantity,def=c.inputDefinition;
   const factors=getBeamFactors(def,c.selection.pol);
   const allocation=def.powerBasis==='component'?'已为指定分量':def.linearOrientation==='manual'?`手动 ${display(def.manualFraction*100)}%`:def.linearOrientation==='parallel'?'平行 B':'垂直 B';
-  const offset=formatZeroFieldOffset(t.wavelength.zeroFieldOffset);
+  const offset=t.wavelength.zeroFieldOffset;
   const wavelengthText=[`${wavelengthLabel(t.wavelength)} ${display(t.wavelength.value)} nm (${t.wavelength.evidenceKind}; λ来源=${t.wavelength.sourceId})`,
-    offset?`零场频移（相对重心） ${offset}`:null,
+    offset?`零场频移（相对重心） ${formatZeroFieldOffset(offset)}`:null,
+    offset?.uncertaintyNote,
     t.wavelength.sourceConflict?`原表波长冲突 ${t.wavelength.sourceConflict}`:null].filter(Boolean).join(' · ');
   return [
     `¹⁷¹Yb ${t.id} · ${t.lower} → ${t.upper} · ${wavelengthText}`,

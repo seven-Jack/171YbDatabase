@@ -97,7 +97,10 @@ export function createFieldView(transitionId,field) {
     sourceDetail:source?.detail || null,
     url:safeHTTPS(source?.url),
     artifactLocator:source?.artifactLocator || null,
+    artifactURL:safeHTTPS(source?.artifactLocator),
     artifactSha256:source?.artifactSha256 || null,
+    rawManifestURL:safeHTTPS(source?.rawManifestLocator),
+    rawArtifactSha256:source?.rawArtifactSha256 || null,
     missingArtifact:quantity.evidenceKind==='internal-calculation'&&!source?.artifactLocator,
     legacyText:quantity.legacyText || null,
     derivedFrom:quantity.derivedFrom || [],
@@ -142,6 +145,7 @@ export function renderFieldSourceHTML(field) {
   if (!field) return '';
   const meta=[field.kind,field.convention,field.review].filter(Boolean).map(escapeHTML).join(' · ');
   const link=field.url?`<p class="source-links"><a href="${escapeHTML(field.url)}" target="_blank" rel="noopener noreferrer">原文链接</a></p>`:'';
+  const artifact=field.artifactURL?`<a href="${escapeHTML(field.artifactURL)}" target="_blank" rel="noopener noreferrer">查看保存工件</a>`:escapeHTML(field.artifactLocator);
   return `<article class="source-field" data-source-field="${escapeHTML(field.key)}">
     <div class="source-field-label">${escapeHTML(field.label)}</div><strong class="source-field-value">${escapeHTML(field.valueText)}</strong>
     <p class="source-meta">${meta}</p>
@@ -158,8 +162,10 @@ export function renderFieldSourceHTML(field) {
       <dt>保存数值</dt><dd>${escapeHTML(field.savedValue)}</dd>
       ${field.modelId?`<dt>模型</dt><dd>${escapeHTML(field.modelId)}</dd>`:''}
       ${field.derivedFrom.length?`<dt>派生自</dt><dd>${escapeHTML(field.derivedFrom.join('；'))}</dd>`:''}
-      ${field.artifactLocator?`<dt>保存记录</dt><dd>${escapeHTML(field.artifactLocator)}</dd>`:''}
+      ${field.artifactLocator?`<dt>保存记录</dt><dd>${artifact}</dd>`:''}
       ${field.artifactSha256?`<dt>保存工件 SHA256</dt><dd class="source-hash">${escapeHTML(field.artifactSha256)}</dd>`:''}
+      ${field.rawManifestURL?`<dt>原始传输清单</dt><dd><a href="${escapeHTML(field.rawManifestURL)}" target="_blank" rel="noopener noreferrer">查看传输清单</a></dd>`:''}
+      ${field.rawArtifactSha256?`<dt>原始传输工件 SHA256</dt><dd class="source-hash">${escapeHTML(field.rawArtifactSha256)}</dd>`:''}
       ${field.missingArtifact?'<dt>计算原始证据</dt><dd>Notebook / Run 及版本定位待补充</dd>':''}
       ${field.legacyText?`<dt>原记录表达</dt><dd>${escapeHTML(field.legacyText)}</dd>`:''}
     </dl>${link}</details>

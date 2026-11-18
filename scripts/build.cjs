@@ -190,39 +190,11 @@ function publishDist(output, candidate, previous) {
 function build(directory, options = {}) {
   const root = fs.realpathSync(directory);
   const output = path.join(root, 'dist');
-  const index = path.join(root, 'index.html');
-  if (!fs.existsSync(index)) throw new Error('Missing source index.html');
-  const dataFile = name => path.join(root, 'data', name);
-  // Focused build fixtures can use individual data files without a complete catalog.
-  const hasCatalog = fs.existsSync(path.join(root, 'src/data/generated-catalog.js')) ||
-    DATA_FILES.every(name => fs.existsSync(dataFile(name)));
-  if (hasCatalog) exportData({ root, check: true });
-  if (fs.existsSync(dataFile('evidence.json'))) exportEvidence({ root, check: true });
-  if (fs.existsSync(dataFile('decay.json'))) exportDecay({ root, check: true });
-  const version = writeVersion(root);
+  if (!fs.existsSync(path.join(root, 'index.html'))) throw new Error('Missing source index.html');
   const sources = publicationFiles(root);
-  const fingerprint = sourceFingerprint(root, sources);
-  const sourceHTML = fs.readFileSync(index, 'utf8');
-  const entries = ['src/main.js'];
-  if (/\bimport\s*\(\s*['"]\.\/src\/bootstrap\.js['"]\s*\)/.test(sourceHTML)) entries.push('src/bootstrap.js');
-  const startupModules = collectStartupModules(root, entries);
-
-  const datasetPath = dataFile('dataset.json');
-  const dataset = fs.existsSync(datasetPath) ? JSON.parse(fs.readFileSync(datasetPath, 'utf8')) : {};
-  const formulaFile = path.join(root, 'src', 'physics', 'constants.js');
-  const formulaVersion = fs.existsSync(formulaFile)
-    ? fs.readFileSync(formulaFile, 'utf8').match(/export\s+const\s+FORMULA_VERSION\s*=\s*['"]([^'"]+)['"]/)?.[1]
-    : null;
-  if (fs.existsSync(formulaFile) && !formulaVersion) throw new Error('The production formula module must export FORMULA_VERSION.');
+  const fingerprint = sourceFingerprint(root, { sourceFiles: sources });
+  const version = writeVersion(root);
   const commit = options.commit || version.appCommit;
-  const metadata = {
-    schemaVersion: 1, softwareVersion: version.softwareVersion, appCommit: commit,
-    worktreeDirty: version.worktreeDirty,
-    datasetVersion: dataset.datasetVersion || dataset.version || 'unversioned',
-    formulaVersion: formulaVersion || dataset.formulaVersion || 'unversioned',
-    sourceTimestamp: options.sourceTimestamp || (process.env.SOURCE_DATE_EPOCH ? new Date(Number(process.env.SOURCE_DATE_EPOCH) * 1000).toISOString() : version.sourceTimestamp),
-    sourceFingerprint: fingerprint,
-  };
   const scratch = path.join(root, 'tmp');
   fs.mkdirSync(scratch, { recursive: true });
   if (!fs.lstatSync(scratch).isDirectory()) throw new Error('Build staging requires a project-owned tmp directory');
@@ -239,8 +211,43 @@ function build(directory, options = {}) {
       fs.mkdirSync(path.dirname(target), { recursive: true });
       fs.copyFileSync(file, target);
     }
+    if (sourceFingerprint(root, { publicationRoot: candidate }) !== fingerprint) {
+      throw new Error('Build inputs changed while staging. Retry from the current source.');
+    }
+
+    // Validate the exact copies that will be published. Schemas stay in the source tree.
+    const dataFile = name => path.join(candidate, 'data', name);
+    // Focused build fixtures can use individual data files without a complete catalog.
+    const hasCatalog = fs.existsSync(path.join(candidate, 'src/data/generated-catalog.js')) ||
+      DATA_FILES.every(name => fs.existsSync(dataFile(name)));
+    if (hasCatalog) exportData({ root: candidate, schemaRoot: root, check: true });
+    if (fs.existsSync(dataFile('evidence.json'))) exportEvidence({ root: candidate, check: true });
+    if (fs.existsSync(dataFile('decay.json'))) exportDecay({ root: candidate, check: true });
+
+    const datasetPath = dataFile('dataset.json');
+    const dataset = fs.existsSync(datasetPath) ? JSON.parse(fs.readFileSync(datasetPath, 'utf8')) : {};
+    const formulaFile = path.join(candidate, 'src', 'physics', 'constants.js');
+    const formulaVersion = fs.existsSync(formulaFile)
+      ? fs.readFileSync(formulaFile, 'utf8').match(/export\s+const\s+FORMULA_VERSION\s*=\s*['"]([^'"]+)['"]/)?.[1]
+      : null;
+    if (fs.existsSync(formulaFile) && !formulaVersion) throw new Error('The production formula module must export FORMULA_VERSION.');
+    const metadata = {
+      schemaVersion: 1, softwareVersion: version.softwareVersion, appCommit: commit,
+      worktreeDirty: version.worktreeDirty,
+      datasetVersion: dataset.datasetVersion || dataset.version || 'unversioned',
+      formulaVersion: formulaVersion || dataset.formulaVersion || 'unversioned',
+      sourceTimestamp: options.sourceTimestamp || (process.env.SOURCE_DATE_EPOCH ? new Date(Number(process.env.SOURCE_DATE_EPOCH) * 1000).toISOString() : version.sourceTimestamp),
+      sourceFingerprint: fingerprint,
+    };
+
+    fs.mkdirSync(path.join(candidate, 'src'), { recursive: true });
     fs.writeFileSync(path.join(candidate, 'src/version.js'), versionModuleSource({ ...version, appCommit: commit }));
-    fs.writeFileSync(path.join(candidate, 'index.html'), injectStartupPreloads(sourceHTML, startupModules));
+    const index = path.join(candidate, 'index.html');
+    const sourceHTML = fs.readFileSync(index, 'utf8');
+    const entries = ['src/main.js'];
+    if (/\bimport\s*\(\s*['"]\.\/src\/bootstrap\.js['"]\s*\)/.test(sourceHTML)) entries.push('src/bootstrap.js');
+    const startupModules = collectStartupModules(candidate, entries);
+    fs.writeFileSync(index, injectStartupPreloads(sourceHTML, startupModules));
     fs.writeFileSync(path.join(candidate, 'build-info.json'), JSON.stringify(metadata, null, 2) + '\n');
     const manifest = {
       ...metadata,

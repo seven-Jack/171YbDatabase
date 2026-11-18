@@ -58,7 +58,7 @@ test('manual selection retains exact initial and final state and field-specific 
 });
 
 test('T2 exposes a selected zero-field offset while T7 retains its centroid conflict without a branch value',()=>{
-  const expected=[[.5,'−3957.85 MHz'],[1.5,'+1978.925 MHz']];
+  const expected=[[.5,'−3957.85 ± 0.05 MHz'],[1.5,'+1978.925 ± 0.025 MHz']];
   for(const [Fp,shift] of expected){
     const model=buildSelectionContext(stateFor('T2',{F_upper:Fp}));
     assert.equal(model.wavelength,'555.80068663 nm');

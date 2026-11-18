@@ -56,6 +56,49 @@ test('clock record and optional workpoint open in a new tab with the intended in
   await expect(opened.locator('#rabiResult')).toContainText('T3');
 });
 
+test('a Rydberg workpoint preserves a display filter for the other F′ branch', async ({ page, context }) => {
+  await page.locator('#rydbergN').fill('66');
+  await page.locator('#hfDiagFUpper').selectOption('0.5');
+  await expect(page.locator('#rabiResult')).toContainText('NS-66-F32');
+
+  const link = await copy(page, 'workpoint');
+  const opened = await context.newPage();
+  await opened.goto(link);
+  await ready(opened);
+
+  await expect(status(opened)).toContainText('已恢复工作点');
+  await expect(opened.locator('#hfDiagFUpper')).toHaveValue('0.5');
+  await expect(opened.locator('#rydbergFp')).toHaveValue('1.5');
+  await expect(opened.locator('#rabiResult')).toContainText('NS-66-F32');
+});
+
+test('restoring the same Rydberg workpoint clears invalid n and ν drafts', async ({ page }) => {
+  const n = page.locator('#rydbergN');
+  const nu = page.locator('#rydbergNu');
+  await n.fill('66');
+  await expect(page.locator('#rabiResult')).toContainText('NS-66-F32');
+  const savedNu = await nu.inputValue();
+  const link = await copy(page, 'workpoint');
+
+  await n.fill('28');
+  await n.press('Enter');
+  await nu.fill('0');
+  await nu.press('Enter');
+  await page.locator('#rpCalcP').fill('4');
+  await expect(n).toHaveValue('28');
+  await expect(nu).toHaveValue('0');
+  await expect(n).toHaveAttribute('aria-invalid', 'true');
+  await expect(nu).toHaveAttribute('aria-invalid', 'true');
+
+  await page.evaluate(href => { location.hash = new URL(href).hash; }, link);
+  await expect(status(page)).toContainText('已恢复工作点');
+  await expect(n).toHaveValue('66');
+  await expect(nu).toHaveValue(savedNu);
+  await expect(n).not.toHaveAttribute('aria-invalid', 'true');
+  await expect(nu).not.toHaveAttribute('aria-invalid', 'true');
+  await expect(page.locator('#rydbergInputMessage')).toBeEmpty();
+});
+
 test('series and legacy R2 links distinguish both F′ choices and show older dataset versions', async ({ page, context }) => {
   const n = page.locator('#rydbergN');
   await n.fill('29');

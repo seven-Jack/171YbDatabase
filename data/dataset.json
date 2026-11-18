@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "datasetVersion": "2026.11.18.1",
+  "datasetVersion": "2026.11.18.2",
   "sourceCommit": "2e2e9d5",
   "sourceDate": "2026-11-18",
   "migrationDate": "2026-10-26",
-  "generatedAt": "2026-11-18T06:07:27.785Z",
-  "contentHash": "81b59dc7dc2eed8b7a3d82470753a594c6f4f8b4a5e5438024c497a77fb4267e",
+  "generatedAt": "2026-11-18T07:12:34.627Z",
+  "contentHash": "f8f8bf3789d69eda79ab2e183378b7d6ad7f0543aae51f13aca0a03980147ba2",
   "files": [
     {
       "path": "data/levels.json",
@@ -21,7 +21,7 @@
     },
     {
       "path": "data/sources.json",
-      "sha256": "e118df71444f11c80838fc4dd8f0021e37fd0fb9e6c02695f7f0a36e3ee00452"
+      "sha256": "b06a82487f282d92fc88b8816fdb31ca16f5541e6ff46eaea1b0c649890bbda4"
     },
     {
       "path": "data/estimates.json",
@@ -32,7 +32,7 @@
       "sha256": "b4c9c84d724ba8d3a3c419217b6793690c016fd91a54295243e17708c8ac469c"
     }
   ],
-  "reviewStatus": "R017 zero-field S-series catalog with verified artifact locations; T7 wavelength uncertainty derived from frequency; historical R2 retained",
+  "reviewStatus": "R017 zero-field S-series catalog with commit-pinned Calculation artifacts; T7 wavelength uncertainty derived from frequency; historical R2 retained",
   "physicalValidation": "not established for all records: compilation, theory, source conflicts, missing originals and internal models are explicitly distinguished",
   "exports": [
     {

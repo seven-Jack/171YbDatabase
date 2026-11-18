@@ -25,6 +25,16 @@ function fixture(t) {
   return root;
 }
 
+function catalogFixture(t) {
+  const root = fixture(t);
+  fs.cpSync(new URL('../../schemas/', import.meta.url), path.join(root, 'schemas'), { recursive: true });
+  for (const file of [...DATA_FILES, 'dataset.json']) {
+    fs.copyFileSync(new URL('../../data/' + file, import.meta.url), path.join(root, 'data', file));
+  }
+  exportData({ root });
+  return root;
+}
+
 test('clean build removes resources deleted since the previous build', t => {
   const root = fixture(t);
   fs.writeFileSync(path.join(root, 'src/obsolete.js'), 'export {};');
@@ -89,12 +99,7 @@ test('a competing publisher leaves the installed build and its lock intact', t =
 });
 
 test('standalone build refuses stale canonical exports before changing dist', t => {
-  const root = fixture(t);
-  fs.cpSync(new URL('../../schemas/', import.meta.url), path.join(root, 'schemas'), { recursive: true });
-  for (const file of [...DATA_FILES, 'dataset.json']) {
-    fs.copyFileSync(new URL('../../data/' + file, import.meta.url), path.join(root, 'data', file));
-  }
-  exportData({ root });
+  const root = catalogFixture(t);
   const manifest = build(root, { quiet: true });
   const sources = path.join(root, 'data/sources.json');
   const sourceData = JSON.parse(fs.readFileSync(sources, 'utf8'));
@@ -104,6 +109,31 @@ test('standalone build refuses stale canonical exports before changing dist', t 
   const output = path.join(root, 'dist');
   assert.deepEqual(JSON.parse(fs.readFileSync(path.join(output, 'artifact-manifest.json'))), manifest);
   assert.doesNotThrow(() => checkArtifacts(output, { quiet: true }));
+});
+
+test('a catalog edit during version lookup preserves the last consistent build', t => {
+  const root = fs.realpathSync(catalogFixture(t));
+  const initial = build(root, { quiet: true });
+  const sources = path.join(root, 'data/sources.json');
+  const edited = JSON.parse(fs.readFileSync(sources, 'utf8'));
+  edited.sources[0].reviewStatus += ' (edited during build)';
+  const packageFile = path.join(root, 'package.json');
+  const readFile = fs.readFileSync;
+  let saved = false;
+  t.mock.method(fs, 'readFileSync', (file, ...options) => {
+    if (!saved && file === packageFile && options[0] === 'utf8') {
+      saved = true;
+      fs.writeFileSync(sources, JSON.stringify(edited));
+    }
+    return readFile(file, ...options);
+  });
+
+  assert.throws(() => build(root, { quiet: true }), /Build inputs changed while staging/);
+  assert.equal(saved, true);
+  const output = path.join(root, 'dist');
+  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(output, 'artifact-manifest.json'))), initial);
+  checkArtifacts(output, { quiet: true });
+  assert.deepEqual(fs.readdirSync(path.join(root, 'tmp')), []);
 });
 
 test('browser reuse accepts the verified build without generated source metadata', t => {

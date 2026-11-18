@@ -142,6 +142,7 @@ export function renderCalculationRecordMarkdown(record) {
     ...(wavelength.uncertaintyNote?[['波长不确定度口径',wavelength.uncertaintyNote]]:[]),
     ...(wavelength.sourceConflict?[['原表波长冲突',wavelength.sourceConflict]]:[]),
     ...(offset?[['零场频移（相对重心）',formatZeroFieldOffset(offset)],['频移公式与来源',`${offset.convention} · ${offset.sourceLocator}`]]:[]),
+    ...(offset?.uncertaintyNote?[['频移不确定度口径',offset.uncertaintyNote]]:[]),
   ];
   const solve = {rabi:'功率、尺寸 → Rabi 频率',power:'Rabi 频率、尺寸 → 录入功率',waist:'功率、Rabi 频率 → 录入尺寸'}[config.display.solveFor] || '未记录';
   const dirty = record.build.worktreeDirty === true ? '含未提交改动；此提交仅为代码基线，不能保证精确复现当前运行代码。'

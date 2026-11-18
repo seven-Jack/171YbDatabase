@@ -6418,7 +6418,7 @@ export const canonicalCatalog = {
         "title": "R017 · ¹⁷¹Yb 65S Rydcalc 零场计算",
         "detail": "原始保存值为 ³P₀ F=1/2、mF=+1/2 出发的 E1 磁子态矩阵元。各末态 F 的带符号约化量由相应 M_fi 和 Condon–Shortley CG 因子换算。",
         "publication": "Calculation R017 · local_20261110T025200Z",
-        "artifactLocator": "Calculation/runs/R017_yb171_3p0_rydberg_transition_matrix_elements/results/local_20261110T025200Z/yb_matrix_elements.csv",
+        "artifactLocator": "https://github.com/seven-Jack/Calculation/blob/8e0dcea0feaf71fb15245655c3d2ced1de70d385/runs/R017/results/local_20261110T025200Z/yb_matrix_elements.csv",
         "artifactSha256": "8ccc808d924fa1a71196c380650ebaf2171a4cef21c3e715bf5b9bf77e361d8b",
         "codeRevision": "Rydcalc d17b981af24b0ef7132819d53504bc84c42f95b2",
         "reviewStatus": "original-source-located",
@@ -6433,7 +6433,7 @@ export const canonicalCatalog = {
         ],
         "year": 2026,
         "rawArtifactSha256": "7cb1c7c40fbe231ad331c59618a33b4410443c1cbaf6262019d4febee8c5db14",
-        "rawManifestLocator": "Calculation/runs/R017_yb171_3p0_rydberg_transition_matrix_elements/results/local_20261110T025200Z/raw_manifest.json",
+        "rawManifestLocator": "https://github.com/seven-Jack/Calculation/blob/8e0dcea0feaf71fb15245655c3d2ced1de70d385/runs/R017/results/local_20261110T025200Z/raw_manifest.json",
         "runId": "R017",
         "batchId": "local_20261110T025200Z",
         "artifactCheckedOn": "2026-11-18"
@@ -6443,7 +6443,7 @@ export const canonicalCatalog = {
         "title": "R017 · ¹⁷¹Yb n=29–100 零场 S 系列",
         "detail": "D_F 与实际 ν 来自 R017 正式交付。光谱采用固定 RydCalc 的 F_c=1 阈值、质量修正里德堡常数和 ³P₀ 频率，按同一末态根换算。",
         "publication": "Calculation R017 · delivery_20261111T085031Z",
-        "artifactLocator": "Calculation/runs/R017_yb171_3p0_rydberg_transition_matrix_elements/results/delivery_20261111T085031Z/data/dataset.json",
+        "artifactLocator": "https://github.com/seven-Jack/Calculation/blob/8e0dcea0feaf71fb15245655c3d2ced1de70d385/runs/R017/results/delivery_20261111T085031Z/data/dataset.json",
         "artifactSha256": "34268f13494583fd05ab3278568e87cc2716ba2b6f1815844c6b0dc371f25607",
         "codeRevision": "Rydcalc d17b981af24b0ef7132819d53504bc84c42f95b2",
         "reviewStatus": "original-source-located",
@@ -8539,12 +8539,12 @@ export const canonicalCatalog = {
 };
 export const datasetManifest = {
   "schemaVersion": 1,
-  "datasetVersion": "2026.11.18.1",
+  "datasetVersion": "2026.11.18.2",
   "sourceCommit": "2e2e9d5",
   "sourceDate": "2026-11-18",
   "migrationDate": "2026-10-26",
-  "generatedAt": "2026-11-18T06:07:27.785Z",
-  "contentHash": "81b59dc7dc2eed8b7a3d82470753a594c6f4f8b4a5e5438024c497a77fb4267e",
+  "generatedAt": "2026-11-18T07:12:34.627Z",
+  "contentHash": "f8f8bf3789d69eda79ab2e183378b7d6ad7f0543aae51f13aca0a03980147ba2",
   "files": [
     {
       "path": "data/levels.json",
@@ -8560,7 +8560,7 @@ export const datasetManifest = {
     },
     {
       "path": "data/sources.json",
-      "sha256": "e118df71444f11c80838fc4dd8f0021e37fd0fb9e6c02695f7f0a36e3ee00452"
+      "sha256": "b06a82487f282d92fc88b8816fdb31ca16f5541e6ff46eaea1b0c649890bbda4"
     },
     {
       "path": "data/estimates.json",
@@ -8571,7 +8571,7 @@ export const datasetManifest = {
       "sha256": "b4c9c84d724ba8d3a3c419217b6793690c016fd91a54295243e17708c8ac469c"
     }
   ],
-  "reviewStatus": "R017 zero-field S-series catalog with verified artifact locations; T7 wavelength uncertainty derived from frequency; historical R2 retained",
+  "reviewStatus": "R017 zero-field S-series catalog with commit-pinned Calculation artifacts; T7 wavelength uncertainty derived from frequency; historical R2 retained",
   "physicalValidation": "not established for all records: compilation, theory, source conflicts, missing originals and internal models are explicitly distinguished",
   "exports": [
     {

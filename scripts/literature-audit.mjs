@@ -27,16 +27,22 @@ const rydbergSeriesInputHashes = {
 };
 // Reviewed metadata and Rydberg display update. Clock quantities, the physics
 // implementation, and every immutable historical audit snapshot retain their hashes.
+const reviewedMetadataInputHashes = {
+  ...rydbergSeriesInputHashes,
+  'data/dataset.json': 'cdb419d040d6ae3b001c31160b0cde657898e46f8dfc5555e91e0daa696f1e45',
+  'data/transitions.json': 'ce79d976728ace0d196823443d06b594074c5f7d32200bf9525c76ce862faace',
+  'data/sources.json': 'e118df71444f11c80838fc4dd8f0021e37fd0fb9e6c02695f7f0a36e3ee00452',
+  'src/ui/energy-diagram.js': '6c693a0251a4109485c3372306e95dc9efb8cbc0f70e40728a030abd1e6fb3e8',
+};
 const releaseInputs = new Map([
   [historicalDatasetVersion, {}],
   [r017DatasetVersion, r017InputHashes],
   [rydbergSeriesVersion, rydbergSeriesInputHashes],
-  ['2026.11.18.1', {
-    ...rydbergSeriesInputHashes,
-    'data/dataset.json': 'cdb419d040d6ae3b001c31160b0cde657898e46f8dfc5555e91e0daa696f1e45',
-    'data/transitions.json': 'ce79d976728ace0d196823443d06b594074c5f7d32200bf9525c76ce862faace',
-    'data/sources.json': 'e118df71444f11c80838fc4dd8f0021e37fd0fb9e6c02695f7f0a36e3ee00452',
-    'src/ui/energy-diagram.js': '6c693a0251a4109485c3372306e95dc9efb8cbc0f70e40728a030abd1e6fb3e8',
+  ['2026.11.18.1', reviewedMetadataInputHashes],
+  ['2026.11.18.2', {
+    ...reviewedMetadataInputHashes,
+    'data/dataset.json': 'c13dfc5e67faccdfe622d80c413df340d786e21ff78ec377fd8f08a03626f968',
+    'data/sources.json': 'b06a82487f282d92fc88b8816fdb31ca16f5541e6ff46eaea1b0c649890bbda4',
   }],
 ]);
 const common = ['scripts/literature-audit.mjs', 'scripts/local-evidence.mjs', 'scripts/paper-paths.mjs'];

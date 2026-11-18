@@ -8,7 +8,7 @@ import {rabiHz} from '../../src/physics/rabi.js';
 import {DEFAULT_BEAM_DEFINITION} from '../../src/physics/beam-conventions.js';
 import {exportCalculationConfig,parseCalculationConfig,ConfigurationError} from '../../src/state/config.js';
 import {buildCalculationRecord,serializeCalculationRecord,renderCalculationRecordMarkdown,parseCalculationRecordOrConfig} from '../../src/ui/calculation-record.js';
-import {resultCSVRow} from '../../src/ui/result-export.js';
+import {formatCalculationSummary,resultCSVRow} from '../../src/ui/result-export.js';
 
 const versions = {softwareVersion:'0.3.3',appCommit:'33270877d433c83cb2c07243f1e741dd98d52cdb',worktreeDirty:false,datasetVersion:DATASET_VERSION,datasetHash:DATASET_MANIFEST.contentHash,formulaVersion:FORMULA_VERSION};
 const close = (a,b) => assert.ok(Math.abs(a-b) <= 1e-11 * Math.max(1e-30,Math.abs(a),Math.abs(b)),`${a} != ${b}`);
@@ -67,18 +67,26 @@ test('standalone records identify both states, angular momenta and wavelength pr
 });
 
 test('T2 and T7 research records distinguish centroid, optional zero-field offset and printed wavelength conflict',()=>{
-  for(const [Fp,value] of [[.5,-3957.85],[1.5,1978.925]]){
+  for(const [Fp,value,uncertainty] of [[.5,-3957.85,.05],[1.5,1978.925,.025]]){
     const record=buildCalculationRecord(stateFor('T2',{F_upper:Fp}),versions);
     const wavelength=record.transition.wavelength, csv=resultCSVRow(record);
     assert.equal(wavelength.reference,'hyperfine-centroid');
     assert.equal(wavelength.value,555.80068663);
-    assert.equal(wavelength.zeroFieldOffset.value,value);
-    assert.equal(wavelength.zeroFieldOffset.Fp,Fp);
+    const offset=JSON.parse(serializeCalculationRecord(record)).transition.wavelength.zeroFieldOffset;
+    assert.equal(offset.value,value);
+    assert.equal(offset.Fp,Fp);
+    assert.equal(offset.uncertainty,uncertainty);
+    assert.match(offset.uncertaintyNote,/一阶磁偶极超精细常数 A\/h/);
     assert.equal(csv.zero_field_offset_from_centroid_MHz,value);
+    assert.equal(csv.zero_field_offset_uncertainty_MHz,uncertainty);
+    assert.equal(csv.zero_field_offset_uncertainty_note,offset.uncertaintyNote);
     assert.match(csv.zero_field_offset_source_locator,/Table5/i);
+    const offsetText=`${value<0?'−':'+'}${Math.abs(value)} ± ${uncertainty} MHz`;
     const markdown=serializeCalculationRecord(record,'markdown');
     assert.match(markdown,/真空重心波长.*555\.80068663 nm/);
-    assert.ok(markdown.includes(`零场频移（相对重心） | ${value<0?'−':'+'}${Math.abs(value)} MHz`));
+    assert.ok(markdown.includes(`零场频移（相对重心） | ${offsetText}`));
+    assert.ok(markdown.includes(`频移不确定度口径 | ${offset.uncertaintyNote}`));
+    assert.ok(formatCalculationSummary(record).includes(`零场频移（相对重心） ${offsetText} · ${offset.uncertaintyNote}`));
     const old=structuredClone(record);
     old.transition.wavelength=Object.fromEntries(['value','unit','sourceId','sourceLocator','evidenceKind','uncertainty'].map(key=>[key,wavelength[key]]));
     assert.equal(parseCalculationRecordOrConfig(old,versions).result.fR,record.configuration.result.frequency_Hz);
@@ -95,7 +103,19 @@ test('T2 and T7 research records distinguish centroid, optional zero-field offse
   assert.equal(csv.wavelength_uncertainty_nm,wave.uncertainty);
   assert.equal(csv.wavelength_uncertainty_note,wave.uncertaintyNote);
   assert.equal(csv.zero_field_offset_from_centroid_MHz,null);
+  assert.equal(csv.zero_field_offset_uncertainty_MHz,null);
+  assert.equal(csv.zero_field_offset_uncertainty_note,null);
   assert.match(serializeCalculationRecord(record,'markdown'),/原表波长冲突.*770\.160284/);
+});
+
+test('older records containing a zero-field offset remain readable without an uncertainty field',()=>{
+  const record=buildCalculationRecord(stateFor('T2',{F_upper:1.5}),versions);
+  const offset=record.transition.wavelength.zeroFieldOffset;
+  delete offset.uncertainty;
+  delete offset.uncertaintyNote;
+  assert.match(serializeCalculationRecord(record,'markdown'),/零场频移（相对重心） \| \+1978\.925 MHz/);
+  assert.equal(resultCSVRow(record).zero_field_offset_uncertainty_MHz,null);
+  assert.equal(parseCalculationRecordOrConfig(record,versions).result.fR,record.configuration.result.frequency_Hz);
 });
 
 test('all three solve directions retain upstream total power/diameter definitions and canonical SI work point',()=>{
