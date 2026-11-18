@@ -1,8 +1,9 @@
 import {DATASET_MANIFEST, getDipoleQuantity, getTransitionRecord, getLevelRecord} from '../data/catalog.js';
-import {EVIDENCE_VERSION, getEvidenceRecord, getEvidenceSource, getEvidenceComparison} from '../data/evidence.js';
+import {EVIDENCE, EVIDENCE_VERSION, getEvidenceRecord, getEvidenceSource, getEvidenceComparison} from '../data/evidence.js';
 import {FORMULA_VERSION} from '../physics/constants.js';
 import {channelKey, computeCGChannels, computeDEff, polarizationQ} from '../physics/angular.js';
 import {DEFAULT_BEAM_DEFINITION, validateBeamDefinition, getBeamFactors} from '../physics/beam-conventions.js';
+import {buildR017Evidence} from './r017-evidence.js';
 
 const labels = {source:'原文定位', formula:'公式与通道核查', comparison:'条件比较', experiment:'独立实验验证'};
 const close = (a, b) => Number.isFinite(a) && Number.isFinite(b) && Math.abs(a - b) <= 1e-10 * Math.max(Math.abs(a), Math.abs(b), 1e-30);
@@ -45,7 +46,7 @@ export function buildEvidenceView(state = {}, versionsOverrides = {}) {
   } catch { channelError = true; }
   const inputValid = definitionValid && (state.inputStatus === undefined || state.inputStatus === 'valid')
     && Number.isFinite(state.P_mW) && state.P_mW >= 0 && Number.isFinite(state.w_um) && state.w_um > 0;
-  const channelReady = !!channel && (state.dEff === undefined || close(state.dEff, Math.abs(channel.matEl)));
+  const channelReady = !!channel && !channelError && (state.dEff === undefined || close(state.dEff, Math.abs(channel.matEl)));
   const calculationStatus = !transition ? 'unselected' : !applicable || state.inputStatus === 'unsupported' ? 'unsupported' : inputValid && channelReady ? 'valid' : 'invalid';
   const primarySourceId = quantity?.sourceId || null;
   const datasetMatch = !!review && versions.datasetHash === review.appliesTo.datasetHash;
@@ -81,8 +82,12 @@ export function buildEvidenceView(state = {}, versionsOverrides = {}) {
     beamDefinition:definition, inputStatus:calculationStatus, stateInputStatus:state.inputStatus ?? 'unreported', datasetHash:versions.datasetHash,
     formulaVersion:versions.formulaVersion, evidenceVersion:EVIDENCE_VERSION});
   const beamText = `${definition.powerPlane === 'upstream' ? '上游' : '原子处'}${definition.powerBasis === 'linear-total' ? '总线偏振功率' : '指定分量功率'} · 1/e² 强度${definition.sizeKind === 'diameter' ? '直径' : '半径'}`;
-  const selectionText = channel ? `F=${fraction(channel.F)}, mF=${magnetic(channel.m)} → F′=${fraction(channel.Fp)}, mF′=${magnetic(channel.mp)} · ${polLabel(q)}` : '通道待确认';
+  const selectionText = channel && !channelError ? `F=${fraction(channel.F)}, mF=${magnetic(channel.m)} → F′=${fraction(channel.Fp)}, mF′=${magnetic(channel.mp)} · ${polLabel(q)}` : '通道待确认';
   const contextText = transition ? `${transitionId} · ${selectionText} · ${beamText}${calculationStatus === 'invalid' ? ' · 当前计算输入待补正' : ''}` : '请选择跃迁';
+  if (EVIDENCE.r017Series && canonical?.quantities.d_num?.sourceId === EVIDENCE.r017Series.sourceId) {
+    return {transitionId, contextKey, contextText, calculationStatus,
+      ...buildR017Evidence({record:canonical, state, channel:channelReady ? channel : null, versions, inputValid, applicable})};
+  }
   if (!review || !applicable) {
     const status = transition && !applicable ? 'not-applicable' : 'not-reviewed';
     const statusText = status === 'not-applicable' ? '不适用' : '本轮未接入';

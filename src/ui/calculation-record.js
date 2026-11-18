@@ -67,8 +67,11 @@ export function buildCalculationRecord(state, versions = {}) {
       uncertainty:quantity.uncertainty ?? null,uncertaintyNote:quantity.uncertaintyNote ?? null,conditions:copy(quantity.conditions ?? {}),source:sourceProjection(getSourceRecord(quantity.sourceId))},
     evidence:{evidenceVersion:EVIDENCE_VERSION,reviewVersion:view.reviewVersion,reviewedAt:view.reviewedAt,summary:view.summary,
       hasReview:view.hasReview,calculationStatus:view.calculationStatus,applicability:copy(view.applicability),rows:copy(view.rows),
+      ...(view.calculationSource ? {calculationSource:copy(view.calculationSource)} : {}),
       atomicSupport:copy(view.atomicSupport),comparisons:copy(view.comparisons),sources:copy(view.sources),missing:copy(view.missing)},
-    boundary:BOUNDARY,
+    boundary:view.calculationSource
+      ? '本工作记录零场原子模型在高斯光束中心的裸相干耦合。总物理不确定度尚未量化，独立实验标定待补。恢复配置时按当前数据与公式计算。'
+      : BOUNDARY,
   };
   record.primaryQuantity = publicMetadata(record.primaryQuantity);
   record.transition = publicMetadata(record.transition);
@@ -121,6 +124,7 @@ export function renderCalculationRecordMarkdown(record) {
   if (record?.kind !== RECORD_KIND || record.schemaVersion !== RECORD_SCHEMA_VERSION) throw new ConfigurationError('record','不是受支持的研究记录');
   const config = record.configuration, transition = record.transition, channel = record.resolvedChannel, primary = record.primaryQuantity, evidence = record.evidence;
   const definition = config.inputDefinition, wavelength=transition.wavelength;
+  const calculationSource = evidence.calculationSource;
   const conditions=primary.conditions||{};
   const seriesRows=Number.isFinite(conditions.n)&&conditions.nuReference ? {
     n:['主量子数标签 n',conditions.n],
@@ -136,7 +140,7 @@ export function renderCalculationRecordMarkdown(record) {
     [wavelengthLabel(wavelength),wavelength.value === null ? '未记录' : `${wavelength.value} ${wavelength.unit}`],
     ['波长证据类型',wavelength.evidenceKind],
     ['波长来源',wavelength.sourceId],
-    ['波长原文定位',wavelength.sourceLocator],
+    [calculationSource ? '波长计算记录定位' : '波长原文定位',wavelength.sourceLocator],
     ['波长不确定度',wavelength.uncertainty === null ? '未知／未建立（null，不是零）' : `${wavelength.uncertainty} ${wavelength.unit}`],
     ...(wavelength.convention?[['波长约定',wavelength.convention]]:[]),
     ...(wavelength.uncertaintyNote?[['波长不确定度口径',wavelength.uncertaintyNote]]:[]),
@@ -163,16 +167,25 @@ export function renderCalculationRecordMarkdown(record) {
     '## 当前模型结果',
     table([['计算状态',config.result.status],['Ω/2π',`${config.result.frequency_Hz} Hz`],['Ω',`${config.result.omega_rad_s} rad/s`],['π 脉冲时间',config.result.frequency_Hz === 0 && config.result.piTime_s === null ? '∞（零耦合；JSON 以 null 记录无限时间）' : `${valueText(config.result.piTime_s)} s`]]),
     '## 原采用矩阵元与来源',
-    table([['来源 ID',primary.sourceId],['原文定位',primary.sourceLocator],['采用值',`${primary.value} ${primary.unit}`],['约定',primary.convention],['证据类型',primary.evidenceKind],['来源核查状态',primary.reviewStatus],['原记录矩阵元不确定度',primary.uncertainty === null ? '未知／未建立（null，不是零）' : `${primary.uncertainty} ${primary.unit}`],['不确定度口径',primary.uncertaintyNote],['完整 Rabi 不确定度','未建立；不把矩阵元误差当成功率、束腰与模型的完整误差']]),
+    table([['来源 ID',primary.sourceId],[calculationSource ? '计算记录定位' : '原文定位',primary.sourceLocator],['采用值',`${primary.value} ${primary.unit}`],['约定',primary.convention],['证据类型',primary.evidenceKind],['来源核查状态',primary.reviewStatus],['原记录矩阵元不确定度',primary.uncertainty === null ? '未知／未建立（null，不是零）' : `${primary.uncertainty} ${primary.unit}`],['不确定度口径',primary.uncertaintyNote],['完整 Rabi 不确定度','未建立；不把矩阵元误差当成功率、束腰与模型的完整误差']]),
     primary.source ? sourceMarkdown(primary.source) : '来源元数据未记录。',
     '原始条件与适用边界：',
     seriesRows?table([...Object.values(seriesRows),['带符号 D_F',`${primary.value} ea₀`]]):'',
     lines(Object.entries(conditions).filter(([key])=>!seriesRows||!Object.hasOwn(seriesRows,key))
       .map(([key,value]) => `${key}: ${typeof value === 'object' ? JSON.stringify(value) : value}`)),
-    '## 分层证据状态',
-    md(evidence.summary),
+    calculationSource ? `## ${md(evidence.summary)}` : '## 分层证据状态',
+    md(calculationSource ? calculationSource.conditions : evidence.summary),
     table((evidence.rows || []).map(row => [row.label,`${row.statusText}〔${row.status}〕：${row.detail}`])),
   ];
+  if (calculationSource) {
+    output.push('### 计算记录', table([
+      ['R017 交付批次',calculationSource.batchId],['计算版本',calculationSource.codeRevision],
+      ['数据集 SHA-256',calculationSource.datasetSha256],['通道表 SHA-256',calculationSource.channelTableSha256],
+    ]));
+    if (calculationSource.channelLine) output.push(sourceMarkdown({
+      title:`原始通道表第 ${calculationSource.channelLine} 行（需 Calculation 仓库访问权限）`, url:calculationSource.channelUrl,
+    }));
+  }
   if (evidence.atomicSupport) {
     const support = evidence.atomicSupport;
     output.push('## 原子强度支持与数据链',md(support.title),md(support.summary),table((support.quantities || []).map(item => [item.label,`${item.value} ${item.unit} · ${item.evidenceKind}`])),md(support.boundary));
@@ -189,7 +202,8 @@ export function renderCalculationRecordMarkdown(record) {
       output.push(md(comparison.normalizationNote),md(comparison.boundary));
     }
   }
-  output.push('## 证据适用性',table(Object.entries(evidence.applicability || {}).map(([key,value]) => [key,Array.isArray(value) ? value.join('；') : value])),'## 待补证据',evidence.missing?.length ? lines(evidence.missing) : '本轮没有接入该跃迁的待补清单，不表示证据已闭合。');
+  output.push('## 证据适用性',table(Object.entries(evidence.applicability || {}).map(([key,value]) => [key,Array.isArray(value) ? value.join('；') : value])));
+  if (evidence.missing?.length || !calculationSource) output.push('## 待补证据',evidence.missing?.length ? lines(evidence.missing) : '本轮没有接入该跃迁的待补清单，不表示证据已闭合。');
   if (evidence.sources?.length) output.push('## 支持文献',...evidence.sources.map(sourceMarkdown));
   output.push('## 恢复与复算','JSON 研究记录可通过页面“恢复计算配置”载入，页面仅提取嵌套 configuration，并使用当前数据、公式与证据版本重新计算和核查；不会把文件中的保存结果、矩阵元或核查结论作为当前依据。旧 v1/v2 配置恢复方式保持不变。');
   return output.filter(item => item !== '').join('\n\n')+'\n';

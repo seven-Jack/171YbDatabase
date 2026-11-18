@@ -1,5 +1,6 @@
 import {test, expect} from '@playwright/test';
 import {readFile} from 'node:fs/promises';
+import {EVIDENCE_VERSION} from '../../src/data/evidence.js';
 
 const problems = new WeakMap();
 const unit = field => `.rp-calc-unit[data-field="${field}"]`;
@@ -75,7 +76,7 @@ test('automatic channel is resolved in the research record without changing the 
   expect(record.resolvedChannel.mp).toBe(record.resolvedChannel.m);
   expect(record.resolvedChannel.dEff_ea0).toBeGreaterThan(0);
   expect(record.build).toHaveProperty('worktreeDirty');
-  expect(record.evidence.evidenceVersion).toBe('2026.11.18.1');
+  expect(record.evidence.evidenceVersion).toBe(EVIDENCE_VERSION);
   expect(record.configuration.result.frequency_Hz).toBeGreaterThan(0);
   const {exportedAt, ...savedConfig} = record.configuration;
   expect(savedConfig).toEqual(before);
@@ -204,7 +205,7 @@ test('zero power records zero frequency and an infinite pi time without inventin
   expect(markdown).toMatch(/∞|无穷|无限/);
 });
 
-test('the compact menu supports keyboard dismissal and unreviewed Rydberg records without page overflow', async ({page}) => {
+test('the compact menu supports keyboard dismissal and exports the selected R017 calculation record', async ({page}) => {
   const control=page.locator('#calculationRecordExport'), summary=control.locator(':scope > summary');
   await summary.focus();
   await summary.press('Enter');
@@ -215,8 +216,10 @@ test('the compact menu supports keyboard dismissal and unreviewed Rydberg record
   await expect(summary).toBeFocused();
   await choose(page,'NS-65-F32');
   const record=await downloadRecord(page);
-  expect(record.evidence.hasReview).toBe(false);
-  expect(record.evidence.rows.every(row=>row.status==='not-reviewed')).toBe(true);
+  expect(record.evidence.summary).toBe('This work · R017 零场计算');
+  expect(record.evidence.calculationSource.channelLine).toBe(367);
+  expect(record.resolvedChannel.matrixElement_ea0).toBeCloseTo(-0.0014248900942541772,14);
+  expect(record.evidence.rows.find(row=>row.key==='experiment').status).toBe('not-closed');
   expect(record.primaryQuantity).toMatchObject({sourceId:'internal-r017-ns-20261111',uncertainty:null,convention:'F-reduced'});
   expect(record.transition.wavelength.evidenceKind).toBe('derived');
   await menu(page);

@@ -8,6 +8,40 @@ test.beforeEach(async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('data-app-ready', 'true');
 });
 
+test('This work follows the branch and the actual magnetic channel from the Rabi source link', async ({page}) => {
+  await page.locator('#rydbergDiagramSelection .transition-line').press('Enter');
+  const review = page.getByTestId('evidence-review');
+  const details = page.getByTestId('evidence-calculation-record');
+  const result = page.locator('#rabiResult');
+  await result.getByRole('link', {name:'查看计算记录'}).click();
+  await expect(details).toHaveAttribute('open','');
+  await expect(review.getByRole('heading')).toHaveText('This work · R017 零场计算');
+  await expect(result.locator('.result-validation')).toHaveText('This work · R017 零场计算');
+  await expect(review).not.toContainText(/本轮未接入|578 nm|文献核查/);
+  await expect(review).toContainText('ν = 60.561073029');
+  await expect(review).toContainText('λ = 301.888533 nm');
+  await expect(review).toContainText('M_fi = −1.424890 × 10⁻³');
+  await expect(details.getByRole('link', {name:/第 367 行/})).toHaveAttribute('href',/channel_matrix_elements\.csv\?plain=1#L367$/);
+  const publicFile = details.getByRole('link', {name:'本站分支数据（JSON）'});
+  const publicData = await page.request.get(await publicFile.evaluate(link => link.href));
+  expect(publicData.ok()).toBe(true);
+  expect((await publicData.json()).states.find(row => row.n === 65 && row.Fp === 1.5))
+    .toMatchObject({nu:60.561073029, dipole_ea0:-0.003490253670468963});
+  await page.locator('#hfCGTableBody [data-channel-key="0.5|0.5|1.5|1.5|1"]').click();
+  await expect(details.getByRole('link', {name:/第 371 行/})).toBeVisible();
+  await expect(review).toContainText('M_fi = −1.745127 × 10⁻³');
+  await page.locator('#hfCGTableBody [data-channel-key="0.5|0.5|0.5|-0.5|-1"]').click();
+  await expect(review).toContainText('混合态');
+  await expect(review).toContainText('D_F = +2.165173 × 10⁻³');
+  await expect(review).toContainText('λ = 301.892033 nm');
+  await details.locator('summary').click();
+  await expect(details.getByRole('link', {name:/第 364 行/})).toBeVisible();
+  await page.locator('#rydbergN').fill('29');
+  await expect(review).toContainText('ν = 24.5448869845');
+  await expect(review).not.toContainText('60.1761270465');
+  await expect(page.locator('#sourcePanel [data-source-field="d_num"]')).toContainText('计算记录定位');
+});
+
 test('switches n in the paired matrix display and uses the chosen R017 channel for Rabi', async ({ page }) => {
   const n = page.locator('#rydbergN');
   const f = page.locator('#rydbergFp');

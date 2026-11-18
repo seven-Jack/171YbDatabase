@@ -32,6 +32,7 @@ export function resultCSVRow(record) {
   requireRecord(record);
   const c=record.configuration,t=record.transition,ch=record.resolvedChannel,d=record.primaryQuantity,def=c.inputDefinition;
   const series=Number.isFinite(d.conditions?.n)&&d.conditions.nuReference?d.conditions:null;
+  const source=record.evidence.calculationSource;
   return {
     exported_at:record.exportedAt,transition_id:t.id,lower_state:t.lower,upper_state:t.upper,multipole:t.multipole,
     wavelength_vac_nm:t.wavelength.value,wavelength_evidence:t.wavelength.evidenceKind,wavelength_source_id:t.wavelength.sourceId,
@@ -64,6 +65,9 @@ export function resultCSVRow(record) {
     zero_field_offset_convention:t.wavelength.zeroFieldOffset?.convention??null,
     rydberg_n:series?.n??null,rydberg_nu_effective:series?.nu??null,rydberg_nu_reference:series?.nuReference??null,
     rydberg_B_T:series?.B_T??null,rydberg_E_V_m:series?.E_V_m??null,rydberg_branch:series?.branch??null,
+    ...(source ? {r017_batch_id:source.batchId,rydcalc_revision:source.codeRevision,
+      r017_dataset_sha256:source.datasetSha256,r017_channel_csv_line:source.channelLine,
+      r017_channel_csv_url:source.channelUrl,r017_channel_csv_sha256:source.channelTableSha256} : {}),
   };
 }
 

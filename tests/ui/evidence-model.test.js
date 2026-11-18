@@ -1,24 +1,44 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {CORE_TRANSITIONS, RYDBERG_QC_TRANSITIONS, getQuantity, getTransitionRecord, getLevelRecord} from '../../src/data/catalog.js';
+import {CORE_TRANSITIONS, RYDBERG_QC_TRANSITIONS, RYDBERG_SERIES_TRANSITIONS, getQuantity, getTransitionRecord, getLevelRecord} from '../../src/data/catalog.js';
 import {computeCGChannels, computeDEff} from '../../src/physics/angular.js';
 import {getEvidenceRecord} from '../../src/data/evidence.js';
 import {buildEvidenceView} from '../../src/ui/evidence-model.js';
 
 function stateFor(id = 'T3', patch = {}) {
-  const transition = [...CORE_TRANSITIONS,...RYDBERG_QC_TRANSITIONS].find(row => row.id === id);
+  const transition = [...CORE_TRANSITIONS,...RYDBERG_QC_TRANSITIONS,...RYDBERG_SERIES_TRANSITIONS].find(row => row.id === id);
   const canonical = getTransitionRecord(id), reviewed = getEvidenceRecord(id)?.appliesTo;
   const q = reviewed?.channels?.[0]?.q ?? 0;
   const state = {transition, dReduced:getQuantity(id,'d_num')?.value || 0,
     J_lower:getLevelRecord(canonical?.lowerLevelId)?.attributes.J ?? 0,
-    J_upper:getLevelRecord(canonical?.upperLevelId)?.attributes.J ?? 0,
-    F_lower:reviewed?.F ?? .5, F_upper:reviewed?.Fp ?? .5,
+    J_upper:transition?.upperJ ?? getLevelRecord(canonical?.upperLevelId)?.attributes.J ?? 0,
+    F_lower:reviewed?.F ?? .5, F_upper:transition?.Fp ?? reviewed?.Fp ?? .5,
     pol:({[-1]:'sigmam',0:'pi',1:'sigmap'})[q], selectedChannel:reviewed?.channels?.[0] ?? null,
     P_mW:1, w_um:500, inputStatus:'valid', ...patch};
   state.dEff = computeDEff(state).dEff;
   return state;
 }
 const statuses = view => Object.fromEntries(view.rows.map(row => [row.key, row.status]));
+
+test('the R017 archive locator requires the actual matching projection, independent of beam power', () => {
+  const state = stateFor('NS-65-F32');
+  const view = buildEvidenceView(state);
+  assert.deepEqual(statuses(view), {source:'internal-calculation',spectrum:'model-derived',formula:'channel-projection',experiment:'not-closed'});
+  assert.equal(view.calculationSource.channelLine,367);
+  assert.equal(buildEvidenceView({...state,P_mW:NaN}).calculationStatus,'invalid');
+  assert.equal(buildEvidenceView({...state,P_mW:NaN}).calculationSource.channelLine,367);
+  for (const changed of [
+    buildEvidenceView({...state,dReduced:-state.dReduced}),
+    buildEvidenceView({...state,selectedChannel:{F:.5,m:-.5,Fp:1.5,mp:.5,q:1}}),
+    buildEvidenceView(state,{formulaVersion:'0.0.0'}),
+    buildEvidenceView(state,{datasetHash:'0'.repeat(64)}),
+  ]) {
+    assert.equal(changed.calculationSource.channelUrl,null);
+    assert.equal(changed.rows.find(row=>row.key==='formula').status,'needs-review');
+    assert.equal(changed.rows.find(row=>row.key==='experiment').status,'not-closed');
+  }
+  assert.equal(buildEvidenceView(stateFor('R2')).calculationSource,undefined);
+});
 
 test('578 nm review keeps four evidence levels and the true adopted source separate', () => {
   const state = stateFor(), before = JSON.stringify(state);
