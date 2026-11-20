@@ -23,11 +23,11 @@ for(const item of cases)test(`${item.id}: low-state paper channel and forward/in
   await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');
   const line=page.locator(`#levelDiagram .transition-line[data-id="${item.id}"]`);
   await line.press('Enter');
-  await expect(page).toHaveURL(/#secCalc$/);
+  await expect(page).toHaveURL(/#polarizationDiagram$/);
   await expect(line).toHaveAttribute('aria-pressed','true');
   const channel=page.locator(`#hfCGTableBody [data-channel-key="${item.channel}"]`);
   await channel.click();
-  await expect(page).toHaveURL(/#secRabi$/);
+  await expect(page).toHaveURL(/#rabiResult$/);
   await expect(channel).toHaveAttribute('aria-pressed','true');
   await expect(page.locator('#selectionContext')).toHaveAttribute('data-selection-transition',item.id);
   await expect(page.locator('#selectionContext .selection-context-channel')).toContainText(item.id==='T7'?'F=5/2, mF=+5/2':'F=1/2, mF=+1/2');

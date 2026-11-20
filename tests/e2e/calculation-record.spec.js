@@ -227,3 +227,66 @@ test('the compact menu supports keyboard dismissal and exports the selected R017
   await page.locator('#rabiResult').click();
   await expect(control).not.toHaveAttribute('open','');
 });
+
+test('clock inverse card names the solved definition and preserves normalized conditions', async ({page}) => {
+  test.slow(); // Three solve directions plus file downloads through the real workbench.
+  await choose(page,'T3','0.5|0.5|0.5|0.5|0');
+  await page.locator('#calcSolveFor').selectOption('power');
+  await page.locator(unit('rabi')).selectOption('kHz');
+  await page.locator('#rpCalcR').fill('100');
+  await page.locator(unit('waist')).selectOption('µm');
+  await page.locator('#rpCalcW').fill('15');
+  const card=page.locator('#rabiResult');
+  await expect(card).toHaveAccessibleName('当前工作点的所需原子处分量功率');
+  await expect(card.locator('strong')).toHaveText('20.3541 mW');
+  await expect(card.locator('small')).toContainText('目标 Ω/2π=100 kHz');
+  const direct=await downloadRecord(page);
+  expect(direct.configuration.result.power_W).toBeCloseTo(.020354060676842625,13);
+  const definitions=page.locator('#beamDefinitionSettings');
+  if(await definitions.getAttribute('open')===null) await definitions.locator(':scope > summary').click();
+  await page.locator('#beamPowerPlane').selectOption('upstream');
+  await page.locator('#beamTransmission').fill('80');
+  await page.locator('#beamPowerBasis').selectOption('linear-total');
+  await page.locator('#beamLinearOrientation').selectOption('manual');
+  await page.locator('#beamManualFraction').fill('50');
+  await expect(card).toHaveAccessibleName('当前工作点的所需上游总功率');
+  await expect(card.locator('strong')).toHaveText('50.8852 mW');
+  await expect(card.locator('small')).toContainText('原子处 Pq=20.3541 mW');
+  const upstream=await downloadRecord(page);
+  expect(upstream.resolvedChannel.solvedQuantity.valueSI).toBeCloseTo(.020354060676842625/.4,13);
+  await page.locator('#beamSizeKind').selectOption('diameter');
+  await page.locator('#calcSolveFor').selectOption('waist');
+  await expect(card).toHaveAccessibleName('当前工作点的所需光束直径 D（1/e² 强度）');
+  const inverse=await downloadRecord(page);
+  expect(inverse.resolvedChannel.solvedQuantity.valueSI).toBeCloseTo(30e-6,9);
+  expect(inverse.configuration.parameters.waist_m).toBeCloseTo(15e-6,9);
+});
+
+test('previewing a historical file keeps the active work point until explicit recalculation', async ({page}) => {
+  test.slow(); // Compare full configurations on both sides of a file-picker round trip.
+  await choose(page,'T3','0.5|0.5|0.5|0.5|0');
+  const record=await downloadRecord(page);
+  const currentHz=record.configuration.result.frequency_Hz;
+  record.configuration.datasetVersion='archived-test';
+  record.configuration.result.frequency_Hz=currentHz+2000;
+  record.evidence.summary='文件中的历史证据说明';
+  await choose(page,'T2');
+  const before=await downloadConfig(page);
+  const chooser=page.waitForEvent('filechooser');
+  await page.locator('#snapshotOpen').click();
+  await (await chooser).setFiles({name:'archive.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(record))});
+  const snapshot=page.locator('#recordSnapshot');
+  await expect(snapshot).toHaveAttribute('open','');
+  await expect(snapshot.locator('summary').first()).toBeFocused();
+  await expect(snapshot).toContainText('archived-test');
+  await expect(snapshot).toContainText('文件中的历史证据说明');
+  expect(await downloadConfig(page)).toEqual(before);
+  await snapshot.locator('#recomputeSnapshot').click();
+  await expect(page.locator('#selectionContext')).toHaveAttribute('data-selection-transition','T3');
+  await expect(snapshot).toContainText('此次重算版本');
+  const change=await snapshot.locator('dt').filter({hasText:'重算减保存'}).locator('+ dd').innerText();
+  expect(Number.parseFloat(change)).toBeCloseTo(-2000,5);
+  await expect(page.locator('#rabiResult')).not.toContainText('文件中的历史证据说明');
+  const current=await downloadRecord(page);
+  expect(current.configuration.result.frequency_Hz).toBeCloseTo(currentHz,7);
+});

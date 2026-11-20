@@ -14,6 +14,7 @@ function levelView(id) {
   const attributes=level?.attributes || {};
   return {
     id,term:attributes.term || '能级记录缺失',config:attributes.config || '',
+    role:id==='yb171-6s2-1s0'?'基态':id==='yb171-6s6p-3p0'?'钟态 / 亚稳态':attributes.role || '',
     J:Number.isFinite(attributes.J)?String(attributes.J):'待补充',
     parity:parityLabel[attributes.parity] || '宇称待补充',missing:!level
   };
@@ -105,7 +106,7 @@ function renderSource(source) {
 export function renderKnowledgeHTML(view) {
   if (!view.transition) return `<p class="knowledge-empty">${view.status==='unknown'?'当前跃迁没有对应的目录记录。':'选择一条跃迁，浏览能级关联与字段来源。'}</p>`;
   const {transition,related,sources}=view;
-  const endpoint=(level,position)=>`<div class="knowledge-level"><span class="knowledge-level-caption">${endpointLabel[position]}</span><strong>${escapeHTML(level.term)}</strong><span>${escapeHTML(level.config)} · J = ${escapeHTML(level.J)} · ${escapeHTML(level.parity)}</span></div>`;
+  const endpoint=(level,position)=>`<div class="knowledge-level"><span class="knowledge-level-caption">${endpointLabel[position]} · ${escapeHTML(level.role || '原子态')}</span><strong>${escapeHTML(level.term)}</strong><span>${escapeHTML(level.config)} · J = ${escapeHTML(level.J)} · ${escapeHTML(level.parity)}</span></div>`;
   return `<header class="knowledge-header"><p class="knowledge-eyebrow">对象 · 关系 · 来源</p><h3><span>${escapeHTML(transition.id)}</span> ${escapeHTML(transition.lower.term)} → ${escapeHTML(transition.upper.term)}</h3><p>${escapeHTML(transition.label)} <span aria-hidden="true">·</span> ${escapeHTML(transition.wavelength)}</p></header>
     <div class="knowledge-levels" aria-label="当前跃迁两端能级">${endpoint(transition.lower,'lower')}<span class="knowledge-level-connector" aria-hidden="true">→</span>${endpoint(transition.upper,'upper')}</div>
     <section class="knowledge-section" aria-label="共享能级的跃迁"><div class="knowledge-section-heading"><h4>能级关联</h4><span>${related.length} 条</span></div><p class="knowledge-hint">按目录中的共同能级关联。</p>

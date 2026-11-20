@@ -14,8 +14,8 @@ function fixture() {
   const transitions=['T2','T4','R2'].map(id=>CORE_TRANSITIONS.find(row=>row.id===id));
   const lines=transitions.map(transition=>Object.assign(node(),{dataset:{id:transition.id}}));
   const unknown=Object.assign(node(),{dataset:{id:'unknown'}});
-  const heading=Object.assign(node(),{focus:options=>focused.push(options)});
-  const destination=Object.assign(node(),{id:'secCalc',querySelector:()=>heading,scrollIntoView:options=>scrolls.push(options)});
+  const heading=Object.assign(node(),{id:'polarizationDiagram',querySelector:()=>null,
+    focus:options=>focused.push(options),scrollIntoView:options=>scrolls.push(options)});
   const svg=Object.assign(node({role:'img','aria-label':'Original diagram'}),{
     querySelectorAll:()=>[...lines,unknown],
     addEventListener:(name,handler)=>listeners.set(name,handler),
@@ -24,7 +24,7 @@ function fixture() {
   });
   let change,unsubscribed=0;
   const calculator={loadTransition:transition=>{selected.push(transition);change?.({transition});},onChange:callback=>{change=callback;callback({transition:transitions[0]});return()=>unsubscribed++;}};
-  const options={svg,transitions,calculator,destination,hideTooltip:()=>effects.push('tooltip'),closeLevelDetails:()=>effects.push('level')};
+  const options={svg,transitions,calculator,destination:heading,hideTooltip:()=>effects.push('tooltip'),closeLevelDetails:()=>effects.push('level')};
   const api=initDiagramNavigation(options);
   function dispatch(line,type='click',key) {
     const event={type,key,target:{closest:()=>line},prevented:0,preventDefault(){this.prevented++;}};
@@ -37,7 +37,7 @@ test('nested transition labels select the original transition object and enter i
   const f=fixture();
   f.dispatch(f.lines[2]);
   assert.equal(f.selected[0],f.transitions[2]);
-  assert.deepEqual(f.hashes,['#secCalc']);
+  assert.deepEqual(f.hashes,['#polarizationDiagram']);
   assert.deepEqual(f.scrolls,[{block:'start',behavior:'auto'}]);
   assert.deepEqual(f.focused,[{preventScroll:true}]);
   assert.deepEqual(f.effects,['tooltip','level']);
@@ -52,8 +52,8 @@ test('plotted choices expose named keyboard buttons instead of an opaque SVG ima
   for (const line of f.lines) {
     assert.equal(line.getAttribute('role'),'button');
     assert.equal(line.getAttribute('tabindex'),'0');
-    assert.equal(line.getAttribute('aria-controls'),'secCalc');
-    assert.match(line.getAttribute('aria-label'),/nm，选择并跳转到超精细分量/);
+    assert.equal(line.getAttribute('aria-controls'),'polarizationDiagram');
+    assert.match(line.getAttribute('aria-label'),/nm，选择并跳转到偏振分量图/);
   }
   assert.equal(f.unknown.getAttribute('role'),null);
 });
@@ -95,6 +95,6 @@ test('a line jump keeps the diagram in browser history without duplicating repea
   view.history.pushState=(state,title,hash)=>{pushed.push(hash);view.location.hash=hash;};
   f.dispatch(f.lines[0]);
   f.dispatch(f.lines[0]);
-  assert.deepEqual(pushed,['#secCalc']);
-  assert.deepEqual(f.hashes,['#secCalc']);
+  assert.deepEqual(pushed,['#polarizationDiagram']);
+  assert.deepEqual(f.hashes,['#polarizationDiagram']);
 });

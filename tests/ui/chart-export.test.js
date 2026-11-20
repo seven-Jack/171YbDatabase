@@ -67,6 +67,22 @@ test('heat SVG embeds only the field/colour strip and CSV keeps saturated grid v
   assert.deepEqual(snapshot,before);
 });
 
+test('fixed colouring and locked axes change figure metadata without changing sampled frequencies',()=>{
+  const {record,snapshot}=fixture('heat');
+  const numeric=source=>parseCSV(serializeChartCSV(source,record)).map(row=>[row.atom_component_power_W,row.intensity_radius_m,row.frequency_Hz]);
+  const before=numeric(snapshot);
+  snapshot.viewTheme='dark';snapshot.axesLocked=true;
+  Object.assign(snapshot.grid,{colorMode:'fixed',colorLo_MHz:0,colorHi_MHz:10});
+  snapshot.figure={width:1200,height:800,font:'serif',background:'paper'};
+  snapshot.theme.background='#ffffff';
+  const svg=renderChartSVG(snapshot,record);
+  assert.match(svg,/width="1200" height="800"/);assert.match(svg,/font-family="Georgia/);
+  assert.match(svg,/固定范围/);assert.doesNotMatch(svg,/2%–98%/);
+  const rows=parseCSV(serializeChartCSV(snapshot,record));
+  assert.equal(rows[0].color_scale_mode,'fixed');assert.equal(rows[0].axes_locked,'true');
+  assert.deepEqual(numeric(snapshot),before);
+});
+
 test('display units, log range and pinned values are exported from the supplied plotted view',()=>{
   const {record,snapshot}=fixture();snapshot.geometry.scale='log';snapshot.geometry.Pmin=.1;
   snapshot.geometry.rUnit='kHz';snapshot.geometry.rf=1000;snapshot.geometry.yMax=200000;snapshot.yTitle='Ω/2π (kHz)';

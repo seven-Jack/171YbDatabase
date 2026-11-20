@@ -161,3 +161,28 @@
   #secData .data-comparison-load { min-height: 44px; }
   #secData .data-comparison-source > summary { min-height: 40px; }
 }
+
+.record-status {
+  display: inline-block;
+  max-width: 100%;
+  color: #a9c7ff;
+  font: 500 12px/1.6 var(--font-ui,system-ui,sans-serif);
+  white-space: normal;
+}
+#core-data-table td[data-column="id"] .record-status { display: block; margin-top: 4px; }
+.record-status[data-adoption="historical"], .record-status[data-adoption="pending"] { color: #e3c390; }
+.record-batch { display: block; color: #bbc9de; font-size: 12px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.source-record-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 14px; margin: 0 0 14px; }
+.source-limit { margin: 4px 0; color: #c6c8c9; font-size: 13px; }
+.source-record-heading strong { color: #dbe6f7; font-weight: 500; }
+.source-record-heading code, .source-record-heading p { margin: 0; color: #bac9de; font-size: 13px; overflow-wrap: anywhere; }
+.batch-values { max-width: 100%; overflow-x: auto; }
+.batch-relation { max-width: 100%; overflow-wrap: anywhere; }
+.batch-values :is(th,td) { padding: 6px 10px; text-align: left; font-variant-numeric: tabular-nums; }
+.evidence-row-detail summary { color: #b6cbed; font-size: 12px; cursor: pointer; }
+#secData .catalog-action { min-height: 40px; padding: 6px 10px; border: 1px solid #3c506a; border-radius: 6px; background: #101e31; color: #c0d6f1; cursor: pointer; }
+#secData .catalog-action:disabled { color: #b0c1d8; opacity: .7; cursor: default; }
+#secData .catalog-row-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 12px; }
+#secData .catalog-copy { width: 100%; color: #cddbf0; background: #0c1522; }
+#secData #catalogMore { margin-top: 8px; }
+@media (max-width: 680px) { #secData .catalog-action { min-height: 44px; } }
