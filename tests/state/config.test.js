@@ -107,6 +107,19 @@ test('inverse mode restores target ordinary frequency and recomputes required po
   assert.notEqual(parsed.state.P_mW, 1);
 });
 
+test('inverse configuration keeps the requested Rabi frequency separate from the recomputed result', () => {
+  for (const solveFor of ['power', 'waist']) {
+    const state = stateFor('T3', 'sigmam');
+    state.solveFor = solveFor;
+    state.fR_MHz = .01;
+    const config = exportCalculationConfig(state, versions);
+    const restored = parseCalculationConfig(config, versions);
+    assert.equal(restored.state.fR_MHz, config.parameters.targetRabi_Hz / 1e6);
+    const next = exportCalculationConfig(restored.state, versions);
+    assert.equal(next.parameters.targetRabi_Hz, config.parameters.targetRabi_Hz);
+  }
+});
+
 test('zero-power configuration stays valid, M2 stays unsupported, exported state is not mutated', () => {
   const state = stateFor(); state.P_mW = 0;
   const before = structuredClone(state);

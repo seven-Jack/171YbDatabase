@@ -132,7 +132,8 @@ function restoreAgainstCatalog(config) {
     }
   }
   const result = calculateRabi({ dEff_ea0: dipole.reduced_ea0 === null ? null : state.dEff, multipole: transition.multipole, P_mW: state.P_mW, w_um: state.w_um });
-  if (result.status === 'ok') state.fR_MHz = result.fR / 1e6;
+  // In inverse modes fR_MHz is the requested input, not the recomputed forward result.
+  if (result.status === 'ok' && solveFor === 'rabi') state.fR_MHz = result.fR / 1e6;
   return { state, transition, result, dipole };
 }
 
