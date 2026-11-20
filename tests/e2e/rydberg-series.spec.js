@@ -158,6 +158,8 @@ test('n and ν synchronize immediately, using only entries in the current F′',
 test('R017 lines stay in the ungraded E1 class when selecting and filtering', async ({ page }) => {
   const line = page.locator('#rydbergDiagramSelection .transition-line');
   await expect(line).toHaveAttribute('data-strength', 'ungraded');
+  const filters = page.locator('#atlasFilters');
+  if (!(await filters.evaluate(el => el.open))) await filters.locator('summary').click();
   await page.locator('[data-fstrength="strong"]').click();
   await expect(line).toHaveCSS('pointer-events', 'none');
   await page.locator('#rydbergN').fill('85');
@@ -166,6 +168,85 @@ test('R017 lines stay in the ungraded E1 class when selecting and filtering', as
   await expect(line).toHaveCSS('pointer-events', 'none');
   await page.locator('[data-fstrength="ungraded"]').click();
   await expect(line).toHaveCSS('pointer-events', 'auto');
+});
+
+test('typing a complete n or ν lands on the polarization diagram for the chosen branch', async ({page}) => {
+  const openBranches = page.locator('a[href="#rydbergSelection"]');
+  const n = page.locator('#rydbergN');
+  const nu = page.locator('#rydbergNu');
+  const fp = page.locator('#rydbergFp');
+  const heading = page.getByRole('heading', {name:'偏振分量图', exact:true});
+  const pi = page.locator('#hfTransPolSeg [data-pol="pi"]');
+  const context = page.locator('#selectionContext');
+  const target = RYDBERG_SERIES_TRANSITIONS.find(branch => branch.n === 85 && branch.Fp === 0.5);
+  async function expectDiagramInView() {
+    await expect(page).toHaveURL(/#polarizationDiagram$/);
+    await expect(heading).toBeFocused();
+    await expect(heading).toBeInViewport({ratio:1});
+    await expect.poll(async () => {
+      const [title, sticky] = await Promise.all([heading.boundingBox(), context.boundingBox()]);
+      return title.y >= sticky.y + sticky.height;
+    }).toBe(true);
+    await expect(pi).toBeInViewport({ratio:1});
+    await expect(page.locator('#hfTransLines svg')).toBeInViewport();
+  }
+
+  await openBranches.click();
+  await fp.selectOption('0.5');
+  await n.fill('');
+  await n.pressSequentially('10');
+  await expect(n).toBeFocused();
+  await expect(page).toHaveURL(/#rydbergSelection$/);
+  await n.press('0');
+  await expectDiagramInView();
+  await expect(context).toHaveAttribute('data-selection-transition', 'NS-100-F12');
+
+  await openBranches.click();
+  await nu.fill('');
+  const digits = String(target.nu);
+  const prefix = digits.slice(0, -3);
+  await nu.pressSequentially(prefix);
+  await expect(nu).toBeFocused();
+  await expect(page).toHaveURL(/#rydbergSelection$/);
+  await nu.pressSequentially(digits.slice(prefix.length));
+  await expectDiagramInView();
+  await expect(n).toHaveValue('85');
+  await expect(fp).toHaveValue('0.5');
+  await expect(context).toHaveAttribute('data-selection-transition', target.id);
+
+  await openBranches.click();
+  await nu.press('Enter');
+  await expectDiagramInView();
+  await pi.click();
+  const line = page.locator('#hfTransLines [role="button"][data-channel-key="0.5|0.5|0.5|0.5|0"]');
+  // The stroked SVG line can have zero geometric width; click its center on screen.
+  const bounds = await line.boundingBox();
+  await page.mouse.click(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2);
+  await expect(page).toHaveURL(/#rabiResult$/);
+  await expect(page.locator('#rabiResult')).toBeFocused();
+  await expect(context).toHaveAttribute('data-selection-transition', target.id);
+});
+
+test('superseded, invalid and cancelled inputs keep the editor in place', async ({page}) => {
+  await page.locator('a[href="#rydbergSelection"]').click();
+  await page.clock.install();
+  const n = page.locator('#rydbergN');
+  const nu = page.locator('#rydbergNu');
+  await n.fill('85');
+  await n.fill('851');
+  await n.press('Enter');
+  await page.clock.fastForward(2000);
+  await expect(n).toHaveAttribute('aria-invalid', 'true');
+  await expect(n).toBeFocused();
+  await expect(page).toHaveURL(/#rydbergSelection$/);
+
+  const saved = await nu.inputValue();
+  await nu.fill('24.5');
+  await nu.press('Escape');
+  await page.clock.fastForward(2000);
+  await expect(nu).toHaveValue(saved);
+  await expect(nu).toBeFocused();
+  await expect(page).toHaveURL(/#rydbergSelection$/);
 });
 
 test('restores legacy R2 and round-trips the new selected branch', async ({ page }) => {

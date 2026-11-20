@@ -7,7 +7,7 @@ test('the auxiliary clock operating point displays the current prediction withou
   await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');
   await page.locator('#levelDiagram .transition-line[data-id="T3"]').press('Enter');
   await page.locator('#hfCGTableBody [data-channel-key="0.5|0.5|0.5|0.5|0"]').click();
-  await expect(page).toHaveURL(/#secRabi$/);
+  await expect(page).toHaveURL(/#rabiResult$/);
   await expect(page.locator('#selectionContext')).toHaveAttribute('data-selection-transition','T3');
   await expect(page.locator('.selection-context-channel')).toContainText('mF′=+1/2 · π');
   await page.locator('.rp-calc-unit[data-field="power"]').selectOption('nW');

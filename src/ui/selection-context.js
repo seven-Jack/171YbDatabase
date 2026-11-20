@@ -1,5 +1,6 @@
 import { channelKey, computeCGChannels, computeDEff, polarizationQ } from '../physics/angular.js';
 import { getDipoleQuantity, getTransitionRecord } from '../data/catalog.js';
+import { getRecordAdoption } from './record-adoption.js';
 import { buildSourceView } from './source-panel.js';
 import { renderCompactTooltip } from './compact-tooltip.js';
 import { formatZeroFieldOffset, getTransitionWavelength, wavelengthLabel } from './transition-wavelength.js';
@@ -9,6 +10,10 @@ const magnetic=value=>Number.isFinite(value)?`${value<0?'−':value>0?'+':''}${f
 const polarization={pi:'π',sigmap:'σ⁺',sigmam:'σ⁻'};
 const number=value=>Number.isFinite(value)?String(Number(value.toPrecision(6))):'—';
 const stateLabel=(channel,upper=false)=>`F${upper?'′':''}=${fraction(channel[upper?'Fp':'F'])}, mF${upper?'′':''}=${magnetic(channel[upper?'mp':'m'])}`;
+
+export function formatChannelLabel(channel, pol) {
+  return `${stateLabel(channel)} → ${stateLabel(channel,true)} · ${polarization[pol] || '—'}`;
+}
 
 /** A read-only description of the channel actually used by the calculator. */
 export function buildSelectionContext(state={}) {
@@ -29,7 +34,9 @@ export function buildSelectionContext(state={}) {
   const wavelengthData=getTransitionWavelength(transition.id,channel);
   const wavelength=Number.isFinite(wavelengthData.value)?`${wavelengthData.value} nm`:'未记录';
   const offset=wavelengthData.zeroFieldOffset;
+  const adoption=getRecordAdoption(transition.id,state.F_upper);
   const rows=[
+    {label:'采用状态',value:[adoption.label,adoption.scope,adoption.batchId].filter(Boolean).join(' · ')},
     {label:wavelengthLabel(wavelengthData),value:wavelength,sourceIds:refs('wavelength_vac_nm')},
     ...(offset?[{label:'零场频移（相对重心）',value:formatZeroFieldOffset(offset),sourceIds:[offset.sourceId]}]:[]),
     ...(wavelengthData.sourceConflict?[{label:'原表波长冲突',value:'采用频率推导值',sourceIds:refs('wavelength_vac_nm')}]:[]),
@@ -37,9 +44,9 @@ export function buildSelectionContext(state={}) {
     {label:'末态',value:channel?`${transition.upper} · ${stateLabel(channel,true)}`:transition.upper},
     ...(channel?[{label:'偏振',value:`${pol} · ΔmF=${channel.q>0?'+':''}${channel.q}`},{label:'|d_eff|',value:`${number(state.dEff)} ea₀`,sourceIds:dipoleSource?[dipoleSource]:[]}]:[])
   ];
-  return {transition,channel,mode,status:source.status,hiddenByFilter,wavelength,
+  return {transition,channel,mode,adoption,status:source.status,hiddenByFilter,wavelength,
     transitionText:`${transition.id} · ${transition.lower} → ${transition.upper}`,
-    channelText:channel?`${stateLabel(channel)} → ${stateLabel(channel,true)} · ${pol}`:source.statusText,
+    channelText:channel?formatChannelLabel(channel,state.pol):source.statusText,
     tooltip:{id:transition.id,title:'当前计算状态',rows,footnote:[mode,source.status==='ready'?'':source.statusText,hiddenByFilter?'显示筛选未包含当前通道':''].filter(Boolean).join(' · ')}};
 }
 
@@ -90,9 +97,9 @@ export function initSelectionContext({calculator,host=globalThis.document?.getEl
     host.dataset.selectionMode=model.channel?(model.mode==='手动选定'?'explicit':'automatic'):'unavailable';
     summary.textContent=model.transitionText;
     channel.textContent=model.channelText;
-    mode.textContent=model.mode;
+    mode.textContent=`${model.mode} · ${model.adoption.label}`;
     details.innerHTML=renderCompactTooltip(model.tooltip);
-    const text=`当前计算：${model.transitionText}；${model.mode}；${model.channelText}`;
+    const text=`当前计算：${model.transitionText}；${model.adoption.label}；${model.mode}；${model.channelText}`;
     trigger.setAttribute('aria-label',`${text}。展开状态详情`);
     if(text!==lastAnnouncement){announcement.textContent=text;lastAnnouncement=text;}
     resize();

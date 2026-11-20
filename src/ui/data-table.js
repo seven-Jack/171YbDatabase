@@ -1,6 +1,7 @@
 import {formatLifetime} from './format.js';
-import {getQuantity,getSourceRecord} from '../data/catalog.js';
-import {createFieldView,createDipoleFieldViews,renderFieldSourceHTML,escapeHTML,formatFrequency} from './source-panel.js';
+import {getRecordAdoption} from './record-adoption.js';
+import {RYDBERG_SERIES_TRANSITIONS,getQuantity,getSourceRecord} from '../data/catalog.js';
+import {createFieldView,createDipoleFieldViews,renderFieldSourceHTML,renderR2ProvenanceHTML,renderBatchRelationHTML,escapeHTML,formatFrequency} from './source-panel.js';
 import {DIAGRAM_SUPPLEMENTAL_SOURCE_COUNT,renderDiagramProvenanceIndexHTML} from './diagram-references.js';
 import {renderCompactTooltip} from './compact-tooltip.js';
 import {getTransitionWavelength,wavelengthLabel} from './transition-wavelength.js';
@@ -63,7 +64,8 @@ export function buildTableTooltipModel(row,column,tableId='core',title=null) {
 function sourceSummaryHTML(row) {
   const wave=createFieldView(row.id,'wavelength_vac_nm'),dipoles=createDipoleFieldViews(row.id);
   if (!wave&&!dipoles.length) return `<div class="src-text">${escapeHTML(row.source||'来源待补充')}</div>`;
-  return `<details class="table-source-details"><summary>${escapeHTML([wave?`λ：${wave.kind}`:'',dipoles.length?`d：${dipoles[0].kind}`:''].filter(Boolean).join('；'))}</summary><div class="source-grid">${[...dipoles,wave].filter(Boolean).map(renderFieldSourceHTML).join('')}</div></details>`;
+  const adoption=getRecordAdoption(row.id,row.Fp);
+  return `${adoption.batchId?`<span class="record-batch">${escapeHTML(adoption.batchId)}</span>`:''}<details class="table-source-details"><summary>${escapeHTML([wave?`λ：${wave.kind}`:'',dipoles.length?`d：${dipoles[0].kind}`:''].filter(Boolean).join('；'))}</summary><div class="source-grid">${[...dipoles,wave].filter(Boolean).map(renderFieldSourceHTML).join('')}</div>${adoption.relatedIds.length?renderBatchRelationHTML():''}</details>`;
 }
 
 const initialized=new WeakMap();
@@ -72,6 +74,8 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
   if (tabs&&initialized.has(tabs)) return initialized.get(tabs);
   const cleanups=[];
   const coreRenderListeners=new Set();
+  const searchable=new Map([...CORE_TRANSITIONS,...RYDBERG_SERIES_TRANSITIONS].map(row=>[row.id,row]));
+  let coreLimit=Infinity;
   let coreFilterIds=null;
   const bind=(target,event,listener)=>{target.addEventListener(event,listener);cleanups.push(()=>target.removeEventListener(event,listener));};
   const sortStates={core:{col:null,dir:null},rydberg:{col:'n',dir:'asc'},states:{col:null,dir:null},defects:{col:null,dir:null}};
@@ -99,9 +103,16 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
     const source=row.source||'详见来源与条件';
     const field=createFieldView(row.id,column);
     const cellTip=(title,content,quantityColumn=column)=>infoTip(buildTableTooltipModel(row,quantityColumn,tableId,title),content);
+    if (column==='classification' && (row.id==='R2'||(tableId==='rydberg' && row.classification==='强' && row.multipole==='E1'))) {
+      return '<span class="badge badge-ungraded">E1 允许 · 耦合未分级</span>';
+    }
     if (tableId==='core') {
+      if (row.n !== undefined && NUMERIC_COLUMNS.has(column) && !field) return '未提供';
       switch(column) {
-        case 'id':return `<span class="mono">${escapeHTML(row.id)}</span>`;
+        case 'id': {
+          const adoption=getRecordAdoption(row.id,row.Fp);
+          return `<span class="mono">${escapeHTML(row.id)}</span><span class="record-status" data-adoption="${adoption.status}">${adoption.label}</span>`;
+        }
         case 'label':return `<div class="trans-label">${escapeHTML(row.label)}</div><div class="trans-pair">${escapeHTML(row.lower)} → ${escapeHTML(row.upper)}</div>`;
         case 'wavelength_vac_nm': {
           const wavelength=getTransitionWavelength(row.id);
@@ -127,7 +138,7 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
             : getQuantity(row.id,'d_num')?.value===null?'缺少适用 E1 数据':escapeHTML(row.d_reduced_ea0)+' ea₀';
           return `<div>${cellTip('约化矩阵元 d',`<span class="mono">${value}</span>`)}</div><div class="wl-sub">${escapeHTML(field?.convention||'约定待核查')}</div>`;
         }
-        case 'classification':return `<span class="badge badge-${row.classification==='强'?'strong':row.classification==='弱'?'weak':'forbidden'}">${escapeHTML(row.classification)}</span>`;
+        case 'classification':return `<span class="badge badge-${row.classification==='强'?'strong':row.classification==='弱'?'weak':row.classification?.startsWith('禁戒')?'forbidden':'ungraded'}">${escapeHTML(row.classification)}</span>`;
         case 'multipole':return `<span class="badge badge-${row.multipole.includes('M2')?'m2':'e1'}">${escapeHTML(row.multipole)}</span>`;
         case 'forbidden_reason':return `<div class="reason-text">${escapeHTML(row.forbidden_reason)}</div><div class="wl-sub">${escapeHTML(row.selection_check)}</div>`;
         case 'use':return `<div class="use-text">${escapeHTML(row.use)}</div>`;
@@ -135,7 +146,7 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
       }
     }
     if (column==='id') return `<span class="mono">${escapeHTML(row.id)}</span>`;
-    if (column==='source') return `<div class="src-text">${escapeHTML(source)}</div>`;
+    if (column==='source') return `<div class="src-text">${row.id==='R2'?`<span class="record-status" data-adoption="historical">历史对照 · R2</span><br>`:''}${escapeHTML(source)}</div>`;
     if (tableId==='states'&&['lifetime_us','C6_ghz_um6','blockade_um'].includes(column)) return '<span class="mono" title="历史标度锚点缺乏适用态证据；数值归档于 data/literature，不作为预测展示">—</span>';
     if (column==='label') return `<div class="trans-label">${escapeHTML(row.label)}</div><div class="trans-pair">${escapeHTML(row.lower)} → ${escapeHTML(row.upper_full||row.upper)}</div>`;
     if (column==='wavelength_vac_nm') return `<div class="wl-cell"><span class="wl-dot" style="background:${escapeHTML(row.color)}"></span>${escapeHTML(row.wavelength_vac_nm)} nm</div>`;
@@ -147,14 +158,14 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
   function applyColumnVisibility(table,columns,tableId) {
     const summary=tableId==='core'&&!fullCore;
     table.dataset.columnMode=summary?'summary':'full';
-    table.querySelectorAll('tr').forEach(row=>Array.from(row.children).forEach((cell,index)=>{cell.hidden=summary&&!CORE_SUMMARY_COLUMNS.includes(columns[index]);}));
+    table.querySelectorAll(':scope > thead > tr,:scope > tbody > tr').forEach(row=>Array.from(row.children).forEach((cell,index)=>{cell.hidden=summary&&!CORE_SUMMARY_COLUMNS.includes(columns[index]);}));
   }
   function renderTable(tableId,data,columns,isRyd) {
     const table=document.querySelector(`table[data-table="${tableId}"]`);
     if (!table) return;
     const tbody=table.querySelector('tbody');
-    const visible=tableId==='core'&&coreFilterIds!==null?data.filter(row=>coreFilterIds.has(row.id)):data;
-    tbody.innerHTML=sortTableRows(visible,sortStates[tableId]).map(row=>`<tr${isRyd?' class="ryd-row"':''} data-row-id="${escapeHTML(row.id||'')}">${columns.map(column=>`<td data-column="${column}">${formatCell(row,column,tableId)}</td>`).join('')}</tr>`).join('');
+    const visible=tableId==='core'&&coreFilterIds!==null?[...coreFilterIds].map(id=>searchable.get(id)).filter(Boolean):data;
+    tbody.innerHTML=sortTableRows(visible,sortStates[tableId]).slice(0,tableId==='core'?coreLimit:Infinity).map(row=>`<tr${isRyd?' class="ryd-row"':''} data-row-id="${escapeHTML(row.id||'')}">${columns.map(column=>`<td data-column="${column}">${formatCell(row,column,tableId)}</td>`).join('')}</tr>`).join('');
     table.querySelectorAll('th[data-sort]').forEach(header=>{
       const active=sortStates[tableId].col===header.dataset.sort;
       header.classList.toggle('sort-asc',active&&sortStates[tableId].dir==='asc');header.classList.toggle('sort-desc',active&&sortStates[tableId].dir==='desc');
@@ -169,7 +180,9 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
   definitions.forEach(([tableId,data,columns,isRyd])=>{
     const table=document.querySelector(`table[data-table="${tableId}"]`);if (!table) return;
     const headers=Array.from(table.querySelectorAll('thead th'));
+    if (tableId==='rydberg') headers[7].textContent='允许性 / 耦合';
     if (tableId==='core') {
+      headers[9].textContent='原记录分级';
       headers[2].textContent='真空波长 λ / nm';headers[6].textContent='线宽频率系数';headers[8].textContent='矩阵元 / 约定';headers[13].textContent='来源与条件';
       table.id ||= 'core-data-table';
       const tools=document.createElement('div');tools.className='table-controls';
@@ -206,24 +219,39 @@ export function initDataTables({CORE_TRANSITIONS,RYDBERG_TRANSITIONS,RYDBERG_STA
     const sourceId=reference.id||'ref-'+String(reference.num).padStart(2,'0');
     const source=getSourceRecord(sourceId);
     const url=source?.url&&/^https:\/\//.test(source.url)?source.url:null;
-    return `<div class="ref-item" id="diagram-source-${escapeHTML(sourceId)}" role="listitem"><div class="ref-num">[${reference.num}]</div><div class="ref-text"><strong class="ref-author">${escapeHTML(reference.title)}</strong><p class="ref-title">${escapeHTML(reference.detail)}</p><div class="ref-meta"><span class="ref-doi">${escapeHTML(reference.doi)}</span>${url?`<a class="ref-original" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer" aria-label="参考文献 ${reference.num}：${escapeHTML(reference.title)}，打开原文">原文链接 <span aria-hidden="true">↗</span></a>`:''}</div></div></div>`;
+    return `<div class="ref-item" id="diagram-source-${escapeHTML(sourceId)}" role="listitem"><div class="ref-num">[${reference.num}]</div><div class="ref-text"><strong class="ref-author">${escapeHTML(reference.title)}</strong>${sourceId==='ref-17'?`<span class="record-status" data-adoption="historical">${getRecordAdoption(sourceId).label} · 旧 J 约化矩阵元</span>`:''}<p class="ref-title">${escapeHTML(reference.detail)}</p>${sourceId==='ref-17'?renderR2ProvenanceHTML(true):''}<div class="ref-meta"><span class="ref-doi">${escapeHTML(reference.doi)}</span>${url?`<a class="ref-original" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer" aria-label="参考文献 ${reference.num}：${escapeHTML(reference.title)}，打开原文">原文链接 <span aria-hidden="true">↗</span></a>`:''}</div></div></div>`;
   }).join('');
   if (list) {
     list.parentElement.querySelector(':scope > .diagram-provenance-index')?.remove();
     list.insertAdjacentHTML('afterend',renderDiagramProvenanceIndexHTML());
-    // A small citation can point into a collapsed provenance index.
+    // Source fragments can live inside both the bibliography and its data index.
     const revealSource=hash=>{
-      if (!hash?.startsWith('#diagram-source-')) return;
-      document.getElementById(hash.slice(1))?.closest('details')?.setAttribute('open','');
+      if (!hash?.startsWith('#diagram-source-') && hash !== '#reference-r2-audit') return;
+      const target=document.getElementById(hash.slice(1));
+      if (!target) return;
+      for (let panel=target.closest('details'); panel; panel=panel.parentElement?.closest('details')) panel.open=true;
+      if (hash==='#diagram-source-ref-17') target.querySelector('#reference-r2-audit').open=true;
+      target.tabIndex=-1;
+      return target;
     };
-    bind(document,'click',event=>revealSource(event.target.closest?.('a[href^="#diagram-source-"]')?.getAttribute('href')));
-    bind(window,'hashchange',()=>revealSource(window.location.hash));
-    revealSource(window.location.hash);
+    bind(document,'click',event=>{
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      revealSource(event.target.closest?.('a[href^="#"]')?.getAttribute('href'));
+    });
+    function locateSource() {
+      const target=revealSource(window.location.hash);
+      if (!target) return;
+      target.focus({preventScroll:true});
+      target.scrollIntoView({block:'start',behavior:'instant'});
+    }
+    bind(window,'hashchange',locateSource);
+    // The initial fragment may have been resolved before these entries existed.
+    if (revealSource(window.location.hash)) requestAnimationFrame(locateSource);
   }
   const referenceCount=document.getElementById('referenceCount');
   if(referenceCount) referenceCount.textContent=`${REFERENCES.length} 项文献 · ${DIAGRAM_SUPPLEMENTAL_SOURCE_COUNT} 项数据记录`;
   const api=Object.freeze({
-    setCoreFilter(ids=null){coreFilterIds=ids===null?null:new Set(ids);renderTable('core',CORE_TRANSITIONS,coreCols,false);},
+    setCoreFilter(ids=null,limit=Infinity){coreLimit=limit;coreFilterIds=ids===null?null:new Set(ids);renderTable('core',CORE_TRANSITIONS,coreCols,false);},
     onCoreRender(listener){
       coreRenderListeners.add(listener);
       const table=document.querySelector('table[data-table="core"]');

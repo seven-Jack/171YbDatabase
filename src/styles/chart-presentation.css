@@ -1,0 +1,30 @@
+#secRabi .chart-presentation { margin: 0 0 16px; color: var(--text-1); font: 14px/1.5 var(--font-ui); }
+#secRabi .chart-presentation summary { width: fit-content; padding: 9px 3px; color: var(--accent-strong); cursor: pointer; }
+.chart-presentation-fields, .chart-presentation-fields fieldset, .chart-fixed-color:not([hidden]) {
+  display: flex; flex-wrap: wrap; align-items: end; gap: 8px 18px;
+}
+.chart-presentation-fields { padding: 10px 14px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-muted); }
+.chart-presentation-fields fieldset { min-width: 0; width: 100%; border: 0; border-top: 1px solid var(--line); margin: 6px 0 0; padding: 6px 0 0; }
+.chart-presentation-fields legend { color: var(--text-1); padding-inline-end: 8px; }
+.chart-fixed-color { flex-basis: 100%; }
+.chart-presentation-fields label { display: grid; gap: 3px; color: var(--text-1); }
+#secRabi .chart-presentation-fields :is(select, input, button) { min-height: 40px; padding: 5px 8px; border: 1px solid #718198; border-radius: 5px; background: var(--surface); color: var(--text-0); font: inherit; }
+#secRabi .chart-presentation :is(select, input, button, summary):focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.chart-presentation-fields input { width: 9em; max-width: 100%; }
+.chart-presentation-fields fieldset > span, #heatColorStatus { color: var(--ui-muted); font-size: 13px; }
+#secRabi [data-chart-theme="paper"] .rabi-canvas-wrap { background: #fff; --chart-text: #25313a; color-scheme: light; }
+#secRabi [data-chart-theme="paper"] .chart-axis-max { color: #124777; border-color: #657d90; background: #edf3f7; }
+#secRabi [data-chart-theme="paper"] .chart-axis-title select { color: #574019; background: #fbf6e9; border-color: #816b43; }
+#secRabi [data-chart-theme="paper"] .chart-axis-title select option { color: #17242b; background: #fff; }
+#secRabi [data-chart-theme="paper"] .chart-axis-max:focus-visible { outline: 2px solid #00639b; }
+#secRabi .lg-unit:focus-visible { outline: 2px solid var(--ui-focus); }
+#secRabi .chart-legend svg.lg-line { width: 25px; height: 8px; }
+#secRabi .lg-unit { min-height: 30px; margin: 0; padding: 2px 6px; border: 1px solid var(--line); border-radius: 4px; color: inherit; background: transparent; font: inherit; }
+#secRabi .chart-legend .lg-item.lg-hidden { opacity: .85; }
+#secRabi [data-chart-theme="paper"] .chart-legend { padding: 6px; border-radius: 6px; background: #fff; color: #25313a; }
+#secRabi [data-chart-theme="paper"] .chart-legend :is(.lg-item,button,input) { color: #25313a; }
+#secRabi [data-chart-theme="paper"] .chart-legend :is(input,button) { border-color: #7c8993; background: #f3f6f8; }
+@media(max-width: 640px) {
+  #secRabi .chart-presentation-fields :is(input, select, button), #secRabi .chart-presentation summary { min-height: 44px; }
+  #secRabi .chart-legend :is(.lg-unit,.lg-winput), #secRabi .chart-readout-tools button { min-height: 44px; }
+}

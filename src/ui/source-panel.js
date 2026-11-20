@@ -1,6 +1,7 @@
 import {getTransitionRecord,getQuantity,getDipoleQuantity,getRydbergPair,getSourceRecord,DATASET_VERSION} from '../data/catalog.js';
 import {matrixElement_F_q,reducedFFromJJ} from '../physics/angular.js';
 import {formatLifetime,signedScientific} from './format.js';
+import {getRecordAdoption,isZeroField} from './record-adoption.js';
 import {R2_PROVENANCE,R2_EVIDENCE_EXTENSION} from './r2-provenance.js';
 import {buildEvidenceView} from './evidence-model.js';
 import {renderEvidencePanelHTML} from './evidence-panel.js';
@@ -82,8 +83,8 @@ export function createFieldView(transitionId,field) {
     savedValue:quantity.value===null?'缺失':`${quantity.value} ${quantity.unit}`,
     kind,review:reviewLabel(quantity.reviewStatus,quantity.evidenceKind==='internal-calculation'||source?.identityStatus==='internal-not-literature'),
     convention:quantity.convention?conventionLabel(quantity.convention):null,
-    uncertainty:quantity.uncertainty===null?'总不确定度未建立':`${quantity.uncertainty} ${quantity.unit}`,
-    uncertaintyNote:wavelength?.uncertaintyNote ?? null,
+    uncertainty:quantity.uncertainty==null?'总不确定度未建立':`${quantity.uncertainty} ${quantity.unit}`,
+    uncertaintyNote:wavelength?.uncertaintyNote ?? quantity.uncertaintyNote ?? null,
     sourceConflict:wavelength?.sourceConflict ?? null,
     conditions:quantity.conditions===null?'原记录未提供完整条件':Object.entries(quantity.conditions).map(([key,value])=>`${key}=${value===null?'未提供':typeof value==='object'?JSON.stringify(value):value}`).join('；'),
     lifetimeBasis:quantity.convention==='inverse-of-statistically-averaged-total-decay-rate; not-F-resolved'?'统计平均总衰减率的倒数，不是每个 F 分量的寿命，也不是寿命的平均。':sourceEvidence?'上态总辐射寿命的文献汇编 / 理论采用值；F、温度及黑体条件须按该字段记录使用，不能替代陷阱人口寿命。':'温度与包含的辐射 / 黑体 / 其他损失过程未完整建立；不能直接作为实验有效寿命。',
@@ -141,11 +142,13 @@ function renderSeriesBranchRowsHTML(pair) {
 export function renderFieldSourceHTML(field) {
   if (!field) return '';
   const meta=[field.kind,field.convention,field.review].filter(Boolean).map(escapeHTML).join(' · ');
+  const dipole=['d_num','d_F32','d_J_from_F32'].includes(field.key);
+  const limits=dipole?[field.uncertainty,field.missingArtifact?'原始生成工件待补':null].filter(Boolean).join(' · '):'';
   const link=field.url?`<p class="source-links"><a href="${escapeHTML(field.url)}" target="_blank" rel="noopener noreferrer">原文链接</a></p>`:'';
   const artifact=field.artifactURL?`<a href="${escapeHTML(field.artifactURL)}" target="_blank" rel="noopener noreferrer">查看保存工件</a>`:escapeHTML(field.artifactLocator);
   return `<article class="source-field" data-source-field="${escapeHTML(field.key)}">
     <div class="source-field-label">${escapeHTML(field.label)}</div><strong class="source-field-value">${escapeHTML(field.valueText)}</strong>
-    <p class="source-meta">${meta}</p>
+    <p class="source-meta">${meta}</p>${limits?`<p class="source-limit">${escapeHTML(limits)}</p>`:''}
     <details class="source-audit"><summary>出处与条件</summary><dl>
       <dt>来源</dt><dd>${escapeHTML(field.sourceTitle)}</dd>
       ${field.publication?`<dt>引用记录</dt><dd>${escapeHTML(field.publication)}</dd>`:''}
@@ -196,9 +199,26 @@ function renderR2EvidenceExtensionHTML() {
     </details>`;
 }
 
-function renderR2ProvenanceHTML() {
+export function renderBatchRelationHTML() {
+  const pair=getRydbergPair(65);
+  const lines=pair.map(({id,Fp})=>{
+    const current=getDipoleQuantity(id,Fp), historical=getDipoleQuantity('R2',Fp);
+    const value=q=>String(q.value).replace('-','−');
+    return `<tr><th scope="row">F′=${fLabel(Fp)}</th><td>${escapeHTML(value(current))}</td><td>${escapeHTML(value(historical))}</td></tr>`;
+  });
+  const current=getRecordAdoption(pair[0].id), historical=getRecordAdoption('R2');
+  const batchLink=adoption=>`<a href="${escapeHTML(getSourceRecord(adoption.sourceId).artifactLocator)}" target="_blank" rel="noopener noreferrer">${escapeHTML(adoption.batchId)}</a>`;
+  return `<details class="source-extra batch-relation"><summary>65S · 两个批次的分支与差异</summary>
+    <p>零场 F 约化矩阵元 D<sub>F</sub>（ea₀），符号沿用各批次的相位约定。两列各自进入对应记录的计算，物理不确定度未建立。</p>
+    <div class="batch-values" role="region" aria-label="65S 两个批次的矩阵元" tabindex="0"><table><thead><tr><th scope="col">末态</th><th scope="col">当前版本采用 · nS</th><th scope="col">历史对照 · R2</th></tr></thead><tbody>${lines.join('')}</tbody></table></div>
+    <p>nS 原始工件 ${batchLink(current)}<br>R2 原始工件 ${batchLink(historical)}</p>
+    <p><a href="#diagram-source-ref-17">旧 J 约化量 0.0376 ea₀ 的来源核查</a> · <a href="data/dataset.json" target="_blank" rel="noopener noreferrer">数据版本清单</a></p>
+    </details>`;
+}
+
+export function renderR2ProvenanceHTML(bibliography=false) {
   const evidence=R2_PROVENANCE;
-  return `<details class="source-extra r2-provenance" data-testid="r2-provenance"><summary>${escapeHTML(evidence.title)}</summary>
+  return `<details class="source-extra r2-provenance" ${bibliography?'id="reference-r2-audit"':'data-testid="r2-provenance"'}><summary>${escapeHTML(evidence.title)}</summary>
     <p>${escapeHTML(evidence.scope)}</p><p>${escapeHTML(evidence.inputStatement)}</p>
     <ol>${evidence.history.map(item=>`<li><p>${escapeHTML(item.summary)}</p><p>历史摘录：<q>${escapeHTML(item.excerpt)}</q></p><dl><dt>网站提交</dt><dd class="source-hash">${escapeHTML(item.commit)}</dd><dt>文件与行号</dt><dd>${escapeHTML(item.path)}:${escapeHTML(item.lines)}</dd><dt>该提交文件 SHA256</dt><dd class="source-hash">${escapeHTML(item.sha256)}</dd></dl></li>`).join('')}</ol>
     <dl><dt>态身份与条件</dt><dd>${escapeHTML(evidence.conditions)}</dd><dt>原始生成记录</dt><dd>${escapeHTML(evidence.artifacts)}</dd><dt>总不确定度</dt><dd>${escapeHTML(evidence.totalUncertainty)}</dd></dl>
@@ -214,7 +234,11 @@ export function renderSourceDetailsHTML(view) {
   const primaryKeys=[...createDipoleFieldViews(view.transition.id).map(field=>field.key),'d_J_from_F32','wavelength_vac_nm','lifetime_ns'];
   const primary=primaryKeys.map(key=>view.fields.find(field=>field.key===key)).filter(Boolean);
   const extra=view.fields.filter(field=>!primaryKeys.includes(field.key));
-  return `<div class="source-grid">${primary.map(renderFieldSourceHTML).join('')}</div>${view.transition.id==='R2'?renderR2ProvenanceHTML():''}${extra.length?`<details class="source-extra"><summary>其余物理量与出处（${extra.length} 项）</summary><div class="source-grid">${extra.map(renderFieldSourceHTML).join('')}</div></details>`:''}`;
+  const adoption=getRecordAdoption(view.transition.id,view.transition.Fp);
+  const limits=isZeroField(adoption.conditions)?'B=E=0 · 物理不确定度未建立 · 独立实验验证未完成':null;
+  return `<header class="source-record-heading"><span class="record-status" data-adoption="${adoption.status}">${adoption.label}</span><strong>${escapeHTML(adoption.scope)}</strong>
+      ${adoption.batchId?`<code>${escapeHTML(adoption.batchId)}</code>`:''}${limits?`<p>${limits}</p>`:''}</header>
+    <div class="source-grid">${primary.map(renderFieldSourceHTML).join('')}</div>${adoption.relatedIds.length?renderBatchRelationHTML():''}${view.transition.id==='R2'?renderR2ProvenanceHTML():''}${extra.length?`<details class="source-extra"><summary>其余物理量与出处（${extra.length} 项）</summary><div class="source-grid">${extra.map(renderFieldSourceHTML).join('')}</div></details>`:''}`;
 }
 
 const activePanels=new WeakMap();
@@ -254,17 +278,22 @@ export function initSourcePanel(calculator,decoratedCoreTransitions=[]) {
   evidence.dataset.testid='evidence-review';
   evidence.tabIndex=-1;
   evidence.setAttribute('aria-labelledby','evidenceReviewTitle');
-  panel.before(evidence);
+  panel.after(evidence);
   let lastTransitionId=Symbol('uninitialized');
   let lastEvidenceKey;
   const render=state=>{
     const view=buildSourceView(state);
     const review=buildEvidenceView(state);
     if(lastEvidenceKey!==review.contextKey){
-      const openSections=new Set([...evidence.querySelectorAll('details[open][data-evidence-section]')].map(node=>node.dataset.evidenceSection));
+      const sameObject=lastTransitionId===view.transition?.id;
+      const openSections=new Set(sameObject?[...evidence.querySelectorAll('details[open][data-evidence-section]')].map(node=>node.dataset.evidenceSection):[]);
+      const focused=sameObject&&document.activeElement?.closest('#evidenceReview [data-evidence-section]')?.dataset.evidenceSection;
       evidence.innerHTML=renderEvidencePanelHTML(review);
       evidence.dataset.calculationStatus=review.calculationStatus;
-      for(const section of evidence.querySelectorAll('details[data-evidence-section]'))section.open=openSections.has(section.dataset.evidenceSection);
+      for(const section of evidence.querySelectorAll('details[data-evidence-section]')) {
+        section.open=openSections.has(section.dataset.evidenceSection);
+        if (section.dataset.evidenceSection===focused) section.querySelector('summary')?.focus({preventScroll:true});
+      }
       lastEvidenceKey=review.contextKey;
     }
     if (!view.transition) context.innerHTML='<span>当前计算对象</span><strong>请先选择跃迁</strong>';

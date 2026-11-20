@@ -12,7 +12,7 @@ async function selectTransition(page, id) {
 async function selectClockPiChannel(page) {
   await selectTransition(page, 'T3');
   await page.locator('#hfCGTableBody [data-channel-key="0.5|0.5|0.5|0.5|0"]').click();
-  await expect(page).toHaveURL(/#secRabi$/);
+  await expect(page).toHaveURL(/#rabiResult$/);
 }
 
 async function openEvidence(page) {

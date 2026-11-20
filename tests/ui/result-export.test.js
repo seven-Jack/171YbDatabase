@@ -75,17 +75,16 @@ test('export availability excludes invalid or non-E1 contexts while keeping zero
   assert.throws(()=>serializeResultCSV({kind:'wrong'}));
 });
 
-test('readable summary suppresses binary tails while CSV and JSON keep full stored precision',()=>{
+test('copied conditions, CSV and JSON preserve full stored precision',()=>{
   const record=buildCalculationRecord(stateFor(),versions);
   record.configuration.enteredParameters.size_m=0.000049999999999999996;
   record.configuration.parameters.waist_m=0.000049999999999999996;
   record.resolvedChannel.dEff_ea0=0.17993333333333336;
   record.configuration.result.piTime_s=1.567842989285534e-8;
   const before=JSON.stringify(record),summary=formatCalculationSummary(record),rows=parseCSV(serializeResultCSV(record));
-  assert.equal(summary.trimEnd().split('\n').length,9);
-  assert.match(summary,/w₀=0\.00005 m/);assert.match(summary,/d_eff=0\.17993333 ea₀/);assert.match(summary,/tπ=1\.567843e-8 s/);
-  assert.doesNotMatch(summary,/0\.000049999|0\.179933333333|1\.567842989/);
-  assert.match(summary,/可读性格式化，不代表不确定度评定/);
+  assert.ok(summary.includes(`w₀=${record.configuration.parameters.waist_m} m`));
+  assert.ok(summary.includes(`d_eff=${record.resolvedChannel.dEff_ea0} ea₀`));
+  assert.ok(summary.includes(`tπ=${record.configuration.result.piTime_s} s`));
   const values=Object.fromEntries(rows[0].map((key,index)=>[key,rows[1][index]]));
   assert.equal(Number(values.intensity_radius_m),record.configuration.parameters.waist_m);
   assert.equal(Number(values.effective_dipole_ea0),record.resolvedChannel.dEff_ea0);

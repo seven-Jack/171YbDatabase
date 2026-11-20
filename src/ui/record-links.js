@@ -1,4 +1,5 @@
 import { CORE_TRANSITIONS, RYDBERG_QC_TRANSITIONS, RYDBERG_SERIES_TRANSITIONS, getLevelRecord, getTransitionRecord } from '../data/catalog.js';
+import { recordCitation } from './record-adoption.js';
 import { getFs } from '../physics/angular.js';
 import { exportCalculationConfig, parseCalculationConfig } from '../state/config.js';
 
@@ -152,7 +153,7 @@ export function initRecordLinks({ host, calculator, charts, versions }) {
       const label = isCitation ? '数据引用' : '记录链接';
       const citationScope = reference.publicManifestUrl ? '版本清单' : '当前站点数据清单';
       const content = isCitation
-        ? `¹⁷¹Yb 跃迁数据图谱，${state.transition.id}，F′=${state.F_upper * 2}/2。数据版本 ${versions.datasetVersion}，整库内容 SHA-256 ${versions.datasetHash}，公式版本 ${versions.formulaVersion}。 ${citationScope} ${reference.publicManifestUrl ?? reference.manifestUrl}`
+        ? `${recordCitation(state.transition.id,state.F_upper,versions)}，整库内容 SHA-256 ${versions.datasetHash}，公式版本 ${versions.formulaVersion}。 ${citationScope} ${reference.publicManifestUrl ?? reference.manifestUrl}`
         : createRecordLink(view.location.href, state, versions, button.dataset.copyRecord === 'workpoint');
       const previewNote = isPreview && (!isCitation || !reference.publicManifestUrl) ? ' 此地址属于当前预览。' : '';
       fallback.hidden = true;
