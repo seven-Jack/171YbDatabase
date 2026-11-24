@@ -12,8 +12,12 @@ test('65S search distinguishes adopted and archived records, exports scopes and 
   test.slow(); // Three downloads, two calculator loads and catalogue selection in one session.
   await page.addInitScript(()=>localStorage.setItem('yb171.onboarding.556.v1','skipped'));
   await page.goto('./');
-  await page.locator('#dataSearch').fill('65S');
   const rows=page.locator('#core-data-table > tbody > tr[data-row-id]');
+  const search=page.locator('#dataSearch');
+  await search.fill('301.888533 nm');
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first()).toHaveAttribute('data-row-id','NS-65-F32');
+  await search.fill('65S');
   await expect(rows).toHaveCount(3);
   await expect(rows.first()).toHaveAttribute('data-row-id','NS-65-F12');
   await expect(rows.last()).toHaveAttribute('data-row-id','R2');

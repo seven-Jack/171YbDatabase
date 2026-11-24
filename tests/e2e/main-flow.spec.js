@@ -55,7 +55,14 @@ test('mobile atlas zoom and touch selection lead from the 556 nm line to its cha
   await viewport.evaluate(el => el.scrollIntoView({block: 'center', behavior: 'instant'}));
   const {left, room, y, x} = await viewport.evaluate(el => {
     const rect = el.getBoundingClientRect();
-    return {left: el.scrollLeft, room: el.scrollWidth - el.clientWidth,
+    const left = el.scrollLeft;
+    const notePanEnd = () => {
+      if (Math.abs(el.scrollLeft - left) <= 20) return;
+      el.dataset.testPanFinished = 'true';
+      el.removeEventListener('scrollend', notePanEnd);
+    };
+    el.addEventListener('scrollend', notePanEnd);
+    return {left, room: el.scrollWidth - el.clientWidth,
       y: rect.top + rect.height / 2, x: rect.left + rect.width / 2};
   });
   const direction = left < room / 2 ? -1 : 1;
@@ -68,6 +75,8 @@ test('mobile atlas zoom and touch selection lead from the 556 nm line to its cha
   await touch.detach();
   await expect.poll(() => viewport.evaluate((el, before) => Math.abs(el.scrollLeft - before), left)).toBeGreaterThan(20);
   await expect(page).not.toHaveURL(/#polarizationDiagram$/);
+  // During native momentum scrolling Chromium can consume a tap to stop the fling.
+  await expect(viewport).toHaveAttribute('data-test-pan-finished', 'true');
   await zoom.tap();
   await expect(zoom).toHaveAttribute('aria-pressed', 'false');
   await expect.poll(async () => (await atlas.boundingBox()).width).toBeCloseTo(overviewWidth, 0);

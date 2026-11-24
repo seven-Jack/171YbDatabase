@@ -67,6 +67,23 @@ test('summary preserves channel, adopted source and code/experiment boundaries i
   assert.match(text,/工作区状态未知/);
 });
 
+test('the copied summary and CSV separate a saved inverse target from the recomputed frequency',()=>{
+  const forward = buildCalculationRecord(stateFor('T3'),versions);
+  assert.equal(resultCSVRow(forward).target_rabi_Hz,null);
+  assert.doesNotMatch(formatCalculationSummary(forward),/反算目标|重算 Ω\/2π/);
+  for (const solveFor of ['power','waist']) {
+    const record = buildCalculationRecord(stateFor('T3',{solveFor}),versions);
+    record.configuration.parameters.targetRabi_Hz = 10000;
+    record.configuration.result.frequency_Hz = 9999.999999999998;
+    const summary = formatCalculationSummary(record);
+    assert.ok(summary.includes('反算目标 Ω/2π=10000 Hz'));
+    assert.ok(summary.includes('重算 Ω/2π=9999.999999999998 Hz'));
+    const [header, row] = parseCSV(serializeResultCSV(record));
+    assert.equal(Number(row[header.indexOf('target_rabi_Hz')]),10000);
+    assert.equal(Number(row[header.indexOf('frequency_Hz')]),9999.999999999998);
+  }
+});
+
 test('export availability excludes invalid or non-E1 contexts while keeping zero power valid',()=>{
   assert.equal(canExportCurrentResult(stateFor()),true);
   assert.equal(canExportCurrentResult(stateFor('T2',{P_mW:0})),true);

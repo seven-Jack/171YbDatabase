@@ -238,6 +238,7 @@ test('series exports preserve both branch identities, zero fields and relative d
     assert.match(conditions.branch,branch);
     assert.equal(json.primaryQuantity.value,dipole);
     assert.equal(json.transition.wavelength.reference,'model-branch');
+    assert.equal(json.transition.J_upper,Fp===.5 ? null : 1);
     assert.equal(csv.rydberg_n,65);
     assert.equal(csv.rydberg_nu_effective,nu);
     assert.equal(csv.rydberg_nu_reference,'ionic F_c=1');
@@ -249,6 +250,17 @@ test('series exports preserve both branch identities, zero fields and relative d
     assert.equal(csv.dipole_convention,'F-reduced');
     const markdown=serializeCalculationRecord(record,'markdown');
     const line=Fp===1.5?367:362;
+    if (Fp === .5) {
+      assert.match(markdown,/电子角动量.*F′=1\/2 混合态，J′ 非好量子数/);
+      assert.doesNotMatch(markdown,/J′=1\b/);
+      const legacy = structuredClone(json);
+      legacy.transition.J_upper = 1;
+      assert.equal(readSavedCalculation(legacy).record.transition.J_upper,1);
+      assert.equal(parseCalculationRecordOrConfig(legacy,versions).result.fR,record.configuration.result.frequency_Hz);
+      assert.doesNotMatch(renderCalculationRecordMarkdown(legacy),/J′=1\b/);
+    } else {
+      assert.match(markdown,/电子角动量.*J=0 → J′=1\b/);
+    }
     assert.equal(json.evidence.calculationSource.channelLine,line);
     assert.equal(csv.r017_channel_csv_line,line);
     assert.equal(csv.r017_batch_id,'delivery_20261111T085031Z');

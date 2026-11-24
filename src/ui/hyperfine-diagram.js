@@ -8,6 +8,7 @@ import { DEFAULT_BEAM_DEFINITION } from '../physics/beam-conventions.js';
 
 const fraction = value => ({0.5:'1/2', 1.5:'3/2', 2.5:'5/2'}[value] ?? String(value));
 const magnetic = value => `${value < 0 ? '−' : value > 0 ? '+' : ''}${fraction(Math.abs(value))}`;
+const T4_E1_UNAVAILABLE = 'M2 激发不适用当前单光子 E1 模型。尚未收录按 F 分辨的超精细诱导 E1 矩阵元。';
 
 // The displayed result is a channel calculation; references identify its
 // retained input matrix element rather than asserting a measured Rabi result.
@@ -196,9 +197,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   }
 
   // ---- Render hyperfine transition diagram (filtered by selected polarization and F display) ----
-  // For the hf-induced clock transition (J=0→0 with hyperfine-mixed channel), there
-  // is no J-level E1 reduced element; we draw the mF-resolved channels with per-channel
-  // matrix element = d_reduced × CG (bare CG, ±1/√3). Dedicated renderer below.
+  // Hyperfine mixing opens the clock transition with an effective F-reduced matrix element.
   function renderHfInducedLines() {
     const elTL = document.getElementById('hfTransLines');
     if (!elTL) return;
@@ -438,6 +437,10 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   function renderTransitionLines() {
     const elTL = document.getElementById('hfTransLines');
     if (!elTL) return;
+    if (state.transition?.id === 'T4') {
+      elTL.innerHTML = `<div class="trans-empty">${T4_E1_UNAVAILABLE}</div>`;
+      return;
+    }
     if (!state.transition || (!state.transition.fReducedDipoles && state.dReduced <= 0)) {
       elTL.innerHTML = '<div class="trans-empty">选择跃迁后自动显示超精细跃迁图</div>';
       return;
@@ -719,7 +722,8 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     const focusedChannel = elCGTableBody.querySelector('button:focus')?.dataset.channelKey;
     const channels = computeCGChannels();
     if (!channels.length) {
-      elCGTableBody.innerHTML = '<tr><td colspan="5" style="padding:16px;color:var(--text-2)">E1 禁戒 (J=0 ↔ J′=0 或约化矩阵元为零)</td></tr>';
+      const reason = state.transition?.id === 'T4' ? T4_E1_UNAVAILABLE : 'E1 禁戒 (J=0 ↔ J′=0 或约化矩阵元为零)';
+      elCGTableBody.innerHTML = `<tr><td colspan="5" style="padding:16px;color:var(--text-2)">${reason}</td></tr>`;
       return;
     }
     const selKey = state.selectedChannel ? channelKey(state.selectedChannel) : null;
@@ -729,9 +733,6 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     for (const ch of channels) {
       const key = channelKey(ch);
       const cls = key === selKey ? 'selected-cg' : '';
-      // For hf-induced channels (J=0→0), the angular factor is the bare CG
-      // ⟨F m; 1 q | F′ m′⟩ (±1/√3) and the matrix element = d_reduced × CG —
-      // shown in exponential form because values are ~10⁻⁵ ea₀.
       const angCell = formatCG(ch.angFactor);
       const matCell = hfMode || branchMode
         ? '<span style="font-family:\'JetBrains Mono\',monospace;color:var(--accent)">' + (ch.matEl >= 0 ? '+' : '−') + Math.abs(ch.matEl).toExponential(branchMode ? 6 : 2) + '</span>'

@@ -108,3 +108,21 @@ test('a dirty catalog cannot use a clean app commit as a data citation', () => {
   };
   assert.match(datasetReference(page, 'T3', published).publicManifestUrl, /ad20cd78cb65fc245a29e7f35ffb373e7b416238\/data\/dataset\.json$/);
 });
+
+test('the November 18 data version pins the published data independently of the preview app commit', () => {
+  const released = {
+    ...versions,
+    datasetVersion: '2026.11.18.2',
+    datasetHash: 'f8f8bf3789d69eda79ab2e183378b7d6ad7f0543aae51f13aca0a03980147ba2',
+    appCommit: 'd3aeafc1ca31dd80c6b77697469ebe3071551f33',
+  };
+  const releaseUrl = 'https://github.com/seven-Jack/171YbDatabase/blob/07dc3f5b2c2fdc032b8ed5a30ec6e49715814fd0/data/dataset.json';
+  for (const worktreeDirty of [false, true]) {
+    assert.deepEqual(datasetReference(page + '?preview=1#record=NS-65-F32', 'NS-65-F32', { ...released, worktreeDirty }), {
+      manifestUrl: 'http://127.0.0.1:4173/171YbDatabase/data/dataset.json',
+      recordUrl: 'http://127.0.0.1:4173/171YbDatabase/data/rydberg-series.json',
+      publicManifestUrl: releaseUrl,
+    });
+  }
+  assert.equal(datasetReference(page, 'T3', { ...released, datasetHash: 'f'.repeat(64) }).publicManifestUrl, null);
+});

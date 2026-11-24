@@ -62,6 +62,8 @@ test('effective F, unsupported M2 and calculated Rydberg evidence remain distinc
   await choose(page,'T4');
   await expect(page.getByTestId('current-context')).toHaveAttribute('data-status','unsupported');
   await expect(page.locator('#sourcePanel [data-source-field="d_num"]')).toContainText('缺少适用');
+  await expect(page.locator('#hfCGTableBody')).toContainText('尚未收录按 F 分辨的超精细诱导 E1 矩阵元');
+  await expect(page.locator('#hfTransLines')).toContainText('M2 激发不适用当前单光子 E1 模型');
   await expect(page.locator('#rabiResult strong')).toHaveText('—');
 
   await page.locator('[data-data-open="R2"]').click();

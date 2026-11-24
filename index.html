@@ -348,7 +348,7 @@
               <div class="calc-note-inner">
                 <div class="trans-note">
                   <span class="formula">CG = ⟨F m<sub>F</sub>; 1 q | F′ m<sub>F</sub>′⟩</span>（Clebsch-Gordan 系数，Racah 公式精确计算）<br>
-                  <span class="formula">⟨F′||d||F⟩ = (−1)<sup>J′+I+F+1</sup> √(2F′+1)(2F+1) {J′ F′ I; F J 1} ⟨J′||d||J⟩</span>（6-j 符号耦合）<br>
+                  <span class="formula">⟨F′||d||F⟩ = (−1)<sup>J′+I+F+1</sup> √[(2F′+1)(2F+1)] {J′ F′ I; F J 1} ⟨J′||d||J⟩</span>（6-j 符号耦合）<br>
                   <span class="formula">⟨F′m′|d|Fm⟩ = CG × ⟨F′||d||F⟩ / √(2F′+1)</span>（Wigner-Eckart 定理）<br>
                   <span class="formula">J 级约化输入的角向因子 = CG × (−1)<sup>J′+I+F+1</sup> √(2F+1) {J′ F′ I; F J 1}</span><br>
                   <span class="formula">F 级约化输入的角向因子 = CG / √(2F′+1)</span>。nS 使用对应末态 F′ 的 D<sub>F</sub>。<br>
@@ -482,7 +482,7 @@
       <div class="rabi-formula-caption">高斯光束中心 · 单光子耦合 · Ω/2π ∝ √P / w₀</div>
         <div class="rabi-formula-body">
           <dl class="rabi-formula-params">
-            <dt>P</dt><dd>原子处当前偏振分量的功率，SI 单位为 W；纯偏振光束时等于该束总功率。</dd>
+            <dt>P</dt><dd>原子处所选 π、σ⁺ 或 σ⁻ 分量的功率，单位为 W。光束全部功率都在所选分量时，P 等于总功率。线偏振垂直于量子化轴时，σ⁺ 和 σ⁻ 各占总功率的一半。</dd>
             <dt>w₀</dt><dd>腰部的 1/e² 强度半径（不是直径），SI 单位为 m。</dd>
             <dt>d<sub>eff</sub></dt><dd>对应偏振与跃迁通道的有效偶极矩阵元绝对值，SI 单位为 C·m；页面采用 ea₀。</dd>
             <dt>Ω/2π</dt><dd>普通 Rabi 频率，单位为 Hz；图中可切换 Hz / kHz / MHz。</dd>
@@ -497,8 +497,8 @@
           <p><strong>适用条件：</strong>圆对称高斯光束腰部中心、单光子电偶极耦合。曲线给出耦合强度，未加入失谐、原子偏离光束中心或退相干修正。</p>
           <details class="rabi-formula-derivation">
             <summary>查看推导</summary>
-            <p>高斯光束的强度分布为 <span class="rabi-formula-inline">I(r)=I<sub>0</sub>exp(−2r<sup>2</sup>/w<sub>0</sub><sup>2</sup>)</span>。</p>
-            <p>对光束横截面积分，得到总功率 <span class="rabi-formula-inline">P=πw<sub>0</sub><sup>2</sup>I<sub>0</sub>/2</span>。</p>
+            <p>所选偏振分量的高斯强度分布为 <span class="rabi-formula-inline">I(r)=I<sub>0</sub>exp(−2r<sup>2</sup>/w<sub>0</sub><sup>2</sup>)</span>。</p>
+            <p>对光束横截面积分，得到该偏振分量的功率 <span class="rabi-formula-inline">P=πw<sub>0</sub><sup>2</sup>I<sub>0</sub>/2</span>。</p>
             <p>因此，中心强度为 <span class="rabi-formula-inline">I<sub>0</sub>=2P/(πw<sub>0</sub><sup>2</sup>)</span>。</p>
             <p>周期平均强度满足 <span class="rabi-formula-inline">I<sub>0</sub>=cε<sub>0</sub>E<sub>0</sub><sup>2</sup>/2</span>，由此得到电场振幅 <span class="rabi-formula-inline">E<sub>0</sub>=√[4P/(πw<sub>0</sub><sup>2</sup>cε<sub>0</sub>)]</span>。</p>
             <p>代入 <span class="rabi-formula-inline">Ω=d<sub>eff</sub>E<sub>0</sub>/ℏ</span>，再除以 2π，即得到上方公式。旋波近似的哈密顿量耦合项为 ℏΩ/2，Ω 本身无需再除以 2。</p>

@@ -42,13 +42,14 @@ export function resultCSVRow(record) {
     adoption_status:adoption?.status??null,adoption_label:adoption?.label??null,adoption_scope:adoption?.scope??null,
     adoption_batch_id:adoption?.batchId??null,related_record_ids:adoption?.relatedIds?.join('|')??null,
     solved_quantity:solved.label,solved_value:solved.value,solved_unit:solved.unit,solved_value_SI:solved.valueSI,solved_unit_SI:solved.siUnit,
-    solve_for:c.display.solveFor,power_plane:def.powerPlane,power_basis:def.powerBasis,transmission:def.transmission,
+    solve_for:solved.key,power_plane:def.powerPlane,power_basis:def.powerBasis,transmission:def.transmission,
     transmission_status:def.powerPlane==='atoms'?'not-used':'supplied',
     linear_orientation:def.linearOrientation,manual_component_fraction:def.manualFraction,size_definition:def.sizeKind,
     entered_power_W:c.enteredParameters.power_W,entered_size_m:c.enteredParameters.size_m,
     atom_component_power_W:c.parameters.power_W,intensity_radius_m:c.parameters.waist_m,
     reduced_dipole_ea0:d.value,dipole_convention:d.convention,effective_dipole_ea0:ch.dEff_ea0,
     ...(Number.isFinite(ch.matrixElement_ea0)?{magnetic_sublevel_dipole_ea0:ch.matrixElement_ea0}:{}),
+    target_rabi_Hz:solved.key==='rabi'?null:c.parameters.targetRabi_Hz,
     frequency_Hz:c.result.frequency_Hz,omega_rad_s:c.result.omega_rad_s,pi_time_s:c.result.frequency_Hz===0?'infinity':c.result.piTime_s,
     pi_time_status:c.result.frequency_Hz===0?'infinite-zero-coupling':'finite',
     dipole_uncertainty_ea0:d.uncertainty,dipole_uncertainty_status:d.uncertainty===null?'unknown':'reported',
@@ -88,6 +89,7 @@ export function formatWorkingPointLines(record) {
   requireRecord(record);
   const c=record.configuration,ch=record.resolvedChannel,def=c.inputDefinition;
   const solved=savedSolvedQuantity(c);
+  const inverse=solved.key!=='rabi';
   const factors=getBeamFactors(def,c.selection.pol);
   const allocation=def.powerBasis==='component'?'已为指定分量':def.linearOrientation==='manual'?`手动 ${display(def.manualFraction*100)}%`:def.linearOrientation==='parallel'?'平行 B':'垂直 B';
   return [
@@ -95,7 +97,8 @@ export function formatWorkingPointLines(record) {
     `F=${fraction(ch.F)}, mF=${signed(ch.m)} → F′=${fraction(ch.Fp)}, mF′=${signed(ch.mp)} · ${pol(ch.q)} · ${ch.selectionOrigin==='auto'?'自动解析的实际通道':'手选通道'}`,
     `录入：P=${display(c.enteredParameters.power_W)} W（${def.powerPlane==='upstream'?'上游':'原子处'}，${def.powerBasis==='linear-total'?'线偏振总功率':'指定偏振分量功率'}）；尺寸=${display(c.enteredParameters.size_m)} m（1/e²强度${def.sizeKind==='diameter'?'直径':'半径'}）；η=${def.transmission===null?'未使用':display(def.transmission*100)+'%'}；分量分配：${allocation}（f_q=${display(factors.componentFraction)}）`,
     `进入公式：Pq=${display(c.parameters.power_W)} W；w₀=${display(c.parameters.waist_m)} m（1/e²强度半径）；d_eff=${display(ch.dEff_ea0)} ea₀`,
-    `${solved.key==='rabi'?'':'目标 '}Ω/2π=${display(c.result.frequency_Hz)} Hz；Ω=${display(c.result.omega_rad_s)} rad/s；tπ=${c.result.frequency_Hz===0?'∞（零耦合）':display(c.result.piTime_s)+' s'}`,
+    ...(inverse?[`反算目标 Ω/2π=${display(c.parameters.targetRabi_Hz)} Hz`]:[]),
+    `${inverse?'重算 ':''}Ω/2π=${display(c.result.frequency_Hz)} Hz；Ω=${display(c.result.omega_rad_s)} rad/s；tπ=${c.result.frequency_Hz===0?'∞（零耦合）':display(c.result.piTime_s)+' s'}`,
   ];
 }
 

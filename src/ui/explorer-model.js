@@ -46,6 +46,10 @@ export function buildExplorerRecords(transitions=[]) {
       :String(transition.classification || '').startsWith('强')?'strong':'unknown';
     const dipole=fields.d_num;
     const adoption=getRecordAdoption(transition.id,transition.Fp);
+    // Search precise nS wavelengths as whole tokens so fractional digits do not match unrelated wavelengths.
+    const wavelengthAliases=transition.n!==undefined&&Number.isFinite(wavelength)?[
+      String(wavelength),wavelength.toFixed(4),wavelength.toFixed(6),fields.wavelength_vac_nm.valueText.replace(/ nm$/,''),
+    ]:[];
     const searchText=normalizeSearch([
       transition.id,transition.lower,transition.upper,transition.label,
       adoption.label,adoption.batchId,adoption.sourceId,
@@ -65,14 +69,14 @@ export function buildExplorerRecords(transitions=[]) {
     return Object.freeze({
       id:transition.id,index,transition,fields,wavelength,adoption,
       region:spectrum.region,strength,evidenceKind:dipole.evidenceKind,
-      convention:dipole.convention,searchText
+      convention:dipole.convention,searchText,wavelengthAliases:Object.freeze(wavelengthAliases)
     });
   });
 }
 
 export function filterExplorerRecords(records,{query='',region='all',strength='all',evidence='all',sort='default'}={}) {
-  const tokens=normalizeSearch(query).split(' ').filter(Boolean);
-  const matches=records.filter(record=>tokens.every(token=>record.searchText.includes(token))
+  const tokens=normalizeSearch(query).replace(/(^|\s)(\d+(?:\.\d+)?)\s*nm(?=\s|$)/g,'$1$2').split(' ').filter(Boolean);
+  const matches=records.filter(record=>tokens.every(token=>record.searchText.includes(token)||record.wavelengthAliases.includes(token))
     &&(region==='all'||record.region===region)
     &&(strength==='all'||record.strength===strength)
     &&(evidence==='all'||(evidence==='missing'?record.fields.d_num.missing:record.evidenceKind===evidence)));

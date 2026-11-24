@@ -12,11 +12,18 @@ const validVersion = value => typeof value === 'string' && shortVersion.test(val
 const sha256 = /^[0-9a-f]{64}$/;
 const publicSite = 'https://seven-jack.github.io/171YbDatabase/';
 const publicRepository = 'https://github.com/seven-Jack/171YbDatabase';
-const publishedCatalog = {
-  datasetVersion: '2026.11.11.1',
-  datasetHash: '4b5df2bd0e5679ce5576f6bcfa5fa99b0b4cd586c371766de6aab2f9ea193068',
-  commit: 'ad20cd78cb65fc245a29e7f35ffb373e7b416238',
-};
+const publishedCatalogs = [
+  {
+    datasetVersion: '2026.11.11.1',
+    datasetHash: '4b5df2bd0e5679ce5576f6bcfa5fa99b0b4cd586c371766de6aab2f9ea193068',
+    commit: 'ad20cd78cb65fc245a29e7f35ffb373e7b416238',
+  },
+  {
+    datasetVersion: '2026.11.18.2',
+    datasetHash: 'f8f8bf3789d69eda79ab2e183378b7d6ad7f0543aae51f13aca0a03980147ba2',
+    commit: '07dc3f5b2c2fdc032b8ed5a30ec6e49715814fd0',
+  },
+];
 
 function selection(recordId, fp) {
   const transition = recordTransitions.get(recordId);
@@ -92,9 +99,11 @@ export function datasetReference(pageHref, recordId, versions) {
   deployment.search = '';
   deployment.hash = '';
   const isPublic = [publicSite, publicSite + 'index.html'].includes(deployment.href);
-  const knownDataset = versions.datasetVersion === publishedCatalog.datasetVersion && versions.datasetHash === publishedCatalog.datasetHash;
-  const commit = knownDataset ? publishedCatalog.commit
-    : isPublic && versions.worktreeDirty === false && /^[0-9a-f]{40}$/.test(versions.appCommit) ? versions.appCommit : null;
+  const published = publishedCatalogs.find(catalog => catalog.datasetVersion === versions.datasetVersion
+    && catalog.datasetHash === versions.datasetHash);
+  const publicBuildCommit = isPublic && versions.worktreeDirty === false && /^[0-9a-f]{40}$/.test(versions.appCommit)
+    ? versions.appCommit : null;
+  const commit = published?.commit ?? publicBuildCommit;
   const relativeManifest = 'data/dataset.json';
   const relativeRecord = recordId?.startsWith('NS-') ? 'data/rydberg-series.json' : 'data/transitions.json';
   const localUrl = relative => new URL(relative, deployment).href;

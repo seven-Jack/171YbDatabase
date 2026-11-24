@@ -47,6 +47,15 @@ test('curve SVG contains vector paths/axes and only the visible sampled series w
   assert.equal(JSON.parse(samples[0].context_json).configuration.transitionId,'T2');
 });
 
+test('inverse figure headers show the requested frequency and the recomputed frequency separately',()=>{
+  const {record,snapshot} = fixture();
+  record.configuration.display.solveFor = 'power';
+  record.configuration.parameters.targetRabi_Hz = 10000;
+  const svg = renderChartSVG(snapshot,record);
+  assert.ok(svg.includes('反算目标 Ω/2π=10000 Hz'));
+  assert.ok(svg.includes(`重算 Ω/2π=${record.configuration.result.frequency_Hz} Hz`));
+});
+
 test('sigma 2P display converts neither physical sample power nor coupling a second time',()=>{
   const {record,snapshot}=fixture('curve','sigmap'),rows=parseCSV(serializeChartCSV(snapshot,record));
   assert.equal(rows[1].power_axis_convention,'2Pq');assert.equal(Number(rows[1].power_axis_value),2);
