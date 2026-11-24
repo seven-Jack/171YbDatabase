@@ -4,9 +4,20 @@ import { buildSourceView } from './source-panel.js';
 export function initWorkflowNavigation(calculator) {
   const navigation = document.getElementById('sectionNav');
   const links = [...navigation.querySelectorAll('a[href^="#"]')];
+  function focusSearch(event) {
+    if (event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+    const search = document.getElementById('dataSearch');
+    if (!search) return;
+    const core = document.getElementById('data-tab-core');
+    if (core?.getAttribute('aria-selected') === 'false') core.click();
+    requestAnimationFrame(() => {
+      search.focus({preventScroll:true});
+      search.scrollIntoView({block:'nearest', behavior:'instant'});
+    });
+  }
+  const searchLinks = [...document.querySelectorAll('[data-open-search]')];
+  searchLinks.forEach(link => link.addEventListener('click', focusSearch));
   const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
-  const steps = [...document.querySelectorAll('.flow-step[data-gstep]')];
-  const location = document.getElementById('workflowLocation');
   let frame = null;
   const updateLocation = () => {
     frame = null;
@@ -17,15 +28,6 @@ export function initWorkflowNavigation(calculator) {
       if (link.getAttribute('href') === `#${active.id}`) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     }
-    for (const step of steps) {
-      const link = step.querySelector('a');
-      const current = link.getAttribute('href') === `#${active.id}`;
-      step.classList.toggle('is-current', current);
-      if (current) link.setAttribute('aria-current', 'step');
-      else link.removeAttribute('aria-current');
-    }
-    const currentLink = links.find(link => link.getAttribute('href') === `#${active.id}`);
-    location.textContent = `当前 · ${currentLink.textContent}`;
   };
   const schedule = () => { if (frame === null) frame = requestAnimationFrame(updateLocation); };
   window.addEventListener('scroll', schedule, {passive:true});
@@ -42,6 +44,7 @@ export function initWorkflowNavigation(calculator) {
       ? `${view.transition.id} · ${view.channel}` : '请先选择跃迁与通道';
   });
   return Object.freeze({destroy() {
+    searchLinks.forEach(link => link.removeEventListener('click', focusSearch));
     window.removeEventListener('scroll', schedule);
     window.removeEventListener('resize', schedule);
     resizeObserver?.disconnect();

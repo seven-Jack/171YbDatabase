@@ -1,4 +1,5 @@
 import {buildCalculationRecord, serializeCalculationRecord} from './calculation-record.js';
+import {recordCitation} from './record-adoption.js';
 import {canExportCurrentResult,serializeResultCSV,formatCalculationSummary} from './result-export.js';
 
 const activeExports = new WeakMap();
@@ -19,29 +20,44 @@ export function initCalculationRecordExport({
   control.id = 'calculationRecordExport';
   control.className = 'calculation-record-export';
   const summary = doc.createElement('summary');
-  summary.textContent = '导出研究记录';
+  summary.textContent = '复制与导出';
   const panel = doc.createElement('div');
   panel.className = 'calculation-record-export-panel';
   const help = doc.createElement('p');
   help.className = 'calculation-record-export-help';
-  help.textContent = 'JSON 可恢复配置并按当前模型重算；Markdown 便于记录与引用。';
+  help.textContent = '所选跃迁、实际通道及当前工作点';
   const hint = doc.createElement('p');
   hint.id = 'calculationRecordExportHint';
   hint.dataset.testid = 'record-export-hint';
   hint.className = 'calculation-record-export-hint';
   hint.setAttribute('role', 'note');
-  const buttons = ['json','markdown','csv','summary'].map(format => {
-    const button = doc.createElement('button');
-    button.type = 'button';
-    button.id = {json:'recordExportJSON',markdown:'recordExportMarkdown',csv:'recordExportCSV',summary:'recordCopySummary'}[format];
-    button.dataset.recordFormat = format;
-    button.setAttribute('aria-describedby', hint.id);
-    button.textContent = {json:'JSON · 可复算记录',markdown:'Markdown · 研究笔记',csv:'CSV · 当前工作点',summary:'复制计算摘要'}[format];
-    return button;
-  });
+  const actions = [
+    ['复制', [['summary','recordCopySummary','复制结果与条件'], ['citation','recordCopyCitation','复制数据引用']]],
+    ['导出数据', [['csv','recordExportCSV','CSV · 当前工作点']]],
+    ['保存研究记录', [['json','recordExportJSON','JSON · 快照与重算配置'], ['markdown','recordExportMarkdown','Markdown · 研究笔记']]],
+  ];
+  const buttons = [];
+  panel.append(help);
+  for (const [label,items] of actions) {
+    const group = doc.createElement('fieldset');
+    const legend = doc.createElement('legend');
+    legend.textContent = label;
+    group.append(legend);
+    for (const [format,id,text] of items) {
+      const button = doc.createElement('button');
+      button.type = 'button';
+      button.id = id;
+      button.dataset.recordFormat = format;
+      button.setAttribute('aria-describedby', hint.id);
+      button.textContent = text;
+      group.append(button);
+      buttons.push(button);
+    }
+    panel.append(group);
+  }
   const copyFallback=doc.createElement('textarea');copyFallback.id='recordCopyFallback';copyFallback.className='result-copy-fallback';copyFallback.readOnly=true;copyFallback.hidden=true;
-  copyFallback.setAttribute('aria-label','待手动复制的计算摘要');
-  panel.append(help, ...buttons, hint,copyFallback);
+  copyFallback.setAttribute('aria-label','待手动复制的内容');
+  panel.append(hint,copyFallback);
   control.append(summary, panel);
   toolbar.append(control);
 
@@ -63,16 +79,18 @@ export function initCalculationRecordExport({
       if (!canExport(state)) throw Error(unavailable);
       const format = button.dataset.recordFormat;
       const record = buildCalculationRecord(state, versions);
-      if(format==='summary'){
-        const text=formatCalculationSummary(record),fingerprint=JSON.stringify(state);copyFallback.hidden=true;
+      if(format==='summary'||format==='citation'){
+        const label=format==='summary'?'当次计算摘要':'数据引用';
+        const text=format==='summary'?formatCalculationSummary(record):recordCitation(record.transition.id,record.resolvedChannel.Fp,versions);
+        const fingerprint=JSON.stringify(state);copyFallback.hidden=true;
         try{
           if(!view.navigator.clipboard?.writeText)throw Error('剪贴板不可用');
           await view.navigator.clipboard.writeText(text);
-          const focusInside=control.contains(doc.activeElement);close();if(focusInside)summary.focus({preventScroll:true});writeStatus(`已复制 ${record.transition.id} 当次计算摘要，包含实际通道、输入定义、来源和版本。`);
+          const focusInside=control.contains(doc.activeElement);close();if(focusInside)summary.focus({preventScroll:true});writeStatus(`已复制 ${record.transition.id} ${label}。`);
         }catch{
-          if(fingerprint!==JSON.stringify(calculator.getState())){writeStatus('剪贴板不可用，当前工作点已变化；请重新复制当前计算摘要。');return;}
+          if(fingerprint!==JSON.stringify(calculator.getState())){writeStatus('剪贴板不可用，当前工作点已变化，请重新复制。');return;}
           copyFallback.value=text;copyFallback.hidden=false;copyFallback.focus();copyFallback.select();
-          writeStatus('剪贴板不可用，摘要已选中；请按 ⌘C / Ctrl+C 手动复制。');
+          writeStatus(`剪贴板不可用，${label}已选中，请按 ⌘C / Ctrl+C 手动复制。`);
         }
         return;
       }

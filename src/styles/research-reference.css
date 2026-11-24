@@ -48,10 +48,14 @@
 #secReference .keypoints h4 { margin: 0 0 7px; font: 500 13px/1.6 var(--font-ui); color: #dce7f6; }
 #secReference .keypoints p { margin: 0; color: #a7bad4; line-height: 1.9; overflow-wrap: anywhere; }
 
-/* A compact bibliography: fixed original numbering, readable titles, clear exits. */
-#secBibliography .reference-index-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding: 16px 22px; border: 1px solid var(--reference-edge); border-bottom: 0; border-radius: 12px 12px 0 0; background: #101d30; }
-#secBibliography .reference-index-bar p { margin: 0; font-size: 11px; line-height: 1.7; color: #9cafca; }
-#secBibliography .reference-total { margin-left: auto; color: #ddc18e; font: 11px/1.6 var(--font-ui); white-space: nowrap; }
+/* Shared disclosure headings for methods and sources. */
+.reference-index-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; padding: 14px 22px; border: 1px solid var(--reference-edge); border-radius: 12px; background: #101d30; cursor: pointer; }
+.reference-index-bar:hover { border-color: #526982; }
+.reference-index-bar::-webkit-details-marker { display: none; }
+.reference-index-bar::after { content: ''; flex: none; width: 8px; height: 8px; margin-right: 3px; border: solid #c5d5e9; border-width: 0 2px 2px 0; transform: rotate(-45deg); }
+#bibliographyDisclosure[open] > .reference-index-bar { border-radius: 12px 12px 0 0; border-bottom: 0; }
+details[open] > .reference-index-bar::after { transform: rotate(45deg); }
+#secBibliography .reference-total { color: #ddc18e; font: 13px/1.6 var(--font-ui); letter-spacing: normal; }
 #secBibliography .ref-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 34px; padding: 2px 24px; border: 1px solid var(--reference-edge); border-radius: 0 0 12px 12px; background: #0b1421; }
 #secBibliography .ref-item { min-width: 0; display: grid; grid-template-columns: 30px minmax(0,1fr); gap: 13px; align-items: start; padding: 23px 0; border-bottom: 1px solid #25344a; }
 #secBibliography .ref-num { padding-top: 1px; color: #c4aa7d; font: 11px/1.8 var(--font-number); }
@@ -87,8 +91,8 @@
   #secReference .keypoints { grid-template-columns: minmax(0,1fr); }
   #secReference .keypoints li:nth-last-child(-n+2) { border-bottom: 1px solid #23334a; padding-bottom: 22px; }
   #secReference .keypoints li:last-child { border-bottom: 0; padding-bottom: 0; }
-  #secBibliography .reference-index-bar { padding: 15px 18px; gap: 7px 12px; }
-  #secBibliography .reference-index-bar p { order: 2; flex-basis: 100%; }
+  .reference-index-bar { padding: 14px 16px; }
+  #secBibliography .reference-total { flex-basis: 100%; }
   #secBibliography .ref-list { grid-template-columns: minmax(0,1fr); padding-inline: 18px; }
   #secBibliography .ref-item { grid-template-columns: 26px minmax(0,1fr); gap: 9px; padding: 21px 0; }
   #secBibliography .ref-item:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid #25344a; }

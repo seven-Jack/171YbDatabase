@@ -1,8 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 
-// All assertions use physical units, including when the solved field picks an
-// automatic display unit. No test treats an upstream or total power as Pq.
+// Physical comparisons use mW, Hz and µm regardless of the selected display unit.
 const unitScales = {
   power: { W: 1000, mW: 1, 'µW': .001, nW: .000001 },
   rabi: { GHz: 1e9, MHz: 1e6, kHz: 1000, Hz: 1 },
@@ -94,7 +93,84 @@ test.afterEach(async ({ page }) => {
   expect(browserProblems.get(page), 'No production script exceptions or missing resources').toEqual([]);
 });
 
-test('default definitions retain the existing work point and size representations preserve the physical beam', async ({ page }) => {
+test('556 nm input power keeps its number when the unit changes and recalculates the Rabi result', async ({ page }) => {
+  await page.locator('#hfCGTableBody [data-channel-key="0.5|0.5|1.5|1.5|1"]').click();
+  await expect(page.locator('#selectionContext')).toHaveAttribute('data-selection-transition', 'T2');
+  await page.locator('#rpCalcP').fill('1');
+  await page.locator('#rpCalcW').fill('500');
+  await expect(page.locator('#rabiResult strong')).toHaveText('5.52367 MHz');
+  const original = await exportConfig(page);
+
+  await page.locator('.rp-calc-unit[data-field="power"]').selectOption('µW');
+  await expect(page.locator('#rpCalcP')).toHaveValue('1');
+  const expectedHz = original.result.frequency_Hz / Math.sqrt(1000);
+  await expectPhysical(page, 'rabi', expectedHz);
+  const microwatt = await exportConfig(page);
+  expect(microwatt.parameters.power_W).toBeCloseTo(1e-6, 14);
+  expect(microwatt.result.frequency_Hz / expectedHz).toBeCloseTo(1, 12);
+
+  await page.locator('.rp-calc-unit[data-field="rabi"]').selectOption('Hz');
+  await expect(page.locator('#rabiResult .result-unit')).toHaveText('Hz');
+  await expectPhysical(page, 'rabi', expectedHz);
+  const cardHz = Number(await page.locator('#rabiResult .result-number').textContent());
+  expect(cardHz / expectedHz).toBeCloseTo(1, 5);
+  const saved = await exportConfig(page);
+  expect(saved.parameters).toEqual(microwatt.parameters);
+  expect(saved.result).toEqual(microwatt.result);
+  expect(saved.display.units).toEqual({ power: 'µW', rabi: 'Hz', waist: 'µm' });
+});
+
+test('inverse solves reinterpret the target frequency and convert only the solved output', async ({ page }) => {
+  await page.locator('#calcSolveFor').selectOption('power');
+  const frequencyUnit = page.locator('.rp-calc-unit[data-field="rabi"]');
+  await frequencyUnit.selectOption('MHz');
+  await page.locator('#rpCalcR').fill('2.5');
+  const megahertz = await exportConfig(page);
+  await frequencyUnit.selectOption('kHz');
+  await expect(page.locator('#rpCalcR')).toHaveValue('2.5');
+  await expect(page.locator('[data-result-target]')).toHaveText('2.5 kHz');
+  const kilohertz = await exportConfig(page);
+  expect(kilohertz.parameters.targetRabi_Hz).toBeCloseTo(2500, 10);
+  expect(kilohertz.parameters.power_W / megahertz.parameters.power_W).toBeCloseTo(1e-6, 15);
+  await page.locator('.rp-calc-unit[data-field="power"]').selectOption('nW');
+  await expect(page.locator('#rabiResult .result-unit')).toHaveText('nW');
+  await expectPhysical(page, 'power', kilohertz.parameters.power_W * 1000);
+  expect((await exportConfig(page)).parameters).toEqual(kilohertz.parameters);
+
+  await page.locator('#calcSolveFor').selectOption('waist');
+  const waist = await exportConfig(page);
+  await page.locator('.rp-calc-unit[data-field="waist"]').selectOption('nm');
+  await expect(page.locator('#rabiResult .result-unit')).toHaveText('nm');
+  await expectPhysical(page, 'waist', waist.parameters.waist_m * 1e6);
+  expect((await exportConfig(page)).parameters).toEqual(waist.parameters);
+});
+
+test('switching units preserves full input precision and restores the saved result unit', async ({ page }) => {
+  const power = page.locator('.rp-calc-unit[data-field="power"]');
+  const frequency = page.locator('.rp-calc-unit[data-field="rabi"]');
+  await page.locator('#rpCalcP').fill('1.2345678901234567');
+  await frequency.selectOption('kHz');
+  const saved = await exportConfig(page);
+  await power.selectOption('nW');
+  await expect(page.locator('#rpCalcP')).toHaveValue('1.2345678901234567');
+  await power.selectOption('mW');
+  const after = await exportConfig(page);
+  expect(after.parameters).toEqual(saved.parameters);
+  expect(after.result).toEqual(saved.result);
+
+  await page.locator('#rpCalcW').fill('');
+  await page.locator('.rp-calc-unit[data-field="waist"]').selectOption('mm');
+  await expect(page.locator('#rpCalcW')).toBeEmpty();
+  await frequency.selectOption('GHz');
+  await expect(page.locator('#rpCalcR')).toBeEmpty();
+  await expect(page.locator('#inputError')).toBeVisible();
+  await importConfig(page, saved, 'saved-units.json');
+  await expect(frequency).toHaveValue('kHz');
+  await expect(page.locator('#rabiResult .result-unit')).toHaveText('kHz');
+  await expect(page.locator('#inputError')).toBeHidden();
+});
+
+test('radius and diameter preserve the physical beam while a size unit change reinterprets the input', async ({ page }) => {
   await expect(page.locator('#beamPowerPlane')).toHaveValue('atoms');
   await expect(page.locator('#beamPowerBasis')).toHaveValue('component');
   await expect(page.locator('#beamSizeKind')).toHaveValue('radius');
@@ -111,10 +187,13 @@ test('default definitions retain the existing work point and size representation
   await expectPhysical(page, 'waist', 100);
   await expectPhysical(page, 'rabi', referenceHz);
   await page.locator('.rp-calc-unit[data-field="waist"]').selectOption('mm');
-  await expect(page.locator('#rpCalcW')).toHaveValue('0.1');
-  await expectPhysical(page, 'rabi', referenceHz);
+  await expect(page.locator('#rpCalcW')).toHaveValue('100');
+  await expectPhysical(page, 'rabi', referenceHz / 1000);
   await page.locator('#beamSizeKind').selectOption('radius');
-  await expectPhysical(page, 'waist', 50);
+  await expectPhysical(page, 'waist', 50000);
+  await expectPhysical(page, 'rabi', referenceHz / 1000);
+  await page.locator('.rp-calc-unit[data-field="waist"]').selectOption('µm');
+  await expect(page.locator('#rpCalcW')).toHaveValue('50');
   await expectPhysical(page, 'rabi', referenceHz);
   const restored = await exportConfig(page);
   expect(restored.parameters.power_W).toBeCloseTo(original.parameters.power_W, 12);
@@ -145,6 +224,13 @@ test('upstream total power normalizes once, with explicit missing-factor states 
   const config = await exportConfig(page);
   expect(config.parameters.power_W).toBeCloseTo(.0004, 12);
   expect(config.enteredParameters.power_W).toBeCloseTo(.001, 12);
+
+  await page.locator('.rp-calc-unit[data-field="power"]').selectOption('µW');
+  await expect(page.locator('#rpCalcP')).toHaveValue('1');
+  await expectPhysical(page, 'rabi', referenceHz * Math.sqrt(.0004));
+  const microwatt = await exportConfig(page);
+  expect(microwatt.enteredParameters.power_W).toBeCloseTo(1e-6, 14);
+  expect(microwatt.parameters.power_W).toBeCloseTo(4e-7, 14);
 });
 
 test('all three solve directions close in raw upstream-power and intensity-diameter coordinates', async ({ page }) => {

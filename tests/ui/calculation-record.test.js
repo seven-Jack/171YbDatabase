@@ -7,7 +7,7 @@ import {computeCGChannels,computeDEff,channelKey} from '../../src/physics/angula
 import {rabiHz} from '../../src/physics/rabi.js';
 import {DEFAULT_BEAM_DEFINITION} from '../../src/physics/beam-conventions.js';
 import {exportCalculationConfig,parseCalculationConfig,ConfigurationError} from '../../src/state/config.js';
-import {buildCalculationRecord,serializeCalculationRecord,renderCalculationRecordMarkdown,parseCalculationRecordOrConfig} from '../../src/ui/calculation-record.js';
+import {buildCalculationRecord,serializeCalculationRecord,renderCalculationRecordMarkdown,readSavedCalculation,parseCalculationRecordOrConfig} from '../../src/ui/calculation-record.js';
 import {formatCalculationSummary,resultCSVRow} from '../../src/ui/result-export.js';
 
 const versions = {softwareVersion:'0.3.3',appCommit:'33270877d433c83cb2c07243f1e741dd98d52cdb',worktreeDirty:false,datasetVersion:DATASET_VERSION,datasetHash:DATASET_MANIFEST.contentHash,formulaVersion:FORMULA_VERSION};
@@ -50,7 +50,9 @@ test('record envelopes preserve configuration v2 and resolve the actual automati
 test('standalone records identify both states, angular momenta and wavelength provenance without promoting R2 estimates',()=>{
   for(const id of ['T2','T3','R2']){
     const state=stateFor(id),record=buildCalculationRecord(state,versions),wavelength=getQuantity(id,'wavelength_vac_nm');
-    const {wavelength:wave,...transition}=record.transition;
+    const {wavelength:wave,adoption,...transition}=record.transition;
+    assert.equal(adoption.status,id==='R2'?'historical':'current');
+    assert.equal(adoption.recordId,id);
     assert.deepEqual(transition,{id,lower:state.transition.lower,upper:state.transition.upper,J_lower:state.J_lower,J_upper:state.J_upper,multipole:state.transition.multipole});
     for(const key of ['value','unit','sourceId','sourceLocator','evidenceKind','uncertainty','convention','uncertaintyNote','reviewStatus','conditions']){
       assert.deepEqual(wave[key],wavelength[key]??null,key);
@@ -64,6 +66,17 @@ test('standalone records identify both states, angular momenta and wavelength pr
   }
   const malformed=buildCalculationRecord(stateFor(),versions);malformed.transition=null;
   assert.throws(()=>parseCalculationRecordOrConfig(malformed,versions),ConfigurationError);
+});
+
+test('an archived identity stays readable without a replacement in the current catalog',()=>{
+  const record=buildCalculationRecord(stateFor('R2'),versions);
+  const legacy=structuredClone(record);
+  delete legacy.transition.adoption;
+  delete legacy.resolvedChannel.solvedQuantity;
+  legacy.configuration.transitionId='archived-record-id';
+  legacy.configuration.result.frequency_Hz=2;
+  assert.deepEqual(readSavedCalculation(JSON.stringify(legacy)),{config:legacy.configuration,record:legacy});
+  assert.throws(()=>parseCalculationRecordOrConfig(legacy,versions),/当前数据没有跃迁 archived-record-id/);
 });
 
 test('T2 and T7 research records distinguish centroid, optional zero-field offset and printed wavelength conflict',()=>{
@@ -128,6 +141,15 @@ test('all three solve directions retain upstream total power/diameter definition
     state.dEff=computeDEff(state).dEff;state.fR_MHz=rabiHz(state.dEff,.4,50)/1e6;
     const original=structuredClone(state),record=buildCalculationRecord(state,versions),config=record.configuration;
     assert.equal(config.display.solveFor,solveFor);
+    const solved = record.resolvedChannel.solvedQuantity;
+    assert.equal(solved.key,solveFor);
+    close(solved.valueSI,solveFor==='power'?.001:solveFor==='waist'?100e-6:config.result.frequency_Hz);
+    const row = resultCSVRow(record);
+    assert.equal(row.solved_quantity,solved.label);
+    assert.equal(row.solved_value_SI,solved.valueSI);
+    assert.equal(row.solved_unit_SI,solved.siUnit);
+    assert.match(formatCalculationSummary(record),new RegExp(solved.label.replace(/[()]/g,'\\$&')));
+    assert.ok(renderCalculationRecordMarkdown(record).includes('主结果 · '+solved.label));
     close(config.enteredParameters.power_W,.001);close(config.enteredParameters.size_m,100e-6);
     close(config.parameters.power_W,.0004);close(config.parameters.waist_m,50e-6);
     close(config.result.frequency_Hz,state.fR_MHz*1e6);
@@ -216,6 +238,7 @@ test('series exports preserve both branch identities, zero fields and relative d
     assert.match(conditions.branch,branch);
     assert.equal(json.primaryQuantity.value,dipole);
     assert.equal(json.transition.wavelength.reference,'model-branch');
+    assert.equal(json.transition.J_upper,Fp===.5 ? null : 1);
     assert.equal(csv.rydberg_n,65);
     assert.equal(csv.rydberg_nu_effective,nu);
     assert.equal(csv.rydberg_nu_reference,'ionic F_c=1');
@@ -227,6 +250,17 @@ test('series exports preserve both branch identities, zero fields and relative d
     assert.equal(csv.dipole_convention,'F-reduced');
     const markdown=serializeCalculationRecord(record,'markdown');
     const line=Fp===1.5?367:362;
+    if (Fp === .5) {
+      assert.match(markdown,/电子角动量.*F′=1\/2 混合态，J′ 非好量子数/);
+      assert.doesNotMatch(markdown,/J′=1\b/);
+      const legacy = structuredClone(json);
+      legacy.transition.J_upper = 1;
+      assert.equal(readSavedCalculation(legacy).record.transition.J_upper,1);
+      assert.equal(parseCalculationRecordOrConfig(legacy,versions).result.fR,record.configuration.result.frequency_Hz);
+      assert.doesNotMatch(renderCalculationRecordMarkdown(legacy),/J′=1\b/);
+    } else {
+      assert.match(markdown,/电子角动量.*J=0 → J′=1\b/);
+    }
     assert.equal(json.evidence.calculationSource.channelLine,line);
     assert.equal(csv.r017_channel_csv_line,line);
     assert.equal(csv.r017_batch_id,'delivery_20261111T085031Z');

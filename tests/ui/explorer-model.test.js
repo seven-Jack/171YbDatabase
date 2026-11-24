@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {CORE_TRANSITIONS} from '../../src/data/catalog.js';
+import {CORE_TRANSITIONS, RYDBERG_SERIES_TRANSITIONS} from '../../src/data/catalog.js';
 import {buildExplorerRecords,normalizeSearch,filterExplorerRecords,toggleComparison,comparisonConventions} from '../../src/ui/explorer-model.js';
 
 const records=buildExplorerRecords(CORE_TRANSITIONS);
@@ -18,6 +18,29 @@ test('keyword search normalizes term typography and full-width wavelength input'
   assert.deepEqual(ids(filterExplorerRecords(records,{query:'3P1 556'})),['T2']);
   assert.deepEqual(ids(filterExplorerRecords(records,{query:'556 literature-reported'})),['T2']);
   assert.deepEqual(ids(filterExplorerRecords(records,{query:'556 文献'})),['T2']);
+});
+
+test('nS wavelength search accepts catalogue, series and source display precision and raw values',()=>{
+  const catalogue=buildExplorerRecords([...CORE_TRANSITIONS,...RYDBERG_SERIES_TRANSITIONS]);
+  const id='NS-65-F32';
+  const {wavelength}=catalogue.find(record=>record.id===id);
+  for (const [query, expected] of [
+    ['３０３．１５４３','NS-30-F12'],
+    ['303.15427','NS-30-F12'],
+    ['301.888533',id],
+    ['301.888533 nm',id],
+    ['301.888533nm',id],
+    [String(wavelength),id],
+  ]) {
+    assert.deepEqual(ids(filterExplorerRecords(catalogue,{query,region:'UV',evidence:'internal-calculation'})),[expected],query);
+  }
+  for (const query of ['301.9','302','65S']) {
+    assert.ok(ids(filterExplorerRecords(catalogue,{query})).includes(id),query);
+  }
+  assert.deepEqual(ids(filterExplorerRecords(catalogue,{query:'301.888533',region:'visible'})),[]);
+  for (const query of ['770','770 nm']) {
+    assert.deepEqual(ids(filterExplorerRecords(catalogue,{query})),['T7'],query);
+  }
 });
 
 test('independent filters combine region, class and matrix-element evidence',()=>{

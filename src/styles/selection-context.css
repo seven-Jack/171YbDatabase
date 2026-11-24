@@ -1,23 +1,21 @@
 /* Persistent calculation identity; separate from diagram geometry and hover cards. */
-:root { --selection-nav-height: 66px; --selection-context-height: 66px; }
+:root { --selection-nav-height: 48px; --selection-context-height: 46px; }
 html { scroll-padding-top: calc(var(--selection-nav-height) + var(--selection-context-height) + 16px); }
 .section { scroll-margin-top: 0; }
 .selection-context {
   position: sticky; top: var(--selection-nav-height); z-index: 49;
-  padding: 0 16px; border: 1px solid #3b5473; border-left: 3px solid #d8b778;
-  border-radius: 0 0 10px 10px;
-  background: linear-gradient(110deg,#182a43,#101c2e 65%); box-shadow: 0 8px 24px #0004,inset 0 1px #b6d6ff12;
+  padding: 0 12px; border-bottom: 1px solid #2a3a50;
+  background: #101925;
   font: 500 13px/1.6 var(--font-ui); color: #e5eefc;
 }
 .selection-context-trigger {
   display: grid; grid-template-columns: max-content max-content minmax(0,1fr) max-content 20px;
-  align-items: center; gap: 14px; width: 100%; min-height: 64px;
-  padding: 10px 0; border: 0; border-radius: 0; background: transparent;
+  align-items: center; gap: 12px; width: 100%; min-height: 44px;
+  padding: 6px 0; border: 0; border-radius: 0; background: transparent;
   color: inherit; text-align: left; font: inherit; cursor: pointer; box-shadow: none;
 }
 .selection-context-caption { color: #b7c8e0; font-size: 11px; white-space: nowrap; }
-.selection-context-caption::before { content: ''; display: inline-block; width: 6px; height: 6px; margin: 0 8px 2px 0; border-radius: 50%; background: #f0d39a; box-shadow: 0 0 9px #e3bf7855; }
-.selection-context-transition { color: #f5dca8; background: #d5b27112; border: 1px solid #a88b535c; border-radius: 7px; padding: 5px 10px; font-size: 16px; font-weight: 600; white-space: nowrap; }
+.selection-context-transition { color: #e3ecf9; font-size: 15px; font-weight: 600; white-space: nowrap; }
 .selection-context-channel { min-width: 0; color: #e0ecff; font-size: 14px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .selection-context-mode { color: #b8cce9; background: #29436455; border: 1px solid #526d925c; border-radius: 5px; padding: 4px 8px; font-size: 11px; white-space: nowrap; }
 .selection-context[data-selection-mode="explicit"] .selection-context-mode { color: #f1d39c; border-color: #a88b5377; background: #4a3c2555; }
@@ -43,10 +41,10 @@ html { scroll-padding-top: calc(var(--selection-nav-height) + var(--selection-co
   .selection-context-channel { grid-column: 1 / -1; grid-row: 2; }
 }
 @media(max-width:600px) {
-  .selection-context { padding: 0 10px; border-radius: 0 0 8px 8px; }
-  .selection-context-trigger { grid-template-columns: minmax(0,1fr) max-content 16px; padding: 9px 0; gap: 7px; }
+  .selection-context { padding: 0 10px; }
+  .selection-context-trigger { grid-template-columns: minmax(0,1fr) max-content 16px; padding: 6px 0; gap: 2px 8px; }
   .selection-context-caption { display: none; }
-  .selection-context-transition { padding: 3px 7px; font-size: 14px; white-space: normal; }
+  .selection-context-transition { font-size: 14px; white-space: normal; }
   .selection-context-mode { padding: 3px 5px; font-size: 10px; }
   .selection-context-channel { font-size: 13px; line-height: 1.7; }
   .selection-context-panel { right: 0; width: 326px; }

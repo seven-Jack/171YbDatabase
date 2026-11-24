@@ -1,7 +1,9 @@
 import {buildExplorerRecords,filterExplorerRecords,toggleComparison,COMPARISON_LIMIT,COMPARISON_FIELDS} from './explorer-model.js';
 import {buildEqualConditionComparison} from './equal-condition-comparison.js';
 import {createFieldView,createDipoleFieldViews,renderFieldSourceHTML,escapeHTML} from './source-panel.js';
-import {getDipoleQuantity,getQuantity} from '../data/catalog.js';
+import {recordCitation} from './record-adoption.js';
+import {catalogExport} from './catalog-export.js';
+import {getDipoleQuantity,getQuantity,RYDBERG_SERIES_TRANSITIONS} from '../data/catalog.js';
 import {renderDiagramSourceMarks} from './diagram-references.js';
 
 const activeBrowsers=new WeakMap();
@@ -21,20 +23,26 @@ export function initDataBrowser({transitions=[],calculator,tables,versions={},on
   if(activeBrowsers.has(host))return activeBrowsers.get(host);
   const records=buildExplorerRecords(transitions),byId=new Map(records.map(record=>[record.id,record]));
   const cleanups=[];
+  const view=host.ownerDocument.defaultView;
+  let seriesRecords,matching=records,visibleLimit=16;
   let selectedIds=[],currentState=calculator.getState(),comparisonView=null;
   const browser=document.createElement('section');browser.id='dataBrowser';browser.className='data-browser';
   browser.setAttribute('aria-labelledby','dataBrowserTitle');
-  browser.innerHTML=`<div class="data-browser-header"><h3 id="dataBrowserTitle">检索与比较</h3><p>检索核心跃迁；最多选择 ${COMPARISON_LIMIT} 条，在当前工作点比较。</p></div>
+  browser.innerHTML=`<div class="data-browser-header"><h3 id="dataBrowserTitle">检索与比较</h3><p>输入波长、态名或批次检索核心跃迁和 nS 零场系列。最多选择 ${COMPARISON_LIMIT} 条比较同一通道。</p></div>
     <div class="data-browser-toolbar">
-      <label class="data-browser-search" for="dataSearch"><span>搜索跃迁</span><input id="dataSearch" type="search" placeholder="波长、态名或用途，如 556 / 3P1" autocomplete="off" spellcheck="false" aria-controls="core-data-table"></label>
+      <label class="data-browser-search" for="dataSearch"><span>搜索跃迁</span><input id="dataSearch" type="search" placeholder="556、65S 或记录 ID" autocomplete="off" spellcheck="false" aria-controls="core-data-table"></label>
       <details class="data-browser-filters"><summary>筛选</summary><div class="data-browser-filter-panel">
         <label>波段<select id="dataRegion"><option value="all">全部波段</option><option value="visible">可见光</option><option value="UV">紫外 UV</option><option value="IR">红外 IR</option></select></label>
-        <label>跃迁类别<select id="dataStrength"><option value="all">全部类别</option><option value="strong">强</option><option value="weak">弱</option><option value="forbidden">禁戒 / 诱导</option></select></label>
+        <label>原记录分级<select id="dataStrength"><option value="all">全部类别</option><option value="strong">强</option><option value="weak">弱</option><option value="forbidden">禁戒 / 诱导</option><option value="unknown">耦合强度未分级</option></select></label>
         <label>矩阵元证据<select id="dataEvidence"><option value="all">全部证据类型</option><option value="literature-reported">文献记录</option><option value="internal-calculation">本工作计算</option><option value="internal-calibration">内部校准</option><option value="derived">由其他量推导</option><option value="scaling-estimate">标度估算</option><option value="missing">矩阵元缺失</option></select></label>
+        <label>浏览范围<select id="dataScope"><option value="default">核心跃迁（搜索含 nS）</option><option value="all">核心跃迁与全部 nS 分支</option></select></label>
       </div></details>
+      <button type="button" class="catalog-action" id="dataExportFiltered">导出筛选记录</button>
       <output class="data-browser-count" id="dataResultCount" role="status" aria-live="polite" aria-atomic="true"></output>
       <button type="button" class="data-browser-reset" id="dataSearchReset" hidden>重置检索</button>
     </div>
+    <button type="button" id="catalogMore" class="catalog-action" hidden>显示更多记录</button>
+    <textarea class="catalog-copy" aria-label="待复制的数据引用" rows="4" readonly hidden></textarea>
     <p class="data-browser-empty" id="dataSearchEmpty" hidden>没有匹配的跃迁。可尝试波长、态名或冷却、重泵等用途。</p>
     <p class="data-browser-feedback" id="dataBrowserFeedback" role="status" aria-live="polite" aria-atomic="true"></p>`;
   tableWrap.before(browser);
@@ -42,6 +50,8 @@ export function initDataBrowser({transitions=[],calculator,tables,versions={},on
   comparison.hidden=true;comparison.setAttribute('aria-labelledby','dataComparisonTitle');tableWrap.after(comparison);
   const search=browser.querySelector('#dataSearch'),filters=browser.querySelector('details');
   const region=browser.querySelector('#dataRegion'),strength=browser.querySelector('#dataStrength'),evidence=browser.querySelector('#dataEvidence');
+  const scope=browser.querySelector('#dataScope'),more=browser.querySelector('#catalogMore'),copyFallback=browser.querySelector('.catalog-copy');
+  const filterState=()=>({query:search.value,region:region.value,strength:strength.value,evidence:evidence.value});
   const reset=browser.querySelector('#dataSearchReset'),feedback=browser.querySelector('#dataBrowserFeedback');
   const bind=(element,type,listener)=>{element.addEventListener(type,listener);cleanups.push(()=>element.removeEventListener(type,listener));};
 
@@ -53,6 +63,8 @@ export function initDataBrowser({transitions=[],calculator,tables,versions={},on
         actions=document.createElement('div');actions.className='data-row-actions';
         actions.innerHTML=`<button type="button" class="data-row-open" data-data-open="${e(record.id)}" aria-label="查看 ${e(record.id)} 的超精细分量">查看分量</button><button type="button" class="data-row-compare" data-data-compare="${e(record.id)}" aria-controls="dataComparison"></button>`;
         row.querySelector('[data-column="label"]').append(actions);
+        const source=row.querySelector('.table-source-details');
+        source?.insertAdjacentHTML('beforeend',`<div class="catalog-row-tools"><button type="button" class="catalog-action" data-data-cite="${e(record.id)}">复制 ${e(record.id)} 引用</button><button type="button" class="catalog-action" data-data-export="${e(record.id)}">导出 ${e(record.id)} 记录</button></div>`);
       }
       const chosen=selectedIds.includes(record.id),button=actions.querySelector('[data-data-compare]');
       button.setAttribute('aria-pressed',String(chosen));
@@ -62,12 +74,25 @@ export function initDataBrowser({transitions=[],calculator,tables,versions={},on
     }
   }
   function renderResults() {
-    const matching=filterExplorerRecords(records,{query:search.value,region:region.value,strength:strength.value,evidence:evidence.value});
-    tables.setCoreFilter(matching.map(record=>record.id));
-    browser.querySelector('#dataResultCount').textContent=`${matching.length} / ${records.length} 条`;
+    const includeSeries=scope.value==='all'||Boolean(search.value.trim());
+    if(includeSeries&&!seriesRecords) {
+      seriesRecords=buildExplorerRecords(RYDBERG_SERIES_TRANSITIONS);
+      for(const record of seriesRecords) byId.set(record.id,record);
+    }
+    matching=filterExplorerRecords(records,filterState());
+    const series=includeSeries?filterExplorerRecords(seriesRecords,filterState()):[];
+    const coreCount=matching.length;
+    matching=[...matching.filter(row=>row.adoption.status!=='historical'),...series,...matching.filter(row=>row.adoption.status==='historical')];
+    tables.setCoreFilter(matching.map(record=>record.id),visibleLimit);
+    browser.querySelector('#dataResultCount').textContent=series.length
+      ? `${matching.length} 条 · 核心 ${coreCount} / nS ${series.length}` : `${coreCount} / ${records.length} 条`;
+    browser.querySelector('#dataExportFiltered').disabled=!matching.length;
+    more.hidden=matching.length<=visibleLimit;
+    more.textContent=`显示更多记录（已显示 ${Math.min(visibleLimit,matching.length)} / ${matching.length}）`;
+    copyFallback.hidden=true;
     browser.querySelector('#dataSearchEmpty').hidden=matching.length!==0;
-    reset.hidden=!search.value&&[region,strength,evidence].every(select=>select.value==='all');
-    const count=[region,strength,evidence].filter(select=>select.value!=='all').length;
+    reset.hidden=scope.value==='default'&&!search.value&&[region,strength,evidence].every(select=>select.value==='all');
+    const count=[region,strength,evidence].filter(select=>select.value!=='all').length+Number(scope.value==='all');
     filters.querySelector('summary').textContent=count?`筛选 · ${count}`:'筛选';
   }
   function renderComparison() {
@@ -81,7 +106,7 @@ export function initDataBrowser({transitions=[],calculator,tables,versions={},on
     const contextText=context.status==='ready'
       ?`原子处 Pq = ${number(context.P_mW)} mW · w₀ = ${number(context.w_um)} µm（1/e² 强度半径） · ${channelText(context.channel)}`
       :context.message;
-    comparison.innerHTML=`<div class="data-comparison-heading"><div><h3 id="dataComparisonTitle" tabindex="-1">同条件 Rabi 比较 <span>${selectedIds.length} / ${COMPARISON_LIMIT}</span></h3><p>相同 Pq、w₀、偏振和完整 mF 通道；不匹配的跃迁不自动换通道。</p></div><button type="button" id="dataComparisonClear">清空比较</button></div>
+    comparison.innerHTML=`<div class="data-comparison-heading"><div><h3 id="dataComparisonTitle" tabindex="-1">同条件 Rabi 比较 <span>${selectedIds.length} / ${COMPARISON_LIMIT}</span></h3><p>相同 Pq、w₀、偏振和完整 mF 通道；不匹配的跃迁不自动换通道。</p></div><button type="button" id="dataExportComparison">导出比较项</button><button type="button" id="dataComparisonClear">清空比较</button></div>
       <output class="data-comparison-context" id="dataComparisonContext" data-status="${e(context.status)}">${e(contextText)}</output>
       <p class="data-comparison-note">${context.status==='ready'?e(context.selectionOrigin==='auto'?'沿用当前自动选择的实际通道。':'沿用当前手选通道。'):''} <a href="#secRabi">调整当前工作点与通道</a></p>
       <div class="data-comparison-grid">${comparisonView.rows.map(row=>{
@@ -90,7 +115,7 @@ export function initDataBrowser({transitions=[],calculator,tables,versions={},on
         const experiment=row.evidence?.rows.find(item=>item.key==='experiment');
         return `<article class="data-comparison-card" data-comparison-id="${e(row.id)}" data-status="${e(row.status)}"${valid?` data-rabi-hz="${e(row.result.fR)}"`:''}>
           <header><h4>${e(row.id)} · ${e(record.fields.wavelength_vac_nm.valueText)}</h4>${renderDiagramSourceMarks(wave?.sourceId?[wave.sourceId]:[])}<button type="button" data-comparison-remove="${e(row.id)}" aria-label="从比较移除 ${e(row.id)}">移除</button></header>
-          <p class="data-comparison-pair">${e(record.transition.lower)} → ${e(record.transition.upper)}</p>
+          <p class="data-comparison-pair"><span class="record-status" data-adoption="${record.adoption.status}">${record.adoption.label}</span> ${e(record.transition.lower)} → ${e(record.transition.upper)}</p>
           <div class="data-comparison-result"><strong>${valid?e(number(row.result.fR/frequencyScales[unit])):'—'}</strong><span>${valid?e(unit)+' · Ω/2π':'当前条件不可计算'}</span></div>
           <p class="data-comparison-channel">${valid?`d_eff = ${e(number(row.dEff_ea0))} ea₀ · 采用 d 的来源 ${renderDiagramSourceMarks(quantity?.sourceId?[quantity.sourceId]:[])}`:e(row.message)}</p>
           <p class="data-comparison-evidence">${valid?e(formula?.statusText||'当前通道尚未核查')+' · '+e(experiment?.statusText||'未独立验证'):''}</p>
@@ -102,12 +127,36 @@ export function initDataBrowser({transitions=[],calculator,tables,versions={},on
     for(const detail of comparison.querySelectorAll('details[data-comparison-source]'))detail.open=openSources.has(detail.dataset.comparisonSource);
   }
   const unsubscribeTable=tables.onCoreRender(syncRowActions);
-  bind(search,'input',renderResults);
-  for(const select of [region,strength,evidence])bind(select,'change',renderResults);
-  bind(reset,'click',()=>{search.value='';for(const select of [region,strength,evidence])select.value='all';renderResults();search.focus();});
+  const refresh=()=>{visibleLimit=16;renderResults();};
+  bind(search,'input',refresh);
+  bind(more,'click',()=>{visibleLimit+=16;renderResults();if(more.hidden)search.focus();});
+  for(const select of [region,strength,evidence,scope])bind(select,'change',refresh);
+  bind(reset,'click',()=>{search.value='';for(const select of [region,strength,evidence])select.value='all';scope.value='default';refresh();search.focus();});
   bind(filters,'keydown',event=>{if(event.key==='Escape'){filters.open=false;filters.querySelector('summary').focus();}});
   bind(document,'click',event=>{if(filters.open&&!filters.contains(event.target))filters.open=false;});
-  bind(host,'click',event=>{
+  bind(host,'click',async event=>{
+    const citation=event.target.closest?.('[data-data-cite]');
+    if(citation){
+      const id=citation.dataset.dataCite;
+      const content=recordCitation(id,byId.get(id)?.transition.Fp,versions);
+      try{await view.navigator.clipboard.writeText(content);feedback.textContent=`已复制 ${id} 的数据引用。`;}
+      catch{copyFallback.hidden=false;copyFallback.value=content;copyFallback.focus();copyFallback.select();feedback.textContent=`可手动复制 ${id} 的数据引用。`;}
+      return;
+    }
+    const exportButton=event.target.closest?.('[data-data-export],#dataExportFiltered,#dataExportComparison');
+    if(exportButton){
+      const id=exportButton.dataset.dataExport;
+      const mode=id?'record':exportButton.id==='dataExportComparison'?'comparison':'filtered';
+      const ids=id?[id]:mode==='comparison'?selectedIds:matching.map(record=>record.id);
+      const options=id?{Fp:byId.get(id)?.transition.Fp}:mode==='comparison'?{comparison:comparisonView}:{filters:{...filterState(),browseScope:scope.value}};
+      const payload=catalogExport(ids,mode,versions,options);
+      const blob=new view.Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json'});
+      const url=view.URL.createObjectURL(blob),anchor=host.ownerDocument.createElement('a');
+      anchor.href=url;anchor.download=`171yb-${mode}-${id||ids.length}.json`;
+      try{anchor.click();feedback.textContent=`已导出 ${ids.length} 条${id?'目录记录':mode==='comparison'?'选中比较记录':'筛选记录'}（JSON）。`;}
+      finally{view.setTimeout(()=>view.URL.revokeObjectURL(url),1000);}
+      return;
+    }
     const open=event.target.closest?.('[data-data-open]');
     if(open){onOpenTransition?.(byId.get(open.dataset.dataOpen).transition);return;}
     const compare=event.target.closest?.('[data-data-compare]');

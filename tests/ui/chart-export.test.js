@@ -47,6 +47,15 @@ test('curve SVG contains vector paths/axes and only the visible sampled series w
   assert.equal(JSON.parse(samples[0].context_json).configuration.transitionId,'T2');
 });
 
+test('inverse figure headers show the requested frequency and the recomputed frequency separately',()=>{
+  const {record,snapshot} = fixture();
+  record.configuration.display.solveFor = 'power';
+  record.configuration.parameters.targetRabi_Hz = 10000;
+  const svg = renderChartSVG(snapshot,record);
+  assert.ok(svg.includes('反算目标 Ω/2π=10000 Hz'));
+  assert.ok(svg.includes(`重算 Ω/2π=${record.configuration.result.frequency_Hz} Hz`));
+});
+
 test('sigma 2P display converts neither physical sample power nor coupling a second time',()=>{
   const {record,snapshot}=fixture('curve','sigmap'),rows=parseCSV(serializeChartCSV(snapshot,record));
   assert.equal(rows[1].power_axis_convention,'2Pq');assert.equal(Number(rows[1].power_axis_value),2);
@@ -65,6 +74,22 @@ test('heat SVG embeds only the field/colour strip and CSV keeps saturated grid v
   assert.equal(rows[3].color_saturated,'true');assert.equal(Number(rows[0].frequency_Hz),0);
   assert.equal(Number(rows[3].atom_component_power_W),.01);assert.ok(Math.abs(Number(rows[3].intensity_radius_m)-100e-6)<1e-12*100e-6);
   assert.deepEqual(snapshot,before);
+});
+
+test('fixed colouring and locked axes change figure metadata without changing sampled frequencies',()=>{
+  const {record,snapshot}=fixture('heat');
+  const numeric=source=>parseCSV(serializeChartCSV(source,record)).map(row=>[row.atom_component_power_W,row.intensity_radius_m,row.frequency_Hz]);
+  const before=numeric(snapshot);
+  snapshot.viewTheme='dark';snapshot.axesLocked=true;
+  Object.assign(snapshot.grid,{colorMode:'fixed',colorLo_MHz:0,colorHi_MHz:10});
+  snapshot.figure={width:1200,height:800,font:'serif',background:'paper'};
+  snapshot.theme.background='#ffffff';
+  const svg=renderChartSVG(snapshot,record);
+  assert.match(svg,/width="1200" height="800"/);assert.match(svg,/font-family="Georgia/);
+  assert.match(svg,/固定范围/);assert.doesNotMatch(svg,/2%–98%/);
+  const rows=parseCSV(serializeChartCSV(snapshot,record));
+  assert.equal(rows[0].color_scale_mode,'fixed');assert.equal(rows[0].axes_locked,'true');
+  assert.deepEqual(numeric(snapshot),before);
 });
 
 test('display units, log range and pinned values are exported from the supplied plotted view',()=>{

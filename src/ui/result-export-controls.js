@@ -22,7 +22,7 @@ export function initResultExportControls({calculator,charts,versions={},document
     const hint=doc.createElement('p');hint.id=prefix+'ChartExportHint';hint.textContent=kind==='heat'?'按当前视图导出；SVG 坐标可编辑，热网格嵌入位图。模型值不是实验测量。':'按当前显示范围、单位与通道导出；模型值不是实验测量。';
     const buttons=['png','svg','csv'].map(format=>{
       const button=doc.createElement('button');button.type='button';button.id=prefix+'Export'+format.toUpperCase();button.dataset.chartFormat=format;button.setAttribute('aria-describedby',hint.id);
-      button.textContent={png:'PNG · 2× 清晰图像',svg:kind==='curve'?'SVG · 矢量坐标与曲线':'SVG · 矢量坐标与热图',csv:kind==='curve'?'CSV · 可见曲线采样':'CSV · 完整网格数值'}[format];return button;
+      button.textContent={png:'PNG · 2× 清晰图像',svg:kind==='curve'?'SVG · 矢量坐标与曲线':'SVG · 矢量坐标与热图位图',csv:kind==='curve'?'CSV · 可见曲线采样':'CSV · 完整网格数值'}[format];return button;
     });
     panel.append(...buttons,hint);control.append(summary,panel);heading.append(control);controls.push({control,summary,buttons,kind});
     bind(control,'keydown',event=>{if(event.key==='Escape'){event.preventDefault();control.open=false;summary.focus({preventScroll:true});}});
@@ -31,7 +31,8 @@ export function initResultExportControls({calculator,charts,versions={},document
       try{
         const state=calculator.getState();
         if(!canExportCurrentResult(state))throw Error('请先修正输入或选择适用的有效通道。');
-        const record=buildCalculationRecord(state,versions),snapshot=charts.getExportSnapshot(kind),format=button.dataset.chartFormat;
+        const format=button.dataset.chartFormat;
+        const record=buildCalculationRecord(state,versions),snapshot=charts.getExportSnapshot(kind,{image:format!=='csv'});
         // Freeze the click's context before loading the optional renderer.
         const {renderChartSVG,serializeChartCSV,chartSVGToPNG}=await import('./chart-export.js');
         const content=format==='csv'?serializeChartCSV(snapshot,record):renderChartSVG(snapshot,record);

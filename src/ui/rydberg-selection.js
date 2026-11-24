@@ -5,7 +5,7 @@ const display = transition => [
   transition.wavelength_vac_nm.toFixed(6), transition.d_num.toExponential(6)
 ];
 
-export function initRydbergSelection({ transitions, calculator, draw, onDraw }) {
+export function initRydbergSelection({ transitions, calculator, draw, onDraw, enterPolarizationDiagram }) {
   const form = document.getElementById('rydbergSelection');
   const nInput = document.getElementById('rydbergN');
   const nuInput = document.getElementById('rydbergNu');
@@ -25,6 +25,8 @@ export function initRydbergSelection({ transitions, calculator, draw, onDraw }) 
   const byF = Map.groupBy(transitions, transition => transition.Fp);
   const lookup = (n, Fp) => byN.get(n)?.find(row => row.Fp === Fp);
   let active;
+  let jumpTimer;
+  const cancelJump = () => clearTimeout(jumpTimer);
 
   function row(transition, pair = false) {
     const f = rydbergFLabel(transition.Fp);
@@ -94,7 +96,7 @@ export function initRydbergSelection({ transitions, calculator, draw, onDraw }) 
       : lookup(nInput.valueAsNumber, fp);
     if (branch) {
       choose(branch);
-      return;
+      return branch;
     }
     const message = input === nuInput
       ? `请选择 F′=${rydbergFLabel(fp)} 下已收录的 ν。当前图谱仍为 ${active.n}S。`
@@ -103,21 +105,37 @@ export function initRydbergSelection({ transitions, calculator, draw, onDraw }) 
     if (committed) input.setAttribute('aria-invalid', 'true');
     else input.removeAttribute('aria-invalid');
   }
+  function commitInput(input) {
+    cancelJump();
+    if (readControl(input, true)) enterPolarizationDiagram();
+  }
   for (const input of [nInput, nuInput]) {
-    input.addEventListener('input', () => readControl(input, false));
+    input.addEventListener('input', event => {
+      cancelJump();
+      if (event.isComposing || !readControl(input, false)) return;
+      // Allow another digit or a correction before moving keyboard focus.
+      jumpTimer = setTimeout(() => {
+        if (document.activeElement === input) enterPolarizationDiagram();
+      }, 500);
+    });
+    input.addEventListener('blur', cancelJump);
     input.addEventListener('change', () => readControl(input, true));
     input.addEventListener('keydown', event => {
-      if (event.key === 'Escape') syncControls(active);
+      if (event.isComposing) return;
+      if (event.key === 'Escape') {
+        cancelJump();
+        syncControls(active);
+      }
       if (event.key === 'Enter') {
         event.preventDefault();
-        readControl(input, true);
+        commitInput(input);
       }
     });
   }
   fInput.addEventListener('change', () => choose(lookup(active.n, Number(fInput.value))));
   form.addEventListener('submit', event => {
     event.preventDefault();
-    readControl(document.activeElement === nuInput ? nuInput : nInput, true);
+    commitInput(document.activeElement === nuInput ? nuInput : nInput);
   });
   for (const body of [pairRows, allRows]) body.addEventListener('click', event => {
     const button = event.target.closest('button[data-rydberg-id]');
@@ -135,6 +153,7 @@ export function initRydbergSelection({ transitions, calculator, draw, onDraw }) 
   calculator.onChange(state => {
     const calculationChanged = state.transition !== calculationTransition;
     calculationTransition = state.transition;
+    if (calculationChanged) cancelJump();
     legacyContext.hidden = calculationTransition?.id !== 'R2';
     const selected = byId.get(selectionId(state));
     if (!legacyContext.hidden && selected) {

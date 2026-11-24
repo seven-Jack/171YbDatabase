@@ -6,11 +6,13 @@ import { createCalculatorStore } from '../state/store.js';
 import { getDipoleQuantity, getRydbergPair } from '../data/catalog.js';
 import { DEFAULT_BEAM_DEFINITION } from '../physics/beam-conventions.js';
 
+const fraction = value => ({0.5:'1/2', 1.5:'3/2', 2.5:'5/2'}[value] ?? String(value));
+const magnetic = value => `${value < 0 ? '−' : value > 0 ? '+' : ''}${fraction(Math.abs(value))}`;
+const T4_E1_UNAVAILABLE = 'M2 激发不适用当前单光子 E1 模型。尚未收录按 F 分辨的超精细诱导 E1 矩阵元。';
+
 // The displayed result is a channel calculation; references identify its
 // retained input matrix element rather than asserting a measured Rabi result.
 export function buildHyperfineTooltipModel(transition, channel, polarization, hfInduced=false) {
-  const fraction=value=>({0.5:'1/2',1.5:'3/2',2.5:'5/2'}[value]??String(value));
-  const magnetic=value=>`${value<0?'−':value>0?'+':''}${fraction(Math.abs(value))}`;
   const dipole=getDipoleQuantity(transition?.id,channel.Fp);
   const sourceId=dipole?.sourceId;
   const sourceIds=sourceId?[sourceId]:[];
@@ -146,7 +148,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   function channelKey(ch) {
     return [ch.F, ch.m, ch.Fp, ch.mp, ch.q].join('|');
   }
-  function selectHFChannel(ln) {
+  function selectHFChannel(ln, origin) {
     const q = state.pol === 'pi' ? 0 : state.pol === 'sigmap' ? 1 : -1;
     const branch = getRydbergPair(state.transition.n).find(transition => transition.Fp === ln.Fp);
     if (branch && branch.id !== state.transition.id) setTransition(branch, false);
@@ -155,13 +157,47 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     state.F_upper = ln.Fp;
     recalc();
     notifyChanged();
-    onChannelSelected?.();
+    onChannelSelected?.(origin);
+  }
+
+  function appendChannelHit(svg, parent, channel, y1, y2, polarization, laneStep) {
+    const key = channelKey(channel);
+    const hit = document.createElementNS(svg.namespaceURI, 'line');
+    hit.setAttribute('x1', channel._x);
+    hit.setAttribute('x2', channel._x);
+    hit.setAttribute('y1', y1);
+    hit.setAttribute('y2', y2);
+    hit.setAttribute('stroke', 'transparent');
+    hit.setAttribute('stroke-width', '18');
+    // In a narrow viewport each channel can use its lane without covering its neighbour.
+    hit.style.setProperty('--channel-hit-width', String(Math.min(laneStep || 80, 80)));
+    hit.setAttribute('stroke-linecap', 'round');
+    hit.style.pointerEvents = 'stroke';
+    hit.style.cursor = 'pointer';
+    hit.dataset.channelKey = key;
+    hit.setAttribute('role', 'button');
+    hit.setAttribute('tabindex', '0');
+    hit.setAttribute('aria-controls', 'rabiResult');
+    hit.setAttribute('aria-pressed', String(!!state.selectedChannel && channelKey(state.selectedChannel) === key));
+    hit.setAttribute('aria-label', `${polarization} 跃迁，从 F=${fraction(channel.F)}，mF=${magnetic(channel.m)} 到 F′=${fraction(channel.Fp)}，mF′=${magnetic(channel.mp)}`);
+    const choose = () => selectHFChannel(channel, 'diagram');
+    hit.addEventListener('click', choose);
+    hit.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      if (!event.repeat) choose();
+    });
+    hit.addEventListener('mouseenter', event => {
+      const branch = getRydbergPair(state.transition.n).find(transition => transition.Fp === channel.Fp);
+      const model = buildHyperfineTooltipModel(branch ?? state.transition, channel, polarization, isHfInduced());
+      showCompactTooltip(event, model, {target: hit, plot: svg});
+    });
+    hit.addEventListener('mouseleave', scheduleTooltipHide);
+    parent.appendChild(hit);
   }
 
   // ---- Render hyperfine transition diagram (filtered by selected polarization and F display) ----
-  // For the hf-induced clock transition (J=0→0 with hyperfine-mixed channel), there
-  // is no J-level E1 reduced element; we draw the mF-resolved channels with per-channel
-  // matrix element = d_reduced × CG (bare CG, ±1/√3). Dedicated renderer below.
+  // Hyperfine mixing opens the clock transition with an effective F-reduced matrix element.
   function renderHfInducedLines() {
     const elTL = document.getElementById('hfTransLines');
     if (!elTL) return;
@@ -375,21 +411,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       text.textContent = textStr;
       arrowG.appendChild(text);
 
-      // Tooltip + click → selectHFChannel
-      const hit = document.createElementNS(NS, 'line');
-      hit.setAttribute('x1', x); hit.setAttribute('y1', y1);
-      hit.setAttribute('x2', x); hit.setAttribute('y2', y2);
-      hit.setAttribute('stroke', 'transparent');
-      hit.setAttribute('stroke-width', '18');
-      hit.setAttribute('stroke-linecap', 'round');
-      hit.style.pointerEvents = 'stroke';
-      hit.style.cursor = 'pointer';
-      hit.addEventListener('click', () => selectHFChannel(ln));
-      hit.addEventListener('mouseenter', e => {
-        showCompactTooltip(e,buildHyperfineTooltipModel(state.transition,ln,polInfo.label,true),{target:hit,plot:svg});
-      });
-      hit.addEventListener('mouseleave', scheduleTooltipHide);
-      arrowG.appendChild(hit);
+      appendChannelHit(svg, arrowG, ln, y1, y2, polInfo.label, laneStep);
     });
 
     // Selection highlight / dimming
@@ -405,7 +427,8 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     });
 
     svg.appendChild(arrowG);
-    svg.setAttribute('role','img');svg.setAttribute('aria-label',state.transition.lower+' → '+state.transition.upper+' '+polInfo.label+'超精细分量示意；用右侧完整表选择通道');
+    svg.setAttribute('role','group');
+    svg.setAttribute('aria-label', `${state.transition.lower} → ${state.transition.upper} ${polInfo.label} 偏振分量图，选择跃迁线进入 Rabi 计算`);
     svg.querySelectorAll('text').forEach(text=>text.setAttribute('font-size',Math.max(13,Number(text.getAttribute('font-size'))||13)));
     elTL.innerHTML = '';
     elTL.appendChild(svg);
@@ -414,6 +437,10 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
   function renderTransitionLines() {
     const elTL = document.getElementById('hfTransLines');
     if (!elTL) return;
+    if (state.transition?.id === 'T4') {
+      elTL.innerHTML = `<div class="trans-empty">${T4_E1_UNAVAILABLE}</div>`;
+      return;
+    }
     if (!state.transition || (!state.transition.fReducedDipoles && state.dReduced <= 0)) {
       elTL.innerHTML = '<div class="trans-empty">选择跃迁后自动显示超精细跃迁图</div>';
       return;
@@ -667,21 +694,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       text.textContent = textStr;
       arrowG.appendChild(text);
 
-      const hit = document.createElementNS(NS, 'line');
-      hit.setAttribute('x1', x); hit.setAttribute('y1', y1);
-      hit.setAttribute('x2', x); hit.setAttribute('y2', y2);
-      hit.setAttribute('stroke', 'transparent');
-      hit.setAttribute('stroke-width', '18');
-      hit.setAttribute('stroke-linecap', 'round');
-      hit.style.pointerEvents = 'stroke';
-      hit.style.cursor = 'pointer';
-      hit.addEventListener('click', () => selectHFChannel(ln));
-      hit.addEventListener('mouseenter', e => {
-        const branch = getRydbergPair(state.transition.n).find(transition => transition.Fp === ln.Fp);
-        showCompactTooltip(e,buildHyperfineTooltipModel(branch ?? state.transition,ln,polInfo.label),{target:hit,plot:svg});
-      });
-      hit.addEventListener('mouseleave', scheduleTooltipHide);
-      arrowG.appendChild(hit);
+      appendChannelHit(svg, arrowG, ln, y1, y2, polInfo.label, laneStep);
     })
 
     // Apply selection highlight / dimming
@@ -697,7 +710,8 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     });
 
     svg.appendChild(arrowG);
-    svg.setAttribute('role','img');svg.setAttribute('aria-label',state.transition.lower+' → '+state.transition.upper+' '+polInfo.label+'超精细分量示意；用右侧完整表选择通道');
+    svg.setAttribute('role','group');
+    svg.setAttribute('aria-label', `${state.transition.lower} → ${state.transition.upper} ${polInfo.label} 偏振分量图，选择跃迁线进入 Rabi 计算`);
     svg.querySelectorAll('text').forEach(text=>text.setAttribute('font-size',Math.max(13,Number(text.getAttribute('font-size'))||13)));
     elTL.innerHTML = '';
     elTL.appendChild(svg);
@@ -705,10 +719,11 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
 
   // ---- Render CG table as a transition list with CG coefficient column ----
   function renderCGTable() {
-    const focusedChannel=document.activeElement?.dataset?.channelKey;
+    const focusedChannel = elCGTableBody.querySelector('button:focus')?.dataset.channelKey;
     const channels = computeCGChannels();
     if (!channels.length) {
-      elCGTableBody.innerHTML = '<tr><td colspan="5" style="padding:16px;color:var(--text-2)">E1 禁戒 (J=0 ↔ J′=0 或约化矩阵元为零)</td></tr>';
+      const reason = state.transition?.id === 'T4' ? T4_E1_UNAVAILABLE : 'E1 禁戒 (J=0 ↔ J′=0 或约化矩阵元为零)';
+      elCGTableBody.innerHTML = `<tr><td colspan="5" style="padding:16px;color:var(--text-2)">${reason}</td></tr>`;
       return;
     }
     const selKey = state.selectedChannel ? channelKey(state.selectedChannel) : null;
@@ -718,15 +733,12 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     for (const ch of channels) {
       const key = channelKey(ch);
       const cls = key === selKey ? 'selected-cg' : '';
-      // For hf-induced channels (J=0→0), the angular factor is the bare CG
-      // ⟨F m; 1 q | F′ m′⟩ (±1/√3) and the matrix element = d_reduced × CG —
-      // shown in exponential form because values are ~10⁻⁵ ea₀.
       const angCell = formatCG(ch.angFactor);
       const matCell = hfMode || branchMode
         ? '<span style="font-family:\'JetBrains Mono\',monospace;color:var(--accent)">' + (ch.matEl >= 0 ? '+' : '−') + Math.abs(ch.matEl).toExponential(branchMode ? 6 : 2) + '</span>'
         : '<span style="font-family:\'JetBrains Mono\',monospace">' + (ch.matEl >= 0 ? '+' : '−') + Math.abs(ch.matEl).toFixed(4) + '</span>';
       html += `<tr class="${cls}" data-key="${key}">
-        <td><button type="button" class="channel-select" data-channel-key="${key}" aria-pressed="${key === selKey}" aria-controls="secRabi" title="选择此通道并进入 Rabi 计算">|F=${fStr(ch.F)}, m<sub>F</sub>=${mStr(ch.m)}⟩</button></td>
+        <td><button type="button" class="channel-select" data-channel-key="${key}" aria-label="从 F=${fraction(ch.F)}，mF=${magnetic(ch.m)} 到 F′=${fraction(ch.Fp)}，mF′=${magnetic(ch.mp)}，${polLabel(ch.q)}" aria-pressed="${key === selKey}" aria-controls="rabiResult" title="查看此通道的 Rabi 结果">|F=${fStr(ch.F)}, m<sub>F</sub>=${mStr(ch.m)}⟩</button></td>
         <td>|F′=${fStr(ch.Fp)}, m<sub>F</sub>′=${mStr(ch.mp)}⟩</td>
         <td>${polLabel(ch.q)}</td>
         <td style="font-family:'JetBrains Mono',monospace">${angCell}</td>
@@ -734,11 +746,16 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
       </tr>`;
     }
     elCGTableBody.innerHTML = html;
-    elCGTableBody.querySelectorAll('[data-channel-key]').forEach(button=>{
-      const choose=()=>{const ch=channels.find(c=>channelKey(c)===button.dataset.channelKey);state.pol=ch.q===0?'pi':ch.q===1?'sigmap':'sigmam';selectHFChannel(ch);};
-      button.addEventListener('click',choose);
-      button.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();choose();}});
-      if(button.dataset.channelKey===focusedChannel)button.focus({preventScroll:true});
+    Array.from(elCGTableBody.rows).forEach((row, index) => {
+      const channel = channels[index];
+      row.addEventListener('click', event => {
+        // Let researchers select and copy cell text without activating the row.
+        const selection = window.getSelection();
+        if (!event.target.closest('button') && selection && !selection.isCollapsed && selection.containsNode(row, true)) return;
+        state.pol = channel.q === 0 ? 'pi' : channel.q === 1 ? 'sigmap' : 'sigmam';
+        selectHFChannel(channel, 'table');
+      });
+      if (channelKey(channel) === focusedChannel) row.querySelector('button').focus({preventScroll:true});
     });
   }
   // ---- Compute effective dipole for selected F, F', polarization ----
@@ -864,7 +881,7 @@ export function initHyperfineCalculator({CORE_LEVELS,CORE_TRANSITIONS,RYDBERG_QC
     channels: () => computeCGChannels(),
     setPolarization,
   });
-  elCGTableBody.setAttribute('aria-label','全部允许偏振分量；每行按钮可选择计算通道');
+  elCGTableBody.setAttribute('aria-label','全部允许偏振分量，选择通道查看 Rabi 结果');
   const defaultT=CORE_TRANSITIONS.find(t=>t.id==='T2');
   api.loadTransition(defaultT);
   return api;

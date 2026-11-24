@@ -1,0 +1,178 @@
+/* Page chrome and working layout around the published scientific diagram. */
+#top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  padding: 26px 0 18px;
+  margin: 0;
+}
+#top .hero-art {
+  inset: 0 0 0 auto;
+  width: min(32%, 300px);
+  opacity: .65;
+}
+#top h1 {
+  gap: 4px 12px;
+  font-size: clamp(28px, 3.1vw, 42px);
+  margin-bottom: 6px;
+}
+#top .header-right { flex-wrap: wrap; gap: 4px 0; margin: 0; }
+#top .meta-card { display: flex; flex: none; align-items: baseline; gap: 6px; padding: 0 12px; }
+#top .meta-card:first-child { padding-left: 0; }
+#top .meta-card .label { color: var(--ui-muted); font-size: 12px; margin: 0; }
+#top .meta-card .value { color: var(--text-1); font-size: 13px; font-variant-numeric: tabular-nums; }
+#sectionNav {
+  min-height: 48px;
+  padding: 0;
+  gap: 0 24px;
+  background: rgba(5, 8, 14, .94);
+}
+#sectionNav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 2px;
+  font-size: 14px;
+}
+#sectionNav .nav-secondary { font-size: 13px; }
+#sectionNav .nav-data { margin-inline-start: auto; }
+#sectionNav a[aria-current="location"]::after { inset-inline: 0; bottom: 0; }
+#secLevel { padding-block-start: 24px; }
+#secLevel > .section-head { grid-template-columns: minmax(0, 1fr) auto; margin-bottom: 14px; }
+#secLevel .diagram-click-guide { margin: 3px 0 0; color: var(--ui-muted); font: 400 13px/1.6 var(--font-ui); }
+#secLevel .branch-jump { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); font-size: 13px; text-underline-offset: 4px; }
+#secLevel .rydberg-details { margin-top: 18px; }
+#atlasZoom, #atlasFilters > summary { display: none; }
+
+@media (max-width: 768px) {
+  #secLevel .original-diagram-wrap { padding: 12px; }
+  .atlas-controls { position: relative; margin-bottom: 8px; }
+  #atlasZoom, #atlasFilters > summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    border: 1px solid #3b4e69;
+    border-radius: 6px;
+    background: #141f31;
+    color: #d3e2f8;
+    font: 500 13px/1.45 var(--font-ui);
+    cursor: pointer;
+  }
+  #atlasZoom { position: absolute; inset: 0 0 auto auto; color: #c3dbff; border-color: #5879a1; }
+  #atlasZoom[aria-pressed="true"] { background: #243956; }
+  #atlasFilters > summary { max-width: calc(100% - 100px); }
+  #atlasFilters > summary::-webkit-details-marker { display: none; }
+  #atlasFilters > summary::after {
+    content: '';
+    flex: none;
+    width: 6px;
+    height: 6px;
+    border: solid currentColor;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+  }
+  #atlasFilters[open] > summary::after { transform: rotate(225deg); }
+  #atlasFilterState { color: #adbed5; }
+  #atlasFilterState:empty { display: none; }
+  #atlasFilters .original-filter-bar { display: grid; gap: 8px; margin: 8px 0 0; }
+  #atlasFilters .original-filter-group { flex-wrap: wrap; }
+  #atlasFilters .original-filter-label, #atlasFilters .original-f-btn { white-space: nowrap; }
+  #atlasFilters .original-f-btn { min-height: 36px; padding-inline: 9px; font-family: var(--font-ui); }
+  #atlasPanHint { margin: 0 0 8px; color: #bacce2; font: 13px/1.5 var(--font-ui); }
+  #atlasViewport { max-width: 100%; }
+  #atlasViewport > svg { width: 100%; height: auto; aspect-ratio: 1000 / 760; }
+  #atlasViewport[data-zoomed] {
+    height: clamp(220px, 48svh, 480px);
+    overflow: auto;
+    overscroll-behavior-x: contain;
+    border-radius: 5px;
+    outline: 1px solid #32435a;
+  }
+  #atlasViewport[data-zoomed]:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 1px; }
+  /* Scale the original 18-unit hit band to 24.3px without widening it into its neighbours. */
+  #atlasViewport[data-zoomed] > svg { width: 1350px; max-width: none; }
+  #atlasViewport .transition-line[aria-disabled="true"] .hit-zone { pointer-events: none !important; }
+}
+@media (max-width: 640px) {
+  #top { gap: 9px; padding: 18px 0 14px; }
+  #top .hero-art { display: none; }
+  #top .hero-title-text { flex-basis: auto; }
+  #top .meta-card { padding-inline: 7px; gap: 4px; }
+  #top .meta-card .label, #top .meta-card .value { font-size: 11px; }
+  #sectionNav { min-height: 44px; gap: clamp(4px, 1.8vw, 12px); }
+  #sectionNav a, #sectionNav .nav-secondary { min-height: 44px; font-size: 12px; }
+  #secLevel { padding-block-start: 16px; }
+}
+
+/* Keep the working value and its conditions together above the record actions. */
+#secRabi .coupling-inputs {
+  container-type: inline-size;
+}
+#secRabi .rabi-solve-direction {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  margin-bottom: 16px;
+  color: var(--ui-muted);
+  font-size: var(--ui-type-control);
+}
+#secRabi #calcSolveFor {
+  max-width: 100%;
+  min-height: 36px;
+  padding: 5px 9px;
+  border: 1px solid var(--ui-control-border);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-control-surface);
+  color: var(--ui-control-ink);
+  font: inherit;
+}
+@container (min-width: 19rem) {
+  #secRabi #rpCalcMini .rp-calc-field {
+    align-items: center;
+    grid-template-columns: minmax(6.5rem, 1fr) minmax(5rem, 1.3fr) 76px;
+  }
+  #secRabi #rpCalcMini .rp-calc-field label {
+    grid-column: auto;
+    padding-right: 8px;
+  }
+}
+#secRabi #rabiResult {
+  justify-content: flex-start;
+  gap: 8px;
+  padding: clamp(20px, 3vw, 40px);
+  background: linear-gradient(125deg, #182435, #101925);
+}
+#secRabi #rabiResult > span {
+  font-size: 14px;
+}
+#secRabi #rabiResult > strong {
+  max-width: 100%;
+  color: #f1d39a;
+  font-size: clamp(38px, 5vw, 68px);
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+#secRabi #rabiResult > small {
+  color: #bccce0;
+  font-size: 12px;
+}
+#secRabi #rabiResult .result-validation {
+  color: #dfc89e;
+  font-size: 13px;
+}
+#secRabi .calculation-toolbar.rabi-record-actions {
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+@media (max-width: 640px) {
+  #secRabi > .section-head { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 10px; margin-bottom: 12px; }
+  #secRabi .section-object-context { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; margin: 0; padding-top: 8px; }
+  #secRabi .section-object-context .gs-step { grid-column: 1; }
+  #secRabi .section-object-context [data-workflow-object] { grid-column: 1; }
+  #secRabi .section-object-context a { grid-column: 2; grid-row: 1 / 3; }
+}

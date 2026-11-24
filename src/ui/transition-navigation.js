@@ -11,7 +11,7 @@ export function initDiagramNavigation({svg,transitions=[],calculator,destination
   const remember=element=>saved.set(element,new Map(attributes.map(name=>[name,element.getAttribute(name)])));
   remember(svg);
   svg.setAttribute('role','group');
-  svg.setAttribute('aria-label','¹⁷¹Yb 能级与跃迁图；选择跃迁线进入超精细分量。');
+  svg.setAttribute('aria-label','¹⁷¹Yb 能级与跃迁图，选择跃迁线进入偏振分量图。');
   const unavailable=line=>line.hidden||line.style?.pointerEvents==='none'||line.getAttribute('aria-hidden')==='true';
   const syncAvailability=()=>knownLines.forEach(line=>{
     const disabled=unavailable(line);
@@ -32,7 +32,7 @@ export function initDiagramNavigation({svg,transitions=[],calculator,destination
       const transition=records.get(line.dataset.id);
       const wavelength=transition.n === undefined ? transition.wavelength_vac_nm : transition.wavelength_vac_nm.toFixed(5);
       line.setAttribute('role','button');
-      line.setAttribute('aria-label',`${transition.id} · ${transition.lower} → ${transition.upper} · ${wavelength} nm，选择并跳转到超精细分量`);
+      line.setAttribute('aria-label',`${transition.id} · ${transition.lower} → ${transition.upper} · ${wavelength} nm，选择并跳转到偏振分量图`);
       line.setAttribute('aria-controls',destination.id);
       line.setAttribute('aria-pressed',String(line.dataset.id===currentId));
     }

@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-ui-revision="workspace-review-20261031.1">
+<html lang="zh-CN" data-ui-revision="research-workbench-20261119.1">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="查询 ¹⁷¹Yb 跃迁与零场 nS 光谱，按磁子态、偏振和光束条件计算 Rabi 耦合，核对逐量来源并导出研究记录。">
+<link rel="canonical" href="https://seven-jack.github.io/171YbDatabase/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="¹⁷¹Yb 跃迁数据图谱 · 原子数据与计算工作台">
+<meta property="og:description" content="从能级与通道定位采用值、计算条件和原始来源。支持零场 nS 分支、Rabi 三向求解和可追溯导出。">
+<meta property="og:url" content="https://seven-jack.github.io/171YbDatabase/">
+<meta property="og:image" content="https://seven-jack.github.io/171YbDatabase/assets/workbench-cover.png">
+<meta property="og:image:alt" content="¹⁷¹Yb 原子数据与计算工作台，配有蓝金色原子阵列">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <title>¹⁷¹Yb 跃迁数据图谱 (含里德堡态) | Ytterbium-171 Transition Atlas</title>
 <link rel="stylesheet" href="src/styles/tokens.css?v=original-preserved-20261029.1">
 <link rel="stylesheet" href="src/styles/components.css?v=original-preserved-20261029.1">
@@ -19,21 +31,41 @@
 <link rel="stylesheet" href="src/styles/ui-consistency.css?v=quantum-consistency-20261029.1">
   <link rel="stylesheet" href="src/styles/diagram-details.css?v=quantum-mf-charts-20261029.1">
   <link rel="stylesheet" href="src/styles/workspace-tooltips.css?v=quantum-direct-lines-20261029.1">
-  <link rel="stylesheet" href="src/styles/selection-context.css?v=quantum-selection-emphasis-20261029.1">
+  <link rel="stylesheet" href="src/styles/selection-context.css?v=atlas-layout-20261118.1">
   <link rel="stylesheet" href="src/styles/chart-axis-controls.css?v=quantum-axis-clarity-20261029.1">
   <link rel="stylesheet" href="src/styles/evidence.css?v=clock-evidence-status-20261031.1">
   <link rel="stylesheet" href="src/styles/chart-readout.css?v=chart-readout-20261031.1">
+  <link rel="stylesheet" href="src/styles/atlas-workspace.css?v=atlas-layout-20261118.1">
+  <link rel="stylesheet" href="src/styles/onboarding.css?v=guided-atlas-20261118.3">
+  <link rel="stylesheet" href="src/styles/chart-presentation.css">
+  <link rel="stylesheet" href="src/styles/research-desk.css">
 </head>
 <body>
+<a href="#secLevel" class="skip-to-atlas">跳到能级图谱</a>
 <div class="container">
 
-  <nav id="sectionNav" class="section-nav" aria-label="研究分区导航">
-    <span>¹⁷¹Yb Atlas</span>
-    <a href="#secLevel">能级与来源</a>
-    <a href="#secCalc">超精细分量</a>
-    <a href="#secRabi">Rabi 结果</a>
-    <a href="#secData">数据表</a>
-    <a href="#secReference">参考与版本</a>
+  <header class="page-header" id="top">
+    <div class="hero-art" aria-hidden="true"><img src="assets/quantum-field.svg" alt="" width="800" height="480"></div>
+    <div class="header-left">
+      <h1 class="title"><span class="hero-isotope"><sup>171</sup>Yb</span><span class="hero-title-text">跃迁数据图谱</span></h1>
+      <p class="subtitle">查询跃迁与零场 nS 光谱，按实际通道计算单光子耦合。</p>
+      <div class="hero-actions"><a href="#secLevel">打开能级图</a><a href="#secData" data-open-search>检索数据</a></div>
+    </div>
+    <div class="header-right">
+      <div class="meta-card"><span class="label">电离能</span><span class="value" id="metaIonEnergy">6.2541 eV</span></div>
+      <div class="meta-card"><span class="label">核自旋</span><span class="value" id="metaNuclearSpin">I = 1/2</span></div>
+      <div class="meta-card"><span class="label">核心跃迁</span><span class="value" id="metaCoreCount">8 条</span></div>
+    </div>
+  </header>
+
+  <nav id="sectionNav" class="section-nav" aria-label="图谱导航">
+    <a href="#secLevel">能级图谱</a>
+    <a href="#secCalc">通道</a>
+    <a href="#secRabi">Rabi 计算</a>
+    <a class="nav-secondary nav-data" href="#secData" data-open-search>检索数据</a>
+    <a class="nav-secondary" href="#secReference">方法与约定</a>
+    <a class="nav-secondary" href="#secBibliography">来源</a>
+    <button id="guideOpen" type="button" aria-controls="guideCard">新手向导</button>
   </nav>
 
   <aside id="selectionContext" class="selection-context" aria-label="当前计算对象" hidden>
@@ -54,37 +86,6 @@
   <p id="filePreviewNotice" class="file-preview-notice" hidden>当前为文件直开模式，交互图谱需要通过本地预览打开。<a href="http://localhost:8766/index.html?preview=load-fixed-20261030#secLevel">打开完整图谱 →</a></p>
   <script>if (location.protocol === 'file:') document.getElementById('filePreviewNotice').hidden = false;</script>
 
-  <!-- Header -->
-  <header class="page-header" id="top">
-    <div class="hero-art" aria-hidden="true"><img src="assets/quantum-field.svg" alt="" width="800" height="480" fetchpriority="high"></div>
-    <div class="header-left">
-      <div class="species-label">
-        ATOMIC TRANSITION ATLAS <span class="dot-sep">/</span> YTTERBIUM-171
-      </div>
-      <h1 class="title"><span class="hero-isotope"><sup>171</sup>Yb</span><span class="hero-title-text">跃迁数据图谱</span></h1>
-      <p class="hero-lead">从能级结构，到光场耦合。</p>
-      <p class="subtitle">核心跃迁、29S–100S 零场光谱与单光子耦合计算。</p>
-      <div class="hero-actions"><a class="hero-primary" href="#secLevel">探索能级图谱 <span aria-hidden="true">↗</span></a><a class="hero-secondary" href="#secRabi">计算耦合强度 <span aria-hidden="true">→</span></a></div>
-    </div>
-    <div class="header-right">
-      <div class="meta-card">
-        <div class="label">电离能</div>
-        <div class="value" id="metaIonEnergy">6.2541 eV</div>
-      </div>
-      <div class="meta-card">
-        <div class="label">核自旋</div>
-        <div class="value" id="metaNuclearSpin">I = 1/2</div>
-      </div>
-      <div class="meta-card">
-        <div class="label">核心跃迁</div>
-        <div class="value" id="metaCoreCount">8 条</div>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- Step-by-step guide (v5.3) -->
-
   <p id="appLoading" class="status-message" role="status">正在加载图谱与来源数据…</p>
   <p id="appError" class="error-message" role="alert" hidden><span id="appErrorMessage"></span> <button type="button" id="appRetry">刷新并重试</button></p>
   <noscript>此计算工具需要启用 JavaScript。请启用后刷新。</noscript>
@@ -93,52 +94,55 @@
 
 
   <!-- Energy Level Diagram -->
-  <section class="section" id="secLevel">
+  <section class="section" id="secLevel" tabindex="-1">
     <div class="section-head">
-      <div class="section-heading"><span class="section-index">01 / ATLAS</span><h2 class="section-title">能级与跃迁 <span class="section-english">Energy levels &amp; transitions</span></h2></div>
-      <nav class="flow-guide" aria-label="使用流程导航">
-        <ol class="flow-steps">
-          <li class="flow-step" data-gstep="1"><a class="flow-step-link" href="#secLevel"><span class="fs-num">01</span><span class="fs-name">选跃迁</span></a></li>
-          <li class="flow-step" data-gstep="2"><a class="flow-step-link" href="#secCalc"><span class="fs-num">02</span><span class="fs-name">选通道</span></a></li>
-          <li class="flow-step" data-gstep="3"><a class="flow-step-link" href="#secRabi"><span class="fs-num">03</span><span class="fs-name">看结果</span></a></li>
-        </ol>
-        <span class="flow-caption" id="workflowLocation">当前 · 能级与来源</span>
-      </nav>
-    </div>
-    <form id="rydbergSelection" class="rydberg-selection" aria-label="里德堡跃迁选择">
-      <strong>³P₀ → nS</strong>
-      <div class="rydberg-quantum-numbers">
-        <label>主量子数 n <input id="rydbergN" type="number" min="29" max="100" step="1" value="65" required></label>
-        <label>有效主量子数 ν <input id="rydbergNu" type="number" inputmode="decimal" step="any" list="rydbergNuChoices" aria-describedby="rydbergInputMessage" required></label>
-        <datalist id="rydbergNuChoices"></datalist>
+      <div class="section-heading">
+        <h2 class="section-title">能级与跃迁</h2>
+        <p class="diagram-click-guide">点选跃迁线，进入偏振分量图。</p>
       </div>
-      <label>末态 F′ <select id="rydbergFp"><option value="0.5">1/2</option><option value="1.5" selected>3/2</option></select></label>
-      <span class="rydberg-conditions">¹⁷¹Yb · B = E = 0</span>
-      <span id="rydbergInputMessage" role="status"></span>
-    </form>
+      <a class="branch-jump" href="#rydbergSelection">调整里德堡分支 ↓</a>
+    </div>
+    <div id="guideInvite" hidden>
+      <div class="guide-intro">
+        <span class="guide-wavelength">556 <small>nm</small></span>
+        <p class="guide-invite-copy"><strong>从能级图到 Rabi 频率</strong><span>第一次使用？跟着示例做三步。</span></p>
+      </div>
+      <div class="guide-invite-actions">
+        <button type="button" data-guide-start aria-controls="guideCard">开始示例</button>
+        <button type="button" data-guide-skip>跳过</button>
+      </div>
+    </div>
     <div class="original-diagram-main">
     <div class="original-diagram-wrap" data-diagram-version="published-original">
-      <div class="original-filter-bar">
-        <div class="original-filter-group">
-          <span class="original-filter-label">类别</span>
-          <button class="original-f-btn active" data-fcat="all">全部</button>
-          <button class="original-f-btn" data-fcat="core">核心跃迁</button>
-          <button class="original-f-btn" data-fcat="rydberg">里德堡激发</button>
-        </div>
-        <div class="original-filter-group">
-          <span class="original-filter-label">强度</span>
-          <button class="original-f-btn active" data-fstrength="all">全部</button>
-          <button class="original-f-btn" data-fstrength="strong">强</button>
-          <button class="original-f-btn" data-fstrength="weak">弱</button>
-          <button class="original-f-btn" data-fstrength="forbidden">禁戒</button>
-          <button class="original-f-btn" data-fstrength="ungraded">未分级</button>
-        </div>
+      <div class="atlas-controls">
+        <details id="atlasFilters" open>
+          <summary>筛选<span id="atlasFilterState"></span></summary>
+          <div class="original-filter-bar">
+            <div class="original-filter-group">
+              <span class="original-filter-label">类别</span>
+              <button class="original-f-btn active" data-fcat="all">全部</button>
+              <button class="original-f-btn" data-fcat="core">核心跃迁</button>
+              <button class="original-f-btn" data-fcat="rydberg">里德堡激发</button>
+            </div>
+            <div class="original-filter-group">
+              <span class="original-filter-label">图线分类</span>
+              <button class="original-f-btn active" data-fstrength="all">全部</button>
+              <button class="original-f-btn" data-fstrength="strong">强</button>
+              <button class="original-f-btn" data-fstrength="weak">弱</button>
+              <button class="original-f-btn" data-fstrength="forbidden">禁戒</button>
+              <button class="original-f-btn" data-fstrength="ungraded">未分级</button>
+            </div>
+          </div>
+        </details>
+        <button type="button" id="atlasZoom" aria-pressed="false" aria-controls="atlasViewport">放大图谱</button>
       </div>
-      <svg class="original-diagram-svg" id="levelDiagram" viewBox="0 0 1000 760" preserveAspectRatio="xMidYMid meet">
-      </svg>
+      <p id="atlasPanHint" hidden>拖动查看全图，轻点波长或跃迁线选择。</p>
+      <div id="atlasViewport" role="region" aria-label="能级图谱">
+        <svg class="original-diagram-svg" id="levelDiagram" viewBox="0 0 1000 760" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
       <div class="original-legend">
         <div class="original-legend-col">
-          <div class="original-legend-title">强度</div>
+          <div class="original-legend-title">目录分类</div>
           <div class="original-legend-item">
             <span class="original-legend-line solid" style="border-color:#34d399; border-top-width:3px"></span>
             <span>强 E1</span>
@@ -192,8 +196,19 @@
       </div>
     </div>
     </div>
-    <p class="diagram-click-guide">点击跃迁线，进入对应的超精细分量与计算。</p>
     <section class="rydberg-details" aria-labelledby="rydbergDetailsTitle">
+    <form id="rydbergSelection" class="rydberg-selection" aria-label="里德堡跃迁选择">
+      <strong>里德堡分支 · ³P₀ → nS</strong>
+      <div class="rydberg-quantum-numbers">
+        <label>主量子数 n <input id="rydbergN" type="number" min="29" max="100" step="1" value="65" aria-describedby="rydbergEntryHint rydbergInputMessage" required></label>
+        <label>有效主量子数 ν <input id="rydbergNu" type="number" inputmode="decimal" step="any" list="rydbergNuChoices" aria-describedby="rydbergEntryHint rydbergInputMessage" required></label>
+        <datalist id="rydbergNuChoices"></datalist>
+      </div>
+      <label>末态 F′ <select id="rydbergFp"><option value="0.5">1/2</option><option value="1.5" selected>3/2</option></select></label>
+      <span class="rydberg-conditions">¹⁷¹Yb · B = E = 0</span>
+      <span class="rydberg-conditions" id="rydbergEntryHint">输入 n 或 ν，匹配后自动跳到偏振分量图。</span>
+      <span id="rydbergInputMessage" role="status"></span>
+    </form>
       <div class="rydberg-details-heading">
         <h3 id="rydbergDetailsTitle">65S 零场分支</h3>
         <span>R017 模型 · ν 相对 F<sub>c</sub>=1 · 物理不确定度未评估</span>
@@ -257,8 +272,8 @@
   <!-- Hyperfine Matrix Element Calculator -->
   <section class="section hf-calc-section" id="secCalc">
     <div class="section-head">
-      <div class="section-heading"><span class="section-index">02 / CHANNELS</span><h2 class="section-title">超精细分量 <span class="section-english">Hyperfine channels</span></h2></div>
-      <a class="workflow-next" href="#secRabi">进入功率与束腰 <span aria-hidden="true">↓</span></a>
+      <h2 class="section-title">超精细通道</h2>
+      <a class="workflow-next" href="#secRabi">使用当前通道计算 <span aria-hidden="true">↓</span></a>
       <div class="section-sub guide-sub section-object-context" data-gstep="2">
         <span class="gs-step">当前跃迁</span>
         <span data-workflow-object="channels"></span>
@@ -284,7 +299,7 @@
         <div class="hf-matrix-diagram-grid">
           <!-- Hyperfine Transition Diagram (π / σ⁺ / σ⁻ filtered) -->
           <div class="hf-calc-panel">
-            <div class="workspace-panel-head"><div><span class="workspace-eyebrow">STATE RESOLVED</span><h3>跃迁分量</h3></div><span class="workspace-chip">偏振视图</span></div>
+            <div class="workspace-panel-head"><h3 id="polarizationDiagram" tabindex="-1">偏振分量图</h3></div>
             <div class="hf-trans-toolbar">
               <label class="hf-filter-field" for="hfDiagFLower"><span>下能级 F</span><select class="hf-mf-select" id="hfDiagFLower" aria-label="下能级 F 过滤"><option value="all">全部</option></select></label>
               <label class="hf-filter-field" for="hfDiagFUpper"><span>上能级 F′</span><select class="hf-mf-select" id="hfDiagFUpper" aria-label="上能级 F′ 过滤"><option value="all">全部</option></select></label>
@@ -300,14 +315,14 @@
             <div class="trans-lines-wrap" id="hfTransLines">
               <div class="trans-empty">选择跃迁后自动显示超精细跃迁图</div>
             </div>
-            <div class="channel-color-key"><span><i></i>可选通道</span><span><i></i>当前通道</span><small>点击连线或表格 → Rabi 计算</small></div>
+            <div class="channel-color-key"><span><i></i>可选通道</span><span><i></i>当前通道</span><small>点击连线查看 Rabi 结果</small></div>
           </div>
 
           <!-- CG coefficient table -->
           <div class="hf-calc-panel cg-panel">
-            <div class="workspace-panel-head"><div><span class="workspace-eyebrow">CHANNEL MATRIX</span><h3>全分量 CG 矩阵</h3></div><span class="workspace-chip">π / σ⁺ / σ⁻</span></div>
+            <div class="workspace-panel-head"><h3>全分量 CG 矩阵</h3></div>
             <div class="matrix-caption">
-              <span>全部允许通道 · 保留矩阵元符号</span><span class="matrix-unit">矩阵元单位 ea₀</span>
+              <span>点选一行查看该通道的 Rabi 结果</span><span class="matrix-unit">矩阵元单位 ea₀</span>
             </div>
             <div class="cg-table-wrap">
               <table class="cg-table" id="hfCGTable">
@@ -320,7 +335,7 @@
 
           </div>
         </div>
-        <p class="selection-rule">选择定则：π，Δm<sub>F</sub> = 0；σ⁺，Δm<sub>F</sub> = +1；σ⁻，Δm<sub>F</sub> = −1。点击图中连线或表中 mF 通道，选定后进入 Rabi 计算。</p>
+        <p class="selection-rule">选择定则：π，Δm<sub>F</sub> = 0；σ⁺，Δm<sub>F</sub> = +1；σ⁻，Δm<sub>F</sub> = −1。表中列出全部允许通道，矩阵元保留符号。</p>
         <div class="technical-notes"><details class="technical-note"><summary>角向因子与钟跃迁约定</summary><div class="hf-note">
               <strong>选择定则：</strong> π 偏振 Δm<sub>F</sub> = 0 · σ⁺ 偏振 Δm<sub>F</sub> = +1 · σ⁻ 偏振 Δm<sub>F</sub> = −1<br>
               「角向因子」= ⟨F′m′|T¹<sub>q</sub>|Fm⟩ / d<sub>reduced</sub>。J 级约化输入使用 6-j 耦合，F 级约化输入使用 CG / √(2F′+1)。右列保留矩阵元的符号。当 J = 0 ↔ J′ = 0 时 E1 严格禁戒；钟跃迁 ¹S₀→³P₀ 由 ¹⁷¹Yb 超精细混合开启 F=1/2→F′=1/2 有效通道，取超精细约化矩阵元 d<sub>reduced</sub> = 9.19×10⁻⁵ ea₀，各 m<sub>F</sub> 子通道矩阵元 = d<sub>reduced</sub> × CG / √(2F′+1)（与 J 级跃迁共用 matrixElement_F_q 链路，σ 通道角向因子 = ±1/√3、π 通道 = ±1/√6），如 +1/2→−1/2 通道 ≈ 5.30×10⁻⁵ ea₀。
@@ -333,7 +348,7 @@
               <div class="calc-note-inner">
                 <div class="trans-note">
                   <span class="formula">CG = ⟨F m<sub>F</sub>; 1 q | F′ m<sub>F</sub>′⟩</span>（Clebsch-Gordan 系数，Racah 公式精确计算）<br>
-                  <span class="formula">⟨F′||d||F⟩ = (−1)<sup>J′+I+F+1</sup> √(2F′+1)(2F+1) {J′ F′ I; F J 1} ⟨J′||d||J⟩</span>（6-j 符号耦合）<br>
+                  <span class="formula">⟨F′||d||F⟩ = (−1)<sup>J′+I+F+1</sup> √[(2F′+1)(2F+1)] {J′ F′ I; F J 1} ⟨J′||d||J⟩</span>（6-j 符号耦合）<br>
                   <span class="formula">⟨F′m′|d|Fm⟩ = CG × ⟨F′||d||F⟩ / √(2F′+1)</span>（Wigner-Eckart 定理）<br>
                   <span class="formula">J 级约化输入的角向因子 = CG × (−1)<sup>J′+I+F+1</sup> √(2F+1) {J′ F′ I; F J 1}</span><br>
                   <span class="formula">F 级约化输入的角向因子 = CG / √(2F′+1)</span>。nS 使用对应末态 F′ 的 D<sub>F</sub>。<br>
@@ -352,7 +367,7 @@
   <section class="section rabi-viz-section" id="secRabi">
     <div class="section-head">
       <div class="rabi-title-row">
-        <div class="section-heading"><span class="section-index">03 / COUPLING</span><h2 class="section-title">耦合强度计算 <span class="section-english">Rabi frequency</span></h2></div>
+        <h2 class="section-title">Rabi 计算</h2>
         <button type="button" class="rabi-formula-open" id="rabiFormulaOpen" aria-haspopup="dialog" aria-controls="rabiFormulaDialog">计算公式 ⓘ</button>
       </div>
       <div class="section-sub guide-sub section-object-context" data-gstep="3">
@@ -361,11 +376,18 @@
         <a href="#secCalc">调整通道</a>
       </div>
     </div>
-    <div class="calculation-toolbar"><label for="calcSolveFor">计算方向</label><select id="calcSolveFor"><option value="rabi">功率、束腰 → Ω/2π</option><option value="power">Ω/2π、束腰 → 功率</option><option value="waist">功率、Ω/2π → 束腰</option></select><button type="button" id="configExport">导出计算配置</button><button type="button" id="configImport">恢复计算配置</button><input type="file" id="configFile" accept="application/json,.json" hidden></div>
-    <p id="configStatus" data-testid="config-status" class="status-message" role="status"></p>
     <p id="inputError" data-testid="input-error" class="error-message" role="alert" hidden></p>
     <div class="coupling-console">
-    <div class="coupling-inputs"><div class="workspace-panel-head"><div><span class="workspace-eyebrow">INPUT PARAMETERS</span><h3>光场参数</h3></div><span class="workspace-chip">高斯光束</span></div><p class="workspace-help">输入两个参数，金色字段为计算结果。</p>
+    <div class="coupling-inputs">
+      <div class="workspace-panel-head"><h3>光场参数</h3></div>
+      <label class="rabi-solve-direction" for="calcSolveFor">
+        计算方向
+        <select id="calcSolveFor">
+          <option value="rabi">功率、束腰 → Ω/2π</option>
+          <option value="power">Ω/2π、束腰 → 功率</option>
+          <option value="waist">功率、Ω/2π → 束腰</option>
+        </select>
+      </label>
     <div class="rp-calc-mini" id="rpCalcMini" aria-label="光场与计算参数">
               <div class="rp-calc-field" data-field="power">
                 <label for="rpCalcP"><span id="rpPowerTitle">原子处分量功率</span> P</label>
@@ -412,8 +434,34 @@
     <p id="beamDefinitionNotice" class="beam-definition-notice" role="status" hidden></p>
     <output id="beamNormalizedSummary" class="beam-normalized-summary" aria-live="polite"></output>
     </div>
-    <div id="rabiResult" class="rabi-result" aria-live="polite"></div>
+    <div id="rabiResult" class="rabi-result" role="region" tabindex="-1" aria-label="当前工作点的 Rabi 结果" aria-live="polite">
+      <span class="result-heading"><span class="result-title"></span><span class="result-channel-mode"></span></span>
+      <strong><span class="result-number"></span><span class="result-unit"></span></strong>
+      <small class="result-context">
+        <span class="result-channel"></span>
+        <span class="result-error" hidden></span>
+        <span class="result-conditions" hidden>
+          <span class="result-field" hidden><span>目标 Ω/2π</span><span class="result-equals">=</span><b data-result-target></b></span>
+          <span class="result-field"><span>原子处 Pq</span><span class="result-equals">=</span><b data-result-power></b></span>
+          <span class="result-field"><span>w₀</span><span class="result-equals">=</span><b data-result-waist></b></span>
+          <span class="result-field"><span>d_eff</span><span class="result-equals">=</span><b data-result-dipole></b></span>
+        </span>
+      </small>
+      <div class="result-evidence"></div>
     </div>
+    </div>
+    <div class="calculation-toolbar rabi-record-actions">
+      <button type="button" id="configExport">导出计算配置</button>
+      <button type="button" id="snapshotOpen">查看保存的快照</button>
+      <button type="button" id="configImport">使用当前版本重算</button>
+      <input type="file" id="configFile" accept="application/json,.json" hidden>
+    </div>
+    <p id="configStatus" data-testid="config-status" class="status-message" role="status"></p>
+    <details id="recordSnapshot" class="saved-record-view" hidden>
+      <summary>保存时的只读快照</summary>
+      <div data-saved-content></div>
+      <button type="button" id="recomputeSnapshot">使用当前版本重算此记录</button>
+    </details>
     <div class="calculation-toolbar"><label for="powerAxisConvention">图表功率轴</label><select id="powerAxisConvention"><option value="component">偏振分量功率 P</option><option value="sigma-double">σ± 显示 2P（换算视图）</option></select></div><p id="powerConvention" class="status-message"></p>
 
 
@@ -434,7 +482,7 @@
       <div class="rabi-formula-caption">高斯光束中心 · 单光子耦合 · Ω/2π ∝ √P / w₀</div>
         <div class="rabi-formula-body">
           <dl class="rabi-formula-params">
-            <dt>P</dt><dd>原子处当前偏振分量的功率，SI 单位为 W；纯偏振光束时等于该束总功率。</dd>
+            <dt>P</dt><dd>原子处所选 π、σ⁺ 或 σ⁻ 分量的功率，单位为 W。光束全部功率都在所选分量时，P 等于总功率。线偏振垂直于量子化轴时，σ⁺ 和 σ⁻ 各占总功率的一半。</dd>
             <dt>w₀</dt><dd>腰部的 1/e² 强度半径（不是直径），SI 单位为 m。</dd>
             <dt>d<sub>eff</sub></dt><dd>对应偏振与跃迁通道的有效偶极矩阵元绝对值，SI 单位为 C·m；页面采用 ea₀。</dd>
             <dt>Ω/2π</dt><dd>普通 Rabi 频率，单位为 Hz；图中可切换 Hz / kHz / MHz。</dd>
@@ -449,8 +497,8 @@
           <p><strong>适用条件：</strong>圆对称高斯光束腰部中心、单光子电偶极耦合。曲线给出耦合强度，未加入失谐、原子偏离光束中心或退相干修正。</p>
           <details class="rabi-formula-derivation">
             <summary>查看推导</summary>
-            <p>高斯光束的强度分布为 <span class="rabi-formula-inline">I(r)=I<sub>0</sub>exp(−2r<sup>2</sup>/w<sub>0</sub><sup>2</sup>)</span>。</p>
-            <p>对光束横截面积分，得到总功率 <span class="rabi-formula-inline">P=πw<sub>0</sub><sup>2</sup>I<sub>0</sub>/2</span>。</p>
+            <p>所选偏振分量的高斯强度分布为 <span class="rabi-formula-inline">I(r)=I<sub>0</sub>exp(−2r<sup>2</sup>/w<sub>0</sub><sup>2</sup>)</span>。</p>
+            <p>对光束横截面积分，得到该偏振分量的功率 <span class="rabi-formula-inline">P=πw<sub>0</sub><sup>2</sup>I<sub>0</sub>/2</span>。</p>
             <p>因此，中心强度为 <span class="rabi-formula-inline">I<sub>0</sub>=2P/(πw<sub>0</sub><sup>2</sup>)</span>。</p>
             <p>周期平均强度满足 <span class="rabi-formula-inline">I<sub>0</sub>=cε<sub>0</sub>E<sub>0</sub><sup>2</sup>/2</span>，由此得到电场振幅 <span class="rabi-formula-inline">E<sub>0</sub>=√[4P/(πw<sub>0</sub><sup>2</sup>cε<sub>0</sub>)]</span>。</p>
             <p>代入 <span class="rabi-formula-inline">Ω=d<sub>eff</sub>E<sub>0</sub>/ℏ</span>，再除以 2π，即得到上方公式。旋波近似的哈密顿量耦合项为 ℏΩ/2，Ω 本身无需再除以 2。</p>
@@ -468,7 +516,7 @@
       <!-- Rabi vs Power multi-curve chart -->
       <div class="rabi-chart-card">
         <div class="rabi-chart-heading">
-          <span class="workspace-eyebrow">POWER RESPONSE</span><h3>功率与耦合强度</h3>
+          <h3>功率与耦合强度</h3>
           <div class="chart-sub">每条曲线对应一个束腰 w₀ (1/e² 强度半径)</div>
           <div class="chart-toolbar">
             <button class="active" data-scale="lin" id="rpScaleLin">线性</button>
@@ -498,7 +546,7 @@
       <!-- Power-Waist heatmap -->
       <div class="rabi-chart-card">
         <div class="rabi-chart-heading">
-          <span class="workspace-eyebrow">PARAMETER MAP</span><h3>功率 × 束腰</h3>
+          <h3>功率 × 束腰</h3>
           <p class="heat-scale-summary"><span id="heatColorQuantity">颜色 = Ω/2π；单位见色标</span><span class="chart-scale-note" id="heatScaleNote">色标：当前网格 2%–98% 分位；≤/≥ 饱和，数值不变；悬浮读数。</span></p>
         </div>
         <div class="chart-frame">
@@ -522,7 +570,7 @@
     </div>
   </section>
 
-      <section class="section" id="secData"><div class="section-head"><div class="section-heading"><span class="section-index">04 / DATA</span><h2 class="section-title">跃迁数据 <span class="section-english">Transition data</span></h2></div>
+      <section class="section" id="secData"><div class="section-head"><h2 class="section-title">跃迁数据</h2>
       <div class="section-sub data-section-caption">按数据类别浏览，点击表头排序。主要字段优先展示，完整参数与来源可展开查看。</div>
     </div>
 
@@ -652,77 +700,84 @@
 
 <!-- Reference Info -->
   <section class="section" id="secReference" aria-labelledby="conventionsTitle">
-    <div class="section-head">
-      <div class="section-heading"><span class="section-index">05 / NOTES</span><h2 class="section-title" id="conventionsTitle">物理约定 <span class="section-english">Conventions</span></h2></div>
+    <details>
+      <summary class="reference-index-bar">
+        <h2 class="section-title" id="conventionsTitle">方法与约定</h2>
+      </summary>
+      <details class="state-conventions">
+        <summary>态名称、编码与耦合强度</summary>
+        <p>¹S₀ 表示基态，³P₀ 表示钟态或亚稳态。核自旋编码使用 ¹S₀ 的两个 m<sub>F</sub> 分量，³P₀ 可用于暂存（shelving）。在光学编码方案中，基态和钟态才可分别指定为逻辑 |0⟩、|1⟩。<a href="#diagram-source-ref-04">核自旋编码文献</a></p>
+        <p>E1、M2 等标记说明跃迁机制。具体耦合由实际磁子态的矩阵元、原子处偏振分量功率和光束尺寸共同决定。R017 的 nS 目录适用于 B = E = 0；40 G 条件需另有有限场态与矩阵元。</p>
+      </details>
+      <div class="info-grid">
+        <article class="info-card selection-card">
+          <div class="reference-card-head"><div><span class="reference-eyebrow">SELECTION RULES</span><h3>选择定则</h3></div><span class="reference-chip">E1 / M1 / M2 / E2</span></div>
+          <ul class="selection-rules">
+            <li>
+              <strong>E1 (电偶极)</strong>
+              <span class="rule-code">严格条件（J 与宇称为好量子数时）：宇称改变；ΔJ=0,±1，禁止 J=0↔0。</span>
+              <span class="rule-code">LS 耦合近似：ΔS=0；ΔL=0,±1，禁止 L=0↔0。</span>
+              <span class="rule-code">忽略组态混合的单电子近似：Δl=±1。对本页受限的 6snl 家族，L=l，相关分支可用 ΔL=±1；不能推广为一般 LS 规则。</span>
+              <span class="rule-code">¹⁷¹Yb 超精细混合的钟跃迁按总 F 与有效矩阵元处理，见上方专门计算。<a href="https://physics.nist.gov/Pubs/AtSpec/node17.html" target="_blank" rel="noopener noreferrer">NIST 选择定则</a></span>
+            </li>
+            <li>
+              <strong>M1 (磁偶极)</strong>
+              <span class="rule-code">ΔS=0, ΔL=0, ΔJ=0,±1 (禁0↔0), 宇称不变</span>
+            </li>
+            <li>
+              <strong>M2 (磁四极)</strong>
+              <span class="rule-code">秩 2 角动量三角条件；宇称变（如 J=0→2）</span>
+            </li>
+            <li>
+              <strong>E2 (电四极)</strong>
+              <span class="rule-code">秩 2 角动量三角条件；宇称不变</span>
+            </li>
+            <li class="convention-note">
+              Yb 的 4f¹⁴ 闭壳层使 LS 耦合近似较好但非完美：³P 与 ¹P 间的自旋-轨道混合使"自旋禁戒"的 intercombination 线仍可被 E1 激发，振子强度下降 ~2 个量级。
+            </li>
+          </ul>
+        </article>
+
+        <article class="info-card hyperfine-card">
+          <div class="reference-card-head"><div><span class="reference-eyebrow">HYPERFINE CONSTANTS</span><h3>超精细结构</h3></div><span class="reference-chip">¹⁷¹Yb · I = 1/2</span></div>
+          <ul class="hyperfine-constants">
+            <li class="ground-state-note"><strong>¹S₀</strong>：J=0 → A_hfs = 0，仅 F=1/2，无超精细分裂</li>
+            <li class="constant-row"><strong>A(³P₁)</strong> <span class="constant-equals">=</span> <span class="constant-value"><span data-hfs-a="³P₁"></span> <span class="constant-unit">MHz</span></span></li>
+            <li class="constant-row"><strong>A(³P₂)</strong> <span class="constant-equals">=</span> <span class="constant-value"><span data-hfs-a="³P₂"></span> <span class="constant-unit">MHz</span></span></li>
+            <li class="constant-row"><strong>A(³S₁)</strong> <span class="constant-equals">=</span> <span class="constant-value"><span data-hfs-a="³S₁"></span> <span class="constant-unit">MHz</span></span></li>
+            <li class="constant-row"><strong>A(³D₁)</strong> <span class="constant-equals">=</span> <span class="constant-value"><span data-hfs-a="³D₁"></span> <span class="constant-unit">MHz</span></span></li>
+            <li class="constant-row"><strong>A(¹P₁)</strong> <span class="constant-equals">=</span> <span class="constant-value"><span data-hfs-a="¹P₁"></span> <span class="constant-unit">MHz</span></span></li>
+            <li class="constant-row ionic-constant"><strong>离子实 A(6s ²S₁/₂)</strong> <span class="constant-equals">=</span> <span class="constant-value">12.643 <span class="constant-unit">GHz</span></span></li>
+            <li class="convention-note">
+              ¹⁷¹Yb (I=1/2) 里德堡态收敛于两个电离阈，对应 Yb⁺ 的 F_core = 0 和 F_core = 1。
+            </li>
+          </ul>
+        </article>
+
+        <article class="info-card ryd">
+          <div class="reference-card-head"><div><span class="reference-eyebrow">RYDBERG NOTES</span><h3>里德堡要点</h3></div><span class="reference-card-caption">实验 · 结构 · 模型</span></div>
+          <ul class="keypoints">
+            <li><h4>激发路径</h4><p><strong>¹⁷⁴Yb 实验示例</strong>：从 ³P₂ 亚稳态经 <strong>325 nm 单光子</strong>激发至 D 系列（含 6s78d ³D₃ 示范）。<a href="https://arxiv.org/html/2204.07995v1#S5" target="_blank" rel="noopener noreferrer">Okuno 2022 §V</a>；不据此指定 ¹⁷¹Yb 的主要激发路径。</p></li>
+            <li><h4>俘获与寿命</h4><p><strong>¹⁷⁴Yb 6s75s ³S₁</strong> 的俘获与寿命已有实验研究（<a href="https://arxiv.org/html/1912.08754" target="_blank" rel="noopener noreferrer">Wilson 原文</a>）；此处 C₆ 测量出处待核查，不据此指定阻塞半径。</p></li>
+            <li><h4>宇称与混合</h4><p>¹⁷¹Yb 的奇宇称 <strong>6snp / 6snf 可发生 p–f 混合</strong>；6snd 在零场为偶宇称，不能称其具有内禀 p–f 混合。奇宇称中间态可影响 D 态 Stark 位移与相互作用计算。<a href="https://arxiv.org/html/2507.11487v1#S4" target="_blank" rel="noopener noreferrer">Kuroda 2025 v1 §IV、VII–VIII</a> 中 ¹⁷¹Yb 的 D 态极化率实测以 ¹D₂ 关联态为主，不据此验证本表 ³D₂ 的 δ₀ 数值。</p></li>
+            <li><h4>高 n 建模</h4><p>高 n 态需使用 <strong>MQDT 多通道</strong> 模型描述，简单单通道量子亏损公式有偏差</p></li>
+            <li><h4>尺度与寿命</h4><p>本页 <strong>n=50–80</strong> 标度表的氢样尺度估计为 <strong>0.179–0.490 µm</strong>（hydrogenic size-scale estimate），65S 为约 0.310 µm；不是具体 MQDT 态的径向期望。寿命温度与包含过程仍待核查。</p></li>
+            <li><h4>两比特门</h4><p>CZ 两比特门保真度可达 <strong>0.994(1)</strong> (Peper 2024)</p></li>
+          </ul>
+        </article>
+      </div>
       <a class="reference-jump" href="#secBibliography">查阅参考文献 <span aria-hidden="true">↓</span></a>
-    </div>
-    <div class="info-grid">
-      <article class="info-card selection-card">
-        <div class="reference-card-head"><div><span class="reference-eyebrow">SELECTION RULES</span><h3>选择定则</h3></div><span class="reference-chip">E1 / M1 / M2 / E2</span></div>
-        <ul class="selection-rules">
-          <li>
-            <strong>E1 (电偶极)</strong>
-            <span class="rule-code">严格条件（J 与宇称为好量子数时）：宇称改变；ΔJ=0,±1，禁止 J=0↔0。</span>
-            <span class="rule-code">LS 耦合近似：ΔS=0；ΔL=0,±1，禁止 L=0↔0。</span>
-            <span class="rule-code">忽略组态混合的单电子近似：Δl=±1。对本页受限的 6snl 家族，L=l，相关分支可用 ΔL=±1；不能推广为一般 LS 规则。</span>
-            <span class="rule-code">¹⁷¹Yb 超精细混合的钟跃迁按总 F 与有效矩阵元处理，见上方专门计算。<a href="https://physics.nist.gov/Pubs/AtSpec/node17.html" target="_blank" rel="noopener noreferrer">NIST 选择定则</a></span>
-          </li>
-          <li>
-            <strong>M1 (磁偶极)</strong>
-            <span class="rule-code">ΔS=0, ΔL=0, ΔJ=0,±1 (禁0↔0), 宇称不变</span>
-          </li>
-          <li>
-            <strong>M2 (磁四极)</strong>
-            <span class="rule-code">秩 2 角动量三角条件；宇称变（如 J=0→2）</span>
-          </li>
-          <li>
-            <strong>E2 (电四极)</strong>
-            <span class="rule-code">秩 2 角动量三角条件；宇称不变</span>
-          </li>
-          <li class="convention-note">
-            Yb 的 4f¹⁴ 闭壳层使 LS 耦合近似较好但非完美：³P 与 ¹P 间的自旋-轨道混合使"自旋禁戒"的 intercombination 线仍可被 E1 激发，振子强度下降 ~2 个量级。
-          </li>
-        </ul>
-      </article>
-
-      <article class="info-card hyperfine-card">
-        <div class="reference-card-head"><div><span class="reference-eyebrow">HYPERFINE CONSTANTS</span><h3>超精细结构</h3></div><span class="reference-chip">¹⁷¹Yb · I = 1/2</span></div>
-        <ul class="hyperfine-constants">
-          <li class="ground-state-note"><strong>¹S₀</strong>：J=0 → A_hfs = 0，仅 F=1/2，无超精细分裂</li>
-          <li class="constant-row"><strong>A(³P₁)</strong> <span class="constant-equals">=</span> <span class="constant-value"><span data-hfs-a="³P₁"></span> <span class="constant-unit">MHz</span></span></li>
-          <li class="constant-row"><strong>A(³P₂)</strong> <span class="constant-equals">=</span> <span class="constant-value"><span data-hfs-a="³P₂"></span> <span class="constant-unit">MHz</span></span></li>
-          <li class="constant-row"><strong>A(³S₁)</strong> <span class="constant-equals">=</span> <span class="constant-value"><span data-hfs-a="³S₁"></span> <span class="constant-unit">MHz</span></span></li>
-          <li class="constant-row"><strong>A(³D₁)</strong> <span class="constant-equals">=</span> <span class="constant-value"><span data-hfs-a="³D₁"></span> <span class="constant-unit">MHz</span></span></li>
-          <li class="constant-row"><strong>A(¹P₁)</strong> <span class="constant-equals">=</span> <span class="constant-value"><span data-hfs-a="¹P₁"></span> <span class="constant-unit">MHz</span></span></li>
-          <li class="constant-row ionic-constant"><strong>离子实 A(6s ²S₁/₂)</strong> <span class="constant-equals">=</span> <span class="constant-value">12.643 <span class="constant-unit">GHz</span></span></li>
-          <li class="convention-note">
-            ¹⁷¹Yb (I=1/2) 里德堡态收敛于两个电离阈，对应 Yb⁺ 的 F_core = 0 和 F_core = 1。
-          </li>
-        </ul>
-      </article>
-
-      <article class="info-card ryd">
-        <div class="reference-card-head"><div><span class="reference-eyebrow">RYDBERG NOTES</span><h3>里德堡要点</h3></div><span class="reference-card-caption">实验 · 结构 · 模型</span></div>
-        <ul class="keypoints">
-          <li><h4>激发路径</h4><p><strong>¹⁷⁴Yb 实验示例</strong>：从 ³P₂ 亚稳态经 <strong>325 nm 单光子</strong>激发至 D 系列（含 6s78d ³D₃ 示范）。<a href="https://arxiv.org/html/2204.07995v1#S5" target="_blank" rel="noopener noreferrer">Okuno 2022 §V</a>；不据此指定 ¹⁷¹Yb 的主要激发路径。</p></li>
-          <li><h4>俘获与寿命</h4><p><strong>¹⁷⁴Yb 6s75s ³S₁</strong> 的俘获与寿命已有实验研究（<a href="https://arxiv.org/html/1912.08754" target="_blank" rel="noopener noreferrer">Wilson 原文</a>）；此处 C₆ 测量出处待核查，不据此指定阻塞半径。</p></li>
-          <li><h4>宇称与混合</h4><p>¹⁷¹Yb 的奇宇称 <strong>6snp / 6snf 可发生 p–f 混合</strong>；6snd 在零场为偶宇称，不能称其具有内禀 p–f 混合。奇宇称中间态可影响 D 态 Stark 位移与相互作用计算。<a href="https://arxiv.org/html/2507.11487v1#S4" target="_blank" rel="noopener noreferrer">Kuroda 2025 v1 §IV、VII–VIII</a> 中 ¹⁷¹Yb 的 D 态极化率实测以 ¹D₂ 关联态为主，不据此验证本表 ³D₂ 的 δ₀ 数值。</p></li>
-          <li><h4>高 n 建模</h4><p>高 n 态需使用 <strong>MQDT 多通道</strong> 模型描述，简单单通道量子亏损公式有偏差</p></li>
-          <li><h4>尺度与寿命</h4><p>本页 <strong>n=50–80</strong> 标度表的氢样尺度估计为 <strong>0.179–0.490 µm</strong>（hydrogenic size-scale estimate），65S 为约 0.310 µm；不是具体 MQDT 态的径向期望。寿命温度与包含过程仍待核查。</p></li>
-          <li><h4>两比特门</h4><p>CZ 两比特门保真度可达 <strong>0.994(1)</strong> (Peper 2024)</p></li>
-        </ul>
-      </article>
-    </div>
+    </details>
   </section>
 
   <!-- References -->
   <section class="section" id="secBibliography" aria-labelledby="bibliographyTitle">
-    <div class="section-head">
-      <div class="section-heading"><span class="section-index">06 / REFERENCES</span><h2 class="section-title" id="bibliographyTitle">来源与参考文献 <span class="section-english">References</span></h2></div>
-    </div>
-    <div class="reference-index-bar"><span class="reference-eyebrow">SOURCE INDEX</span><p>按原有编号列出；原文入口沿用已登记的来源链接。</p><span class="reference-total" id="referenceCount"></span></div>
-    <div class="ref-list" id="refList" role="list" aria-label="来源与参考文献目录">
-    </div>
+    <details id="bibliographyDisclosure">
+      <summary class="reference-index-bar">
+        <h2 class="section-title"><span id="bibliographyTitle">来源与参考文献</span><small class="reference-total" id="referenceCount"></small></h2>
+      </summary>
+      <div class="ref-list" id="refList" role="list" aria-label="来源与参考文献目录"></div>
+    </details>
   </section>
 
   </div><!-- appWorkspace -->
@@ -766,6 +821,24 @@
 
 </div>
 
+<aside id="guideCard" hidden tabindex="-1" aria-labelledby="guideTitle">
+  <div class="guide-card-head">
+    <div class="guide-step-index">
+      <span class="guide-track" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span data-guide-progress></span>
+    </div>
+    <button type="button" data-guide-close aria-label="关闭向导">关闭<span aria-hidden="true">×</span></button>
+  </div>
+  <div class="guide-card-body" aria-live="polite" aria-atomic="true">
+    <h3 id="guideTitle" data-guide-title></h3>
+    <p class="guide-reading" hidden><span>Ω/2π</span> <strong data-guide-reading></strong></p>
+    <p data-guide-instruction></p>
+  </div>
+  <div class="guide-card-actions">
+    <button type="button" id="guideLocate">定位当前步骤</button>
+    <button type="button" data-guide-finish hidden>完成</button>
+  </div>
+</aside>
 <!-- Tooltip -->
 <div class="tooltip" id="tooltip"></div>
 <div class="tooltip info-tooltip" id="infoTooltip"></div>

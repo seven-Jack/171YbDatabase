@@ -70,7 +70,7 @@
 }
 #secCalc :is(.matrix-caption,.channel-color-key),
 #secRabi :is(.workspace-help,.chart-scale-note),
-#secData .data-section-caption,#secBibliography .reference-index-bar p {
+#secData .data-section-caption {
   font-size: var(--ui-type-note);
   line-height: 1.75;
 }

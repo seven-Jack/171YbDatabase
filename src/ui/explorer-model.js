@@ -1,3 +1,4 @@
+import {getRecordAdoption} from './record-adoption.js';
 import {getQuantity} from '../data/catalog.js';
 import {createFieldView, createDipoleFieldViews, conventionLabel, evidenceLabel, reviewLabel} from './source-panel.js';
 import {wavelengthAppearance} from './spectral-color.js';
@@ -40,14 +41,22 @@ export function buildExplorerRecords(transitions=[]) {
     const fields=Object.fromEntries(COMPARISON_FIELDS.map(({key})=>[key,fieldSnapshot(transition.id,key)]));
     const wavelength=fields.wavelength_vac_nm.value;
     const spectrum=transition.spectrum || wavelengthAppearance(wavelength);
-    const strength=String(transition.classification || '').startsWith('禁戒')?'forbidden'
+    const strength=transition.id==='R2'?'unknown':String(transition.classification || '').startsWith('禁戒')?'forbidden'
       :String(transition.classification || '').startsWith('弱')?'weak'
       :String(transition.classification || '').startsWith('强')?'strong':'unknown';
     const dipole=fields.d_num;
+    const adoption=getRecordAdoption(transition.id,transition.Fp);
+    // Search precise nS wavelengths as whole tokens so fractional digits do not match unrelated wavelengths.
+    const wavelengthAliases=transition.n!==undefined&&Number.isFinite(wavelength)?[
+      String(wavelength),wavelength.toFixed(4),wavelength.toFixed(6),fields.wavelength_vac_nm.valueText.replace(/ nm$/,''),
+    ]:[];
     const searchText=normalizeSearch([
       transition.id,transition.lower,transition.upper,transition.label,
-      transition.purpose,transition.use,transition.classification,transition.multipole,
-      wavelength,Number.isFinite(wavelength)?wavelength.toFixed(1):'',
+      adoption.label,adoption.batchId,adoption.sourceId,
+      transition.n!==undefined?`nS ${transition.n}S F′=${transition.Fp*2}/2`:null,
+      transition.id==='R2'?'65S 历史批次':null,
+      transition.purpose,transition.use,transition.id==='R2'?'E1 允许 耦合强度未分级':transition.classification,transition.multipole,
+      transition.n===undefined?wavelength:null,Number.isFinite(wavelength)?wavelength.toFixed(1):'',
       Number.isFinite(wavelength)?Math.round(wavelength):'',
       spectrum.label,dipole.conventionText,dipole.evidenceText,
       dipole.evidenceKind,dipole.reviewText,
@@ -58,16 +67,16 @@ export function buildExplorerRecords(transitions=[]) {
       transition.hf_induced?'超精细诱导':''
     ].filter(value=>value!==null&&value!==undefined).join(' '));
     return Object.freeze({
-      id:transition.id,index,transition,fields,wavelength,
+      id:transition.id,index,transition,fields,wavelength,adoption,
       region:spectrum.region,strength,evidenceKind:dipole.evidenceKind,
-      convention:dipole.convention,searchText
+      convention:dipole.convention,searchText,wavelengthAliases:Object.freeze(wavelengthAliases)
     });
   });
 }
 
 export function filterExplorerRecords(records,{query='',region='all',strength='all',evidence='all',sort='default'}={}) {
-  const tokens=normalizeSearch(query).split(' ').filter(Boolean);
-  const matches=records.filter(record=>tokens.every(token=>record.searchText.includes(token))
+  const tokens=normalizeSearch(query).replace(/(^|\s)(\d+(?:\.\d+)?)\s*nm(?=\s|$)/g,'$1$2').split(' ').filter(Boolean);
+  const matches=records.filter(record=>tokens.every(token=>record.searchText.includes(token)||record.wavelengthAliases.includes(token))
     &&(region==='all'||record.region===region)
     &&(strength==='all'||record.strength===strength)
     &&(evidence==='all'||(evidence==='missing'?record.fields.d_num.missing:record.evidenceKind===evidence)));

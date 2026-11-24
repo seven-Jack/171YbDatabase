@@ -132,11 +132,12 @@ function restoreAgainstCatalog(config) {
     }
   }
   const result = calculateRabi({ dEff_ea0: dipole.reduced_ea0 === null ? null : state.dEff, multipole: transition.multipole, P_mW: state.P_mW, w_um: state.w_um });
-  if (result.status === 'ok') state.fR_MHz = result.fR / 1e6;
+  // In inverse modes fR_MHz is the requested input, not the recomputed forward result.
+  if (result.status === 'ok' && solveFor === 'rabi') state.fR_MHz = result.fR / 1e6;
   return { state, transition, result, dipole };
 }
 
-function validateStructure(config) {
+export function validateSavedConfigStructure(config) {
   object(config, 'config', config?.schemaVersion === 1 ? LEGACY_KEYS : KEYS);
   if (![1, CONFIG_SCHEMA_VERSION].includes(config.schemaVersion)) throw new ConfigurationError('schemaVersion', '仅支持配置版本 1 或 2');
   if (config.kind !== '171yb-rabi-config') throw new ConfigurationError('kind', '不是 171Yb 固定模型 Rabi 配置');
@@ -166,7 +167,11 @@ function validateStructure(config) {
   if (config.schemaVersion === 2) {
     object(config.inputDefinition, 'inputDefinition', DEFINITION_KEYS);
     for (const key of DEFINITION_KEYS) if (!Object.hasOwn(config.inputDefinition, key)) throw new ConfigurationError(`inputDefinition.${key}`, '缺少输入定义字段');
-    validateBeamDefinition(config.inputDefinition);
+    try { validateBeamDefinition(config.inputDefinition); }
+    catch (error) {
+      if (error instanceof PhysicsInputError) throw new ConfigurationError(error.field, error.message);
+      throw error;
+    }
     const entered = object(config.enteredParameters, 'enteredParameters', ['power_W', 'size_m']);
     number(entered.power_W, 'enteredParameters.power_W'); number(entered.size_m, 'enteredParameters.size_m', 0, true);
   }
@@ -191,11 +196,7 @@ export function parseCalculationConfig(value, versions = {}) {
     if (value.length > 65536) throw new ConfigurationError('config', '配置文件超过 64 KiB');
     try { config = JSON.parse(value); } catch { throw new ConfigurationError('config', 'JSON 格式无效'); }
   } else config = value;
-  try { validateStructure(config); }
-  catch (error) {
-    if (error instanceof PhysicsInputError) throw new ConfigurationError(error.field, error.message);
-    throw error;
-  }
+  validateSavedConfigStructure(config);
   const current = currentVersions(versions), warnings = [];
   for (const [key, label] of [['softwareVersion', '软件版本'], ['appCommit', '代码提交'], ['datasetVersion', '数据版本'], ['datasetHash', '数据摘要'], ['formulaVersion', '公式版本']]) {
     if (current[key] && current[key] !== 'unrecorded' && config[key] !== current[key]) warnings.push(`${label}不同：文件 ${config[key]}；当前 ${current[key]}。恢复时使用当前数据和公式。`);
@@ -250,7 +251,7 @@ export function exportCalculationConfig(state, versions = {}) {
     result: { status: 'ok', power_W: 0, frequency_Hz: null, omega_rad_s: null, piTime_s: null },
   };
   let restored;
-  try { validateStructure(config); restored = restoreAgainstCatalog(config); }
+  try { validateSavedConfigStructure(config); restored = restoreAgainstCatalog(config); }
   catch (error) {
     if (error instanceof PhysicsInputError) throw new ConfigurationError(error.field, error.message);
     throw error;

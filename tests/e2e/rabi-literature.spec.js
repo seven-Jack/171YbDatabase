@@ -7,7 +7,7 @@ test('Kroeze T2 benchmark passes through channel selection and all three calcula
   await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');
   const channel=page.locator('#hfCGTableBody [data-channel-key="0.5|0.5|1.5|1.5|1"]');
   await channel.click();
-  await expect(page).toHaveURL(/#secRabi$/);
+  await expect(page).toHaveURL(/#rabiResult$/);
   await expect(page.locator('#selectionContext')).toHaveAttribute('data-selection-transition','T2');
   await expect(page.locator('.selection-context-channel')).toContainText('mF′=+3/2 · σ⁺');
   await expect(page.locator('#powerAxisConvention')).toHaveValue('component');

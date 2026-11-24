@@ -1,10 +1,12 @@
 import {getDipoleQuantity, getSourceRecord} from '../data/catalog.js';
 import {EVIDENCE_VERSION} from '../data/evidence.js';
 import {computeCGChannels, computeDEff, channelKey, polarizationQ} from '../physics/angular.js';
-import {exportCalculationConfig, parseCalculationConfig, ConfigurationError} from '../state/config.js';
+import {exportCalculationConfig, parseCalculationConfig, validateSavedConfigStructure, ConfigurationError} from '../state/config.js';
 import {buildEvidenceView} from './evidence-model.js';
 import {evidenceSourceURL} from './evidence-panel.js';
 import {formatZeroFieldOffset,getTransitionWavelength,wavelengthLabel} from './transition-wavelength.js';
+import {getRecordAdoption} from './record-adoption.js';
+import {savedSolvedQuantity} from './solved-quantity.js';
 
 export const RECORD_SCHEMA_VERSION = 1;
 export const RECORD_KIND = '171yb-rabi-record';
@@ -15,6 +17,7 @@ const BOUNDARY = '这是当前固定模型的计算记录，不是独立实验�
 const RESTORE_NOTICE = '已从研究记录提取配置；保存的结果、矩阵元和证据状态仅作历史记录，恢复使用当前数据与公式重算，页面按当前证据版本重新核查。';
 const copy = value => value == null ? value : structuredClone(value);
 const plain = value => !!value && typeof value === 'object' && !Array.isArray(value) && Object.getPrototypeOf(value) === Object.prototype;
+const isMixedRydbergBranch = conditions => Number.isInteger(conditions?.n) && Boolean(conditions.nuReference) && conditions.Fp === 0.5;
 
 // Source records are already public metadata. Local-original pointers are deliberately omitted.
 function publicMetadata(value) {
@@ -58,9 +61,11 @@ export function buildCalculationRecord(state, versions = {}) {
     schemaVersion:RECORD_SCHEMA_VERSION,kind:RECORD_KIND,exportedAt:configuration.exportedAt,
     build:{softwareVersion:configuration.softwareVersion,appCommit:configuration.appCommit,worktreeDirty:typeof versions.worktreeDirty === 'boolean' ? versions.worktreeDirty : null},
     configuration,
-    transition:{id:restored.transition.id,lower:restored.transition.lower,upper:restored.transition.upper,J_lower:current.J_lower,J_upper:current.J_upper,multipole:restored.transition.multipole,
-      wavelength},
+    transition:{id:restored.transition.id,lower:restored.transition.lower,upper:restored.transition.upper,J_lower:current.J_lower,
+      J_upper:isMixedRydbergBranch(quantity.conditions) ? null : current.J_upper,multipole:restored.transition.multipole,
+      wavelength,adoption:getRecordAdoption(configuration.transitionId,actual.Fp)},
     resolvedChannel:{...Object.fromEntries(TUPLE.map(key => [key,actual[key]])),selectionOrigin:configuration.selection.channel === null ? 'auto' : 'manual',dEff_ea0:effective.dEff,
+      solvedQuantity:savedSolvedQuantity(configuration),
       ...(quantity.convention === 'F-reduced' ? {matrixElement_ea0:actual.matEl} : {})},
     primaryQuantity:{quantity:quantity.quantity,value:quantity.value,unit:quantity.unit,convention:quantity.convention,
       sourceId:quantity.sourceId,sourceLocator:quantity.sourceLocator ?? null,evidenceKind:quantity.evidenceKind,reviewStatus:quantity.reviewStatus,
@@ -85,10 +90,7 @@ function parseValue(value) {
   try {return JSON.parse(value);} catch {throw new ConfigurationError('config','JSON 格式无效');}
 }
 
-/** The report is not an evidence-import format. Only its nested configuration can be restored. */
-export function parseCalculationRecordOrConfig(value, versions = {}) {
-  const input = parseValue(value);
-  if (input?.kind !== RECORD_KIND) return parseCalculationConfig(input,versions);
+function validateRecordEnvelope(input) {
   if (!plain(input)) throw new ConfigurationError('record','研究记录必须为普通对象');
   for (const key of Object.keys(input)) if (!ROOT_KEYS.includes(key)) throw new ConfigurationError(`record.${key}`,'未知字段');
   for (const key of ROOT_KEYS) if (!Object.hasOwn(input,key)) throw new ConfigurationError(`record.${key}`,'缺少研究记录字段');
@@ -96,7 +98,27 @@ export function parseCalculationRecordOrConfig(value, versions = {}) {
   if (typeof input.exportedAt !== 'string' || input.exportedAt.length > 240 || !Number.isFinite(Date.parse(input.exportedAt))) throw new ConfigurationError('record.exportedAt','不是有效时间');
   for (const key of ['build','configuration','transition','resolvedChannel','primaryQuantity','evidence']) if (!plain(input[key])) throw new ConfigurationError(`record.${key}`,'必须为普通对象');
   if (typeof input.boundary !== 'string' || !input.boundary.trim() || input.boundary.length > 3000) throw new ConfigurationError('record.boundary','必须为有界说明文本');
-  const restored = parseCalculationConfig(input.configuration,versions);
+}
+
+/** Structural read only, including files whose record ID no longer exists in the current catalog. */
+function unwrapSavedCalculation(value) {
+  const input = parseValue(value);
+  const record = input?.kind === RECORD_KIND ? input : null;
+  if (record) validateRecordEnvelope(record);
+  return {config:record ? record.configuration : input,record};
+}
+
+export function readSavedCalculation(value) {
+  const saved=unwrapSavedCalculation(value);
+  validateSavedConfigStructure(saved.config);
+  return saved;
+}
+
+/** Only configuration identities and inputs may enter the authoritative restore path. */
+export function parseCalculationRecordOrConfig(value, versions = {}) {
+  const {config,record} = unwrapSavedCalculation(value);
+  const restored = parseCalculationConfig(config, versions);
+  if (!record) return restored;
   return {...restored,warnings:[...restored.warnings,RESTORE_NOTICE]};
 }
 
@@ -125,7 +147,11 @@ export function renderCalculationRecordMarkdown(record) {
   const config = record.configuration, transition = record.transition, channel = record.resolvedChannel, primary = record.primaryQuantity, evidence = record.evidence;
   const definition = config.inputDefinition, wavelength=transition.wavelength;
   const calculationSource = evidence.calculationSource;
+  const solved = savedSolvedQuantity(config);
+  const inverse = solved.key !== 'rabi';
+  const adoption = transition.adoption;
   const conditions=primary.conditions||{};
+  const upperAngularMomentum = isMixedRydbergBranch(conditions) ? 'F′=1/2 混合态，J′ 非好量子数' : `J′=${valueText(transition.J_upper)}`;
   const seriesRows=Number.isFinite(conditions.n)&&conditions.nuReference ? {
     n:['主量子数标签 n',conditions.n],
     nu:['实际有效主量子数 ν',conditions.nu],
@@ -148,7 +174,7 @@ export function renderCalculationRecordMarkdown(record) {
     ...(offset?[['零场频移（相对重心）',formatZeroFieldOffset(offset)],['频移公式与来源',`${offset.convention} · ${offset.sourceLocator}`]]:[]),
     ...(offset?.uncertaintyNote?[['频移不确定度口径',offset.uncertaintyNote]]:[]),
   ];
-  const solve = {rabi:'功率、尺寸 → Rabi 频率',power:'Rabi 频率、尺寸 → 录入功率',waist:'功率、Rabi 频率 → 录入尺寸'}[config.display.solveFor] || '未记录';
+  const solve = {rabi:'功率、尺寸 → Rabi 频率',power:'Rabi 频率、尺寸 → 录入功率',waist:'功率、Rabi 频率 → 录入尺寸'}[solved.key];
   const dirty = record.build.worktreeDirty === true ? '含未提交改动；此提交仅为代码基线，不能保证精确复现当前运行代码。'
     : record.build.worktreeDirty === false ? '无未提交改动' : '构建工作区状态未知；不能仅凭代码基线保证精确复现。';
   const output = [
@@ -158,14 +184,14 @@ export function renderCalculationRecordMarkdown(record) {
     '## 版本与代码基线',
     table([['记录格式',`${record.kind} / schema ${record.schemaVersion}`],['软件版本',record.build.softwareVersion],['代码基线',record.build.appCommit],['工作区',dirty],['数据版本',config.datasetVersion],['数据 SHA-256',config.datasetHash],['公式版本',config.formulaVersion],['证据版本',evidence.evidenceVersion],['核查版本',evidence.reviewVersion],['核查日期',evidence.reviewedAt]]),
     '## 计算对象与实际通道',
-    table([['跃迁',`${transition.id} · ${transition.lower} → ${transition.upper}`],['电子角动量',`J=${transition.J_lower} → J′=${transition.J_upper}`],['多极性',transition.multipole],...wavelengthRows,['求解方向',solve],['通道选择',channel.selectionOrigin === 'manual' ? '手动选定' : '自动：当前 F 对及偏振内最强允许通道'],['实际通道',tupleText(channel)],['d_eff',`${channel.dEff_ea0} ea₀`],
+    table([['跃迁',`${transition.id} · ${transition.lower} → ${transition.upper}`],...(adoption ? [['采用状态',adoption.label],['采用范围',adoption.scope],['批次',adoption.batchId ?? '未登记']] : []),['电子角动量',`J=${transition.J_lower} → ${upperAngularMomentum}`],['多极性',transition.multipole],...wavelengthRows,['求解方向',solve],['通道选择',channel.selectionOrigin === 'manual' ? '手动选定' : '自动：当前 F 对及偏振内最强允许通道'],['实际通道',tupleText(channel)],['d_eff',`${channel.dEff_ea0} ea₀`],
       ...(Number.isFinite(channel.matrixElement_ea0) ? [['磁子态矩阵元 M_fi',`${channel.matrixElement_ea0} ea₀`]] : []),
       ['约化矩阵元',`${config.matrixElement.reduced_ea0} ea₀`],['矩阵元约定',config.matrixElement.convention]]),
     '## 输入定义、录入值与规范化参数',
     '规范化参数是进入现有物理公式的原子处分量功率 Pq 和 1/e² 强度半径 w₀；不得再次拆分偏振或再除以直径因子。',
-    table([['功率位置',definition.powerPlane === 'upstream' ? '上游' : '原子处'],['功率口径',definition.powerBasis === 'linear-total' ? '线偏振总功率' : '指定偏振分量功率'],['传输效率 η',definition.transmission ?? '未使用／未填写'],['线偏振方向',definition.linearOrientation ?? '未使用／未填写'],['手动分量占比',definition.manualFraction ?? '未使用／未填写'],['强度尺寸定义',definition.sizeKind === 'diameter' ? '1/e² 强度直径' : '1/e² 强度半径'],['录入功率',`${config.enteredParameters.power_W} W`],['录入尺寸',`${config.enteredParameters.size_m} m`],['原子处分量功率 Pq',`${config.parameters.power_W} W`],['1/e² 强度半径 w₀',`${config.parameters.waist_m} m`],['反算目标 Ω/2π',config.display.solveFor === 'rabi' ? '不适用（正算）' : `${config.parameters.targetRabi_Hz} Hz`]]),
+    table([['功率位置',definition.powerPlane === 'upstream' ? '上游' : '原子处'],['功率口径',definition.powerBasis === 'linear-total' ? '线偏振总功率' : '指定偏振分量功率'],['传输效率 η',definition.transmission ?? '未使用／未填写'],['线偏振方向',definition.linearOrientation ?? '未使用／未填写'],['手动分量占比',definition.manualFraction ?? '未使用／未填写'],['强度尺寸定义',definition.sizeKind === 'diameter' ? '1/e² 强度直径' : '1/e² 强度半径'],['录入功率',`${config.enteredParameters.power_W} W`],['录入尺寸',`${config.enteredParameters.size_m} m`],['原子处分量功率 Pq',`${config.parameters.power_W} W`],['1/e² 强度半径 w₀',`${config.parameters.waist_m} m`],['反算目标 Ω/2π',inverse ? `${config.parameters.targetRabi_Hz} Hz` : '不适用（正算）']]),
     '## 当前模型结果',
-    table([['计算状态',config.result.status],['Ω/2π',`${config.result.frequency_Hz} Hz`],['Ω',`${config.result.omega_rad_s} rad/s`],['π 脉冲时间',config.result.frequency_Hz === 0 && config.result.piTime_s === null ? '∞（零耦合；JSON 以 null 记录无限时间）' : `${valueText(config.result.piTime_s)} s`]]),
+    table([['主结果 · '+solved.label,`${solved.valueSI} ${solved.siUnit}`],['计算状态',config.result.status],[inverse ? '重算 Ω/2π' : 'Ω/2π',`${config.result.frequency_Hz} Hz`],['Ω',`${config.result.omega_rad_s} rad/s`],['π 脉冲时间',config.result.frequency_Hz === 0 && config.result.piTime_s === null ? '∞（零耦合；JSON 以 null 记录无限时间）' : `${valueText(config.result.piTime_s)} s`]]),
     '## 原采用矩阵元与来源',
     table([['来源 ID',primary.sourceId],[calculationSource ? '计算记录定位' : '原文定位',primary.sourceLocator],['采用值',`${primary.value} ${primary.unit}`],['约定',primary.convention],['证据类型',primary.evidenceKind],['来源核查状态',primary.reviewStatus],['原记录矩阵元不确定度',primary.uncertainty === null ? '未知／未建立（null，不是零）' : `${primary.uncertainty} ${primary.unit}`],['不确定度口径',primary.uncertaintyNote],['完整 Rabi 不确定度','未建立；不把矩阵元误差当成功率、束腰与模型的完整误差']]),
     primary.source ? sourceMarkdown(primary.source) : '来源元数据未记录。',
@@ -205,7 +231,7 @@ export function renderCalculationRecordMarkdown(record) {
   output.push('## 证据适用性',table(Object.entries(evidence.applicability || {}).map(([key,value]) => [key,Array.isArray(value) ? value.join('；') : value])));
   if (evidence.missing?.length || !calculationSource) output.push('## 待补证据',evidence.missing?.length ? lines(evidence.missing) : '本轮没有接入该跃迁的待补清单，不表示证据已闭合。');
   if (evidence.sources?.length) output.push('## 支持文献',...evidence.sources.map(sourceMarkdown));
-  output.push('## 恢复与复算','JSON 研究记录可通过页面“恢复计算配置”载入，页面仅提取嵌套 configuration，并使用当前数据、公式与证据版本重新计算和核查；不会把文件中的保存结果、矩阵元或核查结论作为当前依据。旧 v1/v2 配置恢复方式保持不变。');
+  output.push('## 恢复与复算','选择“查看保存的快照”可只读检查文件内容。选择“使用当前版本重算”将根据配置中的对象、通道、输入和定义，调用当前数据、公式和证据版本，并显示保存版本、重算版本和可比较的主结果差值。此过程支持 v1/v2 配置及包含配置的 JSON 研究记录。');
   return output.filter(item => item !== '').join('\n\n')+'\n';
 }
 

@@ -67,6 +67,23 @@ test('summary preserves channel, adopted source and code/experiment boundaries i
   assert.match(text,/工作区状态未知/);
 });
 
+test('the copied summary and CSV separate a saved inverse target from the recomputed frequency',()=>{
+  const forward = buildCalculationRecord(stateFor('T3'),versions);
+  assert.equal(resultCSVRow(forward).target_rabi_Hz,null);
+  assert.doesNotMatch(formatCalculationSummary(forward),/反算目标|重算 Ω\/2π/);
+  for (const solveFor of ['power','waist']) {
+    const record = buildCalculationRecord(stateFor('T3',{solveFor}),versions);
+    record.configuration.parameters.targetRabi_Hz = 10000;
+    record.configuration.result.frequency_Hz = 9999.999999999998;
+    const summary = formatCalculationSummary(record);
+    assert.ok(summary.includes('反算目标 Ω/2π=10000 Hz'));
+    assert.ok(summary.includes('重算 Ω/2π=9999.999999999998 Hz'));
+    const [header, row] = parseCSV(serializeResultCSV(record));
+    assert.equal(Number(row[header.indexOf('target_rabi_Hz')]),10000);
+    assert.equal(Number(row[header.indexOf('frequency_Hz')]),9999.999999999998);
+  }
+});
+
 test('export availability excludes invalid or non-E1 contexts while keeping zero power valid',()=>{
   assert.equal(canExportCurrentResult(stateFor()),true);
   assert.equal(canExportCurrentResult(stateFor('T2',{P_mW:0})),true);
@@ -75,17 +92,16 @@ test('export availability excludes invalid or non-E1 contexts while keeping zero
   assert.throws(()=>serializeResultCSV({kind:'wrong'}));
 });
 
-test('readable summary suppresses binary tails while CSV and JSON keep full stored precision',()=>{
+test('copied conditions, CSV and JSON preserve full stored precision',()=>{
   const record=buildCalculationRecord(stateFor(),versions);
   record.configuration.enteredParameters.size_m=0.000049999999999999996;
   record.configuration.parameters.waist_m=0.000049999999999999996;
   record.resolvedChannel.dEff_ea0=0.17993333333333336;
   record.configuration.result.piTime_s=1.567842989285534e-8;
   const before=JSON.stringify(record),summary=formatCalculationSummary(record),rows=parseCSV(serializeResultCSV(record));
-  assert.equal(summary.trimEnd().split('\n').length,9);
-  assert.match(summary,/w₀=0\.00005 m/);assert.match(summary,/d_eff=0\.17993333 ea₀/);assert.match(summary,/tπ=1\.567843e-8 s/);
-  assert.doesNotMatch(summary,/0\.000049999|0\.179933333333|1\.567842989/);
-  assert.match(summary,/可读性格式化，不代表不确定度评定/);
+  assert.ok(summary.includes(`w₀=${record.configuration.parameters.waist_m} m`));
+  assert.ok(summary.includes(`d_eff=${record.resolvedChannel.dEff_ea0} ea₀`));
+  assert.ok(summary.includes(`tπ=${record.configuration.result.piTime_s} s`));
   const values=Object.fromEntries(rows[0].map((key,index)=>[key,rows[1][index]]));
   assert.equal(Number(values.intensity_radius_m),record.configuration.parameters.waist_m);
   assert.equal(Number(values.effective_dipole_ea0),record.resolvedChannel.dEff_ea0);

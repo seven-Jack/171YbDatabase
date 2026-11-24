@@ -1,0 +1,95 @@
+/* Research workspace chrome; the published energy diagram keeps its own geometry. */
+.skip-to-atlas { position: fixed; top: 6px; left: 6px; transform: translateY(-160%); z-index: 1200; padding: 9px 15px; background: #d8e8ff; color: #0c1c33; }
+.skip-to-atlas:focus { transform: none; }
+#top {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  padding: 23px 0 19px;
+}
+#top .hero-art { inset: 0 1% 0 auto; width: min(44%, 510px); opacity: .9; }
+#secLevel :is(.original-legend-title,.original-filter-label) { color: #abc0d7; font-size: 12px; }
+#top h1 { font-size: clamp(31px, 3.1vw, 46px); }
+#top .subtitle { color: #b4c7df; font-size: clamp(14px, 1.2vw, 17px); }
+#top .header-right { align-self: end; padding: 6px 10px; border-radius: 5px; background: #0a111ee8; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.hero-actions a { display: inline-flex; align-items: center; min-height: 42px; box-sizing: border-box; padding: 7px 17px; border: 1px solid #415876; border-radius: 6px; color: #d3e5fe; background: #111e2e; font: 600 14px/1.4 var(--font-ui); text-decoration: none; }
+.hero-actions a:first-child { color: #102039; border-color: #a7caff; background: #a7caff; }
+.hero-actions a:hover { border-color: #d7e7ff; }
+.hero-actions a:first-child:hover { background: #c7dfff; }
+#sectionNav { column-gap: clamp(10px,2.2vw,30px); }
+#sectionNav .nav-data::before { content: ''; width: 12px; height: 12px; margin-right: 5px; background: radial-gradient(circle at 40% 40%,transparent 0 3px,currentColor 3.3px 4.4px,transparent 4.7px),linear-gradient(45deg,transparent 39%,currentColor 42% 58%,transparent 62%) bottom right/5px 5px no-repeat; }
+:is(#secCalc,#secRabi,#secData,#secLevel,#secReference,#secBibliography) .section-title { letter-spacing: -.025em; }
+#secRabi #rabiResult strong { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+#rabiResult:focus-visible { outline: 2px solid #b6d6ff; outline-offset: -2px; }
+#rabiResult .result-heading { display: flex; width: 100%; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; }
+#rabiResult .result-channel-mode { color: #acbdd2; font-size: 12px; }
+#rabiResult .result-unit { font-size: .58em; font-weight: 500; letter-spacing: 0; white-space: nowrap; }
+#rabiResult .result-context { display: grid; width: 100%; gap: 14px; }
+#rabiResult .result-channel { color: #e4edf8; font-size: clamp(14px, 1vw, 16px); line-height: 1.55; font-variant-numeric: tabular-nums; }
+#rabiResult .result-conditions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 7rem), 1fr)); gap: 8px 12px; }
+#rabiResult .result-field { position: relative; display: grid; align-content: start; line-height: 1.5; }
+#rabiResult .result-field b { font-size: 14px; font-weight: 500; color: #dae5f5; font-variant-numeric: tabular-nums; }
+/* Linear reading and copying keep the equation, while the visible labels sit above their values. */
+#rabiResult .result-equals { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+#rabiResult .result-error { color: #f0cda1; font-size: 14px; }
+#rabiResult [hidden] { display: none; }
+#secRabi #rabiResult small, #secRabi .result-evidence, .saved-record-view, .state-conventions { overflow-wrap: anywhere; }
+.saved-record-view, .state-conventions { margin-block: 12px; padding: 10px 16px; background: #101a28; color: #d3deee; border: 1px solid #35465e; border-radius: 8px; font: 400 15px/1.65 var(--font-ui); }
+.saved-record-view[hidden] { display: none; }
+.saved-record-view summary, .state-conventions summary { display: list-item; padding: 7px 0; color: #d5e7ff; font-weight: 600; cursor: pointer; }
+.saved-record-view :is(dt, strong) { color: #f0dbaf; }
+.saved-record-view :is(dl, pre) { max-width: 100%; white-space: pre-wrap; }
+#secCalc .cg-table :is(td,th), #secData .data-table :is(td,th), .rydberg-table td { font-variant-numeric: tabular-nums; }
+#secCalc .cg-table td, #secData .data-table td { font-size: 14px; line-height: 1.55; }
+#secCalc .cg-table th, #secData .data-table th, #secLevel .diagram-click-guide { font-size: 13px; }
+#secCalc .cg-table-wrap, #secData .table-scroll, #secLevel .rydberg-table-scroll { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+#secCalc .channel-select, #secCalc .hf-trans-pol button, #secRabi .calculation-toolbar :is(button,summary), #secData .tab-btn { min-height: 44px; }
+#secReference .info-card li, #secBibliography .ref-list li { overflow-wrap: anywhere; }
+#secLevel :is(.evidence-context,.evidence-detail-body,.source-panel,.knowledge-source), #secData :is(td,details) { overflow-wrap: anywhere; }
+.hero-actions a:focus-visible, :is(.saved-record-view,.state-conventions) :focus-visible, #sectionNav :focus-visible { outline: 2px solid #b6d6ff; outline-offset: 2px; }
+
+@media (min-width: 960px) {
+  #top { padding-block: 16px 12px; }
+  #top .header-left { display: grid; grid-template-columns: auto auto; justify-content: start; align-items: center; gap: 2px 18px; }
+  #top h1 { grid-column: 1 / -1; }
+  #top .subtitle, #top .hero-actions { margin: 0; }
+}
+@media (max-width: 700px) {
+  #top { grid-template-columns: minmax(0,1fr); gap: 9px; padding: 17px 0 12px; }
+  #top .hero-art { display: block; inset: 0 0 auto auto; width: 36%; height: 85px; opacity: .38; }
+  #top .header-right { justify-self: start; padding: 0; background: transparent; }
+  #top .meta-card :is(.label,.value) { font-size: 12px; }
+  .hero-actions { margin-top: 7px; }
+  .hero-actions a { min-height: 44px; padding-inline: 13px; }
+  #sectionNav { gap: 0 8px; }
+  #sectionNav a, #sectionNav .nav-secondary { font-size: 13px; }
+  #sectionNav .nav-data::before { display: none; }
+}
+@media (max-width: 540px) {
+  #rabiResult .result-conditions { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  #rabiResult .result-field:has([data-result-target]) { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 8px; }
+  #rabiResult .result-field[hidden] { display: none; }
+  #sectionNav, html[data-app-ready="true"] #sectionNav { display: flex; flex-wrap: nowrap; justify-content: start; gap: 0 13px; overflow-x: auto; overscroll-behavior-x: contain; }
+  #sectionNav > * { flex: none; }
+  #sectionNav .nav-data { margin-inline-start: 0; }
+  #sectionNav #guideOpen { min-height: 42px; }
+  #secCalc .cg-table, #secCalc .cg-table tbody { display: block; min-width: 0; width: 100%; }
+  #secCalc .cg-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  #secCalc .cg-table tbody tr { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 6px 8px; padding: 10px; border-bottom: 1px solid #35465a; }
+  #secCalc .cg-table tbody td { display: block; grid-column: span 3; padding: 0; min-width: 0; border: 0; text-align: left; white-space: normal; overflow-wrap: anywhere; }
+  #secCalc .cg-table tbody td::before { display: block; color: #afc0d6; font: 500 12px/1.5 var(--font-ui); }
+  #secCalc .cg-table td:nth-child(1)::before { content: '初态'; }
+  #secCalc .cg-table td:nth-child(2)::before { content: '末态'; }
+  #secCalc .cg-table td:nth-child(3) { grid-column: span 1; }
+  #secCalc .cg-table td:nth-child(3)::before { content: '偏振'; }
+  #secCalc .cg-table td:nth-child(4) { grid-column: span 2; }
+  #secCalc .cg-table td:nth-child(4)::before { content: '角向因子'; }
+  #secCalc .cg-table td:nth-child(5)::before { content: '矩阵元'; }
+  #secCalc .cg-table td:nth-child(2) { align-content: start; }
+  #secCalc .cg-table td:nth-child(2)::before { margin-bottom: 8px; }
+  #secRabi .calculation-toolbar.rabi-record-actions { justify-content: start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-actions a, #sectionNav a::after { transition: none; }
+}

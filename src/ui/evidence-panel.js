@@ -172,7 +172,7 @@ export function renderEvidencePanelHTML(view = {}) {
     const status = staleReview ? 'not-reviewed' : requestedStatus;
     const statusText = staleReview ? '尚未核查' : row.statusText || (status === 'not-applicable' ? '不适用' : '尚未核查');
     const detail = staleReview ? '当前跃迁没有可适用的核查记录。' : row.detail;
-    return `<div class="evidence-status-row" data-testid="evidence-row-${definition.key}" data-evidence-status="${text(status)}"><dt>${text(row.label || definition.label)}</dt><dd><strong class="evidence-status-badge">${text(statusText)}</strong>${detail ? `<p>${text(detail)}</p>` : ''}</dd></div>`;
+    return `<div class="evidence-status-row" data-testid="evidence-row-${definition.key}" data-evidence-status="${text(status)}"><dt>${text(row.label || definition.label)}</dt><dd><strong class="evidence-status-badge">${text(statusText)}</strong>${detail ? `<details class="evidence-row-detail" data-evidence-section="review-${text(definition.key)}"><summary>核查说明</summary><p>${text(detail)}</p></details>` : ''}</dd></div>`;
   }).join('');
   const header = calculationSource ? `<h3 id="evidenceReviewTitle">${text(view.summary)}</h3>`
     : `<div><span class="evidence-eyebrow">EVIDENCE REVIEW</span><h3 id="evidenceReviewTitle">文献核查${view.transitionId ? ` · ${text(view.transitionId)}` : ''}</h3></div>${metadata.length ? `<p class="evidence-review-meta">${metadata.map(text).join(' · ')}</p>` : ''}`;

@@ -10,9 +10,9 @@ async function choose(page,id) {
   const groupBox=await line.boundingBox(),labelBox=await label.boundingBox();
   if(!groupBox||!labelBox)throw new Error(`Transition ${id} has no visible wavelength label`);
   await line.click({position:{x:labelBox.x+labelBox.width/2-groupBox.x,y:labelBox.y+labelBox.height/2-groupBox.y}});
-  await expect(page).toHaveURL(/#secCalc$/);
+  await expect(page).toHaveURL(/#polarizationDiagram$/);
   await expect(line).toHaveAttribute('aria-pressed','true');
-  await expect(page.locator('#secCalc h2')).toBeFocused();
+  await expect(page.locator('#polarizationDiagram')).toBeFocused();
 }
 
 test.beforeEach(async ({page})=>{
@@ -44,7 +44,7 @@ test('the diagram is the only primary transition selector, with no obsolete cata
   }
 });
 
-test('each visible transition selects the same object and navigates directly to hyperfine channels',async ({page})=>{
+test('each visible transition selects the same object and navigates directly to the polarization diagram',async ({page})=>{
   for(const id of transitionIds){
     await choose(page,id);
     await expect(page.getByTestId('current-context').locator('strong')).toContainText(`${id} ·`);
@@ -62,6 +62,8 @@ test('effective F, unsupported M2 and calculated Rydberg evidence remain distinc
   await choose(page,'T4');
   await expect(page.getByTestId('current-context')).toHaveAttribute('data-status','unsupported');
   await expect(page.locator('#sourcePanel [data-source-field="d_num"]')).toContainText('缺少适用');
+  await expect(page.locator('#hfCGTableBody')).toContainText('尚未收录按 F 分辨的超精细诱导 E1 矩阵元');
+  await expect(page.locator('#hfTransLines')).toContainText('M2 激发不适用当前单光子 E1 模型');
   await expect(page.locator('#rabiResult strong')).toHaveText('—');
 
   await page.locator('[data-data-open="R2"]').click();
@@ -118,24 +120,23 @@ test('shared-level relations still synchronize the object, channels and selected
   await expect(lineFor(page,'NS-65-F12')).toHaveAttribute('aria-pressed','true');
 });
 
-test('native workflow links reflect the current section without marking stages complete',async ({page})=>{
+test('one workflow navigation highlights the current section',async ({page})=>{
   const navigation=page.locator('#sectionNav');
+  await expect(page.locator('nav a[href="#secCalc"]')).toHaveCount(1);
+  await expect(navigation.getByRole('link')).toHaveText(['能级图谱','通道','Rabi 计算','检索数据','方法与约定','来源']);
   await expect(navigation.locator('a[href="#secLevel"]')).toHaveAttribute('aria-current','location');
   await choose(page,'T2');
   await expect(navigation.locator('a[href="#secCalc"]')).toHaveAttribute('aria-current','location');
-  await expect(page.locator('.flow-step[data-gstep="2"] a')).toHaveAttribute('aria-current','step');
-  await expect(page.locator('.flow-step[data-gstep="1"] a')).not.toHaveAttribute('aria-current');
+  await expect(navigation.locator('a[aria-current]')).toHaveCount(1);
   await navigation.locator('a[href="#secRabi"]').click();
   await expect(navigation.locator('a[href="#secRabi"]')).toHaveAttribute('aria-current','location');
-  await expect(page.locator('.flow-step[data-gstep="3"] a')).toHaveAttribute('aria-current','step');
-  await expect(page.locator('.flow-step.done')).toHaveCount(0);
-  await expect(page.locator('.flow-step .fs-num')).toHaveText(['01','02','03']);
+  await expect(navigation.locator('a[aria-current]')).toHaveCount(1);
 });
 
 async function selectExplicitChannel(page){
   await choose(page,'T2');
   await page.locator('#hfCGTableBody .channel-select').first().click();
-  await expect(page).toHaveURL(/#secRabi$/);
+  await expect(page).toHaveURL(/#rabiResult$/);
   await expect(page.locator('#selectionContext')).toHaveAttribute('data-selection-mode','explicit');
 }
 const calculationIdentity=page=>page.evaluate(()=>({
